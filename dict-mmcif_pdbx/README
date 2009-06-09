@@ -1,0 +1,24 @@
+This directory contains the text files required to build the:
+
+            Protein Data Bank Exchange Data Dictionary
+
+
+An ordered list of the text file components of this dictionary is 
+contained in the file mmcif_pdbx.PARTS.   This dictionary requires
+components of the standard mmCIF data dictionary in CVS module
+dict-mmcif_std, and the 3D electron microscopy extension dictionary
+in CVS module dict-mmcif_iims.
+
+The full dictionary can be built using the command:  
+
+    Build.csh mmcif_pdbx
+
+ or 
+
+    make compile
+##
+
+
+
+
+

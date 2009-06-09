@@ -1,0 +1,63 @@
+##
+##
+save__entry.pdbx_pc
+    _item_description.description
+;              Placeholder for additional parent-child relationships 
+;
+    _item.name                  '_entry.pdbx_pc'
+    _item.mandatory_code          no
+    _item_type.code               code
+#
+    loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+#
+# JDWMP - Multiple parents for checking -  
+#                      child                          parent
+               '_atom_site.label_entity_id'      '_struct_asym.entity_id'
+               '_atom_site.label_entity_id'      '_entity_poly_seq.entity_id'
+               '_atom_site.label_seq_id'         '_entity_poly_seq.num'
+               '_atom_site.label_comp_id'        '_entity_poly_seq.mon_id'
+#
+               '_pdbx_poly_seq_scheme.asym_id'   '_struct_asym.id'
+               '_pdbx_poly_seq_scheme.entity_id' '_struct_asym.entity_id'
+#
+              '_pdbx_nonpoly_scheme.asym_id'     '_struct_asym.id'
+              '_pdbx_nonpoly_scheme.entity_id'   '_struct_asym.entity_id'
+#
+              '_pdbx_entity_nonpoly.comp_id'     '_pdbx_nonpoly_scheme.mon_id'     
+              '_pdbx_entity_nonpoly.entity_id'   '_pdbx_nonpoly_scheme.entity_id'   
+#
+              '_struct_ref_seq_dif.seq_num'      '_pdbx_poly_seq_scheme.seq_id'
+              '_struct_ref_seq_dif.mon_id'       '_pdbx_poly_seq_scheme.mon_id'
+#
+              '_struct_ref_seq.seq_align_beg'                 '_pdbx_poly_seq_scheme.seq_id'
+              '_struct_ref_seq.pdbx_strand_id'                '_pdbx_poly_seq_scheme.pdb_strand_id'
+              '_struct_ref_seq.pdbx_seq_align_beg_ins_code'   '_pdbx_poly_seq_scheme.pdb_ins_code'
+#
+              '_struct_ref_seq.seq_align_end'                 '_pdbx_poly_seq_scheme.seq_id'
+              '_struct_ref_seq.pdbx_seq_align_end_ins_code'   '_pdbx_poly_seq_scheme.pdb_ins_code'
+##
+  '_atom_site.label_asym_id'          '_pdbx_poly_seq_scheme.asym_id'    
+  '_atom_site.label_entity_id'        '_pdbx_poly_seq_scheme.entity_id'  
+  '_atom_site.label_seq_id'           '_pdbx_poly_seq_scheme.seq_id'     
+  '_atom_site.label_comp_id'          '_pdbx_poly_seq_scheme.mon_id'       
+#
+  '_atom_site.auth_seq_id'	      '_pdbx_poly_seq_scheme.pdb_seq_num'   
+# '_atom_site.auth_seq_id'	      '_pdbx_poly_seq_scheme.auth_seq_num' 
+  '_atom_site.auth_comp_id'	      '_pdbx_poly_seq_scheme.pdb_mon_id'    
+# '_atom_site.auth_comp_id'	      '_pdbx_poly_seq_scheme.auth_mon_id'  
+  '_atom_site.auth_asym_id'	      '_pdbx_poly_seq_scheme.pdb_strand_id' 
+  '_atom_site.pdbx_PDB_ins_code'      '_pdbx_poly_seq_scheme.pdb_ins_code'  
+#
+#
+  '_pdbx_nonpoly_scheme.pdb_seq_num'     '_atom_site.auth_seq_id'	     
+# '_pdbx_nonpoly_scheme.auth_seq_num'   '_atom_site.auth_seq_id'	     
+  '_pdbx_nonpoly_scheme.pdb_mon_id'      '_atom_site.auth_comp_id'	     
+# '_pdbx_nonpoly_scheme.auth_mon_id'    '_atom_site.auth_comp_id'	     
+  '_pdbx_nonpoly_scheme.pdb_strand_id'   '_atom_site.auth_asym_id'	     
+  '_pdbx_nonpoly_scheme.pdb_ins_code'    '_atom_site.pdbx_PDB_ins_code'     
+##
+save_
+##
+

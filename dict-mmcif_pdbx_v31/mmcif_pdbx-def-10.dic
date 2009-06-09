@@ -1,0 +1,309 @@
+
+
+###########################################################################
+#
+# File:  mmcif_pdbx-def-10.dic                                             
+# 
+#                      PDB Exchange Data Dictionary
+#
+# This data dictionary contains preliminary extensions for describing 
+# macromolecular powder diffraction experiments.
+#
+#                           Definition Section 10
+#                            
+#                                                                        
+###########################################################################
+
+save__diffrn_radiation.pdbx_analyzer 
+    _item_description.description
+; Indicates the method used to obtain monochromatic radiation.
+  _diffrn_radiation.monochromator describes the primary beam
+  monochromator (pre-specimen monochromation). 
+  _diffrn_radiation.pdbx_analyzer specifies the
+  post-diffraction analyser (post-specimen) monochromation.
+  Note that monochromators may have either 'parallel' or
+  'antiparallel' orientation. It is assumed that the
+  geometry is parallel unless specified otherwise.
+  In a parallel geometry, the position of the monochromator
+  allows the incident beam and the final post-specimen
+  and post-monochromator beam to be as close to parallel
+  as possible. In a parallel geometry, the diffracting
+  planes in the specimen and monochromator will be parallel
+  when 2*theta(monochromator) is equal to 2*theta (specimen).
+  For further discussion see R. Jenkins and R. Snyder,
+  Introduction to X-ray Powder Diffraction, Wiley (1996),
+  pp. 164-5.
+;
+    _item.name                  '_diffrn_radiation.pdbx_analyzer'
+    _item.category_id             diffrn_radiation
+    _item.mandatory_code          no
+    _item_type.code               text
+    loop_
+     _item_examples.case  
+       'GE(111)'
+       'Zr filter'   
+       'Ge 220'
+       'none'
+       'equatorial mounted graphite (0001)'
+       'Si (111), antiparallel'
+    _item_aliases.dictionary      cif_pd.dic
+    _item_aliases.version         1.0
+    _item_aliases.alias_name    '_pd_instr_monochr_post_spec'
+	
+save_
+
+save_pdbx_exptl_pd
+    _category.description
+;              Data items in the pdbx_exptl_pd record information about
+               powder sample preparations.
+;
+    _category.id                  pdbx_exptl_pd
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_exptl_pd.entry_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    save_
+
+save__pdbx_exptl_pd.entry_id
+    _item_description.description
+;              The value of _pdbx_exptl_pd.entry_id uniquely identifies a 
+               record in the PDBX_EXPTL_PD category.
+;
+    _item.name               '_pdbx_exptl_pd.entry_id'
+    _item.category_id         pdbx_exptl_pd
+    _item.mandatory_code      yes
+    _item_type.code           code
+    _item_linked.child_name	 '_pdbx_exptl_pd.entry_id'
+    _item_linked.parent_name     '_entry.id'
+     save_
+
+save__pdbx_exptl_pd.spec_preparation_pH
+    _item_description.description
+;  The pH at which the powder sample was prepared.
+;
+    _item.name                  '_pdbx_exptl_pd.spec_preparation_pH'
+    _item.category_id             pdbx_exptl_pd
+    _item.mandatory_code          no
+     loop_
+    _item_range.maximum           
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+     save_
+
+save__pdbx_exptl_pd.spec_preparation_pH_range
+    _item_description.description
+; The range of pH values at which the sample was prepared.   Used when 
+  a point estimate of pH is not appropriate.
+;
+    _item.name                  '_pdbx_exptl_pd.spec_preparation_pH_range'
+    _item.category_id             pdbx_exptl_pd
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_examples.case          '5.6 - 6.4'
+     save_
+ 
+save__pdbx_exptl_pd.spec_preparation
+    _item_description.description
+; A description of preparation steps for producing the
+  diffraction specimen from the sample. Include any procedures
+  related to grinding, sieving, spray drying, etc.
+;
+    _item.name              '_pdbx_exptl_pd.spec_preparation'
+    _item.category_id       pdbx_exptl_pd
+    _item.mandatory_code    no
+    _item_type.code         text
+    loop_
+     _item_examples.case  'POLYCRYSTAL SLURRY'
+                          'wet grinding in acetone'
+                          'sieved through a 44 micron (325 mesh/inch) sieve'
+                          'spray dried in water with 1% clay'
+    
+    _item_aliases.dictionary      cif_pd.dic
+    _item_aliases.version         1.0
+    _item_aliases.alias_name    '_pd_spec_preparation'
+save_
+
+save__refine.pdbx_pd_number_of_powder_patterns
+    _item_description.description
+;     The total number of powder patterns used.
+;
+    _item.name                  '_refine.pdbx_pd_number_of_powder_patterns'
+    _item.category_id             refine
+    _item.mandatory_code          no
+     loop_
+    _item_range.maximum           
+    _item_range.minimum           .   0
+                                  0   0
+    _item_type.code               int
+
+
+     save_
+
+save__refine.pdbx_pd_number_of_points
+    _item_description.description
+;     The total number of data points in the processed diffractogram.
+;
+    _item.name                  '_refine.pdbx_pd_number_of_points'
+    _item.category_id             refine
+    _item.mandatory_code          no
+     loop_
+    _item_range.maximum           
+    _item_range.minimum           .   0
+                                  0   0
+    _item_type.code               int
+    _item_aliases.dictionary      cif_pd.dic
+    _item_aliases.version         1.0
+    _item_aliases.alias_name    '_pd_proc_number_of_points'
+     save_
+
+
+save__refine.pdbx_pd_meas_number_of_points
+    _item_description.description
+;     The total number of points in the measured
+      diffractogram.
+;
+    _item.name                  '_refine.pdbx_pd_meas_number_of_points'
+    _item.category_id             refine
+    _item.mandatory_code          no
+     loop_
+    _item_range.maximum           
+    _item_range.minimum           .   0
+                                  0   0
+    _item_type.code               int
+    _item_aliases.dictionary      cif_pd.dic
+    _item_aliases.version         1.0
+    _item_aliases.alias_name    '_pd_meas_number_of_points'
+     save_
+
+save__refine.pdbx_pd_proc_ls_prof_R_factor
+    _item_description.description
+;      Rietveld/Profile fit R factors.
+       Note that the R factor computed for Rietveld refinements
+       using the extracted reflection intensity values (often
+       called the Rietveld or Bragg R factor, R~B~) is not properly
+       a profile R factor.  
+       pdbx_pd_proc_ls_prof_R_factor, often called R~p~, is an
+       unweighted fitness metric for the agreement between the
+       observed and computed diffraction patterns
+        R~p~ = sum~i~ | I~obs~(i) - I~calc~(i) |
+               / sum~i~ ( I~obs~(i) )
+   Note that in the above equations,
+   w(i) is the weight for the ith data point 
+   I~obs~(i) is the observed intensity for the ith data
+             point, sometimes referred to as y~i~(obs) or
+             y~oi~.
+   I~calc~(i) is the computed intensity for the ith data
+              point with background and other corrections
+              applied to match the scale of the observed dataset,
+              sometimes referred to as y~i~(calc) or
+              y~ci~.
+   n is the total number of data points (see _refine.pdbx_pd_number_of_points)
+     less the number of data points excluded from the refinement.
+   p is the total number of refined parameters.
+;
+    _item.name                  '_refine.pdbx_pd_proc_ls_prof_R_factor'
+    _item.category_id             refine
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.dictionary      cif_pd.dic
+    _item_aliases.version         1.0
+    _item_aliases.alias_name    '_pd_proc_ls_prof_R_factor'
+save_
+
+save__refine.pdbx_pd_proc_ls_prof_wR_factor
+    _item_description.description
+;      Rietveld/Profile fit R factors.
+       Note that the R factor computed for Rietveld refinements
+       using the extracted reflection intensity values (often
+       called the Rietveld or Bragg R factor, R~B~) is not properly
+       a profile R factor.
+       pdbx_pd_proc_ls_prof_wR_factor often called R~wp~, is a
+       weighted fitness metric for the agreement between the
+       observed and computed diffraction patterns
+       R~wp~ = SQRT {
+             sum~i~ ( w(i) [ I~obs~(i) - I~calc~(i) ]^2^ )
+           / sum~i~ ( w(i) [I~obs~(i)]^2^ ) }
+   Note that in the above equations,
+   w(i) is the weight for the ith data point 
+   I~obs~(i) is the observed intensity for the ith data
+             point, sometimes referred to as y~i~(obs) or
+             y~oi~.
+   I~calc~(i) is the computed intensity for the ith data
+              point with background and other corrections
+              applied to match the scale of the observed dataset,
+              sometimes referred to as y~i~(calc) or
+              y~ci~.
+   n is the total number of data points (see _refine.pdbx_pd_number_of_points)
+     less the number of data points excluded from the refinement.
+   p is the total number of refined parameters.
+;
+    _item.name                  '_refine.pdbx_pd_proc_ls_prof_wR_factor'
+    _item.category_id             refine
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.dictionary      cif_pd.dic
+    _item_aliases.version         1.0
+    _item_aliases.alias_name    '_pd_proc_ls_prof_wR_factor'
+save_
+
+
+save__refine.pdbx_pd_Marquardt_correlation_coeff
+    _item_description.description
+;  The correlation coefficient between the observed and
+   calculated structure factors for reflections included in
+   the refinement. This correlation factor is found in the 
+   fitting using the Levenberg-Marquardt algorithm to search 
+   for the minimum value of chisquare. Almost all computer 
+   codes for Rietveld refinement employ the Gauss-Newton algorithm 
+   to find parameters which minimize the weighted sum of squares 
+   of the residuals.
+   A description of the equations is given on
+    http://www.water.hut.fi/~tkarvone/fr_org_s.htm
+;
+    _item.name                  '_refine.pdbx_pd_Marquardt_correlation_coeff'
+    _item.category_id             refine
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refine.pdbx_pd_Fsqrd_R_factor 
+    _item_description.description
+;   Residual factor R for reflections that satisfy the resolution
+    limits established by _refine.ls_d_res_high and 
+    _refine.ls_d_res_low and the observation limit established by
+    _reflns.observed_criterion.
+                   sum|F~obs~**2 - F~calc~**2|
+               R = ---------------------
+                        sum|F~obs~**2|
+               F~obs~  = the observed structure-factor amplitudes
+               F~calc~ = the calculated structure-factor amplitudes
+               sum is taken over the specified reflections
+;
+    _item.name                  '_refine.pdbx_pd_Fsqrd_R_factor'
+    _item.category_id             refine
+    _item.mandatory_code          no
+     loop_
+    _item_range.maximum           
+    _item_range.minimum            .    0.0
+    _item_type.code               float
+     save_
+
+save__refine.pdbx_pd_ls_matrix_band_width
+    _item_description.description
+;      The least squares refinement "band matrix" approximation to the full matrix.
+;
+    _item.name                  '_refine.pdbx_pd_ls_matrix_band_width'
+    _item.category_id             refine
+    _item.mandatory_code          no
+     loop_
+    _item_range.maximum           
+    _item_range.minimum           .   0
+                                  0   0
+    _item_type.code               int
+     save_
+
+### EOF mmcif_pdbx-def-10.dic
+

@@ -1,0 +1,911 @@
+
+###########################################################################
+#
+# File:  mmcif_pdbx-def-13.dic                                             
+# 
+#                      PDB Exchange Data Dictionary
+#
+# This data dictionary contains extensions used by RCSB for describing
+# chemical components.
+#
+#                           Definition Section 13
+#                            
+#                                                                        
+###########################################################################
+
+
+save__chem_comp.pdbx_model_coordinates_details
+    _item_description.description
+;              This data item provides additional details about the model coordinates 
+               in the component definition. 
+;
+    _item.name                  '_chem_comp.pdbx_model_coordinates_details'
+    _item.category_id             chem_comp
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__chem_comp.pdbx_model_coordinates_db_code
+    _item_description.description
+;              This data item identifies the PDB database code from which the heavy 
+               atom model coordinates were obtained.
+;
+    _item.name                  '_chem_comp.pdbx_model_coordinates_db_code'
+    _item.category_id             chem_comp
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+save__chem_comp.pdbx_ideal_coordinates_details
+    _item_description.description
+;              This data item identifies the source of the ideal coordinates in the
+               component definition. 
+;
+    _item.name                  '_chem_comp.pdbx_ideal_coordinates_details'
+    _item.category_id             chem_comp
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__chem_comp.pdbx_ideal_coordinates_missing_flag
+    _item_description.description
+;              This data item identifies if ideal coordinates are missing in this definition. 
+;
+    _item.name                  '_chem_comp.pdbx_ideal_coordinates_missing_flag'
+    _item.category_id             chem_comp
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      'Y'  'ideal coordinates are not provided or incomplete'
+                                  'N'  'ideal coordinates are provided'
+    _item_default.value           'N'
+     save_
+
+save__chem_comp.pdbx_model_coordinates_missing_flag
+    _item_description.description
+;              This data item identifies if model coordinates are missing in this definition. 
+;
+    _item.name                  '_chem_comp.pdbx_model_coordinates_missing_flag'
+    _item.category_id             chem_comp
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      'Y'  'model coordinates are not provided or incomplete'
+                                  'N'  'model coordinates are provided'
+    _item_default.value           'N'
+     save_
+
+save__chem_comp.pdbx_initial_date
+    _item_description.description
+;              Date component was added to database.
+;
+    _item.name                  '_chem_comp.pdbx_initial_date'
+    _item.category_id             chem_comp
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd
+
+     save_
+
+save__chem_comp.pdbx_modified_date
+    _item_description.description
+;              Date component was last modified.
+;
+    _item.name                  '_chem_comp.pdbx_modified_date'
+    _item.category_id             chem_comp
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd
+     save_
+
+save__chem_comp_atom.pdbx_alt_atom_id
+    _item_description.description
+;              An alternative identifier for the atom. This data item would be
+               used in cases where alternative nomenclatures exist for labelling
+               atoms in a group.
+;
+    _item.name                  '_chem_comp_atom.pdbx_alt_atom_id'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               atcode
+     save_
+
+
+save__chem_comp_atom.pdbx_alt_comp_id
+    _item_description.description
+;              An alternative identifier for the atom. This data item would be
+               used in cases where alternative nomenclatures exist for labelling
+               atoms in a group.
+;
+    _item.name                  '_chem_comp_atom.pdbx_alt_comp_id'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               ucode
+     save_
+
+
+save__chem_comp_atom.pdbx_model_Cartn_x_ideal
+    _item_description.description
+;              An alternative x component of the coordinates for this atom in this
+               component specified as orthogonal angstroms. 
+;
+    _item.name                  '_chem_comp_atom.pdbx_model_Cartn_x_ideal'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               float
+    loop_
+    _item_dependent.dependent_name
+                                '_chem_comp_atom.pdbx_model_Cartn_y_ideal'
+                                '_chem_comp_atom.pdbx_model_Cartn_z_ideal'
+    _item_sub_category.id         cartesian_coordinate
+    _item_units.code              angstroms
+
+     save_
+
+
+save__chem_comp_atom.pdbx_model_Cartn_y_ideal
+    _item_description.description
+;              An alternative y component of the coordinates for this atom in this
+               component specified as orthogonal angstroms. 
+;
+    _item.name                  '_chem_comp_atom.pdbx_model_Cartn_y_ideal'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               float
+    loop_
+    _item_dependent.dependent_name
+                                '_chem_comp_atom.pdbx_model_Cartn_x_ideal'
+                                '_chem_comp_atom.pdbx_model_Cartn_z_ideal'
+    _item_sub_category.id         cartesian_coordinate
+    _item_units.code              angstroms
+
+     save_
+
+
+save__chem_comp_atom.pdbx_model_Cartn_z_ideal
+    _item_description.description
+;              An alternative z component of the coordinates for this atom in this
+               component specified as orthogonal angstroms. 
+;
+    _item.name                  '_chem_comp_atom.pdbx_model_Cartn_z_ideal'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               float
+    loop_
+    _item_dependent.dependent_name
+                                '_chem_comp_atom.pdbx_model_Cartn_x_ideal'
+                                '_chem_comp_atom.pdbx_model_Cartn_y_ideal'
+    _item_sub_category.id         cartesian_coordinate
+    _item_units.code              angstroms
+
+     save_
+
+
+
+save__chem_comp_atom.pdbx_stereo_config
+    _item_description.description
+;              The chiral configuration of the atom that is a chiral center.
+;
+    _item.name                  '_chem_comp_atom.pdbx_stereo_config'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      R  'rectus - right handed configuration'
+                                  S  'sinister - left handed configuration'
+                                  N  'none'
+     save_
+
+save__chem_comp_atom.pdbx_aromatic_flag
+    _item_description.description
+;              A flag indicating an aromatic atom.
+;
+    _item.name                  '_chem_comp_atom.pdbx_aromatic_flag'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      Y  'Yes - an aromatic atom'
+                                  N  'No  - not an aromatic atom'
+     save_
+
+save__chem_comp_atom.pdbx_leaving_atom_flag
+    _item_description.description
+;              A flag indicating a leaving atom.
+;
+    _item.name                  '_chem_comp_atom.pdbx_leaving_atom_flag'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      Y  'Yes - a leaving atom'
+                                  N  'No  - not a leaving atom'
+     save_
+
+save__chem_comp_bond.pdbx_stereo_config
+    _item_description.description
+;              Stereochemical configuration across a double bond.
+;
+    _item.name                  '_chem_comp_bond.pdbx_stereo_config'
+    _item.category_id             chem_comp_bond
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      E  'zusammen for together'
+                                  Z  'entgegen for opposite'
+                                  N  'none'
+     save_
+
+save__chem_comp_bond.pdbx_aromatic_flag
+    _item_description.description
+;              A flag indicating an aromatic bond.
+;
+    _item.name                  '_chem_comp_bond.pdbx_aromatic_flag'
+    _item.category_id             chem_comp_bond
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      Y  'Yes - an aromatic bond'
+                                  N  'No  - not an aromatic bond'
+     save_
+
+
+
+###############################
+## PDBX_CHEM_COMP_DESCRIPTOR ##
+###############################
+
+save_pdbx_chem_comp_descriptor
+    _category.description
+;              Data items in the CHEM_COMP_DESCRIPTOR category provide
+               string descriptors of component chemical structure.
+;
+    _category.id                  pdbx_chem_comp_descriptor
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_chem_comp_descriptor.comp_id'
+                                '_pdbx_chem_comp_descriptor.type'
+                                '_pdbx_chem_comp_descriptor.program'
+				'_pdbx_chem_comp_descriptor.program_version'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_chem_comp_descriptor.comp_id
+    _pdbx_chem_comp_descriptor.descriptor
+    _pdbx_chem_comp_descriptor.type
+    _pdbx_chem_comp_descriptor.program
+    _pdbx_chem_comp_descriptor.program_version
+     . . . . .
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_descriptor.comp_id
+    _item_description.description
+;              This data item is a pointer to _chem_comp.id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_chem_comp_descriptor.comp_id'
+    _item.category_id             pdbx_chem_comp_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_chem_comp_descriptor.comp_id'
+    _item_linked.parent_name    '_chem_comp.id'
+     save_
+
+save__pdbx_chem_comp_descriptor.descriptor
+    _item_description.description
+;              This data item contains the descriptor value for this 
+               component.
+;
+    _item.name                  '_pdbx_chem_comp_descriptor.descriptor'
+    _item.category_id             pdbx_chem_comp_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+save__pdbx_chem_comp_descriptor.type
+    _item_description.description
+;              This data item contains the descriptor type. 
+;
+    _item.name                  '_pdbx_chem_comp_descriptor.type'
+    _item.category_id             pdbx_chem_comp_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               uline
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+        SMILES_CANNONICAL  'deprecated'
+        SMILES_CANONICAL   'Canonical SMILES descriptor'
+        SMILES             'SMILES descriptor'
+        SMILES             'SMILES descriptor'
+        InChI              'InChi descriptor'
+        InChI_MAIN         'InChi descriptor- main layer'
+        InChI_MAIN_FORMULA 'InChi descriptor- main layer - chemical formula sub-layer'
+        InChI_MAIN_CONNECT 'InChi descriptor- main layer - atom connection sub-layer'
+        InChI_MAIN_HATOM   'InChi descriptor- main layer - hydrogen atom sub-layer'
+        InChI_CHARGE       'InChi descriptor- charge layer'
+        InChI_STEREO       'InChi descriptor- stereochemical layer'
+        InChI_ISOTOPE      'InChi descriptor- isotopic layer'
+        InChI_FIXEDH       'InChi descriptor- fixed hydrogren layer'
+        InChI_RECONNECT    'InChi descriptor- reconnected layer'
+     save_
+
+save__pdbx_chem_comp_descriptor.program
+    _item_description.description
+;              This data item contains the name of the program
+               or library used to compute the descriptor. 
+;
+    _item.name                  '_pdbx_chem_comp_descriptor.program'
+    _item.category_id             pdbx_chem_comp_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_examples.case
+    _item_examples.detail
+           OPENEYE     'OpenEye OECHEM library' 
+           CACTVS      'CACTVS  program library' 
+           DAYLIGHT    'Daylight program library' 
+           OTHER       'Other program or library'
+     save_
+
+save__pdbx_chem_comp_descriptor.program_version
+    _item_description.description
+;              This data item contains the version of the program
+               or library used to compute the descriptor. 
+;
+    _item.name                  '_pdbx_chem_comp_descriptor.program_version'
+    _item.category_id             pdbx_chem_comp_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+save__pdbx_chem_comp_descriptor.ordinal
+    _item_description.description
+;              Ordinal index for this category.
+;
+    _item.name                  '_pdbx_chem_comp_descriptor.ordinal'
+    _item.category_id             pdbx_chem_comp_descriptor
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+###############################
+## PDBX_CHEM_COMP_IDENTIFIER ##
+###############################
+
+save_pdbx_chem_comp_identifier
+    _category.description
+;              Data items in the CHEM_COMP_IDENTIFIER category provide
+               identifiers for chemical components.
+;
+    _category.id                  pdbx_chem_comp_identifier
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_chem_comp_identifier.comp_id'
+                                '_pdbx_chem_comp_identifier.type'
+                                '_pdbx_chem_comp_identifier.program'
+                                '_pdbx_chem_comp_identifier.program_version'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_chem_comp_identifier.comp_id
+    _pdbx_chem_comp_identifier.identifier
+    _pdbx_chem_comp_identifier.type
+    _pdbx_chem_comp_identifier.program
+    _pdbx_chem_comp_identifier.program_version
+     . . . . .
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_identifier.comp_id
+    _item_description.description
+;              This data item is a pointer to _chem_comp.id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_chem_comp_identifier.comp_id'
+    _item.category_id             pdbx_chem_comp_identifier
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_chem_comp_identifier.comp_id'
+    _item_linked.parent_name    '_chem_comp.id'
+     save_
+
+save__pdbx_chem_comp_identifier.identifier
+    _item_description.description
+;              This data item contains the identifier value for this 
+               component.
+;
+    _item.name                  '_pdbx_chem_comp_identifier.identifier'
+    _item.category_id             pdbx_chem_comp_identifier
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+save__pdbx_chem_comp_identifier.type
+    _item_description.description
+;              This data item contains the identifier type. 
+;
+    _item.name                  '_pdbx_chem_comp_identifier.type'
+    _item.category_id             pdbx_chem_comp_identifier
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+ 	'COMMON NAME'         'Common chemical name'
+        'SYSTEMATIC NAME'     'Systematic chemical name'
+        'CAS REGISTRY NUMBER' 'Chemical Abstracts Registry Number'
+        'PUBCHEM Identifier'  'PubChem accession number'
+        'MDL Identifier'      'Molecular Design Limited Identifier'
+     save_
+
+save__pdbx_chem_comp_identifier.program
+    _item_description.description
+;              This data item contains the name of the program
+               or library used to compute the identifier. 
+;
+    _item.name                  '_pdbx_chem_comp_identifier.program'
+    _item.category_id             pdbx_chem_comp_identifier
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_examples.case
+    _item_examples.detail
+           OPENEYE     'OpenEye OECHEM program' 
+           DAYLIGHT    'Daylight program library' 
+           ACD         'Advanced Chemistry Development Naming Program'
+           AUTONOM     'Belstein AutoNom Naming Program'
+           PUBCHEM_CID 'Compound  identifier'
+           PUBCHEM_SID 'Substance identifier'
+           OTHER       'Other program or library'
+     save_
+
+save__pdbx_chem_comp_identifier.program_version
+    _item_description.description
+;              This data item contains the version of the program
+               or library used to compute the identifier. 
+;
+    _item.name                  '_pdbx_chem_comp_identifier.program_version'
+    _item.category_id             pdbx_chem_comp_identifier
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+save__pdbx_chem_comp_identifier.ordinal
+    _item_description.description
+;              Ordinal index for this category.
+;
+    _item.name                  '_pdbx_chem_comp_identifier.ordinal'
+    _item.category_id             pdbx_chem_comp_identifier
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+###########################
+## PDBX_CHEM_COMP_IMPORT ##
+###########################
+
+save_pdbx_chem_comp_import
+    _category.description
+;              Data items in the PDBX_CHEM_COMP_IMPORT category identify
+               existing chemical components to be imported into the 
+               current component definition.  Components in this list
+               can be edited by instructions in categories 
+               pdbx_chem_comp_atom_edit and pdbx_chem_comp_bond_edit.
+;
+    _category.id                  pdbx_chem_comp_import
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_chem_comp_import.comp_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_chem_comp_import.comp_id
+     ATP
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_chem_comp_import.comp_id
+    _item_description.description
+;              This data item is a pointer to _chem_comp.id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_chem_comp_import.comp_id'
+    _item.category_id             pdbx_chem_comp_import
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_chem_comp_import.comp_id'
+    _item_linked.parent_name    '_chem_comp.id'
+     save_
+
+
+
+##############################
+## PDBX_CHEM_COMP_ATOM_EDIT ##
+##############################
+
+save_pdbx_chem_comp_atom_edit
+    _category.description
+;              Data items in the PDBX_CHEM_COMP_ATOM_EDIT category provide
+               atom level editing instructions to be applied to imported
+               chemical components. 
+;
+    _category.id                  pdbx_chem_comp_atom_edit
+    _category.mandatory_code      no
+    _category_key.name           '_pdbx_chem_comp_atom_edit.ordinal'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_chem_comp_atom_edit.ordinal
+    _pdbx_chem_comp_atom_edit.comp_id
+    _pdbx_chem_comp_atom_edit.edit_op
+    _pdbx_chem_comp_atom_edit.atom_id
+    1 'LYS'  DELETE  'HN2'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_chem_comp_atom_edit.ordinal
+    _item_description.description
+;          This data item uniquely identifies and orders each  atom edit instruction.
+;
+    _item.name                  '_pdbx_chem_comp_atom_edit.ordinal'
+    _item.category_id             pdbx_chem_comp_atom_edit
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_chem_comp_atom_edit.comp_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_chem_comp_import.comp_id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_chem_comp_atom_edit.comp_id'
+    _item.category_id             pdbx_chem_comp_atom_edit
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_chem_comp_atom_edit.comp_id'
+    _item_linked.parent_name    '_pdbx_chem_comp_import.comp_id'
+     save_
+
+save__pdbx_chem_comp_atom_edit.edit_op
+    _item_description.description
+;              The operation applied to the named imported component.
+;
+    _item.name                  '_pdbx_chem_comp_atom_edit.edit_op'
+    _item.category_id             pdbx_chem_comp_atom_edit
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+      RENAME          'Rename the target atom to '
+      DELETE          'Remove the target atom from the component'
+      ADD             'Add the edit_atom_id with specified bond order to the component'
+      CHARGE          'Assign charge to edit_atom_id'
+      PARTIAL_CHARGE  'Assign partial charge to edit_atom_id'
+      MODEL_CARTN_X   'Assign model X Cartesian coordinate to edit_atom_id'
+      MODEL_CARTN_Y   'Assign model Y Cartesian coordinate to edit_atom_id'
+      MODEL_CARTN_Z   'Assign model Z Cartesian coordinate to edit_atom_id'
+      STEREO_CONFIG   'Stereochemical configuration'      
+      AROMATIC_FLAG   'Aromatic flag'
+     save_
+
+save__pdbx_chem_comp_atom_edit.atom_id
+    _item_description.description
+;              The identifier for the target atom in imported component to be edited.
+;
+    _item.name                  '_pdbx_chem_comp_atom_edit.atom_id'
+    _item.category_id             pdbx_chem_comp_atom_edit
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+     save_
+
+save__pdbx_chem_comp_atom_edit.edit_atom_id
+    _item_description.description
+;              The identifier for the edited atom in the generated component.
+;
+    _item.name                  '_pdbx_chem_comp_atom_edit.edit_atom_id'
+    _item.category_id             pdbx_chem_comp_atom_edit
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+     save_
+
+save__pdbx_chem_comp_atom_edit.edit_atom_value
+    _item_description.description
+;              The value for the edited atomic property value in the generated component.
+;
+    _item.name                  '_pdbx_chem_comp_atom_edit.edit_atom_value'
+    _item.category_id             pdbx_chem_comp_atom_edit
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+
+##############################
+## PDBX_CHEM_COMP_BOND_EDIT ##
+##############################
+
+save_pdbx_chem_comp_bond_edit
+    _category.description
+;              Data items in the PDBX_CHEM_COMP_BOND_EDIT category provide
+               bond level editing instructions to be applied to imported
+               chemical components. 
+;
+    _category.id                  pdbx_chem_comp_bond_edit
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          
+      '_pdbx_chem_comp_bond_edit.comp_id'
+      '_pdbx_chem_comp_bond_edit.edit_op'
+      '_pdbx_chem_comp_bond_edit.atom_id_1'
+      '_pdbx_chem_comp_bond_edit.atom_id_2'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_chem_comp_bond_edit.ordinal
+    _pdbx_chem_comp_bond_edit.comp_id
+    _pdbx_chem_comp_bond_edit.edit_op
+    _pdbx_chem_comp_bond_edit.atom_id_1
+    _pdbx_chem_comp_bond_edit.atom_id_2
+    1 'LYS'  DELETE 'OXT' 'HXT'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_bond_edit.ordinal
+    _item_description.description
+;              This data item uniquely identifies and orders each bond edit instruction.
+;
+    _item.name                  '_pdbx_chem_comp_bond_edit.ordinal'
+    _item.category_id             pdbx_chem_comp_bond_edit
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+
+save__pdbx_chem_comp_bond_edit.comp_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_chem_comp_import.comp_id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_chem_comp_bond_edit.comp_id'
+    _item.category_id             pdbx_chem_comp_bond_edit
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_chem_comp_bond_edit.comp_id'
+    _item_linked.parent_name    '_pdbx_chem_comp_import.comp_id'
+     save_
+
+save__pdbx_chem_comp_bond_edit.edit_op
+    _item_description.description
+;              The operation or assignment applied to the named imported component.
+;
+    _item.name                  '_pdbx_chem_comp_bond_edit.edit_op'
+    _item.category_id             pdbx_chem_comp_bond_edit
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+      DELETE          'Remove the target atom from the component'
+      ADD             'Add the edit_atom_id to the component'
+      VALUE_ORDER     'Bond order'
+      VALUE_DIST      'Bond distance'
+      STEREO_CONFIG   'Stereochemical configuration'      
+      AROMATIC_FLAG   'Aromatic flag'
+     save_
+
+save__pdbx_chem_comp_bond_edit.atom_id_1
+    _item_description.description
+;              The identifier for the first atom in the target bond 
+               in imported component.
+;
+    _item.name                  '_pdbx_chem_comp_bond_edit.atom_id_1'
+    _item.category_id             pdbx_chem_comp_bond_edit
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+     save_
+
+save__pdbx_chem_comp_bond_edit.atom_id_2
+    _item_description.description
+;              The identifier for the second atom in the target bond 
+               in imported component.
+;
+    _item.name                  '_pdbx_chem_comp_bond_edit.atom_id_2'
+    _item.category_id             pdbx_chem_comp_bond_edit
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+     save_
+
+save__pdbx_chem_comp_bond_edit.edit_bond_value
+    _item_description.description
+;              The value for the edited bond property value in the generated component.
+;
+    _item.name                  '_pdbx_chem_comp_bond_edit.edit_bond_value'
+    _item.category_id             pdbx_chem_comp_bond_edit
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+##
+##
+##########################
+## PDBX_CHEM_COMP_AUDIT ##
+##########################
+
+save_pdbx_chem_comp_audit
+    _category.description
+;              Data items in the PDBX_CHEM_COMP_AUDIT category records
+               the status and tracking information for this component.
+;
+    _category.id                  pdbx_chem_comp_audit
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          
+    '_pdbx_chem_comp_audit.comp_id'
+    '_pdbx_chem_comp_audit.date'
+    '_pdbx_chem_comp_audit.action_type'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_chem_comp_audit.comp_id
+    _pdbx_chem_comp_audit.date
+    _pdbx_chem_comp_audit.action_type
+    _pdbx_chem_comp_audit.annotator
+     ATP . . . 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_chem_comp_audit.comp_id
+    _item_description.description
+;              This data item is a pointer to _chem_comp.id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_chem_comp_audit.comp_id'
+    _item.category_id             pdbx_chem_comp_audit
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_chem_comp_audit.comp_id'
+    _item_linked.parent_name    '_chem_comp.id'
+     save_
+
+
+save__pdbx_chem_comp_audit.date
+    _item_description.description
+;              The date associated with this audit record.
+;
+    _item.name                  '_pdbx_chem_comp_audit.date'
+    _item.category_id             pdbx_chem_comp_audit
+    _item.mandatory_code          yes
+    _item_type.code               yyyy-mm-dd
+     save_
+
+save__pdbx_chem_comp_audit.annotator
+    _item_description.description
+;              The initials of the annotator creating of modifying the component.
+;
+    _item.name                  '_pdbx_chem_comp_audit.annotator'
+    _item.category_id             pdbx_chem_comp_audit
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case          'JO' 'SJ' 'KB'
+     save_
+
+save__pdbx_chem_comp_audit.action_type
+    _item_description.description
+;              The action associated with this audit record.
+;
+    _item.name                  '_pdbx_chem_comp_audit.action_type'
+    _item.category_id             pdbx_chem_comp_audit
+    _item.mandatory_code          yes
+    _item_type.code               code
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+       'CREATE'                    'Created new component'
+       'CHANGE_STATUS'             'Change status'
+       'CHANGE_ATOM_NOMENCLATURE'  'Change atomic nomenclature'
+       'CHANGE_MODEL'              'Change model coordinates'
+       'CHANGE_NOMENCLATURE'       'Change component nomenclature'
+       'CHANGE_BOND'               'Change topology'
+       'CHANGE_STEREO'             'Change stereochemistry'
+       'OTHER'                     'Miscellaneous change'
+     save_
+
+
+save__chem_comp.pdbx_release_status
+    _item_description.description
+;              This data item holds the current release status for the component.
+;
+    _item.name                  '_chem_comp.pdbx_release_status'
+    _item.category_id             chem_comp
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+     REL   'Released'
+     HOLD  'On hold until yyyy-mm-dd'
+     HPUB  'On hold until publication'
+     OBS   'Entry has been obsoleted and replaced by another entry'
+     DEL   'Entry has been deleted'
+     save_
+##

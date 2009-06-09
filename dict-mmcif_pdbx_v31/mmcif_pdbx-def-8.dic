@@ -1,0 +1,272 @@
+###########################################################################
+#
+# File:  mmcif_pdbx-def-8.dic                                             
+# 
+#                      PDB Exchange Data Dictionary
+#
+# This data dictionary contains definitions used by wwPDB for data exchange
+# and data processing.  
+#
+#                           Definition Section 8
+#                            
+#                                                                        
+###########################################################################
+
+####################
+## RCSB_TABLEINFO ##
+####################
+
+save_rcsb_tableinfo
+    _category.description
+;              
+;
+    _category.id                  rcsb_tableinfo
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_rcsb_tableinfo.tablename'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'rcsb_group'
+    _category_examples.case
+;
+ loop_
+ _rcsb_tableinfo.tablename
+ _rcsb_tableinfo.description
+ _rcsb_tableinfo.type
+ _rcsb_tableinfo.table_serial_no
+ _rcsb_tableinfo.group_name
+ _rcsb_tableinfo.WWW_Selection_Criteria
+ _rcsb_tableinfo.WWW_Report_Criteria
+  summary 'summary data' 1 1 STRUCTURE 1 1
+#   ...
+;
+     save_
+
+save__rcsb_tableinfo.tablename
+    _item_description.description
+;              SQL table name.
+;
+    _item.name                  '_rcsb_tableinfo.tablename'
+    _item.category_id             rcsb_tableinfo
+    _item.mandatory_code          yes
+    _item_type.code               code30
+    _item_examples.case         'structure_summary'
+     save_
+
+save__rcsb_tableinfo.description
+    _item_description.description
+;              SQL table description.
+;
+    _item.name                  '_rcsb_tableinfo.description'
+    _item.category_id             rcsb_tableinfo
+    _item.mandatory_code          yes
+    _item_type.code               text
+    _item_examples.case         'Table of solvent coordinates'
+     save_
+
+save__rcsb_tableinfo.type
+    _item_description.description
+;              SQL table type.
+;
+    _item.name                  '_rcsb_tableinfo.type'
+    _item.category_id             rcsb_tableinfo
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_examples.case         '0=general, 1=coordinate, 2=derived, 3=schema'
+     save_
+
+save__rcsb_tableinfo.table_serial_no
+    _item_description.description
+;              SQL table serial number.
+;
+    _item.name                  '_rcsb_tableinfo.table_serial_no'
+    _item.category_id             rcsb_tableinfo
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_examples.case         '1,2,3,4,...'
+     save_
+
+save__rcsb_tableinfo.column_serial_no
+    _item_description.description
+;              SQL column serial number.
+;
+    _item.name                  '_rcsb_tableinfo.column_serial_no'
+    _item.category_id             rcsb_tableinfo
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_examples.case         '1,2,3,4,...'
+     save_
+
+save__rcsb_tableinfo.group_name
+    _item_description.description
+;              SQL table group name..
+;
+    _item.name                  '_rcsb_tableinfo.group_name'
+    _item.category_id             rcsb_tableinfo
+    _item.mandatory_code          yes
+    _item_type.code               line
+    _item_examples.case         'STRUCTURE FEATURES, SOURCE ORGANISM'
+     save_
+
+save__rcsb_tableinfo.WWW_Selection_Criteria
+    _item_description.description
+;              SQL table visibility in WWW selection querires.
+;
+    _item.name                  '_rcsb_tableinfo.WWW_Selection_Criteria'
+    _item.category_id             rcsb_tableinfo
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_examples.case         '0=no, 1=yes'
+     save_
+
+save__rcsb_tableinfo.WWW_Report_Criteria
+    _item_description.description
+;              SQL table visibility in WWW reports queries.
+;
+    _item.name                  '_rcsb_tableinfo.WWW_Report_Criteria'
+    _item.category_id             rcsb_tableinfo
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_examples.case         '0=no, 1=yes'
+     save_
+
+
+
+
+#####################
+## RCSB_COLUMNINFO ##
+#####################
+
+save_rcsb_columninfo
+    _category.description
+;              
+;
+    _category.id                  rcsb_columninfo
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_rcsb_columninfo.tablename'
+                                '_rcsb_columninfo.columnname'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'rcsb_group'
+    _category_examples.case
+;
+ loop_
+ _rcsb_columninfo.tablename
+ _rcsb_columninfo.columnname
+ _rcsb_columninfo.description
+ _rcsb_columninfo.example
+ _rcsb_columninfo.type
+ _rcsb_columninfo.table_serial_no
+ _rcsb_columninfo.column_serial_no
+ _rcsb_columninfo.WWW_Selection_Criteria
+ _rcsb_columninfo.WWW_Report_Criteria
+  summary  id 'id code' 'id1, id2' 1 1 1 1 1
+#   ...
+;
+     save_
+
+save__rcsb_columninfo.columnname
+    _item_description.description
+;              SQL column name.
+;
+    _item.name                  '_rcsb_columninfo.columnname'
+    _item.category_id             rcsb_columninfo
+    _item.mandatory_code          yes
+    _item_type.code               code30
+    _item_examples.case         'id'
+     save_
+
+save__rcsb_columninfo.tablename
+    _item_description.description
+;              SQL table name.
+;
+    _item.name                  '_rcsb_columninfo.tablename'
+    _item.category_id             rcsb_columninfo
+    _item.mandatory_code          yes
+    _item_type.code               code30
+    _item_examples.case         'structure_summary'
+     save_
+
+save__rcsb_columninfo.description
+    _item_description.description
+;              SQL column description.
+;
+    _item.name                  '_rcsb_columninfo.description'
+    _item.category_id             rcsb_columninfo
+    _item.mandatory_code          yes
+    _item_type.code               text
+    _item_examples.case         'Table of solvent coordinates'
+     save_
+
+save__rcsb_columninfo.example
+    _item_description.description
+;              SQL column example.
+;
+    _item.name                  '_rcsb_columninfo.example'
+    _item.category_id             rcsb_columninfo
+    _item.mandatory_code          yes
+    _item_type.code               text
+    _item_examples.case         'Table of solvent coordinates'
+     save_
+
+save__rcsb_columninfo.type
+    _item_description.description
+;              SQL column type.
+;
+    _item.name                  '_rcsb_columninfo.type'
+    _item.category_id             rcsb_columninfo
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_examples.case
+;1:integer, 2:float, 3:string-single-left, 4:string-single-right, 5:string-multi-left, 
+ 6:string-multi-right, 7:angle, 8:boolean, 9:single character, 
+ 10:author or atom name column, 11: Date
+;
+     save_
+
+save__rcsb_columninfo.table_serial_no
+    _item_description.description
+;              SQL table serial number.
+;
+    _item.name                  '_rcsb_columninfo.table_serial_no'
+    _item.category_id             rcsb_columninfo
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_examples.case         '1,2,3,4,...'
+     save_
+
+save__rcsb_columninfo.column_serial_no
+    _item_description.description
+;              SQL column serial number.
+;
+    _item.name                  '_rcsb_columninfo.column_serial_no'
+    _item.category_id             rcsb_columninfo
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_examples.case         '1,2,3,4,...'
+     save_
+
+save__rcsb_columninfo.WWW_Selection_Criteria
+    _item_description.description
+;              SQL column visibility in WWW selection querires.
+;
+    _item.name                  '_rcsb_columninfo.WWW_Selection_Criteria'
+    _item.category_id             rcsb_columninfo
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_examples.case         '0=no, 1=yes'
+     save_
+
+save__rcsb_columninfo.WWW_Report_Criteria
+    _item_description.description
+;              SQL column visibility in WWW reports queries.
+;
+    _item.name                  '_rcsb_columninfo.WWW_Report_Criteria'
+    _item.category_id             rcsb_columninfo
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_examples.case         '0=no, 1=yes'
+     save_
+##
+### EOF mmcif_pdbx-def-8.dic
