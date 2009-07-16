@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         1.0672
+    _dictionary.version         1.0673
 #
      loop_
     _dictionary_history.version
@@ -1150,7 +1150,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    + update internal tables of link relationships
    + minor typographical corrections in several examples.
 ;
-
-
+   1.0673 2009-07-07
+;
+   Changes (jdw):   
+   + Complete missing definition elements for chem_comp_atom.type_symbol and 
+     remove parent-child for this item which is not supported in the current
+     packaging of the chemical components dictionary.
+;
 #
 ### EOF mmcif_pdbx-header.dic 

@@ -5,7 +5,7 @@ _pdbx_item_linked_group.link_group_id
 _pdbx_item_linked_group.label
 _pdbx_item_linked_group.context
 _pdbx_item_linked_group.condition_id
-atom_site                                1  atom_site:atom_sites_alt:1                                                . .
+#atom_site                                1  atom_site:atom_sites_alt:1                                                . .
 atom_site                                2  atom_site:atom_sites_footnote:2                                           . .
 atom_site                                3  atom_site:atom_type:3                                                     . .
 atom_site                                4  atom_site:chem_comp:4                                                     . .
@@ -20,6 +20,9 @@ atom_site                                12 atom_site:struct_ncs_dom:12         
 atom_site_anisotrop                      1  atom_site_anisotrop:atom_site:1                                           . .
 atom_site_anisotrop                      2  atom_site_anisotrop:atom_type:2                                           . .
 atom_sites                               1  atom_sites:entry:1                                                        . .
+#
+atom_sites_alt                           1  atom_sites_alt:atom_site:1                                                . . 
+#
 atom_sites_alt_gen                       1  atom_sites_alt_gen:atom_sites_alt:1                                       . .
 atom_sites_alt_gen                       2  atom_sites_alt_gen:atom_sites_alt_ens:2                                   . .
 cell                                     1  cell:entry:1                                                              . .
@@ -27,7 +30,7 @@ cell_measurement                         1  cell_measurement:entry:1            
 chem_comp_angle                          1  chem_comp_angle:chem_comp_atom:1                                          . .
 chem_comp_angle                          2  chem_comp_angle:chem_comp_atom:2                                          . .
 chem_comp_angle                          3  chem_comp_angle:chem_comp_atom:3                                          . .
-chem_comp_atom                           1  chem_comp_atom:atom_type:1                                                . .
+#chem_comp_atom                           1  chem_comp_atom:atom_type:1                                                . .
 chem_comp_atom                           2  chem_comp_atom:chem_comp:2                                                . .
 chem_comp_bond                           1  chem_comp_bond:chem_comp_atom:1                                           . .
 chem_comp_bond                           2  chem_comp_bond:chem_comp_atom:2                                           . .
@@ -454,13 +457,28 @@ struct_site_keywords                     1  struct_site_keywords:struct_site:1  
 struct_site_view                         1  struct_site_view:struct_site:1                                            . .
 symmetry                                 1  symmetry:entry:1                                                          . .
 #
+#
+em_sample_preparation                    4  em_sample_preparation:em_entity_assembly:4                                . . 
+em_2d_crystal_entity                     1  em_2d_crystal_entity:em_entity_assembly:1                                 . .
+em_helical_entity                        1  em_helical_entity:em_entity_assembly:1                                    . .
+#
+pdbx_remediation_atom_site_mapping       1  pdbx_remediation_atom_site_mapping:atom_site:1                            . .  
+#
+pdbx_reference_entity_annotation         1  pdbx_reference_entity_annotation:pdbx_reference_entity:1                  . . 
+pdbx_reference_entity_synonyms           1  pdbx_reference_entity_synonyms:pdbx_reference_entity:1                    . . 
+pdbx_reference_entity_components         1  pdbx_reference_entity_components:pdbx_reference_entity:1                  . . 
+pdbx_reference_entity_poly               1  pdbx_reference_entity_poly:pdbx_reference_entity:1                        . . 
+pdbx_reference_entity_poly_seq           1  pdbx_reference_entity_poly_seq:pdbx_reference_entity:1                    . . 
+pdbx_reference_entity_src_nat            1  pdbx_reference_entity_src_nat:pdbx_reference_entity:1                     . . 
+pdbx_reference_entity_feature            1  pdbx_reference_entity_feature:pdbx_reference_entity:1                     . . 
+#
 loop_
 _pdbx_item_linked_group_list.child_category_id
 _pdbx_item_linked_group_list.link_group_id
 _pdbx_item_linked_group_list.child_name
 _pdbx_item_linked_group_list.parent_name
 _pdbx_item_linked_group_list.parent_category_id
-atom_site                                1  '_atom_site.label_alt_id'                             '_atom_sites_alt.id'                        atom_sites_alt
+#atom_site                                1  '_atom_site.label_alt_id'                             '_atom_sites_alt.id'                        atom_sites_alt
 atom_site                                2  '_atom_site.footnote_id'                              '_atom_sites_footnote.id'                   atom_sites_footnote
 atom_site                                3  '_atom_site.type_symbol'                              '_atom_type.symbol'                         atom_type
 atom_site                                4  '_atom_site.label_comp_id'                            '_chem_comp.id'                             chem_comp
@@ -496,6 +514,8 @@ atom_site_anisotrop                      1  '_atom_site_anisotrop.pdbx_label_com
 atom_site_anisotrop                      1  '_atom_site_anisotrop.pdbx_PDB_ins_code'              '_atom_site.pdbx_PDB_ins_code'              atom_site
 atom_site_anisotrop                      2  '_atom_site_anisotrop.type_symbol'                    '_atom_type.symbol'                         atom_type
 atom_sites                               1  '_atom_sites.entry_id'                                '_entry.id'                                 entry
+#
+atom_sites_alt                           1  '_atom_sites_alt.id'                                  '_atom_site.label_alt_id'                   atom_site
 atom_sites_alt_gen                       1  '_atom_sites_alt_gen.alt_id'                          '_atom_sites_alt.id'                        atom_sites_alt
 atom_sites_alt_gen                       2  '_atom_sites_alt_gen.ens_id'                          '_atom_sites_alt_ens.id'                    atom_sites_alt_ens
 cell                                     1  '_cell.entry_id'                                      '_entry.id'                                 entry
@@ -504,7 +524,7 @@ chem_comp_angle                          1  '_chem_comp_angle.comp_id'          
 chem_comp_angle                          1  '_chem_comp_angle.atom_id_1'                          '_chem_comp_atom.atom_id'                   chem_comp_atom
 chem_comp_angle                          2  '_chem_comp_angle.atom_id_2'                          '_chem_comp_atom.atom_id'                   chem_comp_atom
 chem_comp_angle                          3  '_chem_comp_angle.atom_id_3'                          '_chem_comp_atom.atom_id'                   chem_comp_atom
-chem_comp_atom                           1  '_chem_comp_atom.type_symbol'                         '_atom_type.symbol'                         atom_type
+#chem_comp_atom                           1  '_chem_comp_atom.type_symbol'                         '_atom_type.symbol'                         atom_type
 chem_comp_atom                           2  '_chem_comp_atom.comp_id'                             '_chem_comp.id'                             chem_comp
 chem_comp_bond                           1  '_chem_comp_bond.comp_id'                             '_chem_comp_atom.comp_id'                   chem_comp_atom
 chem_comp_bond                           1  '_chem_comp_bond.atom_id_1'                           '_chem_comp_atom.atom_id'                   chem_comp_atom
@@ -1274,7 +1294,7 @@ struct_conn                              1  '_struct_conn.ptnr1_auth_asym_id'   
 struct_conn                              1  '_struct_conn.ptnr1_auth_atom_id'                     '_atom_site.auth_atom_id'                   atom_site
 struct_conn                              1  '_struct_conn.ptnr1_auth_comp_id'                     '_atom_site.auth_comp_id'                   atom_site
 struct_conn                              1  '_struct_conn.ptnr1_auth_seq_id'                      '_atom_site.auth_seq_id'                    atom_site
-#struct_conn                              1  '_struct_conn.ptnr1_label_alt_id'                     '_atom_site.label_alt_id'                   atom_site
+struct_conn                              1  '_struct_conn.ptnr1_label_alt_id'                     '_atom_site.label_alt_id'                   atom_site
 struct_conn                              1  '_struct_conn.ptnr1_label_comp_id'                    '_atom_site.label_comp_id'                  atom_site
 struct_conn                              1  '_struct_conn.ptnr1_label_atom_id'                    '_atom_site.label_atom_id'                  atom_site
 struct_conn                              1  '_struct_conn.ptnr1_label_seq_id'                     '_atom_site.label_seq_id'                   atom_site
@@ -1286,7 +1306,7 @@ struct_conn                              2  '_struct_conn.ptnr2_auth_asym_id'   
 struct_conn                              2  '_struct_conn.ptnr2_auth_atom_id'                     '_atom_site.auth_atom_id'                   atom_site
 struct_conn                              2  '_struct_conn.ptnr2_auth_comp_id'                     '_atom_site.auth_comp_id'                   atom_site
 struct_conn                              2  '_struct_conn.ptnr2_auth_seq_id'                      '_atom_site.auth_seq_id'                    atom_site
-#struct_conn                              2  '_struct_conn.ptnr2_label_alt_id'                     '_atom_site.label_alt_id'                   atom_site
+struct_conn                              2  '_struct_conn.ptnr2_label_alt_id'                     '_atom_site.label_alt_id'                   atom_site
 struct_conn                              2  '_struct_conn.ptnr2_label_comp_id'                    '_atom_site.label_comp_id'                  atom_site
 struct_conn                              2  '_struct_conn.ptnr2_label_atom_id'                    '_atom_site.label_atom_id'                  atom_site
 struct_conn                              2  '_struct_conn.ptnr2_label_seq_id'                     '_atom_site.label_seq_id'                   atom_site
@@ -1438,3 +1458,22 @@ struct_site_keywords                     1  '_struct_site_keywords.site_id'     
 struct_site_view                         1  '_struct_site_view.site_id'                           '_struct_site.id'                           struct_site
 symmetry                                 1  '_symmetry.entry_id'                                  '_entry.id'                                 entry
 #
+#
+pdbx_remediation_atom_site_mapping    1 '_pdbx_remediation_atom_site_mapping.label_alt_id'         '_atom_site.label_alt_id'                   atom_site
+pdbx_remediation_atom_site_mapping    1 '_pdbx_remediation_atom_site_mapping.label_asym_id'	   '_atom_site.label_asym_id'                  atom_site
+pdbx_remediation_atom_site_mapping    1 '_pdbx_remediation_atom_site_mapping.label_atom_id'	   '_atom_site.label_atom_id'                  atom_site
+pdbx_remediation_atom_site_mapping    1 '_pdbx_remediation_atom_site_mapping.label_comp_id'	   '_atom_site.label_comp_id'                  atom_site
+pdbx_remediation_atom_site_mapping    1 '_pdbx_remediation_atom_site_mapping.label_seq_id'	   '_atom_site.label_seq_id'                   atom_site
+pdbx_remediation_atom_site_mapping    1 '_pdbx_remediation_atom_site_mapping.PDB_ins_code'	   '_atom_site.pdbx_PDB_ins_code'              atom_site
+#
+pdbx_reference_entity_annotation         1  '_pdbx_reference_entity_annotation.entity_id' '_pdbx_reference_entity.id'   pdbx_reference_entity 
+pdbx_reference_entity_synonyms           1  '_pdbx_reference_entity_synonyms.entity_id'   '_pdbx_reference_entity.id'   pdbx_reference_entity 
+pdbx_reference_entity_components         1  '_pdbx_reference_entity_components.entity_id' '_pdbx_reference_entity.id'   pdbx_reference_entity 
+pdbx_reference_entity_poly               1  '_pdbx_reference_entity_poly.entity_id'       '_pdbx_reference_entity.id'   pdbx_reference_entity 
+pdbx_reference_entity_poly_seq           1  '_pdbx_reference_entity_poly_seq.entity_id'   '_pdbx_reference_entity.id'   pdbx_reference_entity 
+pdbx_reference_entity_src_nat            1  '_pdbx_reference_entity_src_nat.entity_id'    '_pdbx_reference_entity.id'   pdbx_reference_entity 
+pdbx_reference_entity_feature            1  '_pdbx_reference_entity_feature.entity_id'    '_pdbx_reference_entity.id'   pdbx_reference_entity 
+#
+em_2d_crystal_entity                     1  '_em_2d_crystal_entity.entity_assembly_id'    '_em_entity_assembly.id'      em_entity_assembly
+em_helical_entity                        1  '_em_helical_entity.entity_assembly_id'       '_em_entity_assembly.id'      em_entity_assembly
+em_sample_preparation                    4  '_em_sample_preparation.entity_assembly_id'   '_em_entity_assembly.id'      em_entity_assembly
