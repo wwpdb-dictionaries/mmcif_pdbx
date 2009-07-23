@@ -6651,6 +6651,8 @@ save__chem_comp.type
                                  'L-peptide COOH carboxy terminus'
                                  'DNA linking'
                                  'RNA linking'
+                                 'L-RNA linking'
+                                 'L-DNA linking'
                                  'DNA OH 5 prime terminus'
                                  'RNA OH 5 prime terminus'
                                  'DNA OH 3 prime terminus'

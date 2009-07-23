@@ -1150,12 +1150,14 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    + update internal tables of link relationships
    + minor typographical corrections in several examples.
 ;
-   1.0673 2009-07-07
+   1.0673 2009-07-23
 ;
    Changes (jdw):   
    + Complete missing definition elements for chem_comp_atom.type_symbol and 
      remove parent-child for this item which is not supported in the current
      packaging of the chemical components dictionary.
+   + Add _chem_comp.type's for 'L-RNA linking' 'L-DNA linking'
 ;
+                    
 #
 ### EOF mmcif_pdbx-header.dic 
