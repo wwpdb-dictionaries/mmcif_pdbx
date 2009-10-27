@@ -873,6 +873,30 @@ save__pdbx_chem_comp_audit.annotator
     _item_examples.case          'JO' 'SJ' 'KB'
      save_
 
+save__pdbx_chem_comp_audit.processing_site
+    _item_description.description
+;              An identifier for the wwPDB site creating or modifying the component.
+;
+    _item.name                  '_pdbx_chem_comp_audit.processing_site'
+    _item.category_id             pdbx_chem_comp_audit
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case          'RCSB' 'PDBE' 'PDBJ' 'BMRB'
+     save_
+
+save__pdbx_chem_comp_audit.details
+    _item_description.description
+;              Additional details decribing this change.
+;
+    _item.name                  '_pdbx_chem_comp_audit.details'
+    _item.category_id             pdbx_chem_comp_audit
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case          'Added C14 as a leaving atom.'
+     save_
+
 save__pdbx_chem_comp_audit.action_type
     _item_description.description
 ;              The action associated with this audit record.
@@ -888,9 +912,10 @@ save__pdbx_chem_comp_audit.action_type
        'CHANGE_STATUS'             'Change status'
        'CHANGE_ATOM_NOMENCLATURE'  'Change atomic nomenclature'
        'CHANGE_MODEL'              'Change model coordinates'
-       'CHANGE_NOMENCLATURE'       'Change component nomenclature'
        'CHANGE_BOND'               'Change topology'
        'CHANGE_STEREO'             'Change stereochemistry'
+       'CHANGE_DESCRIPTOR'         'Change descriptor such as SMILES or InChI'
+       'CHANGE_NAME'               'Change or update moleculare name or synonym'
        'OTHER'                     'Miscellaneous change'
      save_
 

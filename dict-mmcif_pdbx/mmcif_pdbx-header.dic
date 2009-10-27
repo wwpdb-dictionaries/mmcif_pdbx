@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         1.0673
+    _dictionary.version         1.0674
 #
      loop_
     _dictionary_history.version
@@ -1157,6 +1157,15 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
      remove parent-child for this item which is not supported in the current
      packaging of the chemical components dictionary.
    + Add _chem_comp.type's for 'L-RNA linking' 'L-DNA linking'
+;
+   1.0674 2009-10-27
+;
+  Changes (jdw):
+   + Add _pdbx_validate_planes.type enumerations for 'SIDE CHAIN' and
+     'MAIN CHAIN' and deprecate values that contained underscores
+     (e.g. MAIN_CHAIN). Update data type and category examples.
+   + Added _pdbx_chem_comp_audit.processing_site and _pdbx_chem_comp_audit.details
+   + Update enumerations for _pdbx_chem_comp_audit.action_type.
 ;
                     
 #

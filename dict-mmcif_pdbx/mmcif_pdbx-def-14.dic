@@ -1958,9 +1958,9 @@ _pdbx_validate_planes.auth_seq_id
 _pdbx_validate_planes.PDB_ins_code
 _pdbx_validate_planes.rmsd
 _pdbx_validate_planes.type
-  1     1   DG  A      3  .    0.068  SIDE-CHAIN
-  2     1   DT  A      4  .    0.198  SIDE-CHAIN
-  3     1   DC  A      8  .    0.090  SIDE-CHAIN
+  1     1   DG  A      3  .    0.068  'SIDE CHAIN'
+  2     1   DT  A      4  .    0.198  'SIDE CHAIN'
+  3     1   DC  A      8  .    0.090  'SIDE CHAIN'
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -2070,16 +2070,19 @@ save__pdbx_validate_planes.rmsd
 
 save__pdbx_validate_planes.type
     _item_description.description
-;   The type of plane - MAIN-CHAIN or SIDE-CHAIN atoms
+;   The type of plane - MAIN CHAIN or SIDE CHAIN atoms
 ;
     _item.name                  '_pdbx_validate_planes.type'
     _item.category_id             pdbx_validate_planes
     _item.mandatory_code          yes
-    _item_type.code              ucode
+    _item_type.code              uline
     loop_
     _item_enumeration.value  
-        'MAIN_CHAIN'
-        'SIDE_CHAIN'
+    _item_enumeration.detail
+        'MAIN_CHAIN' deprecated
+        'SIDE_CHAIN' deprecated
+        'MAIN CHAIN' .
+        'SIDE CHAIN' .
       save_
 #-----------------------------------------------------------
 
