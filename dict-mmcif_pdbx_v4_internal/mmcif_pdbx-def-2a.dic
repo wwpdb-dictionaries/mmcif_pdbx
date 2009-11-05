@@ -799,9 +799,13 @@ save__pdbx_database_remark.id
     _item.category_id             pdbx_database_remark
     _item.mandatory_code          yes
     _item_type.code               int
-    _item_aliases.alias_name     '_rcsb_database_PDB_remark.id'
-    _item_aliases.dictionary     'cif_rcsb.dic'
-    _item_aliases.version        1.1
+     loop_
+    _item_aliases.alias_name     
+    _item_aliases.dictionary     
+    _item_aliases.version        
+    '_rcsb_database_PDB_remark.id' 'cif_rcsb.dic' 1.1
+    '_ndb_database_remark.id'  'cif_rcsb.dic' 1.1
+
      save_
 
 save__pdbx_database_remark.text
@@ -812,9 +816,12 @@ save__pdbx_database_remark.text
     _item.category_id             pdbx_database_remark
     _item.mandatory_code          no
     _item_type.code               text
-    _item_aliases.alias_name     '_rcsb_database_PDB_remark.text'
-    _item_aliases.dictionary     'cif_rcsb.dic'
-    _item_aliases.version        1.1
+     loop_
+    _item_aliases.alias_name     
+    _item_aliases.dictionary     
+    _item_aliases.version        
+    '_rcsb_database_PDB_remark.text' 'cif_rcsb.dic' 1.1
+    '_ndb_database_remark.text' 'cif_rcsb.dic' 1.1
      save_
 
 ###
@@ -876,243 +883,7 @@ save__pdbx_database_status.status_code
     _item_aliases.version        1.1
      save_
 
-save__pdbx_database_status.author_release_status_code
-    _item_description.description
-;              The release status authorized by the depositor.
-;
-    _item.name               '_pdbx_database_status.author_release_status_code'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               code
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail      
-     REL   'Release'
-     HOLD  'On hold until yyyy-mm-dd'
-     HPUB  'On hold until publication'
-     OBS   'Entry has been obsoleted and replaced by another entry'
-     WDRN  'Entry has been withdrawn'	
-    _item_examples.case         
-;
-     REL   = Release 
-     HOLD  = On hold until yyyy-mm-dd
-     HPUB  = On hold until publication
-     OBS   = Entry has been obsoleted and replaced by another entry
-     WDRN  = Entry has been withdrawn by depositor	
-;
-#    _item_aliases.alias_name   '_ndb_database_status.author_release_status_code'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
 
-save__pdbx_database_status.status_code_sf
-    _item_description.description
-;              Code for status of structure factor file.
-;
-    _item.name                  '_pdbx_database_status.status_code_sf'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               code
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail
-   PROC  'To be processed'
-   WAIT  'Processing started, waiting for author input to continue processing'
-   REL   'Released'
-   HOLD  'On hold until yyyy-mm-dd'
-   HPUB  'On hold until publication'
-   OBS   'Entry has been obsoleted and replaced by another entry'
-   WDRN  'Deposition has been withdrawn'	
-   AUTH  'Processed, waiting for author review and approval'
-   POLC  'Processing, waiting for a policy decision'
-   REPL  'Author sent new data to be incorporated'    
-
-    _item_examples.case
-;
-     PROC  = To be processed
-     REL   = Released
-     HOLD  = On hold until yyyy-mm-dd
-     HPUB  = On hold until publication
-     OBS   = Entry has been obsoleted and replaced by another entry
-     WDRN  = Entry has been withdrawn by depositor
-     WAIT  = Awaiting author approval
-;
-#    _item_aliases.alias_name   '_ndb_database_status.status_code_sf'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.status_code_mr
-    _item_description.description
-;              Code for status of NMR constraints file.
-;
-    _item.name                  '_pdbx_database_status.status_code_mr'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               code
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail
-   PROC  'To be processed'
-   WAIT  'Processing started, waiting for author input to continue processing'
-   REL   'Released'
-   HOLD  'On hold until yyyy-mm-dd'
-   HPUB  'On hold until publication'
-   OBS   'Entry has been obsoleted and replaced by another entry'
-   WDRN  'Deposition has been withdrawn'	
-   AUTH  'Processed, waiting for author review and approval'
-   POLC  'Processing, waiting for a policy decision'
-   REPL  'Author sent new data to be incorporated'    
-    _item_examples.case   
-;
-     PROC  = To be processed
-     REL   = Release
-     HOLD  = On hold until yyyy-mm-dd
-     HPUB  = On hold until publication
-     OBS   = Entry has been obsoleted and replaced by another entry
-     WDRN  = Entry has been withdrawn by depositor
-     WAIT  = Awaiting author approval
-;
-#    _item_aliases.alias_name   '_ndb_database_status.status_code_mr'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.dep_release_code_coordinates
-    _item_description.description
-;
-The deposited coordinates for this deposition will be released according
-the value of this item.  
-;
-    _item.name           '_pdbx_database_status.dep_release_code_coordinates'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               line
-    _item_default.value           'RELEASE NOW'
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail      
-     'RELEASE NOW'            'Release immediately'
-     'HOLD FOR PUBLICATION'   'Hold until primary citation is published'
-     'HOLD FOR 4 WEEKS'       'Hold for 4 weeks'
-     'HOLD FOR 6 WEEKS'       'Hold for 6 weeks'
-     'HOLD FOR 8 WEEKS'       'Hold for 8 weeks'
-     'HOLD FOR 6 MONTHS'      'Hold for 6 months'
-     'HOLD FOR 1 YEAR'        'Hold for 1 year'
-    _item_examples.case         
-;
-     RELEASE NOW          =    Release immediately
-     HOLD FOR PUBLICATION =    Hold until the primary citation is published
-     HOLD FOR 4 WEEKS     =    Hold for 4 weeks
-     HOLD FOR 6 WEEKS     =    Hold for 6 weeks
-     HOLD FOR 8 WEEKS     =    Hold for 8 weeks
-     HOLD FOR 6 MONTHS    =    Hold for 6 months
-     HOLD FOR 1 YEAR      =    Hold for 1 year
-;
-#    _item_aliases.alias_name '_ndb_database_status.dep_release_code_coordinates'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.dep_release_code_sequence
-    _item_description.description
-;
-The sequence information for this deposition will be released according
-the value of this item.  Setting this status code to "RELEASE NOW" indicates 
-that the macromolecular sequence(s) for this entry may be displayed in PDB
-status reports prior to the release of the entry.   Setting this status
-code to "HOLD FOR RELEASE" conceals the sequence information in PDB status
-reports until the coordinate data for this entry are released.  
-;
-    _item.name                  '_pdbx_database_status.dep_release_code_sequence'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               line
-#    _item_default.value           'RELEASE NOW'
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail      
-     'RELEASE NOW' 'Release sequence information in status reports immediately'
-     'HOLD FOR RELEASE'       
-;Conceal sequence information in status reports until coordinate data 
-is released
-;
-  _item_examples.case         
-;
- RELEASE NOW =      Release sequence information in status reports immediately
- HOLD FOR RELEASE = Conceal sequence information in status reports until 
-                    coordinate data is release
-;
-#    _item_aliases.alias_name '_ndb_database_status.dep_release_code_sequence'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.dep_release_code_struct_fact
-    _item_description.description
-;
-The deposited structure factors for this deposition will be released according
-the value of this item.
-;
-    _item.name             '_pdbx_database_status.dep_release_code_struct_fact'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               line
-    _item_default.value           'RELEASE NOW'
-#     loop_
-#    _item_enumeration.value
-#    _item_enumeration.detail      
-#     'RELEASE NOW'            'Release immediately'
-#     'HOLD FOR PUBLICATION'   'Hold until primary citation is published'
-#     'HOLD FOR 6 MONTHS'      'Hold for 6 months'
-#     'HOLD FOR 1 YEAR'        'Hold for 1 year'
-#     'HOLD FOR 4 YEARS'       'Hold for 4 years'
-    _item_examples.case         
-;
-     RELEASE NOW          =    Release immediately
-     HOLD FOR PUBLICATION =    Hold until the primary citation is published
-     HOLD FOR 4 WEEKS     =    Hold for 4 weeks
-     HOLD FOR 6 WEEKS     =    Hold for 6 weeks
-     HOLD FOR 6 MONTHS    =    Hold for 6 months
-     HOLD FOR 1 YEAR      =    Hold for 1 year
-;
-#    _item_aliases.alias_name '_ndb_database_status.dep_release_code_struct_fact'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-
-save__pdbx_database_status.dep_release_code_nmr_constraints
-    _item_description.description
-;
-The deposited NMR constrait data for this deposition will be released according
-the value of this item.  
-;
-    _item.name         '_pdbx_database_status.dep_release_code_nmr_constraints'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               line
-    _item_default.value           'RELEASE NOW'
-#     loop_
-#    _item_enumeration.value
-#    _item_enumeration.detail      
-#     'RELEASE NOW'            'Release immediately'
-#     'HOLD FOR PUBLICATION'   'Hold until primary citation is published'
-#     'HOLD FOR 6 MONTHS'      'Hold for 6 months'
-#     'HOLD FOR 1 YEAR'        'Hold for 1 year'
-    _item_examples.case         
-;
-     RELEASE NOW          =    Release immediately
-     HOLD FOR PUBLICATION =    Hold until the primary citation is published
-     HOLD FOR 6 WEEKS     =    Hold for 6 weeks
-     HOLD FOR 6 MONTHS    =    Hold for 6 months
-     HOLD FOR 1 YEAR      =    Hold for 1 year
-;
-#    _item_aliases.alias_name
-#                        '_ndb_database_status.dep_release_code_nmr_constraints'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
 
 save__pdbx_database_status.entry_id
     _item_description.description
@@ -1132,428 +903,6 @@ save__pdbx_database_status.entry_id
      save_
 
 
-save__pdbx_database_status.recvd_deposit_form
-    _item_description.description
-;              This code indicates whether the deposition form for an entry
-               has been received.
-;
-    _item.name                  '_pdbx_database_status.recvd_deposit_form'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               uchar1
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail      
-      Y  'Yes'
-      N  'No'
-    _item_examples.case        Y
-#    _item_aliases.alias_name     '_ndb_database_status.recvd_deposit_form'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.date_deposition_form
-    _item_description.description
-;              The date the deposition form is received.
-;
-    _item.name                  '_pdbx_database_status.date_deposition_form'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               yyyy-mm-dd:hh:mm
-    _item_examples.case          1982-02-21
-#    _item_aliases.alias_name     '_ndb_database_status.date_deposition_form'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.recvd_coordinates
-    _item_description.description
-;              This code indicates whether the coordinates for an entry
-               have been received.
-;
-    _item.name                  '_pdbx_database_status.recvd_coordinates'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               uchar1
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail      
-      Y  'Yes'
-      N  'No'
-    _item_examples.case       Y
-#    _item_aliases.alias_name     '_ndb_database_status.recvd_coordinates'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.date_coordinates
-    _item_description.description
-;              The date the coordinates are received.
-;
-    _item.name                  '_pdbx_database_status.date_coordinates'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               yyyy-mm-dd:hh:mm
-    _item_examples.case          1983-02-21
-#    _item_aliases.alias_name     '_ndb_database_status.date_coordinates'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.recvd_struct_fact
-    _item_description.description
-;              This code indicates whether the structure factors for an entry
-               have been received.
-;
-    _item.name                  '_pdbx_database_status.recvd_struct_fact'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               uchar1
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail      
-     Y  'Yes'
-     N  'No'
-    _item_examples.case          Y
-#    _item_aliases.alias_name     '_ndb_database_status.recvd_struct_fact'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.date_struct_fact
-    _item_description.description
-;              The date the structure factors are received.
-;
-    _item.name                  '_pdbx_database_status.date_struct_fact'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               yyyy-mm-dd:hh:mm
-    _item_examples.case           1983-02-28
-#    _item_aliases.alias_name     '_ndb_database_status.date_struct_fact'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-#
-save__pdbx_database_status.recvd_nmr_constraints
-    _item_description.description
-;              This code indicates whether the NMR contraint data for an entry
-               have been received.
-;
-    _item.name                  '_pdbx_database_status.recvd_nmr_constraints'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               uchar1
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail      
-     Y  'Yes'
-     N  'No'
-    _item_examples.case       Y
-#    _item_aliases.alias_name     '_ndb_database_status.recvd_nmr_constraints'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.date_nmr_constraints
-    _item_description.description
-;              The date the structure factors are received.
-;
-    _item.name                  '_pdbx_database_status.date_nmr_constraints'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               yyyy-mm-dd:hh:mm
-    _item_examples.case           1983-02-28
-#    _item_aliases.alias_name     '_ndb_database_status.date_nmr_constraints'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.recvd_internal_approval
-    _item_description.description
-;              This code indicates whether the internal approval for an entry  
-               have been received.
-;
-    _item.name                  '_pdbx_database_status.recvd_internal_approval'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               uchar1
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail      
-     Y  'Yes'
-     N  'No'
-    _item_examples.case       Y
-#    _item_aliases.alias_name     '_ndb_database_status.recvd_internal_approval'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.recvd_manuscript
-    _item_description.description
-;              This code indicates whether the manuscript for an entry
-               has been received.
-;
-    _item.name                  '_pdbx_database_status.recvd_manuscript'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               uchar1
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail      
-          Y  'Yes'
-          N  'No'
-    _item_examples.case       Y
-#    _item_aliases.alias_name     '_ndb_database_status.recvd_manuscript'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.date_manuscript
-    _item_description.description
-;              The date the manuscript is received.
-;
-    _item.name                  '_pdbx_database_status.date_manuscript'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               yyyy-mm-dd:hh:mm
-    _item_examples.case          1983-02-28
-#    _item_aliases.alias_name     '_ndb_database_status.date_manuscript'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.name_depositor
-    _item_description.description
-;              The last name of the depositor to be used in correspondance.
-
-;
-    _item.name                  '_pdbx_database_status.name_depositor'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               text
-    _item_examples.case          'Smith'
-#    _item_aliases.alias_name     '_ndb_database_status.name_depositor'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.recvd_author_approval
-    _item_description.description
-;              This code indicates whether the author's approval for 
-               an entry has been received.
-;
-    _item.name                  '_pdbx_database_status.recvd_author_approval'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               uchar1
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail      
-     Y  'Yes'
-     N  'No'
-    _item_examples.case       Y
-#    _item_aliases.alias_name     '_ndb_database_status.recvd_author_approval'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.author_approval_type
-    _item_description.description
-;              This code indicates whether the author's approval for 
-               an entry was received explicitly or implicitly.  The
-               latter is automatically implied by failure to respond
-               to the validation summary within the prescribed period.
-;
-    _item.name                  '_pdbx_database_status.author_approval_type'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               code
-     loop_
-    _item_enumeration.value
-     implicit  
-     explicit  
-    _item_examples.case       
-;
-implicit = automatic approval by failure to acknowledge
-explicit = approval via depositor acknowledgement
-;
-#    _item_aliases.alias_name     '_ndb_database_status.author_approval_type'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.date_author_approval
-    _item_description.description
-;              The date the author's approval is received.
-;
-    _item.name                  '_pdbx_database_status.date_author_approval'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code              yyyy-mm-dd:hh:mm
-    _item_examples.case           1983-02-20
-#    _item_aliases.alias_name     '_ndb_database_status.date_author_approval'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.recvd_initial_deposition_date
-    _item_description.description
-;              The date of initial deposition.  (The first message for
-               deposition has been received.)
-;
-    _item.name            '_pdbx_database_status.recvd_initial_deposition_date'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               yyyy-mm-dd:hh:mm
-    _item_examples.case           1983-02-21
-#    _item_aliases.alias_name     
-#                           '_ndb_database_status.recvd_initial_deposition_date'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.date_submitted
-    _item_description.description
-;              The date of complete deposition.  This corresponds to the date
-               at which the PDB identifier is assigned.
-;
-    _item.name                  '_pdbx_database_status.date_submitted'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               yyyy-mm-dd:hh:mm
-    _item_examples.case           1983-02-20
-#    _item_aliases.alias_name     '_ndb_database_status.date_submitted'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-
-save__pdbx_database_status.rcsb_annotator
-    _item_description.description
-;              The initials of the annotator processing this entry.
-;
-    _item.name                  '_pdbx_database_status.rcsb_annotator'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               code
-     loop_
-    _item_examples.case          'BS' 'SJ' 'KB'
-#    _item_aliases.alias_name     '_ndb_database_status.rcsb_annotator'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.date_of_sf_release
-    _item_description.description
-;              The date of PDB/RCSB release.  This corresponds to the date
-               at which the entry is placed into the public archive.
-;
-    _item.name                  '_pdbx_database_status.date_of_sf_release'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               yyyy-mm-dd
-    _item_examples.case           1999-02-28
-#    _item_aliases.alias_name     '_ndb_database_status.date_of_sf_release'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.date_of_mr_release
-    _item_description.description
-;              The date of PDB/RCSB release.  This corresponds to the date
-               at which the entry is placed into the public archive.
-;
-    _item.name                  '_pdbx_database_status.date_of_mr_release'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               yyyy-mm-dd
-    _item_examples.case           1999-02-28
-#    _item_aliases.alias_name     '_ndb_database_status.date_of_mr_release'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.date_of_PDB_release
-    _item_description.description
-;              PDB release date.  This is the date that appears in the PDB
-               REVDAT record.
-
-;
-    _item.name                   '_pdbx_database_status.date_of_PDB_release'
-    _item.category_id            pdbx_database_status
-    _item.mandatory_code         no
-    _item_type.code              yyyy-mm-dd:hh:mm
-    _item_examples.case          1983-02-28
-#    _item_aliases.alias_name     '_ndb_database_status.date_of_PDB_release'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.date_hold_coordinates
-    _item_description.description
-;              At an author's request, a coordinate entry may be held after
-               processing for some period of time.
-;
-    _item.name                  '_pdbx_database_status.date_hold_coordinates'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               yyyy-mm-dd:hh:mm
-    _item_examples.case           1983-02-28
-#    _item_aliases.alias_name     '_ndb_database_status.date_hold_coordinates'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.date_hold_struct_fact
-    _item_description.description
-;              At an author's request, the structure factors may be held after
-               processing for some period of time.
-;
-    _item.name                  '_pdbx_database_status.date_hold_struct_fact'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               yyyy-mm-dd:hh:mm
-    _item_examples.case           1983-02-28
-#    _item_aliases.alias_name     '_ndb_database_status.date_hold_struct_fact'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.date_hold_nmr_constraints
-    _item_description.description
-;              At an author's request, the NMR constraint data may be held after
-               processing for some period of time.
-;
-    _item.name               '_pdbx_database_status.date_hold_nmr_constraints'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               yyyy-mm-dd:hh:mm
-    _item_examples.case           1983-02-28
-#    _item_aliases.alias_name    '_ndb_database_status.date_hold_nmr_constraints'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.hold_for_publication
-    _item_description.description
-;              At an author's request, an entry is to be held until
-               publication.  
-;
-    _item.name                  '_pdbx_database_status.hold_for_publication'
-    _item.category_id             pdbx_database_status
-    _item.mandatory_code          no
-    _item_type.code               uchar1
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail      
-          Y  'Yes'
-          N  'No'
-    _item_examples.case          Y
-#    _item_aliases.alias_name     '_ndb_database_status.hold_for_publication'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
-     save_
 
 save__pdbx_database_status.SG_entry
     _item_description.description
@@ -1573,23 +922,6 @@ save__pdbx_database_status.SG_entry
     _item_aliases.alias_name     '_ndb_database_status.SG_entry'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
-     save_
-
-save__pdbx_database_status.pdb_date_of_author_approval
-    _item_description.description
-;              This is the date when PDB received the author's approval for an
-               entry which has been processed by NDB.  (This is a place holder 
-               for entries processed before Jan. 1, 1996.)
-
-;
-    _item.name              '_pdbx_database_status.pdb_date_of_author_approval'
-    _item.category_id            pdbx_database_status
-    _item.mandatory_code         no
-    _item_type.code              yyyy-mm-dd:hh:mm
-    _item_examples.case          1983-02-27
-#    _item_aliases.alias_name  '_ndb_database_status.pdb_date_of_author_approval'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
      save_
 
 
@@ -1676,9 +1008,9 @@ save__pdbx_entity_name.entity_id
     _item_type.code               code
     _item_linked.child_name	'_pdbx_entity_name.entity_id'
     _item_linked.parent_name    '_entity.id'
-#    _item_aliases.alias_name     '_rcsb_entity_name.entity_id'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
+    _item_aliases.alias_name     '_rcsb_entity_name.entity_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
      save_
 
 save__pdbx_entity_name.name
@@ -1689,9 +1021,9 @@ save__pdbx_entity_name.name
     _item.category_id             pdbx_entity_name
     _item.mandatory_code          yes
     _item_type.code               line
-#    _item_aliases.alias_name     '_rcsb_entity_name.name'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
+    _item_aliases.alias_name     '_rcsb_entity_name.name'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
      save_
 
 save__pdbx_entity_name.name_type
@@ -1702,9 +1034,9 @@ save__pdbx_entity_name.name_type
     _item.category_id             pdbx_entity_name
     _item.mandatory_code          yes
     _item_type.code               line
-#    _item_aliases.alias_name     '_rcsb_entity_name.name_type'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
+    _item_aliases.alias_name     '_rcsb_entity_name.name_type'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
      loop_
     _item_enumeration.value  
      'RCSB_NAME' 
@@ -3613,7 +2945,7 @@ save__atom_site_anisotrop.pdbx_auth_seq_id
     _item_type.code               code
     _item_linked.child_name	'_atom_site_anisotrop.pdbx_auth_seq_id'
     _item_linked.parent_name    '_atom_site.auth_seq_id'
-    _item_aliases.alias_name     '_atom_site_anisotrop.ndb_PDB_residue_no'
+    _item_aliases.alias_name     '_atom_site_anisotrop.ndb_auth_seq_id'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
 
@@ -3629,9 +2961,9 @@ save__atom_site_anisotrop.pdbx_auth_alt_id
     _item_type.code               code
     _item_linked.child_name	'_atom_site_anisotrop.pdbx_auth_alt_id'
     _item_linked.parent_name    '_atom_site.pdbx_auth_alt_id'
-#    _item_aliases.alias_name     '_atom_site_anisotrop.ndb_auth_alt_id'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
+    _item_aliases.alias_name     '_atom_site_anisotrop.ndb_auth_alt_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
 
      save_
 
@@ -3645,7 +2977,7 @@ save__atom_site_anisotrop.pdbx_auth_asym_id
     _item_type.code               code
     _item_linked.child_name	'_atom_site_anisotrop.pdbx_auth_asym_id'
     _item_linked.parent_name    '_atom_site.auth_asym_id'
-    _item_aliases.alias_name     '_atom_site_anisotrop.ndb_PDB_strand_id'
+    _item_aliases.alias_name     '_atom_site_anisotrop.ndb_auth_asym_id'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
 
@@ -3661,9 +2993,9 @@ save__atom_site_anisotrop.pdbx_auth_atom_id
     _item_type.code               atcode
     _item_linked.child_name	'_atom_site_anisotrop.pdbx_auth_atom_id'
     _item_linked.parent_name    '_atom_site.auth_atom_id'
-    _item_aliases.alias_name     '_atom_site_anisotrop.ndb_PDB_atom_name'
-    _item_aliases.dictionary     'cif_rcsb.dic'
-    _item_aliases.version        1.1
+#    _item_aliases.alias_name     '_atom_site_anisotrop.ndb_auth_atom_name'
+#    _item_aliases.dictionary     'cif_rcsb.dic'
+#    _item_aliases.version        1.1
 
      save_
 
@@ -3677,7 +3009,7 @@ save__atom_site_anisotrop.pdbx_auth_comp_id
     _item_type.code               code
     _item_linked.child_name	'_atom_site_anisotrop.pdbx_auth_comp_id'
     _item_linked.parent_name    '_atom_site.auth_comp_id'
-    _item_aliases.alias_name     '_atom_site_anisotrop.ndb_PDB_residue_name'
+    _item_aliases.alias_name     '_atom_site_anisotrop.ndb_auth_comp_id'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
 
@@ -3857,6 +3189,9 @@ save__chem_comp.pdbx_type
     _item.category_id            chem_comp
     _item.mandatory_code         no
     _item_type.code               uline
+    _item_aliases.alias_name     '_chem_comp.ndb_type'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
      save_
 
 save__chem_comp.pdbx_ambiguous_flag
@@ -3914,6 +3249,9 @@ save__chem_comp.pdbx_formal_charge
     _item.mandatory_code          no
     _item_default.value           0
     _item_type.code               int
+    _item_aliases.alias_name     '_chem_comp.ndb_formal_charge'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
      save_
 
 save__chem_comp_atom.pdbx_align
@@ -3924,6 +3262,9 @@ save__chem_comp_atom.pdbx_align
     _item.category_id             chem_comp_atom
     _item.mandatory_code          no
     _item_type.code               int
+    _item_aliases.alias_name     '_chem_comp_atom.rcsb_align'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
      save_
 
 save__chem_comp_atom.pdbx_ordinal
@@ -10729,6 +10070,22 @@ save__pdbx_atom_site_aniso_tls.U_tls[2][3]
     _item_units.code              angstroms_squared
      save_
 ##
+
+save__struct.pdbx_CASP_flag
+    _item_description.description
+;   The item indicates whether the entry is a CASP target
+;
+    _item.name                  '_struct.pdbx_CASP_flag'
+    _item.category_id             struct
+    _item.mandatory_code          no
+    _item_type.code               uchar1
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+          Y  'Yes'
+          N  'No'
+    _item_examples.case           Y
+     save_
 
 ###  EOF mmcif_pdbx-def-2.dic
 

@@ -462,6 +462,7 @@ em_2d_crystal_entity                     1  em_2d_crystal_entity:em_entity_assem
 em_helical_entity                        1  em_helical_entity:em_entity_assembly:1                                    . .
 #
 pdbx_remediation_atom_site_mapping       1  pdbx_remediation_atom_site_mapping:atom_site:1                            . .  
+pdbx_remediation_atom_site_mapping       2  pdbx_remediation_atom_site_mapping:atom_site:2                            . .  
 #
 pdbx_reference_entity_annotation         1  pdbx_reference_entity_annotation:pdbx_reference_entity:1                  . . 
 pdbx_reference_entity_synonyms           1  pdbx_reference_entity_synonyms:pdbx_reference_entity:1                    . . 
@@ -1442,6 +1443,13 @@ pdbx_remediation_atom_site_mapping    1 '_pdbx_remediation_atom_site_mapping.lab
 pdbx_remediation_atom_site_mapping    1 '_pdbx_remediation_atom_site_mapping.label_comp_id'	   '_atom_site.label_comp_id'                  atom_site
 pdbx_remediation_atom_site_mapping    1 '_pdbx_remediation_atom_site_mapping.label_seq_id'	   '_atom_site.label_seq_id'                   atom_site
 pdbx_remediation_atom_site_mapping    1 '_pdbx_remediation_atom_site_mapping.PDB_ins_code'	   '_atom_site.pdbx_PDB_ins_code'              atom_site
+#
+pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.auth_alt_id'          '_atom_site.pdbx_auth_alt_id'              atom_site
+pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.auth_asym_id'	   '_atom_site.auth_asym_id'                  atom_site
+pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.auth_atom_id'	   '_atom_site.auth_atom_id'                  atom_site
+pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.auth_comp_id'	   '_atom_site.auth_comp_id'                  atom_site
+pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.auth_seq_id'	   '_atom_site.auth_seq_id'                   atom_site
+pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.PDB_ins_code'	   '_atom_site.pdbx_PDB_ins_code'             atom_site
 #
 pdbx_reference_entity_annotation         1  '_pdbx_reference_entity_annotation.entity_id' '_pdbx_reference_entity.id'   pdbx_reference_entity 
 pdbx_reference_entity_synonyms           1  '_pdbx_reference_entity_synonyms.entity_id'   '_pdbx_reference_entity.id'   pdbx_reference_entity 

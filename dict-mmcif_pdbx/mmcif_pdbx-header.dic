@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         1.0674
+    _dictionary.version         1.0675
 #
      loop_
     _dictionary_history.version
@@ -1158,7 +1158,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
      packaging of the chemical components dictionary.
    + Add _chem_comp.type's for 'L-RNA linking' 'L-DNA linking'
 ;
-   1.0674 2009-10-27
+   1.0674 2009-10-28
 ;
   Changes (jdw):
    + Add _pdbx_validate_planes.type enumerations for 'SIDE CHAIN' and
@@ -1166,7 +1166,14 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
      (e.g. MAIN_CHAIN). Update data type and category examples.
    + Added _pdbx_chem_comp_audit.processing_site and _pdbx_chem_comp_audit.details
    + Update enumerations for _pdbx_chem_comp_audit.action_type.
+   + Added _pdbx_remediation_atom_site_mapping.auth_alt_id,_pdbx_remediation_atom_site_mapping.auth_asym_id,
+     _pdbx_remediation_atom_site_mapping.auth_atom_id,_pdbx_remediation_atom_site_mapping.auth_comp_id,
+     _pdbx_remediation_atom_site_mapping.auth_seq_id
 ;
-                    
+   1.0675 2009-11-04
+; 
+ Changes (jdw):  Open revision -
+ + update aliases to local dictionaries - 
+;                    
 #
 ### EOF mmcif_pdbx-header.dic 

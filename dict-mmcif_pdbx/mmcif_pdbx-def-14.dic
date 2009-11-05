@@ -4260,8 +4260,13 @@ _pdbx_remediation_atom_site_mapping.pre_auth_asym_id
 _pdbx_remediation_atom_site_mapping.pre_auth_seq_id
 _pdbx_remediation_atom_site_mapping.pre_auth_alt_id
 _pdbx_remediation_atom_site_mapping.pre_PDB_ins_code
-1 HETATM 1 O12 QUA C 0 . . HETATM 1 O12 QUA C 7 . .
-2 HETATM 1 C11 QUA C 0 . . HETATM 1 C11 QUA C 7 . .
+_pdbx_remediation_atom_site_mapping.auth_atom_id
+_pdbx_remediation_atom_site_mapping.auth_comp_id
+_pdbx_remediation_atom_site_mapping.auth_asym_id
+_pdbx_remediation_atom_site_mapping.auth_seq_id
+_pdbx_remediation_atom_site_mapping.auth_alt_id
+1 HETATM 1 O12 QUA C 0 . . HETATM 1 O12 QUA C 7 . . O12 QUA C 7 .
+2 HETATM 1 C11 QUA C 0 . . HETATM 1 C11 QUA C 7 . . C11 QUA C 7 . 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -4498,4 +4503,80 @@ save__pdbx_remediation_atom_site_mapping.pre_pdbx_align
     _item.category_id             pdbx_remediation_atom_site_mapping
     _item.mandatory_code          no
     _item_type.code               int
+     save_
+#
+save__pdbx_remediation_atom_site_mapping.auth_asym_id
+    _item_description.description
+;   A component of the current atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.auth_asym_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.auth_atom_id
+    _item_description.description
+;   A component of the current atom_site identifier.
+
+    This data item corrresponds to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.auth_atom_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.auth_atom_id'
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.auth_comp_id
+    _item_description.description
+;   A component of the current atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.auth_comp_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.auth_comp_id'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.auth_seq_id
+    _item_description.description
+;   A component of the current atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.auth_seq_id'
+    _item.category_id             pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.auth_alt_id
+    _item_description.description
+;   A component of the current atom_site identifier.
+
+    This data item is a pointer to _atom_site.pdbx_auth_alt_id in the
+    ATOM_SITE category.
+
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.auth_alt_id'
+    _item.category_id             pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.auth_alt_id'
+    _item_linked.parent_name    '_atom_site.pdbx_auth_alt_id'
      save_

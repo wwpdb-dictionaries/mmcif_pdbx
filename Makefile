@@ -1,4 +1,4 @@
-EXTERNAL_DATA_DIRS = mmcif_pdbx mmcif_pdbx_internal mmcif_std mmcif_ddl mmcif_pdbx_v31
+EXTERNAL_DATA_DIRS = mmcif_pdbx mmcif_pdbx_internal mmcif_pdbx_v4_internal mmcif_std mmcif_ddl mmcif_pdbx_v31
 INTERNAL_DATA_DIRS = mmcif_nmr-star mmcif_em mmcif_emx mmcif_biosync mmcif_ccp4 mmcif_iims mmcif_img mmcif_mdb mmcif_rcsb_nmr mmcif_rcsb_xray mmcif_rcsb_internal mmcif_sym
 
 DATADIRS = $(INTERNAL_DATA_DIRS) $(EXTERNAL_DATA_DIRS)
