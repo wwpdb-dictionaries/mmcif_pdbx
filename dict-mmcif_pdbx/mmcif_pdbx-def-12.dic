@@ -721,6 +721,16 @@ save__pdbx_soln_scatter_model.num_conformers_submitted
     _item_type.code              int
     save_
 
+save__pdbx_soln_scatter_model.representative_conformer
+    _item_description.description
+;   The index of the representative conformer among the submitted conformers for the entry
+;
+    _item.name                  '_pdbx_soln_scatter_model.representative_conformer'
+    _item.category_id            pdbx_soln_scatter_model
+    _item.mandatory_code         no
+    _item_type.code              int
+    save_
+
 save__pdbx_soln_scatter_model.conformer_selection_criteria
     _item_description.description
 ;   A description of the conformer selection criteria

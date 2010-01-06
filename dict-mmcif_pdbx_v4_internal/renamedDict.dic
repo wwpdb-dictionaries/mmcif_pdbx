@@ -3561,7 +3561,11 @@ save_pdbx_nonstandard_list
    _category.id              pdbx_nonstandard_list
    _category.mandatory_code  no
    #
-   _category_key.name  '_pdbx_nonstandard_list.id'
+   loop_
+   _category_key.name  
+      '_pdbx_nonstandard_list.id'
+      '_pdbx_nonstandard_list.label_asym_id'
+      '_pdbx_nonstandard_list.label_seq_id'
    #
    loop_
    _category_group.id
@@ -3677,7 +3681,7 @@ save__pdbx_nonstandard_list.label_asym_id
    #
    _item.name            '_pdbx_nonstandard_list.label_asym_id'
    _item.category_id     pdbx_nonstandard_list
-   _item.mandatory_code  no
+   _item.mandatory_code  yes
    #
    _item_type.code  code
    #
@@ -3722,7 +3726,7 @@ save__pdbx_nonstandard_list.label_seq_id
    #
    _item.name            '_pdbx_nonstandard_list.label_seq_id'
    _item.category_id     pdbx_nonstandard_list
-   _item.mandatory_code  no
+   _item.mandatory_code  yes
    #
    _item_type.code  int
    #
@@ -5375,9 +5379,9 @@ save__chem_comp.pdbx_type_modified
    loop_
    _item_range.maximum
    _item_range.minimum
-     1.0  1.0
-     1.0  0.0
-     0.0  0.0
+     1  1
+     1  0
+     0  0
    #
    _item_aliases.alias_name  '_chem_comp.rcsb_type_modified'
    _item_aliases.dictionary  cif_rcsb.dic
@@ -7723,7 +7727,7 @@ save_pdbx_struct_link
    loop_
    _category_key.name
      '_pdbx_struct_link.id'       
-     '_pdbx_struct_link.vertex_id'
+     #     '_pdbx_struct_link.vertex_id'
    #
    loop_
    _category_group.id
@@ -7883,7 +7887,7 @@ save__pdbx_struct_link.vertex_id
    #
    _item.name            '_pdbx_struct_link.vertex_id'
    _item.category_id     pdbx_struct_link
-   _item.mandatory_code  yes
+   _item.mandatory_code  no
    #
    _item_type.code  code
    #
