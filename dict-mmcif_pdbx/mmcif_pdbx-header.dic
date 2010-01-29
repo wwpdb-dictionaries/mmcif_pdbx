@@ -1170,13 +1170,14 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
      _pdbx_remediation_atom_site_mapping.auth_atom_id,_pdbx_remediation_atom_site_mapping.auth_comp_id,
      _pdbx_remediation_atom_site_mapping.auth_seq_id
 ;
-   1.0675 2010-11-18
+   1.0675 2010-01-29
 ; 
- Changes (jdw):  Open revision -
- + update aliases to local dictionaries - 
+ Changes (jdw):  
+ + update aliases to local dictionaries 
  + added _pdbx_soln_scatter_model.representative_conformer
  + added _pdbx_remediation_atom_site_mapping.occupancy
  + added _pdbx_remediation_atom_site_mapping.pre_occupancy
+ + added enumeration 'tetartohedral' for _pdbx_reflns_twin.type
 ;                    
 #
 ### EOF mmcif_pdbx-header.dic 

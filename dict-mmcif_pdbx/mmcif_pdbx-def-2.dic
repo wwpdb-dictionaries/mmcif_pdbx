@@ -937,9 +937,9 @@ save__pdbx_database_status.status_code_sf
      WDRN  = Entry has been withdrawn by depositor
      WAIT  = Awaiting author approval
 ;
-#    _item_aliases.alias_name   '_ndb_database_status.status_code_sf'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
+    _item_aliases.alias_name   '_ndb_database_status.status_code_sf'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
      save_
 
 save__pdbx_database_status.status_code_mr
@@ -973,9 +973,9 @@ save__pdbx_database_status.status_code_mr
      WDRN  = Entry has been withdrawn by depositor
      WAIT  = Awaiting author approval
 ;
-#    _item_aliases.alias_name   '_ndb_database_status.status_code_mr'
-#    _item_aliases.dictionary     'cif_rcsb.dic'
-#    _item_aliases.version        1.1
+    _item_aliases.alias_name   '_ndb_database_status.status_code_mr'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
      save_
 
 save__pdbx_database_status.dep_release_code_coordinates
