@@ -1170,7 +1170,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
      _pdbx_remediation_atom_site_mapping.auth_atom_id,_pdbx_remediation_atom_site_mapping.auth_comp_id,
      _pdbx_remediation_atom_site_mapping.auth_seq_id
 ;
-   1.0675 2010-01-29
+   1.0675 2010-02-04
 ; 
  Changes (jdw):  
  + update aliases to local dictionaries 
@@ -1178,6 +1178,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  + added _pdbx_remediation_atom_site_mapping.occupancy
  + added _pdbx_remediation_atom_site_mapping.pre_occupancy
  + added enumeration 'tetartohedral' for _pdbx_reflns_twin.type
+ + added _struct.pdbx_CASP_flag
+ + added items for latest version of Buster.
+   _refine.pdbx_overall_SU_R_free_Cruickshank_DPI
+   _refine.pdbx_overall_SU_R_Blow_DPI
+   _refine.pdbx_overall_SU_R_free_Blow_DPI
+   _refine_ls_restr.pdbx_restraint_function
 ;                    
 #
 ### EOF mmcif_pdbx-header.dic 
