@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         1.0675
+    _dictionary.version         1.0676
 #
      loop_
     _dictionary_history.version
@@ -1184,6 +1184,13 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    _refine.pdbx_overall_SU_R_Blow_DPI
    _refine.pdbx_overall_SU_R_free_Blow_DPI
    _refine_ls_restr.pdbx_restraint_function
-;                    
+;
+   1.0676 2010-02-06
+;
+  Changes (jdw):
+  + revisions for peptide reference dictionary in the pdbx_reference_entity_* category hierarchy.
+  + added _pdbx_entity_src_syn.strain.
+;
+                    
 #
 ### EOF mmcif_pdbx-header.dic 
