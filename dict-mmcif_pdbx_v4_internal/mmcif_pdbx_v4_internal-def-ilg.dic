@@ -466,6 +466,7 @@ pdbx_remediation_atom_site_mapping       1  pdbx_remediation_atom_site_mapping:a
 pdbx_remediation_atom_site_mapping       2  pdbx_remediation_atom_site_mapping:atom_site:2                            . .  
 #
 #
+#
 pdbx_reference_entity_annotation         1  pdbx_reference_entity_annotation:pdbx_reference_entity:1                  . . 
 pdbx_reference_entity_details            1  pdbx_reference_entity_details:pdbx_reference_entity:1                    . . 
 pdbx_reference_entity_synonyms           1  pdbx_reference_entity_synonyms:pdbx_reference_entity:1                    . . 
@@ -476,7 +477,8 @@ pdbx_reference_entity_src_nat            1  pdbx_reference_entity_src_nat:pdbx_r
 pdbx_reference_entity_feature            1  pdbx_reference_entity_feature:pdbx_reference_entity:1                     . . 
 pdbx_reference_entity_feature            2  pdbx_reference_entity_feature:citation:2                                  . . 
 pdbx_reference_entity_related_structures 1  pdbx_reference_entity_related_structures:pdbx_reference_entity:1          . . 
-pdbx_reference_entity_related_structures 2  pdbx_reference_entity_related_structures:citation:2                       . . 
+pdbx_reference_entity_related_structures 2  pdbx_reference_entity_related_structures:citation:2                       . .
+pdbx_reference_entity_instances          1  pdbx_reference_entity_instances:pdbx_reference_entity:1                   . .  
 #
 loop_
 _pdbx_item_linked_group_list.child_category_id
@@ -1480,6 +1482,7 @@ pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.aut
 pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.PDB_ins_code'	   '_atom_site.pdbx_PDB_ins_code'             atom_site
 #
 #
+#
 pdbx_reference_entity_annotation         1  '_pdbx_reference_entity_annotation.prd_id'    '_pdbx_reference_entity.prd_id'   pdbx_reference_entity 
 pdbx_reference_entity_details            1  '_pdbx_reference_entity_details.prd_id'       '_pdbx_reference_entity.prd_id'   pdbx_reference_entity 
 pdbx_reference_entity_synonyms           1  '_pdbx_reference_entity_synonyms.prd_id'      '_pdbx_reference_entity.prd_id'   pdbx_reference_entity 
@@ -1491,6 +1494,7 @@ pdbx_reference_entity_feature            1  '_pdbx_reference_entity_feature.prd_
 pdbx_reference_entity_feature            2  '_pdbx_reference_entity_feature.citation_id'  '_citation.id'    citation
 pdbx_reference_entity_related_structures 1  '_pdbx_reference_entity_related_structures.prd_id'  '_pdbx_reference_entity.prd_id'   pdbx_reference_entity 
 pdbx_reference_entity_related_structures 2  '_pdbx_reference_entity_related_structures.citation_id'  '_citation.id'    citation
+pdbx_reference_entity_instances          1  '_pdbx_reference_entity_instances.prd_id'      '_pdbx_reference_entity.prd_id'   pdbx_reference_entity 
 #
 #
 em_2d_crystal_entity                     1  '_em_2d_crystal_entity.entity_assembly_id'    '_em_entity_assembly.id'      em_entity_assembly

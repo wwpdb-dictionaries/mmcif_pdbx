@@ -3434,6 +3434,20 @@ save__pdbx_entity_src_syn.organism_common_name
     _item_aliases.version        1.1
      save_
 
+save__pdbx_entity_src_syn.strain
+    _item_description.description
+;              The strain of the organism from which the sequence of 
+               the synthetic entity was derived.
+;
+    _item.name                  '_pdbx_entity_src_syn.strain'
+    _item.category_id             pdbx_entity_src_syn
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_aliases.alias_name     '_rcsb_entity_src_syn.strain'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
 save__pdbx_entity_src_syn.ncbi_taxonomy_id
     _item_description.description
 ;  NCBI Taxonomy identifier of the organism from which the sequence of 
