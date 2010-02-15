@@ -1185,13 +1185,17 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    _refine.pdbx_overall_SU_R_free_Blow_DPI
    _refine_ls_restr.pdbx_restraint_function
 ;
-   1.0676 2010-02-11
+   1.0676 2010-02-14
 ;
   Changes (jdw): OPEN REVISION
   + revisions for peptide reference dictionary in the pdbx_reference_entity_* category hierarchy.
   + added _pdbx_entity_src_syn.strain.
   + added _atom_site.pdbx_auth_asym_id,_atom_site.pdbx_auth_comp_id,
           _atom_site.pdbx_auth_seq_id
+  + updated examples for the pdbx_reference_entity_* categories -
+  + added category pdbx_reference_entity_sequence 
+  + added   item _pdbx_reference_entity_instances.published_name
+  + removed unused item _pdbx_reference_entity_feature.support
 ;
                     
 #
