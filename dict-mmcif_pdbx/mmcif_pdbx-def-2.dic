@@ -858,6 +858,7 @@ save__pdbx_database_status.status_code
    REL   'Released'
    HOLD  'On hold until yyyy-mm-dd'
    HPUB  'On hold until publication'
+   REFI  'Re-refined entry'
    OBS   'Entry has been obsoleted and replaced by another entry'
    WDRN  'Deposition has been withdrawn'	
    AUTH  'Processed, waiting for author review and approval'
@@ -890,6 +891,7 @@ save__pdbx_database_status.author_release_status_code
      REL   'Release'
      HOLD  'On hold until yyyy-mm-dd'
      HPUB  'On hold until publication'
+     REFI  'Re-refined entry'
      OBS   'Entry has been obsoleted and replaced by another entry'
      WDRN  'Entry has been withdrawn'	
     _item_examples.case         
