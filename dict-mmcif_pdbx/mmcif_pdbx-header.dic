@@ -1187,7 +1187,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
    1.0676 2010-06-03
 ;
-  Changes (jdw): OPEN REVISION
+  Changes (jdw): 
   + revisions for peptide reference dictionary in the pdbx_reference_entity_* category hierarchy.
   + added _pdbx_entity_src_syn.strain.
   + added _atom_site.pdbx_auth_asym_id,_atom_site.pdbx_auth_comp_id,
