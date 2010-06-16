@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         1.0677
+    _dictionary.version         1.0678
 #
      loop_
     _dictionary_history.version
@@ -1223,6 +1223,13 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
            _pdbx_database_status.dep_release_code_chemical_shifts                    
            _pdbx_database_status.date_of_cs_release
            _pdbx_database_status.status_code_cs
+;
+   1.0678 2010-06-16
+;
+  Changes (jdw): 
+  + _exptl.method - updated enumerations and details 
+	  'INFRARED SPECTROSCOPY'      'IR and FTIR only as supporting methods'
+	  'EPR'                        'EPR only as a supporting method'
 ;
 #
 ### EOF mmcif_pdbx-header.dic 

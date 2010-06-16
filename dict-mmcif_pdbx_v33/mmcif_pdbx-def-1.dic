@@ -16634,18 +16634,24 @@ save__exptl.method
           'SOLID-STATE NMR'   
           'SOLUTION SCATTERING' 
 	  'POWDER DIFFRACTION'
+
     loop_
     _item_enumeration.value
-          'X-RAY DIFFRACTION'
-	  'NEUTRON DIFFRACTION'
-          'FIBER DIFFRACTION'
-          'ELECTRON CRYSTALLOGRAPHY'
-          'ELECTRON MICROSCOPY'
-          'SOLUTION NMR'
-          'SOLID-STATE NMR'   
-          'SOLUTION SCATTERING' 
-	  'POWDER DIFFRACTION'
-	  'INFRARED SPECTROSCOPY'
+    _item_enumeration.detail
+          'X-RAY DIFFRACTION'          .
+	  'NEUTRON DIFFRACTION'        .
+          'FIBER DIFFRACTION'          . 
+          'ELECTRON CRYSTALLOGRAPHY'   .
+          'ELECTRON MICROSCOPY'        .
+          'SOLUTION NMR'               .
+          'SOLID-STATE NMR'            .
+          'SOLUTION SCATTERING'        . 
+	  'POWDER DIFFRACTION'         .
+	  'INFRARED SPECTROSCOPY'      'IR and FTIR only as supporting methods'
+	  'EPR'                        'EPR only as a supporting method'
+
+
+
      save_
 
 save__exptl.method_details
