@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         1.0676
+    _dictionary.version         1.0677
 #
      loop_
     _dictionary_history.version
@@ -1214,6 +1214,15 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + Added REFI to enumerations for _pdbx_database_status.status_code and 
     _pdbx_database_status.release_status_code
 ;
-                    
+   1.0677 2010-06-10
+;
+  Changes (jdw): 
+ + added - _pdbx_database_status.date_hold_chemical_shifts
+           _pdbx_database_status.date_chemical_shifts
+           _pdbx_database_status.recvd_chemical_shifts
+           _pdbx_database_status.dep_release_code_chemical_shifts                    
+           _pdbx_database_status.date_of_cs_release
+           _pdbx_database_status.status_code_cs
+;
 #
 ### EOF mmcif_pdbx-header.dic 

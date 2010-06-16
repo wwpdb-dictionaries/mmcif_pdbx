@@ -30557,7 +30557,7 @@ save_reflns
 ;
     _category.id                  reflns
     _category.mandatory_code      no
-    _category_key.name          '_reflns.pdbx_diffrn_id'
+    _category_key.name          '_reflns.pdbx_ordinal'
     loop_
     _category_group.id           'inclusive_group'
                                  'refln_group'
@@ -30570,6 +30570,7 @@ save_reflns
                 structure corresponding to PDB entry 5HVP.
 ;
 ;
+    _reflns.pdbx_ordinal                   1
     _reflns.pdbx_diffrn_id                 1
     _reflns.entry_id                       '5HVP'
     _reflns.data_reduction_method
@@ -30602,6 +30603,7 @@ save_reflns
                  [Acta Cryst. (1991), C47, 2276-2277].
 ;
 ;
+    _reflns.pdbx_ordinal               1
     _reflns.pdbx_diffrn_id             1
     _reflns.entry_id                   '1TOZ'
     _reflns.limit_h_min                0

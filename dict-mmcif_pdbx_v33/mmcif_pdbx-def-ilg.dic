@@ -378,7 +378,7 @@ phasing_set_refln                        1  phasing_set_refln:phasing_set:1     
 publ                                     1  publ:entry:1                                                              . . 
 publ_manuscript_incl                     1  publ_manuscript_incl:entry:1                                              . . 
 refine                                   1  refine:entry:1                                                            . . 
-refine                                   2  refine:diffrn:2                                                            . . 
+#refine                                   2  refine:diffrn:2                                                            . . 
 refine_B_iso                             1  refine_B_iso:refine:1                                                     . . 
 refine_analyze                           1  refine_analyze:entry:1                                                    . . 
 refine_analyze                           2  refine_analyze:refine:2                                                   . . 
@@ -396,8 +396,8 @@ refln                                    2  refln:exptl_crystal:2               
 refln                                    3  refln:reflns_scale:3                                                      . . 
 refln                                    4  refln:diffrn:4                                                            . . 
 reflns                                   1  reflns:entry:1                                                            . . 
-reflns                                   2  reflns:diffrn:2                                                            . . 
-reflns_shell                             1  reflns_shell:diffrn:1                                                      . . 
+#reflns                                   2  reflns:diffrn:2                                                            . . 
+#reflns_shell                             1  reflns_shell:diffrn:1                                                      . . 
 software                                 1  software:citation:1                                                       . . 
 struct                                   1  struct:entry:1                                                            . . 
 struct_asym                              1  struct_asym:entity:1                                                      . . 
@@ -1240,7 +1240,7 @@ phasing_set_refln                        1  '_phasing_set_refln.set_id'         
 publ                                     1  '_publ.entry_id'                                      '_entry.id'                                 entry
 publ_manuscript_incl                     1  '_publ_manuscript_incl.entry_id'                      '_entry.id'                                 entry
 refine                                   1  '_refine.entry_id'                                    '_entry.id'                                 entry
-refine                                   2  '_refine.pdbx_diffrn_id'                              '_diffrn.id'                                diffrn
+#refine                                   2  '_refine.pdbx_diffrn_id'                              '_diffrn.id'                                diffrn
 refine_B_iso                             1  '_refine_B_iso.pdbx_refine_id'                        '_refine.pdbx_refine_id'                    refine
 refine_analyze                           1  '_refine_analyze.entry_id'                            '_entry.id'                                 entry
 refine_analyze                           2  '_refine_analyze.pdbx_refine_id'                      '_refine.pdbx_refine_id'                    refine
@@ -1258,8 +1258,8 @@ refln                                    2  '_refln.crystal_id'                 
 refln                                    3  '_refln.scale_group_code'                             '_reflns_scale.group_code'                  reflns_scale
 refln                                    4  '_refln.pdbx_diffrn_id'                               '_diffrn.id'                                diffrn
 reflns                                   1  '_reflns.entry_id'                                    '_entry.id'                                 entry
-reflns                                   2  '_reflns.pdbx_diffrn_id'                               '_diffrn.id'                                diffrn
-reflns_shell                             1  '_reflns_shell.pdbx_diffrn_id'                         '_diffrn.id'                                diffrn
+#reflns                                   2  '_reflns.pdbx_diffrn_id'                               '_diffrn.id'                                diffrn
+#reflns_shell                             1  '_reflns_shell.pdbx_diffrn_id'                         '_diffrn.id'                                diffrn
 software                                 1  '_software.citation_id'                               '_citation.id'                              citation
 struct                                   1  '_struct.entry_id'                                    '_entry.id'                                 entry
 struct_asym                              1  '_struct_asym.entity_id'                              '_entity.id'                                entity

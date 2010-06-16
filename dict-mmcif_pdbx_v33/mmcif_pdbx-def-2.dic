@@ -1633,6 +1633,126 @@ save__pdbx_database_status.process_site
 
      save_
 
+save__pdbx_database_status.dep_release_code_chemical_shifts
+    _item_description.description
+;
+The deposited chemical shift data for this deposition will be released according
+the value of this item.
+;
+    _item.name             '_pdbx_database_status.dep_release_code_chemical_shifts'
+    _item.category_id             pdbx_database_status
+    _item.mandatory_code          no
+    _item_type.code               line
+    _item_default.value           'RELEASE NOW'
+#     loop_
+#    _item_enumeration.value
+#    _item_enumeration.detail      
+#     'RELEASE NOW'            'Release immediately'
+#     'HOLD FOR PUBLICATION'   'Hold until primary citation is published'
+#     'HOLD FOR 6 MONTHS'      'Hold for 6 months'
+#     'HOLD FOR 1 YEAR'        'Hold for 1 year'
+#     'HOLD FOR 4 YEARS'       'Hold for 4 years'
+    _item_examples.case         
+;
+     RELEASE NOW          =    Release immediately
+     HOLD FOR PUBLICATION =    Hold until the primary citation is published
+     HOLD FOR 4 WEEKS     =    Hold for 4 weeks
+     HOLD FOR 6 WEEKS     =    Hold for 6 weeks
+     HOLD FOR 6 MONTHS    =    Hold for 6 months
+     HOLD FOR 1 YEAR      =    Hold for 1 year
+;
+     save_
+
+save__pdbx_database_status.recvd_chemical_shifts
+    _item_description.description
+;              This code indicates whether the chemical shift data for an entry
+               have been received.
+;
+    _item.name                  '_pdbx_database_status.recvd_chemical_shifts'
+    _item.category_id             pdbx_database_status
+    _item.mandatory_code          no
+    _item_type.code               uchar1
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+     Y  'Yes'
+     N  'No'
+    _item_examples.case          Y
+     save_
+
+save__pdbx_database_status.date_chemical_shifts
+    _item_description.description
+;              The date the chemical shift data are received.
+;
+    _item.name                  '_pdbx_database_status.date_chemical_shifts'
+    _item.category_id             pdbx_database_status
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd:hh:mm
+    _item_examples.case           2010-02-28
+     save_
+
+save__pdbx_database_status.date_hold_chemical_shifts
+    _item_description.description
+;              At an author's request, the chemical shift data may be held after
+               processing for some period of time.
+;
+    _item.name                  '_pdbx_database_status.date_hold_chemical_shifts'
+    _item.category_id             pdbx_database_status
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd:hh:mm
+    _item_examples.case           2010-02-28
+     save_
+
+save__pdbx_database_status.status_code_cs
+    _item_description.description
+;              Code for status of chemical shift data file.
+;
+    _item.name                  '_pdbx_database_status.status_code_cs'
+    _item.category_id             pdbx_database_status
+    _item.mandatory_code          no
+    _item_type.code               code
+#
+#     loop_
+#    _item_enumeration.value
+#    _item_enumeration.detail      
+#     PROC  'Processing in progress'
+#     PROC  'To be processed'
+#     WAIT  'Awaiting author approval'
+#     WAIT  'Processing started, waiting for author input to continue because of ligand, coordinate, other problems'
+#     AUTH  'Processed, waiting for author review and approval'
+#     POLC  'Waiting for a policy decision'
+#     REPL  'Author sent new coordinates'
+#     REL   'Release'
+#     HOLD  'On hold until yyyy-mm-dd'
+#     HPUB  'On hold until publication'
+#     OBS   'Entry has been obsoleted and replaced by another entry'
+#     WDRN  'Entry has been withdrawn'	
+#
+    _item_examples.case         
+;
+     PROC  = Processing in progress
+     WAIT  = Awaiting author approval
+     REL   = Release 
+     HOLD  = On hold until yyyy-mm-dd
+     HPUB  = On hold until publication
+     OBS   = Entry has been obsoleted and replaced by another entry
+     WDRN  = Entry has been withdrawn by depositor	
+;
+     save_
+
+save__pdbx_database_status.date_of_cs_release
+    _item_description.description
+;              The date of PDB release.  This corresponds to the date
+               at which the chemical shift data is placed into the public archive.
+;
+    _item.name                  '_pdbx_database_status.date_of_cs_release'
+    _item.category_id             pdbx_database_status
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd
+    _item_examples.case           2010-09-28
+     save_
+
+
 ###
 ###
 save_pdbx_entity_name

@@ -4615,8 +4615,8 @@ save__refine.pdbx_adp_type
      loop_
     _item_enumeration.value 
     _item_enumeration.detail       
-        'FULL'      'Full Isotropic B value'
-        'RESIDUAL'  'Residual B factor which does not include TLS contributions'
+        'FULL'      'Full Isotropic B values specified for all atom sites'
+        'RESIDUAL'  'Residual B values  (excluding TLS contributions) specified for some or all atom sites'
      save_
 
 save__diffrn_radiation.pdbx_scattering_type
@@ -4646,25 +4646,29 @@ save__refln.pdbx_diffrn_id
 save__reflns.pdbx_diffrn_id
     _item_description.description
 ;   An identifier for the diffraction data set for this set of summary statistics.
+
+    Multiple diffraction data sets entered as a comma separated list.
 ;
     _item.name                  '_reflns.pdbx_diffrn_id'
     _item.category_id             reflns
     _item.mandatory_code          yes
     _item_type.code               code
-    _item_linked.child_name     '_reflns.pdbx_diffrn_id'
-    _item_linked.parent_name    '_diffrn.id'
+#    _item_linked.child_name     '_reflns.pdbx_diffrn_id'
+#    _item_linked.parent_name    '_diffrn.id'
      save_
 
 save__refine.pdbx_diffrn_id
     _item_description.description
 ;   An identifier for the diffraction data set used in this refinement.
+ 
+    Multiple diffraction data sets specified as a comma separated list.
 ;
     _item.name                  '_refine.pdbx_diffrn_id'
     _item.category_id             refine
     _item.mandatory_code          no
     _item_type.code               code
-    _item_linked.child_name     '_refine.pdbx_diffrn_id'
-    _item_linked.parent_name    '_diffrn.id'
+#    _item_linked.child_name     '_refine.pdbx_diffrn_id'
+#    _item_linked.parent_name    '_diffrn.id'
      save_
 
 save__reflns_shell.pdbx_ordinal
@@ -4677,16 +4681,29 @@ save__reflns_shell.pdbx_ordinal
     _item_type.code               int
      save_
 
+
+save__reflns.pdbx_ordinal
+    _item_description.description
+;   An ordinal identifier for this set of reflection statistics.
+;
+    _item.name                  '_reflns.pdbx_ordinal'
+    _item.category_id             reflns
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
 save__reflns_shell.pdbx_diffrn_id
     _item_description.description
 ;   An identifier for the diffraction data set corresponding to this resolution shell.
+
+    Multiple diffraction data sets specified as a comma separated list.
 ;
     _item.name                  '_reflns_shell.pdbx_diffrn_id'
     _item.category_id             reflns_shell
     _item.mandatory_code          no
     _item_type.code               code
-    _item_linked.child_name     '_reflns_shell.pdbx_diffrn_id'
-    _item_linked.parent_name    '_diffrn.id'
+#    _item_linked.child_name     '_reflns_shell.pdbx_diffrn_id'
+#    _item_linked.parent_name    '_diffrn.id'
      save_
 
 

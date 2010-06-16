@@ -1236,6 +1236,19 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + Deprecate catetory  PDBX_DIFFRN_REFLNS_SHELL 
   + Change category key for REFLNS to _reflns.pdbx_diffrn_id
   + Change cateogry key for REFLNS_SHELL to _reflns_shell.pdbx_ordinal
-;                    
+;
+   3.301 2010-06-10
+; 
+  Changes (jdw):
+  + Change to ordinal key in category REFLNS adding pdbx_ordinal.
+  + Admit multiple comma separated values for child items of pdbx_diffrn_id.
+  + added - _pdbx_database_status.date_hold_chemical_shifts
+           _pdbx_database_status.date_chemical_shifts
+           _pdbx_database_status.recvd_chemical_shifts
+           _pdbx_database_status.dep_release_code_chemical_shifts                    
+           _pdbx_database_status.date_of_cs_release
+           _pdbx_database_status.status_code_cs
+
+;
 #
 ### EOF mmcif_pdbx-header.dic 
