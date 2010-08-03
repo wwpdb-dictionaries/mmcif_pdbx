@@ -4022,7 +4022,41 @@ save__refine.pdbx_density_correlation
     _item.mandatory_code          no
     _item_type.code               float
      save_
+#
+save__refln.pdbx_fiber_layer
+    _item_description.description
+;  The fiber layer line for this reflection.
+;
+    _item.name                   '_refln.pdbx_fiber_layer'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+save__refln.pdbx_fiber_coordinate
+    _item_description.description
+;  The coordinate position in reciprocal space along the fiber layer line
+   for this reflection.
+;
+    _item.name                   '_refln.pdbx_fiber_coordinate'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__refln.pdbx_fiber_F_meas_au
+    _item_description.description
+;  The measured diffraction amplitude for this fiber reflection in arbitrary units.
+;
+    _item.name                   '_refln.pdbx_fiber_F_meas_au'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
 ##
 ##
 
 ### EOF mmcif_pdbx-def-5.dic
+
