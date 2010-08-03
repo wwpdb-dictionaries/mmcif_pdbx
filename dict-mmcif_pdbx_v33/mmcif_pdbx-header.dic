@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         3.303
+    _dictionary.version         3.304
 #
      loop_
     _dictionary_history.version
@@ -1262,6 +1262,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes (jdw): 
   + Added items for fiber diffraction data collection - 
     _refln.pdbx_fiber_layer, _refln.pdbx_fiber_coordinate, _refln.pdbx_fiber_F_meas_au
+;
+   3.304 2010-08-02
+;
+  Changes (jdw): 
+  + Updated enumerations for item _pdbx_chem_comp_audit.action_type and the example for this category.
 ;
 
 #
