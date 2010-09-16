@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         1.0680
+    _dictionary.version         1.0681
 #
      loop_
     _dictionary_history.version
@@ -1242,3 +1242,10 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes (jdw): 
   + Updated enumerations for item _pdbx_chem_comp_audit.action_type and the example for this category.
 ;
+   1.0681 2010-09-16
+;
+  Changes (jdw): 
+  + Data type for _pdbx_chem_comp_audit.action_type changed from code to line.
+  + Enumerations details corrected for _chem_comp_bond.pdbx_stereo_config
+;
+
