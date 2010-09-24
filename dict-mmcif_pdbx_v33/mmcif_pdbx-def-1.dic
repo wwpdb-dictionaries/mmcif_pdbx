@@ -6539,11 +6539,14 @@ save__chem_comp.one_letter_code
                the component.   For non-standard polymer components, the 
                one-letter code for parent component if this exists;
                otherwise, the one-letter code should be given as 'X'.
+
+               Components that derived from multiple parents components 
+               are described by a sequence of one-letter-codes.  
 ;
     _item.name                  '_chem_comp.one_letter_code'
     _item.category_id             chem_comp
     _item.mandatory_code          no
-    _item_type.code               uchar1
+    _item_type.code               ucode
     loop_
     _item_examples.case
     _item_examples.detail         A  'alanine or adenine'

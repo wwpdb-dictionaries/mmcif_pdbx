@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         3.305
+    _dictionary.version         3.306
 #
      loop_
     _dictionary_history.version
@@ -1274,6 +1274,15 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + Data type for _pdbx_chem_comp_audit.action_type changed from code to line.
   + Enumerations details corrected for _chem_comp_bond.pdbx_stereo_config
 ;
-
+   3.306 2010-09-24
+;
+  Changes (jdw):
+   +   _chem_comp.pdbx_processing_site enumerations revised to 'PDBE' 'PDBJ' 'RCSB'
+   +   pdbx_chem_comp_atom_feature category
+   + data type for _chem_comp.one_letter_code changed from uchar1 to ucode to handle components
+     derived from multiple parent components and chromophores.
+   + standardized enumerations for _pdbx_database_status.process_site and deposit_site.
+   + _chem_comp.pdbx_release_status enumeration extended with REF_ONLY to identify reference components.
+;
 #
 ### EOF mmcif_pdbx-header.dic 

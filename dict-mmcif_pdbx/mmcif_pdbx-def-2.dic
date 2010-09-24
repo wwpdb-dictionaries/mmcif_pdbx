@@ -1605,9 +1605,9 @@ save__pdbx_database_status.deposit_site
     _item.mandatory_code         no
     _item_type.code              code
      loop_
-    _item_examples.case          NDB RCSB PDB EBI OSAKA  BMRB BNL
+    _item_examples.case          NDB RCSB PDB EBI OSAKA PDBJ PDBE  BMRB BNL
      loop_
-    _item_enumeration.value      NDB RCSB PDB EBI OSAKA  BMRB BNL
+    _item_enumeration.value      NDB RCSB PDB EBI OSAKA  PDBJ PDBE BMRB BNL
     _item_aliases.alias_name     '_ndb_database_status.deposit_site'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
@@ -1623,10 +1623,10 @@ save__pdbx_database_status.process_site
     _item.mandatory_code         no
     _item_type.code              code
      loop_
-    _item_examples.case      NDB RCSB EBI OSAKA PDB PRAGUE
+    _item_examples.case      NDB RCSB EBI OSAKA PDB PDBJ PDBE 
      loop_
     _item_enumeration.value
-         NDB RCSB EBI OSAKA PDB PRAGUE
+         NDB RCSB EBI OSAKA PDB PDBJ PDBE
     _item_aliases.alias_name     '_ndb_database_status.process_site'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1

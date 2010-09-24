@@ -15,4 +15,5 @@ mmcif_pdbx-def-13.dic
 ../dict-mmcif_rcsb_xray/mmcif_rcsb_xray-def-10.dic
 ../dict-mmcif_rcsb_xray/mmcif_rcsb_xray-def-11.dic
 mmcif_pdbx-def-14.dic
+../dict-mmcif_pdbx/chem_comp_atom_feature.dic
 mmcif_pdbx-def-ilg.dic

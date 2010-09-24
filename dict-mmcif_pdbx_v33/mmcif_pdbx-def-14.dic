@@ -3718,8 +3718,8 @@ save__chem_comp.pdbx_processing_site
     _item.mandatory_code         no
     _item_type.code              code
      loop_
-    _item_enumeration.value    
-     'MSD'
+    _item_enumeration.value 
+     'PDBE'   
      'PDBJ'
      'RCSB'
     save_

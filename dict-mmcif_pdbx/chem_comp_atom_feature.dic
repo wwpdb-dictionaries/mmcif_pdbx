@@ -1,0 +1,86 @@
+
+#################################
+## PDBX_CHEM_COMP_ATOM_FEATURE ##
+#################################
+
+save_pdbx_chem_comp_atom_feature
+    _category.description
+;              Data items in the PDBX_CHEM_COMP_ATOM_FEATURE category provide
+               a selected list of atom level features for the chemical component.
+;
+    _category.id                  pdbx_chem_comp_atom_feature
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_chem_comp_atom_feature.comp_id'
+                                 '_pdbx_chem_comp_atom_feature.atom_id'
+                                 '_pdbx_chem_comp_atom_feature.feature_type'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_chem_comp_atom_feature.comp_id
+    _pdbx_chem_comp_atom_feature.atom_id
+    _pdbx_chem_comp_atom_feature.feature_type
+    'LYS'  'N'  NT
+    'LYS'  'C'  CT
+    'LYS'  'CA' CPA
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_atom_feature.comp_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_chem_comp_import.comp_id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_chem_comp_atom_feature.comp_id'
+    _item.category_id             pdbx_chem_comp_atom_feature
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_chem_comp_atom_feature.comp_id'
+    _item_linked.parent_name    '_chem_comp_atom.comp_id'
+     save_
+
+save__pdbx_chem_comp_atom_feature.atom_id
+    _item_description.description
+;              The identifier for the target atom to which the feature is assigned.
+;
+    _item.name                  '_pdbx_chem_comp_atom_feature.atom_id'
+    _item.category_id             pdbx_chem_comp_atom_feature
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_chem_comp_atom_feature.atom_id'
+    _item_linked.parent_name    '_chem_comp_atom.atom_id'
+     save_
+
+save__pdbx_chem_comp_atom_feature.feature_type
+    _item_description.description
+;              The feature assigned to this atom.
+;
+    _item.name                  '_pdbx_chem_comp_atom_feature.feature_type'
+    _item.category_id             pdbx_chem_comp_atom_feature
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+    CT  'C-terminal peptide linking atom'
+    NT  'N-terminal peptide linking atom'
+    5PT '5-prime nucleotide linking atom'
+    3PT '3-prime nucleotide linking atom'
+    CPA  "Central atom in protein polymer"
+    CNA  "Central atom in nucleic acid polymer"
+     save_
+
+

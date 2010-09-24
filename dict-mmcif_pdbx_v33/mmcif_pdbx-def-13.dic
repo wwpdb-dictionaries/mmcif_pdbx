@@ -956,7 +956,8 @@ save__chem_comp.pdbx_release_status
      REL   'Released'
      HOLD  'On hold until yyyy-mm-dd'
      HPUB  'On hold until publication'
-     OBS   'Entry has been obsoleted and replaced by another entry'
-     DEL   'Entry has been deleted'
+     OBS   'Component defintion has been obsoleted and replaced by another entry'
+     DEL   'Component definition has been deleted'
+     REF_ONLY   'Component definition is provided for reference only and will not be used in released entries.'
      save_
 ##
