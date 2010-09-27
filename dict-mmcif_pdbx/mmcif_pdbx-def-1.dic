@@ -6491,7 +6491,7 @@ save__chem_comp.name
     _item.name                  '_chem_comp.name'
     _item.category_id             chem_comp
     _item.mandatory_code          no
-    _item_type.code               line
+    _item_type.code               text
     loop_
     _item_examples.case          'alanine'
                                  'valine'
