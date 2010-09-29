@@ -1257,8 +1257,10 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    + _pdbx_database_status.process_site and deposit_site enumerations extended with PDBE and PDBJ
    + _chem_comp.pdbx_release_status enumeration extended with REF_ONLY to identify reference components.
 ;
-   1.0683 2010-09-27
+   1.0683 2010-09-28
 ;
   Changes (jdw): 
   + change data type for _chem_comp.name from line to text.
+  + add pdbx_entity_reference_family category and add pdbx_entity_reference_family.family_prd_id 
+    as a part of key in pdbx_entity_reference* categories.
 ;
