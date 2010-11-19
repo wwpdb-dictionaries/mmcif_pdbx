@@ -4602,23 +4602,39 @@ save__pdbx_remediation_atom_site_mapping.pre_occupancy
      save_
 ##
 ##
-save__refine.pdbx_adp_type
+save__refine.pdbx_TLS_residual_ADP_flag
     _item_description.description
-;     A code describing the type of atomic displacement parameters used stored
+;     A flag for TLS refinements identifying the type of atomic displacement parameters stored
       in _atom_site.B_iso_or_equiv.  
-
 ;
-    _item.name                   '_refine.pdbx_adp_type'
+    _item.name                   '_refine.pdbx_TLS_residual_ADP_flag'
     _item.category_id             refine
     _item.mandatory_code          no
-    _item_type.code               code
+    _item_type.code               line
      loop_
     _item_enumeration.value 
     _item_enumeration.detail       
-        'FULL'      'Full Isotropic B values specified for all atom sites'
-        'RESIDUAL'  'Residual B values  (excluding TLS contributions) specified for some or all atom sites'
+        'LIKELY RESIDUAL'  
+         'Residual B values  (excluding TLS contributions) are likely specified for some or all atom sites'
      save_
 
+#save__refine.pdbx_adp_type
+#    _item_description.description
+#;     A code describing the type of atomic displacement parameters used stored
+#      in _atom_site.B_iso_or_equiv.  
+#
+#;
+#    _item.name                   '_refine.pdbx_adp_type'
+#    _item.category_id             refine
+#    _item.mandatory_code          no
+#    _item_type.code               code
+#     loop_
+#    _item_enumeration.value 
+#    _item_enumeration.detail       
+#        'FULL'      'Full Isotropic B values specified for all atom sites'
+#        'RESIDUAL'  'Residual B values  (excluding TLS contributions) specified for some or all atom sites'
+#     save_
+#
 save__diffrn_radiation.pdbx_scattering_type
     _item_description.description
 ;  The radiation scattering type for this diffraction data set.

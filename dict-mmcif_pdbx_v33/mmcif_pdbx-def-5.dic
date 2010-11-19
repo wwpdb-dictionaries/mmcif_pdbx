@@ -4055,6 +4055,27 @@ save__refln.pdbx_fiber_F_meas_au
     _item_type.code               float
      save_
 
+save__reflns.phase_calculation_details
+    _item_description.description
+;      The value of _reflns.phase_calculation_details describes a
+       special details about calculation of phases in _refln.phase_calc.
+;
+    _item.name                 '_reflns.phase_calculation_details'
+    _item.category_id            reflns
+    _item.mandatory_code         no
+    _item_type.code              text
+     loop_
+    _item_examples.case          
+     'From model'
+     'NCS averaging;
+     'Solvent flipping'
+     'Solvent flattening' 
+     'Multiple crystal averaging'
+     'Multiple phase modification' 
+     'Other phase modification'
+     save_
+
+
 ##
 ##
 
