@@ -4568,18 +4568,14 @@ save__pdbx_remediation_atom_site_mapping.auth_seq_id
 
 save__pdbx_remediation_atom_site_mapping.auth_alt_id
     _item_description.description
-;   A component of the current atom_site identifier.
-
-    This data item is a pointer to _atom_site.pdbx_auth_alt_id in the
-    ATOM_SITE category.
-
+;   A component of the current atom_site identifier labeling alternate locations.
 ;
     _item.name                  '_pdbx_remediation_atom_site_mapping.auth_alt_id'
     _item.category_id             pdbx_remediation_atom_site_mapping
     _item.mandatory_code          no
     _item_type.code               code
-    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.auth_alt_id'
-    _item_linked.parent_name    '_atom_site.pdbx_auth_alt_id'
+#    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.auth_alt_id'
+#    _item_linked.parent_name    '_atom_site.pdbx_auth_alt_id'
      save_
 
 save__pdbx_remediation_atom_site_mapping.occupancy

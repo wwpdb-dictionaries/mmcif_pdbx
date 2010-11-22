@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         3.308
+    _dictionary.version         3.309
 #
      loop_
     _dictionary_history.version
@@ -1298,6 +1298,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + Added __reflns.phase_calculation_details from the v3.2 dictionary 
   + Replaced _refine.pdbx_adp_type with _refine.pdbx_TLS_residual_ADP_flag
 ;
+   3.309 2010-11-22
+;
+  Changes (jdw):
+  +parent for _pdbx_remediation_atom_site_mapping.auth_alt_id removed.
+;
+
 #
 
 ### EOF mmcif_pdbx-header.dic 
