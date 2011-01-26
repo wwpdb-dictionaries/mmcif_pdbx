@@ -487,6 +487,8 @@ pdbx_reference_entity_grouping           1  pdbx_reference_entity_grouping:pdbx_
 #
 pdbx_chem_comp_atom_feature              1  pdbx_chem_comp_atom_feature:chem_comp_atom:1                              . . 
 #
+pdbx_struct_comp_nstd_link               1  pdbx_struct_comp_nstd_link:atom_site:1      . .
+#
 loop_
 _pdbx_item_linked_group_list.child_category_id
 _pdbx_item_linked_group_list.link_group_id
@@ -1530,4 +1532,15 @@ em_sample_preparation                    4  '_em_sample_preparation.entity_assem
 #
 pdbx_chem_comp_atom_feature              1  '_pdbx_chem_comp_atom_feature.comp_id'                '_chem_comp_atom.comp_id'                   chem_comp_atom
 pdbx_chem_comp_atom_feature              1  '_pdbx_chem_comp_atom_feature.atom_id'                '_chem_comp_atom.atom_id'                   chem_comp_atom
+#
+pdbx_struct_comp_nstd_link    2 '_pdbx_struct_comp_nstd_link.auth_asym_id'	   '_atom_site.auth_asym_id'                  atom_site
+pdbx_struct_comp_nstd_link    2 '_pdbx_struct_comp_nstd_link.auth_comp_id'	   '_atom_site.auth_comp_id'                  atom_site
+pdbx_struct_comp_nstd_link    2 '_pdbx_struct_comp_nstd_link.auth_seq_id'	   '_atom_site.auth_seq_id'                   atom_site
+pdbx_struct_comp_nstd_link    1 '_pdbx_struct_comp_nstd_link.label_alt_id'         '_atom_site.label_alt_id'                   atom_site
+pdbx_struct_comp_nstd_link    1 '_pdbx_struct_comp_nstd_link.label_asym_id'	   '_atom_site.label_asym_id'                  atom_site
+pdbx_struct_comp_nstd_link    1 '_pdbx_struct_comp_nstd_link.label_comp_id'	   '_atom_site.label_comp_id'                  atom_site
+pdbx_struct_comp_nstd_link    1 '_pdbx_struct_comp_nstd_link.label_seq_id'	   '_atom_site.label_seq_id'                   atom_site
+#pdbx_struct_comp_nstd_link    1 '_pdbx_struct_comp_nstd_link.PDB_model_num'	   '_atom_site.ndb_model'                     atom_site
+#pdbx_struct_comp_nstd_link    2 '_pdbx_struct_comp_nstd_link.auth_alt_id'          '_atom_site.pdbx_auth_alt_id'              atom_site
+#pdbx_struct_comp_nstd_link    1 '_pdbx_struct_comp_nstd_link.PDB_ins_code'	   '_atom_site.ndb_ins_code'                   atom_site
 #

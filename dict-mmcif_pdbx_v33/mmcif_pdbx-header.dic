@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         3.310
+    _dictionary.version         3.311
 #
      loop_
     _dictionary_history.version
@@ -1307,6 +1307,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
   Changes (jdw):
     Added new categories for PRD - pdbx_reference_entity_group, pdbx_reference_entity_group_components, and pdbx_reference_entity_grouping
+;
+  3.311 2011-01-25
+;
+  Changes (jdw):
+    + Added new category pdbx_struct_comp_nstd_link.
+    + Added _chem_comp.type 'Iso-peptide linking'  enumeration.
 ;
 
 #
