@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         3.311
+    _dictionary.version         3.312
 #
      loop_
     _dictionary_history.version
@@ -1313,6 +1313,13 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes (jdw):
     + Added new category pdbx_struct_comp_nstd_link.
     + Added _chem_comp.type 'Iso-peptide linking'  enumeration.
+;
+  3.312 2011-02-03
+;
+  Changes (jdw):
+    + Removed _chem_comp.type 'Iso-peptide linking'  enumeration and replaced this
+      with - 'L-gamma-peptide, C-delta linking', 'D-gamma-peptide, C-delta linking',
+     'L-beta-peptide,  C-gamma linking', and 'D-beta-peptide,  C-gamma linking'.
 ;
 
 #

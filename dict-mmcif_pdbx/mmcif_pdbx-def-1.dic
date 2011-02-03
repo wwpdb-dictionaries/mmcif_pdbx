@@ -6646,32 +6646,37 @@ save__chem_comp.type
         '_chem_comp_link.type_comp_2'  '_chem_comp.type'
     _item_type.code               uline
     loop_
-    _item_enumeration.value      'D-peptide linking'
-                                 'L-peptide linking'
-                                 'D-peptide NH3 amino terminus'
-                                 'L-peptide NH3 amino terminus'
-                                 'D-peptide COOH carboxy terminus'
-                                 'L-peptide COOH carboxy terminus'
-                                 'DNA linking'
-                                 'RNA linking'
-                                 'L-RNA linking'
-                                 'L-DNA linking'
-                                 'DNA OH 5 prime terminus'
-                                 'RNA OH 5 prime terminus'
-                                 'DNA OH 3 prime terminus'
-                                 'RNA OH 3 prime terminus'
-                                 'D-saccharide 1,4 and 1,4 linking'
-                                 'L-saccharide 1,4 and 1,4 linking'
-                                 'D-saccharide 1,4 and 1,6 linking'
-                                 'L-saccharide 1,4 and 1,6 linking'
-                                 'L-saccharide'
-                                 'D-saccharide'
-                                 'saccharide'
-                                 'non-polymer'
-                                 'peptide linking'
-                                 'peptide-like'
-                                 'Iso-peptide linking'
-                                 'other'
+    _item_enumeration.value      
+    _item_enumeration.detail
+                                 'D-peptide linking'   .
+                                 'L-peptide linking'   .
+                                 'D-peptide NH3 amino terminus'  .
+                                 'L-peptide NH3 amino terminus'  .
+                                 'D-peptide COOH carboxy terminus' .
+                                 'L-peptide COOH carboxy terminus' .
+                                 'DNA linking'  .
+                                 'RNA linking'  .
+                                 'L-RNA linking' .
+                                 'L-DNA linking' .
+                                 'DNA OH 5 prime terminus'  .
+                                 'RNA OH 5 prime terminus'  .
+                                 'DNA OH 3 prime terminus'  .
+                                 'RNA OH 3 prime terminus'  .
+                                 'D-saccharide 1,4 and 1,4 linking'  .
+                                 'L-saccharide 1,4 and 1,4 linking'  .
+                                 'D-saccharide 1,4 and 1,6 linking'  .
+                                 'L-saccharide 1,4 and 1,6 linking'  .
+                                 'L-saccharide'  .
+                                 'D-saccharide'  .
+                                 'saccharide'    .
+                                 'non-polymer'   .
+                                 'peptide linking'  .
+                                 'peptide-like'     . 
+				 'L-gamma-peptide, C-delta linking'  'Iso-peptide linking L-gamma peptide'
+				 'D-gamma-peptide, C-delta linking'  'Iso-peptide linking D-gamma peptide'
+				 'L-beta-peptide,  C-gamma linking'  'Iso-peptide linking L-beta peptide'
+				 'D-beta-peptide,  C-gamma linking'  'Iso-peptide linking D-beta peptide'
+                                 'other' .
      save_
 
 #####################
