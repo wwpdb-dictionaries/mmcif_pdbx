@@ -6674,8 +6674,8 @@ save__chem_comp.type
                                  'peptide-like'     . 
 				 'L-gamma-peptide, C-delta linking'  'Iso-peptide linking L-gamma peptide'
 				 'D-gamma-peptide, C-delta linking'  'Iso-peptide linking D-gamma peptide'
-				 'L-beta-peptide,  C-gamma linking'  'Iso-peptide linking L-beta peptide'
-				 'D-beta-peptide,  C-gamma linking'  'Iso-peptide linking D-beta peptide'
+				 'L-beta-peptide, C-gamma linking'  'Iso-peptide linking L-beta peptide'
+				 'D-beta-peptide, C-gamma linking'  'Iso-peptide linking D-beta peptide'
                                  'other' .
      save_
 
