@@ -1538,7 +1538,7 @@ pdbx_struct_comp_nstd_link    1 '_pdbx_struct_comp_nstd_link.label_seq_id'	   '_
 #pdbx_struct_comp_nstd_link    1 '_pdbx_struct_comp_nstd_link.PDB_ins_code'	   '_atom_site.ndb_ins_code'                   atom_site
 
 #
-pdbx_entity_group_components   1  '_pdbx_entity_group_components.group_id'        '_pdbx_entity_group.id'       pdbx_entity_group
+pdbx_entity_group_components   1  '_pdbx_entity_group_components.group_id'        '_pdbx_entity_group.id'       pdbx_entity_group_list
 pdbx_entity_group_components   2  '_pdbx_entity_group_components.entity_id'       '_entity.id'                  entity 
 pdbx_entity_group_components   3  '_pdbx_entity_group_components.beg_seq_id'      '_entity_poly_seq.num'        entity_poly_seq
 pdbx_entity_group_components   4  '_pdbx_entity_group_components.end_seq_id'      '_entity_poly_seq.num'        entity_poly_seq
