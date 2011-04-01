@@ -1,6 +1,6 @@
 ###
 ###   File: prd-extension-v3.dic
-###   Date: Mar 30, 2011
+###   Date: April 1, 2011
 ###
 ###   Revised with additional categories to capture entity level details.
 ###
@@ -3121,11 +3121,10 @@ save__pdbx_struct_group_list.type
     loop_
     _item_enumeration.value
     _item_enumeration.detail      
-    'Molecular Complex'
-    'Heterogen Complex'
-#   For future extension ----
-#    'TLS group' 
-#    'NCS group'
+    'Molecular Complex'  "Molecule composed of polymer and non-polymer components"
+    'Heterogen Complex'  "Molecule composed of non-polymer components"
+    'TLS group'          "Component and/or atom selection defining a TLS group'
+    'NCS group'          "Component and/or atom selection defining an NCS group'
 #
      save_
 
@@ -3418,6 +3417,21 @@ save__pdbx_struct_group_components.label_seq_id
     _item_linked.parent_name    '_atom_site.label_seq_id'
      save_
 
+save__pdbx_struct_group_components.label_alt_id
+    _item_description.description
+;   Part of the identifier for the component in this group assignment.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_components.label_alt_id'
+    _item.category_id            pdbx_struct_group_components
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_group_components.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
 
 #######################################
 ## PDBX_STRUCT_GROUP_COMPONENT_RANGE ##
@@ -3610,6 +3624,21 @@ save__pdbx_struct_group_component_range.beg_label_seq_id
 
      save_
 
+save__pdbx_struct_group_component_range.beg_label_alt_id
+    _item_description.description
+;   Part of the identifier for the component range in this group assignment.
+  
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_component_range.beg_label_alt_id'
+    _item.category_id            pdbx_struct_group_component_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_group_component_range.beg_label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
 save__pdbx_struct_group_component_range.end_auth_asym_id
      _item_description.description
 ;    Part of the identifier for the component range in this group assignment.
@@ -3714,5 +3743,22 @@ save__pdbx_struct_group_component_range.end_label_seq_id
     _item_linked.child_name     '_pdbx_struct_group_component_range.end_label_seq_id'
     _item_linked.parent_name    '_atom_site.label_seq_id'
      save_
+
+
+save__pdbx_struct_group_component_range.end_label_alt_id
+    _item_description.description
+;   Part of the identifier for the component range in this group assignment.
+  
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_component_range.end_label_alt_id'
+    _item.category_id            pdbx_struct_group_component_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_group_component_range.end_label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
 
 
