@@ -1,7 +1,15 @@
 ###
 ###   File: prd-extension-v3.dic
-###   Date: April 1, 2011
+###   Date: April 1, 2011  jdw
 ###
+###   Updated: April 5, 2011 jdw -  Added non-standard polymer linking details in 
+###                            category  PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK,
+###                            added  _pdbx_reference_entity_list.nonpoly_residue_number
+###                            changed the representative flag item name to 
+###                           _pdbx_reference_entity_instances.prd_representative_flag.
+###                           added instance level nonpolymer residue preference,
+###			      _pdbx_entity_group_components.nonpoly_residue_number
+###        
 ###   Revised with additional categories to capture entity level details.
 ###
 ###   PDBX_REFERENCE_ENTITY_LIST
@@ -25,6 +33,10 @@
 ###
 ###   PDBX_ENTITY_GROUP_INSTANCES is provided to map entity-level molecular definitions
 ###   to coordinate observations in the PDBX_STRUCT_GROUP_LIST.
+###
+###
+###   PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK is provided to record non-standard polymer 
+###   linkages including linkages between non-standard polymer componnents.
 ###
 
 ##################################
@@ -306,13 +318,15 @@ _pdbx_reference_entity_list.prd_id
 _pdbx_reference_entity_list.ref_entity_id
 _pdbx_reference_entity_list.type
 _pdbx_reference_entity_list.details
-FAM_000411 PRD_000001 1  'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"
-FAM_000411 PRD_000001 2  'non-polymer' "QUINALDIC ACID CHROMOPHORE"
-FAM_000411 PRD_000001 3  'non-polymer' "QUINALDIC ACID CHROMOPHORE"
+_pdbx_reference_entity_list.nonpoly_residue_number
 
-FAM_000411 PRD_000004 1  'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"
-FAM_000411 PRD_000004 2  'non-polymer' "QUINOXALINE CHROMOPHORE"
-FAM_000411 PRD_000004 3  'non-polymer' "QUINOXALINE CHROMOPHORE"
+FAM_000411 PRD_000001 1  'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"   .
+FAM_000411 PRD_000001 2  'non-polymer' "QUINALDIC ACID CHROMOPHORE"              0
+FAM_000411 PRD_000001 3  'non-polymer' "QUINALDIC ACID CHROMOPHORE"              9
+
+FAM_000411 PRD_000004 1  'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"   .
+FAM_000411 PRD_000004 2  'non-polymer' "QUINOXALINE CHROMOPHORE"                 0
+FAM_000411 PRD_000004 3  'non-polymer' "QUINOXALINE CHROMOPHORE"                 9
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -379,6 +393,17 @@ save__pdbx_reference_entity_list.details
      save_
 
 
+save__pdbx_reference_entity_list.nonpoly_residue_number
+    _item_description.description
+;              The preferred residue number for this non-polymer entity in a complex.
+;
+    _item.name                  '_pdbx_reference_entity_list.nonpoly_residue_number'
+    _item.category_id             pdbx_reference_entity_list
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
 
 ###################################
 ## PDBX_REFERENCE_ENTITY_NONPOLY ##
@@ -410,15 +435,10 @@ loop_
 _pdbx_reference_entity_nonpoly.family_prd_id
 _pdbx_reference_entity_nonpoly.prd_id
 _pdbx_reference_entity_nonpoly.ref_entity_id
-_pdbx_reference_entity_nonpoly.type
-_pdbx_reference_entity_nonpoly.details
-FAM_000411 PRD_000001 1  'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"
-FAM_000411 PRD_000001 2  'non-polymer' "QUINALDIC ACID CHROMOPHORE"
-FAM_000411 PRD_000001 3  'non-polymer' "QUINALDIC ACID CHROMOPHORE"
+_pdbx_reference_entity_nonpoly.name
+_pdbx_reference_entity_nonpoly.three_letter_code
+FAM_000411 PRD_000004 2  "2-CARBOXYQUINOXALINE"  QUI  
 
-FAM_000411 PRD_000004 1  'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"
-FAM_000411 PRD_000004 2  'non-polymer' "QUINOXALINE CHROMOPHORE"
-FAM_000411 PRD_000004 3  'non-polymer' "QUINOXALINE CHROMOPHORE"
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -482,7 +502,7 @@ save__pdbx_reference_entity_nonpoly.name
     _item_type.code               text
      loop_
     _item_examples.case
-                                'thiostrepton'
+                               "2-CARBOXYQUINOXALINE"  
      save_
 
 save__pdbx_reference_entity_nonpoly.three_letter_code
@@ -510,7 +530,10 @@ save_pdbx_reference_entity_link
 ;
     _category.id                  pdbx_reference_entity_link
     _category.mandatory_code      no
-    _category_key.name          '_pdbx_reference_entity_link.link_id'
+    loop_
+    _category_key.name          '_pdbx_reference_entity_link.family_prd_id'
+                                '_pdbx_reference_entity_link.prd_id'
+                                '_pdbx_reference_entity_link.link_id'
      loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
@@ -555,8 +578,9 @@ FAM_000411 PRD_000005 3 1 3 NCY SG 1 7 NCY SG 'single'
 
 save__pdbx_reference_entity_link.link_id
     _item_description.description
-;              This data item is a pointer to _chem_link.id in the 
-               CHEM_LINK category.
+;              The value of _pdbx_reference_entity_link.link_id uniquely identifies
+               linkages between entities with a molecule.
+
 ;
     _item.name                  '_pdbx_reference_entity_link.link_id'
     _item.mandatory_code          yes
@@ -667,10 +691,10 @@ save__pdbx_reference_entity_link.comp_id_1
     _item_description.description
 ;              The component identifier in the first of the two entities containing the linkage. 
 
-               For polymer entities, his data item is a pointer to _pdbx_reference_entity_poly_seq.mon_id 
+               For polymer entities, this data item is a pointer to _pdbx_reference_entity_poly_seq.mon_id 
                in the PDBX_REFERENCE_ENTITY_POLY_SEQ category.
 
-               For non-polymer entities, his data item is a pointer to 
+               For non-polymer entities, this data item is a pointer to 
                _pdbx_reference_entity_nonpoly.three-letter-code in the 
                PDBX_REFERENCE_ENTITY_NONPOLY category.
 
@@ -687,7 +711,7 @@ save__pdbx_reference_entity_link.comp_id_2
                For polymer entities, this data item is a pointer to _pdbx_reference_entity_poly_seq.mon_id 
                in the PDBX_REFERENCE_ENTITY_POLY_SEQ category.
 
-               For non-polymer entities, his data item is a pointer to 
+               For non-polymer entities, this data item is a pointer to 
                _pdbx_reference_entity_nonpoly.three-letter-code in the 
                PDBX_REFERENCE_ENTITY_NONPOLY category.
 
@@ -1119,7 +1143,7 @@ save_pdbx_reference_entity_instances
  _pdbx_reference_entity_instances.ordinal
  _pdbx_reference_entity_instances.database_name
  _pdbx_reference_entity_instances.database_id
- _pdbx_reference_entity_instances.family_representative_flag
+ _pdbx_reference_entity_instances.prd_representative_flag
  FAM_000001  PRD_000001  1 PDB 173d   Y
  FAM_000001  PRD_000001  2 PDB 1a7y   N
  FAM_000001  PRD_000001  3 PDB 1dsc   N
@@ -1211,12 +1235,12 @@ save__pdbx_reference_entity_instances.database_id
     _item_examples.case          '1ABC'
      save_
 
-save__pdbx_reference_entity_instances.family_representative_flag
+save__pdbx_reference_entity_instances.prd_representative_flag
     _item_description.description
 ;              A flag to indicate that this instance is the representative for 
-                example instance for the family.
+               this molecule.
 ;
-    _item.name                  '_pdbx_reference_entity_instances.family_representative_flag'
+    _item.name                  '_pdbx_reference_entity_instances.prd_representative_flag'
     _item.category_id            pdbx_reference_entity_instances
     _item.mandatory_code         yes
     _item_type.code              ucode
@@ -2975,6 +2999,19 @@ save__pdbx_entity_group_components.end_seq_id
     _item_linked.parent_name    '_entity_poly_seq.num'
      save_
 
+save__pdbx_entity_group_components.nonpoly_residue_number
+    _item_description.description
+;    For nonpolymer entities the preferred residue number for this residue molecular complex.
+
+;
+    _item.name                  '_pdbx_entity_group_components.nonpoly_residue_number'
+    _item.category_id             pdbx_entity_group_components
+    _item.mandatory_code          no
+    _item_type.code               int
+
+     save_
+
+
 #################################
 ## PDBX_ENTITY_GROUP_INSTANCES ##
 #################################
@@ -3761,4 +3798,224 @@ save__pdbx_struct_group_component_range.end_label_alt_id
      save_
 
 
+##########################################
+## PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK ##
+##########################################
+
+save_pdbx_reference_entity_poly_nstd_link
+    _category.description
+;              Data items in the PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK category give details about
+               non-standard polymer linkages including linkages between non-standard polymer componnents.
+;
+    _category.id                  pdbx_reference_entity_poly_nstd_link
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_reference_entity_poly_nstd_link.family_prd_id'
+                                 '_pdbx_reference_entity_poly_nstd_link.prd_id'
+                                 '_pdbx_reference_entity_poly_nstd_link.ref_entity_id'
+                                 '_pdbx_reference_entity_poly_nstd_link.link_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+loop_
+_pdbx_reference_entity_poly_nstd_link.family_prd_id
+_pdbx_reference_entity_poly_nstd_link.prd_id
+_pdbx_reference_entity_poly_nstd_link.ref_entity_id
+_pdbx_reference_entity_poly_nstd_link.link_id
+_pdbx_reference_entity_poly_nstd_link.entity_seq_num_1
+_pdbx_reference_entity_poly_nstd_link.comp_id_1
+_pdbx_reference_entity_poly_nstd_link.atom_id_1
+_pdbx_reference_entity_poly_nstd_link.entity_seq_num_2
+_pdbx_reference_entity_poly_nstd_link.comp_id_2
+_pdbx_reference_entity_poly_nstd_link.atom_id_2
+_pdbx_reference_entity_poly_nstd_link.value_order
+FAM_000411 PRD_000001 1 1 1 DSN C 2 ALA N  'single'
+FAM_000411 PRD_000001 1 2 2 ALA C 3 N2C N  'single'
+FAM_000411 PRD_000001 1 3 2 ALA C 3 N2C N  'single'
+FAM_000411 PRD_000001 1 4 2 ALA C 3 NCY N  'single'
+FAM_000411 PRD_000001 1 5 3 N2C C 4 MVA N  'single'
+FAM_000411 PRD_000001 1 6 3 NCY C 4 MVA N  'single'
+FAM_000411 PRD_000001 1 7 4 MVA C 5 DSN OG 'single'
+FAM_000411 PRD_000001 1 8 5 DSN C 6 ALA N  'single'
+FAM_000411 PRD_000001 1 8 6 ALA C 7 NCY N  'single'
+FAM_000411 PRD_000001 1 9 6 ALA C 7 N2C N  'single'
+FAM_000411 PRD_000001 1 8 7 NCY C 8 MVA N  'single'
+FAM_000411 PRD_000001 1 9 7 N2C C 8 MVZ N  'single'
+....
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_reference_entity_poly_nstd_link.link_id
+    _item_description.description
+;     The value of _pdbx_reference_entity_poly_nstd_link.link_id uniquely identifies
+      a non-standard linkage within a polymer entity.
+;
+    _item.name                  '_pdbx_reference_entity_poly_nstd_link.link_id'
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_reference_entity_poly_nstd_link.prd_id
+    _item_description.description
+;    The value of _pdbx_reference_entity_poly_nstd_link.prd_id is a reference
+     _pdbx_reference_entity_list.prd_id in the PDBX_REFERENCE_ENTITY_POLY category.
+;
+    _item.name                  '_pdbx_reference_entity_poly_nstd_link.prd_id'
+    _item.category_id             pdbx_reference_entity_poly_nstd_link
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.prd_id'
+    _item_linked.parent_name    '_pdbx_reference_entity_poly.prd_id'
+     save_
+
+save__pdbx_reference_entity_poly_nstd_link.family_prd_id
+    _item_description.description
+;              The value of _pdbx_reference_entity_poly_nstd_link.family_prd_id is a reference to 
+              _pdbx_reference_entity_list.family_prd_id' in the PDBX_REFERENCE_ENTITY_POLY category.
+;
+    _item.name                  '_pdbx_reference_entity_poly_nstd_link.family_prd_id'
+    _item.category_id             pdbx_reference_entity_poly_nstd_link
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.family_prd_id'
+    _item_linked.parent_name    '_pdbx_reference_entity_poly.family_prd_id'
+     save_
+
+save__pdbx_reference_entity_poly_nstd_link.details
+    _item_description.description
+;              A description of special aspects of this non-standard linkage.
+;
+    _item.name                  '_pdbx_reference_entity_poly_nstd_link.details'
+    _item.category_id             pdbx_reference_entity_poly_nstd_link
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_reference_entity_poly_nstd_link.ref_entity_id
+    _item_description.description
+;              The reference entity id of the polymer entity containing the non-standard linkage.
+
+               This data item is a pointer to _pdbx_reference_entity_poly.ref_entity_id 
+               in the PDBX_REFERENCE_ENTITY_POLY category.
+;
+    _item.name                  '_pdbx_reference_entity_poly_nstd_link.ref_entity_id'
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.ref_entity_id'
+    _item_linked.parent_name    '_pdbx_reference_entity_list.ref_entity_id'
+     save_
+
+save__pdbx_reference_entity_poly_nstd_link.entity_seq_num_1
+    _item_description.description
+;              For a polymer entity, the sequence number in the first of 
+               the two components making the non-standard linkage. 
+
+               This data item is a pointer to _pdbx_reference_entity_poly_seq.num 
+               in the PDBX_REFERENCE_ENTITY_POLY_SEQ category.
+
+;
+    _item.name                  '_pdbx_reference_entity_poly_nstd_link.entity_seq_num_1'
+    _item.mandatory_code          no
+    _item_type.code               int    
+    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.entity_seq_num_1'
+    _item_linked.parent_name    '_pdbx_reference_entity_poly_seq.num'
+     save_
+
+save__pdbx_reference_entity_poly_nstd_link.entity_seq_num_2
+    _item_description.description
+;              For a polymer entity, the sequence number in the second of 
+               the two components making the non-standard linkage. 
+
+               This data item is a pointer to _pdbx_reference_entity_poly_seq.num 
+               in the PDBX_REFERENCE_ENTITY_POLY_SEQ category.
+
+;
+    _item.name                  '_pdbx_reference_entity_poly_nstd_link.entity_seq_num_2'
+    _item.mandatory_code          no
+    _item_type.code               int    
+    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.entity_seq_num_2'
+    _item_linked.parent_name    '_pdbx_reference_entity_poly_seq.num'
+     save_
+
+
+save__pdbx_reference_entity_poly_nstd_link.comp_id_1
+    _item_description.description
+;              The component identifier in the first of the two components making the 
+               non-standard linkage.
+
+               This data item is a pointer to _pdbx_reference_entity_poly_seq.mon_id 
+               in the PDBX_REFERENCE_ENTITY_POLY_SEQ category.
+;
+    _item.name                  '_pdbx_reference_entity_poly_nstd_link.comp_id_1'
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.comp_id_1'
+    _item_linked.parent_name    '_pdbx_reference_entity_poly_seq.mon_id'
+     save_
+
+save__pdbx_reference_entity_poly_nstd_link.comp_id_2
+    _item_description.description
+;              The component identifier in the second of the two components making the 
+               non-standard linkage.
+
+               This data item is a pointer to _pdbx_reference_entity_poly_seq.mon_id 
+               in the PDBX_REFERENCE_ENTITY_POLY_SEQ category.
+;
+    _item.name                  '_pdbx_reference_entity_poly_nstd_link.comp_id_2'
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.comp_id_2'
+    _item_linked.parent_name    '_pdbx_reference_entity_poly_seq.mon_id'
+     save_
+
+save__pdbx_reference_entity_poly_nstd_link.atom_id_1
+    _item_description.description
+;              The atom identifier/name in the first of the two components making
+               the non-standard linkage.
+
+;
+    _item.name                  '_pdbx_reference_entity_poly_nstd_link.atom_id_1'
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+     save_
+
+save__pdbx_reference_entity_poly_nstd_link.atom_id_2
+    _item_description.description
+;              The atom identifier/name in the second of the two components making
+               the non-standard linkage.            
+;
+    _item.name                  '_pdbx_reference_entity_poly_nstd_link.atom_id_2'
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_reference_entity_poly_nstd_link.value_order
+    _item_description.description
+;              The bond order target for the non-standard linkage.
+;
+    _item.name                  '_pdbx_reference_entity_poly_nstd_link.value_order'
+    _item.category_id             pdbx_reference_entity_poly_nstd_link
+    _item.mandatory_code          no
+    _item_default.value           sing
+    _item_type.code               ucode
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail      sing  'single bond'
+                                  doub  'double bond'
+                                  trip  'triple bond'
+                                  quad  'quadruple bond'
+                                  arom  'aromatic bond'
+                                  poly  'polymeric bond'
+                                  delo  'delocalised double bond'
+                                  pi    'pi bond'
+     save_
 

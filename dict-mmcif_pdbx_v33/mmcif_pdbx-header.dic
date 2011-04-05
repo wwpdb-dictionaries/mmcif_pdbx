@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         3.315
+    _dictionary.version         3.316
 #
      loop_
     _dictionary_history.version
@@ -1363,6 +1363,14 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    PDBX_ENTITY_GROUP_INSTANCES is provided to map entity-level molecular definitions
    to coordinate observations in the PDBX_STRUCT_GROUP_LIST.
 ;
-#
+  3.316  2011-04-05
+;
+  Changes (jdw):  
+
+  + Added non-standard polymer linking details in category  PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK
+  + Added  _pdbx_reference_entity_list.nonpoly_residue_number 
+  + Changed the representative flag item name to _pdbx_reference_entity_instances.prd_representative_flag.
+  + Added instance level nonpolymer residue preference,  _pdbx_entity_group_components.nonpoly_residue_number
+;
 
 ### EOF mmcif_pdbx-header.dic 
