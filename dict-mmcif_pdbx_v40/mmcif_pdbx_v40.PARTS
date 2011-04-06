@@ -16,4 +16,7 @@ mmcif_pdbx-def-13.dic
 mmcif_pdbx-def-14.dic
 mmcif_pdbx-def-16.dic
 chem_comp_atom_feature.dic
-mmcif_pdbx-def-ilg.dic
+pdbx_struct_group_extension_v4.dic
+prd-extension-v4.dic
+mmcif_pdbx-def-15.dic
+mmcif_pdbx_internal-def-ilg.dic

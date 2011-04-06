@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         1.0690
+    _dictionary.version         4.000
 #
      loop_
     _dictionary_history.version
@@ -1214,97 +1214,168 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + Added REFI to enumerations for _pdbx_database_status.status_code and 
     _pdbx_database_status.release_status_code
 ;
-   1.0677 2010-06-10
+
+   3.300 2010-06-04
 ;
-  Changes (jdw): 
- + added - _pdbx_database_status.date_hold_chemical_shifts
+  PRELIMINARY DICTIONARY SUPPORT V3.3 FORMAT (jdw): 
+  + added _refine.pdbx_adp_type - to differentiate entries containing mark residual or full 
+    temperature factors 
+  + Modified _atom_site.B_iso_or_equiv definition modified to reflect new type information 
+    in _refine.pdbx_adp_type
+  + Change _refln.wavelength_id mandatory code to NO (optional)
+  + Change _diffrn_refln.wavelength_id mandatory code to NO (optional)
+  + Change _refln.crystal_id mandatory code to NO (optional)
+  + Change _refln.scale_group_code mandatory code to NO (optional)
+  + Change _diffrn_radiation.wavelength_id mandatory code to NO (optional)
+  + Add _diffrn_radiation.pdbx_scattering_type 
+  + Add _refln.pdbx_diffrn_id  as optional child item of _diffrn.id
+  + Add _reflns.pdbx_diffrn_id as optional child of item _diffrn.id
+  + Add _refine.pdbx_diffrn_id as optional child of item _diffrn.id
+  + Add _reflns_shell.pdbx_ordinal  as ordinal category key for reflns_shell category.
+  + Add _reflns_shell.pdbx_diffrn_id as optional child of item _diffrn.id
+  + Deprecate catetory  PDBX_DIFFRN_REFLNS_SHELL 
+  + Change category key for REFLNS to _reflns.pdbx_diffrn_id
+  + Change cateogry key for REFLNS_SHELL to _reflns_shell.pdbx_ordinal
+;
+   3.301 2010-06-10
+; 
+  Changes (jdw):
+  + Change to ordinal key in category REFLNS adding pdbx_ordinal.
+  + Admit multiple comma separated values for child items of pdbx_diffrn_id.
+  + added - _pdbx_database_status.date_hold_chemical_shifts
            _pdbx_database_status.date_chemical_shifts
            _pdbx_database_status.recvd_chemical_shifts
            _pdbx_database_status.dep_release_code_chemical_shifts                    
            _pdbx_database_status.date_of_cs_release
            _pdbx_database_status.status_code_cs
+
 ;
-   1.0678 2010-06-16
-;
-  Changes (jdw): 
+   3.302 2010-06-16
+; 
+  Changes (jdw):
   + _exptl.method - updated enumerations and details 
 	  'INFRARED SPECTROSCOPY'      'IR and FTIR only as supporting methods'
 	  'EPR'                        'EPR only as a supporting method'
 ;
-   1.0679 2010-06-29
+   3.303 2010-06-29
 ;
   Changes (jdw): 
   + Added items for fiber diffraction data collection - 
     _refln.pdbx_fiber_layer, _refln.pdbx_fiber_coordinate, _refln.pdbx_fiber_F_meas_au
 ;
-   1.0680 2010-08-02
+   3.304 2010-08-02
 ;
   Changes (jdw): 
   + Updated enumerations for item _pdbx_chem_comp_audit.action_type and the example for this category.
 ;
-   1.0681 2010-09-16
+   3.305 2010-09-16
 ;
   Changes (jdw): 
   + Data type for _pdbx_chem_comp_audit.action_type changed from code to line.
   + Enumerations details corrected for _chem_comp_bond.pdbx_stereo_config
 ;
-   1.0682 2010-09-24
+   3.306 2010-09-24
 ;
-  Changes (jdw): 
-   + added pdbx_chem_comp_atom_feature category
+  Changes (jdw):
+   + _chem_comp.pdbx_processing_site enumerations revised to 'PDBE' 'PDBJ' 'RCSB'
+   +  pdbx_chem_comp_atom_feature category
    + data type for _chem_comp.one_letter_code changed from uchar1 to ucode to handle components
      derived from multiple parent components and chromophores.
-   + _pdbx_database_status.process_site and deposit_site enumerations extended with PDBE and PDBJ
+   + standardized enumerations for _pdbx_database_status.process_site and deposit_site.
    + _chem_comp.pdbx_release_status enumeration extended with REF_ONLY to identify reference components.
 ;
-   1.0683 2010-09-30
+   3.307 2010-09-30
 ;
-  Changes (jdw): 
+  Changes (jdw):
   + change data type for _chem_comp.name from line to text.
   + add pdbx_entity_reference_family category and add pdbx_entity_reference_family.family_prd_id 
     as a part of key in pdbx_entity_reference* categories.
   + _pdbx_reference_entity_poly.db_code and _pdbx_reference_entity_poly.db_name
 ;
-   1.0684 2010-11-22
+   3.308 2010-11-19
+;
+  Changes (jdw):
+  + Added __reflns.phase_calculation_details from the v3.2 dictionary 
+  + Replaced _refine.pdbx_adp_type with _refine.pdbx_TLS_residual_ADP_flag
+;
+   3.309 2010-11-22
 ;
   Changes (jdw):
   +parent for _pdbx_remediation_atom_site_mapping.auth_alt_id removed.
 ;
-  1.0685 2010-11-29
+  3.310 2010-11-29
 ;
   Changes (jdw):
     Added new categories for PRD - pdbx_reference_entity_group, pdbx_reference_entity_group_components, and pdbx_reference_entity_grouping
 ;
-  1.0686 2011-01-25
+  3.311 2011-01-25
 ;
   Changes (jdw):
     + Added new category pdbx_struct_comp_nstd_link.
     + Added _chem_comp.type 'Iso-peptide linking'  enumeration.
 ;
-  1.0687 2011-02-03
+  3.312 2011-02-03
 ;
   Changes (jdw):
     + Removed _chem_comp.type 'Iso-peptide linking'  enumeration and replaced this
       with - 'L-gamma-peptide, C-delta linking', 'D-gamma-peptide, C-delta linking',
      'L-beta-peptide,  C-gamma linking', and 'D-beta-peptide,  C-gamma linking'.
 ;
-  1.0688 2011-02-21
+  3.313 2011-02-21
 ;
   Changes (jdw):
    + Added categories pdbx_entity_group and pdbx_entity_group_components
 ;
-  1.0689 2011-03-24
+  3.314  2011-03-24
 ;
   Changes (jdw):
    + updated enumeration list for _pdbx_SG_project.project_name.
 ;
-  1.0690 2011-04-06
-;
- Changes(jdw):
-   + Remove provisional unused category pdbx_struct_comp_nstd_link.
-   + Remove provisional unused categories pdbx_entity_group and pdbx_entity_group_components
-   + Remove provisional unused pdbx_entity_reference_* categories 
 
-   These categories will be reintroduced in reorganized form in PDBx dictionary version 4.0.
+  3.315  2011-03-31
 ;
-#
+  Changes (jdw):
+
+   + Add comma separated data type ucode-alphanum-csv
+
+   + Revised with additional categories to capture entity level details.
+
+   PDBX_REFERENCE_ENTITY_LIST
+   PDBX_REFERENCE_ENTITY_NONPOLY
+   PDBX_REFERENCE_ENTITY_LINK
+ 
+   ref_entity_id incorporated as an additional key where appropriate.
+
+  _pdbx_reference_entity_list.ref_entity_id
+  _pdbx_reference_entity_nonpoly.ref_entity_id
+  _pdbx_reference_entity_link.ref_entity_id_1
+  _pdbx_reference_entity_poly.ref_entity_id
+  _pdbx_reference_entity_poly_seq.ref_entity_id
+  _pdbx_reference_entity_sequence.ref_entity_id
+
+   + New categories to be included within PDB entries -- 
+
+   PDBX_ENTITY_GROUP_LIST and 
+
+   PDBX_STRUCT_GROUP_LIST and related categories are provided to map
+   entity level information to the copies in the deposited coordinates.
+
+   PDBX_ENTITY_GROUP_INSTANCES is provided to map entity-level molecular definitions
+   to coordinate observations in the PDBX_STRUCT_GROUP_LIST.
+;
+  3.316  2011-04-05
+;
+  Changes (jdw):  
+
+  + Added non-standard polymer linking details in category  PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK
+  + Added  _pdbx_reference_entity_list.nonpoly_residue_number 
+  + Changed the representative flag item name to _pdbx_reference_entity_instances.prd_representative_flag.
+  + Added instance level nonpolymer residue preference,  _pdbx_entity_group_components.nonpoly_residue_number
+;
+
+  4.000  2011-04-06
+;
+  Changes (jdw):  
+  + Release as provision version 4.000
+;
+### EOF mmcif_pdbx-header.dic 

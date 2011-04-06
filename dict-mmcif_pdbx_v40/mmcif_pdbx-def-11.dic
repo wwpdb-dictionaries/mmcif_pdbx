@@ -1,0 +1,2461 @@
+##
+## DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT-DRAFT
+##
+## PDBx Dictionary Extensions for: 
+##
+## wwPDB Annotation Recommendations on PDB processing procedures 
+##       and policies (version Aug 31,2006)
+##
+##   *********** cifized draft extensions on 2006-09-12 (jdw) ***********
+##   *********** Revised  draft extensions on 2006-09-25 (jdw) ***********
+##
+
+## NOTES: 
+##
+## Twinning items to be added from PDB_EXTRACT examples.
+##
+
+##
+##  For nonpolymer instance geometries.  
+##  Please see: GEOM_BOND, GEOM_ANGLE, GEOM_TORSION.
+##
+
+##
+##  For nonpolymer environments please see:   STRUCT_SITE / STRUCT_SITE_GEN
+##
+
+## TLS extensions if necessary for atom level tensors.
+  
+## END NOTES 
+
+
+##
+##  Preliminary data definitions for twinning.
+##   (from H.Yang as implemented in PDB_EXTRACT) 
+##
+##  cifized draft - jdw 20060912
+##
+save_pdbx_reflns_twin
+    _category.description
+;             Details decribing crystallographic twinning.
+;
+    _category.id                  'pdbx_reflns_twin'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name            '_pdbx_reflns_twin.crystal_id'
+                                  '_pdbx_reflns_twin.diffrn_id'
+                                  '_pdbx_reflns_twin.operator'
+#
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'refln_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+     loop_
+    _pdbx_reflns_twin.diffrn_id
+    _pdbx_reflns_twin.crystal_id
+    _pdbx_reflns_twin.type
+    _pdbx_reflns_twin.operator
+    _pdbx_reflns_twin.fraction
+    _pdbx_reflns_twin.mean_I2_over_mean_I_square   
+    _pdbx_reflns_twin.mean_F_square_over_mean_F2   
+       1 1  merohedral     'h,-h-k,-l'   .43   1.3  .84
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_reflns_twin.diffrn_id
+    _item_description.description
+;             The diffraction data set identifier.  A reference to 
+              _diffrn.id in category DIFFRN.
+;
+    _item.name                   '_pdbx_reflns_twin.diffrn_id'
+    _item.category_id            'pdbx_reflns_twin'
+    _item.mandatory_code          yes
+    _item_type.code               code
+    save_
+
+
+save__pdbx_reflns_twin.crystal_id
+    _item_description.description
+;             The crystal identifier.  A reference to 
+              _exptl_crystal.id in category EXPTL_CRYSTAL.
+;
+    _item.name                   '_pdbx_reflns_twin.crystal_id'
+    _item.category_id            'pdbx_reflns_twin'
+    _item.mandatory_code          yes
+    _item_type.code               code
+    save_
+
+
+save__pdbx_reflns_twin.domain_id
+    _item_description.description
+;             An identifier for the twin domain.  
+;
+    _item.name                   '_pdbx_reflns_twin.domain_id'
+    _item.category_id            'pdbx_reflns_twin'
+    _item.mandatory_code          no
+    _item_type.code               code
+    save_
+
+
+save__pdbx_reflns_twin.type
+    _item_description.description
+;
+  There are two types of twinning: merohedral or hemihedral 
+                                   non-merohedral or epitaxial
+
+  For merohedral twinning the diffraction patterns from the different domains are
+  completely superimposable.   Hemihedral twinning is a special case of merohedral 
+  twinning. It only involves two distinct domains.  Pseudo-merohedral twinning is 
+  a subclass merohedral twinning in which lattice is coincidentally superimposable.
+ 
+  In the case of non-merohedral or epitaxial twinning  the reciprocal 
+  lattices do not superimpose exactly. In this case the  diffraction pattern 
+  consists of two (or more) interpenetrating lattices, which can in principle 
+  be separated.
+;
+    _item.name                   '_pdbx_reflns_twin.type'
+    _item.category_id            'pdbx_reflns_twin'
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_enumeration.value    
+    'merohedral'
+    'hemihedral'
+    'non-merohedral'
+    'pseudo-merohedral'
+    'epitaxial'
+    'tetartohedral'
+save_
+
+save__pdbx_reflns_twin.operator
+    _item_description.description
+; 
+
+The possible merohedral or hemihedral twinning operators for different 
+point groups are:
+
+True point group  	Twin operation  	hkl related to
+3                      	2 along a,b             h,-h-k,-l  
+                       	2 along a*,b*           h+k,-k,-l 
+                        2 along c               -h,-k,l  
+4                       2 along a,b,a*,b*       h,-k,-l   
+6                       2 along a,b,a*,b*       h,-h-k,-l  
+321                     2 along a*,b*,c         -h,-k,l  
+312                     2 along a,b,c           -h,-k,l  
+23                      4 along a,b,c            k,-h,l  
+
+References:
+ Yeates, T.O. (1997) Methods in Enzymology 276, 344-358. Detecting and
+ Overcoming Crystal Twinning.
+
+ and information from the following on-line sites:
+
+   CNS site http://cns.csb.yale.edu/v1.1/
+   CCP4 site http://www.ccp4.ac.uk/dist/html/detwin.html
+   SHELX site http://shelx.uni-ac.gwdg.de/~rherbst/twin.html
+
+;
+    _item.name                   '_pdbx_reflns_twin.operator'
+    _item.category_id            'pdbx_reflns_twin'
+    _item.mandatory_code          yes
+    _item_type.code               line
+
+    loop_
+    _item_examples.case
+ 'h,-h-k,-l'
+ 'h+k,-k,-l' 
+ '-h,-k,l'  
+ 'h,-k,-l'   
+ 'h,-h-k,-l'  
+ '-h,-k,l'  
+ '-h,-k,l'  
+ 'k,-h,l'  
+save_
+
+save__pdbx_reflns_twin.fraction
+    _item_description.description
+; 
+The twin fraction or twin factor represents a quantitative parameter for the
+crystal twinning.  The value 0 represents no twinning, < 0.5 partial twinning,
+ = 0.5 for perfect twinning.
+;
+    _item.name                   '_pdbx_reflns_twin.fraction'
+    _item.category_id            'pdbx_reflns_twin'
+    _item.mandatory_code          yes
+    _item_type.code               float
+save_
+
+save__pdbx_reflns_twin.mean_I2_over_mean_I_square
+    _item_description.description
+; 
+The ideal statistics for twinned crystals. The values calculated with the
+acentric data are given below. 
+
+Statistic	Untwinned data	Perfect twinned data
+<I^2>/<I>^2	2.0             1.5
+<F>^2/<F^2>	0.785           0.865
+
+References:
+ Yeates, T.O. (1997) Methods in Enzymology 276, 344-358. Detecting and
+     Overcoming Crystal Twinning.
+
+ and information from the following on-line sites:
+   CNS site http://cns.csb.yale.edu/v1.1/
+   CCP4 site http://www.ccp4.ac.uk/dist/html/detwin.html
+   SHELX site http://shelx.uni-ac.gwdg.de/~rherbst/twin.html
+;
+    _item.name                   '_pdbx_reflns_twin.mean_I2_over_mean_I_square'
+    _item.category_id            'pdbx_reflns_twin'
+    _item.mandatory_code          no
+    _item_type.code               float
+save_
+
+save__pdbx_reflns_twin.mean_F_square_over_mean_F2
+    _item_description.description
+; 
+The ideal statistics for twinned crystals. The values calculated with the
+acentric data are given below. 
+
+Statistic	Untwinned data	Perfect twinned data
+<I^2>/<I>^2	2.0             1.5
+<F>^2/<F^2>	0.785           0.865
+
+References:
+ Yeates, T.O. (1997) Methods in Enzymology 276, 344-358. Detecting and
+     Overcoming Crystal Twinning.
+
+ and information from the following on-line sites:
+   CNS site http://cns.csb.yale.edu/v1.1/
+   CCP4 site http://www.ccp4.ac.uk/dist/html/detwin.html
+   SHELX site http://shelx.uni-ac.gwdg.de/~rherbst/twin.html
+
+;
+    _item.name                   '_pdbx_reflns_twin.mean_F_square_over_mean_F2'
+    _item.category_id            'pdbx_reflns_twin'
+    _item.mandatory_code          no
+    _item_type.code               float
+save_
+
+###
+###
+
+save__struct_conn.pdbx_dist_value
+    _item_description.description
+;             Distance value for this contact.
+;
+    _item.name                   '_struct_conn.pdbx_dist_value'
+    _item.category_id            'struct_conn'
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              'angstroms'
+save_
+
+save__struct_conn.pdbx_value_order
+    _item_description.description
+;              The chemical bond order associated with the specified atoms in 
+               this contact.
+;
+    _item.name                  '_struct_conn.pdbx_value_order'
+    _item.category_id             struct_conn
+    _item.mandatory_code          no
+    _item_default.value           sing
+    _item_type.code               ucode
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail      sing  'single bond'
+                                  doub  'double bond'
+                                  trip  'triple bond'
+                                  quad  'quadruple bond'
+     save_
+
+
+
+##
+save_pdbx_struct_info
+    _category.description
+;             Special features of this structural entry.
+;
+    _category.id                  'pdbx_struct_info'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name            '_pdbx_struct_info.type'
+                                  '_pdbx_struct_info.value'
+#
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+     loop_
+    _pdbx_struct_info.type
+    _pdbx_struct_info.value
+    'nonpolymer_zero_occupancy_flag'            Y
+    'polymer_zero_occupancy_flag'               Y
+    'multiple_model_flag'                       Y
+    'multiple_model_details'                    'Model 3 missing ligand ACX'
+    'nonpolymer_details'                        'Disordered ligand geometry for C34 with missing pyridine ring'
+    'missing atoms in alternate conformations'  Y
+    
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_info.type
+    _item_description.description
+;             The information category/type for this item.
+;
+    _item.name                   '_pdbx_struct_info.type'
+    _item.category_id            'pdbx_struct_info'
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value    
+    'nonpolymer_zero_occupancy_flag'            
+    'polymer_zero_occupancy_flag'               
+    'multiple_model_flag'                       
+    'multiple_model_details'                    
+    'nonpolymer_details'                        
+    'missing atoms in alternate conformations'  
+save_
+
+save__pdbx_struct_info.value
+    _item_description.description
+;             The value of this information item.
+;
+    _item.name                   '_pdbx_struct_info.value'
+    _item.category_id            'pdbx_struct_info'
+    _item.mandatory_code          yes
+    _item_type.code               text
+save_
+
+save__pdbx_struct_info.details
+    _item_description.description
+;             Additional details about this information item.
+;
+    _item.name                   '_pdbx_struct_info.details'
+    _item.category_id            'pdbx_struct_info'
+    _item.mandatory_code          no
+    _item_type.code               text
+save_
+
+
+##
+save_pdbx_re_refinement
+    _category.description
+;             Describes the origin of the experimental data used in this 
+              entry.
+;
+    _category.id                  'pdbx_re_refinement'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_re_refinement.entry_id'
+#
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'entry_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_re_refinement.entry_id          1ABC
+    _pdbx_re_refinement.citation_id       2
+    _pdbx_re_refinement.details           'Re-refinement of data from entry 1ABC'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_re_refinement.entry_id
+    _item_description.description
+;             The identifier for entry where the experimental data was obtained.
+;
+    _item.name                   '_pdbx_re_refinement.entry_id'
+    _item.category_id            'pdbx_re_refinement'
+    _item.mandatory_code          yes
+    _item_type.code               code
+save_
+
+save__pdbx_re_refinement.citation_id
+    _item_description.description
+;             A pointer to _citation.id in category CITATION describing the 
+              the citation of the entry from from which the experimental data
+              was obtained.
+;
+    _item.name                   '_pdbx_re_refinement.citation_id'
+    _item.category_id            'pdbx_re_refinement'
+    _item.mandatory_code          yes
+    _item_type.code               code
+save_
+
+save__pdbx_re_refinement.details
+    _item_description.description
+;             Additional details about this re-refinement.
+;
+    _item.name                   '_pdbx_re_refinement.details'
+    _item.category_id            'pdbx_re_refinement'
+    _item.mandatory_code          yes
+    _item_type.code               code
+save_
+
+
+#
+save_pdbx_struct_assembly_prop
+    _category.description
+;              Properties and features of structural assemblies.
+;
+    _category.id                  pdbx_struct_assembly_prop
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_struct_assembly_prop.type'
+                                '_pdbx_struct_assembly_prop.biol_id'
+#
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_struct_assembly_prop.biol_id    1
+    _pdbx_struct_assembly_prop.type       ABSA
+    _pdbx_struct_assembly_prop.value      1456.7
+    _pdbx_struct_assembly_prop.details    '   '
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_assembly_prop.biol_id
+    _item_description.description
+;             The identifier for the assembly used in category STRUCT_BIOL.
+;
+    _item.name                   '_pdbx_struct_assembly_prop.biol_id'
+    _item.category_id            'pdbx_struct_assembly_prop'
+    _item.mandatory_code          yes
+    _item_type.code               code
+save_
+
+save__pdbx_struct_assembly_prop.type
+    _item_description.description
+;             The property type for the assembly.
+;
+    _item.name                   '_pdbx_struct_assembly_prop.type'
+    _item.category_id            'pdbx_struct_assembly_prop'
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value    
+       'ABSA (A^2)' 
+       'SSA (A^2)' 
+       'MORE'
+save_
+
+save__pdbx_struct_assembly_prop.value
+    _item_description.description
+;             The value of the assembly property.
+;
+    _item.name                   '_pdbx_struct_assembly_prop.value'
+    _item.category_id            'pdbx_struct_assembly_prop'
+    _item.mandatory_code          yes
+    _item_type.code               text
+save_
+
+save__pdbx_struct_assembly_prop.details
+    _item_description.description
+;             Additional details about this assembly property.
+;
+    _item.name                   '_pdbx_struct_assembly_prop.details'
+    _item.category_id            'pdbx_struct_assembly_prop'
+    _item.mandatory_code          no
+    _item_type.code               text
+save_
+
+save__struct_biol.pdbx_aggregation_state
+    _item_description.description
+;              A description of the structural aggregation in this assembly.
+;
+    _item.name                  '_struct_biol.pdbx_aggregation_state'
+    _item.category_id             'struct_biol'
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_enumeration.value  
+      'MONOMER' 
+      'DIMER' 
+      'TRIMER'
+      'TETRAMER' 
+      'HEXAMER'
+      'MORE'
+     save_
+
+save__struct_biol.pdbx_assembly_method
+    _item_description.description
+;              The method or experiment used to determine this assembly.
+;
+    _item.name                  '_struct_biol.pdbx_assembly_method'
+    _item.category_id             'struct_biol'
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case   'AUTHOR PROVIDED', 'LCMS', 'PISA', 'PQS'
+     save_
+
+
+
+##
+##  DOI's 
+##
+save__entry.pdbx_DOI
+    _item_description.description
+;   Document Object Identifier (DOI) for this entry registered
+    with http://crossref.org.    
+;
+    _item.name                  '_entry.pdbx_DOI'
+    _item.category_id            'entry'
+    _item.mandatory_code          no
+    _item_type.code               code
+save_
+##
+ 
+save__citation.unpublished_flag
+    _item_description.description
+;   Flag to indicate that this citation will not be published.
+;
+    _item.name                  '_citation.unpublished_flag'
+    _item.category_id            'citation'
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_	 
+    _item_enumeration.value      
+       'Y'
+       'N'
+save_
+
+##
+##  Taxonomy ids.. 
+##
+
+save__entity_src_gen.pdbx_gene_src_ncbi_taxonomy_id
+    _item_description.description
+;  NCBI Taxonomy identifier for the gene source organism.
+
+   Reference:
+
+   Wheeler DL, Chappey C, Lash AE, Leipe DD, Madden TL, Schuler GD,
+   Tatusova TA, Rapp BA (2000). Database resources of the National
+   Center for Biotechnology Information. Nucleic Acids Res 2000 Jan
+   1;28(1):10-4 
+
+   Benson DA, Karsch-Mizrachi I, Lipman DJ, Ostell J, Rapp BA,
+   Wheeler DL (2000). GenBank. Nucleic Acids Res 2000 Jan 1;28(1):15-18.
+
+;
+    _item.name                  '_entity_src_gen.pdbx_gene_src_ncbi_taxonomy_id'
+    _item.category_id            'entity_src_gen'
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+save__entity_src_gen.pdbx_host_org_ncbi_taxonomy_id
+    _item_description.description
+;  NCBI Taxonomy identifier for the expression system organism.
+
+   Reference:
+
+   Wheeler DL, Chappey C, Lash AE, Leipe DD, Madden TL, Schuler GD,
+   Tatusova TA, Rapp BA (2000). Database resources of the National
+   Center for Biotechnology Information. Nucleic Acids Res 2000 Jan
+   1;28(1):10-4 
+
+   Benson DA, Karsch-Mizrachi I, Lipman DJ, Ostell J, Rapp BA,
+   Wheeler DL (2000). GenBank. Nucleic Acids Res 2000 Jan 1;28(1):15-18.
+
+;
+    _item.name                  '_entity_src_gen.pdbx_host_org_ncbi_taxonomy_id'
+    _item.category_id            'entity_src_gen'
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+
+save__entity_src_nat.pdbx_ncbi_taxonomy_id
+    _item_description.description
+;  NCBI Taxonomy identifier for the source organism.
+
+   Reference:
+
+   Wheeler DL, Chappey C, Lash AE, Leipe DD, Madden TL, Schuler GD,
+   Tatusova TA, Rapp BA (2000). Database resources of the National
+   Center for Biotechnology Information. Nucleic Acids Res 2000 Jan
+   1;28(1):10-4 
+
+   Benson DA, Karsch-Mizrachi I, Lipman DJ, Ostell J, Rapp BA,
+   Wheeler DL (2000). GenBank. Nucleic Acids Res 2000 Jan 1;28(1):15-18.
+
+;
+    _item.name                  '_entity_src_nat.pdbx_ncbi_taxonomy_id'
+    _item.category_id            'entity_src_nat'
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+
+
+#################################
+## PDBX_STRUCT_REF_SEQ_FEATURE ##
+#################################
+
+save_pdbx_struct_ref_seq_feature
+    _category.description
+;              Data items in the PDBX_STRUCT_REF_SEQ_FEATURE category provide a
+               mechanism for identifying and annotating sequence features.
+;
+    _category.id                  'pdbx_struct_ref_seq_feature'
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_struct_ref_seq_feature.feature_id'
+#
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_struct_ref_seq_feature.feature_id        1
+    _pdbx_struct_ref_seq_feature.align_id          algn2
+    _pdbx_struct_ref_seq_feature.beg_auth_mon_id   GLU
+    _pdbx_struct_ref_seq_feature.end_auth_mon_id   PHE
+    _pdbx_struct_ref_seq_feature.beg_auth_seq_id   10
+    _pdbx_struct_ref_seq_feature.end_auth_seq_id   14
+    _pdbx_struct_ref_seq_feature.type             'variant'
+    _pdbx_struct_ref_seq_feature.details
+    ;  Special 
+    ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_struct_ref_seq_feature.feature_id
+    _item_description.description
+;              Uniquely identfies a sequence feature in 
+               the STRUCT_REF_SEQ_FEATURE  category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.feature_id'
+    _item.category_id           'pdbx_struct_ref_seq_feature'
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_struct_ref_seq_feature.align_id
+    _item_description.description
+;              This data item is a pointer to _struct_ref_seq.align_id in
+               the STRUCT_REF_SEQ  category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.align_id'
+    _item.category_id            'pdbx_struct_ref_seq_feature'
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_struct_ref_seq_feature.type
+    _item_description.description
+;              A classification of the feature
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.type'
+    _item.category_id             'pdbx_struct_ref_seq_feature'
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_enumeration.value  
+     'deletion' 
+     'expression tag' 
+     'variant' 
+     'other'
+     save_
+
+save__pdbx_struct_ref_seq_feature.details
+    _item_description.description
+;              A description of special aspects of the feature
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.details'
+    _item.category_id             'pdbx_struct_ref_seq_feature'
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_struct_ref_seq_feature.pdb_strand_id 
+    _item_description.description
+;              PDB strand/chain id.       
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.pdb_strand_id'
+    _item.category_id             pdbx_struct_ref_seq_feature
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case       'A' 'B'
+     save_
+
+save__pdbx_struct_ref_seq_feature.asym_id 
+    _item_description.description
+;              Instance identifier for the polymer molecule.       
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.asym_id'
+    _item.category_id             pdbx_struct_ref_seq_feature
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case       'A' 'B'
+     save_
+
+save__pdbx_struct_ref_seq_feature.beg_auth_seq_id
+    _item_description.description
+;
+               Initial position in the PDB sequence segment.     
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.beg_auth_seq_id'
+    _item.category_id             pdbx_struct_ref_seq_feature
+    _item.mandatory_code          no
+    _item_type.code               code    
+     loop_
+    _item_examples.case      '1' '2'
+     save_
+
+save__pdbx_struct_ref_seq_feature.end_auth_seq_id
+    _item_description.description
+;
+               Ending position in the PDB sequence segment
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.end_auth_seq_id'
+    _item.category_id             pdbx_struct_ref_seq_feature
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case      '1' '2'     
+     save_
+#
+save__pdbx_struct_ref_seq_feature.beg_seq_num
+    _item_description.description
+;
+               Initial position in the sequence segment.     
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.beg_seq_num'
+    _item.category_id             pdbx_struct_ref_seq_feature
+    _item.mandatory_code          no
+    _item_type.code               code    
+     loop_
+    _item_examples.case      '1' '2'
+     save_
+
+save__pdbx_struct_ref_seq_feature.end_seq_num
+    _item_description.description
+;
+               Ending position in the sequence segment
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.end_seq_num'
+    _item.category_id             pdbx_struct_ref_seq_feature
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case      '1' '2'     
+     save_
+
+save__pdbx_struct_ref_seq_feature.beg_auth_mon_id
+    _item_description.description
+;
+               Monomer ID at the initial position in the PDB sequence segment.     
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.beg_auth_mon_id'
+    _item.category_id             pdbx_struct_ref_seq_feature
+    _item.mandatory_code          no
+    _item_type.code               code    
+     loop_
+    _item_examples.case      '1' '2'
+     save_
+
+save__pdbx_struct_ref_seq_feature.end_auth_mon_id
+    _item_description.description
+;
+               Monomer ID at the terminal position in the PDB sequence segment
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.end_auth_mon_id'
+    _item.category_id             pdbx_struct_ref_seq_feature
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case      '1' '2'     
+     save_
+
+##
+save__pdbx_struct_ref_seq_feature.beg_pdb_ins_code
+    _item_description.description
+;
+               Initial insertion code of the PDB sequence segment.     
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.beg_pdb_ins_code'
+    _item.category_id             pdbx_struct_ref_seq_feature
+    _item.mandatory_code          no
+    _item_type.code               code    
+     loop_
+    _item_examples.case      'A' 'B'
+     save_
+
+save__pdbx_struct_ref_seq_feature.end_pdb_ins_code
+    _item_description.description
+;
+               Terminal insertion code of the PDB sequence segment.     
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature.end_pdb_ins_code'
+    _item.category_id             pdbx_struct_ref_seq_feature
+    _item.mandatory_code          no
+    _item_type.code               code    
+     loop_
+    _item_examples.case      'A' 'B'
+     save_
+
+
+
+######################################
+## PDBX_STRUCT_REF_SEQ_FEATURE_PROP ##
+######################################
+
+save_pdbx_struct_ref_seq_feature_prop
+    _category.description
+;
+         Data items in the PDBX_STRUCT_REF_SEQ_FEATURE_PROP category provide a
+         mechanism for identifying and annotating properties of sequence features.
+;
+    _category.id                  'pdbx_struct_ref_seq_feature_prop'
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_struct_ref_seq_feature_prop.feature_id'
+                                '_pdbx_struct_ref_seq_feature_prop.property_id'
+#
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_struct_ref_seq_feature_prop.feature_id       1
+    _pdbx_struct_ref_seq_feature_prop.property_id      1
+    _pdbx_struct_ref_seq_feature_prop.beg_db_mon_id   GLU
+    _pdbx_struct_ref_seq_feature_prop.end_db_mon_id   PHE
+    _pdbx_struct_ref_seq_feature_prop.beg_db_seq_id    100
+    _pdbx_struct_ref_seq_feature_prop.end_db_seq_id    104
+    _pdbx_struct_ref_seq_feature_prop.type             'VARIABLE_SPLICING'
+    _pdbx_struct_ref_seq_feature_prop.value            'VSP_003456'
+    _pdbx_struct_ref_seq_feature_prop.details
+    ;  Special splice at ... 
+    ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_ref_seq_feature_prop.feature_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_struct_ref_seq_feature.feature_id in
+               the STRUCT_REF_SEQ_FEATURE  category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature_prop.feature_id'
+    _item.category_id           'pdbx_struct_ref_seq_feature_prop'
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name    '_pdbx_struct_ref_seq_feature_prop.feature_id'
+    _item_linked.parent_name   '_pdbx_struct_ref_seq_feature.feature_id'
+     save_
+
+
+save__pdbx_struct_ref_seq_feature_prop.property_id
+    _item_description.description
+;              This uniquely identifies the a property of a sequence feature in 
+               the STRUCT_REF_SEQ_FEATURE_PROPx  category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature_prop.property_id'
+    _item.category_id           'pdbx_struct_ref_seq_feature_prop'
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+
+save__pdbx_struct_ref_seq_feature_prop.type
+    _item_description.description
+;              Property type.
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature_prop.type'
+    _item.category_id             pdbx_struct_ref_seq_feature_prop
+    _item.mandatory_code          yes
+    _item_type.code               text
+     loop_
+    _item_examples.case      'deletion', 'expression tag', 'variant', 'other'
+     save_
+
+save__pdbx_struct_ref_seq_feature_prop.value
+    _item_description.description
+;              Property value.
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature_prop.value'
+    _item.category_id             pdbx_struct_ref_seq_feature_prop
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+save__pdbx_struct_ref_seq_feature_prop.details
+    _item_description.description
+;              A description of special aspects of the property value pair.
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature_prop.details'
+    _item.category_id             pdbx_struct_ref_seq_feature_prop
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_struct_ref_seq_feature_prop.beg_db_mon_id
+    _item_description.description
+;              The begining monomer type found at the starting  position 
+               in the referenced database entry.
+
+               This data item is a pointer to _chem_comp.id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature_prop.beg_db_mon_id'
+    _item.category_id             pdbx_struct_ref_seq_feature_prop
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__pdbx_struct_ref_seq_feature_prop.end_db_mon_id
+    _item_description.description
+;              The terminal monomer type found at the ending position 
+               in the referenced database entry.
+
+               This data item is a pointer to _chem_comp.id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature_prop.end_db_mon_id'
+    _item.category_id             pdbx_struct_ref_seq_feature_prop
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__pdbx_struct_ref_seq_feature_prop.beg_db_seq_id
+    _item_description.description
+;              The begining monomer sequence  position 
+               in the referenced database entry.
+
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature_prop.beg_db_seq_id'
+    _item.category_id             pdbx_struct_ref_seq_feature_prop
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+save__pdbx_struct_ref_seq_feature_prop.end_db_seq_id
+    _item_description.description
+;              The terminal monomer sequence position 
+               in the referenced database entry.
+;
+    _item.name                  '_pdbx_struct_ref_seq_feature_prop.end_db_seq_id'
+    _item.category_id             pdbx_struct_ref_seq_feature_prop
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+#######################################
+## PDBX_STRUCT_CHEM_COMP_DIAGNOSTICS ##
+#######################################
+
+save_pdbx_struct_chem_comp_diagnostics
+    _category.description
+;              Data items in the PDBX_STRUCT_CHEM_COMP_DIAGNOSTICS category provides 
+               structural diagnostics in chemical components instances.
+;
+    _category.id                  'pdbx_struct_chem_comp_diagnostics'
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_struct_chem_comp_diagnostics.ordinal'
+
+#
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_struct_chem_comp_diagnostics.ordinal        1
+    _pdbx_struct_chem_comp_diagnostics.auth_comp_id   Q20
+    _pdbx_struct_chem_comp_diagnostics.auth_seq_id   10
+    _pdbx_struct_chem_comp_diagnostics.seq_num        .
+    _pdbx_struct_chem_comp_diagnostics.pdb_strand_id  Q
+    _pdbx_struct_chem_comp_diagnostics.asym_id        Q
+    _pdbx_struct_chem_comp_diagnostics.type           'GEOMETRY'
+    _pdbx_struct_chem_comp_diagnostics.details        'Strained geometry.  Long carbonyl bond at C10.'    
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_struct_chem_comp_diagnostics.details
+    _item_description.description
+;             Special structural details about this chemical component.
+;
+    _item.name                  '_pdbx_struct_chem_comp_diagnostics.details'
+    _item.category_id             'pdbx_struct_chem_comp_diagnostics'
+    _item.mandatory_code          no
+    _item_type.code               text
+    save_
+
+save__pdbx_struct_chem_comp_diagnostics.type
+    _item_description.description
+;              A classification of the diagnostic for the chemical 
+               component instance
+;
+    _item.name                  '_pdbx_struct_chem_comp_diagnostics.type'
+    _item.category_id             'pdbx_struct_chem_comp_diagnostics'
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_enumeration.value  
+	'MISSING_ATOM' 
+        'STEREOCHEMISTRY'
+        'VALENCE' 
+        'GEOMETRY' 
+        'LABELING' 
+        'OTHER'
+     save_
+
+
+save__pdbx_struct_chem_comp_diagnostics.pdb_strand_id 
+    _item_description.description
+;              PDB strand/chain id.       
+;
+    _item.name                  '_pdbx_struct_chem_comp_diagnostics.pdb_strand_id'
+    _item.category_id             pdbx_struct_chem_comp_diagnostics
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case       'A' 'B'
+    _item_linked.child_name    '_pdbx_struct_chem_comp_diagnostics.pdb_strand_id'
+    _item_linked.parent_name   '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_struct_chem_comp_diagnostics.asym_id 
+    _item_description.description
+;              Instance identifier for the polymer molecule.       
+;
+    _item.name                  '_pdbx_struct_chem_comp_diagnostics.asym_id'
+    _item.category_id             pdbx_struct_chem_comp_diagnostics
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case       'A' 'B'
+    _item_linked.child_name    '_pdbx_struct_chem_comp_diagnostics.asym_id'
+    _item_linked.parent_name   '_atom_site.label_asym_id'
+
+     save_
+
+save__pdbx_struct_chem_comp_diagnostics.auth_seq_id
+    _item_description.description
+;
+               PDB  position in the sequence.
+;
+    _item.name                  '_pdbx_struct_chem_comp_diagnostics.auth_seq_id'
+    _item.category_id             pdbx_struct_chem_comp_diagnostics
+    _item.mandatory_code          no
+    _item_type.code               code    
+     loop_
+    _item_examples.case      '1' '2'
+
+    _item_linked.child_name    '_pdbx_struct_chem_comp_diagnostics.auth_seq_id'
+    _item_linked.parent_name   '_atom_site.auth_seq_id'
+     save_
+
+
+save__pdbx_struct_chem_comp_diagnostics.seq_num
+    _item_description.description
+;
+               Position in the sequence.     
+;
+    _item.name                  '_pdbx_struct_chem_comp_diagnostics.seq_num'
+    _item.category_id             pdbx_struct_chem_comp_diagnostics
+    _item.mandatory_code          no
+    _item_type.code               int
+     loop_
+    _item_examples.case      '1' '2'
+    _item_linked.child_name    '_pdbx_struct_chem_comp_diagnostics.seq_num'
+    _item_linked.parent_name   '_atom_site.label_seq_id'
+
+     save_
+
+
+save__pdbx_struct_chem_comp_diagnostics.auth_comp_id
+    _item_description.description
+;
+               PDB component ID  
+;
+    _item.name                  '_pdbx_struct_chem_comp_diagnostics.auth_comp_id'
+    _item.category_id             pdbx_struct_chem_comp_diagnostics
+    _item.mandatory_code          no
+    _item_type.code               code    
+     loop_
+    _item_examples.case      'NAG' 'ATP'
+
+    _item_linked.child_name    '_pdbx_struct_chem_comp_diagnostics.auth_comp_id'
+    _item_linked.parent_name   '_atom_site.auth_comp_id'
+     save_
+
+
+##
+save__pdbx_struct_chem_comp_diagnostics.pdb_ins_code
+    _item_description.description
+;
+               Insertion code of the monomer or ligand .     
+;
+    _item.name                  '_pdbx_struct_chem_comp_diagnostics.pdb_ins_code'
+    _item.category_id             pdbx_struct_chem_comp_diagnostics
+    _item.mandatory_code          no
+    _item_type.code               code    
+     loop_
+    _item_examples.case      'A' 'B'
+#    _item_linked.child_name    '_pdbx_struct_chem_comp_diagnostics.pdb_ins_code'
+#    _item_linked.parent_name   '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+save__pdbx_struct_chem_comp_diagnostics.ordinal
+    _item_description.description
+;
+               An ordinal index for this category
+;
+    _item.name                  '_pdbx_struct_chem_comp_diagnostics.ordinal'
+    _item.category_id             pdbx_struct_chem_comp_diagnostics
+    _item.mandatory_code          yes
+    _item_type.code               int    
+     loop_
+    _item_examples.case      1 2
+     save_
+
+
+#
+save__refine.pdbx_overall_phase_error
+    _item_description.description
+;              The overall phase error for all reflections after refinement using
+               the current refinement target.
+;
+    _item.name                  '_refine.pdbx_overall_phase_error'
+    _item.category_id             refine
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_examples.case          0.30
+     save_
+
+
+#
+save__refine_ls_shell.pdbx_phase_error
+    _item_description.description
+;              The average phase error for all reflections in the resolution shell.
+;
+    _item.name                  '_refine_ls_shell.pdbx_phase_error'
+    _item.category_id             refine_ls_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_examples.case           0.30
+     save_
+#
+#-----------------------------------------------------------------------------
+
+save__reflns.pdbx_Rrim_I_all
+    _item_description.description
+;             The redundancy-independent merging R factor value Rrim,
+              also denoted Rmeas, for merging all intensities in this
+              data set.
+
+                     sum~i~ [N~i~/(N~i~ - 1)]1/2^ sum~j~ | I~j~ - <I~i~> |
+              Rrim = ----------------------------------------------------
+                                  sum~i~ ( sum~j~ I~j~ )
+
+              I~j~   = the intensity of the jth observation of reflection i
+              <I~i~> = the mean of the intensities of all observations of
+                       reflection i
+	       N~i~   = the redundancy (the number of times reflection i
+                       has been measured).
+
+              sum~i~ is taken over all reflections
+              sum~j~ is taken over all observations of each reflection.
+
+              Ref: Diederichs, K. & Karplus, P. A. (1997). Nature Struct.
+                   Biol. 4, 269-275.
+                   Weiss, M. S. & Hilgenfeld, R. (1997). J. Appl. Cryst.
+                   30, 203-205.
+                   Weiss, M. S. (2001). J. Appl. Cryst. 34, 130-135.
+;
+    _item.name                  '_reflns.pdbx_Rrim_I_all'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__reflns_shell.pdbx_Rrim_I_all
+    _item_description.description
+;             The redundancy-independent merging R factor value Rrim,
+              also denoted Rmeas, for merging all intensities in a
+              given shell.
+
+                     sum~i~ [N~i~ /( N~i~ - 1)]1/2^ sum~j~ | I~j~ - <I~i~> |
+              Rrim = --------------------------------------------------------
+                                   sum~i~ ( sum~j~ I~j~ )
+
+              I~j~   = the intensity of the jth observation of reflection i
+              <I~i~> = the mean of the intensities of all observations of
+                       reflection i
+	      N~i~   = the redundancy (the number of times reflection i
+                       has been measured).
+
+              sum~i~ is taken over all reflections
+              sum~j~ is taken over all observations of each reflection.
+
+              Ref: Diederichs, K. & Karplus, P. A. (1997). Nature Struct.
+                   Biol. 4, 269-275.
+                   Weiss, M. S. & Hilgenfeld, R. (1997). J. Appl. Cryst.
+                   30, 203-205.
+                   Weiss, M. S. (2001). J. Appl. Cryst. 34, 130-135.
+;
+    _item.name                  '_reflns_shell.pdbx_Rrim_I_all'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+#-----------------------------------------------------------------------------
+
+save__reflns.pdbx_Rpim_I_all
+    _item_description.description
+;             The precision-indicating merging R factor value Rpim,
+              for merging all intensities in this data set.
+
+                     sum~i~ [1/(N~i~ - 1)]1/2^ sum~j~ | I~j~ - <I~i~> |
+              Rpim = --------------------------------------------------
+                                   sum~i~ ( sum~j~ I~j~ )
+
+              I~j~   = the intensity of the jth observation of reflection i
+              <I~i~> = the mean of the intensities of all observations
+                       of reflection i
+              N~i~   = the redundancy (the number of times reflection i
+                       has been measured).
+
+              sum~i~ is taken over all reflections
+              sum~j~ is taken over all observations of each reflection.
+
+              Ref: Diederichs, K. & Karplus, P. A. (1997). Nature Struct.
+                   Biol. 4, 269-275.
+                   Weiss, M. S. & Hilgenfeld, R. (1997). J. Appl. Cryst.
+                   30, 203-205.
+                   Weiss, M. S. (2001). J. Appl. Cryst. 34, 130-135.
+;
+    _item.name                  '_reflns.pdbx_Rpim_I_all'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__reflns_shell.pdbx_Rpim_I_all
+    _item_description.description
+;             The precision-indicating merging R factor value Rpim,
+              for merging all intensities in a given shell.
+
+                     sum~i~ [1/(N~i~ - 1)]1/2^ sum~j~ | I~j~ - <I~i~> |
+              Rpim = --------------------------------------------------
+                                   sum~i~ ( sum~j~ I~j~ )
+
+              I~j~   = the intensity of the jth observation of reflection i
+              <I~i~> = the mean of the intensities of all observations of
+                       reflection i
+              N~i~   = the redundancy (the number of times reflection i
+                       has been measured).
+
+              sum~i~ is taken over all reflections
+              sum~j~ is taken over all observations of each reflection.
+
+              Ref: Diederichs, K. & Karplus, P. A. (1997). Nature Struct.
+                   Biol. 4, 269-275.
+                   Weiss, M. S. & Hilgenfeld, R. (1997). J. Appl. Cryst.
+                   30, 203-205.
+                   Weiss, M. S. (2001). J. Appl. Cryst. 34, 130-135.
+
+;
+    _item.name                  '_reflns_shell.pdbx_Rpim_I_all'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__reflns.pdbx_d_opt
+    _item_description.description
+;          The optical resolution of the data set, d(opt), is the
+              expected minimum distance between two resolved peaks in
+              an electron-density map.
+
+              d(opt) = {2[sigma(Patt)2^ + sigma(sph)2^]}1/2^
+
+              sigma(Patt) = standard deviation of the Gaussian function
+                            fitted to the Patterson origin peak
+              sigma(sph)  = standard deviation of the Gaussian function
+                            fitted to the origin peak of the spherical
+                            interference function, representing the Fourier
+                            transform of a sphere with radius 1/dmin
+              dmin        = nominal resolution (_reflns.d_resolution_high)
+
+              Ref: Vaguine, A. A., Richelle, J. & Wodak, S. J. (1999).
+                   Acta Cryst. D55, 191-205.
+                   (see also http://www.ysbl.york.ac.uk/~alexei/sfcheck.html)
+           Weiss, M. S. (2001). J. Appl. Cryst. 34, 130-135.
+;
+    _item.name                   '_reflns.pdbx_d_opt'
+    _item.category_id            reflns
+    _item.mandatory_code         no
+    _item_type.code              float
+     save_
+##
+
+save__struct_ncs_dom.pdbx_ens_id
+    _item_description.description
+;        This is a unique identifier for a collection NCS related domains.      
+         This references item '_struct_ncs_ens.id'.
+
+;
+    _item.name                   '_struct_ncs_dom.pdbx_ens_id'
+    _item.category_id              struct_ncs_dom
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_struct_ncs_dom.pdbx_ens_id'  
+    _item_linked.parent_name      '_struct_ncs_ens.id'
+     save_
+
+save__struct_ncs_dom_lim.pdbx_ens_id
+    _item_description.description
+;        This is a unique identifier for a collection NCS related domains.      
+         This references item '_struct_ncs_dom.pdbx_ens_id'.
+
+;
+    _item.name                   '_struct_ncs_dom_lim.pdbx_ens_id'
+    _item.category_id              struct_ncs_dom_lim
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_struct_ncs_dom_lim.pdbx_ens_id'  
+    _item_linked.parent_name      '_struct_ncs_dom.pdbx_ens_id'
+     save_
+
+
+save__refine_ls_restr_ncs.pdbx_ens_id
+    _item_description.description
+;        This is a unique identifier for a collection NCS related domains.      
+         This references item '_struct_ncs_dom.pdbx_ens_id'.
+
+;
+    _item.name                   '_refine_ls_restr_ncs.pdbx_ens_id'
+    _item.category_id              refine_ls_restr_ncs
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_refine_ls_restr_ncs.pdbx_ens_id'
+    _item_linked.parent_name      '_struct_ncs_dom.pdbx_ens_id'
+     save_
+#
+save__struct.pdbx_model_type_details
+    _item_description.description
+;              A description of the type of structure model.
+;
+    _item.name                  '_struct.pdbx_model_type_details'
+    _item.category_id             struct
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_examples.case          
+        'MINIMIZED AVERAGE'
+     save_
+##
+##
+
+save__chem_comp_atom.pdbx_component_atom_id
+    _item_description.description
+;              The atom identifier in the subcomponent where a  
+               larger component has been divided subcomponents.
+;
+    _item.name                  '_chem_comp_atom.pdbx_component_atom_id'
+    _item.category_id            chem_comp_atom
+    _item.mandatory_code         no
+    _item_type.code              atcode
+     loop_
+    _item_examples.case          
+     'CB' 'CA' 'CG'
+     save_
+
+save__chem_comp_atom.pdbx_component_comp_id
+    _item_description.description
+;              The component identifier for the subcomponent where a  
+               larger component has been divided subcomponents.
+;
+    _item.name                  '_chem_comp_atom.pdbx_component_comp_id'
+    _item.category_id            chem_comp_atom
+    _item.mandatory_code         no
+    _item_type.code              ucode
+     loop_
+    _item_examples.case          
+      'HIS' 'PRO'
+     save_
+
+save__chem_comp.pdbx_subcomponent_list
+    _item_description.description
+;              The list of subcomponents contained in this component.
+;
+    _item.name                  '_chem_comp.pdbx_subcomponent_list'
+    _item.category_id            chem_comp
+    _item.mandatory_code         no
+    _item_type.code              text
+     loop_
+    _item_examples.case          
+     'TSM DPH HIS CHF EMR'
+
+     save_
+
+
+save_pdbx_chem_comp_feature
+    _category.description
+;             Additional features associated with the chemical component.
+;
+    _category.id                  'pdbx_chem_comp_feature'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name            '_pdbx_chem_comp_feature.comp_id'
+                                  '_pdbx_chem_comp_feature.type'
+                                  '_pdbx_chem_comp_feature.value'
+                                  '_pdbx_chem_comp_feature.source'
+#
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+     loop_
+    _pdbx_chem_comp_feature.comp_id
+    _pdbx_chem_comp_feature.type
+    _pdbx_chem_comp_feature.value
+    _pdbx_chem_comp_feature.source
+	00X   'ENZYME INHIBITED'    'ASPARTIC PROTEINASE'                     PDB
+        00X   'FUNCTION'            'Transistion-state analogue inhibitor'    PDB
+        00X   'STRUCTURE IMAGE URL' 'http://journals.iucr.org/00X.jpg'        IUCR
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_feature.comp_id
+    _item_description.description
+;              The component identifier for this feature.
+;
+    _item.name                  '_pdbx_chem_comp_feature.comp_id'
+    _item.category_id            pdbx_chem_comp_feature
+    _item.mandatory_code         yes
+    _item_type.code              ucode
+     loop_
+    _item_examples.case          
+     'ABC'  'ATP'
+    _item_linked.child_name	'_pdbx_chem_comp_feature.comp_id'
+    _item_linked.parent_name    '_chem_comp.id'
+     save_
+
+
+save__pdbx_chem_comp_feature.type
+    _item_description.description
+;              The component feature type.
+;
+    _item.name                  '_pdbx_chem_comp_feature.type'
+    _item.category_id            pdbx_chem_comp_feature
+    _item.mandatory_code         yes
+    _item_type.code              line
+     loop_
+    _item_examples.case          
+     'FUNCTION'
+     'ENZYME INHIBITED'
+     'STRUCTURE IMAGE URL'
+     save_
+
+save__pdbx_chem_comp_feature.support
+    _item_description.description
+;            The supporting evidence for this feature.
+;
+    _item.name                  '_pdbx_chem_comp_feature.support'
+    _item.category_id            pdbx_chem_comp_feature
+    _item.mandatory_code         no
+    _item_type.code              text
+     loop_
+    _item_examples.case          
+     'Biological assay'
+     'Data obtained from PNAS August 17, 1999 vol. 96 no. 17 9586-9590'
+     save_
+
+save__pdbx_chem_comp_feature.value
+    _item_description.description
+;              The component feature value.
+;
+    _item.name                  '_pdbx_chem_comp_feature.value'
+    _item.category_id            pdbx_chem_comp_feature
+    _item.mandatory_code         yes
+    _item_type.code              text
+     save_
+
+
+save__pdbx_chem_comp_feature.source
+    _item_description.description
+;              The information source for the component feature.
+;
+    _item.name                  '_pdbx_chem_comp_feature.source'
+    _item.category_id            pdbx_chem_comp_feature
+    _item.mandatory_code         yes
+    _item_type.code              line
+     loop_
+    _item_examples.case          
+        'PDB'
+        'CHEBI'
+        'DRUGBANK'
+        'PUBCHEM'
+     save_
+
+
+save_pdbx_coordinate_model
+    _category.description
+;             The details of the composition of the coordinate model.
+;
+    _category.id                  'pdbx_coordinate_model'
+    _category.mandatory_code       no
+    _category_key.name            '_pdbx_coordinate_model.asym_id'
+#
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+       loop_
+       _pdbx_coordinate_model.type
+       _pdbx_coordinate_model.asym_id
+        'C-ALPHA ONLY'   A
+        'C-APLHA ONLY'   B
+        'P ONLY'         X
+        'P ONLY'         Y 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_coordinate_model.asym_id
+    _item_description.description
+;    A reference to _struct_asym.id.
+;
+    _item.name                   '_pdbx_coordinate_model.asym_id'
+    _item.category_id             pdbx_coordinate_model
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_pdbx_coordinate_model.asym_id'
+    _item_linked.parent_name    '_struct_asym.id'
+     loop_
+    _item_examples.case          '1'
+                                 'A'
+     save_
+
+save__pdbx_coordinate_model.type
+    _item_description.description
+;    A classification of the composition of the coordinate model.
+;
+    _item.name                   '_pdbx_coordinate_model.type'
+    _item.category_id             pdbx_coordinate_model
+    _item.mandatory_code          yes
+    _item_type.code               code
+     loop_
+    _item_enumeration.value      'C-ALPHA ONLY'
+                                 'P ONLY'                                 
+     loop_
+    _item_examples.case          'C-ALPHA ONLY'
+                                 'P ONLY'
+     save_
+
+###################################
+## PDBX_STRUCT_CHEM_COMP_FEATURE ##
+###################################
+
+save_pdbx_struct_chem_comp_feature
+    _category.description
+;              Data items in the PDBX_STRUCT_CHEM_COMP_FEATURE category provides 
+               structural annotations in chemical components instances.
+;
+    _category.id                  'pdbx_struct_chem_comp_feature'
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_struct_chem_comp_feature.ordinal'
+
+#
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_struct_chem_comp_feature.ordinal        1
+    _pdbx_struct_chem_comp_feature.auth_comp_id   Q20
+    _pdbx_struct_chem_comp_feature.auth_seq_id   10
+    _pdbx_struct_chem_comp_feature.seq_num        .
+    _pdbx_struct_chem_comp_feature.pdb_strand_id  Q
+    _pdbx_struct_chem_comp_feature.asym_id        Q
+    _pdbx_struct_chem_comp_feature.type           'SECONDARY STRUCTURE'
+    _pdbx_struct_chem_comp_feature.details        'Helix of length 4 beginning at atom position C2A.'    
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_struct_chem_comp_feature.details
+    _item_description.description
+;             Special structural details about this chemical component.
+;
+    _item.name                  '_pdbx_struct_chem_comp_feature.details'
+    _item.category_id             'pdbx_struct_chem_comp_feature'
+    _item.mandatory_code          no
+    _item_type.code               text
+    save_
+
+save__pdbx_struct_chem_comp_feature.type
+    _item_description.description
+;              A classification of the annotation for the chemical 
+               component instance
+;
+    _item.name                  '_pdbx_struct_chem_comp_feature.type'
+    _item.category_id             'pdbx_struct_chem_comp_feature'
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_enumeration.value  
+	'SECONDARY STRUCTURE' 
+        'STEREOCHEMISTRY'
+        'GEOMETRY' 
+        'OTHER'
+     save_
+
+save__pdbx_struct_chem_comp_feature.pdb_strand_id 
+    _item_description.description
+;              PDB strand/chain id.       
+;
+    _item.name                  '_pdbx_struct_chem_comp_feature.pdb_strand_id'
+    _item.category_id             pdbx_struct_chem_comp_feature
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case       'A' 'B'
+    _item_linked.child_name    '_pdbx_struct_chem_comp_feature.pdb_strand_id'
+    _item_linked.parent_name   '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_struct_chem_comp_feature.asym_id 
+    _item_description.description
+;              Instance identifier for the polymer molecule.       
+;
+    _item.name                  '_pdbx_struct_chem_comp_feature.asym_id'
+    _item.category_id             pdbx_struct_chem_comp_feature
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case       'A' 'B'
+    _item_linked.child_name    '_pdbx_struct_chem_comp_feature.asym_id'
+    _item_linked.parent_name   '_atom_site.label_asym_id'
+
+     save_
+
+save__pdbx_struct_chem_comp_feature.auth_seq_id
+    _item_description.description
+;
+               PDB position in the sequence.
+;
+    _item.name                  '_pdbx_struct_chem_comp_feature.auth_seq_id'
+    _item.category_id             pdbx_struct_chem_comp_feature
+    _item.mandatory_code          no
+    _item_type.code               code    
+     loop_
+    _item_examples.case      '1' '2'
+
+    _item_linked.child_name    '_pdbx_struct_chem_comp_feature.auth_seq_id'
+    _item_linked.parent_name   '_atom_site.auth_seq_id'
+     save_
+
+
+save__pdbx_struct_chem_comp_feature.seq_num
+    _item_description.description
+;
+               Position in the sequence.     
+;
+    _item.name                  '_pdbx_struct_chem_comp_feature.seq_num'
+    _item.category_id             pdbx_struct_chem_comp_feature
+    _item.mandatory_code          no
+    _item_type.code               int
+     loop_
+    _item_examples.case      '1' '2'
+    _item_linked.child_name    '_pdbx_struct_chem_comp_feature.seq_num'
+    _item_linked.parent_name   '_atom_site.label_seq_id'
+
+     save_
+
+
+save__pdbx_struct_chem_comp_feature.auth_comp_id
+    _item_description.description
+;
+               PDB component ID  
+;
+    _item.name                  '_pdbx_struct_chem_comp_feature.auth_comp_id'
+    _item.category_id             pdbx_struct_chem_comp_feature
+    _item.mandatory_code          no
+    _item_type.code               code    
+     loop_
+    _item_examples.case      'NAG' 'ATP'
+
+    _item_linked.child_name    '_pdbx_struct_chem_comp_feature.auth_comp_id'
+    _item_linked.parent_name   '_atom_site.auth_comp_id'
+     save_
+
+
+##
+save__pdbx_struct_chem_comp_feature.pdb_ins_code
+    _item_description.description
+;
+               Insertion code of the monomer or ligand .     
+;
+    _item.name                  '_pdbx_struct_chem_comp_feature.pdb_ins_code'
+    _item.category_id             pdbx_struct_chem_comp_feature
+    _item.mandatory_code          no
+    _item_type.code               code    
+     loop_
+    _item_examples.case      'A' 'B'
+#    _item_linked.child_name    '_pdbx_struct_chem_comp_feature.pdb_ins_code'
+#    _item_linked.parent_name   '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+save__pdbx_struct_chem_comp_feature.ordinal
+    _item_description.description
+;
+               An ordinal index for this category
+;
+    _item.name                  '_pdbx_struct_chem_comp_feature.ordinal'
+    _item.category_id             pdbx_struct_chem_comp_feature
+    _item.mandatory_code          yes
+    _item_type.code               int    
+     loop_
+    _item_examples.case      1 2
+     save_
+#
+save__software.pdbx_ordinal
+    _item_description.description
+;
+               An ordinal index for this category
+;
+    _item.name                  '_software.pdbx_ordinal'
+    _item.category_id             software
+    _item.mandatory_code          yes
+    _item_type.code               int    
+     loop_
+    _item_examples.case      1 2
+     save_
+#
+save__atom_site.pdbx_formal_charge
+    _item_description.description
+;              The net integer charge assigned to this atom. This is the
+               formal charge assignment normally found in chemical diagrams.
+;
+    _item.name                  '_atom_site.pdbx_formal_charge'
+    _item.category_id             atom_site
+    _item.mandatory_code          no
+    _item_default.value           0
+     loop_
+    _item_range.maximum          
+    _item_range.minimum           8    8
+                                  8   -8
+                                 -8   -8
+    _item_type.code               int
+     loop_
+    _item_examples.case
+    _item_examples.detail         1   'for an ammonium nitrogen'
+                                  -1  'for a chloride ion'
+     save_
+
+save__reflns.pdbx_number_measured_all
+    _item_description.description
+;              Total number of measured reflections.
+               
+;
+    _item.name                  '_reflns.pdbx_number_measured_all'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    _item_type.code               int
+     loop_
+    _item_examples.case          23000  140000
+     save_
+
+save__audit_author.pdbx_ordinal
+    _item_description.description
+;              This data item defines the order of the author's name in the
+               list of audit authors.
+;
+    _item.name                  '_audit_author.pdbx_ordinal'
+    _item.category_id             audit_author
+    _item.mandatory_code          yes
+    _item_type.code               int
+     loop_
+    _item_examples.case    1   2   3
+     save_
+##
+#
+
+save__exptl_crystal.pdbx_mosaicity
+    _item_description.description
+;    
+    The of the distribution of mis-orientation angles specified in degrees
+    of all the unit cells in the crystal. Lower mosaicity indicates better 
+    ordered crystals.  
+;
+    _item.name                  '_exptl_crystal.pdbx_mosaicity'
+    _item.category_id             exptl_crystal
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__exptl_crystal.pdbx_mosaicity_esd
+    _item_description.description
+;    The uncertainty in the mosaicity estimate for the crystal.
+;
+    _item.name                  '_exptl_crystal.pdbx_mosaicity_esd'
+    _item.category_id             exptl_crystal
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+
+save__reflns_shell.pdbx_rejects
+    _item_description.description
+;   The number of rejected reflections in the resolution 
+    shell.  Reflections may be rejected from scaling
+    by setting the observation criterion,
+    _reflns.observed_criterion.
+ 
+;
+    _item.name                  '_reflns_shell.pdbx_rejects'
+    _item.category_id             reflns_shell 
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+save__diffrn_reflns.pdbx_d_res_low
+    _item_description.description
+;    The lowest resolution for the interplanar spacings in the
+     reflection data set. This is the largest d value.         
+;
+    _item.name                  '_diffrn_reflns.pdbx_d_res_low'
+    _item.category_id             diffrn_reflns
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__diffrn_reflns.pdbx_d_res_high
+    _item_description.description
+;     The highest resolution for the interplanar spacings in the
+      reflection data set. This is the smallest d value.         
+        
+;
+    _item.name                  '_diffrn_reflns.pdbx_d_res_high'
+    _item.category_id             diffrn_reflns  
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__diffrn_reflns.pdbx_percent_possible_obs
+    _item_description.description
+;  The percentage of geometrically possible reflections represented
+   by reflections that satisfy the resolution limits established
+   by _diffrn_reflns.d_resolution_high and _diffrn_reflns.d_resolution_low and
+   the observation limit established by   _diffrn_reflns.observed_criterion.
+ 
+;
+    _item.name                  '_diffrn_reflns.pdbx_percent_possible_obs'
+    _item.category_id           diffrn_reflns  
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__diffrn_reflns.pdbx_Rmerge_I_obs
+    _item_description.description
+;         The R factor for merging the reflections that satisfy the
+          resolution limits established by _diffrn_reflns.d_resolution_high
+          and _diffrn_reflns.d_resolution_low and the observation limit
+          established by _diffrn_reflns.observed_criterion.
+
+                           
+               Rmerge(I) = [sum~i~(sum~j~|I~j~ - |)] / [sum~i~(sum~j~)]
+                                
+
+               I~j~ = the intensity of the jth observation of reflection i
+                 = the mean of the amplitudes of all observations of
+                      reflection i
+
+               sum~i~ is taken over all reflections
+               sum~j~ is taken over all observations of each reflection
+ 
+;
+    _item.name                  '_diffrn_reflns.pdbx_Rmerge_I_obs'
+    _item.category_id             diffrn_reflns  
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__diffrn_reflns.pdbx_Rsym_value
+    _item_description.description
+;     The R factor for averaging the symmetry related reflections to a 
+      unique data set.        
+;
+    _item.name                  '_diffrn_reflns.pdbx_Rsym_value'
+    _item.category_id             diffrn_reflns  
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__diffrn_reflns.pdbx_chi_squared
+    _item_description.description
+;     Overall  Chi-squared statistic for the data set.        
+;
+    _item.name                  '_diffrn_reflns.pdbx_chi_squared'
+    _item.category_id             diffrn_reflns  
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__diffrn_reflns.pdbx_redundancy
+    _item_description.description
+;         The overall redundancy for the data set. 
+;
+    _item.name                  '_diffrn_reflns.pdbx_redundancy'
+    _item.category_id             diffrn_reflns  
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__diffrn_reflns.pdbx_rejects
+    _item_description.description
+;   The number of rejected reflections in the data set.
+    The reflections may be rejected by setting the 
+    observation criterion, _diffrn_reflns.observed_criterion.         
+;
+    _item.name                  '_diffrn_reflns.pdbx_rejects'
+    _item.category_id             diffrn_reflns  
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+save__diffrn_reflns.pdbx_observed_criterion
+    _item_description.description
+;  The criterion used to classify a reflection as 'observed'. This
+   criterion is usually expressed in terms of a sigma(I) or 
+   sigma(F) threshold.
+     
+;
+    _item.name                  '_diffrn_reflns.pdbx_observed_criterion'
+    _item.category_id             diffrn_reflns  
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__diffrn_reflns.pdbx_number_obs
+    _item_description.description
+;   The  number of reflections satisfying the observation criterion
+    as in _diffrn_reflns.pdbx_observed_criterion
+     
+;
+    _item.name                  '_diffrn_reflns.pdbx_number_obs'
+    _item.category_id             diffrn_reflns  
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+save_pdbx_diffrn_reflns_shell
+    _category.description
+;  Data items in the DIFFRN_REFLNS_SHELL category record details about
+   the reflection data set within shells of resolution.
+
+;
+    _category.id                  pdbx_diffrn_reflns_shell
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_diffrn_reflns_shell.d_res_high'
+                                '_pdbx_diffrn_reflns_shell.d_res_low'
+                                '_pdbx_diffrn_reflns_shell.diffrn_id'
+                                   
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'refln_group'
+                                 'pdbx_group'
+                                 
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - diffraction properties with shells
+;
+;
+   loop_
+   _pdbx_diffrn_reflns_shell.diffrn_id 
+   _pdbx_diffrn_reflns_shell.d_res_low 
+   _pdbx_diffrn_reflns_shell.d_res_high 
+   _pdbx_diffrn_reflns_shell.number_obs 
+   _pdbx_diffrn_reflns_shell.percent_possible_obs 
+   _pdbx_diffrn_reflns_shell.Rmerge_I_obs 
+   _pdbx_diffrn_reflns_shell.chi_squared 
+   1 50.00 5.18 11791 100.000 0.029 1.154
+   1 5.18  4.11 11717 100.000 0.033 1.098
+   1 4.11  3.59 11792 100.000 0.043 1.044
+   1 3.59  3.26 11718 100.000 0.059 1.104
+   1 3.26  3.03 11753 100.000 0.087 1.160
+   1 3.03  2.85 11811 100.000 0.130 1.169
+   1 2.85  2.71 11752 100.000 0.174 1.170
+   1 2.71  2.59 11767 100.000 0.227 1.165
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    save_
+
+save__pdbx_diffrn_reflns_shell.diffrn_id
+    _item_description.description
+;    This data item is a pointer to _diffrn.id in the DIFFRN category. 
+     This item distingush the different data sets               
+;
+    _item.name                  '_pdbx_diffrn_reflns_shell.diffrn_id'
+    _item.category_id             pdbx_diffrn_reflns_shell
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_pdbx_diffrn_reflns_shell.diffrn_id'
+    _item_linked.parent_name      '_diffrn.id'
+     save_
+
+
+save__pdbx_diffrn_reflns_shell.d_res_low
+    _item_description.description
+;    The lowest resolution for the interplanar spacings in the
+               resolution shell.        
+;
+    _item.name                  '_pdbx_diffrn_reflns_shell.d_res_low'
+    _item.category_id             pdbx_diffrn_reflns_shell
+    _item.mandatory_code          yes
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_reflns_shell.d_res_high
+    _item_description.description
+;     The highest resolution for the interplanar spacings in the
+      resolution shell.         
+        
+;
+    _item.name                  '_pdbx_diffrn_reflns_shell.d_res_high'
+    _item.category_id             pdbx_diffrn_reflns_shell
+    _item.mandatory_code          yes
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_reflns_shell.percent_possible_obs
+    _item_description.description
+;  The percentage of geometrically possible reflections represented
+   by reflections that satisfy the resolution limits established
+   by _diffrn_reflns_shell.d_resolution_high and 
+   _diffrn_reflns_shell.d_resolution_low and the observation limit 
+   established by  _diffrn_reflns.observed_criterion.
+ 
+;
+    _item.name                  '_pdbx_diffrn_reflns_shell.percent_possible_obs'
+    _item.category_id             pdbx_diffrn_reflns_shell  
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_reflns_shell.Rmerge_I_obs
+    _item_description.description
+;     The R factor for the reflections that satisfy the merging 
+      criteria for the resolution shell.    
+;
+    _item.name                  '_pdbx_diffrn_reflns_shell.Rmerge_I_obs'
+    _item.category_id             pdbx_diffrn_reflns_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_diffrn_reflns_shell.Rsym_value
+    _item_description.description
+;     The R factor for averaging the symmetry related reflections 
+      for the resolution shell.        
+;
+    _item.name                  '_pdbx_diffrn_reflns_shell.Rsym_value'
+    _item.category_id             pdbx_diffrn_reflns_shell  
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_diffrn_reflns_shell.chi_squared
+    _item_description.description
+;     The overall Chi-squared statistic for the resolution shell.
+;
+    _item.name                  '_pdbx_diffrn_reflns_shell.chi_squared'
+    _item.category_id             pdbx_diffrn_reflns_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_reflns_shell.redundancy
+    _item_description.description
+;     The overall redundancy for the resolution shell.
+;
+    _item.name                  '_pdbx_diffrn_reflns_shell.redundancy'
+    _item.category_id             pdbx_diffrn_reflns_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_diffrn_reflns_shell.rejects
+    _item_description.description
+;   The number of rejected reflections in the resolution shell 
+;
+    _item.name                  '_pdbx_diffrn_reflns_shell.rejects'
+    _item.category_id             pdbx_diffrn_reflns_shell
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+save__pdbx_diffrn_reflns_shell.number_obs
+    _item_description.description
+;    The number of observed reflections in the resolution shell.
+;
+    _item.name                  '_pdbx_diffrn_reflns_shell.number_obs'
+    _item.category_id             pdbx_diffrn_reflns_shell
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+##
+
+
+##################
+##################
+save__struct_site.pdbx_evidence_code
+    _item_description.description
+;              Source of evidence supporting the assignment of this site.
+;
+    _item.name                  '_struct_site.pdbx_evidence_code'
+    _item.category_id             struct_site
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case          'SOFTWARE' 
+                                 'AUTHOR' 
+                                 'UNKNOWN'
+     save_
+
+save__struct.pdbx_CASP_flag
+    _item_description.description
+;   The item indicates whether the entry is a CASP target, a CASD-NMR target,
+    or similar target participating in methods development experiments.
+;
+    _item.name                  '_struct.pdbx_CASP_flag'
+    _item.category_id             struct
+    _item.mandatory_code          no
+    _item_type.code               uchar1
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+          Y  'Yes'
+          N  'No'
+    _item_examples.case           Y
+     save_
+   
+save__refine.pdbx_overall_SU_R_free_Cruickshank_DPI
+    _item_description.description
+;              The overall standard uncertainty (estimated standard deviation)
+               of the displacement parameters based on the crystallographic
+               R-free value, expressed in a formalism known as the dispersion
+               precision indicator (DPI).
+
+               Ref: Cruickshank, D. W. J. (1999). Acta Cryst. D55, 583-601.
+
+;
+    _item.name                  '_refine.pdbx_overall_SU_R_free_Cruickshank_DPI'
+    _item.category_id             refine
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refine.pdbx_overall_SU_R_free_Blow_DPI
+    _item_description.description
+;              The overall standard uncertainty (estimated standard deviation)
+               of the displacement parameters based on the crystallographic
+               R-free value, expressed in a formalism known as the dispersion
+               precision indicator (DPI).
+
+               Ref: Blow, D (2002) Acta Cryst. D58, 792-797
+
+;
+    _item.name                  '_refine.pdbx_overall_SU_R_free_Blow_DPI'
+    _item.category_id             refine
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refine.pdbx_overall_SU_R_Blow_DPI
+    _item_description.description
+;              The overall standard uncertainty (estimated standard deviation)
+               of the displacement parameters based on the crystallographic
+               R value, expressed in a formalism known as the dispersion
+               precision indicator (DPI).
+
+               Ref: Blow, D (2002) Acta Cryst. D58, 792-797
+
+;
+    _item.name                  '_refine.pdbx_overall_SU_R_Blow_DPI'
+    _item.category_id             refine
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refine_ls_restr.pdbx_restraint_function
+    _item_description.description
+;              The functional form of the restraint function used in the least-squares
+               refinement.
+;
+    _item.name                  '_refine_ls_restr.pdbx_restraint_function'
+    _item.category_id             refine_ls_restr
+    _item.mandatory_code          no
+    _item_type.code               text
+    loop_
+    _item_examples.case           'SINUSOIDAL' 'HARMONIC' 'SEMIHARMONIC'
+     save_
+
+
+##
+#
+save__atom_site.pdbx_auth_comp_id
+   #
+   _item_description.description  'Author's residue name.'
+   #
+   _item.name            '_atom_site.pdbx_auth_comp_id'
+   _item.category_id     atom_site
+   _item.mandatory_code  no
+   #
+   _item_type.code  code
+   #
+   #_item_aliases.alias_name  '_atom_site.ndb_auth_comp_id'
+   #_item_aliases.dictionary  cif_rcsb.dic
+   #_item_aliases.version     1.1
+   #
+   #_pdbx_item_context.type       RCSB_LOCAL
+   #_pdbx_item_context.item_name  '_atom_site.pdbx_auth_comp_id'
+   #
+save_
+#
+save__atom_site.pdbx_auth_asym_id
+   #
+   _item_description.description  'Author's strand id.'
+   #
+   _item.name            '_atom_site.pdbx_auth_asym_id'
+   _item.category_id     atom_site
+   _item.mandatory_code  no
+   #
+   _item_type.code  code
+   #
+   #_item_aliases.alias_name  '_atom_site.ndb_auth_asym_id'
+   #_item_aliases.dictionary  cif_rcsb.dic
+   #_item_aliases.version     1.1
+   #
+   #_pdbx_item_context.type       RCSB_LOCAL
+   #_pdbx_item_context.item_name  '_atom_site.pdbx_auth_asym_id'
+   #
+save_
+#
+save__atom_site.pdbx_auth_seq_id
+   #
+   _item_description.description  'Author's sequence identifier.'
+   #
+   _item.name            '_atom_site.pdbx_auth_seq_id'
+   _item.category_id     atom_site
+   _item.mandatory_code  no
+   #
+   _item_type.code  code
+   #
+   #_item_aliases.alias_name  '_atom_site.ndb_auth_seq_id'
+   #_item_aliases.dictionary  cif_rcsb.dic
+   #_item_aliases.version     1.1
+   #
+   #_pdbx_item_context.type       RCSB_LOCAL
+   #_pdbx_item_context.item_name  '_atom_site.pdbx_auth_seq_id'
+   #
+save_
+
+##
+##
+save_pdbx_bond_distance_limits
+    _category.description
+;             This category provides a table of upper and lower distance 
+              limits used as criteria in determining covalent bonds.
+              The table is organized by atom type pairs.
+;
+    _category.id                  'pdbx_bond_distance_limits'
+    _category.mandatory_code       no
+     loop_
+    _category_key.name            '_pdbx_bond_distance_limits.atom_type_1'
+                                  '_pdbx_bond_distance_limits.atom_type_2'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - Abbreviated bond distance limit table
+;
+;
+ loop_
+ _pdbx_bond_distance_limits.atom_type_1
+ _pdbx_bond_distance_limits.atom_type_2
+ _pdbx_bond_distance_limits.lower_limit
+ _pdbx_bond_distance_limits.upper_limit
+  N   Ag  1.85 2.70
+  O   Ag  1.85 2.70
+  S   Ag  2.00 3.00
+  Al   H  1.35 1.65
+  As   H  1.20 1.60
+  N   Au  1.80 2.80
+  O   Au  1.80 2.80
+  S   Au  1.80 3.00
+  B    B  1.45 1.95
+  C    B  1.20 1.85
+  F    B  1.20 1.75
+ # ... abbreviated ...
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_bond_distance_limits.atom_type_1
+    _item_description.description
+;              The first atom type defining the bond 
+;
+    _item.name                  '_pdbx_bond_distance_limits.atom_type_1'
+    _item.category_id            pdbx_bond_distance_limits
+    _item.mandatory_code         yes
+    _item_type.code              code
+     loop_
+    _item_examples.case          
+     'C' 'N' 'P'
+     save_
+
+save__pdbx_bond_distance_limits.atom_type_2
+    _item_description.description
+;              The first atom type defining the bond 
+;
+    _item.name                  '_pdbx_bond_distance_limits.atom_type_2'
+    _item.category_id            pdbx_bond_distance_limits
+    _item.mandatory_code         yes
+    _item_type.code              code
+     loop_
+    _item_examples.case          
+     'C' 'N' 'P'
+     save_
+
+save__pdbx_bond_distance_limits.lower_limit
+    _item_description.description
+;              The lower bond distance limit.
+;
+    _item.name                  '_pdbx_bond_distance_limits.lower_limit'
+    _item.category_id            pdbx_bond_distance_limits
+    _item.mandatory_code         yes
+    _item_type.code              float
+    _item_units.code             angstroms
+     save_
+
+save__pdbx_bond_distance_limits.upper_limit
+    _item_description.description
+;              The upper bond distance limit.
+;
+    _item.name                  '_pdbx_bond_distance_limits.upper_limit'
+    _item.category_id            pdbx_bond_distance_limits
+    _item.mandatory_code         yes
+    _item_type.code              float
+    _item_units.code             angstroms
+     save_
+
+##
+
+
+
+####
+####

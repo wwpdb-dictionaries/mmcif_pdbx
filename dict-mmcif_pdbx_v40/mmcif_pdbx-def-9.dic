@@ -1,0 +1,1573 @@
+###########################################################################
+#
+# File:  mmcif_pdbx-def-9.dic                                             
+# 
+#                      PDB Exchange Data Dictionary
+#
+# This data dictionary contains definitions used by RCSB for describing
+# derived data and computation.
+#
+#                           Definition Section 9
+#                            
+#                                                                        
+###########################################################################
+
+
+#################
+## PDBX_DOMAIN ##
+#################
+
+save_pdbx_domain
+    _category.description
+;              Data items in the PDBX_DOMAIN category record information
+               about domain definitions.
+
+               A domain need not correspond to a completely polypeptide chain;
+               it can be composed of one or more segments in a single chain,
+               or by segments from more than one chain.
+;
+    _category.id                  pdbx_domain
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_domain.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'pdbx_erf_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+     loop_
+    _pdbx_domain.id   
+    _pdbx_domain.details
+     d1  'Chains A, B'
+     d2  'Asym_id D Residues 1-134'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_domain.details
+    _item_description.description
+;              A description of special aspects of the structural elements that
+               comprise a domain.
+;
+    _item.name                  '_pdbx_domain.details'
+    _item.category_id             pdbx_domain
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_examples.case
+;                                 The loop between residues 18 and 23.
+;
+     save_
+
+save__pdbx_domain.id
+    _item_description.description
+;              The value of _pdbx_domain.id must uniquely identify a
+               record in the PDBX_DOMAIN list.
+
+               Note that this item need not be a number; it can be any unique
+               identifier.
+;
+    _item.name              '_pdbx_domain.id'
+    _item.category_id       pdbx_domain
+    _item.mandatory_code    yes
+    _item_type.code         code
+     save_
+
+#######################
+## PDBX_DOMAIN_RANGE ##
+#######################
+
+save_pdbx_domain_range
+    _category.description
+;              Data items in the PDBX_DOMAIN_RANGE category identify the
+               beginning and ending points of polypeptide chain segments
+               that form all or part of a domain.
+;
+    _category.id                  pdbx_domain_range
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_domain_range.domain_id'           
+                                '_pdbx_domain_range.beg_label_alt_id' 
+                                '_pdbx_domain_range.beg_label_asym_id'
+                                '_pdbx_domain_range.beg_label_comp_id'
+                                '_pdbx_domain_range.beg_label_seq_id' 
+                                '_pdbx_domain_range.end_label_alt_id' 
+                                '_pdbx_domain_range.end_label_asym_id'
+                                '_pdbx_domain_range.end_label_comp_id'
+                                '_pdbx_domain_range.end_label_seq_id' 
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'pdbx_erf_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+     loop_
+    _pdbx_domain_range.domain_id                
+    _pdbx_domain_range.beg_label_alt_id      
+    _pdbx_domain_range.beg_label_asym_id     
+    _pdbx_domain_range.beg_label_comp_id     
+    _pdbx_domain_range.beg_label_seq_id      
+    _pdbx_domain_range.end_label_alt_id      
+    _pdbx_domain_range.end_label_asym_id
+    _pdbx_domain_range.end_label_comp_id
+    _pdbx_domain_range.end_label_seq_id 
+     d1   A  A PRO  1  A A GLY  29 
+     d1   A  B PRO  31 A B GLY  59 
+     d1   A  C PRO  61 A B GLY  89
+     d2   A  D PRO  91 A D GLY 119 
+     d2   A  E PRO 121 A E GLY 149
+     d2   A  F PRO 151 A F GLY 179
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_domain_range.beg_label_alt_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain begins.
+
+               This data item is a pointer to _atom_sites_alt.id in the
+               ATOM_SITES_ALT category.
+;
+    _item.name                  '_pdbx_domain_range.beg_label_alt_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_domain_range.beg_label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_domain_range.beg_label_asym_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain begins.
+
+               This data item is a pointer to _atom_site.label_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_domain_range.beg_label_asym_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_domain_range.beg_label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+
+     save_
+
+save__pdbx_domain_range.beg_label_comp_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain begins.
+
+               This data item is a pointer to _atom_site.label_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_domain_range.beg_label_comp_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_domain_range.beg_label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+
+     save_
+
+save__pdbx_domain_range.beg_label_seq_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain begins.
+
+               This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_domain_range.beg_label_seq_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_domain_range.beg_label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+
+     save_
+
+save__pdbx_domain_range.beg_auth_asym_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain begins.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_domain_range.beg_auth_asym_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_domain_range.beg_auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_domain_range.beg_auth_comp_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain begins.
+
+               This data item is a pointer to _atom_site.auth_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_domain_range.beg_auth_comp_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_domain_range.beg_auth_comp_id'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_domain_range.beg_auth_seq_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain begins.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_domain_range.beg_auth_seq_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_domain_range.beg_auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+
+     save_
+
+save__pdbx_domain_range.domain_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_domain.id in the
+               PDBX_DOMAIN category.
+;
+    _item.name                  '_pdbx_domain_range.domain_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          yes
+    _item_linked.child_name     '_pdbx_domain_range.domain_id'
+    _item_linked.parent_name    '_pdbx_domain.id'
+     save_
+
+save__pdbx_domain_range.end_label_alt_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain ends.
+
+               This data item is a pointer to _atom_sites_alt.id in the
+               ATOM_SITES_ALT category.
+;
+    _item.name                  '_pdbx_domain_range.end_label_alt_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_domain_range.end_label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+
+     save_
+
+save__pdbx_domain_range.end_label_asym_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain ends.
+
+               This data item is a pointer to _atom_site.label_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_domain_range.end_label_asym_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_domain_range.end_label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+
+     save_
+
+save__pdbx_domain_range.end_label_comp_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain ends.
+
+               This data item is a pointer to _atom_site.label_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_domain_range.end_label_comp_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_domain_range.end_label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+
+     save_
+
+save__pdbx_domain_range.end_label_seq_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain ends.
+
+               This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_domain_range.end_label_seq_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_domain_range.end_label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+
+     save_
+
+save__pdbx_domain_range.end_auth_asym_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain ends.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_domain_range.end_auth_asym_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_domain_range.end_auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_domain_range.end_auth_comp_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain ends.
+
+               This data item is a pointer to _atom_site.auth_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_domain_range.end_auth_comp_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_domain_range.end_auth_comp_id'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+
+     save_
+
+save__pdbx_domain_range.end_auth_seq_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the domain ends.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_domain_range.end_auth_seq_id'
+    _item.category_id             pdbx_domain_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_domain_range.end_auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+
+     save_
+
+
+#########################
+## PDBX_SEQUENCE_RANGE ##
+#########################
+
+save_pdbx_sequence_range
+    _category.description
+;              Data items in the PDBX_SEQUENCE_RANGE category identify the
+               beginning and ending points of polypeptide sequence segments.
+;
+    _category.id                  pdbx_sequence_range
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_sequence_range.seq_range_id'           
+                                '_pdbx_sequence_range.beg_label_alt_id' 
+                                '_pdbx_sequence_range.beg_label_asym_id'
+                                '_pdbx_sequence_range.beg_label_comp_id'
+                                '_pdbx_sequence_range.beg_label_seq_id' 
+                                '_pdbx_sequence_range.end_label_alt_id' 
+                                '_pdbx_sequence_range.end_label_asym_id'
+                                '_pdbx_sequence_range.end_label_comp_id'
+                                '_pdbx_sequence_range.end_label_seq_id' 
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'pdbx_erf_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+     loop_
+    _pdbx_sequence_range.seq_range_id                
+    _pdbx_sequence_range.beg_label_alt_id      
+    _pdbx_sequence_range.beg_label_asym_id     
+    _pdbx_sequence_range.beg_label_comp_id     
+    _pdbx_sequence_range.beg_label_seq_id      
+    _pdbx_sequence_range.end_label_alt_id      
+    _pdbx_sequence_range.end_label_asym_id
+    _pdbx_sequence_range.end_label_comp_id
+    _pdbx_sequence_range.end_label_seq_id 
+     s1   A  A PRO  1  A A GLY  29 
+     s2   A  D PRO  91 A D GLY 119 
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_sequence_range.beg_label_alt_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range begins.
+
+               This data item is a pointer to _atom_sites_alt.id in the
+               ATOM_SITES_ALT category.
+;
+    _item.name                  '_pdbx_sequence_range.beg_label_alt_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_sequence_range.beg_label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_sequence_range.beg_label_asym_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range begins.
+
+               This data item is a pointer to _atom_site.label_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_sequence_range.beg_label_asym_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_sequence_range.beg_label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+
+     save_
+
+save__pdbx_sequence_range.beg_label_comp_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range begins.
+
+               This data item is a pointer to _atom_site.label_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_sequence_range.beg_label_comp_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_sequence_range.beg_label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+
+     save_
+
+save__pdbx_sequence_range.beg_label_seq_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range begins.
+
+               This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_sequence_range.beg_label_seq_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_sequence_range.beg_label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+
+     save_
+
+save__pdbx_sequence_range.beg_auth_asym_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range begins.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_sequence_range.beg_auth_asym_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_sequence_range.beg_auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_sequence_range.beg_auth_comp_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range begins.
+
+               This data item is a pointer to _atom_site.auth_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_sequence_range.beg_auth_comp_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_sequence_range.beg_auth_comp_id'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_sequence_range.beg_auth_seq_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range begins.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_sequence_range.beg_auth_seq_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_sequence_range.beg_auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+
+     save_
+
+save__pdbx_sequence_range.seq_range_id
+    _item_description.description
+;              This data item is an identifier for a sequence range.
+;
+    _item.name                  '_pdbx_sequence_range.seq_range_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_sequence_range.end_label_alt_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range ends.
+
+               This data item is a pointer to _atom_sites_alt.id in the
+               ATOM_SITES_ALT category.
+;
+    _item.name                  '_pdbx_sequence_range.end_label_alt_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_sequence_range.end_label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+
+     save_
+
+save__pdbx_sequence_range.end_label_asym_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range ends.
+
+               This data item is a pointer to _atom_site.label_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_sequence_range.end_label_asym_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_sequence_range.end_label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+
+     save_
+
+save__pdbx_sequence_range.end_label_comp_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range ends.
+
+               This data item is a pointer to _atom_site.label_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_sequence_range.end_label_comp_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_sequence_range.end_label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+
+     save_
+
+save__pdbx_sequence_range.end_label_seq_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range ends.
+
+               This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_sequence_range.end_label_seq_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_sequence_range.end_label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+
+     save_
+
+save__pdbx_sequence_range.end_auth_asym_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range ends.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_sequence_range.end_auth_asym_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_sequence_range.end_auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_sequence_range.end_auth_comp_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range ends.
+
+               This data item is a pointer to _atom_site.auth_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_sequence_range.end_auth_comp_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_sequence_range.end_auth_comp_id'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+
+     save_
+
+save__pdbx_sequence_range.end_auth_seq_id
+    _item_description.description
+;              A component of the identifier for the monomer at which this
+               segment of the sequence range ends.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_sequence_range.end_auth_seq_id'
+    _item.category_id             pdbx_sequence_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_sequence_range.end_auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+
+     save_
+
+
+########################
+## PDBX_FEATURE_ENTRY ##
+########################
+
+save_pdbx_feature_entry
+    _category.description
+;              Data items in the PDBX_FEATURE_ENTRY category records 
+               information about properties pertaining to this 
+               structure entry.
+;
+    _category.id                  pdbx_feature_entry
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_feature_entry.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'pdbx_erf_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - Gene Ontology data by entry 
+;
+;
+     loop_
+    _pdbx_feature_entry.id   
+    _pdbx_feature_entry.feature_name
+    _pdbx_feature_entry.feature
+    _pdbx_feature_entry.feature_type
+    _pdbx_feature_entry.feature_assigned_by
+    _pdbx_feature_entry.feature_citation_id
+     1  'molecular function'  'DNA binding activity' 
+          value   GO  GO
+     2  'biological process'  'regulation of transcription, DNA-dependent' 
+          value   GO  GO
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_feature_entry.id
+    _item_description.description
+;              The value of _pdbx_feature_entry.id uniquely identifies a 
+               feature in the PDBX_FEATURE_ENTRY category.
+;
+    _item.name               '_pdbx_feature_entry.id'
+    _item.category_id         pdbx_feature_entry
+    _item.mandatory_code      yes
+    _item_type.code           code
+     save_
+
+
+save__pdbx_feature_entry.feature_name
+    _item_description.description
+;              _pdbx_feature_entry.feature_name identifies a feature
+                by name.
+;
+    _item.name               '_pdbx_feature_entry.feature_name'
+    _item.category_id         pdbx_feature_entry
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+
+save__pdbx_feature_entry.feature_type
+    _item_description.description
+;              _pdbx_feature_entry.feature_type identifies the
+                type of feature.
+;
+    _item.name               '_pdbx_feature_entry.feature_type'
+    _item.category_id         pdbx_feature_entry
+    _item.mandatory_code      yes
+    _item_type.code           text
+     loop_
+    _item_enumeration.value	'value'  'uri'     
+     save_
+
+
+save__pdbx_feature_entry.feature
+    _item_description.description
+;              The value of _pdbx_feature_entry.feature_name.
+;
+    _item.name               '_pdbx_feature_entry.feature'
+    _item.category_id         pdbx_feature_entry
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+save__pdbx_feature_entry.feature_identifier
+    _item_description.description
+;              _pdbx_feature_entry.feature_identifier is an 
+               additional identifier used to identify or 
+               accession this feature.
+;
+    _item.name               '_pdbx_feature_entry.feature_identifier'
+    _item.category_id         pdbx_feature_entry
+    _item.mandatory_code      no
+    _item_type.code           text
+     save_
+
+save__pdbx_feature_entry.feature_assigned_by
+    _item_description.description
+;              _pdbx_feature_entry.feature_assigned_by identifies 
+                the individual, organization or program that 
+                assigned the feature.
+;
+    _item.name               '_pdbx_feature_entry.feature_assigned_by'
+    _item.category_id         pdbx_feature_entry
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+
+save__pdbx_feature_entry.feature_citation_id
+    _item_description.description
+;              _pdbx_feature_entry.feature_citation_id is a 
+                reference to a citation in the CITATION category
+;
+    _item.name               '_pdbx_feature_entry.feature_citation_id'
+    _item.category_id         pdbx_feature_entry
+    _item.mandatory_code      no
+    _item_type.code           code
+    _item_linked.child_name   '_pdbx_feature_entry.feature_citation_id'    
+    _item_linked.parent_name  '_citation.id'
+     save_
+
+save__pdbx_feature_entry.feature_software_id
+    _item_description.description
+;              _pdbx_feature_entry.feature_software_id is a 
+                reference to an application described in the 
+                SOFTWARE category.
+;
+    _item.name               '_pdbx_feature_entry.feature_software_id'
+    _item.category_id         pdbx_feature_entry
+    _item.mandatory_code      no
+    _item_type.code           text
+    _item_linked.child_name   '_pdbx_feature_entry.feature_software_id'    
+    _item_linked.parent_name  '_software.name'
+     save_
+
+
+#########################
+## PDBX_FEATURE_DOMAIN ##
+#########################
+
+save_pdbx_feature_domain
+    _category.description
+;              Data items in the PDBX_FEATURE_DOMAIN category records 
+               information about properties pertaining to this structure 
+               domain.
+;
+    _category.id                  pdbx_feature_domain
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_feature_domain.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'pdbx_erf_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - SCOP data for PDB Entry 1KIP domain d1kipa_
+;
+;
+     loop_
+    _pdbx_feature_domain.id   
+    _pdbx_feature_domain.domain_id
+    _pdbx_feature_domain.feature_name
+    _pdbx_feature_domain.feature
+    _pdbx_feature_domain.feature_type
+    _pdbx_feature_domain.feature_assigned_by
+    _pdbx_feature_domain.feature_citation_id
+     1  'd1kipa_'  class 'All beta proteins' 
+                   value SCOP  scop
+     2  'd1kipa_'  fold  'Immunoglobulin-like beta-sandwich' 
+                   value SCOP  scop
+
+     3  'd1kipa_'  superfamily  'Immunoglobulin' 
+                   value SCOP  scop
+
+     4  'd1kipa_'  family  'V set domains (antibody variable domain-like)' 
+                   value SCOP  scop
+
+     5  'd1kipa_'  domain  'Immunoglobulin light chain kappa variable domain'
+                   value SCOP  scop
+
+     6  'd1kipa_'  species  'Mouse (Mus musculus), cluster 4'
+                   value SCOP  scop
+
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_feature_domain.id
+    _item_description.description
+;              The value of _pdbx_feature_domain.id uniquely identifies 
+               a feature in the PDBX_FEATURE_DOMAIN category.
+;
+    _item.name               '_pdbx_feature_domain.id'
+    _item.category_id         pdbx_feature_domain
+    _item.mandatory_code      yes
+    _item_type.code           code
+     save_
+
+
+save__pdbx_feature_domain.domain_id
+    _item_description.description
+;              The value of _pdbx_feature_domain.id references a domain 
+               definition in category PDBX_DOMAIN.
+;
+    _item.name               '_pdbx_feature_domain.domain_id'
+    _item.category_id         pdbx_feature_domain
+    _item.mandatory_code      yes
+    _item_type.code           code
+    _item_linked.child_name   '_pdbx_feature_domain.domain_id'    
+    _item_linked.parent_name  '_pdbx_domain.id'
+
+     save_
+
+
+save__pdbx_feature_domain.feature_name
+    _item_description.description
+;              _pdbx_feature_domain.feature_name identifies a feature
+                by name.
+;
+    _item.name               '_pdbx_feature_domain.feature_name'
+    _item.category_id         pdbx_feature_domain
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+
+save__pdbx_feature_domain.feature_type
+    _item_description.description
+;              _pdbx_feature_domain.feature_type identifies the
+                type of feature.
+;
+    _item.name               '_pdbx_feature_domain.feature_type'
+    _item.category_id         pdbx_feature_domain
+    _item.mandatory_code      yes
+    _item_type.code           text
+     loop_
+    _item_enumeration.value	'value'  'uri'     
+     save_
+
+
+save__pdbx_feature_domain.feature
+    _item_description.description
+;              The value of _pdbx_feature_domain.feature_name.
+;
+    _item.name               '_pdbx_feature_domain.feature'
+    _item.category_id         pdbx_feature_domain
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+
+save__pdbx_feature_domain.feature_identifier
+    _item_description.description
+;              _pdbx_feature_domain.feature_identifier is an 
+               additional identifier used to identify or 
+               accession this feature.
+;
+    _item.name               '_pdbx_feature_domain.feature_identifier'
+    _item.category_id         pdbx_feature_domain
+    _item.mandatory_code      no
+    _item_type.code           text
+     save_
+
+save__pdbx_feature_domain.feature_assigned_by
+    _item_description.description
+;              _pdbx_feature_domain.feature_assigned_by identifies 
+                the individual, organization or program that 
+                assigned the feature.
+;
+    _item.name               '_pdbx_feature_domain.feature_assigned_by'
+    _item.category_id         pdbx_feature_domain
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+
+save__pdbx_feature_domain.feature_citation_id
+    _item_description.description
+;              _pdbx_feature_domain.feature_citation_id is a 
+                reference to a citation in the CITATION category.
+;
+    _item.name               '_pdbx_feature_domain.feature_citation_id'
+    _item.category_id         pdbx_feature_domain
+    _item.mandatory_code      no
+    _item_type.code           code
+    _item_linked.child_name   '_pdbx_feature_domain.feature_citation_id'    
+    _item_linked.parent_name  '_citation.id'
+     save_
+
+save__pdbx_feature_domain.feature_software_id
+    _item_description.description
+;              _pdbx_feature_domain.feature_software_id is a 
+                reference to an application described in the 
+                SOFTWARE category.
+;
+    _item.name               '_pdbx_feature_domain.feature_software_id'
+    _item.category_id         pdbx_feature_domain
+    _item.mandatory_code      no
+    _item_type.code           text
+    _item_linked.child_name   '_pdbx_feature_domain.feature_software_id'    
+    _item_linked.parent_name  '_software.name'
+     save_
+
+
+#################################
+## PDBX_FEATURE_SEQUENCE_RANGE ##
+#################################
+
+save_pdbx_feature_sequence_range
+    _category.description
+;              Data items in the PDBX_FEATURE_SEQUENCE_RANGE category 
+               records information about properties pertaining to 
+               this structure sequence_range.
+;
+    _category.id                  pdbx_feature_sequence_range
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_feature_sequence_range.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'pdbx_erf_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - Secondary structure computed by program DSSP.
+;
+;
+     loop_
+    _pdbx_feature_sequence_range.id   
+    _pdbx_feature_sequence_range.seq_range_id
+    _pdbx_feature_sequence_range.feature_name
+    _pdbx_feature_sequence_range.feature
+    _pdbx_feature_sequence_range.feature_type
+    _pdbx_feature_sequence_range.feature_assigned_by
+    _pdbx_feature_sequence_range.feature_software_id
+      1  H1 'secondary structure' '4-helix (alpha-helix)'               
+                     value  DSSP DSSP
+      2  T1 'secondary structure' 'hydrogen-bonded turn in beta-ladder' 
+                     value  DSSP DSSP
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_feature_sequence_range.id
+    _item_description.description
+;              The value of _pdbx_feature_sequence_range.id uniquely identifies 
+               a feature in the PDBX_FEATURE_SEQUENCE_RANGE category
+;
+    _item.name               '_pdbx_feature_sequence_range.id'
+    _item.category_id         pdbx_feature_sequence_range
+    _item.mandatory_code      yes
+    _item_type.code           code
+     save_
+
+
+save__pdbx_feature_sequence_range.seq_range_id
+    _item_description.description
+;              The value of _pdbx_feature_sequence_range.seq_range_id
+               references a sequence_range definition in category 
+               PDBX_SEQUENCE_RANGE.
+;
+    _item.name               '_pdbx_feature_sequence_range.seq_range_id'
+    _item.category_id         pdbx_feature_sequence_range
+    _item.mandatory_code      yes
+    _item_type.code           code
+    _item_linked.child_name   '_pdbx_feature_sequence_range.seq_range_id'    
+    _item_linked.parent_name  '_pdbx_sequence_range.seq_range_id'
+
+     save_
+
+
+save__pdbx_feature_sequence_range.feature_name
+    _item_description.description
+;              _pdbx_feature_sequence_range.feature_name identifies a feature
+                by name.
+;
+    _item.name               '_pdbx_feature_sequence_range.feature_name'
+    _item.category_id         pdbx_feature_sequence_range
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+
+save__pdbx_feature_sequence_range.feature_type
+    _item_description.description
+;              _pdbx_feature_sequence_range.feature_type identifies the
+                type of feature.
+;
+    _item.name               '_pdbx_feature_sequence_range.feature_type'
+    _item.category_id         pdbx_feature_sequence_range
+    _item.mandatory_code      yes
+    _item_type.code           text
+     loop_
+    _item_enumeration.value	'value'  'uri'     
+     save_
+
+
+save__pdbx_feature_sequence_range.feature
+    _item_description.description
+;              The value of _pdbx_feature_sequence_range.feature_name.
+;
+    _item.name               '_pdbx_feature_sequence_range.feature'
+    _item.category_id         pdbx_feature_sequence_range
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+save__pdbx_feature_sequence_range.feature_identifier
+    _item_description.description
+;              _pdbx_feature_sequence_range.feature_identifier is an 
+               additional identifier used to identify or 
+               accession this feature.
+;
+    _item.name               '_pdbx_feature_sequence_range.feature_identifier'
+    _item.category_id         pdbx_feature_sequence_range
+    _item.mandatory_code      no
+    _item_type.code           text
+     save_
+
+save__pdbx_feature_sequence_range.feature_assigned_by
+    _item_description.description
+;              _pdbx_feature_sequence_range.feature_assigned_by identifies 
+                the individual, organization or program that assigned 
+                the feature.
+;
+    _item.name               '_pdbx_feature_sequence_range.feature_assigned_by'
+    _item.category_id         pdbx_feature_sequence_range
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+
+save__pdbx_feature_sequence_range.feature_citation_id
+    _item_description.description
+;              _pdbx_feature_sequence_range.feature_citation_id is a 
+                reference to a citation in the CITATION category
+;
+    _item.name               '_pdbx_feature_sequence_range.feature_citation_id'
+    _item.category_id         pdbx_feature_sequence_range
+    _item.mandatory_code      no
+    _item_type.code           code
+    _item_linked.child_name   '_pdbx_feature_sequence_range.feature_citation_id'    
+    _item_linked.parent_name  '_citation.id'
+     save_
+
+save__pdbx_feature_sequence_range.feature_software_id
+    _item_description.description
+;              _pdbx_feature_sequence_range.feature_software_id is a 
+                reference to an application descripted in the 
+                SOFTWARE category.
+;
+    _item.name               '_pdbx_feature_sequence_range.feature_software_id'
+    _item.category_id         pdbx_feature_sequence_range
+    _item.mandatory_code      no
+    _item_type.code           text
+    _item_linked.child_name   '_pdbx_feature_sequence_range.feature_software_id'    
+    _item_linked.parent_name  '_software.name'
+     save_
+
+
+
+###########################
+## PDBX_FEATURE_ASSEMBLY ##
+###########################
+
+save_pdbx_feature_assembly
+    _category.description
+;              Data items in the PDBX_FEATURE_ASSEMBLY category records 
+               information about properties pertaining to this 
+               structural assembly.
+;
+    _category.id                  pdbx_feature_assembly
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_feature_assembly.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'pdbx_erf_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - Biological process for functional assembly  
+;
+;
+     loop_
+    _pdbx_feature_assembly.id   
+    _pdbx_feature_assembly.assembly_id
+    _pdbx_feature_assembly.feature_name
+    _pdbx_feature_assembly.feature
+    _pdbx_feature_assembly.feature_type
+    _pdbx_feature_assembly.feature_assigned_by
+    _pdbx_feature_assembly.feature_citation_id
+        1 b1  'biological process'  'nitrogen metabolism' value GO GO
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_feature_assembly.id
+    _item_description.description
+;              The value of _pdbx_feature_assembly.id uniquely identifies a 
+               feature in the PDBX_FEATURE_ASSEMBLY category.
+;
+    _item.name               '_pdbx_feature_assembly.id'
+    _item.category_id         pdbx_feature_assembly
+    _item.mandatory_code      yes
+    _item_type.code           code
+     save_
+
+
+save__pdbx_feature_assembly.assembly_id
+    _item_description.description
+;              The value of _pdbx_feature_assembly.assembly_id references an
+               assembly definition in category STRUCT_BIOL
+;
+    _item.name               '_pdbx_feature_assembly.assembly_id'
+    _item.category_id         pdbx_feature_assembly
+    _item.mandatory_code      yes
+    _item_type.code           line
+    _item_linked.child_name   '_pdbx_feature_assembly.assembly_id'    
+    _item_linked.parent_name  '_struct_biol.id'
+
+     save_
+
+
+save__pdbx_feature_assembly.feature_name
+    _item_description.description
+;              _pdbx_feature_assembly.feature_name identifies a feature
+                by name.
+;
+    _item.name               '_pdbx_feature_assembly.feature_name'
+    _item.category_id         pdbx_feature_assembly
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+
+save__pdbx_feature_assembly.feature_type
+    _item_description.description
+;              _pdbx_feature_assembly.feature_type identifies the
+                type of feature.
+;
+    _item.name               '_pdbx_feature_assembly.feature_type'
+    _item.category_id         pdbx_feature_assembly
+    _item.mandatory_code      yes
+    _item_type.code           text
+     loop_
+    _item_enumeration.value	'value'  'uri'     
+     save_
+
+
+
+save__pdbx_feature_assembly.feature
+    _item_description.description
+;              The value of _pdbx_feature_assembly.feature_name.
+;
+    _item.name               '_pdbx_feature_assembly.feature'
+    _item.category_id         pdbx_feature_assembly
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+save__pdbx_feature_assembly.feature_identifier
+    _item_description.description
+;              _pdbx_feature_assembly_range.feature_identifier is an 
+               additional identifier used to identify or 
+               accession this feature.
+;
+    _item.name               '_pdbx_feature_assembly.feature_identifier'
+    _item.category_id         pdbx_feature_assembly
+    _item.mandatory_code      no
+    _item_type.code           text
+     save_
+
+save__pdbx_feature_assembly.feature_assigned_by
+    _item_description.description
+;              _pdbx_feature_assembly.feature_assigned_by identifies 
+                the individual, organization or program that assigned 
+                the feature.
+;
+    _item.name               '_pdbx_feature_assembly.feature_assigned_by'
+    _item.category_id         pdbx_feature_assembly
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+
+save__pdbx_feature_assembly.feature_citation_id
+    _item_description.description
+;              _pdbx_feature_assembly.feature_citation_id is a 
+                reference to a citation in the CITATION category
+;
+    _item.name               '_pdbx_feature_assembly.feature_citation_id'
+    _item.category_id         pdbx_feature_assembly
+    _item.mandatory_code      no
+    _item_type.code           code
+    _item_linked.child_name   '_pdbx_feature_assembly.feature_citation_id'    
+    _item_linked.parent_name  '_citation.id'
+     save_
+
+save__pdbx_feature_assembly.feature_software_id
+    _item_description.description
+;              _pdbx_feature_assembly.feature_software_id is a 
+                reference to an application described in the 
+                SOFTWARE category.
+;
+    _item.name               '_pdbx_feature_assembly.feature_software_id'
+    _item.category_id         pdbx_feature_assembly
+    _item.mandatory_code      no
+    _item_type.code           text
+    _item_linked.child_name   '_pdbx_feature_assembly.feature_software_id'    
+    _item_linked.parent_name  '_software.name'
+     save_
+
+
+##########################
+## PDBX_FEATURE_MONOMER ##
+##########################
+
+save_pdbx_feature_monomer
+    _category.description
+;              Data items in the PDBX_FEATURE_MONOMER category records 
+               information about properties pertaining to particular
+               monomers in this structure.
+;
+    _category.id                  pdbx_feature_monomer
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_feature_monomer.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'pdbx_erf_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+     loop_
+    _pdbx_feature_monomer.id   
+    _pdbx_feature_monomer.label_alt_id
+    _pdbx_feature_monomer.label_asym_id
+    _pdbx_feature_monomer.label_comp_id
+    _pdbx_feature_monomer.label_seq_id
+    _pdbx_feature_monomer.feature_name
+    _pdbx_feature_monomer.feature
+    _pdbx_feature_monomer.feature_type
+    _pdbx_feature_monomer.feature_assigned_by
+    _pdbx_feature_monomer.feature_citation_id
+     1 . A ASP 1 'SASA'  129.4  value POPS  pops
+     1 . A ILE 2 'SASA'   35.5  value POPS  pops
+     1 . A VAL 3 'SASA'   87.2  value POPS  pops
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_feature_monomer.id
+    _item_description.description
+;              The value of _pdbx_feature_monomer.id uniquely identifies 
+               a feature in the PDBX_FEATURE_MONOMER category.
+;
+    _item.name               '_pdbx_feature_monomer.id'
+    _item.category_id         pdbx_feature_monomer
+    _item.mandatory_code      yes
+    _item_type.code           code
+     save_
+
+
+save__pdbx_feature_monomer.feature_name
+    _item_description.description
+;              _pdbx_feature_monomer.feature_name identifies a feature
+                by name.
+;
+    _item.name               '_pdbx_feature_monomer.feature_name'
+    _item.category_id         pdbx_feature_monomer
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+
+save__pdbx_feature_monomer.feature_type
+    _item_description.description
+;              _pdbx_feature_monomer.feature_type identifies the
+                type of feature.
+;
+    _item.name               '_pdbx_feature_monomer.feature_type'
+    _item.category_id         pdbx_feature_monomer
+    _item.mandatory_code      yes
+    _item_type.code           text
+     loop_
+    _item_enumeration.value	'value'  'uri'     
+     save_
+
+
+save__pdbx_feature_monomer.feature
+    _item_description.description
+;              The value of _pdbx_feature_monomer.feature_name.
+;
+    _item.name               '_pdbx_feature_monomer.feature'
+    _item.category_id         pdbx_feature_monomer
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+
+save__pdbx_feature_monomer.feature_identifier
+    _item_description.description
+;              _pdbx_feature_monomer.feature_identifier is an 
+               additional identifier used to identify or 
+               accession this feature.
+;
+    _item.name               '_pdbx_feature_monomer.feature_identifier'
+    _item.category_id         pdbx_feature_monomer
+    _item.mandatory_code      no
+    _item_type.code           text
+     save_
+
+save__pdbx_feature_monomer.feature_assigned_by
+    _item_description.description
+;              _pdbx_feature_monomer.feature_assigned_by identifies 
+                the individual, organization or program that 
+                assigned the feature.
+;
+    _item.name               '_pdbx_feature_monomer.feature_assigned_by'
+    _item.category_id         pdbx_feature_monomer
+    _item.mandatory_code      yes
+    _item_type.code           text
+     save_
+
+
+save__pdbx_feature_monomer.feature_citation_id
+    _item_description.description
+;              _pdbx_feature_monomer.feature_citation_id is a 
+                reference to a citation in the CITATION category.
+;
+    _item.name               '_pdbx_feature_monomer.feature_citation_id'
+    _item.category_id         pdbx_feature_monomer
+    _item.mandatory_code      no
+    _item_type.code           code
+    _item_linked.child_name   '_pdbx_feature_monomer.feature_citation_id'    
+    _item_linked.parent_name  '_citation.id'
+     save_
+
+save__pdbx_feature_monomer.feature_software_id
+    _item_description.description
+;              _pdbx_feature_monomer.feature_software_id is a 
+                reference to an application described in the 
+                SOFTWARE category.
+;
+    _item.name               '_pdbx_feature_monomer.feature_software_id'
+    _item.category_id         pdbx_feature_monomer
+    _item.mandatory_code      no
+    _item_type.code           text
+    _item_linked.child_name   '_pdbx_feature_monomer.feature_software_id'    
+    _item_linked.parent_name  '_software.name'
+     save_
+##
+
+save__pdbx_feature_monomer.label_alt_id
+    _item_description.description
+;              A component of the identifier for the monomer.
+
+               This data item is a pointer to _atom_sites_alt.id in the
+               ATOM_SITES_ALT category.
+;
+    _item.name                  '_pdbx_feature_monomer.label_alt_id'
+    _item.category_id             pdbx_feature_monomer
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_feature_monomer.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_feature_monomer.label_asym_id
+    _item_description.description
+;              A component of the identifier for the monomer.
+
+               This data item is a pointer to _atom_site.label_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_feature_monomer.label_asym_id'
+    _item.category_id             pdbx_feature_monomer
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_feature_monomer.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+
+     save_
+
+save__pdbx_feature_monomer.label_comp_id
+    _item_description.description
+;              A component of the identifier for the monomer.
+
+               This data item is a pointer to _atom_site.label_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_feature_monomer.label_comp_id'
+    _item.category_id             pdbx_feature_monomer
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_feature_monomer.label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+
+     save_
+
+save__pdbx_feature_monomer.label_seq_id
+    _item_description.description
+;              A component of the identifier for the monomer.
+
+               This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_feature_monomer.label_seq_id'
+    _item.category_id             pdbx_feature_monomer
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_feature_monomer.label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+
+     save_
+
+save__pdbx_feature_monomer.auth_asym_id
+    _item_description.description
+;              A component of the identifier for the monomer.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_feature_monomer.auth_asym_id'
+    _item.category_id             pdbx_feature_monomer
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_feature_monomer.auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_feature_monomer.auth_comp_id
+    _item_description.description
+;              A component of the identifier for the monomer.
+
+               This data item is a pointer to _atom_site.auth_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_feature_monomer.auth_comp_id'
+    _item.category_id             pdbx_feature_monomer
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_feature_monomer.auth_comp_id'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_feature_monomer.auth_seq_id
+    _item_description.description
+;              A component of the identifier for the monomer.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_feature_monomer.auth_seq_id'
+    _item.category_id             pdbx_feature_monomer
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_feature_monomer.auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+
+     save_
+
+
+
+##
+## End of file:  mmcif_pdbx-def-9.dic
+##
+
