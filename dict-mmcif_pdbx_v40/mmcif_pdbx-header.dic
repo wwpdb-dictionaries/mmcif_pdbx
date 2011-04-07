@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.000
+    _dictionary.version         4.001
 #
      loop_
     _dictionary_history.version
@@ -1378,4 +1378,16 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes (jdw):  
   + Release as provision version 4.000
 ;
+   4.001   2011-04-07
+;
+ Changes:  (jdw):
+  + Added items - 
+    _pdbx_reference_entity_list.component
+    _pdbx_reference_entity_entity_link.link_class        
+    _pdbx_reference_entity_entity_link.entity_seq_num_1  
+    _pdbx_reference_entity_entity_link.nonpoly_res_num_1 
+    _pdbx_reference_entity_entity_link.entity_seq_num_2  
+    _pdbx_reference_entity_entity_link.nonpoly_res_num_2 
+;
+
 ### EOF mmcif_pdbx-header.dic 
