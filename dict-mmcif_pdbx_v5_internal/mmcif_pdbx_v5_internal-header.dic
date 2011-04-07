@@ -8,3 +8,24 @@
 #                                                                           
 ###########################################################################
 
+data_mmcif_pdbx.dic
+
+    _datablock.id                          mmcif_pdbx.dic
+    _datablock.description
+;
+     This data block holds the Protein Data Bank Exchange Data dictionary.
+;
+
+    _dictionary.title           mmcif_pdbx.dic
+    _dictionary.datablock_id    mmcif_pdbx.dic
+    _dictionary.version         5.000
+#
+     loop_
+    _dictionary_history.version
+    _dictionary_history.update
+    _dictionary_history.revision
+  5.000  2011-04-06
+;
+  Changes (jdw):  
+  + Release as provision version 5.000
+;
