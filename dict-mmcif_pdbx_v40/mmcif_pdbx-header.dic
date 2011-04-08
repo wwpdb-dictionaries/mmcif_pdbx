@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.001
+    _dictionary.version         4.002
 #
      loop_
     _dictionary_history.version
@@ -1388,6 +1388,17 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     _pdbx_reference_entity_entity_link.nonpoly_res_num_1 
     _pdbx_reference_entity_entity_link.entity_seq_num_2  
     _pdbx_reference_entity_entity_link.nonpoly_res_num_2 
+;
+   4.002   2011-04-08
+;
+ Changes:  (jdw):
+  + Added items - 
+    _pdbx_reference_entity_link.component_1
+    _pdbx_reference_entity_link.component_2
+    _pdbx_reference_entity_poly_nstd_link.component
+    _pdbx_reference_entity_instances.PDB_residue_number
+    _pdbx_reference_entity_instances.PDB_chain_id_list
+    _pdbx_reference_entity_poly_seq.hetero
 ;
 
 ### EOF mmcif_pdbx-header.dic 

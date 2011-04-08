@@ -15735,7 +15735,7 @@ save__entity_poly_seq.entity_id
 save__entity_poly_seq.hetero
     _item_description.description
 ;              A flag to indicate whether this monomer in the polymer is
-               heterogeneous in sequence. This would be rare.
+               heterogeneous in sequence. 
 ;
     _item.name                  '_entity_poly_seq.hetero'
     _item.category_id             entity_poly_seq

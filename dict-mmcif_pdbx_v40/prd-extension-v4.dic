@@ -2,14 +2,23 @@
 ###   File: prd-extension-v4.dic
 ###   Date: April 1, 2011  jdw
 ###
+###   Updated: April 8, 2011 - 
+###   + Added items - 
+###     _pdbx_reference_entity_link.component_1
+###     _pdbx_reference_entity_link.component_2
+###     _pdbx_reference_entity_poly_nstd_link.component
+###     _pdbx_reference_entity_instances.PDB_residue_number
+###     _pdbx_reference_entity_instances.PDB_chain_id_list
+###     _pdbx_reference_entity_poly_seq.hetero
+###
 ###   Updated: April 6, 2011 - 
 ###   + Added items - 
 ###     _pdbx_reference_entity_list.component
-###     _pdbx_reference_entity_entity_link.link_class        
-###     _pdbx_reference_entity_entity_link.entity_seq_num_1  
-###     _pdbx_reference_entity_entity_link.nonpoly_res_num_1 
-###     _pdbx_reference_entity_entity_link.entity_seq_num_2  
-###     _pdbx_reference_entity_entity_link.nonpoly_res_num_2 
+###     _pdbx_reference_entity_link.link_class        
+###     _pdbx_reference_entity_link.entity_seq_num_1  
+###     _pdbx_reference_entity_link.nonpoly_res_num_1 
+###     _pdbx_reference_entity_link.entity_seq_num_2  
+###     _pdbx_reference_entity_link.nonpoly_res_num_2 
 ###
 ###   Updated: April 5, 2011 jdw -  Added non-standard polymer linking details in 
 ###                            category  PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK,
@@ -295,6 +304,7 @@ save__pdbx_reference_entity.three_letter_code
      save_
 
 
+
 ################################
 ## PDBX_REFERENCE_ENTITY_LIST ##
 ################################
@@ -574,27 +584,29 @@ save_pdbx_reference_entity_link
 ;
 ;
 loop_
-_pdbx_reference_entity_entity_link.family_prd_id
-_pdbx_reference_entity_entity_link.prd_id
-_pdbx_reference_entity_entity_link.link_id
-_pdbx_reference_entity_entity_link.link_class         
-_pdbx_reference_entity_entity_link.ref_entity_id_1
-_pdbx_reference_entity_entity_link.entity_seq_num_1   
-_pdbx_reference_entity_entity_link.nonpoly_res_num_1  
-_pdbx_reference_entity_entity_link.comp_id_1
-_pdbx_reference_entity_entity_link.atom_id_1
-_pdbx_reference_entity_entity_link.ref_entity_id_2
-_pdbx_reference_entity_entity_link.entity_seq_num_2   
-_pdbx_reference_entity_entity_link.nonpoly_res_num_2 
-_pdbx_reference_entity_entity_link.comp_id_2
-_pdbx_reference_entity_entity_link.atom_id_2
-_pdbx_reference_entity_entity_link.value_order
-FAM_000411 PRD_000488 1 PN 1 1 . DSN N  2 . 0 QUI C  'single'
-FAM_000411 PRD_000488 2 PN 1 5 . DSN N  2 . 9 QUI C  'single'
-FAM_000411 PRD_000491 1 PN 1 1 . DSN N  2 . 0 QUI C  'single'
-FAM_000411 PRD_000491 2 PN 1 5 . DSN N  2 . 9 QUI C  'single'
-FAM_000411 PRD_000492 1 PN 1 1 . DSN N  2 . 0 HQU C  'single'
-FAM_000411 PRD_000492 2 PN 1 5 . DSN N  2 . 9 HQU C  'single'
+_pdbx_reference_entity_link.family_prd_id
+_pdbx_reference_entity_link.prd_id
+_pdbx_reference_entity_link.link_id
+_pdbx_reference_entity_link.link_class         
+_pdbx_reference_entity_link.ref_entity_id_1
+_pdbx_reference_entity_link.component_1
+_pdbx_reference_entity_link.entity_seq_num_1   
+_pdbx_reference_entity_link.nonpoly_res_num_1  
+_pdbx_reference_entity_link.comp_id_1
+_pdbx_reference_entity_link.atom_id_1
+_pdbx_reference_entity_link.ref_entity_id_2
+_pdbx_reference_entity_link.component_2
+_pdbx_reference_entity_link.entity_seq_num_2   
+_pdbx_reference_entity_link.nonpoly_res_num_2 
+_pdbx_reference_entity_link.comp_id_2
+_pdbx_reference_entity_link.atom_id_2
+_pdbx_reference_entity_link.value_order
+FAM_000411 PRD_000488 1 PN 1 1 1 . DSN N  2 2 . 0 QUI C  'single'
+FAM_000411 PRD_000488 2 PN 1 1 5 . DSN N  2 3 . 9 QUI C  'single'
+FAM_000411 PRD_000491 1 PN 1 1 1 . DSN N  2 2 . 0 QUI C  'single'
+FAM_000411 PRD_000491 2 PN 1 1 5 . DSN N  2 3 . 9 QUI C  'single'
+FAM_000411 PRD_000492 1 PN 1 1 1 . DSN N  2 2 . 0 HQU C  'single'
+FAM_000411 PRD_000492 2 PN 1 1 5 . DSN N  2 3 . 9 HQU C  'single'
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -694,6 +706,36 @@ save__pdbx_reference_entity_link.ref_entity_id_2
     _item_type.code               ucode
     _item_linked.child_name	'_pdbx_reference_entity_link.ref_entity_id_2'
     _item_linked.parent_name    '_pdbx_reference_entity_list.ref_entity_id'
+     save_
+
+save__pdbx_reference_entity_link.component_1
+    _item_description.description
+;              The component number of the first of the two entities joined by the
+               linkage. 
+
+               This data item is a pointer to _pdbx_reference_entity_list.component
+               in the PDBX_REFERENCE_ENTITY_LIST category.
+;
+    _item.name                  '_pdbx_reference_entity_link.component_1'
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_pdbx_reference_entity_link.component_1'
+    _item_linked.parent_name    '_pdbx_reference_entity_list.component'
+     save_
+
+save__pdbx_reference_entity_link.component_2
+    _item_description.description
+;              The component number of the second of the two entities joined by the
+               linkage. 
+
+               This data item is a pointer to _pdbx_reference_entity_list.component
+               in the PDBX_REFERENCE_ENTITY_LIST category.
+;
+    _item.name                  '_pdbx_reference_entity_link.component_2'
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_pdbx_reference_entity_link.component_2'
+    _item_linked.parent_name    '_pdbx_reference_entity_list.component'
      save_
 
 save__pdbx_reference_entity_link.entity_seq_num_1
@@ -1166,6 +1208,38 @@ save__pdbx_reference_entity_poly_seq.mon_id
     _item_type.code               code
      save_
 
+save__pdbx_reference_entity_poly_seq.hetero
+    _item_description.description
+;              A flag to indicate whether this monomer in the polymer is
+               heterogeneous in sequence. 
+;
+    _item.name                  '_pdbx_reference_entity_poly_seq.hetero'
+    _item.category_id             pdbx_reference_entity_poly_seq
+    _item.mandatory_code          no
+    _item_default.value           no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      no
+                                 'sequence is not heterogeneous at this monomer'
+                                  n
+                                 'abbreviation for "no"'
+                                  yes
+                                 'sequence is heterogeneous at this monomer'
+                                  y
+                                 'abbreviation for "yes"'
+     save_
+
+save__pdbx_reference_entity_poly_seq.hetero
+    _item_description.description
+;              This data item is the 3-letter-code of monomer.
+;
+    _item.name                  '_pdbx_reference_entity_poly_seq.mon_id'
+    _item.category_id             pdbx_reference_entity_poly_seq
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
 save__pdbx_reference_entity_poly_seq.modified_mon_id
     _item_description.description
 ;              This data item is the 3-letter-code of the modified monomer.
@@ -1331,6 +1405,33 @@ save__pdbx_reference_entity_instances.prd_representative_flag
           N  'not representative'
     _item_examples.case           Y
      save_
+
+save__pdbx_reference_entity_instances.PDB_chain_id_list
+    _item_description.description
+;              The PDB Chain identifier code(s) for the representative molecule.
+   
+               Multiple chain codes are represented as a comma separated list.
+;
+    _item.name                  '_pdbx_reference_entity_instances.PDB_chain_id_list'
+    _item.category_id             pdbx_reference_entity_instances
+    _item.mandatory_code          no
+    _item_type.code               ucode-alphanum-csv
+     loop_
+    _item_examples.case         'A' 'A,B'
+     save_
+
+save__pdbx_reference_entity_instances.PDB_residue_number
+    _item_description.description
+;              The PDB residue number for the representative molecule.
+;
+    _item.name                  '_pdbx_reference_entity_instances.PDB_residue_number'
+    _item.category_id             pdbx_reference_entity_instances
+    _item.mandatory_code          no
+    _item_type.code               ucode
+     loop_
+    _item_examples.case         '100' '411'
+     save_
+
 
 save__pdbx_reference_entity_instances.details
     _item_description.description
@@ -3197,6 +3298,7 @@ loop_
 _pdbx_reference_entity_poly_nstd_link.family_prd_id
 _pdbx_reference_entity_poly_nstd_link.prd_id
 _pdbx_reference_entity_poly_nstd_link.ref_entity_id
+_pdbx_reference_entity_poly_nstd_link.component
 _pdbx_reference_entity_poly_nstd_link.link_id
 _pdbx_reference_entity_poly_nstd_link.entity_seq_num_1
 _pdbx_reference_entity_poly_nstd_link.comp_id_1
@@ -3205,18 +3307,18 @@ _pdbx_reference_entity_poly_nstd_link.entity_seq_num_2
 _pdbx_reference_entity_poly_nstd_link.comp_id_2
 _pdbx_reference_entity_poly_nstd_link.atom_id_2
 _pdbx_reference_entity_poly_nstd_link.value_order
-FAM_000411 PRD_000001 1 1 1 DSN C 2 ALA N  'single'
-FAM_000411 PRD_000001 1 2 2 ALA C 3 N2C N  'single'
-FAM_000411 PRD_000001 1 3 2 ALA C 3 N2C N  'single'
-FAM_000411 PRD_000001 1 4 2 ALA C 3 NCY N  'single'
-FAM_000411 PRD_000001 1 5 3 N2C C 4 MVA N  'single'
-FAM_000411 PRD_000001 1 6 3 NCY C 4 MVA N  'single'
-FAM_000411 PRD_000001 1 7 4 MVA C 5 DSN OG 'single'
-FAM_000411 PRD_000001 1 8 5 DSN C 6 ALA N  'single'
-FAM_000411 PRD_000001 1 8 6 ALA C 7 NCY N  'single'
-FAM_000411 PRD_000001 1 9 6 ALA C 7 N2C N  'single'
-FAM_000411 PRD_000001 1 8 7 NCY C 8 MVA N  'single'
-FAM_000411 PRD_000001 1 9 7 N2C C 8 MVZ N  'single'
+FAM_000411 PRD_000001 1 1 1 1 DSN C 2 ALA N  'single'
+FAM_000411 PRD_000001 1 1 2 2 ALA C 3 N2C N  'single'
+FAM_000411 PRD_000001 1 1 3 2 ALA C 3 N2C N  'single'
+FAM_000411 PRD_000001 1 1 4 2 ALA C 3 NCY N  'single'
+FAM_000411 PRD_000001 1 1 5 3 N2C C 4 MVA N  'single'
+FAM_000411 PRD_000001 1 1 6 3 NCY C 4 MVA N  'single'
+FAM_000411 PRD_000001 1 1 7 4 MVA C 5 DSN OG 'single'
+FAM_000411 PRD_000001 1 1 8 5 DSN C 6 ALA N  'single'
+FAM_000411 PRD_000001 1 1 8 6 ALA C 7 NCY N  'single'
+FAM_000411 PRD_000001 1 1 9 6 ALA C 7 N2C N  'single'
+FAM_000411 PRD_000001 1 1 8 7 NCY C 8 MVA N  'single'
+FAM_000411 PRD_000001 1 1 9 7 N2C C 8 MVZ N  'single'
 ....
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -3280,6 +3382,20 @@ save__pdbx_reference_entity_poly_nstd_link.ref_entity_id
     _item_type.code               ucode
     _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.ref_entity_id'
     _item_linked.parent_name    '_pdbx_reference_entity_list.ref_entity_id'
+     save_
+
+save__pdbx_reference_entity_poly_nstd_link.component
+    _item_description.description
+;              The component number of the polymer entity containing the non-standard linkage.
+
+               This data item is a pointer to _pdbx_reference_entity_list.component
+               in the PDBX_REFERENCE_ENTITY_LIST category.
+;
+    _item.name                  '_pdbx_reference_entity_poly_nstd_link.component'
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.component'
+    _item_linked.parent_name    '_pdbx_reference_entity_list.component'
      save_
 
 save__pdbx_reference_entity_poly_nstd_link.entity_seq_num_1
