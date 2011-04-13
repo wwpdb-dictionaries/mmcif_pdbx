@@ -2,7 +2,18 @@
 ###   File: prd-extension-v4.dic
 ###   Date: April 1, 2011  jdw
 ###
-###   Updated: April 13, 2011
+###   Updated: April 13, 2011 PM
+###   +  The roles of _pdbx_reference_entity_poly_seq.modified_mon_id and _pdbx_reference_entity_poly_seq.mon_id 
+###      swapped.   
+###   + _pdbx_reference_entity_poly_seq.modified_mon_id removed
+###   + _pdbx_reference_entity_poly_seq.parent_mon_id added as an optional item for the 
+###      parent items in ribosomal proteins.
+###   + _pdbx_reference_entity_poly_seq.mon_id made mandatory 
+###   +  corrected examples link examples with bond orders  = 'sing'
+###   +  relax the comma separated item data type
+###   +  add famil_prd_id and ref_entity_id to the category key of pdbx_entity_reference_sequence
+###
+###   Updated: April 13, 2011 AM
 ###   + removed duplicate _pdbx_reference_entity_poly_seq.hetero definition
 ###   + Changed the lower limit for _pdbx_reference_entity_poly_seq.num to include 0
 ###      
@@ -606,12 +617,12 @@ _pdbx_reference_entity_link.nonpoly_res_num_2
 _pdbx_reference_entity_link.comp_id_2
 _pdbx_reference_entity_link.atom_id_2
 _pdbx_reference_entity_link.value_order
-FAM_000411 PRD_000488 1 PN 1 1 1 . DSN N  2 2 . 0 QUI C  'single'
-FAM_000411 PRD_000488 2 PN 1 1 5 . DSN N  2 3 . 9 QUI C  'single'
-FAM_000411 PRD_000491 1 PN 1 1 1 . DSN N  2 2 . 0 QUI C  'single'
-FAM_000411 PRD_000491 2 PN 1 1 5 . DSN N  2 3 . 9 QUI C  'single'
-FAM_000411 PRD_000492 1 PN 1 1 1 . DSN N  2 2 . 0 HQU C  'single'
-FAM_000411 PRD_000492 2 PN 1 1 5 . DSN N  2 3 . 9 HQU C  'single'
+FAM_000411 PRD_000488 1 PN 1 1 1 . DSN N  2 2 . 0 QUI C  'sing'
+FAM_000411 PRD_000488 2 PN 1 1 5 . DSN N  2 3 . 9 QUI C  'sing'
+FAM_000411 PRD_000491 1 PN 1 1 1 . DSN N  2 2 . 0 QUI C  'sing'
+FAM_000411 PRD_000491 2 PN 1 1 5 . DSN N  2 3 . 9 QUI C  'sing'
+FAM_000411 PRD_000492 1 PN 1 1 1 . DSN N  2 2 . 0 HQU C  'sing'
+FAM_000411 PRD_000492 2 PN 1 1 5 . DSN N  2 3 . 9 HQU C  'sing'
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1126,7 +1137,7 @@ save_pdbx_reference_entity_poly_seq
                                 '_pdbx_reference_entity_poly_seq.prd_id'
                                 '_pdbx_reference_entity_poly_seq.ref_entity_id'
                                 '_pdbx_reference_entity_poly_seq.num'
-#                               '_pdbx_reference_entity_poly_seq.mon_id'
+                                '_pdbx_reference_entity_poly_seq.mon_id'
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
@@ -1145,18 +1156,18 @@ save_pdbx_reference_entity_poly_seq
  _pdbx_reference_entity_poly_seq.ref_entity_id
  _pdbx_reference_entity_poly_seq.num
  _pdbx_reference_entity_poly_seq.mon_id   
- _pdbx_reference_entity_poly_seq.modified_mon_id
- FAM_000001 PRD_000001 1  1 THR THR 
- FAM_000001 PRD_000001 1  2 VAL DVA 
- FAM_000001 PRD_000001 1  3 PRO PRO 
- FAM_000001 PRD_000001 1  4 GLY SAR 
- FAM_000001 PRD_000001 1  5 VAL MVA 
- FAM_000001 PRD_000001 1  6 .   PXZ 
- FAM_000001 PRD_000001 1  7 THR THR 
- FAM_000001 PRD_000001 1  8 VAL DVA 
- FAM_000001 PRD_000001 1  9 PRO PRO 
- FAM_000001 PRD_000001 1 10 GLY SAR 
- FAM_000001 PRD_000001 1 11 VAL MVA 
+ _pdbx_reference_entity_poly_seq.parent_mon_id
+ FAM_000001 PRD_000001 1  1  THR  THR
+ FAM_000001 PRD_000001 1  2  DVA  VAL
+ FAM_000001 PRD_000001 1  3  PRO  PRO
+ FAM_000001 PRD_000001 1  4  SAR  GLY
+ FAM_000001 PRD_000001 1  5  MVA  VAL
+ FAM_000001 PRD_000001 1  6  PXZ  .  
+ FAM_000001 PRD_000001 1  7  THR  THR
+ FAM_000001 PRD_000001 1  8  DVA  VAL
+ FAM_000001 PRD_000001 1  9  PRO  PRO
+ FAM_000001 PRD_000001 1 10  SAR  GLY
+ FAM_000001 PRD_000001 1 11  MVA  VAL
  #
  # ---- data abbreviated -----
 ;
@@ -1236,15 +1247,6 @@ save__pdbx_reference_entity_poly_seq.hetero
      save_
 
 
-save__pdbx_reference_entity_poly_seq.modified_mon_id
-    _item_description.description
-;              This data item is the 3-letter-code of the modified monomer.
-;
-    _item.name                  '_pdbx_reference_entity_poly_seq.modified_mon_id'
-    _item.category_id             pdbx_reference_entity_poly_seq
-    _item.mandatory_code          yes
-    _item_type.code               code
-     save_
 
 save__pdbx_reference_entity_poly_seq.num
     _item_description.description
@@ -1260,6 +1262,17 @@ save__pdbx_reference_entity_poly_seq.num
                                   0   0
     _item_type.code               int
      save_
+
+save__pdbx_reference_entity_poly_seq.parent_mon_id
+    _item_description.description
+;              This data item is the 3-letter-code of the parent monomer for ribosomal proteins.
+;
+    _item.name                  '_pdbx_reference_entity_poly_seq.parent_mon_id'
+    _item.category_id             pdbx_reference_entity_poly_seq
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
 
 #####################################
 ## PDBX_REFERENCE_ENTITY_INSTANCES ##
@@ -1411,7 +1424,8 @@ save__pdbx_reference_entity_instances.PDB_chain_id_list
     _item.name                  '_pdbx_reference_entity_instances.PDB_chain_id_list'
     _item.category_id             pdbx_reference_entity_instances
     _item.mandatory_code          no
-    _item_type.code               ucode-alphanum-csv
+#    _item_type.code               ucode-alphanum-csv
+    _item_type.code               line
      loop_
     _item_examples.case         'A' 'A,B'
      save_
@@ -2549,7 +2563,9 @@ save_pdbx_reference_entity_sequence
     _category.id                  'pdbx_reference_entity_sequence'
     _category.mandatory_code      no
      loop_
-    _category_key.name            '_pdbx_reference_entity_sequence.prd_id'
+    _category_key.name            '_pdbx_reference_entity_sequence.family_prd_id'
+                                  '_pdbx_reference_entity_sequence.prd_id'
+                                  '_pdbx_reference_entity_sequence.ref_entity_id'
 #
     loop_
     _category_group.id           'inclusive_group'
@@ -2674,7 +2690,8 @@ save_pdbx_reference_entity_grouping
     _category.id                  'pdbx_reference_entity_grouping'
     _category.mandatory_code      no
      loop_
-    _category_key.name            '_pdbx_reference_entity_grouping.prd_id'
+    _category_key.name            '_pdbx_reference_entity_grouping.family_prd_id'
+                                  '_pdbx_reference_entity_grouping.prd_id'
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
@@ -2762,6 +2779,7 @@ save_pdbx_reference_entity_group
     _category.mandatory_code      no
      loop_
     _category_key.name            
+       '_pdbx_reference_entity_group.family_prd_id'
        '_pdbx_reference_entity_group.prd_id'
        '_pdbx_reference_entity_group.id'
     loop_
@@ -3303,18 +3321,18 @@ _pdbx_reference_entity_poly_nstd_link.entity_seq_num_2
 _pdbx_reference_entity_poly_nstd_link.comp_id_2
 _pdbx_reference_entity_poly_nstd_link.atom_id_2
 _pdbx_reference_entity_poly_nstd_link.value_order
-FAM_000411 PRD_000001 1 1 1 1 DSN C 2 ALA N  'single'
-FAM_000411 PRD_000001 1 1 2 2 ALA C 3 N2C N  'single'
-FAM_000411 PRD_000001 1 1 3 2 ALA C 3 N2C N  'single'
-FAM_000411 PRD_000001 1 1 4 2 ALA C 3 NCY N  'single'
-FAM_000411 PRD_000001 1 1 5 3 N2C C 4 MVA N  'single'
-FAM_000411 PRD_000001 1 1 6 3 NCY C 4 MVA N  'single'
-FAM_000411 PRD_000001 1 1 7 4 MVA C 5 DSN OG 'single'
-FAM_000411 PRD_000001 1 1 8 5 DSN C 6 ALA N  'single'
-FAM_000411 PRD_000001 1 1 8 6 ALA C 7 NCY N  'single'
-FAM_000411 PRD_000001 1 1 9 6 ALA C 7 N2C N  'single'
-FAM_000411 PRD_000001 1 1 8 7 NCY C 8 MVA N  'single'
-FAM_000411 PRD_000001 1 1 9 7 N2C C 8 MVZ N  'single'
+FAM_000411 PRD_000001 1 1 1 1 DSN C 2 ALA N  'sing'
+FAM_000411 PRD_000001 1 1 2 2 ALA C 3 N2C N  'sing'
+FAM_000411 PRD_000001 1 1 3 2 ALA C 3 N2C N  'sing'
+FAM_000411 PRD_000001 1 1 4 2 ALA C 3 NCY N  'sing'
+FAM_000411 PRD_000001 1 1 5 3 N2C C 4 MVA N  'sing'
+FAM_000411 PRD_000001 1 1 6 3 NCY C 4 MVA N  'sing'
+FAM_000411 PRD_000001 1 1 7 4 MVA C 5 DSN OG 'sing'
+FAM_000411 PRD_000001 1 1 8 5 DSN C 6 ALA N  'sing'
+FAM_000411 PRD_000001 1 1 8 6 ALA C 7 NCY N  'sing'
+FAM_000411 PRD_000001 1 1 9 6 ALA C 7 N2C N  'sing'
+FAM_000411 PRD_000001 1 1 8 7 NCY C 8 MVA N  'sing'
+FAM_000411 PRD_000001 1 1 9 7 N2C C 8 MVZ N  'sing'
 ....
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

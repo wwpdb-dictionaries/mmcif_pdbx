@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.003
+    _dictionary.version         4.004
 #
      loop_
     _dictionary_history.version
@@ -1406,5 +1406,16 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + removed duplicate _pdbx_reference_entity_poly_seq.hetero definition
   + Changed the lower limit for _pdbx_reference_entity_poly_seq.num to include 0
 ;
-
+   4.004   2011-04-13
+;
+  +  The roles of _pdbx_reference_entity_poly_seq.modified_mon_id and _pdbx_reference_entity_poly_seq.mon_id 
+     swapped.   
+  + _pdbx_reference_entity_poly_seq.modified_mon_id removed
+  + _pdbx_reference_entity_poly_seq.parent_mon_id added as an optional item for the 
+     parent items in ribosomal proteins.
+  + _pdbx_reference_entity_poly_seq.mon_id made mandatory -- 
+  +  corrected examples link examples with bond orders  = 'sing'
+  +  relax the comma separated item data type
+  +  add famil_prd_id and ref_entity_id to the category key of pdbx_entity_reference_sequence
+;
 ### EOF mmcif_pdbx-header.dic 

@@ -375,7 +375,7 @@
                numbers.
 ;
                ucode-alphanum-csv      uchar
-               '[A-Za-z0-9*|+-]+(,[A-Za-z0-9*|+-]+)?'
+               '[A-Za-z0-9]+(,[A-Za-z0-9]+)?'
 ;              comma separated alpha numeric codes (single words)  (case insensitive) ...
 ;
               code30  char
