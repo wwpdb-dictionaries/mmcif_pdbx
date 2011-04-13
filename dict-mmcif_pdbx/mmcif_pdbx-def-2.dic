@@ -10434,6 +10434,7 @@ save__pdbx_SG_project.project_name
       'PSI:Biology'
       'PSI, Protein Structure Initiative'
       'NPPSFA, National Project on Protein Structural and Functional Analyses'
+      'Enzyme Function Initiative'
      save_
 
 save__pdbx_SG_project.full_name_of_center

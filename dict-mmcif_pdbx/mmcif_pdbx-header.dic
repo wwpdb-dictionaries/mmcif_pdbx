@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         1.0690
+    _dictionary.version         1.0691
 #
      loop_
     _dictionary_history.version
@@ -1298,7 +1298,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes (jdw):
    + updated enumeration list for _pdbx_SG_project.project_name.
 ;
-  1.0690 2011-04-06
+  1.0690 2011-04-13
 ;
  Changes(jdw):
    + Remove provisional unused category pdbx_struct_comp_nstd_link.
@@ -1306,5 +1306,10 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    + Remove provisional unused pdbx_entity_reference_* categories 
 
    These categories will be reintroduced in reorganized form in PDBx dictionary version 4.0.
+;
+  1.0691 2011-04-13
+;
+  Changes (jdw):
+  + update enumeration for pdbx_SG_project.project_name with 'Enzyme Function Initiative'
 ;
 #
