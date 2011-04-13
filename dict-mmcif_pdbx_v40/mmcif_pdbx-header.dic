@@ -1408,12 +1408,13 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
    4.004   2011-04-13
 ;
+ Changes:  (jdw):
   +  The roles of _pdbx_reference_entity_poly_seq.modified_mon_id and _pdbx_reference_entity_poly_seq.mon_id 
      swapped.   
   + _pdbx_reference_entity_poly_seq.modified_mon_id removed
   + _pdbx_reference_entity_poly_seq.parent_mon_id added as an optional item for the 
      parent items in ribosomal proteins.
-  + _pdbx_reference_entity_poly_seq.mon_id made mandatory -- 
+  + _pdbx_reference_entity_poly_seq.mon_id made mandatory and part of key
   +  corrected examples link examples with bond orders  = 'sing'
   +  relax the comma separated item data type
   +  add famil_prd_id and ref_entity_id to the category key of pdbx_entity_reference_sequence
