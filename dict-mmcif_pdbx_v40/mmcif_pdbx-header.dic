@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.002
+    _dictionary.version         4.003
 #
      loop_
     _dictionary_history.version
@@ -1399,6 +1399,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     _pdbx_reference_entity_instances.PDB_residue_number
     _pdbx_reference_entity_instances.PDB_chain_id_list
     _pdbx_reference_entity_poly_seq.hetero
+;
+   4.003   2011-04-13
+;
+ Changes:  (jdw):
+  + removed duplicate _pdbx_reference_entity_poly_seq.hetero definition
+  + Changed the lower limit for _pdbx_reference_entity_poly_seq.num to include 0
 ;
 
 ### EOF mmcif_pdbx-header.dic 
