@@ -2,6 +2,9 @@
 ###   File: prd-extension-v4.dic
 ###   Date: April 1, 2011  jdw
 ###
+###   Updated: April 19, 2011 
+###   + Add item _pdbx_reference_entity_poly_seq.modification_details
+###   
 ###   Updated: April 13, 2011 PM
 ###   +  The roles of _pdbx_reference_entity_poly_seq.modified_mon_id and _pdbx_reference_entity_poly_seq.mon_id 
 ###      swapped.   
@@ -1272,6 +1275,17 @@ save__pdbx_reference_entity_poly_seq.parent_mon_id
     _item.mandatory_code          no
     _item_type.code               code
      save_
+
+save__pdbx_reference_entity_poly_seq.modification_details
+    _item_description.description
+;              This data item records addtional details describing modifications of this monomer.
+;
+    _item.name                  '_pdbx_reference_entity_poly_seq.modification_details'
+    _item.category_id             pdbx_reference_entity_poly_seq
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
 
 
 #####################################
