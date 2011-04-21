@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.005
+    _dictionary.version         4.006
 #
      loop_
     _dictionary_history.version
@@ -1424,4 +1424,10 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  Changes:  (jdw):
  + Add item _pdbx_reference_entity_poly_seq.modification_details
 ;
+   4.006   2011-04-21
+;
+ Changes:  (jdw):
+   + updated enumeration list for _pdbx_SG_project items.
+;
+
 ### EOF mmcif_pdbx-header.dic 

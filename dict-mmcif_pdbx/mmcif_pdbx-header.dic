@@ -1307,9 +1307,10 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 
    These categories will be reintroduced in reorganized form in PDBx dictionary version 4.0.
 ;
-  1.0691 2011-04-13
+  1.0691 2011-04-19
 ;
   Changes (jdw):
   + update enumeration for pdbx_SG_project.project_name with 'Enzyme Function Initiative'
+  + update enumeration for pdbx_SG_project centers and abbreviations.
 ;
 #

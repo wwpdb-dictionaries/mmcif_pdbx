@@ -10490,6 +10490,7 @@ save__pdbx_SG_project.full_name_of_center
       'Structural Genomics Consortium'
       'Structural Genomics Consortium for Research on Gene Expression'
       'Structural Proteomics in Europe'
+      'Structural Proteomics in Europe 2'
       'Structure-Function Studies of Tight Junction Membrane Proteins'
       'Structure 2 Function Project'
       'Structure, Dynamics and Activation Mechanisms of Chemokine Receptors'
@@ -10512,6 +10513,7 @@ save__pdbx_SG_project.initial_of_center
     _item_examples.case           'BSGC'
     loop_
     _item_enumeration.value
+      'ATCG3D'
       'BIGS'
       'BSGC'
       'BSGI'
@@ -10519,6 +10521,7 @@ save__pdbx_SG_project.initial_of_center
       'CELLMAT'
       'CESG'
       'CHSAM'
+      'CHTSB'
       'CSGID'
       'CSMP'
       'GPCR'
@@ -10550,6 +10553,7 @@ save__pdbx_SG_project.initial_of_center
       'SGCGES'
       'SGPP'
       'SPINE'
+      'SPINE-2'
       'SSGCID'
       'SSPF'
       'TBSGC'
