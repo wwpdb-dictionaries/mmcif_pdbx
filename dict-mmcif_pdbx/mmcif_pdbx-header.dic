@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         1.0691
+    _dictionary.version         1.0692
 #
      loop_
     _dictionary_history.version
@@ -1312,5 +1312,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes (jdw):
   + update enumeration for pdbx_SG_project.project_name with 'Enzyme Function Initiative'
   + update enumeration for pdbx_SG_project centers and abbreviations.
+;
+  1.0692 2011-04-27
+;
+  Changes (jdw):
+  + _exptl.method enumeration and details extended with 	  
+     'THEORETICAL MODEL'          'THEORETICAL MODEL only as a supporting method'
 ;
 #
