@@ -4075,6 +4075,47 @@ save__reflns.phase_calculation_details
      'Other phase modification'
      save_
 
+##  REFMAC 5.x 
+##
+save__refln.pdbx_FWT
+    _item_description.description
+;  The weighted structure factor amplitude for the 2mFo-DFc map.
+;
+    _item.name                   '_refln.pdbx_FWT'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refln.pdbx_PHWT
+    _item_description.description
+;  The weighted phase for the 2mFo-DFc map.
+;
+    _item.name                   '_refln.pdbx_PHWT'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refln.pdbx_DELFWT
+    _item_description.description
+;  The weighted structure factor amplitude for the mFo-DFc map.
+;
+    _item.name                   '_refln.pdbx_DELFWT'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refln.pdbx_DELPHWT
+    _item_description.description
+;  The weighted phase for the mFo-DFc map.
+;
+    _item.name                   '_refln.pdbx_DELPHWT'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
 
 ##
 ##

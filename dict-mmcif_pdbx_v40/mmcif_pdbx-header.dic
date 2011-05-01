@@ -1429,11 +1429,14 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  Changes:  (jdw):
    + updated enumeration list for _pdbx_SG_project items.
 ;
-   4.007 2011-04-27
+   4.007 2011-05-01
 ;
   Changes (jdw):
   + _exptl.method enumeration and details extended with 	  
      'THEORETICAL MODEL'          'THEORETICAL MODEL only as a supporting method'
+  + added new items -_refln.pdbx_FWT,_refln.pdbx_DELFWT,_refln.pdbx_PHWT, and 
+    _refln.pdbx_DELPHWT
+  + updated examples for _symmetry.space_group_name_H-M
 ;
 
 ### EOF mmcif_pdbx-header.dic 

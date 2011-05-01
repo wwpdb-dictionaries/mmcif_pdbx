@@ -1313,10 +1313,13 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + update enumeration for pdbx_SG_project.project_name with 'Enzyme Function Initiative'
   + update enumeration for pdbx_SG_project centers and abbreviations.
 ;
-  1.0692 2011-04-27
+  1.0692 2011-05-01
 ;
   Changes (jdw):
   + _exptl.method enumeration and details extended with 	  
      'THEORETICAL MODEL'          'THEORETICAL MODEL only as a supporting method'
+  + added new items -_refln.pdbx_FWT,_refln.pdbx_DELFWT,_refln.pdbx_PHWT, and 
+    _refln.pdbx_DELPHWT
+  + updated examples for _symmetry.space_group_name_H-M
 ;
 #
