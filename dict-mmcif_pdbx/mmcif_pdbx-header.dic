@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         1.0692
+    _dictionary.version         1.0693
 #
      loop_
     _dictionary_history.version
@@ -1321,5 +1321,10 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + added new items -_refln.pdbx_FWT,_refln.pdbx_DELFWT,_refln.pdbx_PHWT, and 
     _refln.pdbx_DELPHWT
   + updated examples for _symmetry.space_group_name_H-M
+;
+  1.0693 2011-05-03
+;
+    Changes (jdw):
+    + update alias information for _pdbx_database_status.status_code_cs
 ;
 #

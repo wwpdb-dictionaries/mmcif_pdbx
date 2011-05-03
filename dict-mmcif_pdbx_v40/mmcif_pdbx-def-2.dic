@@ -1778,6 +1778,9 @@ save__pdbx_database_status.status_code_cs
      OBS   = Entry has been obsoleted and replaced by another entry
      WDRN  = Entry has been withdrawn by depositor	
 ;
+    _item_aliases.alias_name     '_ndb_database_status.status_code_cs'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
      save_
 
 save__pdbx_database_status.date_of_cs_release

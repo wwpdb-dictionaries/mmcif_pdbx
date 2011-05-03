@@ -1440,6 +1440,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + add _refine_ls_restr.pdbx_refine_id to category key
   + add item pdbx_version.revision_type as key item in this category
   + _pdbx_version.minor_version data type changed to code.  
+  + update aliases for _pdbx_database_status.status_code_cs
 ;
 
 ### EOF mmcif_pdbx-header.dic 
