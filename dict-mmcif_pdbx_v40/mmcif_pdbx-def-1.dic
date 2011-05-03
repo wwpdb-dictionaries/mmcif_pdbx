@@ -28574,7 +28574,9 @@ save_refine_ls_restr
 ;
     _category.id                  refine_ls_restr
     _category.mandatory_code      no
+    loop_
     _category_key.name          '_refine_ls_restr.type'
+                                '_refine_ls_restr.pdbx_refine_id'
     loop_
     _category_group.id           'inclusive_group'
                                  'refine_group'

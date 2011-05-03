@@ -61,7 +61,7 @@ save__pdbx_audit.current_version
 save_pdbx_version
     _category.description
 ;              Data items in the PDBX_VERSION category record details about the
-               current internal version of this entry.
+               version of this entry.
 
 ;
     _category.id                  pdbx_version
@@ -71,6 +71,7 @@ save_pdbx_version
      '_pdbx_version.entry_id'
      '_pdbx_version.major_version'
      '_pdbx_version.minor_version'
+     '_pdbx_version.revision_type'
      loop_
     _category_group.id           'inclusive_group'
                                  'audit_group'
@@ -84,11 +85,12 @@ save_pdbx_version
 ;
 ;
     _pdbx_version.entry_id                      1ABC
-    _pdbx_version.revision_date                 '2006-12-08'
-    _pdbx_version.major_version                 3
-    _pdbx_version.minor_version                 12
+    _pdbx_version.revision_date                 '2011-05-02'
+    _pdbx_version.major_version                 4
+    _pdbx_version.minor_version                 0001
+    _pdbx_version.revision_type                'Citation'
     _pdbx_version.details    
-    ;  Update version information. 
+    ;  Primary citation page numbers added. 
     ;
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -126,16 +128,14 @@ save__pdbx_version.revision_date
 
 save__pdbx_version.major_version
     _item_description.description
-;              Major version number for this datablock: 
+;              Major version number for this datablock.
 
-               3 - represents remediated data - 
-               2 - current production data -  
 ;
     _item.name                  '_pdbx_version.major_version'
     _item.category_id             pdbx_version
     _item.mandatory_code          yes
     _item_type.code               int
-    _item_examples.case           3
+    _item_examples.case           4
     _item_aliases.alias_name     '_rcsb_version.major_version'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
@@ -143,16 +143,15 @@ save__pdbx_version.major_version
 
 save__pdbx_version.minor_version
     _item_description.description
-;              Minor version number for this datablock: 
+;              Minor version identifier for this datablock: 
 
-               An integer value which is incremented for each 
-               datablock revision. 
+               The minor version is incremented for each datablock revision. 
 ;
     _item.name                  '_pdbx_version.minor_version'
     _item.category_id             pdbx_version
     _item.mandatory_code          yes
-    _item_type.code               int
-    _item_examples.case           15
+    _item_type.code               code
+    _item_examples.case           0004
     _item_aliases.alias_name     '_rcsb_version.minor_version'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
@@ -171,6 +170,47 @@ save__pdbx_version.details
     _item_aliases.alias_name     '_rcsb_version.details'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
+     save_
+
+save__pdbx_version.revision_type
+    _item_description.description
+;              The content type that associated with the revision.
+;
+    _item.name                  '_pdbx_version.revision_type'
+    _item.category_id             pdbx_version
+    _item.mandatory_code          yes
+    _item_type.code               line 
+    _item_examples.case          'Entry title'
+    _item_aliases.alias_name     '_rcsb_version.revision_type'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+         'Entry title'                            .
+         'Function and keywords'                  .
+         'Entry authorship'                       .
+         'Citation'                               .
+         'Polymer description'                    .
+         'Non-polymer description'                .
+         'Source and taxonomy'                    .
+         'Experimental method'                    .
+         'Refinement description'                 .
+         'Data collection'                        .
+         'Biological assembly'                    .
+         'Geometry validation'                    .
+         'Sequence database correpondence'        .
+         'Secondary structure'                    .
+         'Binding sites and description'          .
+         'Atom nomenclature'                      .
+         'Atom element type assignment'           .
+         'Atom occupancy'                         .
+         'Atom temperature factor'                .
+         'Solvent atom position'                  .
+         'Linkage'                                .
+         'Advisory'                               .
+         'Version format compliance'              .
+         'Other '                                 .
      save_
 
 
@@ -10902,5 +10942,4 @@ save__pdbx_atom_site_aniso_tls.U_tls[2][3]
 ##
 
 ###  EOF mmcif_pdbx-def-2.dic
-
 
