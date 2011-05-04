@@ -1429,7 +1429,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  Changes:  (jdw):
    + updated enumeration list for _pdbx_SG_project items.
 ;
-   4.007 2011-05-03
+   4.007 2011-05-04
 ;
   Changes (jdw):
   + _exptl.method enumeration and details extended with 	  
@@ -1441,6 +1441,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + add item pdbx_version.revision_type as key item in this category
   + _pdbx_version.minor_version data type changed to code.  
   + update aliases for _pdbx_database_status.status_code_cs
+  + add enumerations for _pdbx_version.revision_type
 ;
 
 ### EOF mmcif_pdbx-header.dic 
