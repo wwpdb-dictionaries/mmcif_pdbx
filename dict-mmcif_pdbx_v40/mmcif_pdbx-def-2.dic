@@ -10483,12 +10483,12 @@ save__pdbx_SG_project.project_name
 save__pdbx_SG_project.full_name_of_center
     _item_description.description
 ;          The value identifies the full name of center.
-;
+; 
     _item.name                    '_pdbx_SG_project.full_name_of_center'
     _item.category_id             pdbx_SG_project
     _item.mandatory_code          no
     _item_type.code               text
-    _item_examples.case           'Berkeley Structural Genomics Center'
+    _item_examples.case           'Midwest Center for Structural Genomics'
     loop_
     _item_enumeration.value
       'Accelerated Technologies Center for Gene to 3D Structure'
@@ -10523,9 +10523,10 @@ save__pdbx_SG_project.full_name_of_center
       'Ontario Centre for Structural Proteomics'
       'Oxford Protein Production Facility'
       'Paris-Sud Yeast Structural Genomics'
+      'Partnership for T-Cell Biology'
+      'Partnership for Stem Cell Biology'
       'Program for the Characterization of Secreted Effector Proteins'
       'Protein Structure Factory'
-      'Ribonucleoprotein Complexes Regulating T-Cell Activation'
       'RIKEN Structural Genomics/Proteomics Initiative'
       'Scottish Structural Proteomics Facility'
       'Seattle Structural Genomics Center for Infectious Disease'
@@ -10539,22 +10540,21 @@ save__pdbx_SG_project.full_name_of_center
       'Structure 2 Function Project'
       'Structure, Dynamics and Activation Mechanisms of Chemokine Receptors'
       'Structures of Mtb Proteins Conferring Susceptibility to Known Mtb Inhibitors'
-      'Structures of Protein Complexes Regulating Transcription in Embryonic Stem Cells'
       'TB Structural Genomics Consortium'
       'Transcontinental EM Initiative for Membrane Protein Structure'
       'Transmembrane Protein Center'
-
      save_
+
 
 save__pdbx_SG_project.initial_of_center
     _item_description.description
 ;          The value identifies the full name of center.
-;
-    _item.name                    '_pdbx_SG_project.initial_of_center'
+; 
+    _item.name                  '_pdbx_SG_project.initial_of_center'
     _item.category_id             pdbx_SG_project
     _item.mandatory_code          no
     _item_type.code               text
-    _item_examples.case           'BSGC'
+    _item_examples.case           'JCSG'
     loop_
     _item_enumeration.value
       'ATCG3D'
@@ -10591,7 +10591,7 @@ save__pdbx_SG_project.initial_of_center
       'PSF'
       'RSGI'
       'S2F'
-      'SCB'
+#      'SCB'
       'SECSG'
       'SGC'
       'SGCGES'
@@ -10601,14 +10601,13 @@ save__pdbx_SG_project.initial_of_center
       'SSGCID'
       'SSPF'
       'TBSGC'
-      'TCELLRNP'
+#      'TCELLRNP'
       'TEMIMPS'
       'TJMP'
       'TMPC'
       'TransportPDB'
       'XMTB'
       'YSG'
-
      save_
 
 ##
