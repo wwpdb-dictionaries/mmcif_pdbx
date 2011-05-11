@@ -4613,6 +4613,7 @@ save__refine.pdbx_TLS_residual_ADP_flag
     _item_enumeration.detail       
         'LIKELY RESIDUAL'  
          'Residual B values  (excluding TLS contributions) are likely specified for some or all atom sites'
+        'UNVERIFIED'  .
      save_
 
 #save__refine.pdbx_adp_type

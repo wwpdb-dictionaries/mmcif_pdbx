@@ -1429,7 +1429,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  Changes:  (jdw):
    + updated enumeration list for _pdbx_SG_project items.
 ;
-   4.007 2011-05-06
+   4.007 2011-05-11
 ;
   Changes (jdw):
   + _exptl.method enumeration and details extended with 	  
@@ -1443,6 +1443,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + update aliases for _pdbx_database_status.status_code_cs
   + add enumerations for _pdbx_version.revision_type
   + update enumerations for PSI centers -
+  + extended enumeratio for _refine.pdbx_TLS_residual_ADP_flag 
 ;
 
 ### EOF mmcif_pdbx-header.dic 
