@@ -1528,7 +1528,7 @@ pdbx_remediation_atom_site_mapping    1 '_pdbx_remediation_atom_site_mapping.lab
 pdbx_remediation_atom_site_mapping    1 '_pdbx_remediation_atom_site_mapping.label_seq_id'	   '_atom_site.label_seq_id'                   atom_site
 pdbx_remediation_atom_site_mapping    1 '_pdbx_remediation_atom_site_mapping.PDB_ins_code'	   '_atom_site.pdbx_PDB_ins_code'              atom_site
 #
-pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.auth_alt_id'          '_atom_site.pdbx_auth_alt_id'              atom_site
+#pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.auth_alt_id'          '_atom_site.pdbx_auth_alt_id'              atom_site
 pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.auth_asym_id'	   '_atom_site.auth_asym_id'                  atom_site
 pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.auth_atom_id'	   '_atom_site.auth_atom_id'                  atom_site
 pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.auth_comp_id'	   '_atom_site.auth_comp_id'                  atom_site
