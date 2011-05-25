@@ -2830,18 +2830,6 @@ save__pdbx_struct_conn_angle.ptnr1_auth_alt_id
     _item_type.code               code
      save_
 
-save__pdbx_struct_conn_angle.ptnr1_label_alt_id
-    _item_description.description
-;   A component of the identifier for partner 1 of the structure angle. 
-
-    This data item is a pointer to _atom_site.label_alt_id in 
-    the ATOM_SITE category.
-;
-    _item.name                  '_pdbx_struct_conn_angle.ptnr1_label_alt_id'
-    _item.category_id            pdbx_struct_conn_angle
-    _item.mandatory_code          no
-    _item_type.code               code
-     save_
 
 save__pdbx_struct_conn_angle.ptnr2_PDB_ins_code
     _item_description.description
@@ -2871,18 +2859,6 @@ save__pdbx_struct_conn_angle.ptnr2_auth_alt_id
     _item_type.code               code
      save_
 
-save__pdbx_struct_conn_angle.ptnr2_label_alt_id
-    _item_description.description
-;   A component of the identifier for partner 2 of the structure angle. 
-
-    This data item is a pointer to _atom_site.label_alt_id in 
-    the ATOM_SITE category.
-;
-    _item.name                   '_pdbx_struct_conn_angle.ptnr2_label_alt_id'
-    _item.category_id            pdbx_struct_conn_angle
-    _item.mandatory_code          no
-    _item_type.code               code
-     save_
 
 save__pdbx_struct_conn_angle.ptnr3_auth_alt_id
     _item_description.description

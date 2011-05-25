@@ -10717,19 +10717,6 @@ save__pdbx_atom_site_aniso_tls.auth_comp_id
     _item_linked.parent_name    '_atom_site.auth_comp_id'
      save_
 
-save__pdbx_atom_site_aniso_tls.auth_comp_id
-    _item_description.description
-;   
-    This data item is a pointer to _atom_site.auth_comp_id in the
-    ATOM_SITE category.
-;
-    _item.name                  '_pdbx_atom_site_aniso_tls.auth_comp_id'
-    _item.category_id           pdbx_atom_site_aniso_tls
-    _item.mandatory_code        yes
-    _item_type.code 		code
-    _item_linked.child_name     '_pdbx_atom_site_aniso_tls.auth_comp_id'  
-    _item_linked.parent_name    '_atom_site.auth_comp_id'
-     save_
 
 save__pdbx_atom_site_aniso_tls.auth_seq_id
     _item_description.description
