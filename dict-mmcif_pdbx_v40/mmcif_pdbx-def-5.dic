@@ -4067,7 +4067,7 @@ save__reflns.phase_calculation_details
      loop_
     _item_examples.case          
      'From model'
-     'NCS averaging;
+     'NCS averaging'
      'Solvent flipping'
      'Solvent flattening' 
      'Multiple crystal averaging'

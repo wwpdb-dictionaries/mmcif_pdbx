@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         1.0693
+    _dictionary.version         1.0694
 #
      loop_
     _dictionary_history.version
@@ -1328,5 +1328,10 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + update alias information for _pdbx_database_status.status_code_cs
     + update enumerations for PSI centers -
     + _em_imaging.microscope_id made optional -
+;
+  1.0694 2011-05-27
+;
+    Changes (jdw):
+   + correct typo in example for _reflns.phase_calculation_details
 ;
 #
