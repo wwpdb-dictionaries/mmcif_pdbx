@@ -937,6 +937,8 @@ save__pdbx_chem_comp_audit.action_type
     'Modify component atom id'         .
     'Modify component comp_id'         .
     'Modify value order'               .
+    'Modify descriptor'                .
+    'Modify identifier'                .
     'Other modification'               .
     'Obsolete component'               .
      save_

@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.008
+    _dictionary.version         4.009
 #
      loop_
     _dictionary_history.version
@@ -1460,5 +1460,9 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    + update enumerations for  _pdbx_SG_project.project_name
    + update enumerations for  _pdbx_SG_project.full_name_of_center
 ;
-
+4.009 2011-05-31  
+;
+  Changes (jdw):  -- Open revision -- 
+   + update enumerations for  _pdbx_chem_comp_audit.action_type'
+;
 ### EOF mmcif_pdbx-header.dic 
