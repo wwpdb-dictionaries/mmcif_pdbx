@@ -939,6 +939,7 @@ save__pdbx_chem_comp_audit.action_type
     'Modify value order'               .
     'Modify descriptor'                .
     'Modify identifier'                .
+    'Modify coordinates'               .
     'Other modification'               .
     'Obsolete component'               .
      save_

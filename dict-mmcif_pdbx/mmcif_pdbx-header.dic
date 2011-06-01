@@ -1334,7 +1334,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     Changes (jdw):
    + correct typo in example for _reflns.phase_calculation_details
 ;
-  1.0695 2011-05-31  
+  1.0695 2011-06-01
 ;
   Changes (jdw):  -- Open revision -- 
    + update enumerations for  _pdbx_chem_comp_audit.action_type'
