@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         1.0695
+    _dictionary.version         1.0696
 #
      loop_
     _dictionary_history.version
@@ -1336,8 +1336,14 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
   1.0695 2011-06-01
 ;
-  Changes (jdw):  -- Open revision -- 
+  Changes (jdw): 
    + update enumerations for  _pdbx_chem_comp_audit.action_type'
 ;
-
+  1.0696 2011-06-07
+;
+  Changes (jdw):  -- Open revision -- 
+   + data type relaxed from line to text for -_chem_comp.pdbx_synonym _chem_comp.pdbx_modification_details.
+   + add FLUORESCENCE TRANSFER/'FLUORESCENCE TRANSFER only as a supporting method' to
+     _exptl.method enumeration list.
+;
 #

@@ -3992,7 +3992,7 @@ save__chem_comp.pdbx_synonyms
     _item.name                  '_chem_comp.pdbx_synonyms'
     _item.category_id             chem_comp
     _item.mandatory_code          no
-    _item_type.code               line
+    _item_type.code               text
     _item_examples.case           ATP
     _item_aliases.alias_name     '_chem_comp.ndb_synonyms'
     _item_aliases.dictionary     'cif_rcsb.dic'
@@ -4008,7 +4008,7 @@ save__chem_comp.pdbx_modification_details
     _item.name                  '_chem_comp.pdbx_modification_details'
     _item.category_id             chem_comp
     _item.mandatory_code          no
-    _item_type.code               line
+    _item_type.code               text
     _item_examples.case           ATP
     _item_aliases.alias_name     '_chem_comp.rcsb_modification_details'
     _item_aliases.dictionary     'cif_rcsb.dic'

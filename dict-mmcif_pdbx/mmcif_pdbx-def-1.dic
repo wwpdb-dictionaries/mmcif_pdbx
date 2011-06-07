@@ -16650,6 +16650,7 @@ save__exptl.method
 	  'POWDER DIFFRACTION'         .
 	  'INFRARED SPECTROSCOPY'      'IR and FTIR only as supporting methods'
 	  'EPR'                        'EPR only as a supporting method'
+	  'FLUORESCENCE TRANSFER'      'FLUORESCENCE TRANSFER only as a supporting method'
 	  'THEORETICAL MODEL'          'THEORETICAL MODEL only as a supporting method'
      save_
 
