@@ -11204,6 +11204,9 @@ save__database_2.database_id
                                   BMRB
 ;                                 Biological Magnetic Reference Data Bank
 ;
+                                  PDBE
+;                                 Protein Data Bank Europe
+;
      save_
 
 save__database_2.database_code
