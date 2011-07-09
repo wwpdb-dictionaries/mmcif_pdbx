@@ -9,7 +9,7 @@ install: compile
 build:  compile
 
 compile:
-	@sh -c './Build.csh mmcif_pdbx_internal'
+	@sh -c './Build.csh mmcif_pdbx_v32_internal'
 clean:
-	@rm -rf mmcif_pdbx_internal.dic
+	@rm -rf mmcif_pdbx_v32_internal.dic
 ####

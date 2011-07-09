@@ -228,6 +228,11 @@
                by 6 * the expected RMSD
 ;
 
+              'view_group'
+              'inclusive_group'
+;              Categories that describe data views.
+;
+
 
 ####################
 ## ITEM_TYPE_LIST ##

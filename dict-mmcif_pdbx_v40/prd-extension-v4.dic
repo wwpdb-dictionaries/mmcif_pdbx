@@ -2,43 +2,6 @@
 ###   File: prd-extension-v4.dic
 ###   Date: April 1, 2011  jdw
 ###
-###   Updated: April 19, 2011 
-###   + Add item _pdbx_reference_entity_poly_seq.modification_details
-###   
-###   Updated: April 13, 2011 PM
-###   +  The roles of _pdbx_reference_entity_poly_seq.modified_mon_id and _pdbx_reference_entity_poly_seq.mon_id 
-###      swapped.   
-###   + _pdbx_reference_entity_poly_seq.modified_mon_id removed
-###   + _pdbx_reference_entity_poly_seq.parent_mon_id added as an optional item for the 
-###      parent items in ribosomal proteins.
-###   + _pdbx_reference_entity_poly_seq.mon_id made mandatory and part of key
-###   +  corrected examples link examples with bond orders  = 'sing'
-###   +  relax the comma separated item data type
-###   +  add famil_prd_id and ref_entity_id to the category key of pdbx_entity_reference_sequence
-###
-###   Updated: April 13, 2011 AM
-###   + removed duplicate _pdbx_reference_entity_poly_seq.hetero definition
-###   + Changed the lower limit for _pdbx_reference_entity_poly_seq.num to include 0
-###      
-###
-###   Updated: April 8, 2011 - 
-###   + Added items - 
-###     _pdbx_reference_entity_link.component_1
-###     _pdbx_reference_entity_link.component_2
-###     _pdbx_reference_entity_poly_nstd_link.component
-###     _pdbx_reference_entity_instances.PDB_residue_number
-###     _pdbx_reference_entity_instances.PDB_chain_id_list
-###     _pdbx_reference_entity_poly_seq.hetero
-###
-###   Updated: April 6, 2011 - 
-###   + Added items - 
-###     _pdbx_reference_entity_list.component
-###     _pdbx_reference_entity_link.link_class        
-###     _pdbx_reference_entity_link.entity_seq_num_1  
-###     _pdbx_reference_entity_link.nonpoly_res_num_1 
-###     _pdbx_reference_entity_link.entity_seq_num_2  
-###     _pdbx_reference_entity_link.nonpoly_res_num_2 
-###
 ###   Updated: April 5, 2011 jdw -  Added non-standard polymer linking details in 
 ###                            category  PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK,
 ###                            added  _pdbx_reference_entity_list.nonpoly_residue_number
@@ -323,7 +286,6 @@ save__pdbx_reference_entity.three_letter_code
      save_
 
 
-
 ################################
 ## PDBX_REFERENCE_ENTITY_LIST ##
 ################################
@@ -339,7 +301,6 @@ save_pdbx_reference_entity_list
     _category_key.name          '_pdbx_reference_entity_list.family_prd_id'
                                 '_pdbx_reference_entity_list.prd_id'
                                 '_pdbx_reference_entity_list.ref_entity_id'
-                                '_pdbx_reference_entity_list.component'
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
@@ -355,23 +316,17 @@ loop_
 _pdbx_reference_entity_list.family_prd_id
 _pdbx_reference_entity_list.prd_id
 _pdbx_reference_entity_list.ref_entity_id
-_pdbx_reference_entity_list.component
 _pdbx_reference_entity_list.type
 _pdbx_reference_entity_list.details
 _pdbx_reference_entity_list.nonpoly_residue_number
 
-FAM_000411 PRD_000488 1 1 'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"  .
-FAM_000411 PRD_000488 2 2 'non-polymer' "QUINALDIC ACID CHROMOPHORE"             0
-FAM_000411 PRD_000488 2 3 'non-polymer' "QUINALDIC ACID CHROMOPHORE"             9
+FAM_000411 PRD_000001 1  'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"   .
+FAM_000411 PRD_000001 2  'non-polymer' "QUINALDIC ACID CHROMOPHORE"              0
+FAM_000411 PRD_000001 3  'non-polymer' "QUINALDIC ACID CHROMOPHORE"              9
 
-FAM_000411 PRD_000491 1 1 'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"  . 
-FAM_000411 PRD_000491 2 2 'non-polymer' "QUINOXALINE CHROMOPHORE"                0
-FAM_000411 PRD_000491 2 3 'non-polymer' "QUINOXALINE CHROMOPHORE"                9
-
-FAM_000411 PRD_000492 1 1 'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"  .
-FAM_000411 PRD_000492 2 2 'non-polymer' "3-HYDROXYQUINALDIC ACID CHROMOPHORE"    0
-FAM_000411 PRD_000492 2 3 'non-polymer' "3-HYDROXYQUINALDIC ACID CHROMOPHORE"    9
-
+FAM_000411 PRD_000004 1  'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"   .
+FAM_000411 PRD_000004 2  'non-polymer' "QUINOXALINE CHROMOPHORE"                 0
+FAM_000411 PRD_000004 3  'non-polymer' "QUINOXALINE CHROMOPHORE"                 9
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -413,18 +368,6 @@ save__pdbx_reference_entity_list.ref_entity_id
     _item_type.code               ucode
      save_
 
-save__pdbx_reference_entity_list.component
-    _item_description.description
-;    The value of _pdbx_reference_entity_list.component uniquely identifies 
-     each entity within the reference molecule.
-
-;
-    _item.name                  '_pdbx_reference_entity_list.component'
-    _item.category_id             pdbx_reference_entity_list
-    _item.mandatory_code          yes
-    _item_type.code               int
-     save_
-
 save__pdbx_reference_entity_list.type
     _item_description.description
 ;              Defines the polymer characteristic of the entity.
@@ -456,7 +399,7 @@ save__pdbx_reference_entity_list.nonpoly_residue_number
 ;
     _item.name                  '_pdbx_reference_entity_list.nonpoly_residue_number'
     _item.category_id             pdbx_reference_entity_list
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               int
      save_
 
@@ -606,26 +549,28 @@ loop_
 _pdbx_reference_entity_link.family_prd_id
 _pdbx_reference_entity_link.prd_id
 _pdbx_reference_entity_link.link_id
-_pdbx_reference_entity_link.link_class         
 _pdbx_reference_entity_link.ref_entity_id_1
-_pdbx_reference_entity_link.component_1
-_pdbx_reference_entity_link.entity_seq_num_1   
-_pdbx_reference_entity_link.nonpoly_res_num_1  
+_pdbx_reference_entity_link.entity_seq_num_1
 _pdbx_reference_entity_link.comp_id_1
 _pdbx_reference_entity_link.atom_id_1
 _pdbx_reference_entity_link.ref_entity_id_2
-_pdbx_reference_entity_link.component_2
-_pdbx_reference_entity_link.entity_seq_num_2   
-_pdbx_reference_entity_link.nonpoly_res_num_2 
+_pdbx_reference_entity_link.entity_seq_num_2
 _pdbx_reference_entity_link.comp_id_2
 _pdbx_reference_entity_link.atom_id_2
 _pdbx_reference_entity_link.value_order
-FAM_000411 PRD_000488 1 PN 1 1 1 . DSN N  2 2 . 0 QUI C  'sing'
-FAM_000411 PRD_000488 2 PN 1 1 5 . DSN N  2 3 . 9 QUI C  'sing'
-FAM_000411 PRD_000491 1 PN 1 1 1 . DSN N  2 2 . 0 QUI C  'sing'
-FAM_000411 PRD_000491 2 PN 1 1 5 . DSN N  2 3 . 9 QUI C  'sing'
-FAM_000411 PRD_000492 1 PN 1 1 1 . DSN N  2 2 . 0 HQU C  'sing'
-FAM_000411 PRD_000492 2 PN 1 1 5 . DSN N  2 3 . 9 HQU C  'sing'
+
+FAM_000411 PRD_000001 1 1 1 DSN N  2 . QUI C  'single'
+FAM_000411 PRD_000001 2 1 5 DSN N  3 . QUI C  'single'
+FAM_000411 PRD_000001 3 1 3 NCY SG 1 7 NCY SG 'single'
+
+FAM_000411 PRD_000004 1 1 1 DSN N  2 . QUI C  'single'
+FAM_000411 PRD_000004 2 1 5 DSN N  3 . QUI C  'single'
+FAM_000411 PRD_000004 3 1 3 NCY SG 1 7 NCY SG 'single'
+
+FAM_000411 PRD_000005 1 1 1 DSN N  2 . QUI C  'single'
+FAM_000411 PRD_000005 2 1 5 DSN N  3 . QUI C  'single'
+FAM_000411 PRD_000005 3 1 3 NCY SG 1 7 NCY SG 'single'
+
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -653,24 +598,6 @@ save__pdbx_reference_entity_link.prd_id
     _item_type.code               ucode
     _item_linked.child_name	'_pdbx_reference_entity_link.prd_id'
     _item_linked.parent_name    '_pdbx_reference_entity_list.prd_id'
-     save_
-
-save__pdbx_reference_entity_link.link_class
-    _item_description.description
-;              Classifies the linkage in terms of the entities types involved.
-               Polymer-polymer, polymer-non-polymer, and non-polymer-non-polymer
-               classes are defined.
-
-;
-    _item.name                  '_pdbx_reference_entity_link.link_class'
-    _item.category_id             pdbx_reference_entity_link
-    _item.mandatory_code          yes
-    _item_type.code               ucode
-     loop_
-    _item_enumeration.value
-    _item_enumeration.detail      PN    'links between polymer and non-polymer'
-                                  PP    'links between polymer and polymer'
-                                  NN    'links between non-polymer and non-polymer'
      save_
 
 save__pdbx_reference_entity_link.family_prd_id
@@ -727,36 +654,6 @@ save__pdbx_reference_entity_link.ref_entity_id_2
     _item_linked.parent_name    '_pdbx_reference_entity_list.ref_entity_id'
      save_
 
-save__pdbx_reference_entity_link.component_1
-    _item_description.description
-;              The component number of the first of the two entities joined by the
-               linkage. 
-
-               This data item is a pointer to _pdbx_reference_entity_list.component
-               in the PDBX_REFERENCE_ENTITY_LIST category.
-;
-    _item.name                  '_pdbx_reference_entity_link.component_1'
-    _item.mandatory_code          yes
-    _item_type.code               int
-    _item_linked.child_name	'_pdbx_reference_entity_link.component_1'
-    _item_linked.parent_name    '_pdbx_reference_entity_list.component'
-     save_
-
-save__pdbx_reference_entity_link.component_2
-    _item_description.description
-;              The component number of the second of the two entities joined by the
-               linkage. 
-
-               This data item is a pointer to _pdbx_reference_entity_list.component
-               in the PDBX_REFERENCE_ENTITY_LIST category.
-;
-    _item.name                  '_pdbx_reference_entity_link.component_2'
-    _item.mandatory_code          yes
-    _item_type.code               int
-    _item_linked.child_name	'_pdbx_reference_entity_link.component_2'
-    _item_linked.parent_name    '_pdbx_reference_entity_list.component'
-     save_
-
 save__pdbx_reference_entity_link.entity_seq_num_1
     _item_description.description
 ;              For a polymer entity, the sequence number in the first of 
@@ -765,7 +662,6 @@ save__pdbx_reference_entity_link.entity_seq_num_1
                This data item is a pointer to _pdbx_reference_entity_poly_seq.num 
                in the PDBX_REFERENCE_ENTITY_POLY_SEQ category.
 
-               Expected for link_class(es) PP and PN
 ;
     _item.name                  '_pdbx_reference_entity_link.entity_seq_num_1'
     _item.mandatory_code          no
@@ -782,51 +678,14 @@ save__pdbx_reference_entity_link.entity_seq_num_2
                This data item is a pointer to _pdbx_reference_entity_poly_seq.num 
                in the PDBX_REFERENCE_ENTITY_POLY_SEQ category.
 
-               Expected for link_class  PP
-
 ;
     _item.name                  '_pdbx_reference_entity_link.entity_seq_num_2'
     _item.mandatory_code          no
     _item_type.code               int    
     _item_linked.child_name	'_pdbx_reference_entity_link.entity_seq_num_2'
     _item_linked.parent_name    '_pdbx_reference_entity_poly_seq.num'
-
      save_
 
-
-save__pdbx_reference_entity_link.nonpoly_res_num_1
-    _item_description.description
-;         For a non-polymer entity, the residue number in the first of 
-          the two entities containing the linkage. 
-
-          This data item is a pointer to _pdbx_reference_entity_list.nonpoly_residue_number
-          in the PDBX_REFERENCE_ENTITY_LIST category.
-
-               Expected for link_class(es) NN
-;
-    _item.name                  '_pdbx_reference_entity_link.nonpoly_res_num_1'
-    _item.mandatory_code          no
-    _item_type.code               int    
-    _item_linked.child_name	'_pdbx_reference_entity_link.nonpoly_res_num_1'
-    _item_linked.parent_name    '_pdbx_reference_entity_list.nonpoly_residue_number'
-     save_
-
-save__pdbx_reference_entity_link.nonpoly_res_num_2
-    _item_description.description
-;         For a non-polymer entity, the residue number in the second of 
-          the two entities containing the linkage. 
-
-          This data item is a pointer to _pdbx_reference_entity_list.nonpoly_residue_number
-          in the PDBX_REFERENCE_ENTITY_LIST category.
-
-               Expected for link_class(es) PN and NN
-;
-    _item.name                  '_pdbx_reference_entity_link.nonpoly_res_num_2'
-    _item.mandatory_code          no
-    _item_type.code               int    
-    _item_linked.child_name	'_pdbx_reference_entity_link.nonpoly_res_num_2'
-    _item_linked.parent_name    '_pdbx_reference_entity_list.nonpoly_residue_number'
-     save_
 
 save__pdbx_reference_entity_link.comp_id_1
     _item_description.description
@@ -1140,7 +999,7 @@ save_pdbx_reference_entity_poly_seq
                                 '_pdbx_reference_entity_poly_seq.prd_id'
                                 '_pdbx_reference_entity_poly_seq.ref_entity_id'
                                 '_pdbx_reference_entity_poly_seq.num'
-                                '_pdbx_reference_entity_poly_seq.mon_id'
+#                               '_pdbx_reference_entity_poly_seq.mon_id'
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
@@ -1159,18 +1018,18 @@ save_pdbx_reference_entity_poly_seq
  _pdbx_reference_entity_poly_seq.ref_entity_id
  _pdbx_reference_entity_poly_seq.num
  _pdbx_reference_entity_poly_seq.mon_id   
- _pdbx_reference_entity_poly_seq.parent_mon_id
- FAM_000001 PRD_000001 1  1  THR  THR
- FAM_000001 PRD_000001 1  2  DVA  VAL
- FAM_000001 PRD_000001 1  3  PRO  PRO
- FAM_000001 PRD_000001 1  4  SAR  GLY
- FAM_000001 PRD_000001 1  5  MVA  VAL
- FAM_000001 PRD_000001 1  6  PXZ  .  
- FAM_000001 PRD_000001 1  7  THR  THR
- FAM_000001 PRD_000001 1  8  DVA  VAL
- FAM_000001 PRD_000001 1  9  PRO  PRO
- FAM_000001 PRD_000001 1 10  SAR  GLY
- FAM_000001 PRD_000001 1 11  MVA  VAL
+ _pdbx_reference_entity_poly_seq.modified_mon_id
+ FAM_000001 PRD_000001 1  1 THR THR 
+ FAM_000001 PRD_000001 1  2 VAL DVA 
+ FAM_000001 PRD_000001 1  3 PRO PRO 
+ FAM_000001 PRD_000001 1  4 GLY SAR 
+ FAM_000001 PRD_000001 1  5 VAL MVA 
+ FAM_000001 PRD_000001 1  6 .   PXZ 
+ FAM_000001 PRD_000001 1  7 THR THR 
+ FAM_000001 PRD_000001 1  8 VAL DVA 
+ FAM_000001 PRD_000001 1  9 PRO PRO 
+ FAM_000001 PRD_000001 1 10 GLY SAR 
+ FAM_000001 PRD_000001 1 11 VAL MVA 
  #
  # ---- data abbreviated -----
 ;
@@ -1227,29 +1086,15 @@ save__pdbx_reference_entity_poly_seq.mon_id
     _item_type.code               code
      save_
 
-save__pdbx_reference_entity_poly_seq.hetero
+save__pdbx_reference_entity_poly_seq.modified_mon_id
     _item_description.description
-;              A flag to indicate whether this monomer in the polymer is
-               heterogeneous in sequence. 
+;              This data item is the 3-letter-code of the modified monomer.
 ;
-    _item.name                  '_pdbx_reference_entity_poly_seq.hetero'
+    _item.name                  '_pdbx_reference_entity_poly_seq.modified_mon_id'
     _item.category_id             pdbx_reference_entity_poly_seq
-    _item.mandatory_code          no
-    _item_default.value           no
-    _item_type.code               ucode
-    loop_
-    _item_enumeration.value
-    _item_enumeration.detail      no
-                                 'sequence is not heterogeneous at this monomer'
-                                  n
-                                 'abbreviation for "no"'
-                                  yes
-                                 'sequence is heterogeneous at this monomer'
-                                  y
-                                 'abbreviation for "yes"'
+    _item.mandatory_code          yes
+    _item_type.code               code
      save_
-
-
 
 save__pdbx_reference_entity_poly_seq.num
     _item_description.description
@@ -1261,32 +1106,10 @@ save__pdbx_reference_entity_poly_seq.num
     _item.mandatory_code          yes
     loop_
     _item_range.maximum
-    _item_range.minimum           .   0
-                                  0   0
+    _item_range.minimum           .   1
+                                  1   1
     _item_type.code               int
      save_
-
-save__pdbx_reference_entity_poly_seq.parent_mon_id
-    _item_description.description
-;              This data item is the 3-letter-code of the parent monomer for ribosomal proteins.
-;
-    _item.name                  '_pdbx_reference_entity_poly_seq.parent_mon_id'
-    _item.category_id             pdbx_reference_entity_poly_seq
-    _item.mandatory_code          no
-    _item_type.code               code
-     save_
-
-save__pdbx_reference_entity_poly_seq.modification_details
-    _item_description.description
-;              This data item records addtional details describing modifications of this monomer.
-;
-    _item.name                  '_pdbx_reference_entity_poly_seq.modification_details'
-    _item.category_id             pdbx_reference_entity_poly_seq
-    _item.mandatory_code          no
-    _item_type.code               text
-     save_
-
-
 
 #####################################
 ## PDBX_REFERENCE_ENTITY_INSTANCES ##
@@ -1428,34 +1251,6 @@ save__pdbx_reference_entity_instances.prd_representative_flag
           N  'not representative'
     _item_examples.case           Y
      save_
-
-save__pdbx_reference_entity_instances.PDB_chain_id_list
-    _item_description.description
-;              The PDB Chain identifier code(s) for the representative molecule.
-   
-               Multiple chain codes are represented as a comma separated list.
-;
-    _item.name                  '_pdbx_reference_entity_instances.PDB_chain_id_list'
-    _item.category_id             pdbx_reference_entity_instances
-    _item.mandatory_code          no
-#    _item_type.code               ucode-alphanum-csv
-    _item_type.code               line
-     loop_
-    _item_examples.case         'A' 'A,B'
-     save_
-
-save__pdbx_reference_entity_instances.PDB_residue_number
-    _item_description.description
-;              The PDB residue number for the representative molecule.
-;
-    _item.name                  '_pdbx_reference_entity_instances.PDB_residue_number'
-    _item.category_id             pdbx_reference_entity_instances
-    _item.mandatory_code          no
-    _item_type.code               ucode
-     loop_
-    _item_examples.case         '100' '411'
-     save_
-
 
 save__pdbx_reference_entity_instances.details
     _item_description.description
@@ -1948,6 +1743,18 @@ save__pdbx_reference_entity_annotation.ordinal
     _item_type.code               int
      save_
 
+save__pdbx_reference_entity_annotation.source
+    _item_description.description
+;             The source of the annoation for this entity.
+;
+    _item.name                  '_pdbx_reference_entity_annotation.source'
+    _item.category_id             pdbx_reference_entity_annotation
+    _item.mandatory_code          yes
+    _item_type.code               text
+     loop_
+    _item_examples.case          'depositor provided'
+                                 'from UniProt Entry P200311'
+     save_
 
 save__pdbx_reference_entity_annotation.text
     _item_description.description
@@ -2004,7 +1811,7 @@ save__pdbx_reference_entity_annotation.source
     _item.name                  '_pdbx_reference_entity_annotation.source'
     _item.category_id            pdbx_reference_entity_annotation
     _item.mandatory_code         yes
-    _item_type.code              text
+    _item_type.code              line
      loop_
     _item_examples.case          
         'Author provided'
@@ -2565,9 +2372,7 @@ save_pdbx_reference_entity_sequence
     _category.id                  'pdbx_reference_entity_sequence'
     _category.mandatory_code      no
      loop_
-    _category_key.name            '_pdbx_reference_entity_sequence.family_prd_id'
-                                  '_pdbx_reference_entity_sequence.prd_id'
-                                  '_pdbx_reference_entity_sequence.ref_entity_id'
+    _category_key.name            '_pdbx_reference_entity_sequence.prd_id'
 #
     loop_
     _category_group.id           'inclusive_group'
@@ -2692,8 +2497,7 @@ save_pdbx_reference_entity_grouping
     _category.id                  'pdbx_reference_entity_grouping'
     _category.mandatory_code      no
      loop_
-    _category_key.name            '_pdbx_reference_entity_grouping.family_prd_id'
-                                  '_pdbx_reference_entity_grouping.prd_id'
+    _category_key.name            '_pdbx_reference_entity_grouping.prd_id'
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
@@ -2781,7 +2585,6 @@ save_pdbx_reference_entity_group
     _category.mandatory_code      no
      loop_
     _category_key.name            
-       '_pdbx_reference_entity_group.family_prd_id'
        '_pdbx_reference_entity_group.prd_id'
        '_pdbx_reference_entity_group.id'
     loop_
@@ -3283,6 +3086,718 @@ save__pdbx_entity_group_instances.ordinal
 
 
 
+############################
+## PDBX_STRUCT_GROUP_LIST ##
+############################
+
+save_pdbx_struct_group_list
+    _category.description
+;              Data items in the PDBX_STRUCT_GROUP_LIST define groups of related components
+               or atoms.
+;
+    _category.id                  pdbx_struct_group_list
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_struct_group_list.struct_group_id'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_struct_group_list.struct_group_id
+    _pdbx_struct_group_list.name  
+    _pdbx_struct_group_list.type
+    _pdbx_struct_group_list.group_enumeration_type
+    _pdbx_struct_group_list.description
+  1 DECAPLANIN MolecularComplex  component
+ ; Decaplanin is a tricyclic glycopeptide. The scaffold is a heptapeptide with the
+   configuration D-D-L-D-D-L-L, glycosylated by a monosaccharide and a disaccharide
+ ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_struct_group_list.struct_group_id
+    _item_description.description
+;              The unique identifier for the group.
+;
+    _item.name                  '_pdbx_struct_group_list.struct_group_id'
+    _item.category_id             pdbx_struct_group_list
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
+save__pdbx_struct_group_list.name
+    _item_description.description
+;              The name of the group.
+;
+    _item.name                  '_pdbx_struct_group_list.name'
+    _item.category_id             pdbx_struct_group_list
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+save__pdbx_struct_group_list.type
+    _item_description.description
+;              A selected list of group types.
+;
+    _item.name                  '_pdbx_struct_group_list.type'
+    _item.category_id             pdbx_struct_group_list
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+    'Molecular Complex'  "Molecule composed of polymer and non-polymer components"
+    'Heterogen Complex'  "Molecule composed of non-polymer components"
+    'TLS group'          "Component and/or atom selection defining a TLS group'
+    'NCS group'          "Component and/or atom selection defining an NCS group'
+#
+     save_
+
+save__pdbx_struct_group_list.group_enumeration_type
+    _item_description.description
+;     The manner in which the group is defined.  Groups consist of collections
+      within the set of deposited coordinates which can be defined in terms of
+      a list of chemical components in category PDBX_STRUCT_GROUP_COMPONENTS,  
+      ranges of chemical components in PDBX_STRUCT_GROUP_COMPONENT_RANGE, 
+      or as individual atoms using _atom_site.pdbx_group_id.
+
+      Groups can be composed of selections from multiple categories in which 
+      case the enumeration types are separated by commas.  
+;
+    _item.name                  '_pdbx_struct_group_list.group_enumeration_type'
+    _item.category_id             pdbx_struct_group_list
+    _item.mandatory_code          yes
+    _item_type.code               ucode-alphanum-csv
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+    "atom"               "group assigned by atom site"
+    "component"          "group assigned by component(s)"
+    "component_range"    "group assigned by component range(s)"
+     loop_
+    _item_examples.case
+    _item_examples.detail         
+      "component"                  "a list of components"
+      "component,component_range"  "a selection of listed components and component range selections"
+     save_
+
+save__pdbx_struct_group_list.description
+    _item_description.description
+;              The description of the group.
+;
+    _item.name                  '_pdbx_struct_group_list.description'
+    _item.category_id             pdbx_struct_group_list
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+save__pdbx_struct_group_list.selection  
+    _item_description.description
+;              A qualification of the subset of atoms in the group.
+;
+    _item.name                  '_pdbx_struct_group_list.selection'
+    _item.category_id             pdbx_struct_group_list
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_examples.case
+    _item_examples.detail         
+        all                       'all atoms in specified range'
+        mnc                       'main chain atoms only'
+        sdc			  'side chain atoms only'
+     save_
+
+save__pdbx_struct_group_list.selection_details 
+    _item_description.description
+;              A text description of subset of the atom selection in the group.
+;
+    _item.name                  '_pdbx_struct_group_list.selection_details'
+    _item.category_id             pdbx_struct_group_list
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+
+##########################
+##  ATOM_SITE extension ##
+##########################
+
+save__atom_site.pdbx_struct_group_id
+     _item_description.description
+;    The value of _atom_site.pdbx_struct_group_id identifies the group or groups
+     assigned to this atom.    This is a reference to the identifier for 
+     group definition in category PDBX_STRUCT_GROUP_LIST.
+
+     Multiple groups identifiers are encoded as a comma separated list.
+;
+     _item.name               '_atom_site.pdbx_struct_group_id'
+     _item.category_id          atom_site
+     _item.mandatory_code       no
+     _item_type.code            ucode-alphanum-csv
+#     _item_linked.child_name    '_atom_site.pdbx_struct_group_id'
+#     _item_linked.parent_name   '_pdbx_struct_group_list.struct_group_id'
+      loop_
+     _item_examples.case
+     _item_examples.detail
+       'C1'         'atom assigned to individual group C1'
+       'C1,C2,C3'   'atom assigned to multiple groups C1, C2 and C3'
+      save_
+
+##################################
+## PDBX_STRUCT_GROUP_COMPONENTS ##
+##################################
+
+save_pdbx_struct_group_components
+     _category.description
+;   Data items in the PDBX_STRUCT_GROUP_COMPONENTS category list component-level
+    group assignments within the entry.  Groups are defined and described in category
+    PDBX_STRUCT_GROUP_LIST.  
+;
+     _category.id                  pdbx_struct_group_components
+     _category.mandatory_code      no
+     _category_key.name          '_pdbx_struct_group_components.ordinal'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+
+      loop_
+     _category_examples.detail
+     _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+     Example 1
+;
+;
+loop_
+_pdbx_struct_group_components.ordinal
+_pdbx_struct_group_components.struct_group_id
+_pdbx_struct_group_components.PDB_model_num
+_pdbx_struct_group_components.auth_seq_id
+_pdbx_struct_group_components.auth_comp_id
+_pdbx_struct_group_components.auth_asym_id
+_pdbx_struct_group_components.PDB_ins_code
+   1  1 1  1 MLU  A    .
+   2  1 1  2 OMZ  A    .
+   3  1 1  3 ASN  A    .
+   4  1 1  4 GHP  A    .
+   5  1 1  5 GHP  A    .
+   6  1 1  6 OMX  A    .
+   7  1 1  7 3FG  A    .
+   8  1 1  8 ERE  A    .
+   9  1 1  9 BGC  A    .
+  10  1 1 10 RAM  A    .
+  #  .... abbreviated ....
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+      save_
+
+save__pdbx_struct_group_components.ordinal
+     _item_description.description
+;   The value of _pdbx_struct_group_components.ordinal must uniquely identify
+     each item in the PDBX_STRUCT_GROUP_COMPONENTS list.
+
+     This is an integer serial number.
+;
+     _item.name               '_pdbx_struct_group_components.ordinal'
+     _item.category_id          pdbx_struct_group_components
+     _item.mandatory_code       yes
+     _item_type.code            int
+      save_
+
+save__pdbx_struct_group_components.struct_group_id
+     _item_description.description
+;    The value of _pdbx_struct_group_components.group_id identifies the group
+     assignment for the component.    This is a reference to the identifier for 
+     group definition in category PDBX_STRUCT_GROUP_LIST.
+;
+     _item.name               '_pdbx_struct_group_components.struct_group_id'
+     _item.category_id          pdbx_struct_group_components
+     _item.mandatory_code       yes
+     _item_type.code            ucode
+     _item_linked.child_name    '_pdbx_struct_group_components.struct_group_id'
+     _item_linked.parent_name   '_pdbx_struct_group_list.struct_group_id'
+      save_
+
+
+save__pdbx_struct_group_components.PDB_model_num
+     _item_description.description
+;   Part of the identifier for the component in this group assignment.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_model_num in the
+    ATOM_SITE category.
+
+;
+     _item.name                 '_pdbx_struct_group_components.PDB_model_num'
+     _item.category_id          pdbx_struct_group_components
+     _item.mandatory_code       no
+     _item_type.code            int
+     _item_linked.child_name    '_pdbx_struct_group_components.PDB_model_num'
+     _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+      save_
+
+save__pdbx_struct_group_components.auth_asym_id
+     _item_description.description
+;    Part of the identifier for the component in this group assignment.
+
+     This data item is a pointer to _atom_site.auth_asym_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_struct_group_components.auth_asym_id'
+     _item.category_id           pdbx_struct_group_components
+     _item.mandatory_code        yes
+     _item_type.code             code
+     _item_linked.child_name     '_pdbx_struct_group_components.auth_asym_id'
+     _item_linked.parent_name    '_atom_site.auth_asym_id'
+      save_
+
+save__pdbx_struct_group_components.auth_comp_id
+     _item_description.description
+;    Part of the identifier for the component in this group assignment.
+
+     This data item is a pointer to _atom_site.auth_comp_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_struct_group_components.auth_comp_id'
+     _item.category_id           pdbx_struct_group_components
+     _item.mandatory_code        yes
+     _item_type.code             ucode
+     _item_linked.child_name     '_pdbx_struct_group_components.auth_comp_id'
+     _item_linked.parent_name    '_chem_comp.id'
+      save_
+
+save__pdbx_struct_group_components.auth_seq_id
+     _item_description.description
+;    Part of the identifier for the component in this group assignment. 
+
+     This data item is a pointer to _atom_site.auth_seq_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_struct_group_components.auth_seq_id'
+     _item.category_id           pdbx_struct_group_components
+     _item.mandatory_code        yes
+     _item_type.code             code
+     _item_linked.child_name     '_pdbx_struct_group_components.auth_seq_id'
+     _item_linked.parent_name    '_atom_site.auth_seq_id'
+      save_
+
+save__pdbx_struct_group_components.PDB_ins_code
+     _item_description.description
+;    Part of the identifier for the component in this group assignment.
+
+     This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+     ATOM_SITE category.
+;
+     _item.name                  '_pdbx_struct_group_components.PDB_ins_code'
+     _item.category_id           pdbx_struct_group_components
+     _item.mandatory_code        no
+     _item_type.code             code
+     _item_linked.child_name     '_pdbx_struct_group_components.PDB_ins_code'
+     _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+save__pdbx_struct_group_components.label_asym_id
+    _item_description.description
+;   Part of the identifier for the component in this group assignment.
+
+    This data item is a pointer to _atom_site.label_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_components.label_asym_id'
+    _item.category_id            pdbx_struct_group_components
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_group_components.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_struct_group_components.label_comp_id
+    _item_description.description
+;   Part of the identifier for the component in this group assignment.
+  
+    This data item is a pointer to _atom_site.label_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_components.label_comp_id'
+    _item.category_id            pdbx_struct_group_components
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_struct_group_components.label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_struct_group_components.label_seq_id
+    _item_description.description
+;   Part of the identifier for the component in this group assignment.
+
+    This data item is a pointer to _atom_site.label_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_components.label_seq_id'
+    _item.category_id            pdbx_struct_group_components
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_struct_group_components.label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+
+save__pdbx_struct_group_components.label_alt_id
+    _item_description.description
+;   Part of the identifier for the component in this group assignment.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_components.label_alt_id'
+    _item.category_id            pdbx_struct_group_components
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_group_components.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+
+#######################################
+## PDBX_STRUCT_GROUP_COMPONENT_RANGE ##
+#######################################
+
+save_pdbx_struct_group_component_range
+    _category.description
+;              Data items in the PDBX_STRUCT_GROUP_COMPONENT_RANGE category define a structural
+               group as a continuous span chemical components. 
+;
+    _category.id                  pdbx_struct_group_component_range
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_struct_group_component_range.ordinal'
+
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+loop_
+_pdbx_struct_group_component_range.ordinal
+_pdbx_struct_group_component_range.struct_group_id
+_pdbx_struct_group_component_range.PDB_model_num
+_pdbx_struct_group_component_range.beg_auth_seq_id
+_pdbx_struct_group_component_range.beg_auth_comp_id
+_pdbx_struct_group_component_range.beg_auth_asym_id
+_pdbx_struct_group_component_range.beg_PDB_ins_code
+_pdbx_struct_group_component_range.end_auth_seq_id
+_pdbx_struct_group_component_range.end_auth_comp_id
+_pdbx_struct_group_component_range.end_auth_asym_id
+_pdbx_struct_group_component_range.end_PDB_ins_code
+   1  1 1  1 MLU  A   .  10 RAM  A  .
+#  .... abbreviated ....
+;
+     save_
+
+save__pdbx_struct_group_component_range.ordinal
+    _item_description.description
+;              The value of _pdbx_struct_group_component_range.id must uniquely identify 
+               a record in the PDBX_STRUCT_GROUP_COMPONENT_RANGE list.
+
+;
+    _item.name                  '_pdbx_struct_group_component_range.ordinal'
+    _item.category_id             pdbx_struct_group_component_range
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_struct_group_component_range.struct_group_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_struct_group_list.struct_group_id in the
+               PDBX_STRUCT_GROUP_LIST category.
+;
+    _item.name                  '_pdbx_struct_group_component_range.struct_group_id'
+    _item.category_id             pdbx_struct_group_component_range
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name      '_pdbx_struct_group_component_range.struct_group_id'
+    _item_linked.parent_name     '_pdbx_struct_group_list.struct_group_id'
+     save_
+
+save__pdbx_struct_group_components.PDB_model_num
+     _item_description.description
+;   Part of the identifier for the component range in this group assignment.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_model_num in the
+    ATOM_SITE category.
+
+;
+     _item.name                 '_pdbx_struct_group_component_range.PDB_model_num'
+     _item.category_id          pdbx_struct_group_component_range
+     _item.mandatory_code       no
+     _item_type.code            int
+     _item_linked.child_name    '_pdbx_struct_group_component_range.PDB_model_num'
+     _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+      save_
+
+
+save__pdbx_struct_group_component_range.beg_auth_asym_id
+     _item_description.description
+;    Part of the identifier for the component range in this group assignment.
+
+     This data item is a pointer to _atom_site.auth_asym_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_struct_group_component_range.beg_auth_asym_id'
+     _item.category_id           pdbx_struct_group_component_range
+     _item.mandatory_code        yes
+     _item_type.code             code
+     _item_linked.child_name     '_pdbx_struct_group_component_range.beg_auth_asym_id'
+     _item_linked.parent_name    '_atom_site.auth_asym_id'
+      save_
+
+save__pdbx_struct_group_component_range.beg_auth_comp_id
+     _item_description.description
+;    Part of the identifier for the component range in this group assignment.
+
+     This data item is a pointer to _atom_site.auth_comp_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_struct_group_component_range.beg_auth_comp_id'
+     _item.category_id           pdbx_struct_group_component_range
+     _item.mandatory_code        yes
+     _item_type.code             ucode
+     _item_linked.child_name     '_pdbx_struct_group_component_range.beg_auth_comp_id'
+     _item_linked.parent_name    '_chem_comp.id'
+      save_
+
+save__pdbx_struct_group_component_range.beg_auth_seq_id
+     _item_description.description
+;    Part of the identifier for the component range in this group assignment. 
+
+     This data item is a pointer to _atom_site.auth_seq_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_struct_group_component_range.beg_auth_seq_id'
+     _item.category_id           pdbx_struct_group_component_range
+     _item.mandatory_code        yes
+     _item_type.code             code
+     _item_linked.child_name     '_pdbx_struct_group_component_range.beg_auth_seq_id'
+     _item_linked.parent_name    '_atom_site.auth_seq_id'
+      save_
+
+save__pdbx_struct_group_component_range.beg_PDB_ins_code
+     _item_description.description
+;    Part of the identifier for the component range in this group assignment.
+
+     This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+     ATOM_SITE category.
+;
+     _item.name                  '_pdbx_struct_group_component_range.beg_PDB_ins_code'
+     _item.category_id           pdbx_struct_group_component_range
+     _item.mandatory_code        no
+     _item_type.code             code
+     _item_linked.child_name     '_pdbx_struct_group_component_range.beg_PDB_ins_code'
+     _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+save__pdbx_struct_group_component_range.beg_label_asym_id
+    _item_description.description
+;   Part of the identifier for the component range in this group assignment.
+
+    This data item is a pointer to _atom_site.label_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_component_range.beg_label_asym_id'
+    _item.category_id            pdbx_struct_group_component_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_group_component_range.beg_label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_struct_group_component_range.beg_label_comp_id
+    _item_description.description
+;   Part of the identifier for the component range in this group assignment.
+  
+    This data item is a pointer to _atom_site.label_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_component_range.beg_label_comp_id'
+    _item.category_id            pdbx_struct_group_component_range
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_struct_group_component_range.beg_label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_struct_group_component_range.beg_label_seq_id
+    _item_description.description
+;   Part of the identifier for the component range in this group assignment.
+
+    This data item is a pointer to _atom_site.label_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_component_range.beg_label_seq_id'
+    _item.category_id            pdbx_struct_group_component_range
+    _item.mandatory_code          no
+    _item_type.code               int
+#    _item_linked.child_name     '_pdbx_struct_group_component_range.beg_label_seq_id'
+#    _item_linked.parent_name    '_atom_site.label_seq_id'
+
+     save_
+
+save__pdbx_struct_group_component_range.beg_label_alt_id
+    _item_description.description
+;   Part of the identifier for the component range in this group assignment.
+  
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_component_range.beg_label_alt_id'
+    _item.category_id            pdbx_struct_group_component_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_group_component_range.beg_label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_struct_group_component_range.end_auth_asym_id
+     _item_description.description
+;    Part of the identifier for the component range in this group assignment.
+
+     This data item is a pointer to _atom_site.auth_asym_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_struct_group_component_range.end_auth_asym_id'
+     _item.category_id           pdbx_struct_group_component_range
+     _item.mandatory_code        yes
+     _item_type.code             code
+     _item_linked.child_name     '_pdbx_struct_group_component_range.end_auth_asym_id'
+     _item_linked.parent_name    '_atom_site.auth_asym_id'
+      save_
+
+save__pdbx_struct_group_component_range.end_auth_comp_id
+     _item_description.description
+;    Part of the identifier for the component range in this group assignment.
+
+     This data item is a pointer to _atom_site.auth_comp_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_struct_group_component_range.end_auth_comp_id'
+     _item.category_id           pdbx_struct_group_component_range
+     _item.mandatory_code        yes
+     _item_type.code             ucode
+     _item_linked.child_name     '_pdbx_struct_group_component_range.end_auth_comp_id'
+     _item_linked.parent_name    '_chem_comp.id'
+      save_
+
+save__pdbx_struct_group_component_range.end_auth_seq_id
+     _item_description.description
+;    Part of the identifier for the component range in this group assignment. 
+
+     This data item is a pointer to _atom_site.auth_seq_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_struct_group_component_range.end_auth_seq_id'
+     _item.category_id           pdbx_struct_group_component_range
+     _item.mandatory_code        yes
+     _item_type.code             code
+     _item_linked.child_name     '_pdbx_struct_group_component_range.end_auth_seq_id'
+     _item_linked.parent_name    '_atom_site.auth_seq_id'
+      save_
+
+save__pdbx_struct_group_component_range.end_PDB_ins_code
+     _item_description.description
+;    Part of the identifier for the component range in this group assignment.
+
+     This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+     ATOM_SITE category.
+;
+     _item.name                  '_pdbx_struct_group_component_range.end_PDB_ins_code'
+     _item.category_id           pdbx_struct_group_component_range
+     _item.mandatory_code        no
+     _item_type.code             code
+     _item_linked.child_name     '_pdbx_struct_group_component_range.end_PDB_ins_code'
+     _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+save__pdbx_struct_group_component_range.end_label_asym_id
+    _item_description.description
+;   Part of the identifier for the component range in this group assignment.
+
+    This data item is a pointer to _atom_site.label_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_component_range.end_label_asym_id'
+    _item.category_id            pdbx_struct_group_component_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_group_component_range.end_label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_struct_group_component_range.end_label_comp_id
+    _item_description.description
+;   Part of the identifier for the component range in this group assignment.
+  
+    This data item is a pointer to _atom_site.label_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_component_range.end_label_comp_id'
+    _item.category_id            pdbx_struct_group_component_range
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_struct_group_component_range.end_label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_struct_group_component_range.end_label_seq_id
+    _item_description.description
+;   Part of the identifier for the component range in this group assignment.
+
+    This data item is a pointer to _atom_site.label_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_component_range.end_label_seq_id'
+    _item.category_id            pdbx_struct_group_component_range
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_struct_group_component_range.end_label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+
+
+save__pdbx_struct_group_component_range.end_label_alt_id
+    _item_description.description
+;   Part of the identifier for the component range in this group assignment.
+  
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_group_component_range.end_label_alt_id'
+    _item.category_id            pdbx_struct_group_component_range
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_group_component_range.end_label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+
 ##########################################
 ## PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK ##
 ##########################################
@@ -3314,7 +3829,6 @@ loop_
 _pdbx_reference_entity_poly_nstd_link.family_prd_id
 _pdbx_reference_entity_poly_nstd_link.prd_id
 _pdbx_reference_entity_poly_nstd_link.ref_entity_id
-_pdbx_reference_entity_poly_nstd_link.component
 _pdbx_reference_entity_poly_nstd_link.link_id
 _pdbx_reference_entity_poly_nstd_link.entity_seq_num_1
 _pdbx_reference_entity_poly_nstd_link.comp_id_1
@@ -3323,18 +3837,18 @@ _pdbx_reference_entity_poly_nstd_link.entity_seq_num_2
 _pdbx_reference_entity_poly_nstd_link.comp_id_2
 _pdbx_reference_entity_poly_nstd_link.atom_id_2
 _pdbx_reference_entity_poly_nstd_link.value_order
-FAM_000411 PRD_000001 1 1 1 1 DSN C 2 ALA N  'sing'
-FAM_000411 PRD_000001 1 1 2 2 ALA C 3 N2C N  'sing'
-FAM_000411 PRD_000001 1 1 3 2 ALA C 3 N2C N  'sing'
-FAM_000411 PRD_000001 1 1 4 2 ALA C 3 NCY N  'sing'
-FAM_000411 PRD_000001 1 1 5 3 N2C C 4 MVA N  'sing'
-FAM_000411 PRD_000001 1 1 6 3 NCY C 4 MVA N  'sing'
-FAM_000411 PRD_000001 1 1 7 4 MVA C 5 DSN OG 'sing'
-FAM_000411 PRD_000001 1 1 8 5 DSN C 6 ALA N  'sing'
-FAM_000411 PRD_000001 1 1 8 6 ALA C 7 NCY N  'sing'
-FAM_000411 PRD_000001 1 1 9 6 ALA C 7 N2C N  'sing'
-FAM_000411 PRD_000001 1 1 8 7 NCY C 8 MVA N  'sing'
-FAM_000411 PRD_000001 1 1 9 7 N2C C 8 MVZ N  'sing'
+FAM_000411 PRD_000001 1 1 1 DSN C 2 ALA N  'single'
+FAM_000411 PRD_000001 1 2 2 ALA C 3 N2C N  'single'
+FAM_000411 PRD_000001 1 3 2 ALA C 3 N2C N  'single'
+FAM_000411 PRD_000001 1 4 2 ALA C 3 NCY N  'single'
+FAM_000411 PRD_000001 1 5 3 N2C C 4 MVA N  'single'
+FAM_000411 PRD_000001 1 6 3 NCY C 4 MVA N  'single'
+FAM_000411 PRD_000001 1 7 4 MVA C 5 DSN OG 'single'
+FAM_000411 PRD_000001 1 8 5 DSN C 6 ALA N  'single'
+FAM_000411 PRD_000001 1 8 6 ALA C 7 NCY N  'single'
+FAM_000411 PRD_000001 1 9 6 ALA C 7 N2C N  'single'
+FAM_000411 PRD_000001 1 8 7 NCY C 8 MVA N  'single'
+FAM_000411 PRD_000001 1 9 7 N2C C 8 MVZ N  'single'
 ....
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -3398,20 +3912,6 @@ save__pdbx_reference_entity_poly_nstd_link.ref_entity_id
     _item_type.code               ucode
     _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.ref_entity_id'
     _item_linked.parent_name    '_pdbx_reference_entity_list.ref_entity_id'
-     save_
-
-save__pdbx_reference_entity_poly_nstd_link.component
-    _item_description.description
-;              The component number of the polymer entity containing the non-standard linkage.
-
-               This data item is a pointer to _pdbx_reference_entity_list.component
-               in the PDBX_REFERENCE_ENTITY_LIST category.
-;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.component'
-    _item.mandatory_code          yes
-    _item_type.code               int
-    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.component'
-    _item_linked.parent_name    '_pdbx_reference_entity_list.component'
      save_
 
 save__pdbx_reference_entity_poly_nstd_link.entity_seq_num_1

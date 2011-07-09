@@ -488,7 +488,7 @@ pdbx_struct_group_component_range   3  pdbx_struct_group_component_range:atom_si
 pdbx_entity_group_instances    1  pdbx_entity_group_instances:pdbx_struct_group_list:1   . .
 pdbx_entity_group_instances    2  pdbx_entity_group_instances:pdbx_entity_group_list:1   . .
 ##
-##           ------ PRD V3 items -------
+##           ------ PRD V4 items -------
 ##
 pdbx_reference_entity                    1  pdbx_reference_entity:pdbx_reference_entity_family:1                  . . 
 pdbx_reference_entity_annotation         1  pdbx_reference_entity_annotation:pdbx_reference_entity:1                  . . 
@@ -1590,7 +1590,7 @@ pdbx_struct_group_component_range    3 '_pdbx_struct_group_component_range.end_l
 pdbx_entity_group_instances          1  '_pdbx_entity_group_instances.struct_group_id'             '_pdbx_struct_group_list.struct_group_id'   pdbx_struct_group_list
 pdbx_entity_group_instances          2  '_pdbx_entity_group_instances.entity_group_id'             '_pdbx_entity_group_list.entity_group_id'   pdbx_entity_group_list
 #
-#  -- PRD V3 relationships --- 
+#  -- PRD V4 relationships --- 
 pdbx_reference_entity                    1  '_pdbx_reference_entity.family_prd_id'               '_pdbx_reference_entity_family.family_prd_id'   pdbx_reference_entity_family 
 pdbx_reference_entity_annotation         1  '_pdbx_reference_entity_annotation.family_prd_id'    '_pdbx_reference_entity.family_prd_id'   pdbx_reference_entity 
 pdbx_reference_entity_annotation         1  '_pdbx_reference_entity_annotation.prd_id'           '_pdbx_reference_entity.prd_id'          pdbx_reference_entity 
@@ -1666,4 +1666,4 @@ pdbx_reference_entity_poly_nstd_link     2  '_pdbx_reference_entity_poly_nstd_li
 pdbx_reference_entity_poly_nstd_link     3  '_pdbx_reference_entity_poly_nstd_link.ref_entity_id'      '_pdbx_reference_entity_poly_seq.ref_entity_id'  pdbx_reference_entity_poly_seq
 pdbx_reference_entity_poly_nstd_link     3  '_pdbx_reference_entity_poly_nstd_link.entity_seq_num_2'   '_pdbx_reference_entity_poly_seq.num'        pdbx_reference_entity_poly_seq
 pdbx_reference_entity_poly_nstd_link     3  '_pdbx_reference_entity_poly_nstd_link.comp_id_2'          '_pdbx_reference_entity_poly_seq.mon_id'     pdbx_reference_entity_poly_seq
-
+##

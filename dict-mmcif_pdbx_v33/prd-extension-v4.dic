@@ -3538,7 +3538,7 @@ save__pdbx_struct_group_component_range.struct_group_id
     _item_linked.parent_name     '_pdbx_struct_group_list.struct_group_id'
      save_
 
-save__pdbx_struct_group_components.PDB_model_num
+save__pdbx_struct_group_component_range.PDB_model_num
      _item_description.description
 ;   Part of the identifier for the component range in this group assignment.
 
