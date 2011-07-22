@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.012
+    _dictionary.version         4.013
 #
      loop_
     _dictionary_history.version
@@ -1482,4 +1482,10 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes (jdw): 
    + removed trailing space in enumeration of value for _pdbx_version.revision_type
 ;
+4.013 2011-07-22
+;
+  Changes (jdw): 
+   + Update enumerations for pdbx_sg_projects category.
+;
+
 ### EOF mmcif_pdbx-header.dic 
