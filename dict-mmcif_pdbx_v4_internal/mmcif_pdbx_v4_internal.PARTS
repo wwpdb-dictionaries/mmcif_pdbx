@@ -18,4 +18,5 @@
 ../dict-mmcif_pdbx_v40/chem_comp_atom_feature.dic
 ../dict-mmcif_pdbx_v40/prd-extension-v4.dic
 ../dict-mmcif_pdbx_v40/mmcif_pdbx-def-15.dic
+carbohydrate-extension.dic
 ../dict-mmcif_pdbx_v40/mmcif_pdbx_internal-def-ilg.dic
