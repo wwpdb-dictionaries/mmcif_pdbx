@@ -3160,8 +3160,8 @@ save__pdbx_struct_group_list.type
     _item_enumeration.detail      
     'Molecular Complex'  "Molecule composed of polymer and non-polymer components"
     'Heterogen Complex'  "Molecule composed of non-polymer components"
-    'TLS group'          "Component and/or atom selection defining a TLS group'
-    'NCS group'          "Component and/or atom selection defining an NCS group'
+    'TLS group'          "Component and/or atom selection defining a TLS group"
+    'NCS group'          "Component and/or atom selection defining an NCS group"
 #
      save_
 
