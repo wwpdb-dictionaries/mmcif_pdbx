@@ -1,0 +1,31 @@
+###########################################################################
+# INTERNAL INTERNAL INTERNAL INTERNAL INTERNAL INTERNAL INTERNAL INTERNAL 
+#
+# 
+#        PDB Exchange Data Dictionary (V4 INTERNAL TEST VERSION)
+#
+#                                                                           
+#                                                                           
+###########################################################################
+
+data_mmcif_pdbx.dic
+
+    _datablock.id                          mmcif_pdbx.dic
+    _datablock.description
+;
+     This data block holds the Protein Data Bank Exchange Data dictionary.
+;
+
+    _dictionary.title           mmcif_pdbx.dic
+    _dictionary.datablock_id    mmcif_pdbx.dic
+    _dictionary.version         4.999
+#
+     loop_
+    _dictionary_history.version
+    _dictionary_history.update
+    _dictionary_history.revision
+  4.999  2011-07-30
+;
+  Changes (jdw):  
+  + Release as provision version 4.999
+;
