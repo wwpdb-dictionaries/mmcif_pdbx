@@ -38,6 +38,9 @@
 ###   PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK is provided to record non-standard polymer 
 ###   linkages including linkages between non-standard polymer componnents.
 ###
+###
+### Updated: Sept 23, 2011 jdw  Add _pdbx_reference_entity_poly_seq.observed
+###
 
 ##################################
 ## PDBX_REFERENCE_ENTITY_FAMILY ##
@@ -1019,17 +1022,18 @@ save_pdbx_reference_entity_poly_seq
  _pdbx_reference_entity_poly_seq.num
  _pdbx_reference_entity_poly_seq.mon_id   
  _pdbx_reference_entity_poly_seq.modified_mon_id
- FAM_000001 PRD_000001 1  1 THR THR 
- FAM_000001 PRD_000001 1  2 VAL DVA 
- FAM_000001 PRD_000001 1  3 PRO PRO 
- FAM_000001 PRD_000001 1  4 GLY SAR 
- FAM_000001 PRD_000001 1  5 VAL MVA 
- FAM_000001 PRD_000001 1  6 .   PXZ 
- FAM_000001 PRD_000001 1  7 THR THR 
- FAM_000001 PRD_000001 1  8 VAL DVA 
- FAM_000001 PRD_000001 1  9 PRO PRO 
- FAM_000001 PRD_000001 1 10 GLY SAR 
- FAM_000001 PRD_000001 1 11 VAL MVA 
+ _pdbx_reference_entity_poly_seq.observed
+ FAM_000001 PRD_000001 1  1 THR THR Y
+ FAM_000001 PRD_000001 1  2 VAL DVA Y 
+ FAM_000001 PRD_000001 1  3 PRO PRO Y 
+ FAM_000001 PRD_000001 1  4 GLY SAR Y 
+ FAM_000001 PRD_000001 1  5 VAL MVA Y 
+ FAM_000001 PRD_000001 1  6 .   PXZ Y 
+ FAM_000001 PRD_000001 1  7 THR THR Y 
+ FAM_000001 PRD_000001 1  8 VAL DVA Y 
+ FAM_000001 PRD_000001 1  9 PRO PRO Y 
+ FAM_000001 PRD_000001 1 10 GLY SAR Y 
+ FAM_000001 PRD_000001 1 11 VAL MVA Y 
  #
  # ---- data abbreviated -----
 ;
@@ -1110,6 +1114,23 @@ save__pdbx_reference_entity_poly_seq.num
                                   1   1
     _item_type.code               int
      save_
+
+save__pdbx_reference_entity_poly_seq.observed
+    _item_description.description
+;              A flag to indicate that this monomer is observed in the instance example.
+;
+    _item.name                  '_pdbx_reference_entity_poly_seq.observed'
+    _item.category_id            pdbx_reference_entity_poly_seq
+    _item.mandatory_code         yes
+    _item_type.code              ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+          Y  'observed'
+          N  'not observed'
+    _item_examples.case           Y
+     save_
+
 
 #####################################
 ## PDBX_REFERENCE_ENTITY_INSTANCES ##
