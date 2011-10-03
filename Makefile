@@ -1,3 +1,5 @@
+include ../etc/Makefile.platform
+
 EXTERNAL_DATA_DIRS = mmcif_pdbx_v32 mmcif_pdbx_v40  mmcif_std mmcif_ddl mmcif_pdbx_v31 
 INTERNAL_DATA_DIRS =   mmcif_nmr-star mmcif_em mmcif_emx mmcif_biosync mmcif_ccp4 mmcif_iims mmcif_img mmcif_mdb mmcif_rcsb_nmr mmcif_rcsb_xray mmcif_sym  mmcif_pdbx_v32_internal mmcif_pdbx_v4_internal mmcif_pdbx_v5_internal
 
@@ -11,6 +13,7 @@ all:	compile
 clean_build: clean
 
 compile:
+	@mkdir -p ../mmcif
 	@for datadir in $(DATADIRS); do \
 		echo " "; \
 		echo "------------------------------------------------------------"; \
@@ -37,4 +40,19 @@ clean:
 	done
 
 	@cd mmcif; rm -f *.dic
+
+export:
+	mkdir -p $(EXPORT_DIR)
+	@sed 's/^DATADIRS = $$(INTERNAL_DATA_DIRS) $$(EXTERNAL_DATA_DIRS)/DATADIRS = $$(EXTERNAL_DATA_DIRS)/g' Makefile > $(EXPORT_DIR)/Makefile
+	mkdir -p $(EXPORT_DIR)/mmcif
+	@cp -r dict-mmcif_ddl $(EXPORT_DIR)
+	@rm -rf $(EXPORT_DIR)/dict-mmcif_ddl/.svn
+	@cp -r dict-mmcif_std $(EXPORT_DIR)
+	@rm -rf $(EXPORT_DIR)/dict-mmcif_std/.svn
+	@cp -r dict-mmcif_pdbx_v31 $(EXPORT_DIR)
+	@rm -rf $(EXPORT_DIR)/dict-mmcif_pdbx_v31/.svn
+	@cp -r dict-mmcif_pdbx_v32 $(EXPORT_DIR)
+	@rm -rf $(EXPORT_DIR)/dict-mmcif_pdbx_v32/.svn
+	@cp -r dict-mmcif_pdbx_v40 $(EXPORT_DIR)
+	@rm -rf $(EXPORT_DIR)/dict-mmcif_pdbx_v40/.svn
 
