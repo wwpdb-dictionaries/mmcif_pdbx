@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.016
+    _dictionary.version         4.017
 #
      loop_
     _dictionary_history.version
@@ -1507,5 +1507,9 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + correct data type  and parent references for  _pdbx_struct_group_components.auth_comp_id,
    _pdbx_struct_group_component_range.beg_auth_comp_id, and  _pdbx_struct_group_component_range.end_auth_comp_id
 ;
-
+4.017 2011-11-11
+;
+  Changes (jdw):
+  + update enumerations for _chem_comp.pdbx_processing_site
+;
 ### EOF mmcif_pdbx-header.dic 

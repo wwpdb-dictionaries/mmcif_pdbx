@@ -3696,6 +3696,7 @@ save__chem_comp.pdbx_processing_site
      loop_
     _item_enumeration.value 
      'PDBE'   
+     'EBI'
      'PDBJ'
      'RCSB'
     save_
