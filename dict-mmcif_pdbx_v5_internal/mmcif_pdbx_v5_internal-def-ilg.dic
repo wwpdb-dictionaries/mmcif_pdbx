@@ -527,6 +527,7 @@ pdbx_reference_entity_link               5  '_pdbx_reference_entity_link.entity_
 pdbx_reference_entity_poly_nstd_link               1  pdbx_reference_entity_poly_nstd_link:pdbx_reference_entity_poly:1              . .  
 pdbx_reference_entity_poly_nstd_link               2  pdbx_reference_entity_poly_nstd_link:pdbx_reference_entity_poly_seq:2         . .
 pdbx_reference_entity_poly_nstd_link               3  pdbx_reference_entity_poly_nstd_link:pdbx_reference_entity_poly_seq:3          . .
+pdbx_reference_entity_poly_nstd_link               4  pdbx_reference_entity_poly_nstd_link:pdbx_reference_entity_list:4              . .
 ###
 ###
 ##
@@ -1704,11 +1705,15 @@ pdbx_reference_entity_sequence           1  '_pdbx_reference_entity_sequence.fam
 pdbx_reference_entity_sequence           1  '_pdbx_reference_entity_sequence.prd_id'             '_pdbx_reference_entity_list.prd_id'          pdbx_reference_entity_list
 pdbx_reference_entity_sequence           1  '_pdbx_reference_entity_sequence.ref_entity_id'      '_pdbx_reference_entity_list.ref_entity_id'   pdbx_reference_entity_list
 #
+#
 pdbx_reference_entity_link               1  '_pdbx_reference_entity_link.family_prd_id'          '_pdbx_reference_entity_list.family_prd_id'   pdbx_reference_entity_list 
 pdbx_reference_entity_link               1  '_pdbx_reference_entity_link.prd_id'                 '_pdbx_reference_entity_list.prd_id'          pdbx_reference_entity_list
 
 pdbx_reference_entity_link               2  '_pdbx_reference_entity_link.ref_entity_id_1'    '_pdbx_reference_entity_list.ref_entity_id'   pdbx_reference_entity_list
+pdbx_reference_entity_link               2  '_pdbx_reference_entity_link.component_1'        '_pdbx_reference_entity_list.component'       pdbx_reference_entity_list
+
 pdbx_reference_entity_link               3  '_pdbx_reference_entity_link.ref_entity_id_2'    '_pdbx_reference_entity_list.ref_entity_id'   pdbx_reference_entity_list
+pdbx_reference_entity_link               3  '_pdbx_reference_entity_link.component_2'        '_pdbx_reference_entity_list.component'       pdbx_reference_entity_list
 
 pdbx_reference_entity_link               4  '_pdbx_reference_entity_link.entity_seq_num_1'    '_pdbx_reference_entity_poly_seq.num'   pdbx_reference_entity_poly_seq
 pdbx_reference_entity_link               5  '_pdbx_reference_entity_link.entity_seq_num_2'    '_pdbx_reference_entity_poly_seq.num'   pdbx_reference_entity_poly_seq
@@ -1735,6 +1740,11 @@ pdbx_reference_entity_poly_nstd_link     2  '_pdbx_reference_entity_poly_nstd_li
 pdbx_reference_entity_poly_nstd_link     3  '_pdbx_reference_entity_poly_nstd_link.ref_entity_id'      '_pdbx_reference_entity_poly_seq.ref_entity_id'  pdbx_reference_entity_poly_seq
 pdbx_reference_entity_poly_nstd_link     3  '_pdbx_reference_entity_poly_nstd_link.entity_seq_num_2'   '_pdbx_reference_entity_poly_seq.num'        pdbx_reference_entity_poly_seq
 pdbx_reference_entity_poly_nstd_link     3  '_pdbx_reference_entity_poly_nstd_link.comp_id_2'          '_pdbx_reference_entity_poly_seq.mon_id'     pdbx_reference_entity_poly_seq
+
+pdbx_reference_entity_poly_nstd_link     4  '_pdbx_reference_entity_poly_nstd_link.family_prd_id'      '_pdbx_reference_entity_list.family_prd_id'   pdbx_reference_entity_list
+pdbx_reference_entity_poly_nstd_link     4  '_pdbx_reference_entity_poly_nstd_link.prd_id'             '_pdbx_reference_entity_list.prd_id'          pdbx_reference_entity_list
+pdbx_reference_entity_poly_nstd_link     4  '_pdbx_reference_entity_poly_nstd_link.ref_entity_id'      '_pdbx_reference_entity_list.ref_entity_id'   pdbx_reference_entity_list
+pdbx_reference_entity_poly_nstd_link     4  '_pdbx_reference_entity_poly_nstd_link.component'          '_pdbx_reference_entity_list.component'       pdbx_reference_entity_list
 
 
 ###    NDB/RCSB renamed items --- 
