@@ -61,6 +61,12 @@
 ###  _pdbx_reference_entity_list.component part of key
 ###  _pdbx_reference_entity_poly_nstd_link.component  part of key
 ###  _pdbx_reference_entity_poly_seq.num .ge. 0
+###  
+###  _pdbx_reference_entity_sequence.family_prd_id added to key
+###  _pdbx_reference_entity_sequence.prd_id        added to key
+###  _pdbx_reference_entity_sequence.ref_entity_id added to key
+###
+###  _pdbx_reference_entity_poly_seq.mon_id restored in key
 ###
 
 ##################################
@@ -1095,7 +1101,7 @@ save_pdbx_reference_entity_poly_seq
                                 '_pdbx_reference_entity_poly_seq.prd_id'
                                 '_pdbx_reference_entity_poly_seq.ref_entity_id'
                                 '_pdbx_reference_entity_poly_seq.num'
-#                               '_pdbx_reference_entity_poly_seq.mon_id'
+                                '_pdbx_reference_entity_poly_seq.mon_id'
                                 '_pdbx_reference_entity_poly_seq.hetero'
     loop_
     _category_group.id           'inclusive_group'
@@ -1114,8 +1120,8 @@ save_pdbx_reference_entity_poly_seq
  _pdbx_reference_entity_poly_seq.prd_id
  _pdbx_reference_entity_poly_seq.ref_entity_id
  _pdbx_reference_entity_poly_seq.num
- _pdbx_reference_entity_poly_seq.mon_id   
- _pdbx_reference_entity_poly_seq.modified_mon_id
+ _pdbx_reference_entity_poly_seq.parent_mon_id   
+ _pdbx_reference_entity_poly_seq.mon_id
  _pdbx_reference_entity_poly_seq.observed
  _pdbx_reference_entity_poly_seq.hetero
  FAM_000001 PRD_000001 1   1 THR THR Y  N
@@ -2544,7 +2550,10 @@ save_pdbx_reference_entity_sequence
     _category.id                  'pdbx_reference_entity_sequence'
     _category.mandatory_code      no
      loop_
-    _category_key.name            '_pdbx_reference_entity_sequence.prd_id'
+    _category_key.name            
+     '_pdbx_reference_entity_sequence.family_prd_id'
+     '_pdbx_reference_entity_sequence.prd_id'
+     '_pdbx_reference_entity_sequence.ref_entity_id'
 #
     loop_
     _category_group.id           'inclusive_group'
@@ -3986,6 +3995,7 @@ save_pdbx_reference_entity_poly_nstd_link
                                  '_pdbx_reference_entity_poly_nstd_link.prd_id'
                                  '_pdbx_reference_entity_poly_nstd_link.ref_entity_id'
                                  '_pdbx_reference_entity_poly_nstd_link.link_id'
+                                 '_pdbx_reference_entity_poly_nstd_link.component'
      loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
