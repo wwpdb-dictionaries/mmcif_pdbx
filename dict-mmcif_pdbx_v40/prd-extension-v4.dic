@@ -58,6 +58,10 @@
 ### _pdbx_reference_entity_poly_seq.insert_code
 ### _pdbx_reference_entity_poly_seq.modification_details
 ###
+###  _pdbx_reference_entity_list.component part of key
+###  _pdbx_reference_entity_poly_nstd_link.component  part of key
+###  _pdbx_reference_entity_poly_seq.num .ge. 0
+###
 
 ##################################
 ## PDBX_REFERENCE_ENTITY_FAMILY ##
@@ -321,6 +325,7 @@ save_pdbx_reference_entity_list
     _category_key.name          '_pdbx_reference_entity_list.family_prd_id'
                                 '_pdbx_reference_entity_list.prd_id'
                                 '_pdbx_reference_entity_list.ref_entity_id'
+                                '_pdbx_reference_entity_list.component'
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
@@ -1210,8 +1215,8 @@ save__pdbx_reference_entity_poly_seq.num
     _item.mandatory_code          yes
     loop_
     _item_range.maximum
-    _item_range.minimum           .   1
-                                  1   1
+    _item_range.minimum           .   0
+                                  0   0
     _item_type.code               int
      save_
 

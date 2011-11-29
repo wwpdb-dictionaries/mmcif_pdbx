@@ -1532,6 +1532,9 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  _pdbx_reference_entity_poly_seq.insert_code
  _pdbx_reference_entity_poly_seq.modification_details
 
+ + _pdbx_reference_entity_list.component made part of key
+ + _pdbx_reference_entity_poly_nstd_link.component  made part of key
+ + _pdbx_reference_entity_poly_seq.num boundary conditions set .ge. 0
 ;
 
 ### EOF mmcif_pdbx-header.dic 
