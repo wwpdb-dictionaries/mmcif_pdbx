@@ -1512,7 +1512,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes (jdw):
   + update enumerations for _chem_comp.pdbx_processing_site
 ;
-4.018 2011-11-28
+4.018 2011-11-29
 ;
   Changes (jdw):
   + Restore provisional data data items:
@@ -1534,12 +1534,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 
  + _pdbx_reference_entity_list.component made part of key
  + _pdbx_reference_entity_poly_nstd_link.component  made part of key
- + _pdbx_reference_entity_poly_seq.num boundary conditions set .ge. 0
  + _pdbx_reference_entity_sequence.family_prd_id added to key
  + _pdbx_reference_entity_sequence.prd_id        added to key
  + _pdbx_reference_entity_sequence.ref_entity_id added to key
  + _pdbx_reference_entity_poly_seq.mon_id restored in key
 
+ + _pdbx_reference_entity_poly_seq.num boundary remove boundary conditions.
 ;
 
 ### EOF mmcif_pdbx-header.dic 

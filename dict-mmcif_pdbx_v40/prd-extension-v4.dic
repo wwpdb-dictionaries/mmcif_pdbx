@@ -68,6 +68,11 @@
 ###
 ###  _pdbx_reference_entity_poly_seq.mon_id restored in key
 ###
+### Updated: Nov 29, 2011 jdw  revised
+###
+###  _pdbx_reference_entity_poly_seq.num  integer with no boundary conditions.
+###
+#########################################################################XS
 
 ##################################
 ## PDBX_REFERENCE_ENTITY_FAMILY ##
@@ -1215,14 +1220,17 @@ save__pdbx_reference_entity_poly_seq.num
     _item_description.description
 ;              The value of _pdbx_reference_entity_poly_seq.num must uniquely and sequentially
                identify a record in the PDBX_REFERENCE_ENTITY_POLY_SEQ list.
+
+               This value is conforms to author numbering conventions and does not map directly
+               to the numbering conventions used for _entity_poly_seq.num.
 ;
     _item.name                  '_pdbx_reference_entity_poly_seq.num'                         
     _item.category_id             pdbx_reference_entity_poly_seq     
     _item.mandatory_code          yes
-    loop_
-    _item_range.maximum
-    _item_range.minimum           .   0
-                                  0   0
+#    loop_
+#    _item_range.maximum
+#    _item_range.minimum           .   0
+#                                  0   0
     _item_type.code               int
      save_
 
