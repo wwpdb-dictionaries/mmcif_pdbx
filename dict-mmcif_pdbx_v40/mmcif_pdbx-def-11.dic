@@ -1586,10 +1586,10 @@ save_pdbx_coordinate_model
        loop_
        _pdbx_coordinate_model.type
        _pdbx_coordinate_model.asym_id
-        'C-ALPHA ONLY'   A
-        'C-APLHA ONLY'   B
-        'P ONLY'         X
-        'P ONLY'         Y 
+        'CA ATOMS ONLY'   A
+        'CA ATOMS ONLY'   B
+        'P ATOMS ONLY'         X
+        'P ATOMS ONLY'         Y 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -1618,11 +1618,11 @@ save__pdbx_coordinate_model.type
     _item.mandatory_code          yes
     _item_type.code               code
      loop_
-    _item_enumeration.value      'C-ALPHA ONLY'
-                                 'P ONLY'                                 
+    _item_enumeration.value      'CA ATOMS ONLY'
+                                 'P ATOMS ONLY'                                 
      loop_
-    _item_examples.case          'C-ALPHA ONLY'
-                                 'P ONLY'
+    _item_examples.case          'CA ATOMS ONLY'
+                                 'P ATOMS ONLY'
      save_
 
 ###################################
