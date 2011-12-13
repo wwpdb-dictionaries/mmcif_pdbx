@@ -1616,7 +1616,7 @@ save__pdbx_coordinate_model.type
     _item.name                   '_pdbx_coordinate_model.type'
     _item.category_id             pdbx_coordinate_model
     _item.mandatory_code          yes
-    _item_type.code               code
+    _item_type.code               line
      loop_
     _item_enumeration.value      'CA ATOMS ONLY'
                                  'P ATOMS ONLY'                                 
