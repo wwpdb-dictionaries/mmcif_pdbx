@@ -1547,6 +1547,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + Revise enuerations for item  _pdbx_coordinate_model.type
   + Update enumerations for pdbx_sg_projects category.
   + Added item _pdbx_database_status.methods_development_category 
+  + Update examples for _pdbx_database_related.db_name
 ;
 #
 ### EOF mmcif_pdbx-header.dic 

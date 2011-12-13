@@ -3373,8 +3373,7 @@ NDB  - Nucleic Acid Database
 BMRB - BioMagResBank
 EMDB - Electron Microscopy Database
 BMCD - Biological Macromolecule Crystallization Database
-TARGETDB - Target Registration Database
-PEPCDB - Protein Expression Purification and Crystalization Database
+TargetTrack - Target Registration and Protocol Database
 ;
     _item_aliases.alias_name     '_rcsb_database_related.db_name'
     _item_aliases.dictionary     'cif_rcsb.dic'
