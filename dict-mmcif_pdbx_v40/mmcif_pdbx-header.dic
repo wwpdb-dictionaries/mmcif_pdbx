@@ -1541,7 +1541,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 
  + _pdbx_reference_entity_poly_seq.num boundary remove boundary conditions.
 ;
-4.019 2011-12-08
+4.019 2011-12-13
 ;
   Changes (jdw):
   + Revise enuerations for item  _pdbx_coordinate_model.type

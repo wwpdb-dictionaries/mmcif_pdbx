@@ -1814,6 +1814,7 @@ save__pdbx_database_status.methods_development_category
        'CASP'
        'CASD-NMR'
        'FoldIt'
+       'GPCR Dock'
     _item_aliases.alias_name     '_ndb_database_status.methods_development_category'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
