@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.020
+    _dictionary.version         4.021
 #
      loop_
     _dictionary_history.version
@@ -1549,10 +1549,16 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + Added item _pdbx_database_status.methods_development_category 
   + Update examples for _pdbx_database_related.db_name
 ;
-4.020 2011-01-04
+4.020 2012-01-04
 ;
   Changes (jdw):
   + Revise enumerations for category pdbx_sg_project.
+;
+4.021 2012-01-18
+;
+  Changes (jdw):
+
+  + Added _pdbx_database_PDB_obs_spr.details
 ;
 #
 ### EOF mmcif_pdbx-header.dic 
