@@ -1554,11 +1554,72 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes (jdw):
   + Revise enumerations for category pdbx_sg_project.
 ;
-4.021 2012-01-18
+4.021 2012-01-24
 ;
   Changes (jdw):
-
   + Added _pdbx_database_PDB_obs_spr.details
+  + The following changes have been made to the new PDBX_REFERENCE_ categories -
+
+ Renamed categories and items:
+
+ pdbx_reference_entity_details              -> pdbx_reference_molecule_details
+ pdbx_reference_entity_feature              -> pdbx_reference_molecule_features
+ pdbx_reference_entity_annotatoin           -> pdbx_reference_molecule_annotation
+ pdbx_reference_entity_synonyms             -> pdbx_reference_molecule_synonyms
+ pdbx_reference_entity_related_structures   -> pdbx_reference_molecule_related_structures
+ pdbx_reference_entity_family               -> pdbx_reference_molecule_family  
+ pdbx_reference_entity_instance             -> pdbx_reference_molecule_instances
+
+ _pdbx_reference_entity_list.component           -> _pdbx_reference_entity_list.component_id
+ _pdbx_reference_entity_list.component renamed   -> _pdbx_reference_entity_list.component_id
+ _pdbx_reference_entity_poly_nstd_link.component -> _pdbx_reference_entity_poly_nstd_link.component_id
+
+  Renamed three_letter_code -> chem_comp_id  in items: 
+
+ _pdbx_reference_molecule.chem_comp_id
+ _pdbx_reference_entity_nonpoly.chem_comp_id
+ _pdbx_reference_molecule_instancess.chem_comp_id
+ _pdbx_reference_molecule_synonyms.chem_comp_id
+ _pdbx_reference_entity_subcomponents.chem_comp_id
+ _pdbx_reference_molecule_annotation.chem_comp_id
+ _pdbx_reference_molecule_features.chem_comp_id
+
+ Added audit categories for molecule and family information:
+ 
+ pdbx_prd_audit and pdbx_family_prd_audit
+
+ Added items:
+
+ _pdbx_reference_molecule_list.family_prd_id
+ _pdbx_reference_molecule_list.prd_id
+ _pdbx_reference_entity_list.auth_asym_id
+ _pdbx_reference_entity_nonpoly.auth_asym_id 
+ _pdbx_reference_entity_nonpoly.auth_seq_id 
+ _pdbx_reference_entity_nonpoly.PDB_ins_code 
+ _pdbx_reference_entity_nonpoly.label_auth_id
+ _pdbx_reference_molecule.type_evidence_code
+ _pdbx_reference_molecule.class_evidence_code
+
+ Removed provisional categories -
+  pdbx_reference_entity_group              
+  pdbx_reference_entity_group_components   
+  pdbx_reference_entity_group_components   
+  pdbx_reference_entity_grouping           
+
+ Removed provisional items -
+ _pdbx_reference_molecule.family_prd_id
+ _pdbx_reference_entity_list.family_prd_id
+ _pdbx_reference_entity_nonpoly.family_prd_id
+ _pdbx_reference_molecule_instancess.family_prd_id
+ _pdbx_reference_molecule_instancess.PDB_chain_id_list
+ _pdbx_reference_molecule_instancess.PDB_residue_number 
+ _pdbx_reference_entity_subcomponents.family_prd_id
+ _pdbx_reference_entity_link.family_prd_id
+ _pdbx_reference_entity_poly.family_prd_id
+ _pdbx_reference_entity_poly_seq.family_prd_id
+ _pdbx_reference_entity_sequence.family_prd_id
+ _pdbx_reference_entity_src_nat.family_prd_id
+ _pdbx_reference_entity_poly_nstd_link.family_prd_id
 ;
 #
 ### EOF mmcif_pdbx-header.dic 
