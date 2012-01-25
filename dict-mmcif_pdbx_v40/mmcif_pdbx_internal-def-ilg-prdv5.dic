@@ -490,7 +490,7 @@ pdbx_entity_group_components   4  pdbx_entity_group_components:entity_poly_seq:4
 pdbx_entity_group_instances    1  pdbx_entity_group_instances:pdbx_struct_group_list:1   . .
 pdbx_entity_group_instances    2  pdbx_entity_group_instances:pdbx_entity_group_list:1   . .
 ##
-##           ------ PRD V5b items -------
+##           ------ PRD V5 items -------
 ##
 pdbx_prd_audit                             1  pdbx_prd_audit:pdbx_reference_molecule:1                  . . 
 pdbx_family_prd_audit                      1  pdbx_family_prd_audit:pdbx_reference_molecule_family:1                  . . 
