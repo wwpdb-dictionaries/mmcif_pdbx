@@ -18,7 +18,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.000
+    _dictionary.version         5.001
 #
      loop_
     _dictionary_history.version
@@ -28,4 +28,11 @@ data_mmcif_pdbx.dic
 ;
   Changes (jdw):  
   + Release as provision version 5.000
+;
+
+  5.001  2012-01-25
+;
+  Changes (jdw) Open Version :  
+  + This version automatically tracks changes in the current public dictionary.
+  + Added provisional category  pdbx_update_info
 ;
