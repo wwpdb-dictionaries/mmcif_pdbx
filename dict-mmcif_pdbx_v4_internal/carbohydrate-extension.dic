@@ -139,7 +139,12 @@ save__pdbx_carbohydrate_features.type
     loop_
     _item_enumeration.value      'sequence feature'
                                  'linkage issue'
+				 'pdbcare_link_issue_p1'
+				 'pdbcare_annomeric_center_issue_p1'
+				 'pdbcare_nomenclature_issue_p1'            
+				 'pdbcare_details_p1'
                                  'other issue'
+
      save_
 
 save__pdbx_carbohydrate_features.value
