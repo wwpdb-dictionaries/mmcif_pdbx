@@ -1,6 +1,6 @@
 ##
 ## File: carbohydrate-extension.dic
-## Date: 20-Jan-2012  Jdw
+## Date: 29-Jan-2012  Jdw
 ##
 
 #############################
@@ -181,4 +181,14 @@ save__pdbx_carbohydrate_features.support
     _item.category_id             pdbx_carbohydrate_features
     _item.mandatory_code          no
     _item_type.code               text
+     save_
+
+save__pdbx_carbohydrate_features.date
+    _item_description.description
+;              Date of feature assignment.
+;
+    _item.name                  '_pdbx_carbohydrate_features.date'
+    _item.category_id             pdbx_carbohydrate_features
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd
      save_
