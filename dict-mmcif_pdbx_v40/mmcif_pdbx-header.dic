@@ -1638,15 +1638,32 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 
  _pdbx_reference_entity_list.auth_asym_id
  _pdbx_reference_molecule_features.citation_id
+
+ _pdbx_reference_entity_nonpoly.auth_asym_id
+ _pdbx_reference_entity_nonpoly.auth_seq_id
+ _pdbx_reference_entity_nonpoly.label_alt_id
+ _pdbx_reference_entity_nonpoly.PDB_ins_code
+ _pdbx_reference_entity_poly_link.insert_code_1
+ _pdbx_reference_entity_poly_link.insert_code_2 
+ _pdbx_reference_entity_link.nonpoly_res_num_1
+ _pdbx_reference_entity_link.nonpoly_res_num_2
  
   +  Remove category
 
  _pdbx_reference_molecule_instances
  
-  + Add items
+  + Add new items
 
   _pdb_reference_molecule.representative_PDB_id_code
   _pdbx_reference_entity_nonpoly.observed
+  _pdbx_reference_molecule.release_status
+  _pdbx_reference_molecule.replaces
+  _pdbx_reference_molecule.replaced_by
+  _pdbx_reference_molecule_family.release_status
+  _pdbx_reference_molecule_family.replaces
+  _pdbx_reference_molecule_family.replaced_by
+  _pdbx_reference_entity_src_nat.source_id
+  _pdbx_reference_molecule_details.source_id
  
   + Add new category PDBX_MOLECULE to entry files to identify  PRD reference molecules:
 
