@@ -62,13 +62,13 @@
 ### _pdbx_reference_entity_poly_seq.insert_code
 ### _pdbx_reference_entity_poly_seq.modification_details
 ###
-###  _pdbx_reference_entity_list.component part of key
-###  _pdbx_reference_entity_poly_nstd_link.component  part of key
-###  _pdbx_reference_entity_poly_seq.num .ge. 0
+### _pdbx_reference_entity_list.component part of key
+### _pdbx_reference_entity_poly_nstd_link.component  part of key
+### _pdbx_reference_entity_poly_seq.num .ge. 0
 ###  
-###  _pdbx_reference_entity_sequence.family_prd_id added to key
-###  _pdbx_reference_entity_sequence.prd_id        added to key
-###  _pdbx_reference_entity_sequence.ref_entity_id added to key
+### _pdbx_reference_entity_sequence.family_prd_id added to key
+### _pdbx_reference_entity_sequence.prd_id        added to key
+### _pdbx_reference_entity_sequence.ref_entity_id added to key
 ###
 ###  _pdbx_reference_entity_poly_seq.mon_id restored in key
 ###
@@ -192,15 +192,34 @@
 ###
 ### _pdbx_reference_entity_list.auth_asym_id
 ### _pdbx_reference_molecule_features.citation_id
-### 
+###
+### _pdbx_reference_entity_nonpoly.auth_asym_id
+### _pdbx_reference_entity_nonpoly.auth_seq_id
+### _pdbx_reference_entity_nonpoly.label_alt_id
+### _pdbx_reference_entity_nonpoly.PDB_ins_code
+###
+### _pdbx_reference_entity_poly_link.insert_code_1
+### _pdbx_reference_entity_poly_link.insert_code_2 
+### _pdbx_reference_entity_link.nonpoly_res_num_1
+### _pdbx_reference_entity_link.nonpoly_res_num_2
+###
 ### Remove category
 ###
 ### _pdbx_reference_molecule_instances
 ### 
-### Add items
+### Add new items
 ###
 ###  _pdb_reference_molecule.representative_PDB_id_code
 ###  _pdbx_reference_entity_nonpoly.observed
+###  _pdbx_reference_molecule.release_status
+###  _pdbx_reference_molecule.replaces
+###  _pdbx_reference_molecule.replaced_by
+###  _pdbx_reference_molecule_family.release_status
+###  _pdbx_reference_molecule_family.replaces
+###  _pdbx_reference_molecule_family.replaced_by
+###  _pdbx_reference_entity_src_nat.source_id
+###  _pdbx_reference_molecule_details.source_id
+###
 ### 
 ### Add new category PDBX_MOLECULE to entry files to identify  PRD reference molecules:
 ###
@@ -276,6 +295,40 @@ save__pdbx_reference_molecule_family.name
     _item_examples.case
                                 'actinomycin'
                                 'adriamycin '    
+     save_
+
+save__pdbx_reference_molecule_family.release_status
+    _item_description.description
+;              Assigns the current PDB release status for this family.
+;
+    _item.name                  '_pdbx_reference_molecule_family.release_status'
+    _item.category_id             pdbx_reference_molecule_family
+    _item.mandatory_code          no
+    _item_type.code               uline
+     loop_
+    _item_enumeration.value  
+                                'REL' 'HOLD' 'OBS'
+     save_
+
+save__pdbx_reference_molecule_family.replaces
+    _item_description.description
+;              Assigns the identifier for the family which have been replaced by this family.
+               Multiple family identifier codes should be separated by commas.
+;
+    _item.name                  '_pdbx_reference_molecule_family.replaces'
+    _item.category_id             pdbx_reference_molecule_family
+    _item.mandatory_code          no
+    _item_type.code               uline
+     save_
+
+save__pdbx_reference_molecule_family.replaced_by
+    _item_description.description
+;     Assigns the identifier of the family that has replaced this component.
+;
+    _item.name                  '_pdbx_reference_molecule_family.replaced_by'
+    _item.category_id             pdbx_reference_molecule_family
+    _item.mandatory_code          no
+    _item_type.code               uline
      save_
 
 
@@ -575,6 +628,42 @@ save__pdbx_reference_molecule.representative_PDB_id_code
     _item_type.code               ucode
      save_
 
+save__pdbx_reference_molecule.release_status
+    _item_description.description
+;              Defines the current PDB release status for this molecule definition.
+;
+    _item.name                  '_pdbx_reference_molecule.release_status'
+    _item.category_id             pdbx_reference_molecule
+    _item.mandatory_code          no
+    _item_type.code               uline
+     loop_
+    _item_enumeration.value  
+                                'REL' 'HOLD' 'OBS'
+     save_
+
+save__pdbx_reference_molecule.replaces
+    _item_description.description
+;              Assigns the identifier for the reference molecule which have been replaced 
+               by this reference molecule.
+               Multiple molecule identifier codes should be separated by commas.
+;
+    _item.name                  '_pdbx_reference_molecule.replaces'
+    _item.category_id             pdbx_reference_molecule
+    _item.mandatory_code          no
+    _item_type.code               uline
+     save_
+
+save__pdbx_reference_molecule.replaced_by
+    _item_description.description
+;     Assigns the identifier of the reference molecule that has replaced this molecule.
+;
+    _item.name                  '_pdbx_reference_molecule.replaced_by'
+    _item.category_id             pdbx_reference_molecule
+    _item.mandatory_code          no
+    _item_type.code               uline
+     save_
+
+
 
 ################################
 ## PDBX_REFERENCE_ENTITY_LIST ##
@@ -790,48 +879,6 @@ save__pdbx_reference_entity_nonpoly.chem_comp_id
      loop_
     _item_examples.case         '0Z3' 'CD9'
      save_
-
-save__pdbx_reference_entity_nonpoly.auth_asym_id 
-    _item_description.description
-;              The PDB chain identifier code for this non-polymer entity.
-;
-    _item.name                  '_pdbx_reference_entity_nonpoly.auth_asym_id'
-    _item.category_id             pdbx_reference_entity_nonpoly
-    _item.mandatory_code          no
-    _item_type.code               code
-     save_
-
-save__pdbx_reference_entity_nonpoly.auth_seq_id 
-    _item_description.description
-;              The author sequence number for this non-polymer entity.
-;
-    _item.name                  '_pdbx_reference_entity_nonpoly.auth_seq_id'
-    _item.category_id             pdbx_reference_entity_nonpoly
-    _item.mandatory_code          no
-    _item_type.code               code
-     save_
-
-save__pdbx_reference_entity_nonpoly.label_alt_id
-    _item_description.description
-;              The alternate location identifier for this non-polymer entity.
-;
-    _item.name                  '_pdbx_reference_entity_nonpoly.label_alt_id'
-    _item.category_id             pdbx_reference_entity_nonpoly
-    _item.mandatory_code          no
-    _item_type.code               code
-     save_
-
-
-save__pdbx_reference_entity_nonpoly.PDB_ins_code 
-    _item_description.description
-;              PDB insertion code for this non-polymer entity.
-;
-    _item.name                  '_pdbx_reference_entity_nonpoly.PDB_ins_code'
-    _item.category_id             pdbx_reference_entity_nonpoly
-    _item.mandatory_code          no
-    _item_type.code               code
-     save_
-
 
 
 ################################
@@ -1789,7 +1836,7 @@ save_pdbx_reference_entity_src_nat
  _pdbx_reference_entity_src_nat.atcc 
  _pdbx_reference_entity_src_nat.db_code 
  _pdbx_reference_entity_src_nat.db_name 
- PRD_000001 1  1 146923 "Streptomyces parvulus"     KEGG ? C06770 KEGG
+ PRD_000001 1  1 146923 "Streptomyces parvulus"     KEGG   ? C06770   KEGG
  PRD_000001 1  2   1892 "Streptomyces anulatus"     Norine ? NOR00228 Norine
  PRD_000001 1  3   1890 "Streptomyces antibioticus" Norine ? NOR00228 Norine
  PRD_000001 1  4 146923 "Streptomyces parvulus"     Norine ? NOR00228 Norine
@@ -1874,7 +1921,6 @@ save__pdbx_reference_entity_src_nat.taxid
     _item.category_id             pdbx_reference_entity_src_nat
     _item.mandatory_code          no
     _item_type.code               text
-
      save_
 
 save__pdbx_reference_entity_src_nat.atcc
@@ -1908,21 +1954,27 @@ save__pdbx_reference_entity_src_nat.db_name
     _item.category_id             pdbx_reference_entity_src_nat
     _item.mandatory_code          no
     _item_type.code               text
-
      save_
 
 save__pdbx_reference_entity_src_nat.source
     _item_description.description
-;              Additional details about of the origin of this source information.
+;              The data source for this information.
 ;
     _item.name                  '_pdbx_reference_entity_src_nat.source'
     _item.category_id             pdbx_reference_entity_src_nat
     _item.mandatory_code          no
     _item_type.code               text
-
      save_
 
-
+save__pdbx_reference_entity_src_nat.source_id
+    _item_description.description
+;              A identifier within the data source for this information.
+;
+    _item.name                  '_pdbx_reference_entity_src_nat.source_id'
+    _item.category_id             pdbx_reference_entity_src_nat
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
 
 #####################################
 ## PDBX_REFERENCE_MOLECULE_DETAILS ##
@@ -1956,20 +2008,21 @@ save_pdbx_reference_molecule_details
  _pdbx_reference_molecule_details.prd_id
  _pdbx_reference_molecule_details.ordinal
  _pdbx_reference_molecule_details.source
+ _pdbx_reference_molecule_details.source_id
  _pdbx_reference_molecule_details.text
- FAM_000001 PRD_000001  1 Wikipedia
+ FAM_000001 PRD_000001  1 Wikipedia ?
  ; Actinomycin D is primarily used as an investigative tool in cell biology to inhibit transcription. It does this by
    binding DNA at the transcription initiation complex and preventing elongation by RNA polymerase. Because it can bind
    DNA duplexes, it can also interfere with DNA replication, although other chemicals such as hydroxyurea are
    better suited for use in the laboratory as inhibitors of DNA synthesis.
  ;
- FAM_000001 PRD_000001  2 DrugBank
+ FAM_000001 PRD_000001  2 DrugBank ?
  ; A compound composed of a two cyclic peptides attached to a phenoxazine that is derived from streptomyces parvullus. It
    binds to DNA and inhibits RNA synthesis (transcription), with chain elongation more sensitive than initiation,
   termination, or release. As a result of impaired mRNA production, protein synthesis also declines after dactinomycin
   therapy.
  ;
- FAM_000001 PRD_000003  3 "DOI:10.1016/S0960-894X(98)00345-X"
+ FAM_000001 PRD_000003  3 DOI "DOI:10.1016/S0960-894X(98)00345-X"
  ; Actinomycin D, C2 and VII, cyclic peptides, inhibit Grb2 SH2 domain association with a phosphotyrosine containing 
    peptide derived from the Shc protein (pTyr317). Actinomycins are the first examples of nonphosphorylated 
    natural ligands of SH2 domain.
@@ -2020,9 +2073,19 @@ save__pdbx_reference_molecule_details.ordinal
 
 save__pdbx_reference_molecule_details.source
     _item_description.description
-;              A source of this information.
+;              A data source of this information (e.g. PubMed, Merck Index)
 ;
     _item.name                  '_pdbx_reference_molecule_details.source'
+    _item.category_id             pdbx_reference_molecule_details
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_reference_molecule_details.source_id
+    _item_description.description
+;              A identifier within the data source for this information.
+;
+    _item.name                  '_pdbx_reference_molecule_details.source_id'
     _item.category_id             pdbx_reference_molecule_details
     _item.mandatory_code          no
     _item_type.code               text
@@ -4049,3 +4112,5 @@ save__pdbx_molecule.asym_id
     _item_type.code               code
     _item_examples.case          'A
      save_
+
+
