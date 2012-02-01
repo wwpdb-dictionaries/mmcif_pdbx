@@ -210,7 +210,6 @@
 ### Add new items
 ###
 ###  _pdb_reference_molecule.representative_PDB_id_code
-###  _pdbx_reference_entity_nonpoly.observed
 ###  _pdbx_reference_molecule.release_status
 ###  _pdbx_reference_molecule.replaces
 ###  _pdbx_reference_molecule.replaced_by
@@ -850,22 +849,6 @@ save__pdbx_reference_entity_nonpoly.name
                                "2-CARBOXYQUINOXALINE"  
      save_
 
-save__pdbx_reference_entity_nonpoly.observed
-    _item_description.description
-;              A flag to indicate that this component is observed in the instance example.
-;
-    _item.name                  '_pdbx_reference_entity_nonpoly.observed'
-    _item.category_id            pdbx_reference_entity_nonpoly
-    _item.mandatory_code         no
-    _item_type.code              ucode
-    _item_default.value          Y
-    loop_
-    _item_enumeration.value
-    _item_enumeration.detail
-          Y  'observed'
-          N  'not observed'
-    _item_examples.case           Y
-     save_
 
 save__pdbx_reference_entity_nonpoly.chem_comp_id
     _item_description.description

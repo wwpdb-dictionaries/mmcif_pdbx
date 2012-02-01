@@ -1655,7 +1655,6 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + Add new items
 
   _pdb_reference_molecule.representative_PDB_id_code
-  _pdbx_reference_entity_nonpoly.observed
   _pdbx_reference_molecule.release_status
   _pdbx_reference_molecule.replaces
   _pdbx_reference_molecule.replaced_by
