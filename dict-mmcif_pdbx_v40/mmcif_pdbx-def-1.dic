@@ -6361,7 +6361,7 @@ save__chem_comp.id
          '_struct_mon_nucl.label_comp_id'           '_atom_site.label_comp_id'
          '_struct_mon_prot.label_comp_id'           '_atom_site.label_comp_id'
          '_struct_mon_prot_cis.label_comp_id'       '_atom_site.label_comp_id'
-         '_struct_ref_seq_dif.db_mon_id'            '_chem_comp.id'
+#         '_struct_ref_seq_dif.db_mon_id'            '_chem_comp.id'
 #         '_struct_ref_seq_dif.mon_id'               '_chem_comp.id'
          '_struct_ref_seq_dif.mon_id'               '_entity_poly_seq.mon_id'
          '_struct_sheet_range.beg_label_comp_id'    '_atom_site.label_comp_id'

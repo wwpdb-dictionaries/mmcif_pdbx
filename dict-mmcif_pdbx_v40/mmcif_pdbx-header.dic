@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.021
+    _dictionary.version         4.022
 #
      loop_
     _dictionary_history.version
@@ -1621,5 +1621,45 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  _pdbx_reference_entity_src_nat.family_prd_id
  _pdbx_reference_entity_poly_nstd_link.family_prd_id
 ;
+4.022 2012-01-31
+;
+  Changes (jdw): OPEN NON-PUBLIC REVISION 
+   + Remove parent link from  '_struct_ref_seq_dif.db_mon_id' to '_chem_comp.id'.
+   + Remove below items.
+ 
+ _pdbx_reference_entity_poly.nstd_chirality
+ _pdbx_reference_entity_poly.nstd_linkage
+ _pdbx_reference_entity_poly.nstd_monomer
+ _pdbx_reference_entity_poly.number_of_monomers
+ 
+ _pdbx_reference_entity_poly_seq.insert_code
+ _pdbx_reference_entity_poly_seq.modification_details
+ _pdbx_reference_entity_poly_seq.modified_mon_id
+
+ _pdbx_reference_entity_list.auth_asym_id
+ _pdbx_reference_molecule_features.citation_id
+ 
+  +  Remove category
+
+ _pdbx_reference_molecule_instances
+ 
+  + Add items
+
+  _pdb_reference_molecule.representative_PDB_id_code
+  _pdbx_reference_entity_nonpoly.observed
+ 
+  + Add new category PDBX_MOLECULE to entry files to identify  PRD reference molecules:
+
+ _pdbx_molecule.instance_id
+ _pdbx_molecule.asym_id
+ _pdbx_molecule.prd_id
+ 
+  + Rename category - 
+
+  pdbx_reference_entity_poly_nstd_link   to  pdbx_reference_entity_poly_link
+ 
+   this category expanded to include both standard and non-standard linkages.
+;
+
 #
 ### EOF mmcif_pdbx-header.dic 

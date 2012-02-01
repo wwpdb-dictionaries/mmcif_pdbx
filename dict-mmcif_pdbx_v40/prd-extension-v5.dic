@@ -2,9 +2,10 @@
 ###   File: prd-extension-v5.dic
 ###
 ###   Orginal:     April 1, 2011     jdw
-###   Last update: January 17, 2012  jdw V5 alpha 2
+###   Last update: January 31, 2012  jdw V5 alpha 3
 ###
 ### --------------------------------------------------------------------------------------------
+###
 ###   Updated: April 5, 2011 jdw -  Added non-standard polymer linking details in 
 ###                            category  PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK,
 ###                            added  _pdbx_reference_entity_list.nonpoly_residue_number
@@ -175,7 +176,44 @@
 ###
 ### Updated and verified parent/child relationships and item_link_group relationships.
 ###
+### ---------------------------------------------------------------------------------------
+### Updated:  Version 5 (alpha 3) --  Jan 31, 2012 -  JDW
 ###
+### Remove below items.
+### 
+### _pdbx_reference_entity_poly.nstd_chirality
+### _pdbx_reference_entity_poly.nstd_linkage
+### _pdbx_reference_entity_poly.nstd_monomer
+### _pdbx_reference_entity_poly.number_of_monomers
+### 
+### _pdbx_reference_entity_poly_seq.insert_code
+### _pdbx_reference_entity_poly_seq.modification_details
+### _pdbx_reference_entity_poly_seq.modified_mon_id
+###
+### _pdbx_reference_entity_list.auth_asym_id
+### _pdbx_reference_molecule_features.citation_id
+### 
+### Remove category
+###
+### _pdbx_reference_molecule_instances
+### 
+### Add items
+###
+###  _pdb_reference_molecule.representative_PDB_id_code
+###  _pdbx_reference_entity_nonpoly.observed
+### 
+### Add new category PDBX_MOLECULE to entry files to identify  PRD reference molecules:
+###
+### _pdbx_molecule.instance_id
+### _pdbx_molecule.asym_id
+### _pdbx_molecule.prd_id
+### 
+### Rename category - 
+###
+### pdbx_reference_entity_poly_nstd_link   to  pdbx_reference_entity_poly_link
+### 
+### this category expanded to include both standard and non-standard linkages.
+### 
 ###
 #########################################################################
 
@@ -527,6 +565,16 @@ save__pdbx_reference_molecule.description
 #    _item_examples.case
      save_
 
+save__pdbx_reference_molecule.representative_PDB_id_code
+    _item_description.description
+;              The PDB accession code for the entry containing a representative example of this molecule.
+;
+    _item.name                  '_pdbx_reference_molecule.representative_PDB_id_code'
+    _item.category_id             pdbx_reference_molecule
+    _item.mandatory_code          no
+    _item_type.code               ucode
+     save_
+
 
 ################################
 ## PDBX_REFERENCE_ENTITY_LIST ##
@@ -560,10 +608,9 @@ _pdbx_reference_entity_list.ref_entity_id
 _pdbx_reference_entity_list.component_id
 _pdbx_reference_entity_list.type
 _pdbx_reference_entity_list.details
-_pdbx_reference_entity_list.auth_asym_id
-PRD_000001 1 1 'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"   Q
-PRD_000001 2 2 'non-polymer' "QUINALDIC ACID CHROMOPHORE"              .
-PRD_000001 3 3 'non-polymer' "QUINALDIC ACID CHROMOPHORE"              .
+PRD_000001 1 1 'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"   
+PRD_000001 2 2 'non-polymer' "QUINALDIC ACID CHROMOPHORE"              
+PRD_000001 3 3 'non-polymer' "QUINALDIC ACID CHROMOPHORE"              
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -626,17 +673,6 @@ save__pdbx_reference_entity_list.component_id
     _item.category_id             pdbx_reference_entity_list
     _item.mandatory_code          yes
     _item_type.code               int
-     save_
-
-save__pdbx_reference_entity_list.auth_asym_id 
-    _item_description.description
-;              The author asymmetric unit identifier (PDB chain identifier code) 
-               for this entity.
-;
-    _item.name                  '_pdbx_reference_entity_list.auth_asym_id'
-    _item.category_id             pdbx_reference_entity_list
-    _item.mandatory_code          no
-    _item_type.code               code
      save_
 
 
@@ -723,6 +759,23 @@ save__pdbx_reference_entity_nonpoly.name
      loop_
     _item_examples.case
                                "2-CARBOXYQUINOXALINE"  
+     save_
+
+save__pdbx_reference_entity_nonpoly.observed
+    _item_description.description
+;              A flag to indicate that this component is observed in the instance example.
+;
+    _item.name                  '_pdbx_reference_entity_nonpoly.observed'
+    _item.category_id            pdbx_reference_entity_nonpoly
+    _item.mandatory_code         no
+    _item_type.code              ucode
+    _item_default.value          Y
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+          Y  'observed'
+          N  'not observed'
+    _item_examples.case           Y
      save_
 
 save__pdbx_reference_entity_nonpoly.chem_comp_id
@@ -1076,22 +1129,23 @@ save__pdbx_reference_entity_link.link_class
      save_
 
 
-##########################################
-## PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK ##
-##########################################
+#####################################
+## PDBX_REFERENCE_ENTITY_POLY_LINK ##
+#####################################
 
-save_pdbx_reference_entity_poly_nstd_link
+save_pdbx_reference_entity_poly_link
     _category.description
-;              Data items in the PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK category give details about
-               non-standard polymer linkages including linkages between non-standard polymer componnents.
+;              Data items in the PDBX_REFERENCE_ENTITY_POLY_LINK category give details about
+               polymer linkages including both standard and non-standard linkages between 
+               polymer componnents.
 ;
-    _category.id                  pdbx_reference_entity_poly_nstd_link
+    _category.id                  pdbx_reference_entity_poly_link
     _category.mandatory_code      no
     loop_
-    _category_key.name           '_pdbx_reference_entity_poly_nstd_link.prd_id'
-                                 '_pdbx_reference_entity_poly_nstd_link.ref_entity_id'
-                                 '_pdbx_reference_entity_poly_nstd_link.link_id'
-                                 '_pdbx_reference_entity_poly_nstd_link.component_id'
+    _category_key.name           '_pdbx_reference_entity_poly_link.prd_id'
+                                 '_pdbx_reference_entity_poly_link.ref_entity_id'
+                                 '_pdbx_reference_entity_poly_link.link_id'
+                                 '_pdbx_reference_entity_poly_link.component_id'
      loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
@@ -1104,17 +1158,17 @@ save_pdbx_reference_entity_poly_nstd_link
 ;
 ;
 loop_
-_pdbx_reference_entity_poly_nstd_link.prd_id
-_pdbx_reference_entity_poly_nstd_link.ref_entity_id
-_pdbx_reference_entity_poly_nstd_link.component
-_pdbx_reference_entity_poly_nstd_link.link_id
-_pdbx_reference_entity_poly_nstd_link.entity_seq_num_1
-_pdbx_reference_entity_poly_nstd_link.comp_id_1
-_pdbx_reference_entity_poly_nstd_link.atom_id_1
-_pdbx_reference_entity_poly_nstd_link.entity_seq_num_2
-_pdbx_reference_entity_poly_nstd_link.comp_id_2
-_pdbx_reference_entity_poly_nstd_link.atom_id_2
-_pdbx_reference_entity_poly_nstd_link.value_order
+_pdbx_reference_entity_poly_link.prd_id
+_pdbx_reference_entity_poly_link.ref_entity_id
+_pdbx_reference_entity_poly_link.component
+_pdbx_reference_entity_poly_link.link_id
+_pdbx_reference_entity_poly_link.entity_seq_num_1
+_pdbx_reference_entity_poly_link.comp_id_1
+_pdbx_reference_entity_poly_link.atom_id_1
+_pdbx_reference_entity_poly_link.entity_seq_num_2
+_pdbx_reference_entity_poly_link.comp_id_2
+_pdbx_reference_entity_poly_link.atom_id_2
+_pdbx_reference_entity_poly_link.value_order
 PRD_000001 1 1 1 1 DSN C 2 ALA N  'single'
 PRD_000001 1 1 2 2 ALA C 3 N2C N  'single'
 PRD_000001 1 1 3 2 ALA C 3 N2C N  'single'
@@ -1132,176 +1186,176 @@ PRD_000001 1 1 9 7 N2C C 8 MVZ N  'single'
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
 
-save__pdbx_reference_entity_poly_nstd_link.link_id
+save__pdbx_reference_entity_poly_link.link_id
     _item_description.description
-;     The value of _pdbx_reference_entity_poly_nstd_link.link_id uniquely identifies
-      a non-standard linkage within a polymer entity.
+;     The value of _pdbx_reference_entity_poly_link.link_id uniquely identifies
+      a linkage within a polymer entity.
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.link_id'
+    _item.name                  '_pdbx_reference_entity_poly_link.link_id'
     _item.mandatory_code          yes
     _item_type.code               int
      save_
 
-save__pdbx_reference_entity_poly_nstd_link.prd_id
+save__pdbx_reference_entity_poly_link.prd_id
     _item_description.description
-;    The value of _pdbx_reference_entity_poly_nstd_link.prd_id is a reference
+;    The value of _pdbx_reference_entity_poly_link.prd_id is a reference
      _pdbx_reference_entity_list.prd_id in the PDBX_REFERENCE_ENTITY_POLY category.
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.prd_id'
-    _item.category_id             pdbx_reference_entity_poly_nstd_link
+    _item.name                  '_pdbx_reference_entity_poly_link.prd_id'
+    _item.category_id             pdbx_reference_entity_poly_link
     _item.mandatory_code          yes
     _item_type.code               ucode
-    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.prd_id'
+    _item_linked.child_name	'_pdbx_reference_entity_poly_link.prd_id'
     _item_linked.parent_name    '_pdbx_reference_entity_poly.prd_id'
      save_
 
 
-save__pdbx_reference_entity_poly_nstd_link.details
+save__pdbx_reference_entity_poly_link.details
     _item_description.description
-;              A description of special aspects of this non-standard linkage.
+;              A description of special aspects of this linkage.
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.details'
-    _item.category_id             pdbx_reference_entity_poly_nstd_link
+    _item.name                  '_pdbx_reference_entity_poly_link.details'
+    _item.category_id             pdbx_reference_entity_poly_link
     _item.mandatory_code          no
     _item_type.code               text
      save_
 
-save__pdbx_reference_entity_poly_nstd_link.ref_entity_id
+save__pdbx_reference_entity_poly_link.ref_entity_id
     _item_description.description
-;              The reference entity id of the polymer entity containing the non-standard linkage.
+;              The reference entity id of the polymer entity containing the linkage.
 
                This data item is a pointer to _pdbx_reference_entity_poly.ref_entity_id 
                in the PDBX_REFERENCE_ENTITY_POLY category.
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.ref_entity_id'
+    _item.name                  '_pdbx_reference_entity_poly_link.ref_entity_id'
     _item.mandatory_code          yes
     _item_type.code               ucode
-    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.ref_entity_id'
+    _item_linked.child_name	'_pdbx_reference_entity_poly_link.ref_entity_id'
     _item_linked.parent_name    '_pdbx_reference_entity_list.ref_entity_id'
      save_
 
-save__pdbx_reference_entity_poly_nstd_link.component_id
+save__pdbx_reference_entity_poly_link.component_id
     _item_description.description
-;              The entity component identifier entity containing the non-standard linkage. 
+;              The entity component identifier entity containing the linkage. 
 
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.component_id'
+    _item.name                  '_pdbx_reference_entity_poly_link.component_id'
     _item.mandatory_code          yes
     _item_type.code               int
-    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.component_id'
+    _item_linked.child_name	'_pdbx_reference_entity_poly_link.component_id'
     _item_linked.parent_name    '_pdbx_reference_entity_list.component_id'
      save_
 
-save__pdbx_reference_entity_poly_nstd_link.entity_seq_num_1
+save__pdbx_reference_entity_poly_link.entity_seq_num_1
     _item_description.description
 ;              For a polymer entity, the sequence number in the first of 
-               the two components making the non-standard linkage. 
+               the two components making the linkage. 
 
                This data item is a pointer to _pdbx_reference_entity_poly_seq.num 
                in the PDBX_REFERENCE_ENTITY_POLY_SEQ category.
 
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.entity_seq_num_1'
+    _item.name                  '_pdbx_reference_entity_poly_link.entity_seq_num_1'
     _item.mandatory_code          no
     _item_type.code               int    
-    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.entity_seq_num_1'
+    _item_linked.child_name	'_pdbx_reference_entity_poly_link.entity_seq_num_1'
     _item_linked.parent_name    '_pdbx_reference_entity_poly_seq.num'
      save_
 
-save__pdbx_reference_entity_poly_nstd_link.entity_seq_num_2
+save__pdbx_reference_entity_poly_link.entity_seq_num_2
     _item_description.description
 ;              For a polymer entity, the sequence number in the second of 
-               the two components making the non-standard linkage. 
+               the two components making the linkage. 
 
                This data item is a pointer to _pdbx_reference_entity_poly_seq.num 
                in the PDBX_REFERENCE_ENTITY_POLY_SEQ category.
 
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.entity_seq_num_2'
+    _item.name                  '_pdbx_reference_entity_poly_link.entity_seq_num_2'
     _item.mandatory_code          no
     _item_type.code               int    
-    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.entity_seq_num_2'
+    _item_linked.child_name	'_pdbx_reference_entity_poly_link.entity_seq_num_2'
     _item_linked.parent_name    '_pdbx_reference_entity_poly_seq.num'
      save_
 
 
-save__pdbx_reference_entity_poly_nstd_link.comp_id_1
+save__pdbx_reference_entity_poly_link.comp_id_1
     _item_description.description
 ;              The component identifier in the first of the two components making the 
-               non-standard linkage.
+               linkage.
 
                This data item is a pointer to _pdbx_reference_entity_poly_seq.mon_id 
                in the PDBX_REFERENCE_ENTITY_POLY_SEQ category.
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.comp_id_1'
+    _item.name                  '_pdbx_reference_entity_poly_link.comp_id_1'
     _item.mandatory_code          yes
     _item_type.code               code
-    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.comp_id_1'
+    _item_linked.child_name	'_pdbx_reference_entity_poly_link.comp_id_1'
     _item_linked.parent_name    '_pdbx_reference_entity_poly_seq.mon_id'
      save_
 
-save__pdbx_reference_entity_poly_nstd_link.comp_id_2
+save__pdbx_reference_entity_poly_link.comp_id_2
     _item_description.description
 ;              The component identifier in the second of the two components making the 
-               non-standard linkage.
+               linkage.
 
                This data item is a pointer to _pdbx_reference_entity_poly_seq.mon_id 
                in the PDBX_REFERENCE_ENTITY_POLY_SEQ category.
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.comp_id_2'
+    _item.name                  '_pdbx_reference_entity_poly_link.comp_id_2'
     _item.mandatory_code          yes
     _item_type.code               code
-    _item_linked.child_name	'_pdbx_reference_entity_poly_nstd_link.comp_id_2'
+    _item_linked.child_name	'_pdbx_reference_entity_poly_link.comp_id_2'
     _item_linked.parent_name    '_pdbx_reference_entity_poly_seq.mon_id'
      save_
 
-save__pdbx_reference_entity_poly_nstd_link.atom_id_1
+save__pdbx_reference_entity_poly_link.atom_id_1
     _item_description.description
 ;              The atom identifier/name in the first of the two components making
-               the non-standard linkage.
+               the linkage.
 
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.atom_id_1'
+    _item.name                  '_pdbx_reference_entity_poly_link.atom_id_1'
     _item.mandatory_code          yes
     _item_type.code               atcode
      save_
 
-save__pdbx_reference_entity_poly_nstd_link.atom_id_2
+save__pdbx_reference_entity_poly_link.atom_id_2
     _item_description.description
 ;              The atom identifier/name in the second of the two components making
-               the non-standard linkage.            
+               the linkage.            
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.atom_id_2'
+    _item.name                  '_pdbx_reference_entity_poly_link.atom_id_2'
     _item.mandatory_code          yes
     _item_type.code               code
      save_
 
-save__pdbx_reference_entity_poly_nstd_link.insert_code_1
+save__pdbx_reference_entity_poly_link.insert_code_1
     _item_description.description
 ;              The residue insertion code for the first of the two components making
                the non-standard linkage.            
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.insert_code_1'
+    _item.name                  '_pdbx_reference_entity_poly_link.insert_code_1'
     _item.mandatory_code          no
     _item_type.code               code
      save_
 
-save__pdbx_reference_entity_poly_nstd_link.insert_code_2
+save__pdbx_reference_entity_poly_link.insert_code_2
     _item_description.description
 ;              The residue insertion code for the second of the two components making
                the non-standard linkage.            
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.insert_code_2'
+    _item.name                  '_pdbx_reference_entity_poly_link.insert_code_2'
     _item.mandatory_code          no
     _item_type.code               code
      save_
 
-save__pdbx_reference_entity_poly_nstd_link.value_order
+save__pdbx_reference_entity_poly_link.value_order
     _item_description.description
 ;              The bond order target for the non-standard linkage.
 ;
-    _item.name                  '_pdbx_reference_entity_poly_nstd_link.value_order'
-    _item.category_id             pdbx_reference_entity_poly_nstd_link
+    _item.name                  '_pdbx_reference_entity_poly_link.value_order'
+    _item.category_id             pdbx_reference_entity_poly_link
     _item.mandatory_code          no
     _item_default.value           sing
     _item_type.code               ucode
@@ -1350,18 +1404,14 @@ save_pdbx_reference_entity_poly
  _pdbx_reference_entity_poly.prd_id
  _pdbx_reference_entity_poly.ref_entity_id
  _pdbx_reference_entity_poly.type
- _pdbx_reference_entity_poly.nstd_chirality
- _pdbx_reference_entity_poly.nstd_linkage
- _pdbx_reference_entity_poly.nstd_monomer
- _pdbx_reference_entity_poly.number_of_monomers
  _pdbx_reference_entity_poly.db_code 
  _pdbx_reference_entity_poly.db_name 
- PRD_000001 1 "peptide-like" YES YES YES 11 NOR00228 Norine
- PRD_000006 2 "peptide-like" YES YES YES 11 ? "Semi-synthetic"
- PRD_000007 3 "peptide-like" YES YES YES 11 NOR00232 Norine
- PRD_000009 4 "peptide-like" YES YES YES 11 NOR00237 Norine
- PRD_000010 5 "peptide-like" YES YES YES 11 ? "Semi-synthetic"
- PRD_000011 6 "peptide-like" YES YES YES 11 ? "Semi-synthetic"
+ PRD_000001 1 "peptide-like"  NOR00228 Norine
+ PRD_000006 2 "peptide-like"  ? "Semi-synthetic"
+ PRD_000007 3 "peptide-like"  NOR00232 Norine
+ PRD_000009 4 "peptide-like"  NOR00237 Norine
+ PRD_000010 5 "peptide-like"  ? "Semi-synthetic"
+ PRD_000011 6 "peptide-like"  ? "Semi-synthetic"
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -1391,94 +1441,6 @@ save__pdbx_reference_entity_poly.ref_entity_id
     _item_type.code               ucode
     _item_linked.child_name	'_pdbx_reference_entity_poly.ref_entity_id'
     _item_linked.parent_name    '_pdbx_reference_entity_list.ref_entity_id'
-     save_
-
-save__pdbx_reference_entity_poly.nstd_chirality
-    _item_description.description
-;              A flag to indicate whether the polymer contains at least
-               one monomer unit with non-standard chirality.
-;
-    _item.name                  '_pdbx_reference_entity_poly.nstd_chirality'
-    _item.category_id             pdbx_reference_entity_poly
-    _item.mandatory_code          no
-    _item_type.code               ucode
-    loop_
-    _item_enumeration.value
-    _item_enumeration.detail      no
-;                                 polymer contains no monomers with different
-                                  chirality
-;
-                                  n
-;                                 abbreviation for "no"
-;
-                                  yes
-;                                 polymer contains at least one monomer with
-                                  different chirality
-;
-                                  y
-;                                 abbreviation for "yes"
-;
-     save_
-
-save__pdbx_reference_entity_poly.nstd_linkage
-    _item_description.description
-;              A flag to indicate whether the polymer contains at least
-               one monomer-to-monomer link different from that implied by
-               _pdbx_reference_entity_poly.type.
-;
-    _item.name                  '_pdbx_reference_entity_poly.nstd_linkage'
-    _item.category_id             pdbx_reference_entity_poly
-    _item.mandatory_code          no
-    _item_type.code               ucode
-    loop_
-    _item_enumeration.value
-    _item_enumeration.detail      no
-                                 'polymer contains no different links'
-                                  n
-                                 'abbreviation for "no"'
-                                  yes
-;                                 polymer contains at least one different
-                                  link
-;
-                                  y
-                                 'abbreviation for "yes"'
-     save_
-
-save__pdbx_reference_entity_poly.nstd_monomer
-    _item_description.description
-;              A flag to indicate whether the polymer contains at least
-               one monomer that is not considered standard.
-;
-    _item.name                  '_pdbx_reference_entity_poly.nstd_monomer'
-    _item.category_id             pdbx_reference_entity_poly
-    _item.mandatory_code          no
-    _item_type.code               ucode
-    loop_
-    _item_enumeration.value
-    _item_enumeration.detail      no
-                                 'polymer contains no nonstandard monomers'
-                                  n
-                                 'abbreviation for "no"'
-                                  yes
-;                                 polymer contains at least one nonstandard
-                                  monomer
-;
-                                  y
-                                 'abbreviation for "yes"'
-     save_
-
-save__pdbx_reference_entity_poly.number_of_monomers
-    _item_description.description
-;              The number of monomers in the polymer.
-;
-    _item.name                  '_pdbx_reference_entity_poly.number_of_monomers'
-    _item.category_id             pdbx_reference_entity_poly
-    _item.mandatory_code          no
-    loop_
-    _item_range.maximum
-    _item_range.minimum           .   1
-                                  1   1
-    _item_type.code               int
      save_
 
 save__pdbx_reference_entity_poly.type
@@ -1988,173 +1950,6 @@ save__pdbx_reference_entity_src_nat.source
 
      save_
 
-
-########################################
-## PDBX_REFERENCE_MOLECULE_INSTANCES ##
-########################################
-
-save_pdbx_reference_molecule_instances
-    _category.description
-;              Data items in the PDBX_REFERENCE_MOLECULE_INSTANCES category records 
-               synonym names for reference entities.
-;
-    _category.id                  pdbx_reference_molecule_instances
-    _category.mandatory_code      no
-     loop_
-    _category_key.name          '_pdbx_reference_molecule_instances.prd_id'
-                                '_pdbx_reference_molecule_instances.ordinal'
-    loop_
-    _category_group.id           'inclusive_group'
-                                 'pdbx_group'
-    loop_
-    _category_examples.detail
-    _category_examples.case
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-;
-    Example 1 - Actinomycin
-;
-;
- loop_
- _pdbx_reference_molecule_instances.prd_id
- _pdbx_reference_molecule_instances.ordinal
- _pdbx_reference_molecule_instances.database_name
- _pdbx_reference_molecule_instances.database_id
- _pdbx_reference_molecule_instances.prd_representative_flag
- PRD_000001  1 PDB 173d   Y
- PRD_000001  2 PDB 1a7y   N
- PRD_000001  3 PDB 1dsc   N
- PRD_000001  4 PDB 1dsd   N
- PRD_000001  5 PDB 1fja   N
- PRD_000001  6 PDB 1i3w   N
- PRD_000001  7 PDB 1l1v   N
- PRD_000001  8 PDB 1mnv   N
- PRD_000001  9 PDB 1ovf   N
- PRD_000001 10 PDB 2d55   N
- PRD_000011 11 PDB 209d   N
- PRD_000006 12 PDB 316d   N
- PRD_000010 13 PDB 1unj   N
- PRD_000010 14 PDB 1unm   N
- PRD_000009 15 PDB 1a7z   N
- PRD_000007 16 PDB 1qfi   N
-;
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-     save_
-
-
-save__pdbx_reference_molecule_instances.prd_id
-    _item_description.description
-;              The value of _pdbx_reference_molecule_instances.prd_id is a reference to
-	       _pdbx_reference_molecule.prd_id in the  PDBX_REFERENCE_MOLECULE category.
-;
-    _item.name                  '_pdbx_reference_molecule_instances.prd_id'
-    _item.category_id             pdbx_reference_molecule_instances
-    _item.mandatory_code          yes
-    _item_type.code               ucode
-    _item_linked.child_name	'_pdbx_reference_molecule_instances.prd_id'
-    _item_linked.parent_name    '_pdbx_reference_molecule.prd_id'
-     save_
-
-save__pdbx_reference_molecule_instances.ordinal
-    _item_description.description
-;              The value of _pdbx_reference_molecule_instances.ordinal is an ordinal
-	       to distinguish synonyms for this entity.
-;
-    _item.name                  '_pdbx_reference_molecule_instances.ordinal'
-    _item.category_id             pdbx_reference_molecule_instances
-    _item.mandatory_code          yes
-    _item_type.code               int
-     save_
-
-
-save__pdbx_reference_molecule_instances.chem_comp_id
-    _item_description.description
-;              The 3 letter code for this instance. 
-;
-    _item.name                  '_pdbx_reference_molecule_instances.chem_comp_id'
-    _item.category_id             pdbx_reference_molecule_instances
-    _item.mandatory_code          no
-    _item_type.code               ucode
-    _item_examples.case          '0X1'
-     save_
-
-save__pdbx_reference_molecule_instances.database_name
-    _item_description.description
-;              The database name for this instance.
-;
-    _item.name                  '_pdbx_reference_molecule_instances.database_name'
-    _item.category_id             pdbx_reference_molecule_instances
-    _item.mandatory_code          yes
-    _item_type.code               text
-    _item_examples.case          'PDB'
-     save_
-
-save__pdbx_reference_molecule_instances.database_id
-    _item_description.description
-;              The database identifier for this instance.
-;
-    _item.name                  '_pdbx_reference_molecule_instances.database_id'
-    _item.category_id             pdbx_reference_molecule_instances
-    _item.mandatory_code          yes
-    _item_type.code               text
-    _item_examples.case          '1ABC'
-     save_
-
-save__pdbx_reference_molecule_instances.prd_representative_flag
-    _item_description.description
-;              A flag to indicate that this instance is the representative for 
-               this molecule.
-;
-    _item.name                  '_pdbx_reference_molecule_instances.prd_representative_flag'
-    _item.category_id            pdbx_reference_molecule_instances
-    _item.mandatory_code         yes
-    _item_type.code              ucode
-    loop_
-    _item_enumeration.value
-    _item_enumeration.detail
-          Y  'representative'
-          N  'not representative'
-    _item_examples.case           Y
-     save_
-
-save__pdbx_reference_molecule_instances.details
-    _item_description.description
-;              Additional details related to this instance.
-;
-    _item.name                  '_pdbx_reference_molecule_instances.details'
-    _item.category_id             pdbx_reference_molecule_instances
-    _item.mandatory_code          no
-    _item_type.code               text
-     save_
-
-save__pdbx_reference_molecule_instances.published_name
-    _item_description.description
-;              Name as published in this instance.
-;
-    _item.name                  '_pdbx_reference_molecule_instances.published_name'
-    _item.category_id             pdbx_reference_molecule_instances
-    _item.mandatory_code          no
-    _item_type.code               text
-     save_
-
-save__pdbx_reference_molecule_instances.published_subcomponent
-    _item_description.description
-;              The author assigned list of subcomponents for this instance.
-;
-    _item.name                  '_pdbx_reference_molecule_instances.published_subcomponent'
-    _item.category_id             pdbx_reference_molecule_instances
-    _item.mandatory_code          no
-    _item_type.code               text
-     save_
-
-save__pdbx_reference_molecule_instances.pre_subcomponents_seq
-    _item_description.description
-;              The prior list of subcomponents for this instance.
-;
-    _item.name                  '_pdbx_reference_molecule_instances.pre_subcomponents_seq'
-    _item.category_id             pdbx_reference_molecule_instances
-    _item.mandatory_code          no
-    _item_type.code               line
-     save_
 
 
 #####################################
@@ -2794,17 +2589,6 @@ save__pdbx_reference_molecule_features.chem_comp_id
     _item_examples.case         '0Z3' 'CD9'
      save_
 
-save__pdbx_reference_molecule_features.citation_id
-    _item_description.description
-;              A link to related reference information in the citation category.  
-;
-    _item.name                  '_pdbx_reference_molecule_features.citation_id'
-    _item.category_id            pdbx_reference_molecule_features
-    _item.mandatory_code         no
-    _item_type.code              code
-    _item_linked.child_name	'_pdbx_reference_molecule_features.citation_id'
-    _item_linked.parent_name    '_citation.id'
-     save_
 
 
 
@@ -4220,3 +4004,76 @@ save__pdbx_family_prd_audit.action_type
      save_
 
 
+##
+
+###################
+## PDBX_MOLECULE ##
+###################
+
+save_pdbx_molecule
+    _category.description
+;              Data items in the PDBX_MOLECULE category identify reference molecules
+               within a PDB entry.
+;
+    _category.id                  pdbx_molecule
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_molecule.prd_id'
+                                '_pdbx_molecule.instance_id'
+                                '_pdbx_molecule.asym_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+ loop_
+ _pdbx_molecule.instance_id
+ _pdbx_molecule.prd_id
+ _pdbx_molecule.asym_id
+  1  PRD_050001   X
+  1  PRD_050001   Y
+  1  PRD_050001   Z
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_molecule.prd_id
+    _item_description.description
+;               The value of _pdbx_molecule.prd_id is the PDB accession code for this 
+                reference molecule.
+;
+    _item.name                  '_pdbx_molecule.prd_id'
+    _item.category_id             pdbx_molecule
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
+save__pdbx_molecule.instance_id
+    _item_description.description
+;              The value of _pdbx_molecule.instance_id is identifies a particular molecule
+	       in the molecule list.
+;
+    _item.name                  '_pdbx_molecule.instance_id'
+    _item.category_id             pdbx_molecule
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+
+save__pdbx_molecule.asym_id
+    _item_description.description
+;              A reference to _struct_asym.id in the STRUCT_ASYM category.
+;
+    _item.name                  '_pdbx_molecule.asym_id'
+    _item.category_id             pdbx_molecule
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_examples.case          'A
+     save_
