@@ -1614,8 +1614,7 @@ pdbx_reference_molecule_details            1  '_pdbx_reference_molecule_details.
 pdbx_reference_molecule_details            1  '_pdbx_reference_molecule_details.prd_id'              '_pdbx_reference_molecule_list.prd_id'          pdbx_reference_molecule_list
 pdbx_reference_molecule_synonyms           1  '_pdbx_reference_molecule_synonyms.family_prd_id'      '_pdbx_reference_molecule_list.family_prd_id'   pdbx_reference_molecule_list
 pdbx_reference_molecule_synonyms           1  '_pdbx_reference_molecule_synonyms.prd_id'             '_pdbx_reference_molecule_list.prd_id'          pdbx_reference_molecule_list 
-#pdbx_reference_entity_subcomponents       1  '_pdbx_reference_entity_subcomponents.family_prd_id'   '_pdbx_reference_molecule_list.family_prd_id'   pdbx_reference_molecule_list
-pdbx_reference_entity_subcomponents        1  '_pdbx_reference_entity_subcomponents.prd_id'          '_pdbx_reference_molecule_list.prd_id'          pdbx_reference_molecule_list
+
 pdbx_reference_molecule_features            1  '_pdbx_reference_molecule_features.family_prd_id'       '_pdbx_reference_molecule_list.family_prd_id'   pdbx_reference_molecule_list
 pdbx_reference_molecule_features            1  '_pdbx_reference_molecule_features.prd_id'              '_pdbx_reference_molecule_list.prd_id'          pdbx_reference_molecule_list
 #pdbx_reference_molecule_features            2  '_pdbx_reference_molecule_features.citation_id'         '_citation.id'                           citation
@@ -1625,6 +1624,7 @@ pdbx_reference_molecule_features            1  '_pdbx_reference_molecule_feature
 pdbx_reference_molecule_related_structures 1  '_pdbx_reference_molecule_related_structures.family_prd_id'  '_pdbx_reference_molecule_list.family_prd_id'   pdbx_reference_molecule_list 
 pdbx_reference_molecule_related_structures 2  '_pdbx_reference_molecule_related_structures.citation_id'    '_citation.id'                           citation
 ##
+pdbx_reference_entity_subcomponents        1  '_pdbx_reference_entity_subcomponents.prd_id'          '_pdbx_reference_molecule.prd_id'          pdbx_reference_molecule
 ##
 #pdbx_reference_entity_list               1  '_pdbx_reference_entity_list.family_prd_id'          '_pdbx_reference_entity.family_prd_id'   pdbx_reference_entity 
 pdbx_reference_entity_list               1  '_pdbx_reference_entity_list.prd_id'                 '_pdbx_reference_molecule.prd_id'          pdbx_reference_molecule 
