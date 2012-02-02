@@ -1621,7 +1621,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  _pdbx_reference_entity_src_nat.family_prd_id
  _pdbx_reference_entity_poly_nstd_link.family_prd_id
 ;
-4.022 2012-01-31
+4.022 2012-02-02
 ;
   Changes (jdw): OPEN NON-PUBLIC REVISION 
    + Remove parent link from  '_struct_ref_seq_dif.db_mon_id' to '_chem_comp.id'.
@@ -1675,6 +1675,8 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   pdbx_reference_entity_poly_nstd_link   to  pdbx_reference_entity_poly_link
  
    this category expanded to include both standard and non-standard linkages.
+
+ + Update categories pdbx_item_linked_group and pdbx_item_linked_group_list.
 ;
 
 #
