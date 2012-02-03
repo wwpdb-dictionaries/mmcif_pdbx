@@ -1621,11 +1621,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  _pdbx_reference_entity_src_nat.family_prd_id
  _pdbx_reference_entity_poly_nstd_link.family_prd_id
 ;
-4.022 2012-02-02
+4.022 2012-02-03
 ;
-  Changes (jdw): OPEN NON-PUBLIC REVISION 
+  Changes (jdw): 
    + Remove parent link from  '_struct_ref_seq_dif.db_mon_id' to '_chem_comp.id'.
-   + Remove below items.
+   + Remove items:.
  
  _pdbx_reference_entity_poly.nstd_chirality
  _pdbx_reference_entity_poly.nstd_linkage
