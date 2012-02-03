@@ -36159,6 +36159,7 @@ save__struct_ref_seq_dif.db_mon_id
 ;
     _item.name                  '_struct_ref_seq_dif.db_mon_id'
     _item.mandatory_code          no
+    _item_type.code               ucode
      save_
 
 save__struct_ref_seq_dif.details
@@ -36183,6 +36184,7 @@ save__struct_ref_seq_dif.mon_id
 ;
     _item.name                  '_struct_ref_seq_dif.mon_id'
     _item.mandatory_code          no
+    _item_type.code               ucode
      save_
 
 save__struct_ref_seq_dif.seq_num
@@ -36192,6 +36194,7 @@ save__struct_ref_seq_dif.seq_num
 ;
     _item.name                  '_struct_ref_seq_dif.seq_num'
     _item.mandatory_code          no
+    _item_type.code               int
      save_
 
 ##################
