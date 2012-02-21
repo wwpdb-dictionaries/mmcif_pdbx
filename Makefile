@@ -1,7 +1,7 @@
 include ../etc/Makefile.platform
 
-EXTERNAL_DATA_DIRS = mmcif_pdbx_v32 mmcif_pdbx_v40  mmcif_std mmcif_ddl mmcif_pdbx_v31 
-INTERNAL_DATA_DIRS =   mmcif_nmr-star mmcif_em mmcif_emx mmcif_biosync mmcif_ccp4 mmcif_iims mmcif_img mmcif_mdb mmcif_rcsb_nmr mmcif_rcsb_xray mmcif_sym  mmcif_pdbx_v32_internal mmcif_pdbx_v4_internal mmcif_pdbx_v5_internal
+EXTERNAL_DATA_DIRS = mmcif_ddl mmcif_pdbx_v40
+INTERNAL_DATA_DIRS = mmcif_nmr-star mmcif_em mmcif_emx mmcif_biosync mmcif_ccp4 mmcif_iims mmcif_img mmcif_mdb mmcif_rcsb_nmr mmcif_rcsb_xray mmcif_sym  mmcif_pdbx_v32_internal mmcif_pdbx_v4_internal mmcif_pdbx_v5_internal mmcif_pdbx_v31 mmcif_pdbx_v32 mmcif_std
 
 DATADIRS = $(INTERNAL_DATA_DIRS) $(EXTERNAL_DATA_DIRS)
 
