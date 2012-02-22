@@ -1,7 +1,7 @@
 include ../etc/Makefile.platform
 
-EXTERNAL_DATA_DIRS = mmcif_ddl mmcif_pdbx_v40
-INTERNAL_DATA_DIRS = mmcif_nmr-star mmcif_em mmcif_emx mmcif_biosync mmcif_ccp4 mmcif_iims mmcif_img mmcif_mdb mmcif_rcsb_nmr mmcif_rcsb_xray mmcif_sym  mmcif_pdbx_v32_internal mmcif_pdbx_v4_internal mmcif_pdbx_v5_internal mmcif_pdbx_v31 mmcif_pdbx_v32 mmcif_std
+EXTERNAL_DATA_DIRS = mmcif_ddl mmcif_std mmcif_iims mmcif_pdbx_v40
+INTERNAL_DATA_DIRS = mmcif_nmr-star mmcif_em mmcif_emx mmcif_biosync mmcif_ccp4 mmcif_img mmcif_mdb mmcif_rcsb_nmr mmcif_rcsb_xray mmcif_sym mmcif_pdbx_v32_internal mmcif_pdbx_v4_internal mmcif_pdbx_v5_internal mmcif_pdbx_v31 mmcif_pdbx_v32
 
 DATADIRS = $(INTERNAL_DATA_DIRS) $(EXTERNAL_DATA_DIRS)
 
@@ -49,10 +49,8 @@ export:
 	@rm -rf $(EXPORT_DIR)/dict-mmcif_ddl/.svn
 	@cp -r dict-mmcif_std $(EXPORT_DIR)
 	@rm -rf $(EXPORT_DIR)/dict-mmcif_std/.svn
-	@cp -r dict-mmcif_pdbx_v31 $(EXPORT_DIR)
-	@rm -rf $(EXPORT_DIR)/dict-mmcif_pdbx_v31/.svn
-	@cp -r dict-mmcif_pdbx_v32 $(EXPORT_DIR)
-	@rm -rf $(EXPORT_DIR)/dict-mmcif_pdbx_v32/.svn
+	@cp -r dict-mmcif_iims $(EXPORT_DIR)
+	@rm -rf $(EXPORT_DIR)/dict-mmcif_iims/.svn
 	@cp -r dict-mmcif_pdbx_v40 $(EXPORT_DIR)
 	@rm -rf $(EXPORT_DIR)/dict-mmcif_pdbx_v40/.svn
 
