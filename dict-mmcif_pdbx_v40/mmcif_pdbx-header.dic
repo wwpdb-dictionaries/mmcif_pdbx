@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.022
+    _dictionary.version         4.023
 #
      loop_
     _dictionary_history.version
@@ -1678,6 +1678,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 
  + Update categories pdbx_item_linked_group and pdbx_item_linked_group_list.
 ;
-
+4.023 2012-02-24
+;
+  Changes (jdw): 
+   + Correct typo in definition for _refine_ls_restr_ncs.pdbx_rms.
+   + Add category pdbx_molecule_features
+   + correct several parent child data type inconsistencies
+;
 #
 ### EOF mmcif_pdbx-header.dic 

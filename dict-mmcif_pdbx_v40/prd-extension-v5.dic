@@ -232,6 +232,14 @@
 ### 
 ### this category expanded to include both standard and non-standard linkages.
 ### 
+### Updates - Feb 24, 2012 
+### 
+### Add items- 
+### _pdbx_molecule_features.prd_id, 
+### _pdbx_molecule_features.name 
+### _pdbx_molecule_features.type, 
+### _pdbx_molecule_features.class 
+### _pdbx_molecule_features.details
 ###
 #########################################################################
 
@@ -4096,4 +4104,98 @@ save__pdbx_molecule.asym_id
     _item_examples.case          'A
      save_
 
+############################
+## PDBX_MOLECULE_FEATURES ##
+############################
 
+save_pdbx_molecule_features
+    _category.description
+;              Data items in the PDBX_MOLECULE_FEATURES category record features of molecules
+               within a PDB entry.
+;
+    _category.id                  pdbx_molecule_features
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_molecule_features.prd_id'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                  'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+ loop_
+ _pdbx_molecule_features.prd_id
+ _pdbx_molecule_features.name
+ _pdbx_molecule_features.type
+ _pdbx_molecule_features.class
+  PRD_000001  "Actinomycin D" "Antitumor Antibiotic"  "polypeptide antibiotic" 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_molecule_features.prd_id
+    _item_description.description
+;               The value of _pdbx_molecule_features.prd_id is the PDB accession code for this 
+                reference molecule.
+;
+    _item.name                  '_pdbx_molecule_features.prd_id'
+    _item.category_id             pdbx_molecule_features
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
+save__pdbx_molecule_features.class
+    _item_description.description
+;              Broadly defines the function of the molecule.
+;
+    _item.name                  '_pdbx_molecule_features.class'
+    _item.category_id             pdbx_molecule_features
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_molecule_features.type
+    _item_description.description
+;              Defines the structural classification of the molecule.
+;
+    _item.name                  '_pdbx_molecule_features.type'
+    _item.category_id             pdbx_molecule_features
+    _item.mandatory_code          no
+    _item_type.code               uline
+     loop_
+    _item_examples.case
+                                'peptide-like'
+                                'macrolide'    
+     save_
+
+save__pdbx_molecule_features.name
+    _item_description.description
+;              A name of the molecule.
+;
+    _item.name                  '_pdbx_molecule_features.name'
+    _item.category_id             pdbx_molecule_features
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case
+                                'thiostrepton'
+     save_
+
+save__pdbx_molecule_features.details
+    _item_description.description
+;              Additional details describing the molecule.
+;
+    _item.name                  '_pdbx_molecule_features.details'
+    _item.category_id             pdbx_molecule_features
+    _item.mandatory_code          no
+    _item_type.code               text
+    save_
+
+
+ 

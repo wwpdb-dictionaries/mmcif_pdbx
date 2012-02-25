@@ -2212,7 +2212,7 @@ save__refine_ls_restr_ncs.pdbx_auth_asym_id
 
 save__refine_ls_restr_ncs.pdbx_number
     _item_description.description
-;              record the residue number .
+;              Records the number restraints in the contributing to the RMS statistic. 
 ;
     _item.name                  '_refine_ls_restr_ncs.pdbx_number'
     _item.category_id            refine_ls_restr_ncs
@@ -2226,7 +2226,7 @@ save__refine_ls_restr_ncs.pdbx_number
 
 save__refine_ls_restr_ncs.pdbx_rms
     _item_description.description
-;              record the standard divation between one segment to another
+;              Records the standard deviation in the restraint between NCS related domains.
 ;
     _item.name                  '_refine_ls_restr_ncs.pdbx_rms'
     _item.category_id            refine_ls_restr_ncs
@@ -2240,7 +2240,7 @@ save__refine_ls_restr_ncs.pdbx_rms
 
 save__refine_ls_restr_ncs.pdbx_weight
     _item_description.description
-;              record the weight used for NCS restraint.
+;              Records the weight used for NCS restraint.
 ;
     _item.name                  '_refine_ls_restr_ncs.pdbx_weight'
     _item.category_id            refine_ls_restr_ncs

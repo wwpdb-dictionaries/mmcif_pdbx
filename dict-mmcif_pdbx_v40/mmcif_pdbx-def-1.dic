@@ -1938,6 +1938,7 @@ save__atom_site.label_atom_id
     _item.name                  '_atom_site.label_atom_id'
     _item.mandatory_code          yes
     _item_sub_category.id         mm_atom_site_label
+    _item_type.code               atcode
      save_
 
 save__atom_site.label_comp_id
@@ -1958,7 +1959,9 @@ save__atom_site.label_entity_id
 ;              This data item is a pointer to _entity.id in the ENTITY category.
 ;
     _item.name                  '_atom_site.label_entity_id'
+    _item.category_id             atom_site
     _item.mandatory_code          yes
+    _item_type.code               code
      save_
 
 save__atom_site.label_seq_id
@@ -2106,7 +2109,9 @@ save__atom_site.type_symbol
                ATOM_TYPE category.
 ;
     _item.name                  '_atom_site.type_symbol'
+    _item.category_id             atom_site
     _item.mandatory_code          yes
+    _item_type.code               code
     _item_aliases.alias_name    '_atom_site_type_symbol'
     _item_aliases.dictionary      cif_core.dic
     _item_aliases.version         2.0.1
@@ -7206,7 +7211,9 @@ save__chem_comp_atom.comp_id
                category.
 ;
     _item.name                  '_chem_comp_atom.comp_id'
+    _item.category_id           chem_comp_atom
     _item.mandatory_code          yes
+    _item_type.code               ucode
      save_
 
 save__chem_comp_atom.partial_charge
@@ -15556,7 +15563,9 @@ save__entity_poly.entity_id
 ;              This data item is a pointer to _entity.id in the ENTITY category.
 ;
     _item.name                  '_entity_poly.entity_id'
+    _item.category_id             entity_poly
     _item.mandatory_code          yes
+    _item_type.code               code
      save_
 
 save__entity_poly.nstd_chirality
@@ -15732,7 +15741,9 @@ save__entity_poly_seq.entity_id
 ;              This data item is a pointer to _entity.id in the ENTITY category.
 ;
     _item.name                  '_entity_poly_seq.entity_id'
+    _item.category_id             entity_poly_seq
     _item.mandatory_code          yes
+    _item_type.code               code
      save_
 
 save__entity_poly_seq.hetero
@@ -15763,7 +15774,9 @@ save__entity_poly_seq.mon_id
                category.
 ;
     _item.name                  '_entity_poly_seq.mon_id'
+    _item.category_id             entity_poly_seq
     _item.mandatory_code          yes
+    _item_type.code               ucode
      save_
 
 save__entity_poly_seq.num
@@ -32033,7 +32046,9 @@ save__struct_asym.entity_id
 ;              This data item is a pointer to _entity.id in the ENTITY category.
 ;
     _item.name                  '_struct_asym.entity_id'
+    _item.category_id             struct_asym
     _item.mandatory_code          yes
+    _item_type.code               code
      save_
 
 save__struct_asym.id
