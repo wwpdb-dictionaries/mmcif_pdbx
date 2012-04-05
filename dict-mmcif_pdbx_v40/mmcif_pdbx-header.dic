@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.023
+    _dictionary.version         4.024
 #
      loop_
     _dictionary_history.version
@@ -1684,6 +1684,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    + Correct typo in definition for _refine_ls_restr_ncs.pdbx_rms.
    + Add category pdbx_molecule_features
    + correct several parent child data type inconsistencies
+;
+4.024 2012-04-05
+;
+  Changes (jdw):  Open version
+  + add category pdbx_distant_solvent_atoms
 ;
 #
 ### EOF mmcif_pdbx-header.dic 
