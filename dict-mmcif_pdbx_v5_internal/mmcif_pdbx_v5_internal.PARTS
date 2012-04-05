@@ -17,6 +17,7 @@ mmcif_pdbx-def-2a.dic
 ../dict-mmcif_pdbx_v40/mmcif_pdbx-def-16.dic
 ../dict-mmcif_pdbx_v40/chem_comp_atom_feature.dic
 ../dict-mmcif_pdbx_v40/prd-extension-v5.dic
+../dict-mmcif_pdbx_v40/distant_solvent-extension.dic
 renamedDict.dic
 ../dict-mmcif_pdbx_v40/mmcif_pdbx-def-15.dic
 update_info_extension.dic
