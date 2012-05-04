@@ -2142,7 +2142,7 @@ save_pdbx_reference_molecule_synonyms
 save__pdbx_reference_molecule_synonyms.family_prd_id
     _item_description.description
 ;              The value of _pdbx_reference_molecule_synonyms.family_prd_id is a reference to 
-               _pdbx_reference_molecule_list.family_prd_id' in category PDBX_REFERENCE_MOLECULE_FAMILY_LIST.
+               _pdbx_reference_molecule_list.family_prd_id in category PDBX_REFERENCE_MOLECULE_FAMILY_LIST.
 ;
     _item.name                  '_pdbx_reference_molecule_synonyms.family_prd_id'
     _item.category_id             pdbx_reference_molecule_synonyms
@@ -2335,7 +2335,7 @@ save_pdbx_reference_molecule_annotation
 save__pdbx_reference_molecule_annotation.family_prd_id
     _item_description.description
 ;              The value of _pdbx_reference_molecule_annotation.family_prd_id is a reference to 
-               _pdbx_reference_molecule_list.family_prd_id' in category PDBX_REFERENCE_MOLECULE_FAMILY_LIST.
+               _pdbx_reference_molecule_list.family_prd_id in category PDBX_REFERENCE_MOLECULE_FAMILY_LIST.
 ;
     _item.name                  '_pdbx_reference_molecule_annotation.family_prd_id'
     _item.category_id             pdbx_reference_molecule_annotation
@@ -2501,7 +2501,7 @@ save_pdbx_reference_molecule_features
 save__pdbx_reference_molecule_features.family_prd_id
     _item_description.description
 ;              The value of _pdbx_reference_molecule_features.family_prd_id is a reference to 
-               _pdbx_reference_molecule_list.family_prd_id' in category PDBX_REFERENCE_MOLECULE_FAMILY_LIST.
+               _pdbx_reference_molecule_list.family_prd_id in category PDBX_REFERENCE_MOLECULE_FAMILY_LIST.
 ;
     _item.name                  '_pdbx_reference_molecule_features.family_prd_id'
     _item.category_id             pdbx_reference_molecule_features
@@ -2669,7 +2669,7 @@ save_pdbx_reference_molecule_related_structures
 save__pdbx_reference_molecule_related_structures.family_prd_id
     _item_description.description
 ;              The value of _pdbx_reference_molecule_related_structures.family_prd_id is a reference to 
-               _pdbx_reference_molecule_list.family_prd_id' in category PDBX_REFERENCE_MOLECULE_FAMILY_LIST.
+               _pdbx_reference_molecule_list.family_prd_id in category PDBX_REFERENCE_MOLECULE_FAMILY_LIST.
 ;
     _item.name                  '_pdbx_reference_molecule_related_structures.family_prd_id'
     _item.category_id             pdbx_reference_molecule_related_structures
@@ -4101,7 +4101,8 @@ save__pdbx_molecule.asym_id
     _item.category_id             pdbx_molecule
     _item.mandatory_code          yes
     _item_type.code               code
-    _item_examples.case          'A
+     loop_
+    _item_examples.case          A B
      save_
 
 ############################
