@@ -1842,6 +1842,36 @@ save__pdbx_validate_chiral.auth_asym_id
     _item_linked.parent_name   '_atom_site.auth_asym_id'
      save_
 
+save__pdbx_validate_chiral.auth_atom_id
+    _item_description.description
+;   Part of the identifier of the residue
+
+    This data item is a pointer to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                '_pdbx_validate_chiral.auth_atom_id'
+    _item.category_id           pdbx_validate_chiral
+    _item.mandatory_code        no
+    _item_type.code 		atcode
+    _item_linked.child_name    '_pdbx_validate_chiral.auth_atom_id' 
+    _item_linked.parent_name   '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_chiral.label_alt_id
+    _item_description.description
+;   Part of the identifier of the residue
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                '_pdbx_validate_chiral.label_alt_id'
+    _item.category_id           pdbx_validate_chiral
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name    '_pdbx_validate_chiral.label_alt_id' 
+    _item_linked.parent_name   '_atom_site.label_alt_id'
+     save_
+
 
 save__pdbx_validate_chiral.auth_comp_id
     _item_description.description
