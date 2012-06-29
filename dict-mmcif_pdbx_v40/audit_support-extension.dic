@@ -1,0 +1,96 @@
+##
+# File:      pdbx_audit_support-extension.dic
+# Original:  Apr 11, 2012  JDW
+#
+# Updated: -- 
+#     May 2, 2012 - Remove author relationship 
+#
+# Draft dictionary extension for describing support details for data entry. 
+#
+## 
+
+
+
+########################
+## PDBX_AUDIT_SUPPORT ##
+########################
+
+save_pdbx_audit_support
+    _category.description
+;              Data items in the PDBX_AUDIT_SUPPORT category record details about
+               funding support for the entry.
+;
+    _category.id                  pdbx_audit_support
+    _category.mandatory_code      no
+    _category_key.name           '_pdbx_audit_support.ordinal'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'audit_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+     loop_
+     _pdbx_audit_support.id
+     _pdbx_audit_support.funding_organization
+     _pdbx_audit_support.grant_number
+     _pdbx_audit_support.country
+     1  'National Institute for General Medical Sciences' '1R01GM072999-01' 'United States'  
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_audit_support.funding_organization
+    _item_description.description
+;              The name of the organization providing funding support for the 
+               entry.
+;
+    _item.name                  '_pdbx_audit_support.funding_organization'
+    _item.category_id             pdbx_audit_support
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop
+    _item_examples.case
+       'National Institutes of Health'
+       'Welcome Trust'
+       'National Institute of General Medical Sciences'
+     save_
+
+save__pdbx_audit_support.country 
+    _item_description.description
+;              The country providing the funding support for the entry.
+;
+    _item.name                  '_pdbx_audit_support.funding_organization'
+    _item.category_id             pdbx_audit_support
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+
+save__pdbx_audit_support.grant_number
+    _item_description.description
+;              The grant number associated with this source of support.
+;
+    _item.name                  '_pdbx_audit_support.funding_organization'
+    _item.category_id             pdbx_audit_support
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+
+save__pdbx_audit_support.id
+    _item_description.description
+;              A unique sequential integer identifier for each source of support for this entry.
+;
+    _item.name                  '_pdbx_audit_support.id'
+    _item.category_id             pdbx_audit_support
+    _item.mandatory_code          yes
+    _item_type.code               int
+     loop_
+    _item_examples.case          1 2 3
+     save_

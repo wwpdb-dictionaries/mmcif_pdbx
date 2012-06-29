@@ -1,0 +1,346 @@
+##
+# File:      entity-poly-multi-src-extension.dic
+# Original:  Jan 25, 2012  JDW
+#
+# Updated: -- 
+#
+# Jan 26, 2012 - jdw -  updated with suggestions from SV
+# Apr 12, 2012 - jdw -  updated with consensus comments from group
+# May  2, 2012 - jdw -  integrated with existing source categories eliminating the 
+#                       need for a  part specific source category and 
+# Jun 11, 2012 - jdw    Revised to simplify linking relationships isolate changes within
+#                       existing source data categories.  The part category and part identifier 
+#                       are removed in this simplified version.   
+# Jun 12, 2012 - jdw    Updated examples 
+#
+# Jun 14, 2012 - jdw    Further simplication removing parent child relationships for sequence position
+#                       added one-letter-code for alternative sample sequence and alternate source
+#                       flag in the struct_ref category.
+#
+# Jun 21, 2012 - jdw    Remove alternate source flag in the struct_ref category.
+#                       Change data type for _entity_poly.pdbx_seq_one_letter_code_sample from text to seq-one-letter-code.
+#
+# Draft dictionary extension for describing polymeric molecules with derived
+# from multiple biological sources.
+#
+
+#
+## 
+####################
+## ENTITY_SRC_GEN ##
+####################
+
+save_entity_src_gen
+    _category.description
+;              Data items in the ENTITY_SRC_GEN category record details of
+               the source from which the entity was obtained in cases
+               where the source was genetically manipulated.  The
+               following are treated separately:  items pertaining to the tissue
+               from which the gene was obtained, items pertaining to the host
+               organism for gene expression and items pertaining to the actual
+               producing organism (plasmid).
+;
+    _category.id                  entity_src_gen
+    _category.mandatory_code      no
+    _category_key.name          '_entity_src_gen.pdbx_src_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example  - Fusion protein case- 3L2J
+
+    Fusion protein of maltose-binding periplasmic protein and  
+    parathyroid hormone/parathyroid hormone-related peptide receptor.    
+;
+;
+    loop_
+    _entity_src_gen.pdbx_src_id
+    _entity_src_gen.entity_id
+    _entity_src_gen.pdbx_alt_source_flag
+    _entity_src_gen.pdbx_beg_seq_num
+    _entity_src_gen.pdbx_end_seq_num
+    _entity_src_gen.pdbx_gene_src_scientific_name
+    _entity_src_gen.pdbx_gene_src_gene 
+    _entity_src_gen.gene_src_species
+    _entity_src_gen.gene_src_strain
+    _entity_src_gen.pdbx_gene_src_ncbi_taxonomy_id    
+    _entity_src_gen.pdbx_host_org_scientific_name
+    _entity_src_gen.pdbx_host_org_ncbi_taxonomy_id 
+    _entity_src_gen.host_org_species
+    _entity_src_gen.pdbx_host_org_vector_type    
+    _entity_src_gen.plasmid_name
+    1 1  sample 1   364 'Escherichia coli'    'b4034, JW3994' ?  K12 83333  'Escherichia coli' 562 ? plasmid pGEX6p-2RBS 
+    2 1  sample 365 370 'synthetic construct'  ?              ?  ?   32630  'Escherichia coli' 562 ? plasmid pGEX6p-2RBS  
+    3 1  sample 371 529 'Homo sapiens'        'malE, PTHR1'   ?  ?   9606   'Escherichia coli' 562 ? plasmid pGEX6p-2RBS 
+    4 1  sample 530 535 'synthetic construct'  ?              ?  ?   32630  'Escherichia coli' 562 ? plasmid pGEX6p-2RBS 
+#
+
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__entity_src_gen.pdbx_src_id
+    _item_description.description
+;              This data item is an ordinal identifier for entity_src_gen data records.
+;
+    _item.name                  '_entity_src_gen.pdbx_src_id'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          yes
+    _item_type.code		  int
+     save_
+
+
+save__entity_src_gen.pdbx_alt_source_flag
+    _item_description.description
+;              This data item identifies cases in which an alternative source
+               modeled.
+;
+    _item.name                  '_entity_src_gen.pdbx_alt_source_flag'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code		  code
+    _item_default.value           'sample'
+     loop_
+    _item_enumeration.value   'sample' 'model'
+     save_
+
+save__entity_src_gen.pdbx_beg_seq_num
+    _item_description.description
+;              The beginning polymer sequence position for the polymer section corresponding  
+               to this source.
+
+               A reference to the sequence position in the entity_poly category.
+;
+    _item.name                  '_entity_src_gen.pdbx_beg_seq_num'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+save__entity_src_gen.pdbx_end_seq_num
+    _item_description.description
+;              The ending polymer sequence position for the polymer section corresponding  
+               to this source.
+
+               A reference to the sequence position in the entity_poly category.
+;
+    _item.name                  '_entity_src_gen.pdbx_end_seq_num'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+####################
+## ENTITY_SRC_NAT ##
+####################
+
+save_entity_src_nat
+    _category.description
+;              Data items in the ENTITY_SRC_NAT category record details of
+               the source from which the entity was obtained in cases
+               where the entity was isolated directly from a natural tissue.
+;
+    _category.id                  entity_src_nat
+    _category.mandatory_code      no
+    _category_key.name          '_entity_src_nat.pdbx_src_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example  - based on PDB entry 5HVP and laboratory records for the
+                structure corresponding to PDB entry 5HVP.
+;
+;
+    loop_
+    _entity_src_nat.pdbx_src_id
+    _entity_src_nat.entity_id
+    _entity_src_nat.pdbx_alt_source_flag
+    _entity_src_nat.pdbx_beg_seq_num
+    _entity_src_nat.pdbx_end_seq_num
+    _entity_src_nat.common_name
+    _entity_src_nat.genus
+    _entity_src_nat.species
+    _entity_src_nat.details
+     1 2 'sample' 1  99 'bacteria'  'Actinomycetes' '?'
+    ;    Acetyl-pepstatin was isolated by Dr. K. Oda, Osaka
+         Prefecture University, and provided to us by Dr. Ben
+         Dunn, University of Florida, and Dr. J. Kay, University
+         of Wales.
+    ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__entity_src_nat.pdbx_src_id
+    _item_description.description
+;              This data item is an ordinal identifier for entity_src_nat data records.
+;
+    _item.name                  '_entity_src_nat.pdbx_src_id'
+    _item.category_id             entity_src_nat
+    _item.mandatory_code          yes
+    _item_type.code		  int
+     save_
+
+
+save__entity_src_nat.pdbx_alt_source_flag
+    _item_description.description
+;              This data item identifies cases in which an alternative source
+               modeled.
+;
+    _item.name                  '_entity_src_nat.pdbx_alt_source_flag'
+    _item.category_id             entity_src_nat
+    _item.mandatory_code          no
+    _item_type.code		  code
+    _item_default.value           'sample'
+     loop_
+    _item_enumeration.value   'sample' 'model'
+     save_
+
+save__entity_src_nat.pdbx_beg_seq_num
+    _item_description.description
+;              The beginning polymer sequence position for the polymer section corresponding  
+               to this source.
+
+               A reference to the sequence position in the entity_poly category.
+;
+    _item.name                  '_entity_src_nat.pdbx_beg_seq_num'
+    _item.category_id             entity_src_nat
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+save__entity_src_nat.pdbx_end_seq_num
+    _item_description.description
+;              The ending polymer sequence position for the polymer section corresponding  
+               to this source.
+
+               A reference to the sequence position in the entity_poly category.
+;
+    _item.name                  '_entity_src_nat.pdbx_end_seq_num'
+    _item.category_id             entity_src_nat
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+#########################
+## PDBX_ENTITY_SRC_SYN ##
+#########################
+
+save_pdbx_entity_src_syn
+    _category.description
+;            PDBX_ENTITY_SRC_SYN records the details about each chemically
+             synthesized molecule (entity) in the entry.
+;
+    _category.id                  pdbx_entity_src_syn
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_entity_src_syn.pdbx_src_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+     save_
+
+save__entity_src_syn.pdbx_src_id
+    _item_description.description
+;              This data item is an ordinal identifier for entity_src_syn data records.
+;
+    _item.name                  '_entity_src_nat.pdbx_src_id'
+    _item.category_id             entity_src_nat
+    _item.mandatory_code          yes
+    _item_type.code		  int
+     save_
+
+save__entity_src_syn.pdbx_alt_source_flag
+    _item_description.description
+;              This data item identifies cases in which an alternative source
+               modeled.
+;
+    _item.name                  '_entity_src_syn.pdbx_alt_source_flag'
+    _item.category_id             entity_src_syn
+    _item.mandatory_code          no
+    _item_type.code		  code
+    _item_default.value           'sample'
+     loop_
+    _item_enumeration.value   'sample' 'model'
+     save_
+
+save__entity_src_syn.pdbx_beg_seq_num
+    _item_description.description
+;              The beginning polymer sequence position for the polymer section corresponding  
+               to this source.
+
+               A reference to the sequence position in the entity_poly category.
+;
+    _item.name                  '_entity_src_syn.pdbx_beg_seq_num'
+    _item.category_id             entity_src_syn
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+save__entity_src_syn.pdbx_end_seq_num
+    _item_description.description
+;              The ending polymer sequence position for the polymer section corresponding  
+               to this source.
+
+               A reference to the sequence position in the entity_poly category.
+;
+    _item.name                  '_entity_src_syn.pdbx_end_seq_num'
+    _item.category_id             entity_src_syn
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+##
+save__entity_poly.pdbx_seq_one_letter_code_sample
+    _item_description.description
+;              For cases in which the sample and model sequence differ this item contains 
+               the sample chemical sequence expressed as string of one-letter amino acid codes. 
+
+               Modified may be include as 'X' or with their 3-letter codes in parentheses. 
+;
+    _item.name                  '_entity_poly.pdbx_seq_one_letter_code'
+    _item.category_id             entity_poly
+    _item.mandatory_code          no
+    _item_type.code               seq-one-letter-code
+    _item_examples.case
+;
+A  for alanine or adenine
+B  for ambiguous asparagine/aspartic-acid
+R  for arginine
+N  for asparagine
+D  for aspartic-acid
+C  for cysteine or cystine or cytosine
+Q  for glutamine
+E  for glutamic-acid
+Z  for ambiguous glutamine/glutamic acid
+G  for glycine or guanine
+H  for histidine
+I  for isoleucine
+L  for leucine
+K  for lysine
+M  for methionine
+F  for phenylalanine
+P  for proline
+S  for serine
+T  for threonine or thymine
+W  for tryptophan
+Y  for tyrosine
+V  for valine
+U  for uracil
+O  for water
+X  for other
+;
+     save_
+
