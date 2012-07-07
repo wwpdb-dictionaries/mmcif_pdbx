@@ -4699,6 +4699,7 @@ save_pdbx_refine_ls_restr_ncs
        conditions are provided for each domain.
 ;
    _category.id           pdbx_refine_ls_restr_ncs
+   _category.mandatory_code  no
    #
    _ndb_category_examples.detail  .
    _ndb_category_examples.case    
@@ -4733,6 +4734,7 @@ save__pdbx_refine_ls_restr_ncs.dom_id
    #
    _item.name         '_pdbx_refine_ls_restr_ncs.dom_id'
    _item.category_id  pdbx_refine_ls_restr_ncs
+   _item.mandatory_code  yes
    #
    _item_type.code  line
    #
@@ -4758,6 +4760,7 @@ save__pdbx_refine_ls_restr_ncs.type
    #
    _item.name         '_pdbx_refine_ls_restr_ncs.type'
    _item.category_id  pdbx_refine_ls_restr_ncs
+   _item.mandatory_code  np
    #
    _item_type.code  line
    #
@@ -4783,6 +4786,7 @@ save__pdbx_refine_ls_restr_ncs.number
    #
    _item.name         '_pdbx_refine_ls_restr_ncs.number'
    _item.category_id  pdbx_refine_ls_restr_ncs
+   _item.mandatory_code  no
    #
    _item_type.code  int
    #
@@ -4808,6 +4812,7 @@ save__pdbx_refine_ls_restr_ncs.rms_dev
    #
    _item.name         '_pdbx_refine_ls_restr_ncs.rms_dev'
    _item.category_id  pdbx_refine_ls_restr_ncs
+   _item.mandatory_code  no
    #
    _item_type.code  float
    #
@@ -4835,6 +4840,7 @@ save__pdbx_refine_ls_restr_ncs.weight
    #
    _item.name         '_pdbx_refine_ls_restr_ncs.weight'
    _item.category_id  pdbx_refine_ls_restr_ncs
+   _item.mandatory_code  no
    #
    _item_type.code  float
    #
