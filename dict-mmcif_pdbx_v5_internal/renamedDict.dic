@@ -4760,7 +4760,7 @@ save__pdbx_refine_ls_restr_ncs.type
    #
    _item.name         '_pdbx_refine_ls_restr_ncs.type'
    _item.category_id  pdbx_refine_ls_restr_ncs
-   _item.mandatory_code  np
+   _item.mandatory_code  no
    #
    _item_type.code  line
    #
@@ -7742,18 +7742,29 @@ save_pdbx_struct_link
    #
    _category_examples.case  
 ;
-     loop_
-    _pdbx_struct_link.id
-    _pdbx_struct_link.vertex_id
-    _pdbx_struct_link.label_comp_id
-    _pdbx_struct_link.label_asym_id
-    _pdbx_struct_link.label_seq_id
-    _pdbx_struct_link.label_atom_id
-    _pdbx_struct_link.symmetry
-      C1  from ARG  A  87 NZ1 1_555 
-      C1  to   GLU  A 92  OE1 1_555
-      C2  from ARG  B 287 N   1_555 
-      C2  to   GLY  B 292 O   1_555
+# 
+loop_
+_pdbx_struct_link.id 
+_pdbx_struct_link.type 
+_pdbx_struct_link.ptnr1_label_alt_id 
+_pdbx_struct_link.ptnr1_label_asym_id 
+_pdbx_struct_link.ptnr1_label_atom_id 
+_pdbx_struct_link.ptnr1_label_comp_id 
+_pdbx_struct_link.ptnr1_label_seq_id 
+_pdbx_struct_link.ptnr1_label_ins_code 
+_pdbx_struct_link.ptnr1_symmetry 
+_pdbx_struct_link.ptnr2_label_alt_id 
+_pdbx_struct_link.ptnr2_label_asym_id 
+_pdbx_struct_link.ptnr2_label_atom_id 
+_pdbx_struct_link.ptnr2_label_comp_id 
+_pdbx_struct_link.ptnr2_label_seq_id 
+_pdbx_struct_link.ptnr2_label_ins_code 
+_pdbx_struct_link.ptnr2_symmetry 
+_pdbx_struct_link.details 
+_pdbx_struct_link.pdbx_dist_value 
+1 metalc ? A CO B12 201 ? 1_555 ? A NE2 HIS 16 ? 1_555 ? 2.217 
+2 metalc ? C CO B12 201 ? 1_555 ? C NE2 HIS 16 ? 1_555 ? 2.222 
+
 ;
    #
    _pdbx_category_context.type         RCSB_LOCAL
@@ -7775,109 +7786,6 @@ save__pdbx_struct_link.id
    #
    _item_type.code  code
    #
-   loop_
-   _item_enumeration.value
-     1  
-     2  
-     3  
-     4  
-     5  
-     6  
-     7  
-     8  
-     9  
-     10 
-     11 
-     12 
-     13 
-     14 
-     15 
-     16 
-     17 
-     18 
-     19 
-     20 
-     21 
-     22 
-     23 
-     24 
-     25 
-     26 
-     27 
-     28 
-     29 
-     30 
-     31 
-     32 
-     33 
-     34 
-     35 
-     36 
-     37 
-     38 
-     39 
-     40 
-     41 
-     42 
-     43 
-     44 
-     45 
-     46 
-     47 
-     48 
-     49 
-     50 
-     51 
-     52 
-     53 
-     54 
-     55 
-     56 
-     57 
-     58 
-     59 
-     60 
-     61 
-     62 
-     63 
-     64 
-     65 
-     66 
-     67 
-     68 
-     69 
-     70 
-     71 
-     72 
-     73 
-     74 
-     75 
-     76 
-     77 
-     78 
-     79 
-     80 
-     81 
-     82 
-     83 
-     84 
-     85 
-     86 
-     87 
-     88 
-     89 
-     90 
-     91 
-     92 
-     93 
-     94 
-     95 
-     96 
-     97 
-     98 
-     99 
-     100
-   #
    _item_aliases.alias_name  '_rcsb_struct_link.id'
    _item_aliases.dictionary  cif_rcsb.dic
    _item_aliases.version     1.1
@@ -7887,174 +7795,29 @@ save__pdbx_struct_link.id
    #
 save_
 #
-save__pdbx_struct_link.vertex_id
-   #
-   _item_description.description  'Identifies the vertex in the linkage.'
-   #
-   _item.name            '_pdbx_struct_link.vertex_id'
-   _item.category_id     pdbx_struct_link
-   _item.mandatory_code  no
-   #
-   _item_type.code  code
-   #
-   loop_
-   _item_enumeration.value
-     from
-     to  
-   #
-   _item_aliases.alias_name  '_rcsb_struct_link.vertex_id'
-   _item_aliases.dictionary  cif_rcsb.dic
-   _item_aliases.version     1.1
-   #
-   _pdbx_item_context.type       RCSB_LOCAL
-   _pdbx_item_context.item_name  '_pdbx_struct_link.vertex_id'
-   #
-save_
+save__pdbx_struct_link.type
+    _item_description.description
+;           The chemical or structural type of the interaction.
+;
+    _item.name                  '_pdbx_struct_link.type'
+    _item.category_id             pdbx_struct_link
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      covale  'covalent bond'
+                                  disulf  'disulfide bridge'
+                                  hydrog  'hydrogen bond'
+                                  metalc  'metal coordination'
+                                  mismat  'mismatched base pairs'
+                                  saltbr  'ionic interaction'
+                                  modres   'covalent residue modification'
+                covale_base   'covalent modification of a nucleotide base'
+               covale_sugar   'covalent modification of a nucleotide sugar'
+           covale_phosphate   'covalent modification of a nucleotide phosphate'
+     save_
+
 #
-save__pdbx_struct_link.label_alt_id
-   #
-   _item_description.description  
-;              This data item is a pointer to _atom_site.label_alt_id in the
-               ATOM_SITE category.
-;
-   #
-   _item.name            '_pdbx_struct_link.label_alt_id'
-   _item.category_id     pdbx_struct_link
-   _item.mandatory_code  no
-   #
-   _item_type.code  code
-   #
-   _item_aliases.alias_name  '_rcsb_struct_link.label_alt_id'
-   _item_aliases.dictionary  cif_rcsb.dic
-   _item_aliases.version     1.1
-   #
-   _pdbx_item_context.type       RCSB_LOCAL
-   _pdbx_item_context.item_name  '_pdbx_struct_link.label_alt_id'
-   #
-save_
-#
-save__pdbx_struct_link.label_asym_id
-   #
-   _item_description.description  
-;
-               This data item is a pointer to _atom_site.label_asym_id in the
-               ATOM_SITE category.
-;
-   #
-   _item.name            '_pdbx_struct_link.label_asym_id'
-   _item.category_id     pdbx_struct_link
-   _item.mandatory_code  no
-   #
-   _item_type.code  code
-   #
-   _item_aliases.alias_name  '_rcsb_struct_link.label_asym_id'
-   _item_aliases.dictionary  cif_rcsb.dic
-   _item_aliases.version     1.1
-   #
-   _pdbx_item_context.type       RCSB_LOCAL
-   _pdbx_item_context.item_name  '_pdbx_struct_link.label_asym_id'
-   #
-save_
-#
-save__pdbx_struct_link.label_atom_id
-   #
-   _item_description.description  
-;
-               This data item is a pointer to _chem_comp_atom.atom_id in the
-               CHEM_COMP_ATOM category.
-;
-   #
-   _item.name            '_pdbx_struct_link.label_atom_id'
-   _item.category_id     pdbx_struct_link
-   _item.mandatory_code  no
-   #
-   _item_type.code  atcode
-   #
-   _item_aliases.alias_name  '_rcsb_struct_link.label_atom_id'
-   _item_aliases.dictionary  cif_rcsb.dic
-   _item_aliases.version     1.1
-   #
-   _pdbx_item_context.type       RCSB_LOCAL
-   _pdbx_item_context.item_name  '_pdbx_struct_link.label_atom_id'
-   #
-save_
-#
-save__pdbx_struct_link.label_comp_id
-   #
-   _item_description.description  
-;              
-               This data item is a pointer to _atom_site.label_comp_id in the
-               ATOM_SITE category.
-;
-   #
-   _item.name            '_pdbx_struct_link.label_comp_id'
-   _item.category_id     pdbx_struct_link
-   _item.mandatory_code  no
-   #
-   _item_type.code  ucode
-   #
-   _item_aliases.alias_name  '_rcsb_struct_link.label_comp_id'
-   _item_aliases.dictionary  cif_rcsb.dic
-   _item_aliases.version     1.1
-   #
-   _pdbx_item_context.type       RCSB_LOCAL
-   _pdbx_item_context.item_name  '_pdbx_struct_link.label_comp_id'
-   #
-save_
-#
-save__pdbx_struct_link.label_seq_id
-   #
-   _item_description.description  
-;
-               This data item is a pointer to _atom_site.label_seq_id in the
-               ATOM_SITE category.
-;
-   #
-   _item.name            '_pdbx_struct_link.label_seq_id'
-   _item.category_id     pdbx_struct_link
-   _item.mandatory_code  no
-   #
-   _item_type.code  int
-   #
-   _item_aliases.alias_name  '_rcsb_struct_link.label_seq_id'
-   _item_aliases.dictionary  cif_rcsb.dic
-   _item_aliases.version     1.1
-   #
-   _pdbx_item_context.type       RCSB_LOCAL
-   _pdbx_item_context.item_name  '_pdbx_struct_link.label_seq_id'
-   #
-save_
-#
-save__pdbx_struct_link.symmetry
-   #
-   _item_description.description  
-;              Describes the symmetry operation that should be applied to the
-               atom set specified by _pdbx_struct_link.vertex to generate the
-               first partner in the structure connection.
-;
-   #
-   _item.name            '_pdbx_struct_link.symmetry'
-   _item.category_id     pdbx_struct_link
-   _item.mandatory_code  no
-   #
-   _item_default.value  1_555
-   #
-   _item_type.code  symop
-   #
-   loop_
-   _item_examples.case
-   _item_examples.detail
-     4      '4th symmetry operation applied'   
-     7_645  '7th symm. posn.; +a on x; -b on y'
-   #
-   _item_aliases.alias_name  '_rcsb_struct_link.symmetry'
-   _item_aliases.dictionary  cif_rcsb.dic
-   _item_aliases.version     1.1
-   #
-   _pdbx_item_context.type       RCSB_LOCAL
-   _pdbx_item_context.item_name  '_pdbx_struct_link.symmetry'
-   #
-save_
 #
 save__pdbx_struct_link.ptnr1_label_alt_id
    #
@@ -8433,6 +8196,33 @@ save__pdbx_struct_link.details
    _pdbx_item_context.item_name  '_pdbx_struct_link.details'
    #
 save_
+
+save__pdbx_struct_link.pdbx_dist_value
+   #
+   _item_description.description  'The linkage distance in angstroms.'
+   #
+   _item.name            '_pdbx_struct_link.pdbx_dist_value'
+   _item.category_id     pdbx_struct_link
+   _item.mandatory_code  no
+   #
+   #
+   loop_
+   _item_range.maximum
+   _item_range.minimum
+     .    0.0
+     0.0  0.0
+   #
+   _item_type.code  float
+   #
+   _item_type_conditions.code  esd
+   #
+   _item_units.code  angstroms
+   #
+   _pdbx_item_context.type       RCSB_LOCAL
+   _pdbx_item_context.item_name  '_pdbx_struct_link.pdbx_dist_value'
+save_
+
+#
 #
 save__refine.pdbx_overall_ESU_B
    #

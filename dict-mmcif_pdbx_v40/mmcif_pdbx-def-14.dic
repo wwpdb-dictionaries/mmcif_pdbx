@@ -908,6 +908,40 @@ save__pdbx_validate_rmsd_bond.bond_value
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              angstroms
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+     save_
+
+save__pdbx_validate_rmsd_bond.bond_target_value
+    _item_description.description
+;   The target value of the bond length
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.bond_target_value'
+    _item.category_id             pdbx_validate_rmsd_bond
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+     save_
+
+save__pdbx_validate_rmsd_bond.bond_standard_deviation
+    _item_description.description
+;   The uncertaintiy in target value of the bond length expressed as a standard deviation.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.bond_standard_deviation'
+    _item.category_id             pdbx_validate_rmsd_bond
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
      save_
 
 
@@ -1319,10 +1353,36 @@ save__pdbx_validate_rmsd_angle.angle_value
     _item.category_id             pdbx_validate_rmsd_angle
     _item.mandatory_code          no
     _item_type.code               float
-    _item_units.code              angstroms
+    _item_units.code              degrees
      save_
 
 
+save__pdbx_validate_rmsd_angle.angle_target_value
+    _item_description.description
+;   The target value of the bond angle
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.angle_target_value'
+    _item.category_id             pdbx_validate_rmsd_angle
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+
+save__pdbx_validate_rmsd_angle.angle_standard_deviation
+    _item_description.description
+;   The uncertainty in the target value of the bond angle expressed as a standard deviation.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.angle_standard_deviation'
+    _item.category_id             pdbx_validate_rmsd_angle
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+     save_
 
 save__pdbx_validate_rmsd_angle.linker_flag
     _item_description.description
