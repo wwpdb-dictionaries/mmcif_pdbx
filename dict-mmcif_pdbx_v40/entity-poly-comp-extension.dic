@@ -16,7 +16,13 @@
 #  PDBX_LINKED_ENTITY_LINK_LIST - link of linkages between the constituent entities of a molecule represented as 
 #                                  a linked entity.
 #
-#  PDB_LINKED_ENTITY_INSTANCE_LIST   list of instances of molecules represented as linked entities.
+#  PDBS_LINKED_ENTITY_INSTANCE_LIST   list of instances of molecules represented as linked entities.
+#
+#  Updated:  13-Aug-2012 jdw
+#
+#  PDBX_ENTITY_DESCRIPTOR  - entity-level descriptors 
+#
+#  Added items: _entity_poly.pdbx_explicit_linking_flag and _pdbx_molecule.linked_entity_id
 #
 # ----------------------------------------------------------------------------------------------------------------------------
 
@@ -825,3 +831,148 @@ save__pdbx_linked_entity_link_list.link_class
      save_
 ##
 ##
+
+############################
+## PDBX_ENTITY_DESCRIPTOR ##
+############################
+
+save_pdbx_entity_descriptor
+    _category.description
+;              Data items in the PDBX_ENTITY_DESCRIPTOR category provide
+               string descriptors of entity chemical structure.
+;
+    _category.id                  pdbx_entity_descriptor
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_entity_descriptor.ordinal'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_entity_descriptor.ordinal
+    _pdbx_entity_descriptor.entity_id
+    _pdbx_entity_descriptor.descriptor
+    _pdbx_entity_descriptor.type
+    _pdbx_entity_descriptor.program
+    _pdbx_entity_descriptor.program_version
+	1     1       
+     '[][Asn]{[(4+1)][b-D-GlcpNAc]{[(4+1)][b-D-GlcpNAc]{[(4+1)][b-D-Manp]{[(3+1)][a-D-Manp]{[(2+1)][a-D-Manp]{[(2+1)][a-D-Manp]{}}}[(6+1)][a-D-Manp]{[(3+1)][a-D-Manp]{[(2+1)][a-D-Manp]{}}[(6+1)][a-D-Manp]{[(2+1)][a-D-Manp]{}}}}}}}'
+           LINUCS           PDB-CARE Beta
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_entity_descriptor.entity_id
+    _item_description.description
+;              This data item is a pointer to _entity_poly.entity_id in the ENTITY
+               category.
+;
+    _item.name                  '_pdbx_entity_descriptor.entity_id'
+    _item.category_id             pdbx_entity_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_entity_descriptor.entity_id'
+    _item_linked.parent_name    '_entity.id'
+     save_
+
+save__pdbx_entity_descriptor.descriptor
+    _item_description.description
+;              This data item contains the descriptor value for this 
+               entity.
+;
+    _item.name                  '_pdbx_entity_descriptor.descriptor'
+    _item.category_id             pdbx_entity_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+save__pdbx_entity_descriptor.type
+    _item_description.description
+;              This data item contains the descriptor type. 
+;
+    _item.name                  '_pdbx_entity_descriptor.type'
+    _item.category_id             pdbx_entity_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               uline
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+        LINUCS               'LInear Notation for Unique description of Carbohydrate Sequences'
+	IUPAC                .
+        'IUPAC Abbreviated'  .
+     save_
+
+save__pdbx_entity_descriptor.program
+    _item_description.description
+;              This data item contains the name of the program
+               or library used to compute the descriptor. 
+;
+    _item.name                  '_pdbx_entity_descriptor.program'
+    _item.category_id             pdbx_entity_descriptor
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_examples.case
+    _item_examples.detail
+           PDB-CARE    . 
+           OTHER       'Other program or library'
+     save_
+
+save__pdbx_entity_descriptor.program_version
+    _item_description.description
+;              This data item contains the version of the program
+               or library used to compute the descriptor. 
+;
+    _item.name                  '_pdbx_entity_descriptor.program_version'
+    _item.category_id             pdbx_entity_descriptor
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+save__pdbx_entity_descriptor.ordinal
+    _item_description.description
+;              Ordinal index for this category.
+;
+    _item.name                  '_pdbx_entity_descriptor.ordinal'
+    _item.category_id             pdbx_entity_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+##
+
+save__entity_poly.pdbx_explicit_linking_flag
+    _item_description.description
+;              A flag to indicate that linking data is explicitly provided for this polymer
+               in the PDBX_ENTITY_POLY_COMP_LINK_LIST category
+;
+    _item.name                   '_entity_poly.pdbx_explicit_linking_flag'
+    _item.category_id             pdbx_entity
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_default.value           'N'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      Y  'yes'
+                                  N  'no'
+     save_
+
+save__pdbx_molecule.linked_entity_id
+    _item_description.description
+;              A reference to _pdbx_linked_entity.linked_entity_id in the PDBX_LINKED_ENTITY  category.
+;
+    _item.name                  '_pdbx_molecule.linked_entity_id'
+    _item.category_id             pdbx_molecule
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case           1 2
+     save_
