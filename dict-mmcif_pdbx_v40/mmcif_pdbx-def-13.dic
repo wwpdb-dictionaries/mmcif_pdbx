@@ -942,6 +942,7 @@ save__pdbx_chem_comp_audit.action_type
     'Modify coordinates'               .
     'Other modification'               .
     'Obsolete component'               .
+    'Initial release'                  .
      save_
 
 

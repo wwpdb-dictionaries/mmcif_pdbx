@@ -1685,13 +1685,15 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    + Add category pdbx_molecule_features
    + correct several parent child data type inconsistencies
 ;
-4.024 2012-07-28
+4.024 2012-08-13
 ;
-  Changes (jdw):  Open version
+  Changes (jdw):  
   + add category pdbx_distant_solvent_atoms
+  + remove unused categories pdbx_entity_group_list, pdbx_entity_group_components, pdbx_entity_group_instances 
   + add items _pdbx_validate_chiral.auth_atom_id and _pdbx_validate_chiral.label_alt_id 
-  + aad items _pdbx_validate_rmsd_bond.bond_target_value,_pdbx_validate_rmsd_bond.bond_standard_deviation,
+  + add items _pdbx_validate_rmsd_bond.bond_target_value,_pdbx_validate_rmsd_bond.bond_standard_deviation,
        _pdbx_validate_rmsd_angle.angle_target_value, _pdbx_validate_rmsd_angle.angle_standard_deviation
+  + add enumeration 'Initial release' to item _pdbx_chem_comp_audit.action_type
 ;
 #
 ### EOF mmcif_pdbx-header.dic 
