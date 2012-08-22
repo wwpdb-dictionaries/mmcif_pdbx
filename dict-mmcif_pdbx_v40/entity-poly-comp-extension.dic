@@ -103,7 +103,7 @@ save__pdbx_entity_poly_comp_link_list.entity_id
     _item.name                  '_pdbx_entity_poly_comp_link_list.entity_id'
     _item.category_id             pdbx_entity_poly_comp_link_list
     _item.mandatory_code          yes
-    _item_type.code               ucode
+    _item_type.code               code
     _item_linked.child_name	'_pdbx_entity_poly_comp_link_list.entity_id'
     _item_linked.parent_name    '_entity_poly_seq.entity_id'
      save_
@@ -151,8 +151,8 @@ save__pdbx_entity_poly_comp_link_list.comp_id_1
     _item.name                  '_pdbx_entity_poly_comp_link_list.comp_id_1'
     _item.category_id             pdbx_entity_poly_comp_link_list
     _item.mandatory_code          yes
-    _item_type.code               code
-    _item_linked.child_name	'_pdbx_entity_poly_comp_link_list.entity_comp_id_1'
+    _item_type.code               ucode
+    _item_linked.child_name	'_pdbx_entity_poly_comp_link_list.comp_id_1'
     _item_linked.parent_name    '_entity_poly_seq.mon_id'
      save_
 
@@ -166,8 +166,8 @@ save__pdbx_entity_poly_comp_link_list.comp_id_2
     _item.name                  '_pdbx_entity_poly_comp_link_list.comp_id_2'
     _item.category_id             pdbx_entity_poly_comp_link_list
     _item.mandatory_code          yes
-    _item_type.code               code
-    _item_linked.child_name	'_pdbx_entity_poly_comp_link_list.entity_comp_id_2'
+    _item_type.code               ucode
+    _item_linked.child_name	'_pdbx_entity_poly_comp_link_list.comp_id_2'
     _item_linked.parent_name    '_entity_poly_seq.mon_id'
      save_
 
@@ -528,10 +528,10 @@ save__pdbx_linked_entity_list.entity_id
 ;   The value of _pdbx_linked_entity_list.ref_entity_id is a unique identifier 
     the a constituent entity within this reference molecule.
 ;
-    _item.name                  '_pdbx_linked_entity_list.ref_entity_id'
+    _item.name                  '_pdbx_linked_entity_list.entity_id'
     _item.category_id             pdbx_linked_entity_list
     _item.mandatory_code          yes
-    _item_type.code               ucode
+    _item_type.code               code
     _item_linked.child_name	'_pdbx_linked_entity_list.entity_id'
     _item_linked.parent_name    '_entity.id'
      save_
@@ -654,7 +654,7 @@ save__pdbx_linked_entity_link_list.entity_id_1
     _item.name                  '_pdbx_linked_entity_link_list.entity_id_1'
     _item.category_id             pdbx_linked_entity_link_list
     _item.mandatory_code          yes
-    _item_type.code               ucode
+    _item_type.code               code
     _item_linked.child_name	'_pdbx_linked_entity_link_list.entity_id_1'
     _item_linked.parent_name    '_pdbx_linked_entity_list.entity_id'
      save_
@@ -670,7 +670,7 @@ save__pdbx_linked_entity_link_list.entity_id_2
     _item.name                  '_pdbx_linked_entity_link_list.entity_id_2'
     _item.category_id             pdbx_linked_entity_link_list
     _item.mandatory_code          yes
-    _item_type.code               ucode
+    _item_type.code               code
     _item_linked.child_name	'_pdbx_linked_entity_link_list.entity_id_2'
     _item_linked.parent_name    '_pdbx_linked_entity_list.entity_id'
      save_
@@ -879,7 +879,7 @@ save__pdbx_entity_descriptor.entity_id
     _item.name                  '_pdbx_entity_descriptor.entity_id'
     _item.category_id             pdbx_entity_descriptor
     _item.mandatory_code          yes
-    _item_type.code               ucode
+    _item_type.code               code
     _item_linked.child_name     '_pdbx_entity_descriptor.entity_id'
     _item_linked.parent_name    '_entity.id'
      save_
@@ -955,7 +955,7 @@ save__entity_poly.pdbx_explicit_linking_flag
                in the PDBX_ENTITY_POLY_COMP_LINK_LIST category
 ;
     _item.name                   '_entity_poly.pdbx_explicit_linking_flag'
-    _item.category_id             pdbx_entity
+    _item.category_id             entity_poly
     _item.mandatory_code          no
     _item_type.code               ucode
     _item_default.value           'N'

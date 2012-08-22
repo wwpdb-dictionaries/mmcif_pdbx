@@ -268,23 +268,23 @@ save_pdbx_entity_src_syn
                                  'pdbx_group'
      save_
 
-save__entity_src_syn.pdbx_src_id
+save__pdbx_entity_src_syn.pdbx_src_id
     _item_description.description
-;              This data item is an ordinal identifier for entity_src_syn data records.
+;              This data item is an ordinal identifier for pdbx_entity_src_syn data records.
 ;
-    _item.name                  '_entity_src_nat.pdbx_src_id'
-    _item.category_id             entity_src_nat
+    _item.name                  '_pdbx_entity_src_syn.pdbx_src_id'
+    _item.category_id             pdbx_entity_src_syn
     _item.mandatory_code          yes
     _item_type.code		  int
      save_
 
-save__entity_src_syn.pdbx_alt_source_flag
+save__pdbx_entity_src_syn.pdbx_alt_source_flag
     _item_description.description
 ;              This data item identifies cases in which an alternative source
                modeled.
 ;
-    _item.name                  '_entity_src_syn.pdbx_alt_source_flag'
-    _item.category_id             entity_src_syn
+    _item.name                  '_pdbx_entity_src_syn.pdbx_alt_source_flag'
+    _item.category_id             pdbx_entity_src_syn
     _item.mandatory_code          no
     _item_type.code		  code
     _item_default.value           'sample'
@@ -292,28 +292,28 @@ save__entity_src_syn.pdbx_alt_source_flag
     _item_enumeration.value   'sample' 'model'
      save_
 
-save__entity_src_syn.pdbx_beg_seq_num
+save__pdbx_entity_src_syn.pdbx_beg_seq_num
     _item_description.description
 ;              The beginning polymer sequence position for the polymer section corresponding  
                to this source.
 
                A reference to the sequence position in the entity_poly category.
 ;
-    _item.name                  '_entity_src_syn.pdbx_beg_seq_num'
-    _item.category_id             entity_src_syn
+    _item.name                  '_pdbx_entity_src_syn.pdbx_beg_seq_num'
+    _item.category_id             pdbx_entity_src_syn
     _item.mandatory_code          no
     _item_type.code               int
      save_
 
-save__entity_src_syn.pdbx_end_seq_num
+save__pdbx_entity_src_syn.pdbx_end_seq_num
     _item_description.description
 ;              The ending polymer sequence position for the polymer section corresponding  
                to this source.
 
                A reference to the sequence position in the entity_poly category.
 ;
-    _item.name                  '_entity_src_syn.pdbx_end_seq_num'
-    _item.category_id             entity_src_syn
+    _item.name                  '_pdbx_entity_src_syn.pdbx_end_seq_num'
+    _item.category_id             pdbx_entity_src_syn
     _item.mandatory_code          no
     _item_type.code               int
      save_
@@ -327,7 +327,7 @@ save__entity_poly.pdbx_seq_one_letter_code_sample
 
                Modified may be include as 'X' or with their 3-letter codes in parentheses. 
 ;
-    _item.name                  '_entity_poly.pdbx_seq_one_letter_code'
+    _item.name                  '_entity_poly.pdbx_seq_one_letter_code_sample'
     _item.category_id             entity_poly
     _item.mandatory_code          no
     _item_type.code               seq-one-letter-code
