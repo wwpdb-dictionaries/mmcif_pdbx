@@ -1,0 +1,66 @@
+##
+## File struct_site_auth_extension.dic
+##
+
+save__struct_site.pdbx_auth_asym_id
+    _item_description.description
+;              A component of the identifier for the ligand in the site.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_struct_site.pdbx_auth_asym_id'
+    _item.category_id            struct_site
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__struct_site.pdbx_auth_comp_id
+    _item_description.description
+;              A component of the identifier for the ligand in the site.
+
+               This data item is a pointer to _atom_site.auth_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_struct_site.pdbx_auth_comp_id'
+    _item.category_id            struct_site
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__struct_site.pdbx_auth_seq_id
+    _item_description.description
+;              A component of the identifier for the ligand in the site.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_struct_site.pdbx_auth_seq_id'
+    _item.category_id            struct_site
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__struct_site.pdbx_auth_ins_code
+    _item_description.description
+;         PDB insertion code for the ligand in the site.
+;
+    _item.name                  '_struct_site.pdbx_auth_ins_code'
+    _item.category_id             struct_site
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+
+save__struct_site.pdbx_evidence_code
+    _item_description.description
+;         The evidentiary support for the site assignment.
+;
+    _item.name                  '_struct_site.pdbx_evidence_code'
+    _item.category_id             struct_site
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_enumeration.value 'Software' 'Author'
+
+     save_
