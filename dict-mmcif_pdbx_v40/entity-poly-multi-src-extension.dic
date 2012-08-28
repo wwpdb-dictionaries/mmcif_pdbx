@@ -121,7 +121,7 @@ save__entity_src_gen.pdbx_seq_type
     _item.mandatory_code          no
     _item_type.code		  line
      loop_
-    _item_enumeration.value   'N-terminal tag' 'C-terminal tag' 'Fragment sample' 'Linker'
+    _item_enumeration.value   'N-terminal tag' 'C-terminal tag' 'Biological sequence' 'Linker'
      save_
 
 

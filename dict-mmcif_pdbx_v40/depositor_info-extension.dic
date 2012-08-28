@@ -1,0 +1,2176 @@
+# ----------------------------------------------------------------------------------------------------------------------------
+#
+#  File: depositor_info-extension.dic
+#  Date: 11-June-2012 Jdw
+#
+#  Draft dictionary extension for representing details to be captured at deposition time.
+#
+#  Updated:
+#      27-Aug-2012 jdw  added 
+# ----------------------------------------------------------------------------------------------------------------------------
+
+###################################
+## PDBX_CHEM_COMP_DEPOSITOR_INFO ##
+###################################
+
+save_pdbx_chem_comp_depositor_info
+    _category.description
+;              Data items in the PDBX_CHEM_COMP_DEPOSITOR_INFO category record additional 
+               details provided by depositors about deposited chemical components.
+;
+    _category.id                  pdbx_chem_comp_depositor_info
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_chem_comp_depositor_info.ordinal'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+
+    _pdbx_chem_comp_depositor_info.ordinal
+    _pdbx_chem_comp_depositor_info.comp_id
+    _pdbx_chem_comp_depositor_info.name
+    _pdbx_chem_comp_depositor_info.upload_file_name
+    _pdbx_chem_comp_depositor_info.upload_file_type
+    _pdbx_chem_comp_depositor_info.formula
+    _pdbx_chem_comp_depositor_info.descriptor
+    _pdbx_chem_comp_depositor_info.descriptor_type
+     1 GNC "N-acetyl-beta-D-glucosamine"  GNC.gif gif  "C8 H15 N O6" "CC(=O)N[C@H]1[C@H](O)O[C@H](CO)[C@@H](O)[C@@H]1O" SMILES
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_depositor_info.ordinal
+    _item_description.description
+;              Ordinal index for this category.
+;
+    _item.name                  '_pdbx_chem_comp_depositor_info.ordinal'
+    _item.category_id             pdbx_chem_comp_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_chem_comp_depositor_info.comp_id
+    _item_description.description
+;              The chemical component identifier used by the depositor to represent this component.
+;
+    _item.name                  '_pdbx_chem_comp_depositor_info.comp_id'
+    _item.category_id             pdbx_chem_comp_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
+save__pdbx_chem_comp_depositor_info.name
+    _item_description.description
+;              The chemical name of the component.
+;
+    _item.name                  '_pdbx_chem_comp_depositor_info.name'
+    _item.category_id             pdbx_chem_comp_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               text
+    loop_
+    _item_examples.case          'alanine'
+                                 'valine'
+                                 'adenine'
+                                 'cytosine'
+     save_
+
+save__pdbx_chem_comp_depositor_info.upload_file_type
+    _item_description.description
+;              The type of the uploaded file containing information about this component.
+;
+    _item.name                  '_pdbx_chem_comp_depositor_info.upload_file_type'
+    _item.category_id             pdbx_chem_comp_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+                                 'GIF'    .
+                                 'JPEG'   .
+                                 'PNG'    .
+                                 'SVG'    .
+                                 'TIFF'   .
+                                 'other'  .
+
+     save_
+
+save__pdbx_chem_comp_depositor_info.upload_file_name
+    _item_description.description
+;              The name of the uploaded file containing information about this component.
+;
+    _item.name                  '_pdbx_chem_comp_depositor_info.upload_file_name'
+    _item.category_id             pdbx_chem_comp_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+save__pdbx_chem_comp_depositor_info.formula
+    _item_description.description
+;              The formula for the chemical component. Formulae are written
+               according to the following rules:
+
+               (1) Only recognized element symbols may be used.
+
+               (2) Each element symbol is followed by a 'count' number. A count
+                  of '1' may be omitted.
+
+               (3) A space or parenthesis must separate each cluster of
+                  (element symbol + count), but in general parentheses are
+                  not used.
+
+               (4) The order of elements depends on whether carbon is
+                  present or not. If carbon is present, the order should be:
+                  C, then H, then the other elements in alphabetical order
+                  of their symbol. If carbon is not present, the elements
+                  are listed purely in alphabetic order of their symbol. This
+                  is the 'Hill' system used by Chemical Abstracts.
+;
+    _item.name                  '_pdbx_chem_comp_depositor_info.formula'
+    _item.category_id             pdbx_chem_comp_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               text
+    loop_
+    _item_examples.case          'C18 H19 N7 O8 S'
+     save_
+
+save__pdbx_chem_comp_depositor_info.type
+    _item_description.description
+;              This data item contains the chemical component type. 
+;
+    _item.name                  '_pdbx_chem_comp_depositor_info.type'
+    _item.category_id             pdbx_chem_comp_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+                                 'D-peptide linking'   .
+                                 'L-peptide linking'   .
+                                 'DNA linking'  .
+                                 'RNA linking'  .
+                                 'L-RNA linking' .
+                                 'L-DNA linking' .
+                                 'saccharide'    .
+                                 'non-polymer'   .
+                                 'peptide linking'  .
+                                 'peptide-like'     . 
+                                 'other' .
+    save_
+
+save__pdbx_chem_comp_depositor_info.descriptor
+    _item_description.description
+;              This data item contains the descriptor value for this 
+               component.
+;
+    _item.name                  '_pdbx_chem_comp_depositor_info.descriptor'
+    _item.category_id             pdbx_chem_comp_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+save__pdbx_chem_comp_depositor_info.descriptor_type
+    _item_description.description
+;              This data item contains the descriptor type. 
+;
+    _item.name                  '_pdbx_chem_comp_depositor_info.descriptor_type'
+    _item.category_id             pdbx_chem_comp_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               uline
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+        SMILES             'SMILES descriptor'
+        InChI              'InChI descriptor'
+        InChIKey           'InChI descriptor- hash key form'
+     save_
+
+save__pdbx_chem_comp_depositor_info.details
+    _item_description.description
+;              This data item contains additional details about this 
+               component.
+;
+    _item.name                  '_pdbx_chem_comp_depositor_info.details'
+    _item.category_id             pdbx_chem_comp_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+##
+##
+
+####################################
+## PDBX_STRUCT_REF_DEPOSITOR_INFO ##
+####################################
+
+save_pdbx_struct_ref_depositor_info
+    _category.description
+;              Data items in the PDBX_STRUCT_REF_DEPOSITOR_INFO category capture
+               depositor provided information related to the archival cateogory
+               STRUCT_REF.
+;
+    _category.id                  pdbx_struct_ref_depositor_info
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_struct_ref_depositor_info.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                  'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+                
+;
+;
+    loop_
+    _pdbx_struct_ref_depositor_info.id
+    _pdbx_struct_ref_depositor_info.entity_id
+    _pdbx_struct_ref_depositor_info.biol_id
+    _pdbx_struct_ref_depositor_info.db_name
+    _pdbx_struct_ref_depositor_info.db_code
+    _pdbx_struct_ref_depositor_info.seq-one-letter-code
+    _pdbx_struct_ref_depositor_info.align_begin
+    _pdbx_struct_ref_depositor_info.db_accession
+   1 1 1 . . . . .
+	
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_ref_depositor_info.biol_id
+    _item_description.description
+;              This data item is a pointer to _struct_biol.id in the
+               STRUCT_BIOL category.
+;
+    _item.name                  '_pdbx_struct_ref_depositor_info.biol_id'
+    _item.category_id             pdbx_struct_ref_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_struct_ref_depositor_info.db_code
+    _item_description.description
+;              The code for this entity or biological unit or for a closely
+               related entity or biological unit in the named database.
+;
+    _item.name                  '_pdbx_struct_ref_depositor_info.db_code'
+    _item.category_id             pdbx_struct_ref_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_examples.case          '1ABC'
+                                 'ABCDEF'
+     save_
+
+save__pdbx_struct_ref_depositor_info.db_name
+    _item_description.description
+;              The name of the database containing reference information about
+               this entity or biological unit.
+;
+    _item.name                  '_pdbx_struct_ref_depositor_info.db_name'
+    _item.category_id             pdbx_struct_ref_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_examples.case          'PDB'
+                                 'UniProt'
+                                 'Genbank'
+     save_
+
+save__pdbx_struct_ref_depositor_info.entity_id
+    _item_description.description
+;              This data item is a pointer to _entity.id in the ENTITY category.
+;
+    _item.name                  '_pdbx_struct_ref_depositor_info.entity_id'
+    _item.category_id            pdbx_struct_ref_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_struct_ref_depositor_info.id
+    _item_description.description
+;              The value of _pdbx_struct_ref_depositor_info.id must uniquely identify a record
+               in the PDBX_STRUCT_REF_DEPOSITOR_INFO list.
+
+;
+    _item.name                  '_pdbx_struct_ref_depositor_info.id'
+    _item.category_id            pdbx_struct_ref_depositor_info
+    _item.mandatory_code         yes
+    _item_type.code               code
+     save_
+
+
+save__pdbx_struct_ref_depositor_info.db_accession
+    _item_description.description
+;              Accession code of the reference database.
+;
+    _item.name                  '_pdbx_struct_ref_depositor_info.db_accession'
+    _item.category_id             pdbx_struct_ref_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case       'P07617'
+     save_
+
+save__pdbx_struct_ref_depositor_info.seq_one_letter_code
+    _item_description.description
+;              Database chemical sequence expressed as string of one-letter 
+               amino acid codes. 
+;
+    _item.name                  '_pdbx_struct_ref_depositor_info.seq_one_letter_code'
+    _item.category_id             pdbx_struct_ref_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               seq-one-letter-code
+    _item_examples.case
+;
+A  for alanine or adenine
+B  for ambiguous asparagine/aspartic-acid
+R  for arginine
+N  for asparagine
+D  for aspartic-acid
+C  for cysteine or cystine or cytosine
+Q  for glutamine
+E  for glutamic-acid
+Z  for ambiguous glutamine/glutamic acid
+G  for glycine or guanine
+H  for histidine
+I  for isoleucine
+L  for leucine
+K  for lysine
+M  for methionine
+F  for phenylalanine
+P  for proline
+S  for serine
+T  for threonine or thymine
+W  for tryptophan
+Y  for tyrosine
+V  for valine
+U  for uracil
+O  for water
+X  for other
+;
+     save_
+
+save__pdbx_struct_ref_depositor_info.align_begin
+    _item_description.description
+;         
+               Beginning index in the chemical sequence from the 
+               reference database.
+;
+    _item.name                  '_pdbx_struct_ref_depositor_info.align_begin'
+    _item.category_id             pdbx_struct_ref_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case         '1' '2'
+     save_
+
+##
+##
+########################################
+## PDBX_STRUCT_REF_SEQ_DEPOSITOR_INFO ##
+########################################
+
+save_pdbx_struct_ref_seq_depositor_info
+    _category.description
+;              Data items in the PDBX_STRUCT_REF_SEQ_DEPOSITOR_INFO category capture
+               depositor provided information related to the archival cateogory
+               STRUCT_REF_SEQ.
+;
+    _category.id                  pdbx_struct_ref_seq_depositor_info
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_struct_ref_seq_depositor_info.align_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                  'pdbx_group'
+                                 'struct_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_struct_ref_seq_depositor_info.align_id          1
+    _pdbx_struct_ref_seq_depositor_info.ref_id            1
+    _pdbx_struct_ref_seq_depositor_info.db_align_beg      18
+    _pdbx_struct_ref_seq_depositor_info.db_align_end      276
+    _pdbx_struct_ref_seq_depositor_info.db_code                           .
+    _pdbx_struct_ref_seq_depositor_info.db_name                           .
+    _pdbx_struct_ref_seq_depositor_info.db_accession                      .
+    _pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code            .
+    _pdbx_struct_ref_seq_depositor_info.details                           .
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_ref_seq_depositor_info.align_id
+    _item_description.description
+;              The value of _pdbx_struct_ref_seq_depositor_info.align_id must uniquely identify a
+               record in the PDBX_STRUCT_REF_SEQ_DEPOSITOR_INFO list.
+
+               Note that this item need not be a number; it can be any unique
+               identifier.
+;
+    _item.name               '_pdbx_struct_ref_seq_depositor_info.align_id'      
+    _item.category_id          pdbx_struct_ref_seq_depositor_info 
+    _item.mandatory_code       yes
+    _item_type.code            code
+     save_
+
+save__pdbx_struct_ref_seq_depositor_info.db_align_beg
+    _item_description.description
+;              The sequence position in the referenced database entry
+               at which the alignment begins.
+;
+    _item.name                  '_pdbx_struct_ref_seq_depositor_info.db_align_beg'
+    _item.category_id             pdbx_struct_ref_seq_depositor_info
+    _item.mandatory_code          yes
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+    _item_type.code               int
+     save_
+
+save__pdbx_struct_ref_seq_depositor_info.db_align_end
+    _item_description.description
+;              The sequence position in the referenced database entry
+               at which the alignment ends.
+;
+    _item.name                  '_pdbx_struct_ref_seq_depositor_info.db_align_end'
+    _item.category_id             pdbx_struct_ref_seq_depositor_info
+    _item.mandatory_code          yes
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+    _item_type.code               int
+     save_
+
+save__pdbx_struct_ref_seq_depositor_info.details
+    _item_description.description
+;              A description of special aspects of the sequence alignment.
+;
+    _item.name                  '_pdbx_struct_ref_seq_depositor_info.details'
+    _item.category_id             pdbx_struct_ref_seq_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_struct_ref_seq_depositor_info.ref_id
+    _item_description.description
+;              This data item is a pointer to _struct_ref.id in the
+               PDBX_STRUCT_REF_DESPOSITOR_INFO category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_depositor_info.ref_id'
+    _item.category_id             pdbx_struct_ref_seq_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+
+save__pdbx_struct_ref_seq_depositor_info.db_accession
+    _item_description.description
+;               Accession code of the reference database.
+;
+    _item.name                  '_pdbx_struct_ref_seq_depositor_info.db_accession'
+    _item.category_id             pdbx_struct_ref_seq_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case       'P07617'
+     save_
+
+
+save__pdbx_struct_ref_seq_depositor_info.db_code
+    _item_description.description
+;              The code for this entity or biological unit or for a closely
+               related entity or biological unit in the named database.
+;
+    _item.name                  '_pdbx_struct_ref_seq_depositor_info.db_code'
+    _item.category_id             pdbx_struct_ref_seq_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_examples.case          '1ABC'
+                                 'ABCDEF'
+     save_
+
+save__pdbx_struct_ref_seq_depositor_info.db_name
+    _item_description.description
+;              The name of the database containing reference information about
+               this entity or biological unit.
+;
+    _item.name                  '_pdbx_struct_ref_seq_depositor_info.db_name'
+    _item.category_id             pdbx_struct_ref_seq_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_examples.case          'PDB'
+                                 'UniProt'
+                                 'Genbank'
+     save_
+
+save__pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code
+    _item_description.description
+;              Database chemical sequence expressed as string of one-letter 
+               amino acid codes. 
+;
+    _item.name                  '_pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code'
+    _item.category_id             pdbx_struct_ref_seq_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               seq-one-letter-code
+    _item_examples.case
+;
+A  for alanine or adenine
+B  for ambiguous asparagine/aspartic-acid
+R  for arginine
+N  for asparagine
+D  for aspartic-acid
+C  for cysteine or cystine or cytosine
+Q  for glutamine
+E  for glutamic-acid
+Z  for ambiguous glutamine/glutamic acid
+G  for glycine or guanine
+H  for histidine
+I  for isoleucine
+L  for leucine
+K  for lysine
+M  for methionine
+F  for phenylalanine
+P  for proline
+S  for serine
+T  for threonine or thymine
+W  for tryptophan
+Y  for tyrosine
+V  for valine
+U  for uracil
+O  for water
+X  for other
+;
+     save_
+
+
+
+############################################
+## PDBX_STRUCT_REF_SEQ_DIF_DEPOSITOR_INFO ##
+############################################
+
+save_pdbx_struct_ref_seq_dif_depositor_info
+    _category.description
+;              Data items in the PDBX_STRUCT_REF_SEQ_DIF_DEPOSITOR_INFO category capture
+               depositor provided information related to the archival cateogory
+               STRUCT_REF_SEQ_DIF.     
+
+;
+    _category.id                  pdbx_struct_ref_seq_dif_depositor_info
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_struct_ref_seq_dif_depositor_info.ordinal'
+	
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_struct_ref_seq_dif_depositor_info.ordinal       1
+    _pdbx_struct_ref_seq_dif_depositor_info.align_id      1
+    _pdbx_struct_ref_seq_dif_depositor_info.auth_seq_id 181
+    _pdbx_struct_ref_seq_dif_depositor_info.auth_mon_id ALA
+    _pdbx_struct_ref_seq_dif_depositor_info.db_mon_id   GLU
+    _pdbx_struct_ref_seq_dif_depositor_info.db_seq_id   301
+    _pdbx_struct_ref_seq_dif_depositor_info.details       .
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_ref_seq_dif_depositor_info.ordinal
+    _item_description.description
+;              Ordinal index for this category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.ordinal'
+    _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_struct_ref_seq_dif_depositor_info.align_id
+    _item_description.description
+;              This data item is a pointer to _struct_ref_seq.align_id in
+               the STRUCT_REF_SEQ  category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.align_id'
+    _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_struct_ref_seq_dif_depositor_info.db_mon_id
+    _item_description.description
+;              The monomer type found at this position in the referenced
+               database entry.
+
+               This data item is a pointer to _chem_comp.id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.db_mon_id'
+    _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               ucode
+     save_
+
+save__pdbx_struct_ref_seq_dif_depositor_info.db_seq_id
+    _item_description.description
+;              The monomer position in the referenced database entry.
+
+;
+    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.db_seq_id'
+    _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               int
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+     save_
+
+
+save__pdbx_struct_ref_seq_dif_depositor_info.details
+    _item_description.description
+;              A description of special aspects of the point differences
+               between the sequence of the entity or biological unit described
+               in the data block and that in the referenced database entry.
+;
+    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.details'
+    _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_struct_ref_seq_dif_depositor_info.auth_mon_id
+    _item_description.description
+;              The monomer type found at this position in the sequence of
+               the entity or biological unit provided by the depositor.
+
+;
+    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.auth_mon_id'
+    _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               ucode
+     save_
+
+save__pdbx_struct_ref_seq_dif_depositor_info.auth_seq_id
+    _item_description.description
+;    The monomer position in the author provided sequence.
+;
+    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.auth_seq_id'
+    _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+save__pdbx_struct_ref_seq_dif_depositor_info.db_accession
+    _item_description.description
+;               Accession code of the reference database.
+;
+    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.db_accession'
+    _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case       'P07617'
+     save_
+
+
+save__pdbx_struct_ref_seq_dif_depositor_info.db_code
+    _item_description.description
+;              The code for this entity or biological unit or for a closely
+               related entity or biological unit in the named database.
+;
+    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.db_code'
+    _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_examples.case          '1ABC'
+                                 'ABCDEF'
+     save_
+
+save__pdbx_struct_ref_seq_dif_depositor_info.db_name
+    _item_description.description
+;              The name of the database containing reference information about
+               this entity or biological unit.
+;
+    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.db_name'
+    _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_examples.case          'PDB'
+                                 'UniProt'
+                                 'Genbank'
+     save_
+
+save__pdbx_struct_ref_seq_dif_depositor_info.annotation
+    _item_description.description
+;              The description of the sequence difference.
+;
+    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.annotation'
+    _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+###
+###
+save_pdbx_struct_assembly_prop_depositor_info
+    _category.description
+;              Data items in the PDBX_STRUCT_ASSEMBLY_PROP_DEPOSITOR_INFO category capture
+               depositor provided information related to the archival cateogory
+               PDBX_STRUCT_ASSEMBLY_PROP.     
+;
+    _category.id                  pdbx_struct_assembly_prop_depositor_info
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_struct_assembly_prop_depositor_info.type'
+                                '_pdbx_struct_assembly_prop_depositor_info.biol_id'
+#
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_struct_assembly_prop_depositor_info.biol_id    1
+    _pdbx_struct_assembly_prop_depositor_info.type       ABSA
+    _pdbx_struct_assembly_prop_depositor_info.value      1456.7
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_assembly_prop_depositor_info.biol_id
+    _item_description.description
+;             The identifier for the assembly used in category STRUCT_BIOL.
+;
+    _item.name                   '_pdbx_struct_assembly_prop_depositor_info.biol_id'
+    _item.category_id            'pdbx_struct_assembly_prop_depositor_info'
+    _item.mandatory_code          yes
+    _item_type.code               code
+save_
+
+save__pdbx_struct_assembly_prop_depositor_info.type
+    _item_description.description
+;             The property type for the assembly.
+;
+    _item.name                   '_pdbx_struct_assembly_prop_depositor_info.type'
+    _item.category_id            'pdbx_struct_assembly_prop_depositor_info'
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value    
+       'ABSA (A^2)' 
+       'SSA (A^2)' 
+       'MORE'
+save_
+
+save__pdbx_struct_assembly_prop_depositor_info.value
+    _item_description.description
+;             The value of the assembly property.
+;
+    _item.name                   '_pdbx_struct_assembly_prop_depositor_info.value'
+    _item.category_id            'pdbx_struct_assembly_prop_depositor_info'
+    _item.mandatory_code          yes
+    _item_type.code               text
+save_
+
+save__pdbx_struct_assembly_prop_depositor_info.details
+    _item_description.description
+;             Additional details about this assembly property.
+;
+    _item.name                   '_pdbx_struct_assembly_prop_depositor_info.details'
+    _item.category_id            'pdbx_struct_assembly_prop_depositor_info'
+    _item.mandatory_code          no
+    _item_type.code               text
+save_
+
+##
+
+#########################################
+## PDBX_STRUCT_ASSEMBLY_DEPOSITOR_INFO ##
+#########################################
+
+save_pdbx_struct_assembly_depositor_info
+    _category.description
+;              Data items in the PDBX_STRUCT_ASSEMBLY_DEPOSITOR_INFO category capture
+               depositor provided information related to the archival cateogory
+               PDBX_STRUCT_ASSEMBLY.     
+
+;
+    _category.id                  pdbx_struct_assembly_depositor_info
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_struct_assembly_depositor_info.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_struct_assembly_depositor_info.id
+    _pdbx_struct_assembly_depositor_info.details
+      1
+    ; The icosahedral virus particle.
+    ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_assembly_depositor_info.details
+    _item_description.description
+;              A description of special aspects of the macromolecular assembly.
+;
+    _item.name                  '_pdbx_struct_assembly_depositor_info.details'
+    _item.category_id             pdbx_struct_assembly_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_examples.case
+;                                The icosahedral virus particle.
+;
+     save_
+
+save__pdbx_struct_assembly_depositor_info.id
+    _item_description.description
+;              The value of _pdbx_struct_assembly_depositor_info.id must uniquely identify a record in
+               the PDBX_STRUCT_ASSEMBLY_DEPOSITOR_INFO list.
+;
+    _item.name             '_pdbx_struct_assembly_depositor_info.id'                
+    _item.category_id        pdbx_struct_assembly_depositor_info           
+    _item.mandatory_code     yes
+    _item_type.code          line
+     save_
+
+save__pdbx_struct_assembly_depositor_info.method_details
+    _item_description.description
+;   Provides details of the method used to determine or 
+    compute the assembly.
+;
+    _item.name                  '_pdbx_struct_assembly_depositor_info.method_details'
+    _item.category_id             pdbx_struct_assembly_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+#
+save__pdbx_struct_assembly_depositor_info.oligomeric_details
+    _item_description.description
+;   Provides the details of the oligomeric state of the assembly.
+;
+    _item.name                  '_pdbx_struct_assembly_depositor_info.oligomeric_details'
+    _item.category_id             pdbx_struct_assembly_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_examples.case
+       monomer
+       octameric
+       tetradecameric
+       eicosameric
+       21-meric
+       60-meric
+       180-meric
+       helical
+#
+#     monomeric   octameric       pentadecameric
+#     dimeric     nonameric       hexadecameric
+#     trimeric    decameric       heptadecameric
+#     tetrameric  undecameric     octadecameric
+#     pentameric  dodecameric     nonadecameric
+#     hexameric   tridecameric    eicosameric
+#     heptameric  tetradecameric  
+#     21-meric 22-meric 23-meric 24-meric 25-meric 26-meric 27-meric 28-meric 29-meric 30-meric
+#     31-meric 32-meric 33-meric 34-meric 35-meric 36-meric 37-meric 38-meric 39-meric 40-meric
+#     41-meric 42-meric 43-meric 44-meric 45-meric 46-meric 47-meric 48-meric 49-meric 50-meric
+#     51-meric 52-meric 53-meric 54-meric 55-meric 56-meric 57-meric 58-meric 59-meric 60-meric
+#     62-meric 108-meric 120-meric 180-meric  240-meric
+#     cyclic tetrahedral dihedral octahedral icosahedral
+#
+     save_
+
+save__pdbx_struct_assembly_depositor_info.oligomeric_count
+    _item_description.description
+;   The number of polymer molecules in the assembly.
+;
+    _item.name                  '_pdbx_struct_assembly_depositor_info.oligomeric_count'
+    _item.category_id             pdbx_struct_assembly_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+save__pdbx_struct_assembly_depositor_info.matrix_flag
+    _item_description.description
+;   A flag to indicate that the depositor has provided matrix records
+;
+    _item.name                  '_pdbx_struct_assembly_depositor_info.matrix_flag'
+    _item.category_id             pdbx_struct_assembly_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+     save_
+
+
+save__pdbx_struct_assembly_depositor_info.upload_file_name
+    _item_description.description
+;   The name of a file containing matrix records.
+;
+    _item.name                  '_pdbx_struct_assembly_depositor_info.upload_file_name'
+    _item.category_id             pdbx_struct_assembly_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+
+#############################################
+## PDBX_STRUCT_ASSEMBLY_GEN_DEPOSITOR_INFO ##
+#############################################
+
+save_pdbx_struct_assembly_gen_depositor_info
+    _category.description
+;              Data items in the PDBX_STRUCT_ASSEMBLY_GEN_DEPOSITOR_INFO category capture
+               depositor provided information related to the archival cateogory
+               PDBX_STRUCT_ASSEMBLY_GEN.     
+
+;
+    _category.id                  pdbx_struct_assembly_gen_depositor_info
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_struct_assembly_gen_depositor_info.assembly_id'
+                                '_pdbx_struct_assembly_gen_depositor_info.asym_id_list'
+                                '_pdbx_struct_assembly_gen_depositor_info.oper_expression'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_struct_assembly_gen_depositor_info.assembly_id
+    _pdbx_struct_assembly_gen_depositor_info.asym_id_list
+    _pdbx_struct_assembly_gen_depositor_info.oper_expression
+      1  A  1
+      1  B  1
+      2  A  2
+      2  B  2
+      2  C  2
+      3  A  3
+      3  B  3
+      3  D  3 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 2 - 
+;
+;
+    loop_
+    _pdbx_struct_assembly_gen_depositor_info.assembly_id
+    _pdbx_struct_assembly_gen_depositor_info.asym_id_list
+    _pdbx_struct_assembly_gen_depositor_info.oper_expression
+      1  'A,B'    1
+      2  'A,B,C'  2
+      3  'A,B,D'  3
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_assembly_gen_depositor_info.asym_id_list
+    _item_description.description
+;              This data item is a pointer to _struct_asym.id in 
+               the STRUCT_ASYM category.
+
+               This item may be expressed as a comma separated list of identifiers.
+;
+    _item.name                  '_pdbx_struct_assembly_gen_depositor_info.asym_id_list'
+    _item.category_id             pdbx_struct_assembly_gen_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+save__pdbx_struct_assembly_gen_depositor_info.auth_asym_id_list
+    _item_description.description
+;              This data item is a pointer to _atom_site.auth_asym_id in 
+               the ATOM_SITE category.
+
+               This item may be expressed as a comma separated list of identifiers.
+;
+    _item.name                  '_pdbx_struct_assembly_gen_depositor_info.auth_asym_id_list'
+    _item.category_id             pdbx_struct_assembly_gen_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+save__pdbx_struct_assembly_gen_depositor_info.assembly_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_struct_assembly.id in the 
+               PDBX_STRUCT_ASSEMBLY category.
+;
+    _item.name                  '_pdbx_struct_assembly_gen_depositor_info.assembly_id'
+    _item.category_id             pdbx_struct_assembly_gen_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+save__pdbx_struct_assembly_gen_depositor_info.oper_expression
+    _item_description.description
+;              Identifies the operation of collection of operations 
+               from category PDBX_STRUCT_OPER_LIST.  
+
+               Operation expressions may have the forms:
+
+                (1)        the single operation 1
+                (1,2,5)    the operations 1, 2, 5
+                (1-4)      the operations 1,2,3 and 4
+                (1,2)(3,4) the combinations of operations
+                           3 and 4 followed by 1 and 2 (i.e.
+                           the cartesian product of parenthetical
+                           groups applied from right to left)
+               
+;
+    _item.name                  '_pdbx_struct_assembly_gen_depositor_info.oper_expression'
+    _item.category_id             pdbx_struct_assembly_gen_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               operation_expression
+     loop_
+    _item_examples.case          '(1)'
+                                 '(1,2,5)'
+                                 '(1-60)'
+                                 '(1-60)(61)'
+
+     save_
+
+##########################################
+## PDBX_STRUCT_OPER_LIST_DEPOSITOR_INFO ##
+##########################################
+
+save_pdbx_struct_oper_list_depositor_info
+    _category.description
+;              Data items in the PDBX_STRUCT_OPER_LIST_DEPOSITOR_INFO category capture
+               depositor provided information related to the archival cateogory
+               PDBX_STRUCT_OPER_LIST.     
+;
+    _category.id                  pdbx_struct_oper_list_depositor_info
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_struct_oper_list_depositor_info.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_struct_oper_list_depositor_info.id              2
+    _pdbx_struct_oper_list_depositor_info.matrix[1][1]    0.247
+    _pdbx_struct_oper_list_depositor_info.matrix[1][2]    0.935
+    _pdbx_struct_oper_list_depositor_info.matrix[1][3]    0.256
+    _pdbx_struct_oper_list_depositor_info.matrix[2][1]    0.929
+    _pdbx_struct_oper_list_depositor_info.matrix[2][2]    0.153
+    _pdbx_struct_oper_list_depositor_info.matrix[2][3]    0.337
+    _pdbx_struct_oper_list_depositor_info.matrix[3][1]    0.276
+    _pdbx_struct_oper_list_depositor_info.matrix[3][2]    0.321
+    _pdbx_struct_oper_list_depositor_info.matrix[3][3]   -0.906
+    _pdbx_struct_oper_list_depositor_info.vector[1]      -8.253
+    _pdbx_struct_oper_list_depositor_info.vector[2]     -11.743
+    _pdbx_struct_oper_list_depositor_info.vector[3]      -1.782
+    _pdbx_struct_oper_list_depositor_info.type    'point symmetry operation'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.id
+    _item_description.description
+;              This identifier code must uniquely identify a
+               record in the PDBX_STRUCT_OPER_LIST_DEPOSITOR_INFO list.
+;
+    _item.name                    '_pdbx_struct_oper_list_depositor_info.id'
+    _item.category_id             pdbx_struct_oper_list_depositor_info      
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.type
+    _item_description.description
+;              A code to indicate the type of operator.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.type'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+        'identity operation'
+        'point symmetry operation'
+	'helical symmetry operation'
+        'crystal symmetry operation'
+        '3D crystal symmetry operation'
+        '2D crystal symmetry operation'
+        'transform to point frame'
+        'transform to helical frame'
+        'transform to crystal frame'
+        'transform to 2D crystal frame'
+        'transform to 3D crystal frame'
+        'build point asymmetric unit'
+        'build helical asymmetric unit'
+        'build 2D crystal asymmetric unit'
+        'build 3D crystal asymmetric unit'
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.name
+    _item_description.description
+;              A descriptive name for the transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.name'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_examples.case          '1_555'
+                                 'two-fold rotation'
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.symmetry_operation
+    _item_description.description
+;              The symmetry operation corresponding to the transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.symmetry_operation'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_examples.case          'x,y,z'
+                                 'x+1/2,y,-z'
+     save_
+
+
+
+save__pdbx_struct_oper_list_depositor_info.matrix[1][1]
+    _item_description.description
+;              The [1][1] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.matrix[1][1]'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.matrix[1][2]
+    _item_description.description
+;              The [1][2] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.matrix[1][2]'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.matrix[1][3]
+    _item_description.description
+;              The [1][3] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.matrix[1][3]'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.matrix[2][1]
+    _item_description.description
+;              The [2][1] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.matrix[2][1]'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.matrix[2][2]
+    _item_description.description
+;              The [2][2] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.matrix[2][2]'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.matrix[2][3]
+    _item_description.description
+;              The [2][3] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.matrix[2][3]'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.matrix[3][1]
+    _item_description.description
+;              The [3][1] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.matrix[3][1]'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.matrix[3][2]
+    _item_description.description
+;              The [3][2] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.matrix[3][2]'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.matrix[3][3]
+    _item_description.description
+;              The [3][3] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.matrix[3][3]'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.vector[1]
+    _item_description.description
+;              The [1] element of the three-element vector component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.vector[1]'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_sub_category.id         vector
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.vector[2]
+    _item_description.description
+;              The [2] element of the three-element vector component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.vector[2]'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_sub_category.id         vector
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list_depositor_info.vector[3]
+    _item_description.description
+;              The [3] element of the three-element vector component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list_depositor_info.vector[3]'
+    _item.category_id             pdbx_struct_oper_list_depositor_info
+    _item.mandatory_code          no
+    _item_sub_category.id         vector
+    _item_type.code               float
+     save_
+
+
+########################################
+## PDBX_POINT_SYMMETRY_DEPOSITOR_INFO ##
+########################################
+
+save_pdbx_point_symmetry_depositor_info
+    _category.description
+;              Data items in the PDBX_POINT_SYMMETRY_DEPOSITOR_INFO category capture
+               depositor provided information related to the archival cateogory
+               PDBX_POINT_SYMMETRY.     
+
+;
+    _category.id                  pdbx_point_symmetry_depositor_info
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_point_symmetry_depositor_info.entry_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'symmetry_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_point_symmetry_depositor_info.entry_id              1ABC
+    _pdbx_point_symmetry_depositor_info.Schoenflies_symbol    I
+    _pdbx_point_symmetry_depositor_info.H-M_notation          532
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_point_symmetry_depositor_info.entry_id
+    _item_description.description
+;              This data item is a pointer to _entry.id in the ENTRY category.
+;
+    _item.name                  '_pdbx_point_symmetry_depositor_info.entry_id'
+    _item.mandatory_code          yes
+    _item_type.code             code
+    _item_linked.child_name     '_pdbx_point_symmetry_depositor_info.entry_id'
+    _item_linked.parent_name    '_entry.id'
+     save_
+
+save__pdbx_point_symmetry_depositor_info.Schoenflies_symbol
+    _item_description.description
+;              The Schoenflies point symmetry symbol.
+;
+    _item.name                  '_pdbx_point_symmetry_depositor_info.Schoenflies_symbol'
+    _item.category_id             pdbx_point_symmetry_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               code
+    loop_
+    _item_enumeration.value 
+     'I'
+     'O'
+     'T'
+     'C'
+     'D'
+    save_
+
+save__pdbx_point_symmetry_depositor_info.circular_symmetry
+    _item_description.description
+;              Rotational n-fold C and D point symmetry.
+;
+    _item.name                  '_pdbx_point_symmetry_depositor_info.circular_symmetry'
+    _item.category_id             pdbx_point_symmetry_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               int
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+     save_
+
+save__pdbx_point_symmetry_depositor_info.H-M_notation
+    _item_description.description
+;              The Hermann-Mauguin notation for this point symmetry group.
+;
+    _item.name                  '_pdbx_point_symmetry_depositor_info.H-M_notation'
+    _item.category_id             pdbx_point_symmetry_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case
+    'I -> 532'
+    'O -> 432'
+    'T -> 23'
+    'Cn -> n (e.g. C5 -> 5)'
+    'Dn -> n22 (n even)'
+    'Dn -> n2  (n odd)'
+    save_
+
+##
+
+##########################################
+## PDBX_HELICAL_SYMMETRY_DEPOSITOR_INFO ##
+##########################################
+
+save_pdbx_helical_symmetry_depositor_info
+    _category.description
+;              Data items in the PDBX_HELICAL_SYMMETRY_DEPOSITOR_INFO category capture
+               depositor provided information related to the archival cateogory
+               PDBX_HELICAL_SYMMETRY.     
+
+;
+    _category.id                  pdbx_helical_symmetry_depositor_info
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_helical_symmetry_depositor_info.entry_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'symmetry_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_helical_symmetry_depositor_info.entry_id                    '1ABC'
+    _pdbx_helical_symmetry_depositor_info.number_of_operations        35
+    _pdbx_helical_symmetry_depositor_info.rotation_per_n_subunits     131.84
+    _pdbx_helical_symmetry_depositor_info.rise_per_n_subunits         6.10
+    _pdbx_helical_symmetry_depositor_info.n_subunits_divisor          1
+    _pdbx_helical_symmetry_depositor_info.dyad_axis                   no             
+    _pdbx_helical_symmetry_depositor_info.circular_symmetry           1
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    save_
+
+save__pdbx_helical_symmetry_depositor_info.entry_id
+    _item_description.description
+;              This data item is a pointer to _entry.id in the ENTRY category.
+;
+    _item.name                  '_pdbx_helical_symmetry_depositor_info.entry_id'
+    _item.mandatory_code          yes
+    _item_type.code             code
+    _item_linked.child_name     '_pdbx_helical_symmetry_depositor_info.entry_id'
+    _item_linked.parent_name    '_entry.id'
+     save_
+
+save__pdbx_helical_symmetry_depositor_info.number_of_operations
+    _item_description.description
+;              Number of operations.
+;
+    _item.name                  '_pdbx_helical_symmetry_depositor_info.number_of_operations'
+    _item.category_id             pdbx_helical_symmetry_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               int
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+
+    save_
+
+save__pdbx_helical_symmetry_depositor_info.rotation_per_n_subunits
+    _item_description.description
+;              Angular rotation (degrees) in N subunits 
+;
+    _item.name                  '_pdbx_helical_symmetry_depositor_info.rotation_per_n_subunits'
+    _item.category_id             pdbx_helical_symmetry_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_units.code              degrees
+    save_
+
+save__pdbx_helical_symmetry_depositor_info.rise_per_n_subunits
+    _item_description.description
+;              Angular rotation (degrees) in N subunits 
+;
+    _item.name                  '_pdbx_helical_symmetry_depositor_info.rise_per_n_subunits'
+    _item.category_id             pdbx_helical_symmetry_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_units.code              angstroms
+    save_
+
+save__pdbx_helical_symmetry_depositor_info.n_subunits_divisor
+    _item_description.description
+;              Number of subunits used in the calculation of rise and 
+               rotation.
+;
+    _item.name                  '_pdbx_helical_symmetry_depositor_info.n_subunits_divisor'
+    _item.category_id             pdbx_helical_symmetry_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               int
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+    save_
+
+save__pdbx_helical_symmetry_depositor_info.dyad_axis
+    _item_description.description
+;              Two-fold symmetry perpendicular to the helical axis.
+;
+    _item.name                  '_pdbx_helical_symmetry_depositor_info.dyad_axis'
+    _item.category_id             pdbx_helical_symmetry_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               code
+     loop_
+    _item_enumeration.value       
+      'no'
+      'yes'
+    save_
+
+save__pdbx_helical_symmetry_depositor_info.circular_symmetry
+    _item_description.description
+;              Rotational n-fold symmetry about the helical axis. 
+;
+    _item.name                  '_pdbx_helical_symmetry_depositor_info.circular_symmetry'
+    _item.category_id             pdbx_helical_symmetry_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               int
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+    save_
+
+##
+##
+
+####################################
+## PDBX_SOLVENT_ATOM_SITE_MAPPING ##
+####################################
+
+save_pdbx_solvent_atom_site_mapping
+    _category.description
+;   Data items in the PDBX_SOLVENT_ATOM_SITE_MAPPING category records
+    mapping information between solvent atoms before and after symmetry
+    repositioning. 
+;
+    _category.id                 'pdbx_solvent_atom_site_mapping'
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_solvent_atom_site_mapping.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'atom_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example - 
+;
+;
+loop_
+_pdbx_solvent_atom_site_mapping.id
+_pdbx_solvent_atom_site_mapping.label_atom_id
+_pdbx_solvent_atom_site_mapping.label_comp_id
+_pdbx_solvent_atom_site_mapping.label_asym_id
+_pdbx_solvent_atom_site_mapping.label_seq_id
+_pdbx_solvent_atom_site_mapping.label_alt_id
+_pdbx_solvent_atom_site_mapping.auth_atom_id
+_pdbx_solvent_atom_site_mapping.auth_comp_id
+_pdbx_solvent_atom_site_mapping.auth_asym_id
+_pdbx_solvent_atom_site_mapping.auth_seq_id
+_pdbx_solvent_atom_site_mapping.auth_alt_id
+_pdbx_solvent_atom_site_mapping.Cartn_x
+_pdbx_solvent_atom_site_mapping.Cartn_y
+_pdbx_solvent_atom_site_mapping.Cartn_z
+_pdbx_solvent_atom_site_mapping.pre_auth_atom_id
+_pdbx_solvent_atom_site_mapping.pre_auth_comp_id
+_pdbx_solvent_atom_site_mapping.pre_auth_asym_id
+_pdbx_solvent_atom_site_mapping.pre_auth_seq_id
+_pdbx_solvent_atom_site_mapping.pre_auth_alt_id
+_pdbx_solvent_atom_site_mapping.pre_Cartn_x
+_pdbx_solvent_atom_site_mapping.pre_Cartn_y
+_pdbx_solvent_atom_site_mapping.pre_Cartn_z
+1 . . . . . . . . . . . . . . . . . . . . .  
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_solvent_atom_site_mapping.id
+    _item_description.description
+;    The value of pdbx_solvent_atom_site_mapping.id must uniquely identify a record in
+     the PDBX_SOLVENT_ATOM_SITE_MAPPING list.
+
+     Note that this item need not be a number; it can be any unique
+     identifier.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+
+save__pdbx_solvent_atom_site_mapping.label_alt_id
+    _item_description.description
+;   A component of the atom_site identifier.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.label_alt_id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_solvent_atom_site_mapping.label_asym_id
+    _item_description.description
+;   A component of the atom_site identifier.
+
+    This data item is a pointer to _atom_site.label_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.label_asym_id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_solvent_atom_site_mapping.label_atom_id
+    _item_description.description
+;   A component of the atom_site identifier.
+
+    This data item is a pointer to _atom_site.label_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.label_atom_id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.label_atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_solvent_atom_site_mapping.label_comp_id
+    _item_description.description
+;   A component of the atom_site identifier.
+
+    This data item is a pointer to _atom_site.label_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.label_comp_id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_solvent_atom_site_mapping.label_seq_id
+    _item_description.description
+;   A component of the atom_site identifier.
+
+    This data item is a pointer to _atom_site.label_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.label_seq_id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+
+
+save__pdbx_solvent_atom_site_mapping.PDB_ins_code
+    _item_description.description
+;   Optional atom_site identifier.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.PDB_ins_code'
+    _item.category_id           pdbx_solvent_atom_site_mapping
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.PDB_ins_code'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+    save_
+##
+##
+save__pdbx_solvent_atom_site_mapping.pre_auth_asym_id
+    _item_description.description
+;   A component of the prior atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.pre_auth_asym_id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__pdbx_solvent_atom_site_mapping.pre_auth_atom_id
+    _item_description.description
+;   A component of the prior atom_site identifier.
+
+    This data item corrresponds to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.pre_auth_atom_id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               atcode
+     save_
+
+save__pdbx_solvent_atom_site_mapping.pre_auth_comp_id
+    _item_description.description
+;   A component of the prior atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.pre_auth_comp_id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__pdbx_solvent_atom_site_mapping.pre_auth_seq_id
+    _item_description.description
+;   A component of the prior atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.pre_auth_seq_id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__pdbx_solvent_atom_site_mapping.pre_PDB_ins_code
+    _item_description.description
+;   A component of the prior atom_site identifier.
+
+    This data item corresponds to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.pre_PDB_ins_code'
+    _item.category_id           pdbx_solvent_atom_site_mapping
+    _item.mandatory_code        no
+    _item_type.code 		code
+    save_
+
+save__pdbx_solvent_atom_site_mapping.pre_auth_alt_id
+    _item_description.description
+;   A component of the prior atom_site identifier.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.pre_auth_alt_id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+#
+save__pdbx_solvent_atom_site_mapping.auth_asym_id
+    _item_description.description
+;   A component of the current atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.auth_asym_id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_solvent_atom_site_mapping.auth_atom_id
+    _item_description.description
+;   A component of the current atom_site identifier.
+
+    This data item corrresponds to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.auth_atom_id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.auth_atom_id'
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_solvent_atom_site_mapping.auth_comp_id
+    _item_description.description
+;   A component of the current atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.auth_comp_id'
+    _item.category_id            pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.auth_comp_id'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_solvent_atom_site_mapping.auth_seq_id
+    _item_description.description
+;   A component of the current atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.auth_seq_id'
+    _item.category_id             pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_solvent_atom_site_mapping.auth_alt_id
+    _item_description.description
+;   A component of the current atom_site identifier labeling alternate locations.
+
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.auth_alt_id'
+    _item.category_id             pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+#    _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.auth_alt_id'
+#   _item_linked.parent_name    '_atom_site.pdbx_auth_alt_id'
+     save_
+
+save__pdbx_solvent_atom_site_mapping.occupancy
+    _item_description.description
+;              The fraction of the atom type present at the current atom site.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.occupancy'
+    _item.category_id             pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+##
+save__pdbx_solvent_atom_site_mapping.Cartn_x
+    _item_description.description
+;              The x atom-site coordinate of the solvent position in angstroms.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.Cartn_x'
+    _item.category_id             pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+
+save__pdbx_solvent_atom_site_mapping.Cartn_y
+    _item_description.description
+;              The y atom-site coordinate of the solvent position in angstroms.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.Cartn_y'
+    _item.category_id             pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_solvent_atom_site_mapping.Cartn_z
+    _item_description.description
+;              The z atom-site coordinate of the solvent position in angstroms.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.Cartn_z'
+    _item.category_id             pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+##
+save__pdbx_solvent_atom_site_mapping.pre_Cartn_x
+    _item_description.description
+;              The prior x atom-site coordinate of the solvent position in angstroms.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.pre_Cartn_x'
+    _item.category_id             pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+
+save__pdbx_solvent_atom_site_mapping.pre_Cartn_y
+    _item_description.description
+;              The prior y atom-site coordinate of the solvent position in angstroms.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.pre_Cartn_y'
+    _item.category_id             pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_solvent_atom_site_mapping.pre_Cartn_z
+    _item_description.description
+;              The prior z atom-site coordinate of the solvent position in angstroms.
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.pre_Cartn_z'
+    _item.category_id             pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+##
+##
+########################################
+## PDBX_ENTITY_SRC_GEN_DEPOSITOR_INFO ##
+########################################
+
+save_pdbx_entity_src_gen_depositor_info
+    _category.description
+;              Data items in the PDBX_ENTITY_SRC_GEN_DEPOSITOR_INFO  category record additional 
+               details provided by depositors about multiple source entities.
+;
+    _category.id                  pdbx_entity_src_gen_depositor_info
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_entity_src_gen_depositor_info.entity_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_entity_src_gen_depositor_info.entity_id
+    _pdbx_entity_src_gen_depositor_info.alt_source_flag
+    _pdbx_entity_src_gen_depositor_info.seq_type
+    _pdbx_entity_src_gen_depositor_info.beg_seq_num
+    _pdbx_entity_src_gen_depositor_info.end_seq_num
+	1   N   'N-terminal tag'       1     9
+	1   N   'Biological sequence' 10    234
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_entity_src_gen_depositor_info.entity_id
+    _item_description.description
+;               The value of _pdbx_entity_src_gen_depositor_info.entity_id is a reference to 
+                to the entity identifier for this molecule.
+;
+    _item.name                  '_pdbx_entity_src_gen_depositor_info.entity_id'
+    _item.category_id             pdbx_entity_src_gen_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
+save__pdbx_entity_src_gen_depositor_info.alt_source_flag
+    _item_description.description
+;              This data item identifies cases in which an alternative source
+               modeled.
+;
+    _item.name                  '_pdbx_entity_src_gen_depositor_info.alt_source_flag'
+    _item.category_id             pdbx_entity_src_gen_depositor_info
+    _item.mandatory_code          no
+    _item_type.code		  code
+    _item_default.value           'sample'
+     loop_
+    _item_enumeration.value   'sample' 'model'
+     save_
+
+save__pdbx_entity_src_gen_depositor_info.seq_type
+    _item_description.description
+;              This data item povides additional information about the sequence type.
+;
+    _item.name                  '_pdbx_entity_src_gen_depositor_info.seq_type'
+    _item.category_id             pdbx_entity_src_gen_depositor_info
+    _item.mandatory_code          no
+    _item_type.code		  line
+     loop_
+    _item_enumeration.value   'N-terminal tag' 'C-terminal tag' 'Biological sequence' 'Linker'
+     save_
+
+
+
+save__pdbx_entity_src_gen_depositor_info.beg_seq_num
+    _item_description.description
+;              The beginning polymer sequence position for the polymer section corresponding  
+               to this source.
+
+               A reference to the sequence position in the entity_poly category.
+;
+    _item.name                  '_pdbx_entity_src_gen_depositor_info.beg_seq_num'
+    _item.category_id             pdbx_entity_src_gen_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+save__pdbx_entity_src_gen_depositor_info.end_seq_num
+    _item_description.description
+;              The ending polymer sequence position for the polymer section corresponding  
+               to this source.
+
+               A reference to the sequence position in the entity_poly category.
+;
+    _item.name                  '_pdbx_entity_src_gen_depositor_info.end_seq_num'
+    _item.category_id             pdbx_entity_src_gen_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+
+###########################################
+## PDBX_MOLECULE_FEATURES_DEPOSITOR_INFO ##
+###########################################
+
+save_pdbx_molecule_features_depositor_info
+    _category.description
+;              Data items in the PDBX_MOLECULE_FEATURES_DEPOSITOR_INFO  category capture
+               depositor provided information related to the archival cateogory
+               PDBX_MOLECULE_FEATURES.
+;
+    _category.id                  pdbx_molecule_features_depositor_info
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_molecule_features_depositor_info.entity_id'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                  'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+ loop_
+ _pdbx_molecule_features_depositor_info.entity_id
+ _pdbx_molecule_features_depositor_info.name
+ _pdbx_molecule_features_depositor_info.type
+ _pdbx_molecule_features_depositor_info.class
+  1  "Actinomycin D" "Antitumor Antibiotic"  "polypeptide antibiotic" 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_molecule_features_depositor_info.entity_id
+    _item_description.description
+;               The value of _pdbx_molecule_features_depositor_info.entity_id is a reference to 
+                to the entity identifier for this molecule.
+;
+    _item.name                  '_pdbx_molecule_features_depositor_info.entity_id'
+    _item.category_id             pdbx_molecule_features_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
+save__pdbx_molecule_features_depositor_info.class
+    _item_description.description
+;              Broadly defines the function of the molecule.
+;
+    _item.name                  '_pdbx_molecule_features_depositor_info.class'
+    _item.category_id             pdbx_molecule_features_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_molecule_features_depositor_info.type
+    _item_description.description
+;              Defines the structural classification of the molecule.
+;
+    _item.name                  '_pdbx_molecule_features_depositor_info.type'
+    _item.category_id             pdbx_molecule_features_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               uline
+     loop_
+    _item_examples.case
+                                'peptide-like'
+                                'macrolide'    
+     save_
+
+save__pdbx_molecule_features_depositor_info.name
+    _item_description.description
+;              A name of the molecule.
+;
+    _item.name                  '_pdbx_molecule_features_depositor_info.name'
+    _item.category_id             pdbx_molecule_features_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case
+                                'thiostrepton'
+     save_
+
+save__pdbx_molecule_features_depositor_info.details
+    _item_description.description
+;              Additional details describing the molecule.
+;
+    _item.name                  '_pdbx_molecule_features_depositor_info.details'
+    _item.category_id             pdbx_molecule_features_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               text
+    save_
+
+
+save__struct_conn.pdbx_leaving_atom_flag
+    _item_description.description
+;              This data item identifies if the atoms involved in this linkage are
+               identified as leaving atoms in their chemical component defintions.
+;
+    _item.name                  '_struct_conn.pdbx_leaving_atom_flag'
+    _item.category_id             struct_conn
+    _item.mandatory_code          no
+    _item_type.code		  code
+     loop_
+    _item_enumeration.value   'both' 'one' 'none'
+     save_
+ 
