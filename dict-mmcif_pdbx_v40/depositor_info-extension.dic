@@ -1051,19 +1051,6 @@ save__pdbx_struct_assembly_gen_depositor_info.asym_id_list
     _item_type.code               line
      save_
 
-save__pdbx_struct_assembly_gen_depositor_info.auth_asym_id_list
-    _item_description.description
-;              This data item is a pointer to _atom_site.auth_asym_id in 
-               the ATOM_SITE category.
-
-               This item may be expressed as a comma separated list of identifiers.
-;
-    _item.name                  '_pdbx_struct_assembly_gen_depositor_info.auth_asym_id_list'
-    _item.category_id             pdbx_struct_assembly_gen_depositor_info
-    _item.mandatory_code          no
-    _item_type.code               line
-     save_
-
 save__pdbx_struct_assembly_gen_depositor_info.assembly_id
     _item_description.description
 ;              This data item is a pointer to _pdbx_struct_assembly.id in the 
