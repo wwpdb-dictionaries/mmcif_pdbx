@@ -741,7 +741,23 @@ save__pdbx_struct_ref_seq_dif_depositor_info.annotation
     _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.annotation'
     _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
     _item.mandatory_code          no
-    _item_type.code               line
+    _item_type.code               uline
+    loop_
+    _item_enumeration.value    
+    'engineered mutation' 
+    'cloning artifact' 
+    variant
+    'expression tags'
+    insertion 
+    deletion
+    microheterogeneity
+    chromophore
+    linker
+    conflict
+    acetylation
+    amidation
+    'initiating methionine'
+    
      save_
 ###
 ###
@@ -2120,7 +2136,39 @@ save__pdbx_molecule_features_depositor_info.class
     _item.name                  '_pdbx_molecule_features_depositor_info.class'
     _item.category_id             pdbx_molecule_features_depositor_info
     _item.mandatory_code          no
-    _item_type.code               text
+    _item_type.code               uline
+     loop_
+    _item_enumeration.value   
+    Antibiotic
+    Inhibitor
+    Antitumor
+    'Trypsin inhibitor'
+    'Thrombin inhibitor'
+    Toxin
+    'Enzyme inhibitor'
+    Anticancer
+    Antimicrobial 
+    Antifungal
+    Anthelmintic 
+    Antiviral
+    Antineoplastic 
+    Antiparasitic
+    Antiretroviral
+    Antithrombotic
+    Anticoagulant
+    Chaperone binding
+    Antiinflammatory 
+    'CASPASE inhibitor'
+    'Metal transport' 
+    'Growth factor'
+    'Oxidation-reduction'
+    Receptor
+    Immunosuppressant
+    Antagonist
+    Lantibiotics
+    Metabolism
+    Unknown
+
      save_
 
 save__pdbx_molecule_features_depositor_info.type
@@ -2134,7 +2182,42 @@ save__pdbx_molecule_features_depositor_info.type
      loop_
     _item_examples.case
                                 'peptide-like'
-                                'macrolide'    
+                                'macrolide'
+     loop_
+    _item_enumeration.value   
+    macrolide
+    'amino acid'
+    'non-polymer'
+    'peptide-like'
+    aminoglycoside
+    anthracycline
+    oligosaccharide
+    polysaccharide
+    oligopeptide
+    polypeptide
+    lipopeptide
+    glycopeptide
+    ansamycin
+    Quinolone
+    thiolactone
+    thiopeptide
+    heterocyclic
+    polycyclic
+    'cyclic depsipeptide'
+    'cyclic peptide'
+    'cyclic lipopeptide'
+    chromophore
+    chalkophore
+    siderophore
+    'peptide-like'
+    'imino sugar'
+    'keto acid'
+    'lipoglycopeptide'
+    'nucleoside'
+    'peptaibol'
+    'anthraquinone'
+
+    
      save_
 
 save__pdbx_molecule_features_depositor_info.name

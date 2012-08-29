@@ -3618,11 +3618,18 @@ save__pdbx_prd_audit.action_type
 
     loop_
     _item_enumeration.value
-    _item_enumeration.detail      
-    'Create molecule'                  .
-    'Modify sequence'                  .
-    'Other modification'               .
-    'Obsolete molecule'                .
+    _item_enumeration.detail  
+     'Create molecule'             .
+     'Modify type'                 .
+     'Modify class'                . 
+     'Modify molecule name'        .
+     'Modify representation'       . 
+     'Modify sequence'             . 
+     'Modify linkage'              .
+     'Modify taxonomy organism'    . 
+     'Modify audit'                .
+     'Other modification'          . 
+     'Obsolete molecule'           .
      save_
 ##
 ###########################
@@ -3737,7 +3744,22 @@ save__pdbx_family_prd_audit.action_type
 
     loop_
     _item_enumeration.value
-    _item_enumeration.detail      
+    _item_enumeration.detail 
+    'Create family'                 .
+    'Add PRD'                       .
+    'Remove PRD'                    . 
+    'Modify family name'            . 
+    'Modify synonyms'               . 
+    'Modify annotation'             . 
+    'Modify feature'                .
+    'Modify related structures'     . 
+    'Modify molecule details'       .
+    'Modify citation'               .
+    'Other modification'            .
+    'Obsolete family'               .
+
+
+     
     'Create family'                  .
     'Modify sequence'                .
     'Other modification'             .
