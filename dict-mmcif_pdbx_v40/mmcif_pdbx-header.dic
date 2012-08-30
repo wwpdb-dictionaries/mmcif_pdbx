@@ -1698,8 +1698,9 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 4.025 2012-08-28
 ;
   Changes (jdw):  (OPEN REVISION)
-  + Update enumerations for _pdbx_family_prd_audit.action_type
-  + Update enumerations for _pdbx_prd_audit.action_type
+  + Update enumerations for _pdbx_family_prd_audit.action_type and _pdbx_prd_audit.action_type
+  + Update enumerations for _pdbx_reference_molecule.class/type, _pdbx_molecule_features.class/type
+
 ;  
 #
 ### EOF mmcif_pdbx-header.dic 

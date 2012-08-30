@@ -531,6 +531,40 @@ save__pdbx_reference_molecule.type
     _item.mandatory_code          no
     _item_type.code               uline
      loop_
+    _item_enumeration.value   
+    macrolide
+    'amino acid'
+    'non-polymer'
+    'peptide-like'
+    aminoglycoside
+    anthracycline
+    oligosaccharide
+    polysaccharide
+    oligopeptide
+    polypeptide
+    lipopeptide
+    glycopeptide
+    ansamycin
+    Quinolone
+    thiolactone
+    thiopeptide
+    heterocyclic
+    polycyclic
+    'cyclic depsipeptide'
+    'cyclic peptide'
+    'cyclic lipopeptide'
+    chromophore
+    chalkophore
+    siderophore
+    'peptide-like'
+    'imino sugar'
+    'keto acid'
+    'lipoglycopeptide'
+    'nucleoside'
+    'peptaibol'
+    'anthraquinone'
+
+     loop_
     _item_examples.case
                                 'peptide-like'
                                 'macrolide'    
@@ -553,7 +587,39 @@ save__pdbx_reference_molecule.class
     _item.name                  '_pdbx_reference_molecule.class'
     _item.category_id             pdbx_reference_molecule
     _item.mandatory_code          no
-    _item_type.code               text
+    _item_type.code               uline
+     loop_
+    _item_enumeration.value   
+    Antibiotic
+    Inhibitor
+    Antitumor
+    'Trypsin inhibitor'
+    'Thrombin inhibitor'
+    Toxin
+    'Enzyme inhibitor'
+    Anticancer
+    Antimicrobial 
+    Antifungal
+    Anthelmintic 
+    Antiviral
+    Antineoplastic 
+    Antiparasitic
+    Antiretroviral
+    Antithrombotic
+    Anticoagulant
+    Chaperone binding
+    Antiinflammatory 
+    'CASPASE inhibitor'
+    'Metal transport' 
+    'Growth factor'
+    'Oxidation-reduction'
+    Receptor
+    Immunosuppressant
+    Antagonist
+    Lantibiotics
+    Metabolism
+    Unknown
+
      save_
 
 save__pdbx_reference_molecule.class_evidence_code
@@ -3619,6 +3685,7 @@ save__pdbx_prd_audit.action_type
     loop_
     _item_enumeration.value
     _item_enumeration.detail  
+     'Initial release'             .
      'Create molecule'             .
      'Modify type'                 .
      'Modify class'                . 
@@ -3745,6 +3812,7 @@ save__pdbx_family_prd_audit.action_type
     loop_
     _item_enumeration.value
     _item_enumeration.detail 
+    'Initial release'               .
     'Create family'                 .
     'Add PRD'                       .
     'Remove PRD'                    . 
@@ -3895,7 +3963,39 @@ save__pdbx_molecule_features.class
     _item.name                  '_pdbx_molecule_features.class'
     _item.category_id             pdbx_molecule_features
     _item.mandatory_code          no
-    _item_type.code               text
+    _item_type.code               uline
+     loop_
+    _item_enumeration.value   
+    Antibiotic
+    Inhibitor
+    Antitumor
+    'Trypsin inhibitor'
+    'Thrombin inhibitor'
+    Toxin
+    'Enzyme inhibitor'
+    Anticancer
+    Antimicrobial 
+    Antifungal
+    Anthelmintic 
+    Antiviral
+    Antineoplastic 
+    Antiparasitic
+    Antiretroviral
+    Antithrombotic
+    Anticoagulant
+    Chaperone binding
+    Antiinflammatory 
+    'CASPASE inhibitor'
+    'Metal transport' 
+    'Growth factor'
+    'Oxidation-reduction'
+    Receptor
+    Immunosuppressant
+    Antagonist
+    Lantibiotics
+    Metabolism
+    Unknown
+
      save_
 
 save__pdbx_molecule_features.type
@@ -3906,6 +4006,40 @@ save__pdbx_molecule_features.type
     _item.category_id             pdbx_molecule_features
     _item.mandatory_code          no
     _item_type.code               uline
+     loop_
+    _item_enumeration.value   
+    macrolide
+    'amino acid'
+    'non-polymer'
+    'peptide-like'
+    aminoglycoside
+    anthracycline
+    oligosaccharide
+    polysaccharide
+    oligopeptide
+    polypeptide
+    lipopeptide
+    glycopeptide
+    ansamycin
+    Quinolone
+    thiolactone
+    thiopeptide
+    heterocyclic
+    polycyclic
+    'cyclic depsipeptide'
+    'cyclic peptide'
+    'cyclic lipopeptide'
+    chromophore
+    chalkophore
+    siderophore
+    'peptide-like'
+    'imino sugar'
+    'keto acid'
+    'lipoglycopeptide'
+    'nucleoside'
+    'peptaibol'
+    'anthraquinone'
+
      loop_
     _item_examples.case
                                 'peptide-like'
