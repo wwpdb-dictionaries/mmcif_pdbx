@@ -474,6 +474,7 @@ save__pdbx_chem_comp_identifier.type
         'CAS REGISTRY NUMBER' 'Chemical Abstracts Registry Number'
         'PUBCHEM Identifier'  'PubChem accession number'
         'MDL Identifier'      'Molecular Design Limited Identifier'
+ 	'SYNONYM'             'Synonym chemical name'
      save_
 
 save__pdbx_chem_comp_identifier.program
@@ -495,6 +496,7 @@ save__pdbx_chem_comp_identifier.program
            PUBCHEM_CID 'Compound  identifier'
            PUBCHEM_SID 'Substance identifier'
            OTHER       'Other program or library'
+           NONE        'Non-programmatic identifier'
      save_
 
 save__pdbx_chem_comp_identifier.program_version
