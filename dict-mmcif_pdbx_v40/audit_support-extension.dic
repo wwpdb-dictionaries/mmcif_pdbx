@@ -4,6 +4,7 @@
 #
 # Updated: -- 
 #     May 2, 2012 - Remove author relationship 
+#     Sep 1, 2012 - Adjust data types.
 #
 # Draft dictionary extension for describing support details for data entry. 
 #
@@ -36,7 +37,7 @@ save_pdbx_audit_support
 ;
 ;
      loop_
-     _pdbx_audit_support.id
+     _pdbx_audit_support.ordinal
      _pdbx_audit_support.funding_organization
      _pdbx_audit_support.grant_number
      _pdbx_audit_support.country
@@ -54,7 +55,7 @@ save__pdbx_audit_support.funding_organization
     _item.category_id             pdbx_audit_support
     _item.mandatory_code          no
     _item_type.code               text
-     loop
+     loop_
     _item_examples.case
        'National Institutes of Health'
        'Welcome Trust'
@@ -65,10 +66,10 @@ save__pdbx_audit_support.country
     _item_description.description
 ;              The country providing the funding support for the entry.
 ;
-    _item.name                  '_pdbx_audit_support.funding_organization'
+    _item.name                  '_pdbx_audit_support.country'
     _item.category_id             pdbx_audit_support
     _item.mandatory_code          no
-    _item_type.code               text
+    _item_type.code               line
      save_
 
 
@@ -76,18 +77,18 @@ save__pdbx_audit_support.grant_number
     _item_description.description
 ;              The grant number associated with this source of support.
 ;
-    _item.name                  '_pdbx_audit_support.funding_organization'
+    _item.name                  '_pdbx_audit_support.grant_number'
     _item.category_id             pdbx_audit_support
     _item.mandatory_code          no
     _item_type.code               line
      save_
 
 
-save__pdbx_audit_support.id
+save__pdbx_audit_support.ordinal
     _item_description.description
 ;              A unique sequential integer identifier for each source of support for this entry.
 ;
-    _item.name                  '_pdbx_audit_support.id'
+    _item.name                  '_pdbx_audit_support.ordinal'
     _item.category_id             pdbx_audit_support
     _item.mandatory_code          yes
     _item_type.code               int
