@@ -2233,8 +2233,10 @@ save__pdbx_molecule_features_depositor_info.details
 
 save__struct_conn.pdbx_leaving_atom_flag
     _item_description.description
-;              This data item identifies if the atoms involved in this linkage are
-               identified as leaving atoms in their chemical component defintions.
+;              This data item identifies if the linkage has displaced leaving atoms
+               on both, one or none of the connected atoms forming the linkage.    
+               Leaving atoms are defined within their chemical defintions of each
+               connected component.
 ;
     _item.name                  '_struct_conn.pdbx_leaving_atom_flag'
     _item.category_id             struct_conn
