@@ -1963,6 +1963,35 @@ save__pdbx_solvent_atom_site_mapping.pre_Cartn_z
     _item_units.code              angstroms
      save_
 
+save__pdbx_solvent_atom_site_mapping.symmetry
+    _item_description.description
+;              Describes the symmetry operation that should be applied to the
+               target solvent atom
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.symmetry'
+    _item.category_id             pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               symop
+    loop_
+    _item_examples.case
+    _item_examples.detail         
+                                  7_645  '7th symm. posn.; +a on x; -b on y'
+     save_
+
+save__pdbx_solvent_atom_site_mapping.symmetry_as_xyz
+    _item_description.description
+;  The symmetry applied to the target solvent atom.  The symmetry equivalent position 
+   is given in the 'xyz' representation. 
+;
+    _item.name                  '_pdbx_solvent_atom_site_mapping.symmetry_as_xyz'
+    _item.category_id             pdbx_solvent_atom_site_mapping
+    _item.mandatory_code          no
+    _item_default.value           'x,y,z'
+    _item_type.code               line
+     save_
+
+
+
 ##
 ##
 ########################################
