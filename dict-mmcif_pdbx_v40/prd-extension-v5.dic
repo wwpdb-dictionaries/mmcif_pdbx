@@ -246,6 +246,16 @@
 ### Remove items:
 ###  _pdbx_entity_group_* categories are not used and are being removed.
 ###
+###
+### Updates - Sep 12, 2012
+###
+### Added items to supporting chemical component definitions - 
+###
+### _chem_comp_atom.pdbx_residue_numbering    : residue numbering (always start from 1)
+### _chem_comp_atom.pdbx_polymer_type         : indicates if the residue belong to polymer or non-polymer
+### _chem_comp_atom.pdbx_ref_id               : mapping to the value of _pdbx_reference_entity_list.ref_entity_id
+### _chem_comp_atom.pdbx_component_id         : mapping to the value of _pdbx_reference_entity_list.component_id      
+###
 #########################################################################
 
 ####################################
@@ -4069,5 +4079,44 @@ save__pdbx_molecule_features.details
     _item_type.code               text
     save_
 
+save__chem_comp_atom.pdbx_residue_numbering
+    _item_description.description
+;              Preferred residue numbering in the BIRD definition.
+;
+    _item.name                  '_chem_comp_atom.pdbx_residue_numbering'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               int
+    save_
 
- 
+save__chem_comp_atom.pdbx_polymer_type
+    _item_description.description
+;              Is the atom in a polymer or non-polymer subcomponent in the BIRD definition. 
+;
+    _item.name                  '_chem_comp_atom.pdbx_polymer_type'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_enumeration.value   polymer non-polymer
+    save_
+
+save__chem_comp_atom.pdbx_ref_id
+    _item_description.description
+;              A reference to _pdbx_reference_entity_list.ref_entity_id
+;
+    _item.name                  '_chem_comp_atom.pdbx_ref_id'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    save_
+
+save__chem_comp_atom.pdbx_component_id
+    _item_description.description
+;              A reference to _pdbx_reference_entity_list.component_id
+;
+    _item.name                  '_chem_comp_atom.pdbx_component_id'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               int
+    save_
