@@ -24,6 +24,10 @@
 #
 #  Added items: _entity_poly.pdbx_explicit_linking_flag and _pdbx_molecule.linked_entity_id
 #
+#
+#  Updated:  18-Sep-2012  jdw 
+# 
+#  Added categories:  pdbx_reference_linked_entity, pdbx_reference_linked_entity_list, pdbx_reference_linked_entity_link
 # ----------------------------------------------------------------------------------------------------------------------------
 
 
@@ -763,7 +767,7 @@ save__pdbx_linked_entity_link_list.atom_id_2
     _item.name                  '_pdbx_linked_entity_link_list.atom_id_2'
     _item.category_id             pdbx_linked_entity_link_list
     _item.mandatory_code          yes
-    _item_type.code               code
+    _item_type.code               atcode
      save_
 
 save__pdbx_linked_entity_link_list.value_order
@@ -975,4 +979,505 @@ save__pdbx_molecule.linked_entity_id
     _item_type.code               code
      loop_
     _item_examples.case           1 2
+     save_
+
+
+
+####################################
+## PDBX_REFERENCE_LINKED_ENTITY   ##
+####################################
+
+save_pdbx_reference_linked_entity
+    _category.description
+;              Data items in the pdbx_reference_linked_entity category describe
+               common observed interaction patterns within linked entities.
+;
+    _category.id                  pdbx_reference_linked_entity
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_reference_linked_entity.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+ #
+ loop_
+ _pdbx_reference_linked_entity.id
+ _pdbx_reference_linked_entity.class
+ _pdbx_reference_linked_entity.name
+ _pdbx_reference_linked_entity.link_to_entity_type
+ _pdbx_reference_linked_entity.link_to_comp_id
+ _pdbx_reference_linked_entity.link_from_entity_type
+ _pdbx_reference_linked_entity.taxonomy_class
+ _pdbx_reference_linked_entity.taxonomy_id
+  0 "N-linked-glycan"  "basic"               polypeptide(L) ASN polysaccharide(D)  . .
+  1 "N-linked-glycan"  "high-mannose simple" polypeptide(L) ASN polysaccharide(D)  . .
+  2 "N-linked-glycan"  "high-mannose"        polypeptide(L) ASN polysaccharide(D)  . .
+  3 "N-linked-glycan"  "hybrid simple"       polypeptide(L) ASN polysaccharide(D)  . . 
+  4 "N-linked-glycan"  "hybrid"              polypeptide(L) ASN polysaccharide(D)  . .
+  5 "N-linked-glycan"  "complex"             polypeptide(L) ASN polysaccharide(D)  Mammalia 40674 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_reference_linked_entity.id
+    _item_description.description
+;              The value of _pdbx_reference_linked_entity.id uniquely identifies
+               examples in the list of observed linking patterns.
+
+;
+    _item.name                  '_pdbx_reference_linked_entity.id'
+    _item.category_id             pdbx_reference_linked_entity
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+
+save__pdbx_reference_linked_entity.class
+    _item_description.description
+;              Broadly classifies of this linked entity example.
+;
+    _item.name                  '_pdbx_reference_linked_entity.class'
+    _item.category_id             pdbx_reference_linked_entity
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_reference_linked_entity.name
+    _item_description.description
+;              The name of the linked entity example.
+;
+    _item.name                  '_pdbx_reference_linked_entity.name'
+    _item.category_id             pdbx_reference_linked_entity
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case          'high mannose' 'basic' 'hybrid' 'hybrid simple'
+     save_
+
+
+save__pdbx_reference_linked_entity.taxonomy_id
+    _item_description.description
+;              The NCBI taxonomy identifier of the organism for the linked entity example.
+;
+    _item.name                  '_pdbx_reference_linked_entity.taxonomy_id'
+    _item.category_id             pdbx_reference_linked_entity
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+
+save__pdbx_reference_linked_entity.taxonomy_class
+    _item_description.description
+;              The NCBI taxonomy classification  of the organism for this linked entity example.
+;
+    _item.name                  '_pdbx_reference_linked_entity.taxonomy_class'
+    _item.category_id             pdbx_reference_linked_entity
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case
+      'Archaea'
+      'Bacteria'
+      'Eukaryota'
+      'Embryophyta'
+      'Fungi'
+      'Metazoa'
+      'Vertebrata'
+      'Mammalia'
+      'Rodentia'
+      'Primates'
+     save_
+
+
+save__pdbx_reference_linked_entity.link_to_entity_type
+    _item_description.description
+;              The polymer linking type of the first partner entity in example linkage. 
+;
+    _item.name                  '_pdbx_reference_linked_entity.link_to_entity_type'
+    _item.category_id             pdbx_reference_linked_entity
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_enumeration.value      'polypeptide(D)'
+                                 'polypeptide(L)'
+                                 'polydeoxyribonucleotide'
+                                 'polyribonucleotide'
+                                 'polysaccharide(D)'
+                                 'polysaccharide(L)'
+                                 'polydeoxyribonucleotide/polyribonucleotide hybrid'
+                                 'cyclic-pseudo-peptide'
+                                 'other'
+     save_
+
+save__pdbx_reference_linked_entity.link_to_comp_id
+    _item_description.description
+;              The component identifer for the component in the first partner of the example linkage.
+;
+    _item.name                  '_pdbx_reference_linked_entity.link_to_comp_id'
+    _item.category_id             pdbx_reference_linked_entity
+    _item.mandatory_code          no
+    _item_type.code               ucode
+     save_
+
+
+save__pdbx_reference_linked_entity.link_from_entity_type
+    _item_description.description
+;              The polymer linking type of the second partner entity in example linkage. 
+;
+    _item.name                  '_pdbx_reference_linked_entity.link_from_entity_type'
+    _item.category_id             pdbx_reference_linked_entity
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_enumeration.value      'polypeptide(D)'
+                                 'polypeptide(L)'
+                                 'polydeoxyribonucleotide'
+                                 'polyribonucleotide'
+                                 'polysaccharide(D)'
+                                 'polysaccharide(L)'
+                                 'polydeoxyribonucleotide/polyribonucleotide hybrid'
+                                 'cyclic-pseudo-peptide'
+                                 'other'
+     save_
+
+
+
+#########################################
+## PDBX_REFERENCE_LINKED_ENTITY_LIST   ##
+#########################################
+
+save_pdbx_reference_linked_entity_list
+    _category.description
+;              Data items in the pdbx_reference_linked_entity_list category lists
+               the constituents of common observed interaction patterns  
+               described in the pdbx_reference_linked_entity category.
+;
+    _category.id                  pdbx_reference_linked_entity_list
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_reference_linked_entity_list.linked_entity_id'
+                                 '_pdbx_reference_linked_entity_list.list_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+ #
+ loop_
+ _pdbx_reference_linked_entity_list.linked_entity_id
+ _pdbx_reference_linked_entity_list.list_id
+ _pdbx_reference_linked_entity_list.name
+ _pdbx_reference_linked_entity_list.comp_id
+ 0  0 "protein-Asparagine"   ASN
+ 0  1 "N-acetyl glucosamine" NAG
+ 0  2 "N-acetyl glucosamine" NAG
+ 0  3 Mannose                MAN
+ 0  4 Mannose                MAN
+ 0  5 Mannose                MAN
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_reference_linked_entity_list.linked_entity_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_reference_linked_entity.id
+	       in the pdbx_reference_linked_entity  category.
+;
+    _item.name                  '_pdbx_reference_linked_entity_list.linked_entity_id'
+    _item.category_id             pdbx_reference_linked_entity_list
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_reference_linked_entity_list.linked_entity_id'
+    _item_linked.parent_name    '_pdbx_reference_linked_entity.id'
+     save_
+
+save__pdbx_reference_linked_entity_list.list_id
+    _item_description.description
+;              This data item uniquely identifies a constituent of with the linked entity.
+;
+    _item.name                  '_pdbx_reference_linked_entity_list.list_id'
+    _item.category_id             pdbx_reference_linked_entity_list
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_reference_linked_entity_list.name
+    _item_description.description
+;              The name of the constituent withing the linked entity.
+;
+    _item.name                  '_pdbx_reference_linked_entity_list.name'
+    _item.category_id             pdbx_reference_linked_entity_list
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case          'protein-Asparagine' 'N-acetyl glucosamine'
+     save_
+
+save__pdbx_reference_linked_entity_list.comp_id
+    _item_description.description
+;              The component identifer for the constituent within the linked entity..
+;
+    _item.name                  '_pdbx_reference_linked_entity_list.comp_id'
+    _item.category_id             pdbx_reference_linked_entity_list
+    _item.mandatory_code          no
+    _item_type.code               ucode
+     save_
+
+#######################################
+## PDBX_REFERENCE_LINKED_ENTITY_LINK ##
+#######################################
+
+save_pdbx_reference_linked_entity_link
+    _category.description
+;              Data items in the pdbx_reference_linked_entity_link category enumerate
+               linkages between the constituents of common observed interaction patterns  
+               described in the pdbx_reference_linked_entity category.
+;
+    _category.id                  pdbx_reference_linked_entity_link
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_reference_linked_entity_link.linked_entity_id'
+                                 '_pdbx_reference_linked_entity_link.link_id'
+
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+ loop_
+ _pdbx_reference_linked_entity_link.linked_entity_id
+ _pdbx_reference_linked_entity_link.link_id
+ _pdbx_reference_linked_entity_link.list_id_1
+ _pdbx_reference_linked_entity_link.comp_id_1
+ _pdbx_reference_linked_entity_link.atom_id_1
+ _pdbx_reference_linked_entity_link.leaving_atom_id_1
+ _pdbx_reference_linked_entity_link.atom_stereo_config_1
+ _pdbx_reference_linked_entity_link.list_id_2
+ _pdbx_reference_linked_entity_link.comp_id_2
+ _pdbx_reference_linked_entity_link.atom_id_2
+ _pdbx_reference_linked_entity_link.leaving_atom_id_2
+ _pdbx_reference_linked_entity_link.atom_stereo_config_2
+ _pdbx_reference_linked_entity_link.value_order
+ _pdbx_reference_linked_entity_link.details
+ 0  1  0 ASN  ND2 . N   1 NAG C1 O1 R sing . 
+ 0  2  1 NAG  O4  . N   2 NAG C1 O1 R sing "beta 1-->4"
+ 0  3  2 NAG  O4  . N   3 MAN C1 O1 S sing "beta 1-->4"
+ 0  4  3 MAN  O3  . N   4 MAN C1 O1 S sing "alpha 1-->3"
+ 0  5  3 MAN  O6  . N   5 MAN C1 O1 S sing "alpha 1-->6"
+ # 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_reference_linked_entity_link.linked_entity_id
+    _item_description.description
+;    The value of _pdbx_reference_linked_entity_link.linked_entity_id is a reference
+     _pdbx_reference_linked_entity_list.linked_entity_id in the pdbx_reference_linked_entity_list
+      category.
+;
+    _item.name                  '_pdbx_reference_linked_entity_link.linked_entity_id'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_pdbx_reference_linked_entity_link.linked_entity_id'
+    _item_linked.parent_name    '_pdbx_reference_linked_entity_list.linked_entity_id'
+     save_
+
+save__pdbx_reference_linked_entity_link.link_id
+    _item_description.description
+;              The value of _pdbx_reference_linked_entity_link.link_id uniquely identifies
+               linkages within the linked entity.
+
+;
+    _item.name                  '_pdbx_reference_linked_entity_link.link_id'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_reference_linked_entity_link.list_id_1
+    _item_description.description
+;    The value of _pdbx_reference_linked_entity_link.list_id_1 is a reference
+     _pdbx_reference_linked_entity_list.list_id in the pdbx_reference_linked_entity_list
+      category.
+;
+    _item.name                  '_pdbx_reference_linked_entity_link.list_id_1'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_pdbx_reference_linked_entity_link.list_id_1'
+    _item_linked.parent_name    '_pdbx_reference_linked_entity_list.list_id'
+     save_
+
+save__pdbx_reference_linked_entity_link.list_id_2
+    _item_description.description
+;    The value of _pdbx_reference_linked_entity_link.list_id_2 is a reference
+     _pdbx_reference_linked_entity_list.list_id in the pdbx_reference_linked_entity_list
+      category.
+;
+    _item.name                  '_pdbx_reference_linked_entity_link.list_id_2'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_pdbx_reference_linked_entity_link.list_id_2'
+    _item_linked.parent_name    '_pdbx_reference_linked_entity_list.list_id'
+     save_
+
+save__pdbx_reference_linked_entity_link.details
+    _item_description.description
+;              A description of special aspects of a linkage between
+               these constituents in this linked entity.
+;
+    _item.name                  '_pdbx_reference_linked_entity_link.details'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+
+save__pdbx_reference_linked_entity_link.comp_id_1
+    _item_description.description
+;              The component identifier in the first of the two constituents containing the linkage. 
+;
+    _item.name                  '_pdbx_reference_linked_entity_link.comp_id_1'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_reference_linked_entity_link.comp_id_2
+    _item_description.description
+;              The component identifier in the second of the two constituents containing the linkage. 
+;
+    _item.name                  '_pdbx_reference_linked_entity_link.comp_id_2'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_reference_linked_entity_link.atom_id_1
+    _item_description.description
+;              The atom identifier/name in the first of the two constituents containing the linkage. 
+
+;
+    _item.name                  '_pdbx_reference_linked_entity_link.atom_id_1'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+     save_
+
+save__pdbx_reference_linked_entity_link.atom_id_2
+    _item_description.description
+;              The atom identifier/name in the second of the two constituents containing the linkage. 
+
+;
+    _item.name                  '_pdbx_reference_linked_entity_link.atom_id_2'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+     save_
+
+
+save__pdbx_reference_linked_entity_link.leaving_atom_id_1
+    _item_description.description
+;              The leaving atom identifier/name bonded to the first atom making the linkage. 
+
+;
+    _item.name                  '_pdbx_reference_linked_entity_link.leaving_atom_id_1'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+#    _item_linked.child_name       '_pdbx_reference_linked_entity_link.leaving_atom_id_1'
+#    _item_linked.parent_name      '_chem_comp_atom.atom_id'
+     save_
+
+save__pdbx_reference_linked_entity_link.atom_stereo_config_1
+    _item_description.description
+;              The chiral configuration of the first atom making the linkage.
+;
+    _item.name                   '_pdbx_reference_linked_entity_link.atom_stereo_config_1'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_default.value           'N'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      R  'rectus - right handed configuration'
+                                  S  'sinister - left handed configuration'
+                                  N  'none'
+     save_
+
+
+save__pdbx_reference_linked_entity_link.leaving_atom_id_2
+    _item_description.description
+;              The leaving atom identifier/name bonded to the second atom making the linkage. 
+
+;
+    _item.name                  '_pdbx_reference_linked_entity_link.leaving_atom_id_2'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+#    _item_linked.child_name       '_pdbx_reference_linked_entity_link.leaving_atom_id_2'
+#    _item_linked.parent_name      '_chem_comp_atom.atom_id'
+     save_
+
+save__pdbx_reference_linked_entity_link.atom_stereo_config_2
+    _item_description.description
+;              The chiral configuration of the second atom making the linkage.
+;
+    _item.name                   '_pdbx_reference_linked_entity_link.atom_stereo_config_2'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_default.value           'N'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      R  'rectus - right handed configuration'
+                                  S  'sinister - left handed configuration'
+                                  N  'none'
+     save_
+
+save__pdbx_reference_linked_entity_link.value_order
+    _item_description.description
+;              The bond order target for the chemical linkage.
+;
+    _item.name                  '_pdbx_reference_linked_entity_link.value_order'
+    _item.category_id             pdbx_reference_linked_entity_link
+    _item.mandatory_code          no
+    _item_default.value           sing
+    _item_type.code               ucode
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail      sing  'single bond'
+                                  doub  'double bond'
+                                  trip  'triple bond'
+                                  quad  'quadruple bond'
+                                  arom  'aromatic bond'
+                                  poly  'polymeric bond'
+                                  delo  'delocalised double bond'
+                                  pi    'pi bond'
      save_
