@@ -1566,7 +1566,7 @@ save__pdbx_reference_linked_entity_link.link_id
 
 save__pdbx_reference_linked_entity_link.from_list_id
     _item_description.description
- ;    The value of _pdbx_reference_linked_entity_link.from_list_id is a reference
+;    The value of _pdbx_reference_linked_entity_link.from_list_id is a reference
      _pdbx_reference_linked_entity_comp_list.list_id in the pdbx_reference_linked_entity_comp_list
       category.
 ;
@@ -1604,7 +1604,7 @@ save__pdbx_reference_linked_entity_link.from_comp_id
     _item_description.description
 ;              The component identifier in the second of the two constituents containing the linkage. 
 ;
-    _item.name                  '_pdbx_reference_linked_entity_link.comp_id_2'
+    _item.name                  '_pdbx_reference_linked_entity_link.from_comp_id'
     _item.category_id             pdbx_reference_linked_entity_link
     _item.mandatory_code          yes
     _item_type.code               code
