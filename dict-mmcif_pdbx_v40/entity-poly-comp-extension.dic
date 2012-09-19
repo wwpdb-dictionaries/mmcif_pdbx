@@ -34,6 +34,8 @@
 #  Rename categories to: pdbx_reference_linked_entity, pdbx_reference_linked_entity_comp_list, 
 #                        pdbx_reference_linked_entity_link, and  pdbx_reference_linked_entity_comp_link
 #                        and distinguish inter and intra entity linkages.
+#           
+#  Revised enumeration for _pdbx_reference_linked_entity.link_to_entity_type
 # ----------------------------------------------------------------------------------------------------------------------------
 
 
@@ -1024,12 +1026,12 @@ save_pdbx_reference_linked_entity
  _pdbx_reference_linked_entity.link_from_entity_type
  _pdbx_reference_linked_entity.taxonomy_class
  _pdbx_reference_linked_entity.taxonomy_id
-  0 "N-linked-glycan"  "basic"               polypeptide(L) ASN polysaccharide(D)  . .
-  1 "N-linked-glycan"  "high-mannose simple" polypeptide(L) ASN polysaccharide(D)  . .
-  2 "N-linked-glycan"  "high-mannose"        polypeptide(L) ASN polysaccharide(D)  . .
-  3 "N-linked-glycan"  "hybrid simple"       polypeptide(L) ASN polysaccharide(D)  . . 
-  4 "N-linked-glycan"  "hybrid"              polypeptide(L) ASN polysaccharide(D)  . .
-  5 "N-linked-glycan"  "complex"             polypeptide(L) ASN polysaccharide(D)  Mammalia 40674 
+  0 "N-linked-glycan"  "basic"               polypeptide ASN polysaccharide  . .
+  1 "N-linked-glycan"  "high-mannose simple" polypeptide ASN polysaccharide  . .
+  2 "N-linked-glycan"  "high-mannose"        polypeptide ASN polysaccharide  . .
+  3 "N-linked-glycan"  "hybrid simple"       polypeptide ASN polysaccharide  . . 
+  4 "N-linked-glycan"  "hybrid"              polypeptide ASN polysaccharide  . .
+  5 "N-linked-glycan"  "complex"             polypeptide ASN polysaccharide  Mammalia 40674 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -1113,14 +1115,12 @@ save__pdbx_reference_linked_entity.link_to_entity_type
     _item.mandatory_code          no
     _item_type.code               line
     loop_
-    _item_enumeration.value      'polypeptide(D)'
-                                 'polypeptide(L)'
+    _item_enumeration.value      'polypeptide'
                                  'polydeoxyribonucleotide'
                                  'polyribonucleotide'
-                                 'polysaccharide(D)'
-                                 'polysaccharide(L)'
-                                 'polydeoxyribonucleotide/polyribonucleotide hybrid'
-                                 'cyclic-pseudo-peptide'
+                                 'polysaccharide'
+                                 'lipid'
+                                 'General-Glycoside'
                                  'other'
      save_
 
