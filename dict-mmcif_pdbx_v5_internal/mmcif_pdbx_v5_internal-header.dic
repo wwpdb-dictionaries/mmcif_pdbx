@@ -18,7 +18,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.001
+    _dictionary.version         5.002
 #
      loop_
     _dictionary_history.version
@@ -32,8 +32,12 @@ data_mmcif_pdbx.dic
 
   5.001  2012-08-02
 ;
-  Changes (jdw) Open Version :  
+  Changes (jdw):  
   + This version automatically tracks changes in the current public dictionary.
   + Added provisional category  pdbx_update_info
   + Revised items and category definition for internal category pdbx_struct_link
+;
+  5.002  2012-09-27
+;
+  Further changes in this dictionary are documented in the  mmcif_pdbx_v5_next dictioanry.
 ;
