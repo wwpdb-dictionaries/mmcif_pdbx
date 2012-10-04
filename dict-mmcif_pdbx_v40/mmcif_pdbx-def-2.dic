@@ -2199,7 +2199,9 @@ save__pdbx_poly_seq_scheme.pdb_seq_num
 
 save__pdbx_poly_seq_scheme.auth_seq_num
     _item_description.description
-;      _atom_site.auth_seq_id
+;   Author provided residue number.   This value may differ from the PDB residue
+    number and may not correspond to residue numbering within the coordinate records.
+     
 ;
     _item.name                  '_pdbx_poly_seq_scheme.auth_seq_num'
     _item.category_id             pdbx_poly_seq_scheme
@@ -2213,7 +2215,7 @@ save__pdbx_poly_seq_scheme.auth_seq_num
 
 save__pdbx_poly_seq_scheme.pdb_mon_id
     _item_description.description
-;      PDB residue name.
+;      PDB residue identifier.
 ;
     _item.name                  '_pdbx_poly_seq_scheme.pdb_mon_id'
     _item.category_id             pdbx_poly_seq_scheme
@@ -2227,7 +2229,8 @@ save__pdbx_poly_seq_scheme.pdb_mon_id
 
 save__pdbx_poly_seq_scheme.auth_mon_id
     _item_description.description
-;           _atom_site.auth_comp_id
+;   Author provided residue identifier.   This value may differ from the PDB residue
+    identifier and may not correspond to residue identifier within the coordinate records.
 ;
     _item.name                  '_pdbx_poly_seq_scheme.auth_mon_id'
     _item.category_id             pdbx_poly_seq_scheme
@@ -2385,7 +2388,9 @@ save__pdbx_nonpoly_scheme.pdb_seq_num
 
 save__pdbx_nonpoly_scheme.auth_seq_num
     _item_description.description
-;      _atom_site.auth_seq_id
+;       Author provided residue numbering.   This value may differ from the PDB residue
+        number and may not correspond to residue numbering within the coordinate records.
+     
 ;
     _item.name                  '_pdbx_nonpoly_scheme.auth_seq_num'
     _item.category_id             pdbx_nonpoly_scheme
@@ -2399,7 +2404,7 @@ save__pdbx_nonpoly_scheme.auth_seq_num
 
 save__pdbx_nonpoly_scheme.pdb_mon_id
     _item_description.description
-;      PDB residue name.
+;      PDB residue identifier.
 ;
     _item.name                  '_pdbx_nonpoly_scheme.pdb_mon_id'
     _item.category_id             pdbx_nonpoly_scheme
@@ -2413,7 +2418,8 @@ save__pdbx_nonpoly_scheme.pdb_mon_id
 
 save__pdbx_nonpoly_scheme.auth_mon_id
     _item_description.description
-;           _atom_site.auth_comp_id
+;       Author provided residue identifier.   This value may differ from the PDB residue
+        identifier and may not correspond to residue identification within the coordinate records.
 ;
     _item.name                  '_pdbx_nonpoly_scheme.auth_mon_id'
     _item.category_id             pdbx_nonpoly_scheme
