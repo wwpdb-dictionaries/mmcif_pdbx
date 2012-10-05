@@ -628,6 +628,12 @@ save__pdbx_reference_molecule.class
     Antagonist
     Lantibiotics
     Metabolism
+   "Antithrombotic, Anticoagulant"
+   "Antimicrobial, Antibiotic"
+   "Thrombin Inhibitor, Trypsin Inhibitor"
+   "Antiretroviral, Antimicrobial"
+   "Antitumor, Antimicrobial"
+
     Unknown
 
      save_

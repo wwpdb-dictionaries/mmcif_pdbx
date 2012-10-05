@@ -1695,7 +1695,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
        _pdbx_validate_rmsd_angle.angle_target_value, _pdbx_validate_rmsd_angle.angle_standard_deviation
   + add enumeration 'Initial release' to item _pdbx_chem_comp_audit.action_type
 ;
-4.025 2012-10-04
+4.025 2012-10-05
 ;
   Changes (jdw):  (OPEN REVISION)
   + Update enumerations for _pdbx_family_prd_audit.action_type and _pdbx_prd_audit.action_type
@@ -1706,6 +1706,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + Add _chem_comp_atom.pdbx_ref_id             
   + Add _chem_comp_atom.pdbx_component_id       
   + Update item descriptions within the pdbx_poly_seq_scheme and pdbx_nonpoly_scheme categories.
+  + Update joint enumerations for _pdbx_reference_molecule.class.
 ;  
 #
 ### EOF mmcif_pdbx-header.dic 
