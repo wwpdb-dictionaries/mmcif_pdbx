@@ -6,7 +6,8 @@
 #  Draft dictionary extension for representing details to be captured at deposition time.
 #
 #  Updated:
-#      27-Aug-2012 jdw  added 
+#      27-Aug-2012 jdw  added pdbx_solvent_atom_site_mapping
+#      11-Oct-2012 jdw  added pdbx_chem_comp_instance_depositor_info
 # ----------------------------------------------------------------------------------------------------------------------------
 
 ###################################
@@ -193,6 +194,18 @@ save__pdbx_chem_comp_depositor_info.descriptor_type
         SMILES             'SMILES descriptor'
         InChI              'InChI descriptor'
         InChIKey           'InChI descriptor- hash key form'
+     save_
+
+save__pdbx_chem_comp_depositor_info.in_dictionary_flag 
+    _item_description.description
+;   A flag to indicate if the chemical component is defined in the chemical component dictionary.
+;
+    _item.name                  '_pdbx_chem_comp_depositor_info.in_dictionary_flag'
+    _item.category_id             pdbx_chem_comp_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
      save_
 
 save__pdbx_chem_comp_depositor_info.details
@@ -2158,3 +2171,157 @@ save__pdbx_molecule_features_depositor_info.details
     save_
 
  
+
+############################################
+## PDBX_CHEM_COMP_INSTANCE_DEPOSITOR_INFO ##
+############################################
+
+save_pdbx_chem_comp_instance_depositor_info
+    _category.description
+;   Data items in the PDBX_CHEM_COMP_INSTANCE_DEPOSITOR_INFO category records
+    depositor provided information about the chemical context of component instances.
+;
+    _category.id                 'pdbx_chem_comp_instance_depositor_info'
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_chem_comp_instance_depositor_info.ordinal'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example - 
+;
+;
+loop_
+ _pdbx_chem_comp_instance_depositor_info.ordinal
+ _pdbx_chem_comp_instance_depositor_info.comp_id
+ _pdbx_chem_comp_instance_depositor_info.auth_seq_id
+ _pdbx_chem_comp_instance_depositor_info.auth_asym_id
+ _pdbx_chem_comp_instance_depositor_info.PDB_ins_code
+ _pdbx_chem_comp_instance_depositor_info.label_alt_id
+ _pdbx_chem_comp_instance_depositor_info.author_provided_flag    Y/N
+ _pdbx_chem_comp_instance_depositor_info.in_polymer_flag    Y/N 
+  X78 102  W . .  Y N
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_instance_depositor_info.ordinal
+    _item_description.description
+;    The value of pdbx_chem_comp_instance_depositor_info.ordinal must uniquely identify a record in
+     the PDBX_CHEM_COMP_INSTANCE_DEPOSITOR_INFO list.
+
+;
+    _item.name                  '_pdbx_chem_comp_instance_depositor_info.ordinal'
+    _item.category_id             pdbx_chem_comp_instance_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+
+save__pdbx_chem_comp_instance_depositor_info.label_alt_id
+    _item_description.description
+;   An element of the chemical component instance identifier.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_chem_comp_instance_depositor_info.label_alt_id'
+    _item.category_id            pdbx_chem_comp_instance_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_chem_comp_instance_depositor_info.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_chem_comp_instance_depositor_info.comp_id
+    _item_description.description
+;   An element of the chemical component instance identifier.
+
+    This data item is a pointer to _atom_site.label_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_chem_comp_instance_depositor_info.comp_id'
+    _item.category_id            pdbx_chem_comp_instance_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_chem_comp_instance_depositor_info.comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+
+save__pdbx_chem_comp_instance_depositor_info.PDB_ins_code
+    _item_description.description
+;   Optional element of the chemical component instance identifier.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                '_pdbx_chem_comp_instance_depositor_info.PDB_ins_code'
+    _item.category_id           pdbx_chem_comp_instance_depositor_info
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_chem_comp_instance_depositor_info.PDB_ins_code'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+    save_
+##
+save__pdbx_chem_comp_instance_depositor_info.auth_asym_id
+    _item_description.description
+;   An element of the chemical component instance identifier.
+
+    This data item corresponds to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_chem_comp_instance_depositor_info.auth_asym_id'
+    _item.category_id            pdbx_chem_comp_instance_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_chem_comp_instance_depositor_info.auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_chem_comp_instance_depositor_info.auth_seq_id
+    _item_description.description
+;   An element of the chemical component instance identifier.
+
+    This data item corresponds to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_chem_comp_instance_depositor_info.auth_seq_id'
+    _item.category_id             pdbx_chem_comp_instance_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_chem_comp_instance_depositor_info.auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+
+save__pdbx_chem_comp_instance_depositor_info.in_polymer_flag 
+    _item_description.description
+;   A flag to indicate if the chemical component instance is a part of a polymer molecule.
+;
+    _item.name                  '_pdbx_chem_comp_instance_depositor_info.in_polymer_flag'
+    _item.category_id             pdbx_chem_comp_instance_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+     save_
+
+save__pdbx_chem_comp_instance_depositor_info.author_provided_flag
+    _item_description.description
+;   A flag to indicate if details about this chemical component instance have been provided by the depositor.
+;
+    _item.name                  '_pdbx_chem_comp_instance_depositor_info.author_provided_flag'
+    _item.category_id             pdbx_chem_comp_instance_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+     save_
+
+##
+##
