@@ -8,7 +8,14 @@
 # These source data supporting multiple sources per entity to capture data at deposition.
 #
 #
-## 
+# Update 7-Nov-2012 jdw:
+#
+# Added item _pdbx_entity_src_gen_depositor_info.entity_id 
+# Removed item _pdbx_entity_src_gen_depositor_info.alt_source_flag and _pdbx_entity_src_gen_depositor_info.gene_src_strain
+# Items _pdbx_entity_src_gen_depositor_info.beg_seq_num and _pdbx_entity_src_gen_depositor_info.end_seq_num set to mandatory
+# Data types for _pdbx_entity_src_gen_depositor_info.host_org_ncbi_taxonomy_id set to int
+#
+### 
 ########################################
 ## PDBX_ENTITY_SRC_GEN_DEPOSITOR_INFO ##
 ########################################
@@ -43,22 +50,20 @@ save_pdbx_entity_src_gen_depositor_info
     loop_
     _pdbx_entity_src_gen_depositor_info.src_id
     _pdbx_entity_src_gen_depositor_info.entity_id
-    _pdbx_entity_src_gen_depositor_info.alt_source_flag
     _pdbx_entity_src_gen_depositor_info.beg_seq_num
     _pdbx_entity_src_gen_depositor_info.end_seq_num
     _pdbx_entity_src_gen_depositor_info.gene_src_scientific_name
     _pdbx_entity_src_gen_depositor_info.gene_src_gene 
-    _pdbx_entity_src_gen_depositor_info.gene_src_strain
     _pdbx_entity_src_gen_depositor_info.gene_src_ncbi_taxonomy_id    
     _pdbx_entity_src_gen_depositor_info.host_org_scientific_name
     _pdbx_entity_src_gen_depositor_info.host_org_ncbi_taxonomy_id 
     _pdbx_entity_src_gen_depositor_info.host_org_species
     _pdbx_entity_src_gen_depositor_info.host_org_vector_type    
     _pdbx_entity_src_gen_depositor_info.plasmid_name
-    1 1  sample 1   364 'Escherichia coli'    'b4034, JW3994'   K12 83333  'Escherichia coli' 562 ? plasmid pGEX6p-2RBS 
-    2 1  sample 365 370 'synthetic construct'  ?                ?   32630  'Escherichia coli' 562 ? plasmid pGEX6p-2RBS  
-    3 1  sample 371 529 'Homo sapiens'        'malE, PTHR1'     ?   9606   'Escherichia coli' 562 ? plasmid pGEX6p-2RBS 
-    4 1  sample 530 535 'synthetic construct'  ?                ?   32630  'Escherichia coli' 562 ? plasmid pGEX6p-2RBS 
+    1 1  1   364 'Escherichia coli'    'b4034, JW3994'   83333  'Escherichia coli' 562 ? plasmid pGEX6p-2RBS 
+    2 1  365 370 'synthetic construct'  ?                32630  'Escherichia coli' 562 ? plasmid pGEX6p-2RBS  
+    3 1  371 529 'Homo sapiens'        'malE, PTHR1'     9606   'Escherichia coli' 562 ? plasmid pGEX6p-2RBS 
+    4 1  530 535 'synthetic construct'  ?                32630  'Escherichia coli' 562 ? plasmid pGEX6p-2RBS 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -73,20 +78,34 @@ save__pdbx_entity_src_gen_depositor_info.src_id
     _item_type.code		  int
      save_
 
-
-save__pdbx_entity_src_gen_depositor_info.alt_source_flag
+save__pdbx_entity_src_gen_depositor_info.entity_id
     _item_description.description
-;              This data item identifies cases in which an alternative source
-               modeled.
+;              The entity id for this chimeric entity. 
+
+               This data item is a pointer to _entity_poly_seq.entity_id  
+               in the ENTITY_POLY_SEQ category.
 ;
-    _item.name                  '_pdbx_entity_src_gen_depositor_info.alt_source_flag'
+    _item.name                  '_pdbx_entity_src_gen_depositor_info.entity_id'
     _item.category_id             pdbx_entity_src_gen_depositor_info
-    _item.mandatory_code          no
-    _item_type.code		  code
-    _item_default.value           'sample'
-     loop_
-    _item_enumeration.value   'sample' 'model'
+    _item.mandatory_code          yes
+    _item_type.code               code
+#    _item_linked.child_name	'_pdbx_entity_src_gen_depositor_info.entity_id'
+#    _item_linked.parent_name    '_entity_poly_seq.entity_id'
      save_
+
+#save__pdbx_entity_src_gen_depositor_info.alt_source_flag
+#    _item_description.description
+#;              This data item identifies cases in which an alternative source
+#               modeled.
+#;
+#    _item.name                  '_pdbx_entity_src_gen_depositor_info.alt_source_flag'
+#    _item.category_id             pdbx_entity_src_gen_depositor_info
+#    _item.mandatory_code          no
+#    _item_type.code		  code
+#    _item_default.value           'sample'
+#     loop_
+#    _item_enumeration.value   'sample' 'model'
+#     save_
 
 save__pdbx_entity_src_gen_depositor_info.seq_type
     _item_description.description
@@ -111,7 +130,7 @@ save__pdbx_entity_src_gen_depositor_info.beg_seq_num
 ;
     _item.name                  '_pdbx_entity_src_gen_depositor_info.beg_seq_num'
     _item.category_id             pdbx_entity_src_gen_depositor_info
-    _item.mandatory_code          no
+    _item.mandatory_code          yes
     _item_type.code               int
      save_
 
@@ -124,7 +143,7 @@ save__pdbx_entity_src_gen_depositor_info.end_seq_num
 ;
     _item.name                  '_pdbx_entity_src_gen_depositor_info.end_seq_num'
     _item.category_id             pdbx_entity_src_gen_depositor_info
-    _item.mandatory_code          no
+    _item.mandatory_code          yes
     _item_type.code               int
      save_
 
@@ -157,19 +176,19 @@ SACCHAROMYCES CEREVISIAE
 
 
 
-save__pdbx_entity_src_gen_depositor_info.gene_src_strain
-    _item_description.description
-;              The strain of the natural organism from which the gene was
-               obtained, if relevant.
-;
-    _item.name                  '_pdbx_entity_src_gen_depositor_info.gene_src_strain'
-    _item.category_id             pdbx_entity_src_gen_depositor_info
-    _item.mandatory_code          no
-    _item_type.code               text
-    loop_
-    _item_examples.case          'DH5a'
-                                 'BMH 71-18'
-     save_
+#save__pdbx_entity_src_gen_depositor_info.gene_src_strain
+#    _item_description.description
+#;              The strain of the natural organism from which the gene was
+#               obtained, if relevant.
+#;
+#    _item.name                  '_pdbx_entity_src_gen_depositor_info.gene_src_strain'
+#    _item.category_id             pdbx_entity_src_gen_depositor_info
+#    _item.mandatory_code          no
+#    _item_type.code               text
+#    loop_
+#    _item_examples.case          'DH5a'
+#                                 'BMH 71-18'
+#     save_
 
 save__pdbx_entity_src_gen_depositor_info.host_org_gene
     _item_description.description
@@ -232,7 +251,7 @@ save__pdbx_entity_src_gen_depositor_info.gene_src_ncbi_taxonomy_id
     _item.name                  '_pdbx_entity_src_gen_depositor_info.gene_src_ncbi_taxonomy_id'
     _item.category_id            'pdbx_entity_src_gen_depositor_info'
     _item.mandatory_code          no
-    _item_type.code               line
+    _item_type.code               int
      save_
 
 save__pdbx_entity_src_gen_depositor_info.host_org_ncbi_taxonomy_id
@@ -253,7 +272,7 @@ save__pdbx_entity_src_gen_depositor_info.host_org_ncbi_taxonomy_id
     _item.name                  '_pdbx_entity_src_gen_depositor_info.host_org_ncbi_taxonomy_id'
     _item.category_id            'pdbx_entity_src_gen_depositor_info'
     _item.mandatory_code          no
-    _item_type.code               line
+    _item_type.code               int
      save_
 
 
