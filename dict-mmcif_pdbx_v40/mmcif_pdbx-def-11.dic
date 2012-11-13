@@ -448,7 +448,7 @@ save_pdbx_struct_assembly_prop
 
 save__pdbx_struct_assembly_prop.biol_id
     _item_description.description
-;             The identifier for the assembly used in category STRUCT_BIOL.
+;             The identifier for the assembly used in category PDBX_STRUCT_ASSEMBLY.
 ;
     _item.name                   '_pdbx_struct_assembly_prop.biol_id'
     _item.category_id            'pdbx_struct_assembly_prop'
