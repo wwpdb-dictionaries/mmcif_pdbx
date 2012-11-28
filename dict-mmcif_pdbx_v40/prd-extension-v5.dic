@@ -635,7 +635,7 @@ save__pdbx_reference_molecule.class
   'Antibiotic, Anthelmintic'
   'Antimicrobial, Antiretroviral'
   'Antimicrobial, Antitumor'
-  'Thrombin Inhibitor, Trypsin Inhibitor'
+  'Thrombin inhibitor, Trypsin inhibitor'
      save_
 
 save__pdbx_reference_molecule.class_evidence_code
@@ -4016,7 +4016,7 @@ save__pdbx_molecule_features.class
   'Antibiotic, Anthelmintic'
   'Antimicrobial, Antiretroviral'
   'Antimicrobial, Antitumor'
-  'Thrombin Inhibitor, Trypsin Inhibitor'
+  'Thrombin inhibitor, Trypsin inhibitor'
      save_
 
 save__pdbx_molecule_features.type
