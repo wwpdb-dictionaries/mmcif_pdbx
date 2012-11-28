@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.025
+    _dictionary.version         4.026
 #
      loop_
     _dictionary_history.version
@@ -1709,6 +1709,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + Update description for _pdbx_struct_assembly_prop.biol_id
   + Update joint enumerations for _pdbx_reference_molecule.class.
   + Update enumeration list for _em_imaging.specimen_holder_model
-;  
+;
+4.026 2012-11-28
+;
+  Changes (jdw):  
+  + Update enumerations for _pdbx_reference_molecule.class/type
+;
+  
 #
 ### EOF mmcif_pdbx-header.dic 

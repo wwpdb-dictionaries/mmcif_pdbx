@@ -3982,36 +3982,41 @@ save__pdbx_molecule_features.class
     _item_type.code               uline
      loop_
     _item_enumeration.value   
-    Antibiotic
-    Inhibitor
-    Antitumor
-    'Trypsin inhibitor'
-    'Thrombin inhibitor'
-    Toxin
-    'Enzyme inhibitor'
-    Anticancer
-    Antimicrobial 
-    Antifungal
-    Anthelmintic 
-    Antiviral
-    Antineoplastic 
-    Antiparasitic
-    Antiretroviral
-    Antithrombotic
-    Anticoagulant
-    Chaperone binding
-    Antiinflammatory 
-    'CASPASE inhibitor'
-    'Metal transport' 
-    'Growth factor'
-    'Oxidation-reduction'
-    Receptor
-    Immunosuppressant
-    Antagonist
-    Lantibiotics
-    Metabolism
-    Unknown
-
+  Antagonist 
+  Antibiotic        
+  Anticancer
+  Anticoagulant
+  Antifungal
+  Antiinflammatory
+  Antimicrobial
+  Antineoplastic
+  Antiparasitic
+  Antiretroviral
+  Anthelmintic
+  Antithrombotic
+  Antitumor 
+  Antiviral
+  'CASPASE inhibitor'
+  'Chaperone binding'  
+  'Enzyme inhibitor'
+  'Growth factor'
+  Immunosuppressant
+  Inhibitor
+   Lantibiotic
+   Metabolism
+  'Metal transport'
+  'Oxidation-reduction'
+   Receptor
+  'Thrombin inhibitor'
+  'Trypsin inhibitor'
+   Toxin
+   Unknown  
+  'Anticoagulant, Antithrombotic'
+  'Antibiotic, Antimicrobial'
+  'Antibiotic, Anthelmintic'
+  'Antimicrobial, Antiretroviral'
+  'Antimicrobial, Antitumor'
+  'Thrombin Inhibitor, Trypsin Inhibitor'
      save_
 
 save__pdbx_molecule_features.type
@@ -4024,42 +4029,43 @@ save__pdbx_molecule_features.type
     _item_type.code               uline
      loop_
     _item_enumeration.value   
-    macrolide
-    'amino acid'
-    'non-polymer'
-    'peptide-like'
-    aminoglycoside
-    anthracycline
-    oligosaccharide
-    polysaccharide
-    oligopeptide
-    polypeptide
-    lipopeptide
-    glycopeptide
-    ansamycin
-    Quinolone
-    thiolactone
-    thiopeptide
-    heterocyclic
-    polycyclic
-    'cyclic depsipeptide'
-    'cyclic peptide'
-    'cyclic lipopeptide'
-    chromophore
-    chalkophore
-    siderophore
-    'peptide-like'
-    'imino sugar'
-    'keto acid'
-    'lipoglycopeptide'
-    'nucleoside'
-    'peptaibol'
-    'anthraquinone'
+ 'Amino acid'   
+  Aminoglycoside
+  Anthracycline
+  Anthraquinone
+  Ansamycin
+  Chalkophore
+  Chromophore
+  Glycopeptide
+ 'Cyclic depsipeptide'  
+ 'Cyclic lipopeptide'  
+ 'Cyclic peptide'
+  Heterocyclic
+ 'Imino sugar'
+ 'Keto acid'
+ 'Lipoglycopeptide'
+  Lipopeptide
+  Macrolide
+ 'Non-polymer'
+ 'Nucleoside'   
+  Oligopeptide
+  Oligosaccharide
+ 'Peptaibol'
+ 'Peptide-like' 
+  Polycyclic
+  Polypeptide
+  Polysaccharide            
+  Quinolone      
+  Thiolactone
+  Thiopeptide   
+  Siderophore
+  Unknown
+ 'Chalkophore, Polypeptide'
 
      loop_
     _item_examples.case
-                                'peptide-like'
-                                'macrolide'    
+                                'Peptide-like'
+                                'Macrolide'    
      save_
 
 save__pdbx_molecule_features.name
