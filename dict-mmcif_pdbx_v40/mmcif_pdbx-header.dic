@@ -1710,10 +1710,10 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + Update joint enumerations for _pdbx_reference_molecule.class.
   + Update enumeration list for _em_imaging.specimen_holder_model
 ;
-4.026 2012-11-28
+4.026 2012-11-30
 ;
   Changes (jdw):  
-  + Update enumerations for _pdbx_reference_molecule.class/type
+  + Update enumerations for _pdbx_reference_molecule.class/type, _pdbx_reference_entity_list.type
 ;
   
 #

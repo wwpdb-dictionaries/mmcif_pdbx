@@ -835,6 +835,7 @@ save__pdbx_reference_entity_list.type
     _item_examples.case
                                 'polymer'
                                 'non-polymer'    
+                                'polymer-like'    
      save_
 
 save__pdbx_reference_entity_list.details
