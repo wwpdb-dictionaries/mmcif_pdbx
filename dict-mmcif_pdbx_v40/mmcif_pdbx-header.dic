@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.026
+    _dictionary.version         4.027
 #
      loop_
     _dictionary_history.version
@@ -1715,6 +1715,14 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes (jdw):  
   + Update enumerations for _pdbx_reference_molecule.class/type, _pdbx_reference_entity_list.type
 ;
-  
+4.027 2012-12-13
+;
+  Changes (cl,eu,jdw):  
+  + Update the following EM enumerations - 
+  _em_experiment.reconstruction_method: Add "SUBTOMOGRAM AVERAGING"
+  _em_assembly.aggregation_state: Add "HELICAL CRYSTAL"
+  _em_imaging.specimen_holder_model: Add "JEOL 3200FSC CRYOHOLDER"  
+  _em_image_scans.scanner_model: Add "PATCHWORK DENSITOMETER" 
+;  
 #
 ### EOF mmcif_pdbx-header.dic 

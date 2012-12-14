@@ -2574,3 +2574,62 @@ Pointer to '_entry.id'
 
 save_
 
+
+# extension add from chemical_shift_pdbx_update_20121211.dic
+
+save__pdbx_nmr_assigned_chem_shift_list.label
+   _item_description.description
+;
+A descriptive label that uniquely identifies a list of reported assigned chemical shifts.
+;
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.label'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            no
+#  _item_default.value            '?'
+   _item_type.code                'line'
+   _item_examples.case            'assigned chem shift set 1'
+save_
+
+
+
+save__pdbx_nmr_assigned_chem_shift_list.conditions_label
+   _item_description.description
+;
+Pointer to 'pdbx_nmr_exptl_sample_conditions.label'.
+;
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.conditions_label'
+   _item.category_id               'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            no
+#   _item_default.value            '?'
+   _item_type.code                'line'
+   _item_examples.case            'sample conditions one'
+save_
+
+save__pdbx_nmr_spectral_peak_list.label
+   _item_description.description
+;
+A descriptive label that uniquely identifies a list of reported spectral peaks.
+;
+   _item.name                     '_pdbx_nmr_spectral_peak_list.label'
+   _item.category_id               'pdbx_nmr_spectral_peak_list'
+   _item.mandatory_code            no
+#   _item_default.value            '?'
+   _item_type.code                'line'
+   _item_examples.case            'peak list 1'
+save_
+
+
+
+save__pdbx_nmr_spectral_peak_list.conditions_label
+   _item_description.description
+;
+Pointer to 'pdbx_nmr_exptl_sample_conditions.label'.
+;
+   _item.name                     '_pdbx_nmr_spectral_peak_list.conditions_label'
+   _item.category_id               'pdbx_nmr_spectral_peak_list'
+   _item.mandatory_code            no
+#   _item_default.value            '?'
+   _item_type.code                'line'
+   _item_examples.case            'sample conditions one'
+save_
+
