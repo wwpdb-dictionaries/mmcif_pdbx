@@ -1,0 +1,288 @@
+
+###########################################################################
+#
+# File:  chem_comp_subcomponent_extension.dic  (DRAFT)
+# Date   14-Dec-2012
+#                            
+# Draft extension dictionary for describing subcomponent organization.
+#                                                                        
+###########################################################################
+#
+
+save_pdbx_chem_comp_subcomponent_struct_conn
+    _category.description
+;              Data items in the pdbx_chem_comp_subcomponent_struct_conn
+               list the chemical interactions among the subcomponents in 
+               the chemical component.
+;
+    _category.id                  pdbx_chem_comp_subcomponent_struct_conn
+    _category.mandatory_code      no
+    _category_key.name            '_pdbx_chem_comp_subcomponent_struct_conn.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+#
+loop_
+_pdbx_chem_comp_subcomponent_struct_conn.id
+_pdbx_chem_comp_subcomponent_struct_conn.type
+_pdbx_chem_comp_subcomponent_struct_conn.entity_id_1
+_pdbx_chem_comp_subcomponent_struct_conn.comp_id_1
+_pdbx_chem_comp_subcomponent_struct_conn.seq_id_1
+_pdbx_chem_comp_subcomponent_struct_conn.atom_id_1
+_pdbx_chem_comp_subcomponent_struct_conn.entity_id_2
+_pdbx_chem_comp_subcomponent_struct_conn.comp_id_2
+_pdbx_chem_comp_subcomponent_struct_conn.seq_id_2
+_pdbx_chem_comp_subcomponent_struct_conn.atom_id_2
+  1  covale  1 BGC    1  " O4"   1  BGC    2  " C1"   
+  2  covale  1 BGC    2  " O4"   1  BGC    3  " C1"   
+  3  covale  1 BGC    3  " O4"   1  BGC    4  " C1"   
+  4  covale  1 BGC    4  " O4"   1  BGC    5  " C1"   
+  5  covale  1 BGC    5  " O4"   1  BGC    6  " C1"   
+  6  covale  1 BGC    6  " O4"   1  BGC    7  " C1"   
+  7  covale  1 BGC    7  " O4"   1  BGC    8  " C1"   
+#
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_chem_comp_subcomponent_struct_conn.id
+    _item_description.description
+;              Ordinal index for the interactions listed in this category.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_struct_conn.id'
+    _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+
+save__pdbx_chem_comp_subcomponent_struct_conn.type
+    _item_description.description
+;              The chemical or structural type of the interaction.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_struct_conn.type'
+    _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      covale  'covalent bond'
+                                  disulf  'disulfide bridge'
+                                  hydrog  'hydrogen bond'
+                                  metalc  'metal coordination'
+                                  mismat  'mismatched base pairs'
+                                  saltbr  'ionic interaction'
+                covale_base   'covalent modification of a nucleotide base'
+               covale_sugar   'covalent modification of a nucleotide sugar'
+           covale_phosphate   'covalent modification of a nucleotide phosphate'
+     save_
+
+
+save__pdbx_chem_comp_subcomponent_struct_conn.entity_id_1
+    _item_description.description
+;              The entity identifier for the first atom in the interaction.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_struct_conn.entity_id_1'
+    _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_chem_comp_subcomponent_struct_conn.entity_id_2
+    _item_description.description
+;              The entity identifier for the second atom in the interaction.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_struct_conn.entity_id_2'
+    _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_chem_comp_subcomponent_struct_conn.atom_id_1
+    _item_description.description
+;              The atom identifier for the first atom in the interaction.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_struct_conn.atom_id_1'
+    _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+     save_
+
+save__pdbx_chem_comp_subcomponent_struct_conn.atom_id_2
+    _item_description.description
+;              The atom identifier for the second atom in the interaction.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_struct_conn.atom_id_2'
+    _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+     save_
+
+
+save__pdbx_chem_comp_subcomponent_struct_conn.comp_id_1
+    _item_description.description
+;              The component identifier for the first atom in the interaction.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_struct_conn.comp_id_1'
+    _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
+save__pdbx_chem_comp_subcomponent_struct_conn.comp_id_2
+    _item_description.description
+;              The component identifier for the second atom in the interaction.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_struct_conn.comp_id_2'
+    _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
+save__pdbx_chem_comp_subcomponent_struct_conn.seq_id_1
+    _item_description.description
+;              The positional index for the first atom in the interaction.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_struct_conn.seq_id_1'
+    _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_chem_comp_subcomponent_struct_conn.seq_id_2
+    _item_description.description
+;              The positional index for the first atom in the interaction.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_struct_conn.seq_id_1'
+    _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save_pdbx_chem_comp_subcomponent_entity_list
+    _category.description
+;              Data items in the pdbx_chem_comp_subcomponent_entity_list category
+               list the constituent chemical entities and entity features in this chemical component.
+;
+    _category.id                  pdbx_chem_comp_subcomponent_entity_list
+    _category.mandatory_code      no
+    _category_key.name            '_pdbx_chem_comp_subcomponent_entity_list.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+#
+loop_
+_pdbx_chem_comp_subcomponent_entity_list.id
+_pdbx_chem_comp_subcomponent_entity_list.parent_comp_id
+_pdbx_chem_comp_subcomponent_entity_list.type
+_pdbx_chem_comp_subcomponent_entity_list.class
+  1  CE8 polymer saccharide
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_subcomponent_entity_list.id
+    _item_description.description
+;              Ordinal index for the entities listed in this category.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_entity_list.id'
+    _item.category_id             pdbx_chem_comp_subcomponent_entity_list
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_chem_comp_subcomponent_entity_list.parent_comp_id
+    _item_description.description
+;              The parent component identifier corresponding to this entity.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_entity_list.parent_comp_id'
+    _item.category_id             pdbx_chem_comp_subcomponent_entity_list
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
+
+
+save__pdbx_chem_comp_subcomponent_entity_list.type
+    _item_description.description
+;              Defines the type of the entity.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_entity_list.type'
+    _item.category_id             pdbx_chem_comp_subcomponent_entity_list
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      polymer      'entity is a polymer'
+                                  non-polymer  'entity is not a polymer'
+                                  macrolide    'entity is a macrolide'
+                                  water        'water in the solvent model'
+     save_
+
+save__pdbx_chem_comp_subcomponent_entity_list.class
+    _item_description.description
+;              Defines the predominant linking type of the entity.
+;
+    _item.name                  '_pdbx_chem_comp_subcomponent_entity_list.class'
+    _item.category_id             pdbx_chem_comp_subcomponent_entity_list
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value      'polypeptide(D)'
+                                 'polypeptide(L)'
+                                 'polydeoxyribonucleotide'
+                                 'polyribonucleotide'
+                                 'polysaccharide(D)'
+                                 'polysaccharide(L)'
+                                 'polydeoxyribonucleotide/polyribonucleotide hybrid'
+                                 'cyclic-pseudo-peptide'
+                                 'other'
+     save_
+
+
+##
+## added to category CHEM_COMP_ATOM 
+##
+save__chem_comp_atom.pdbx_component_entity_id
+    _item_description.description
+;              A reference to entity identifier in data  category 
+               pdbx_chem_comp_subcomponent_entity_list.
+;
+    _item.name                  '_chem_comp_atom.pdbx_component_entity_id'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+##
+## added to category CHEM_COMP
+##
+
+save__chem_comp.pdbx_number_subcomponents
+    _item_description.description
+;              The number of subcomponents represented in this component.
+;
+    _item.name                  '_chem_comp.pdbx_number_subcomponents'
+    _item.category_id             chem_comp
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
