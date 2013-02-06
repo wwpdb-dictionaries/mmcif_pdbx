@@ -11815,10 +11815,8 @@ save__database_PDB_rev.date_original
 
 save__database_PDB_rev.mod_type
     _item_description.description
-;              Taken from the REVDAT record. Refer to the Protein Data Bank
-               format description at
-            http://www.rcsb.org/pdb/docs/format/pdbguide2.2/guide2.2_frame.html
-               for details.
+;              A code taken from the REVDAT record classifying common types of entry
+               revisions.
 ;
     _item.name                  '_database_PDB_rev.mod_type'
     _item.category_id             database_PDB_rev

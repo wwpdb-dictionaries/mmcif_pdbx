@@ -1723,6 +1723,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   _em_assembly.aggregation_state: Add "HELICAL CRYSTAL"
   _em_imaging.specimen_holder_model: Add "JEOL 3200FSC CRYOHOLDER"  
   _em_image_scans.scanner_model: Add "PATCHWORK DENSITOMETER" 
-;  
+;
+4.028 2013-02-05
+;
+  Changes (jdw):    OPEN REVISION
+  + Update description for item _database_PDB_rev.mod_type  
+;
 #
 ### EOF mmcif_pdbx-header.dic 
