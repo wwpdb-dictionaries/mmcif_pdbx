@@ -2,10 +2,13 @@
 ###########################################################################
 #
 # File:  chem_comp_subcomponent_extension.dic  (DRAFT)
-# Date   14-Dec-2012
+# Date   14-Dec-2012  J. Westbrook
 #                            
 # Draft extension dictionary for describing subcomponent organization.
-#                                                                        
+#                    
+# Updates:
+# 5-Feb-2013 Jdw  Add linkage details                                       
+#
 ###########################################################################
 #
 
@@ -96,6 +99,9 @@ save__pdbx_chem_comp_subcomponent_struct_conn.entity_id_1
     _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
     _item.mandatory_code          yes
     _item_type.code               int
+    _item_linked.child_name       '_pdbx_chem_comp_subcomponent_struct_conn.entity_id_1'
+    _item_linked.parent_name      '_chem_comp_atom.pdbx_component_entity_id'
+
      save_
 
 save__pdbx_chem_comp_subcomponent_struct_conn.entity_id_2
@@ -106,6 +112,8 @@ save__pdbx_chem_comp_subcomponent_struct_conn.entity_id_2
     _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
     _item.mandatory_code          yes
     _item_type.code               int
+    _item_linked.child_name       '_pdbx_chem_comp_subcomponent_struct_conn.entity_id_2'
+    _item_linked.parent_name      '_chem_comp_atom.pdbx_component_entity_id'
      save_
 
 save__pdbx_chem_comp_subcomponent_struct_conn.atom_id_1
@@ -116,6 +124,9 @@ save__pdbx_chem_comp_subcomponent_struct_conn.atom_id_1
     _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
     _item.mandatory_code          yes
     _item_type.code               atcode
+
+    _item_linked.child_name       '_pdbx_chem_comp_subcomponent_struct_conn.atom_id_1'
+    _item_linked.parent_name      '_chem_comp_atom.pdbx_component_atom_id'
      save_
 
 save__pdbx_chem_comp_subcomponent_struct_conn.atom_id_2
@@ -126,6 +137,9 @@ save__pdbx_chem_comp_subcomponent_struct_conn.atom_id_2
     _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
     _item.mandatory_code          yes
     _item_type.code               atcode
+
+    _item_linked.child_name       '_pdbx_chem_comp_subcomponent_struct_conn.atom_id_2'
+    _item_linked.parent_name      '_chem_comp_atom.pdbx_component_atom_id'
      save_
 
 
@@ -137,6 +151,8 @@ save__pdbx_chem_comp_subcomponent_struct_conn.comp_id_1
     _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
     _item.mandatory_code          yes
     _item_type.code               ucode
+    _item_linked.child_name       '_pdbx_chem_comp_subcomponent_struct_conn.comp_id_1'
+    _item_linked.parent_name      '_chem_comp_atom.pdbx_component_comp_id'
      save_
 
 save__pdbx_chem_comp_subcomponent_struct_conn.comp_id_2
@@ -147,6 +163,8 @@ save__pdbx_chem_comp_subcomponent_struct_conn.comp_id_2
     _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
     _item.mandatory_code          yes
     _item_type.code               ucode
+    _item_linked.child_name       '_pdbx_chem_comp_subcomponent_struct_conn.comp_id_2'
+    _item_linked.parent_name      '_chem_comp_atom.pdbx_component_comp_id'
      save_
 
 save__pdbx_chem_comp_subcomponent_struct_conn.seq_id_1
@@ -157,16 +175,20 @@ save__pdbx_chem_comp_subcomponent_struct_conn.seq_id_1
     _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
     _item.mandatory_code          yes
     _item_type.code               int
+    _item_linked.child_name       '_pdbx_chem_comp_subcomponent_struct_conn.seq_id_1'
+    _item_linked.parent_name      '_chem_comp_atom.pdbx_residue_numbering'
      save_
 
 save__pdbx_chem_comp_subcomponent_struct_conn.seq_id_2
     _item_description.description
 ;              The positional index for the first atom in the interaction.
 ;
-    _item.name                  '_pdbx_chem_comp_subcomponent_struct_conn.seq_id_1'
+    _item.name                  '_pdbx_chem_comp_subcomponent_struct_conn.seq_id_2'
     _item.category_id             pdbx_chem_comp_subcomponent_struct_conn
     _item.mandatory_code          yes
     _item_type.code               int
+    _item_linked.child_name       '_pdbx_chem_comp_subcomponent_struct_conn.seq_id_2'
+    _item_linked.parent_name      '_chem_comp_atom.pdbx_residue_numbering'
      save_
 
 save_pdbx_chem_comp_subcomponent_entity_list
@@ -218,6 +240,8 @@ save__pdbx_chem_comp_subcomponent_entity_list.parent_comp_id
     _item.category_id             pdbx_chem_comp_subcomponent_entity_list
     _item.mandatory_code          yes
     _item_type.code               ucode
+    _item_linked.child_name       '_pdbx_chem_comp_subcomponent_entity_list.parent_comp_id'
+    _item_linked.parent_name      '_chem_comp.id'
      save_
 
 
