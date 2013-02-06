@@ -1688,7 +1688,7 @@ save_pdbx_nmr_software_task
 Items in the pdbx_nmr_software_task category provide information about software workflow in the NMR experiment.
 ;
    _category.id                   'pdbx_nmr_software_task'
-   _category.mandatory_code        yes
+   _category.mandatory_code        no
 
    loop_
      _category_key.name
