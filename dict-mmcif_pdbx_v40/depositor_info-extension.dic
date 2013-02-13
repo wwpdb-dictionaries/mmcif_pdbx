@@ -8,6 +8,7 @@
 #  Updated:
 #      27-Aug-2012 jdw  added pdbx_solvent_atom_site_mapping
 #      11-Oct-2012 jdw  added pdbx_chem_comp_instance_depositor_info
+#      13-Feb-2013 jdw  added _pdbx_helical_symmetry_depositor_info.status_flag and _pdbx_point_symmetry_depositor_info.status_flag
 # ----------------------------------------------------------------------------------------------------------------------------
 
 ###################################
@@ -1450,6 +1451,19 @@ save__pdbx_point_symmetry_depositor_info.H-M_notation
     'Dn -> n2  (n odd)'
     save_
 
+save__pdbx_point_symmetry_depositor_info.status_flag
+    _item_description.description
+;              A flag to indicate that this data is relevant to the current entry
+;
+    _item.name                  '_pdbx_point_symmetry_depositor_info.status_flag'
+    _item.category_id             pdbx_point_symmetry_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+
+    save_
+
 ##
 
 ##########################################
@@ -1578,6 +1592,20 @@ save__pdbx_helical_symmetry_depositor_info.circular_symmetry
     _item_range.maximum
     _item_range.minimum           .   1
                                   1   1
+    save_
+
+
+save__pdbx_helical_symmetry_depositor_info.status_flag
+    _item_description.description
+;              A flag to indicate that this data is relevant to the current entry
+;
+    _item.name                  '_pdbx_helical_symmetry_depositor_info.status_flag'
+    _item.category_id             pdbx_helical_symmetry_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+
     save_
 
 ##

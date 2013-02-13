@@ -329,7 +329,7 @@ save__pdbx_reference_molecule_family.release_status
     _item_type.code               uline
      loop_
     _item_enumeration.value  
-                                'REL' 'HOLD' 'OBS'
+                                'REL' 'HOLD' 'OBS' 'WAIT'
      save_
 
 save__pdbx_reference_molecule_family.replaces
@@ -732,7 +732,7 @@ save__pdbx_reference_molecule.release_status
     _item_type.code               uline
      loop_
     _item_enumeration.value  
-                                'REL' 'HOLD' 'OBS'
+                                'REL' 'HOLD' 'OBS' 'WAIT'
      save_
 
 save__pdbx_reference_molecule.replaces

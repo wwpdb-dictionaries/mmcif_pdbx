@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.027
+    _dictionary.version         4.028
 #
      loop_
     _dictionary_history.version
@@ -1724,10 +1724,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   _em_imaging.specimen_holder_model: Add "JEOL 3200FSC CRYOHOLDER"  
   _em_image_scans.scanner_model: Add "PATCHWORK DENSITOMETER" 
 ;
-4.028 2013-02-05
+4.028 2013-02-13
 ;
-  Changes (jdw):    OPEN REVISION
+  Changes (jdw):
   + Update description for item _database_PDB_rev.mod_type  
+  + Update enumeration content for _pdbx_reference_molecule_family.release_status _pdbx_reference_molecule.release_status
 ;
 #
 ### EOF mmcif_pdbx-header.dic 
