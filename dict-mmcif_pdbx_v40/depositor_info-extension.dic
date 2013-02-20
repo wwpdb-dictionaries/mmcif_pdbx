@@ -10,6 +10,7 @@
 #      11-Oct-2012 jdw  added pdbx_chem_comp_instance_depositor_info
 #      13-Feb-2013 jdw  added _pdbx_helical_symmetry_depositor_info.status_flag and _pdbx_point_symmetry_depositor_info.status_flag
 #                       added internal categories -depui_validation_status_flags, pdbx_depui_upload, pdbx_depui_status_flags
+#      20-Feb-2013 jdw  added pdbx_chem_comp_upload_depositor_info category.
 # ----------------------------------------------------------------------------------------------------------------------------
 
 ###################################
@@ -42,12 +43,11 @@ save_pdbx_chem_comp_depositor_info
     _pdbx_chem_comp_depositor_info.ordinal
     _pdbx_chem_comp_depositor_info.comp_id
     _pdbx_chem_comp_depositor_info.name
-    _pdbx_chem_comp_depositor_info.upload_file_name
-    _pdbx_chem_comp_depositor_info.upload_file_type
     _pdbx_chem_comp_depositor_info.formula
     _pdbx_chem_comp_depositor_info.descriptor
     _pdbx_chem_comp_depositor_info.descriptor_type
-     1 GNC "N-acetyl-beta-D-glucosamine"  GNC.gif gif  "C8 H15 N O6" "CC(=O)N[C@H]1[C@H](O)O[C@H](CO)[C@@H](O)[C@@H]1O" SMILES
+    _pdbx_chem_comp_depositor_info.alt_comp_id
+     1 GNC "N-acetyl-beta-D-glucosamine"  GNC.gif gif  "C8 H15 N O6" "CC(=O)N[C@H]1[C@H](O)O[C@H](CO)[C@@H](O)[C@@H]1O" SMILES .
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -73,13 +73,23 @@ save__pdbx_chem_comp_depositor_info.comp_id
     _item_type.code               ucode
      save_
 
+save__pdbx_chem_comp_depositor_info.alt_comp_id
+    _item_description.description
+;              The alternate chemical component identifier matching the deposited chemical component.
+;
+    _item.name                  '_pdbx_chem_comp_depositor_info.alt_comp_id'
+    _item.category_id             pdbx_chem_comp_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               ucode
+     save_
+
 save__pdbx_chem_comp_depositor_info.name
     _item_description.description
 ;              The chemical name of the component.
 ;
     _item.name                  '_pdbx_chem_comp_depositor_info.name'
     _item.category_id             pdbx_chem_comp_depositor_info
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               text
     loop_
     _item_examples.case          'alanine'
@@ -88,35 +98,6 @@ save__pdbx_chem_comp_depositor_info.name
                                  'cytosine'
      save_
 
-save__pdbx_chem_comp_depositor_info.upload_file_type
-    _item_description.description
-;              The type of the uploaded file containing information about this component.
-;
-    _item.name                  '_pdbx_chem_comp_depositor_info.upload_file_type'
-    _item.category_id             pdbx_chem_comp_depositor_info
-    _item.mandatory_code          yes
-    _item_type.code               line
-    loop_
-    _item_enumeration.value
-    _item_enumeration.detail
-                                 'GIF'    .
-                                 'JPEG'   .
-                                 'PNG'    .
-                                 'SVG'    .
-                                 'TIFF'   .
-                                 'other'  .
-
-     save_
-
-save__pdbx_chem_comp_depositor_info.upload_file_name
-    _item_description.description
-;              The name of the uploaded file containing information about this component.
-;
-    _item.name                  '_pdbx_chem_comp_depositor_info.upload_file_name'
-    _item.category_id             pdbx_chem_comp_depositor_info
-    _item.mandatory_code          yes
-    _item_type.code               line
-     save_
 
 save__pdbx_chem_comp_depositor_info.formula
     _item_description.description
@@ -153,7 +134,7 @@ save__pdbx_chem_comp_depositor_info.type
 ;
     _item.name                  '_pdbx_chem_comp_depositor_info.type'
     _item.category_id             pdbx_chem_comp_depositor_info
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               line
     loop_
     _item_enumeration.value
@@ -178,7 +159,7 @@ save__pdbx_chem_comp_depositor_info.descriptor
 ;
     _item.name                  '_pdbx_chem_comp_depositor_info.descriptor'
     _item.category_id             pdbx_chem_comp_depositor_info
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               text
      save_
 
@@ -188,7 +169,7 @@ save__pdbx_chem_comp_depositor_info.descriptor_type
 ;
     _item.name                  '_pdbx_chem_comp_depositor_info.descriptor_type'
     _item.category_id             pdbx_chem_comp_depositor_info
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               uline
     loop_
     _item_enumeration.value
@@ -217,11 +198,10 @@ save__pdbx_chem_comp_depositor_info.details
 ;
     _item.name                  '_pdbx_chem_comp_depositor_info.details'
     _item.category_id             pdbx_chem_comp_depositor_info
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               text
      save_
 
-##
 ##
 
 ####################################
@@ -1521,7 +1501,7 @@ save__pdbx_helical_symmetry_depositor_info.number_of_operations
 ;
     _item.name                  '_pdbx_helical_symmetry_depositor_info.number_of_operations'
     _item.category_id             pdbx_helical_symmetry_depositor_info
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               int
     loop_
     _item_range.maximum
@@ -1536,7 +1516,7 @@ save__pdbx_helical_symmetry_depositor_info.rotation_per_n_subunits
 ;
     _item.name                  '_pdbx_helical_symmetry_depositor_info.rotation_per_n_subunits'
     _item.category_id             pdbx_helical_symmetry_depositor_info
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              degrees
     save_
@@ -1547,7 +1527,7 @@ save__pdbx_helical_symmetry_depositor_info.rise_per_n_subunits
 ;
     _item.name                  '_pdbx_helical_symmetry_depositor_info.rise_per_n_subunits'
     _item.category_id             pdbx_helical_symmetry_depositor_info
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              angstroms
     save_
@@ -1559,7 +1539,7 @@ save__pdbx_helical_symmetry_depositor_info.n_subunits_divisor
 ;
     _item.name                  '_pdbx_helical_symmetry_depositor_info.n_subunits_divisor'
     _item.category_id             pdbx_helical_symmetry_depositor_info
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               int
     loop_
     _item_range.maximum
@@ -1573,7 +1553,7 @@ save__pdbx_helical_symmetry_depositor_info.dyad_axis
 ;
     _item.name                  '_pdbx_helical_symmetry_depositor_info.dyad_axis'
     _item.category_id             pdbx_helical_symmetry_depositor_info
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               code
      loop_
     _item_enumeration.value       
@@ -1587,7 +1567,7 @@ save__pdbx_helical_symmetry_depositor_info.circular_symmetry
 ;
     _item.name                  '_pdbx_helical_symmetry_depositor_info.circular_symmetry'
     _item.category_id             pdbx_helical_symmetry_depositor_info
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               int
     loop_
     _item_range.maximum
@@ -1704,7 +1684,7 @@ save__pdbx_solvent_atom_site_mapping.label_asym_id
 ;
     _item.name                  '_pdbx_solvent_atom_site_mapping.label_asym_id'
     _item.category_id            pdbx_solvent_atom_site_mapping
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               code
     _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.label_asym_id'
     _item_linked.parent_name    '_atom_site.label_asym_id'
@@ -1719,7 +1699,7 @@ save__pdbx_solvent_atom_site_mapping.label_atom_id
 ;
     _item.name                  '_pdbx_solvent_atom_site_mapping.label_atom_id'
     _item.category_id            pdbx_solvent_atom_site_mapping
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               atcode
     _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.label_atom_id'
     _item_linked.parent_name    '_atom_site.label_atom_id'
@@ -1734,7 +1714,7 @@ save__pdbx_solvent_atom_site_mapping.label_comp_id
 ;
     _item.name                  '_pdbx_solvent_atom_site_mapping.label_comp_id'
     _item.category_id            pdbx_solvent_atom_site_mapping
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               ucode
     _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.label_comp_id'
     _item_linked.parent_name    '_atom_site.label_comp_id'
@@ -1749,7 +1729,7 @@ save__pdbx_solvent_atom_site_mapping.label_seq_id
 ;
     _item.name                  '_pdbx_solvent_atom_site_mapping.label_seq_id'
     _item.category_id            pdbx_solvent_atom_site_mapping
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               int
     _item_linked.child_name     '_pdbx_solvent_atom_site_mapping.label_seq_id'
     _item_linked.parent_name    '_atom_site.label_seq_id'
@@ -2632,3 +2612,96 @@ save__pdbx_depui_validation_status_flags.solvent_outliers
     _item_range.minimum           .   0
                                   0   0
      save_
+
+##
+##########################################
+## PDBX_CHEM_COMP_UPLOAD_DEPOSITOR_INFO ##
+##########################################
+
+save_pdbx_chem_comp_upload_depositor_info
+    _category.description
+;              Data items in the PDBX_CHEM_COMP_UPLOAD_DEPOSITOR_INFO category record
+               details of the uploaded files related to depositor provided chemical assignments.
+;
+    _category.id                  pdbx_chem_comp_upload_depositor_info
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_chem_comp_upload_depositor_info.ordinal'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+
+    _pdbx_chem_comp_upload_depositor_info.ordinal
+    _pdbx_chem_comp_upload_depositor_info.comp_id
+    _pdbx_chem_comp_upload_depositor_info.upload_file_name
+    _pdbx_chem_comp_upload_depositor_info.upload_file_type
+     1 GNC GNC.gif gif  
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_upload_depositor_info.ordinal
+    _item_description.description
+;              Ordinal index for this category.
+;
+    _item.name                  '_pdbx_chem_comp_upload_depositor_info.ordinal'
+    _item.category_id             pdbx_chem_comp_upload_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_chem_comp_upload_depositor_info.comp_id
+    _item_description.description
+;              The chemical component identifier used by the depositor to represent this component.
+;
+    _item.name                  '_pdbx_chem_comp_upload_depositor_info.comp_id'
+    _item.category_id             pdbx_chem_comp_upload_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
+
+save__pdbx_chem_comp_upload_depositor_info.upload_file_type
+    _item_description.description
+;              The type of the uploaded file containing information about this component.
+;
+    _item.name                  '_pdbx_chem_comp_upload_depositor_info.upload_file_type'
+    _item.category_id             pdbx_chem_comp_upload_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+                                 'GIF'    .
+                                 'JPEG'   .
+                                 'PNG'    .
+                                 'SVG'    .
+                                 'TIFF'   .
+                                 'other'  .
+
+     save_
+
+save__pdbx_chem_comp_upload_depositor_info.upload_file_name
+    _item_description.description
+;              The name of the uploaded file containing information about this component.
+;
+    _item.name                  '_pdbx_chem_comp_upload_depositor_info.upload_file_name'
+    _item.category_id             pdbx_chem_comp_upload_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+
+##
+
