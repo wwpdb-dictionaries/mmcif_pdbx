@@ -11,6 +11,7 @@
 #      13-Feb-2013 jdw  added _pdbx_helical_symmetry_depositor_info.status_flag and _pdbx_point_symmetry_depositor_info.status_flag
 #                       added internal categories -depui_validation_status_flags, pdbx_depui_upload, pdbx_depui_status_flags
 #      20-Feb-2013 jdw  added pdbx_chem_comp_upload_depositor_info category.
+#                       added _pdbx_depui_status_flags.prediction_target and category pdbx_depui_entity_status_flags
 # ----------------------------------------------------------------------------------------------------------------------------
 
 ###################################
@@ -2333,7 +2334,6 @@ save__pdbx_chem_comp_instance_depositor_info.author_provided_flag
      save_
 
 ##
-
 ##
 save_pdbx_depui_status_flags
     _category.description
@@ -2358,6 +2358,7 @@ save_pdbx_depui_status_flags
   _pdbx_depui_status_flags.dep_dataset_id    D_000000
   _pdbx_depui_status_flags.is_grant_funded   Y
   _pdbx_depui_status_flags.has_ncs_data      Y
+  _pdbx_depui_status_flags.prediction_target N
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -2389,6 +2390,18 @@ save__pdbx_depui_status_flags.has_ncs_data
 ;   A flag to indicate that the deposition includes NCS data.
 ;
     _item.name                  '_pdbx_depui_status_flags.has_ncs_data'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+     save_
+
+save__pdbx_depui_status_flags.prediction_target
+    _item_description.description
+;   A flag to indicate that this entry is a candidate prediction target.
+;
+    _item.name                  '_pdbx_depui_status_flags.prediction_target'
     _item.category_id             pdbx_depui_status_flags
     _item.mandatory_code          no
     _item_type.code               code
@@ -2704,4 +2717,65 @@ save__pdbx_chem_comp_upload_depositor_info.upload_file_name
 
 
 ##
+
+##
+save_pdbx_depui_entity_status_flags
+    _category.description
+;              Data items in the PDBX_DEPUI_ENTITY_STATUS_FLAGS category record status
+               details related to individual entities.
+;
+    _category.id                  pdbx_depui_entity_status_flags
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_depui_entity_status_flags.dep_dataset_id'
+                                '_pdbx_depui_entity_status_flags.entity_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+  _pdbx_depui_entity_status_flags.dep_dataset_id    D_000000
+  _pdbx_depui_entity_status_flags.entity_id         1
+  _pdbx_depui_entity_status_flags.has_mutation      Y
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_depui_entity_status_flags.dep_dataset_id
+    _item_description.description
+;   The internal identifier assigned to each deposition.
+;
+    _item.name                  '_pdbx_depui_entity_status_flags.dep_dataset_id'
+    _item.category_id             pdbx_depui_entity_status_flags
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_depui_entity_status_flags.entity_id
+    _item_description.description
+;   A reference to the _entity.id in the ENTITY_POLY category
+;
+    _item.name                  '_pdbx_depui_entity_status_flags.entity_id'
+    _item.category_id             pdbx_depui_entity_status_flags
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_depui_entity_status_flags.has_mutation
+    _item_description.description
+;   A flag to indicate that the entity has a mutation.
+;
+    _item.name                  '_pdbx_depui_entity_status_flags.has_mutation'
+    _item.category_id             pdbx_depui_entity_status_flags
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+     save_
 
