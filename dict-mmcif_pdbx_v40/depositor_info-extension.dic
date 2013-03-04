@@ -12,6 +12,7 @@
 #                       added internal categories -depui_validation_status_flags, pdbx_depui_upload, pdbx_depui_status_flags
 #      20-Feb-2013 jdw  added pdbx_chem_comp_upload_depositor_info category.
 #                       added _pdbx_depui_status_flags.prediction_target and category pdbx_depui_entity_status_flags
+#      04-Mar-2013 jdw  consolidated pdbx_struct_ref_depositor_info  into pdbx_struct_ref_seq_depositor_info
 # ----------------------------------------------------------------------------------------------------------------------------
 
 ###################################
@@ -205,192 +206,6 @@ save__pdbx_chem_comp_depositor_info.details
 
 ##
 
-
-####################################
-## PDBX_STRUCT_REF_DEPOSITOR_INFO ##
-####################################
-
-save_pdbx_struct_ref_depositor_info
-    _category.description
-;              Data items in the PDBX_STRUCT_REF_DEPOSITOR_INFO category capture
-               depositor provided information related to the archival cateogory
-               STRUCT_REF.
-;
-    _category.id                  pdbx_struct_ref_depositor_info
-    _category.mandatory_code      no
-    _category_key.name          '_pdbx_struct_ref_depositor_info.id'
-    loop_
-    _category_group.id           'inclusive_group'
-                                 'struct_group'
-                                  'pdbx_group'
-    loop_
-    _category_examples.detail
-    _category_examples.case
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-;
-    Example 1 - 
-                
-;
-;
-    loop_
-    _pdbx_struct_ref_depositor_info.id
-    _pdbx_struct_ref_depositor_info.entity_id
-    _pdbx_struct_ref_depositor_info.biol_id
-    _pdbx_struct_ref_depositor_info.db_name
-    _pdbx_struct_ref_depositor_info.db_code
-    _pdbx_struct_ref_depositor_info.seq-one-letter-code
-    _pdbx_struct_ref_depositor_info.align_begin
-    _pdbx_struct_ref_depositor_info.align_end
-    _pdbx_struct_ref_depositor_info.db_accession
-   1 1 1 . . . . . .
-	
-;
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-     save_
-
-save__pdbx_struct_ref_depositor_info.biol_id
-    _item_description.description
-;              This data item is a pointer to _struct_biol.id in the
-               STRUCT_BIOL category.
-;
-    _item.name                  '_pdbx_struct_ref_depositor_info.biol_id'
-    _item.category_id             pdbx_struct_ref_depositor_info
-    _item.mandatory_code          yes
-    _item_type.code               code
-     save_
-
-save__pdbx_struct_ref_depositor_info.db_code
-    _item_description.description
-;              The code for this entity or biological unit or for a closely
-               related entity or biological unit in the named database.
-;
-    _item.name                  '_pdbx_struct_ref_depositor_info.db_code'
-    _item.category_id             pdbx_struct_ref_depositor_info
-    _item.mandatory_code          yes
-    _item_type.code               line
-    loop_
-    _item_examples.case          '1ABC'
-                                 'ABCDEF'
-     save_
-
-save__pdbx_struct_ref_depositor_info.db_name
-    _item_description.description
-;              The name of the database containing reference information about
-               this entity or biological unit.
-;
-    _item.name                  '_pdbx_struct_ref_depositor_info.db_name'
-    _item.category_id             pdbx_struct_ref_depositor_info
-    _item.mandatory_code          yes
-    _item_type.code               line
-    loop_
-    _item_examples.case          'PDB'
-                                 'UniProt'
-                                 'Genbank'
-     save_
-
-save__pdbx_struct_ref_depositor_info.entity_id
-    _item_description.description
-;              This data item is a pointer to _entity.id in the ENTITY category.
-;
-    _item.name                  '_pdbx_struct_ref_depositor_info.entity_id'
-    _item.category_id            pdbx_struct_ref_depositor_info
-    _item.mandatory_code          yes
-    _item_type.code               code
-     save_
-
-save__pdbx_struct_ref_depositor_info.id
-    _item_description.description
-;              The value of _pdbx_struct_ref_depositor_info.id must uniquely identify a record
-               in the PDBX_STRUCT_REF_DEPOSITOR_INFO list.
-
-;
-    _item.name                  '_pdbx_struct_ref_depositor_info.id'
-    _item.category_id            pdbx_struct_ref_depositor_info
-    _item.mandatory_code         yes
-    _item_type.code               code
-     save_
-
-
-save__pdbx_struct_ref_depositor_info.db_accession
-    _item_description.description
-;              Accession code of the reference database.
-;
-    _item.name                  '_pdbx_struct_ref_depositor_info.db_accession'
-    _item.category_id             pdbx_struct_ref_depositor_info
-    _item.mandatory_code          no
-    _item_type.code               code
-     loop_
-    _item_examples.case       'P07617'
-     save_
-
-save__pdbx_struct_ref_depositor_info.seq_one_letter_code
-    _item_description.description
-;              Database chemical sequence expressed as string of one-letter 
-               amino acid codes. 
-;
-    _item.name                  '_pdbx_struct_ref_depositor_info.seq_one_letter_code'
-    _item.category_id             pdbx_struct_ref_depositor_info
-    _item.mandatory_code          no
-    _item_type.code               seq-one-letter-code
-    _item_examples.case
-;
-A  for alanine or adenine
-B  for ambiguous asparagine/aspartic-acid
-R  for arginine
-N  for asparagine
-D  for aspartic-acid
-C  for cysteine or cystine or cytosine
-Q  for glutamine
-E  for glutamic-acid
-Z  for ambiguous glutamine/glutamic acid
-G  for glycine or guanine
-H  for histidine
-I  for isoleucine
-L  for leucine
-K  for lysine
-M  for methionine
-F  for phenylalanine
-P  for proline
-S  for serine
-T  for threonine or thymine
-W  for tryptophan
-Y  for tyrosine
-V  for valine
-U  for uracil
-O  for water
-X  for other
-;
-     save_
-
-save__pdbx_struct_ref_depositor_info.align_begin
-    _item_description.description
-;         
-               Beginning index in the chemical sequence from the 
-               reference database.
-;
-    _item.name                  '_pdbx_struct_ref_depositor_info.align_begin'
-    _item.category_id             pdbx_struct_ref_depositor_info
-    _item.mandatory_code          no
-    _item_type.code               code
-     loop_
-    _item_examples.case         '1' '2'
-     save_
-
-save__pdbx_struct_ref_depositor_info.align_end
-    _item_description.description
-;         
-               Ending index in the chemical sequence from the 
-               reference database.
-;
-    _item.name                  '_pdbx_struct_ref_depositor_info.align_end'
-    _item.category_id             pdbx_struct_ref_depositor_info
-    _item.mandatory_code          no
-    _item_type.code               code
-     loop_
-    _item_examples.case         '201' '451'
-     save_
-
-##
 ##
 ########################################
 ## PDBX_STRUCT_REF_SEQ_DEPOSITOR_INFO ##
@@ -404,7 +219,7 @@ save_pdbx_struct_ref_seq_depositor_info
 ;
     _category.id                  pdbx_struct_ref_seq_depositor_info
     _category.mandatory_code      no
-    _category_key.name          '_pdbx_struct_ref_seq_depositor_info.align_id'
+    _category_key.name          '_pdbx_struct_ref_seq_depositor_info.ref_id'
     loop_
     _category_group.id           'inclusive_group'
                                   'pdbx_group'
@@ -417,33 +232,42 @@ save_pdbx_struct_ref_seq_depositor_info
     Example 1 - 
 ;
 ;
-    _pdbx_struct_ref_seq_depositor_info.align_id          1
     _pdbx_struct_ref_seq_depositor_info.ref_id            1
+    _pdbx_struct_ref_seq_depositor_info.entity_id         1
     _pdbx_struct_ref_seq_depositor_info.db_align_beg      18
     _pdbx_struct_ref_seq_depositor_info.db_align_end      276
     _pdbx_struct_ref_seq_depositor_info.db_code                           .
     _pdbx_struct_ref_seq_depositor_info.db_name                           .
     _pdbx_struct_ref_seq_depositor_info.db_accession                      .
     _pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code            .
+    _pdbx_struct_ref_seq_depositor_info.seq_align_beg                     .
+    _pdbx_struct_ref_seq_depositor_info.seq_align_end                     .
     _pdbx_struct_ref_seq_depositor_info.details                           .
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
 
-save__pdbx_struct_ref_seq_depositor_info.align_id
+save__pdbx_struct_ref_seq_depositor_info.ref_id
     _item_description.description
-;              The value of _pdbx_struct_ref_seq_depositor_info.align_id must uniquely identify a
-               record in the PDBX_STRUCT_REF_SEQ_DEPOSITOR_INFO list.
-
-               Note that this item need not be a number; it can be any unique
-               identifier.
+;              This data item is a unique identifier for reference sequence information.
 ;
-    _item.name               '_pdbx_struct_ref_seq_depositor_info.align_id'      
-    _item.category_id          pdbx_struct_ref_seq_depositor_info 
-    _item.mandatory_code       yes
-    _item_type.code            code
+    _item.name                  '_pdbx_struct_ref_seq_depositor_info.ref_id'
+    _item.category_id             pdbx_struct_ref_seq_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               code
      save_
+
+save__pdbx_struct_ref_seq_depositor_info.entity_id
+    _item_description.description
+;              This data item is a pointer to _entity.id in the ENTITY category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_depositor_info.entity_id'
+    _item.category_id             pdbx_struct_ref_seq_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
 
 save__pdbx_struct_ref_seq_depositor_info.db_align_beg
     _item_description.description
@@ -485,16 +309,6 @@ save__pdbx_struct_ref_seq_depositor_info.details
     _item_type.code               text
      save_
 
-save__pdbx_struct_ref_seq_depositor_info.ref_id
-    _item_description.description
-;              This data item is a pointer to _struct_ref.id in the
-               PDBX_STRUCT_REF_DESPOSITOR_INFO category.
-;
-    _item.name                  '_pdbx_struct_ref_seq_depositor_info.ref_id'
-    _item.category_id             pdbx_struct_ref_seq_depositor_info
-    _item.mandatory_code          yes
-    _item_type.code               code
-     save_
 
 
 save__pdbx_struct_ref_seq_depositor_info.db_accession
@@ -579,6 +393,32 @@ X  for other
      save_
 
 
+save__pdbx_struct_ref_seq_depositor_info.seq_align_begin
+    _item_description.description
+;         
+               Beginning index in the author provided chemical sequence.
+;
+    _item.name                  '_pdbx_struct_ref_seq_depositor_info.seq_align_begin'
+    _item.category_id             pdbx_struct_ref_seq_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case         '1' '2'
+     save_
+
+save__pdbx_struct_ref_seq_depositor_info.seq_align_end
+    _item_description.description
+;         
+               Ending index in the author provided chemical sequence.
+;
+    _item.name                  '_pdbx_struct_ref_seq_depositor_info.seq_align_end'
+    _item.category_id             pdbx_struct_ref_seq_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case         '201' '451'
+     save_
+
 
 ############################################
 ## PDBX_STRUCT_REF_SEQ_DIF_DEPOSITOR_INFO ##
@@ -607,8 +447,8 @@ save_pdbx_struct_ref_seq_dif_depositor_info
     Example 1 - 
 ;
 ;
-    _pdbx_struct_ref_seq_dif_depositor_info.ordinal       1
-    _pdbx_struct_ref_seq_dif_depositor_info.align_id      1
+    _pdbx_struct_ref_seq_dif_depositor_info.ordinal     1
+    _pdbx_struct_ref_seq_dif_depositor_info.ref_id      1
     _pdbx_struct_ref_seq_dif_depositor_info.auth_seq_id 181
     _pdbx_struct_ref_seq_dif_depositor_info.auth_mon_id ALA
     _pdbx_struct_ref_seq_dif_depositor_info.db_mon_id   GLU
@@ -628,12 +468,12 @@ save__pdbx_struct_ref_seq_dif_depositor_info.ordinal
     _item_type.code               int
      save_
 
-save__pdbx_struct_ref_seq_dif_depositor_info.align_id
+save__pdbx_struct_ref_seq_dif_depositor_info.ref_id
     _item_description.description
-;              This data item is a pointer to _struct_ref_seq.align_id in
-               the STRUCT_REF_SEQ  category.
+;              This data item is a pointer to _struct_ref_seq.ref_id in
+               the STRUCT_REF_SEQ_DEPOSITOR_INFO  category.
 ;
-    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.align_id'
+    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.ref_id'
     _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
     _item.mandatory_code          yes
     _item_type.code               code
