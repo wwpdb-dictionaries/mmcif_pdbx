@@ -205,6 +205,7 @@ save__pdbx_chem_comp_depositor_info.details
 
 ##
 
+
 ####################################
 ## PDBX_STRUCT_REF_DEPOSITOR_INFO ##
 ####################################
@@ -239,8 +240,9 @@ save_pdbx_struct_ref_depositor_info
     _pdbx_struct_ref_depositor_info.db_code
     _pdbx_struct_ref_depositor_info.seq-one-letter-code
     _pdbx_struct_ref_depositor_info.align_begin
+    _pdbx_struct_ref_depositor_info.align_end
     _pdbx_struct_ref_depositor_info.db_accession
-   1 1 1 . . . . .
+   1 1 1 . . . . . .
 	
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -372,6 +374,20 @@ save__pdbx_struct_ref_depositor_info.align_begin
     _item_type.code               code
      loop_
     _item_examples.case         '1' '2'
+     save_
+
+save__pdbx_struct_ref_depositor_info.align_end
+    _item_description.description
+;         
+               Ending index in the chemical sequence from the 
+               reference database.
+;
+    _item.name                  '_pdbx_struct_ref_depositor_info.align_end'
+    _item.category_id             pdbx_struct_ref_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case         '201' '451'
      save_
 
 ##

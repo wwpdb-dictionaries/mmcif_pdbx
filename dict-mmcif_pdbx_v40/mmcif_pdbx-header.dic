@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.028
+    _dictionary.version         4.029
 #
      loop_
     _dictionary_history.version
@@ -1730,5 +1730,9 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + Update description for item _database_PDB_rev.mod_type  
   + Update enumeration content for _pdbx_reference_molecule_family.release_status _pdbx_reference_molecule.release_status
 ;
-#
+4.029 2013-03-01  
+;
+  Changes (jdw): (Open revision)
+  + add optional item _struct_ref.pdbx_align_end.
+;
 ### EOF mmcif_pdbx-header.dic 

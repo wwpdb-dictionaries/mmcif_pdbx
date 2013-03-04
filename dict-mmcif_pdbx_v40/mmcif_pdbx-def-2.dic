@@ -7684,6 +7684,20 @@ save__struct_ref.pdbx_align_begin
     _item_aliases.version        1.1
      save_
 
+save__struct_ref.pdbx_align_end
+    _item_description.description
+;         
+               Ending index in the chemical sequence from the 
+               reference database.
+;
+    _item.name                  '_struct_ref.pdbx_align_end'
+    _item.category_id             struct_ref
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case         '105' '245'
+     save_
+
 ##
 ##
 save__struct_ref_seq.pdbx_strand_id

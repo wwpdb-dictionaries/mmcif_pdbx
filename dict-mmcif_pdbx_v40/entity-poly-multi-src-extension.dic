@@ -23,6 +23,8 @@
 #
 # Aug 12, 2012 - jdw    Add _entiry_src_gen.pdbx_seq_type to characterize the type of the sequence part.
 #
+# Aug 12, 2012 - jdw    Add _entiry_src_gen.pdbx_seq_type to characterize the type of the sequence part.
+#
 # Draft dictionary extension for describing polymeric molecules with derived
 # from multiple biological sources.
 #
@@ -123,7 +125,6 @@ save__entity_src_gen.pdbx_seq_type
      loop_
     _item_enumeration.value   'N-terminal tag' 'C-terminal tag' 'Biological sequence' 'Linker'
      save_
-
 
 
 save__entity_src_gen.pdbx_beg_seq_num
