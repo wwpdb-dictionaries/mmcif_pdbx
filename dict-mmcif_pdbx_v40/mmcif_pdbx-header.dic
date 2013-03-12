@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.029
+    _dictionary.version         4.030
 #
      loop_
     _dictionary_history.version
@@ -1732,7 +1732,13 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
 4.029 2013-03-01  
 ;
-  Changes (jdw): (Open revision)
+  Changes (jdw): 
   + add optional item _struct_ref.pdbx_align_end.
+;
+4.030 2013-03-12  
+;
+  Changes (jdw): (Open revision)
+  + add items  _pdbx_depui_status_flags.primary_citation_status,  _pdbx_depui_status_flags.reference_citation_status,
+               _pdbx_depui_status_flags.corresponding_author_status  
 ;
 ### EOF mmcif_pdbx-header.dic 

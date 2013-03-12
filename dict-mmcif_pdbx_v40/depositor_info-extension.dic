@@ -2215,6 +2215,9 @@ save_pdbx_depui_status_flags
   _pdbx_depui_status_flags.is_grant_funded   Y
   _pdbx_depui_status_flags.has_ncs_data      Y
   _pdbx_depui_status_flags.prediction_target N
+  _pdbx_depui_status_flags.primary_citation_status      N
+  _pdbx_depui_status_flags.reference_citation_status    N
+  _pdbx_depui_status_flags.corresponding_author_status  N
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -2227,6 +2230,42 @@ save__pdbx_depui_status_flags.dep_dataset_id
     _item.category_id             pdbx_depui_status_flags
     _item.mandatory_code          yes
     _item_type.code               code
+     save_
+
+save__pdbx_depui_status_flags.primary_citation_status
+    _item_description.description
+;   A flag to indicate status about primary citation data.
+;
+    _item.name                  '_pdbx_depui_status_flags.primary_citation_status'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+     save_
+
+save__pdbx_depui_status_flags.corresponding_author_status
+    _item_description.description
+;   A flag to indicate status about corresponding author data.
+;
+    _item.name                  '_pdbx_depui_status_flags.corresponding_author_status'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+     save_
+
+save__pdbx_depui_status_flags.reference_citation_status
+    _item_description.description
+;   A flag to indicate status about reference citation data.
+;
+    _item.name                  '_pdbx_depui_status_flags.reference_citation_status'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
      save_
 
 save__pdbx_depui_status_flags.is_grant_funded
