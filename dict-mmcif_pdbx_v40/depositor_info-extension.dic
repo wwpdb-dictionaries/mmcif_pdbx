@@ -2674,3 +2674,71 @@ save__pdbx_depui_entity_status_flags.has_mutation
     _item_enumeration.value    Y N   
      save_
 
+
+
+##
+save_pdbx_depui_entity_features
+    _category.description
+;              Data items in the PDBX_DEPUI_ENTITY_FEATURES category record status
+               details related to the features of individual entities.
+;
+    _category.id                  pdbx_depui_entity_features
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_depui_entity_features.dep_dataset_id'
+                                '_pdbx_depui_entity_features.entity_id'
+                                '_pdbx_depui_entity_features.type'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+  _pdbx_depui_entity_features.dep_dataset_id    D_000000
+  _pdbx_depui_entity_features.entity_id         1
+  _pdbx_depui_entity_features.type              'Antibiotic/inhibitor'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_depui_entity_features.dep_dataset_id
+    _item_description.description
+;   The internal identifier assigned to each deposition.
+;
+    _item.name                  '_pdbx_depui_entity_features.dep_dataset_id'
+    _item.category_id             pdbx_depui_entity_features
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_depui_entity_features.entity_id
+    _item_description.description
+;   A reference to the _entity.id in the ENTITY category
+;
+    _item.name                  '_pdbx_depui_entity_features.entity_id'
+    _item.category_id             pdbx_depui_entity_features
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_depui_entity_features.type
+    _item_description.description
+;   A flag to indicate that the entity has a mutation.
+;
+    _item.name                  '_pdbx_depui_entity_features.type'
+    _item.category_id             pdbx_depui_entity_features
+    _item.mandatory_code          yes
+    _item_type.code               uline
+    loop_
+    _item_enumeration.value 
+     'Chimera'
+     'Antibiotic/inhibitor'
+     'Carbohydrate'
+     'None of these'
+     save_
+
