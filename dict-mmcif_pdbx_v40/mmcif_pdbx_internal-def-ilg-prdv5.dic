@@ -1226,6 +1226,7 @@ pdbx_validate_main_chain_plane           1  '_pdbx_validate_main_chain_plane.aut
 pdbx_validate_main_chain_plane           1  '_pdbx_validate_main_chain_plane.auth_comp_id'        '_atom_site.auth_comp_id'                   atom_site
 pdbx_validate_main_chain_plane           1  '_pdbx_validate_main_chain_plane.auth_seq_id'         '_atom_site.auth_seq_id'                    atom_site
 pdbx_validate_main_chain_plane           1  '_pdbx_validate_main_chain_plane.PDB_ins_code'        '_atom_site.pdbx_PDB_ins_code'              atom_site
+pdbx_validate_main_chain_plane           1  '_pdbx_validate_main_chain_plane.label_alt_id'        '_atom_site.label_alt_id'                   atom_site
 pdbx_validate_peptide_omega              1  '_pdbx_validate_peptide_omega.PDB_model_num'          '_atom_site.pdbx_PDB_model_num'             atom_site
 pdbx_validate_peptide_omega              1  '_pdbx_validate_peptide_omega.auth_asym_id_1'         '_atom_site.auth_asym_id'                   atom_site
 pdbx_validate_peptide_omega              1  '_pdbx_validate_peptide_omega.auth_comp_id_1'         '_atom_site.auth_comp_id'                   atom_site
@@ -1242,6 +1243,7 @@ pdbx_validate_planes                     1  '_pdbx_validate_planes.auth_asym_id'
 pdbx_validate_planes                     1  '_pdbx_validate_planes.auth_comp_id'                  '_atom_site.auth_comp_id'                   atom_site
 pdbx_validate_planes                     1  '_pdbx_validate_planes.auth_seq_id'                   '_atom_site.auth_seq_id'                    atom_site
 pdbx_validate_planes                     1  '_pdbx_validate_planes.PDB_ins_code'                  '_atom_site.pdbx_PDB_ins_code'              atom_site
+pdbx_validate_planes                     1  '_pdbx_validate_planes.label_alt_id'                  '_atom_site.label_alt_id'                   atom_site
 pdbx_validate_planes_atom                1  '_pdbx_validate_planes_atom.PDB_model_num'            '_atom_site.pdbx_PDB_model_num'             atom_site
 pdbx_validate_planes_atom                1  '_pdbx_validate_planes_atom.auth_asym_id'             '_atom_site.auth_asym_id'                   atom_site
 pdbx_validate_planes_atom                1  '_pdbx_validate_planes_atom.auth_comp_id'             '_atom_site.auth_comp_id'                   atom_site
@@ -1299,6 +1301,7 @@ pdbx_validate_torsion                    1  '_pdbx_validate_torsion.auth_asym_id
 pdbx_validate_torsion                    1  '_pdbx_validate_torsion.auth_comp_id'                 '_atom_site.auth_comp_id'                   atom_site
 pdbx_validate_torsion                    1  '_pdbx_validate_torsion.auth_seq_id'                  '_atom_site.auth_seq_id'                    atom_site
 pdbx_validate_torsion                    1  '_pdbx_validate_torsion.PDB_ins_code'                 '_atom_site.pdbx_PDB_ins_code'              atom_site
+pdbx_validate_torsion                    1  '_pdbx_validate_torsion.label_alt_id'                 '_atom_site.label_alt_id'                   atom_site
 pdbx_version                             1  '_pdbx_version.entry_id'                              '_entry.id'                                 entry
 pdbx_xplor_file                          1  '_pdbx_xplor_file.pdbx_refine_id'                     '_refine.pdbx_refine_id'                    refine
 phasing_MAD                              1  '_phasing_MAD.entry_id'                               '_entry.id'                                 entry

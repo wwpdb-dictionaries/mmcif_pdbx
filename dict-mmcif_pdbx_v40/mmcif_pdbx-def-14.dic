@@ -1,6 +1,7 @@
 ##
 ## File: mmcif_pdbx-def-14.dic
 ##
+
  
 #################################
 ## PDBX_VALIDATE_CLOSE_CONTACT ##
@@ -1524,6 +1525,21 @@ save__pdbx_validate_torsion.PDB_ins_code
     _item_linked.parent_name  '_atom_site.pdbx_PDB_ins_code'
     save_
 
+save__pdbx_validate_torsion.label_alt_id
+    _item_description.description
+;   Optional identifier of the residue
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_torsion.label_alt_id'
+    _item.category_id           pdbx_validate_torsion
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_torsion.label_alt_id' 
+    _item_linked.parent_name  '_atom_site.label_alt_id'
+    save_
+
 save__pdbx_validate_torsion.phi
     _item_description.description
 ;   The Phi value that for the residue that lies outside normal limits 
@@ -2145,6 +2161,21 @@ save__pdbx_validate_planes.PDB_ins_code
     _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
     save_
 
+save__pdbx_validate_planes.label_alt_id
+    _item_description.description
+;   Optional identifier of the residue in which the plane is calculated
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_planes.label_alt_id'
+    _item.category_id           pdbx_validate_planes
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_planes.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+    save_
+
 
 save__pdbx_validate_planes.rmsd
     _item_description.description
@@ -2494,6 +2525,21 @@ save__pdbx_validate_main_chain_plane.PDB_ins_code
     _item_type.code 		code
     _item_linked.child_name     '_pdbx_validate_main_chain_plane.PDB_ins_code'
     _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_main_chain_plane.label_alt_id
+    _item_description.description
+;   Optional identifier of the residue in which the plane is calculated
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_main_chain_plane.label_alt_id'
+    _item.category_id           pdbx_validate_main_chain_plane
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_main_chain_plane.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
     save_
 
 
