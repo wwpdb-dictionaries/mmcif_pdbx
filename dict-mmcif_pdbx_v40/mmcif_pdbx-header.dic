@@ -1736,10 +1736,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + add optional item _struct_ref.pdbx_align_end.
 ;
 
-4.030 2013-03-15  
+4.030 2013-03-22
 ;
   Changes (jdw): 
   + add optional items _pdbx_validate_main_chain_plane.label_alt_id, _pdbx_validate_planes.lable_alt_id, _pdbx_validate_torsion.label_alt_id
+  + update enumerations for _pdbx_reference_molecule.class and _pdbx_molecule_features.class
 ;
 
 

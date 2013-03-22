@@ -633,8 +633,10 @@ save__pdbx_reference_molecule.class
   'Anticoagulant, Antithrombotic'
   'Antibiotic, Antimicrobial'
   'Antibiotic, Anthelmintic'
+  "Antibiotic, Antineoplastic"	
   'Antimicrobial, Antiretroviral'
   'Antimicrobial, Antitumor'
+  "Antimicrobial, Antiparasitic, Antibiotic"
   'Thrombin inhibitor, Trypsin inhibitor'
      save_
 
@@ -4015,8 +4017,10 @@ save__pdbx_molecule_features.class
   'Anticoagulant, Antithrombotic'
   'Antibiotic, Antimicrobial'
   'Antibiotic, Anthelmintic'
+  "Antibiotic, Antineoplastic"	
   'Antimicrobial, Antiretroviral'
   'Antimicrobial, Antitumor'
+  "Antimicrobial, Antiparasitic, Antibiotic"
   'Thrombin inhibitor, Trypsin inhibitor'
      save_
 
