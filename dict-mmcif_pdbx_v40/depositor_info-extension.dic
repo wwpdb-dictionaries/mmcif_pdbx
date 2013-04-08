@@ -479,6 +479,16 @@ save__pdbx_struct_ref_seq_dif_depositor_info.ref_id
     _item_type.code               code
      save_
 
+save__pdbx_struct_ref_seq_dif_depositor_info.entity_id
+    _item_description.description
+;              This data item is a pointer to _entity.id in the ENTITY category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_dif_depositor_info.entity_id'
+    _item.category_id             pdbx_struct_ref_seq_dif_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
 save__pdbx_struct_ref_seq_dif_depositor_info.db_mon_id
     _item_description.description
 ;              The monomer type found at this position in the referenced
@@ -599,7 +609,7 @@ save__pdbx_struct_ref_seq_dif_depositor_info.annotation
     'engineered mutation' 
     'cloning artifact' 
     variant
-    'expression tags'
+    'expression tag'
     insertion 
     deletion
     microheterogeneity
@@ -2187,6 +2197,35 @@ save__pdbx_chem_comp_instance_depositor_info.author_provided_flag
     _item_type.code               code
     loop_
     _item_enumeration.value    Y N   
+     save_
+
+save__pdbx_chem_comp_instance_depositor_info.formula
+    _item_description.description
+;              The observed formula for the chemical component in the deposited coordinates.
+               Formulae are written according to the following rules:
+
+               (1) Only recognized element symbols may be used.
+
+               (2) Each element symbol is followed by a 'count' number. A count
+                  of '1' may be omitted.
+
+               (3) A space or parenthesis must separate each cluster of
+                  (element symbol + count), but in general parentheses are
+                  not used.
+
+               (4) The order of elements depends on whether carbon is
+                  present or not. If carbon is present, the order should be:
+                  C, then H, then the other elements in alphabetical order
+                  of their symbol. If carbon is not present, the elements
+                  are listed purely in alphabetic order of their symbol. This
+                  is the 'Hill' system used by Chemical Abstracts.
+;
+    _item.name                  '_pdbx_chem_comp_instance_depositor_info.formula'
+    _item.category_id             pdbx_chem_comp_instance_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               text
+    loop_
+    _item_examples.case          'C18 H19 N7 O8 S'
      save_
 
 ##
