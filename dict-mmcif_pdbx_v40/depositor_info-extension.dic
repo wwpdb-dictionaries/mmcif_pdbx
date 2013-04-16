@@ -361,7 +361,8 @@ save__pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code
     _item.name                  '_pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code'
     _item.category_id             pdbx_struct_ref_seq_depositor_info
     _item.mandatory_code          no
-    _item_type.code               seq-one-letter-code
+#    _item_type.code               seq-one-letter-code
+    _item_type.code               text
     _item_examples.case
 ;
 A  for alanine or adenine
@@ -2336,6 +2337,42 @@ save__pdbx_depui_status_flags.prediction_target
 ;   A flag to indicate that this entry is a candidate prediction target.
 ;
     _item.name                  '_pdbx_depui_status_flags.prediction_target'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+     save_
+
+save__pdbx_depui_status_flags.has_helical_symmetry
+    _item_description.description
+;   A flag to indicate that this entry has helical symmetry
+;
+    _item.name                  '_pdbx_depui_status_flags.has_helical_symmetry'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+     save_
+
+save__pdbx_depui_status_flags.has_point_symmetry
+    _item_description.description
+;   A flag to indicate that this entry has point symmetry
+;
+    _item.name                  '_pdbx_depui_status_flags.has_point_symmetry'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+     save_
+
+save__pdbx_depui_status_flags.has_cyclic_symmetry
+    _item_description.description
+;   A flag to indicate that this entry has cyclic symmetry
+;
+    _item.name                  '_pdbx_depui_status_flags.has_cyclic_symmetry'
     _item.category_id             pdbx_depui_status_flags
     _item.mandatory_code          no
     _item_type.code               code
