@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.030
+    _dictionary.version         4.031
 #
      loop_
     _dictionary_history.version
@@ -1742,7 +1742,10 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + add optional items _pdbx_validate_main_chain_plane.label_alt_id, _pdbx_validate_planes.lable_alt_id, _pdbx_validate_torsion.label_alt_id
   + update enumerations for _pdbx_reference_molecule.class and _pdbx_molecule_features.class
 ;
-
-
+4.031 2013-04-24
+;
+  Changes (jdw): 
+  +   Add category pdbx_validate_polymer_linkage.
+;
 ### EOF mmcif_pdbx-header.dic 
 

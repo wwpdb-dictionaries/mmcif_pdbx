@@ -71,7 +71,7 @@ save__pdbx_validate_close_contact.id
 
 save__pdbx_validate_close_contact.PDB_model_num
     _item_description.description
-;   The model number for the given angle
+;   The model number for the given contact
 ;
     _item.name                 '_pdbx_validate_close_contact.PDB_model_num'
     _item.category_id          pdbx_validate_close_contact
@@ -4831,6 +4831,288 @@ save__reflns_shell.pdbx_diffrn_id
     _item_type.code               code
 #    _item_linked.child_name     '_reflns_shell.pdbx_diffrn_id'
 #    _item_linked.parent_name    '_diffrn.id'
+     save_
+
+##
+###################################
+## PDBX_VALIDATE_POLYMER_LINKAGE ##
+###################################
+
+save_pdbx_validate_polymer_linkage
+    _category.description
+;   Data items in the PDBX_VALIDATE_POLYMER_LINKAGE category list the
+    polymer linkages within the entry that are outside of typlical 
+    covalent distances.
+
+;
+    _category.id                  pdbx_validate_polymer_linkage
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_validate_polymer_linkage.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'validate_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_validate_polymer_linkage.id
+_pdbx_validate_polymer_linkage.PDB_model_num
+_pdbx_validate_polymer_linkage.auth_atom_id_1
+_pdbx_validate_polymer_linkage.auth_asym_id_1
+_pdbx_validate_polymer_linkage.auth_comp_id_1
+_pdbx_validate_polymer_linkage.auth_seq_id_1
+_pdbx_validate_polymer_linkage.PDB_ins_code_1
+_pdbx_validate_polymer_linkage.label_alt_id_1
+_pdbx_validate_polymer_linkage.auth_atom_id_2
+_pdbx_validate_polymer_linkage.auth_asym_id_2
+_pdbx_validate_polymer_linkage.auth_comp_id_2
+_pdbx_validate_polymer_linkage.auth_seq_id_2
+_pdbx_validate_polymer_linkage.PDB_ins_code_2
+_pdbx_validate_polymer_linkage.label_alt_id_2
+_pdbx_validate_polymer_linkage.dist
+   1     1     .  B  VAL    107  .  .       .  B  ARG    108  .  .         3.16
+   2     1     .  B  ARG    110  .  .       .  B  LYS    110  .  .         2.95
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_validate_polymer_linkage.id
+    _item_description.description
+;   The value of _pdbx_validate_polymer_linkage.id must uniquely identify 
+    each item in the PDBX_VALIDATE_POLYMER_LINKAGE list.
+
+    This is an integer serial number.
+;
+    _item.name                 '_pdbx_validate_polymer_linkage.id'
+    _item.category_id          pdbx_validate_polymer_linkage
+    _item.mandatory_code       yes
+    _item_type.code            int
+     save_
+
+save__pdbx_validate_polymer_linkage.PDB_model_num
+    _item_description.description
+;   The model number for the given linkage
+;
+    _item.name                 '_pdbx_validate_polymer_linkage.PDB_model_num'
+    _item.category_id          pdbx_validate_polymer_linkage
+    _item.mandatory_code       yes
+    _item_type.code            int
+    _item_linked.child_name    '_pdbx_validate_polymer_linkage.PDB_model_num'
+    _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+     save_
+
+
+save__pdbx_validate_polymer_linkage.auth_asym_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_asym_id_1'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_asym_id_1' 
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_atom_id_1
+    _item_description.description
+;    Part of the identifier of the first of the two atom sites that
+     define the linkage.
+
+     This data item is a pointer to _atom_site.auth_atom_id in the
+     ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_atom_id_1'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_atom_id_1' 
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_comp_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_comp_id_1'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_comp_id_1'  
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_seq_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_seq_id_1'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_seq_id_1'   
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_atom_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the linkage.
+
+    This data item is a pointer to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_atom_id_2'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_atom_id_2' 
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_asym_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the linkage.
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_asym_id_2'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_asym_id_2'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_comp_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the linkage.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_comp_id_2'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_comp_id_2'  
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_seq_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the linkage.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_seq_id_2'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_seq_id_2'   
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+
+save__pdbx_validate_polymer_linkage.PDB_ins_code_1
+    _item_description.description
+;   Optional identifier of the first of the two atom sites that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.PDB_ins_code_1'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.PDB_ins_code_1'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_polymer_linkage.PDB_ins_code_2
+    _item_description.description
+;   Optional identifier of the second of the two atom sites that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.PDB_ins_code_2'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.PDB_ins_code_2' 
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+
+    save_
+
+save__pdbx_validate_polymer_linkage.label_alt_id_1
+    _item_description.description
+;   An optional identifier of the first of the two atoms that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.label_alt_id_1'
+    _item.mandatory_code          no
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.label_alt_id_1'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.label_alt_id_2
+    _item_description.description
+;   An optional identifier of the second of the two atoms that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.label_alt_id_2'
+    _item.mandatory_code          no
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.label_alt_id_2'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.dist
+    _item_description.description
+;   The value of the polymer linkage for the two atoms defined.
+;
+    _item.name                    '_pdbx_validate_polymer_linkage.dist'
+    _item.category_id             pdbx_validate_polymer_linkage
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_units.code              angstroms
      save_
 
 
