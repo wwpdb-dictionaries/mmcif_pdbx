@@ -10257,7 +10257,7 @@ save__pdbx_contact_author.email
 ;
     _item.name                  '_pdbx_contact_author.email'
     _item.category_id             pdbx_contact_author
-    _item.mandatory_code          no
+    _item.mandatory_code          yes
     _item_type.code               line
      loop_
     _item_examples.case          'name@host.domain.country'
@@ -10357,7 +10357,7 @@ save__pdbx_contact_author.country
 ;
     _item.name                  '_pdbx_contact_author.country'
     _item.category_id             pdbx_contact_author
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               line
      loop_
     _item_examples.case          
@@ -10373,7 +10373,7 @@ save__pdbx_contact_author.continent
 ;
     _item.name                  '_pdbx_contact_author.continent'
     _item.category_id             pdbx_contact_author
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               line
      loop_
     _item_examples.case          

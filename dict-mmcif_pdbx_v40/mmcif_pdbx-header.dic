@@ -1742,10 +1742,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + add optional items _pdbx_validate_main_chain_plane.label_alt_id, _pdbx_validate_planes.lable_alt_id, _pdbx_validate_torsion.label_alt_id
   + update enumerations for _pdbx_reference_molecule.class and _pdbx_molecule_features.class
 ;
-4.031 2013-04-24
+4.031 2013-04-30
 ;
   Changes (jdw): 
-  +   Add category pdbx_validate_polymer_linkage.
+  +   Add category pdbx_validate_polymer_linkage
+  +   Adjust mandatory codes for items in category pdbx_contact_author.
 ;
 ### EOF mmcif_pdbx-header.dic 
 
