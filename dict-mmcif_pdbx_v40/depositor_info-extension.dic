@@ -366,9 +366,15 @@ save__pdbx_struct_ref_seq_depositor_info.db_name
     _item.mandatory_code          no
     _item_type.code               line
     loop_
-    _item_examples.case          'PDB'
-                                 'UniProt'
-                                 'Genbank'
+    _item_examples.case          
+    'UNP'
+    'GB'
+   loop_
+   _pdbx_item_enumeration.value
+   _pdbx_item_enumeration.detail
+     'UNP'  'UniProt'
+     'GB'   'Genbank'
+
      save_
 
 save__pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code
