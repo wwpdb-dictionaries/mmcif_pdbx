@@ -2398,6 +2398,18 @@ save__pdbx_depui_status_flags.has_cyclic_symmetry
     _item_enumeration.value    Y N   
      save_
 
+save__pdbx_depui_status_flags.has_accepted_terms_and_conditions
+    _item_description.description
+;   A flag to indicate the acceptance of wwPDB deposition and annoation terms and conditions.
+;
+    _item.name                  '_pdbx_depui_status_flags.has_accepted_terms_and_conditions'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          yes
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+     save_
+
 save_pdbx_depui_upload
     _category.description
 ;              Data items in the PDBX_DEPUI_UPLOAD category record the
