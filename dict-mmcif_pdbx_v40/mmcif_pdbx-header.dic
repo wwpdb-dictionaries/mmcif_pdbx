@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.031
+    _dictionary.version         4.032
 #
      loop_
     _dictionary_history.version
@@ -1748,5 +1748,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   +   Add category pdbx_validate_polymer_linkage
   +   Adjust mandatory codes for items in category pdbx_contact_author.
 ;
+
+4.032 2013-06-14
+;
+  Changes (jdw):
+  +  updated enumeration for item _pdbx_database_related.content_type
+; 
 ### EOF mmcif_pdbx-header.dic 
 

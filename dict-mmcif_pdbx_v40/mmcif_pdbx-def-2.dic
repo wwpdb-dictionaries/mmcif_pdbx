@@ -3456,6 +3456,7 @@ save__pdbx_database_related.content_type
                              'protein target sequence and/or protocol data'
                              'split'
                              're-refinement'
+                             'complete structure'
                              'unspecified'
                              'other'
      loop_
@@ -3471,9 +3472,10 @@ save__pdbx_database_related.content_type
                              'protein target sequence and/or protocol data'
                              'split'
                              're-refinement'
+                             'complete structure'
                              'unspecified'
                              'other'
-q
+
     _item_aliases.alias_name     '_rcsb_database_related.content_type'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
