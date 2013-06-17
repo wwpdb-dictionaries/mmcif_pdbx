@@ -30,6 +30,85 @@ save__entity_poly.pdbx_sequence_evidence_code
                                  'derived from coordinates' .
 save_
 
+#################################
+## PDBX_SEQ_MAP_DEPOSITOR_INFO ##
+#################################
+
+save_pdbx_seq_map_depositor_info
+    _category.description
+;              Data items in the PDBX_CHEM_COMP_DEPOSITOR_INFO record the
+               details about the mapping sample and coordinate sequences.
+;
+    _category.id                  pdbx_seq_map_depositor_info
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_seq_map_depositor_info.entity_id'
+                                '_pdbx_seq_map_depositor_info.auth_asym_id'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_seq_map_depositor_info.entity_id
+    _pdbx_seq_map_depositor_info.auth_asym_id
+    _pdbx_seq_map_depositor_info.one_letter_code
+    _pdbx_seq_map_depositor_info.one_letter_code_mod
+     1    A     'AAAAAAAAAAAAAAAAA'   'AAAAAAAAAAAAAAAAA'  
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_seq_map_depositor_info.entity_id
+    _item_description.description
+;   This data item is a pointer to _entity_poly.entity_id in the ENTITY_POLY category.
+;
+    _item.name                  '_pdbx_seq_map_depositor_info.entity_id'
+    _item.category_id             pdbx_seq_map_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_seq_map_depositor_info.auth_asym_id
+    _item_description.description
+;   This data item is a pointer to _atom_site.auth_asym_id in the ATOM_SITE category.
+;
+    _item.name                  '_pdbx_seq_map_depositor_info.auth_asym_id'
+    _item.category_id             pdbx_seq_map_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_seq_map_depositor_info.one_letter_code
+    _item_description.description
+;              Coordinate sequence expressed as string of one-letter residue codes. 
+;
+    _item.name                  '_pdbx_seq_map_depositor_info.one_letter_code'
+    _item.category_id             pdbx_seq_map_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+
+save__pdbx_seq_map_depositor_info.one_letter_code_mod
+    _item_description.description
+;              Coordinate sequence expressed as string of one-letter residue codes with 
+               nonstandard residues expressed as 3-letter codes in parentheses.
+;
+    _item.name                  '_pdbx_seq_map_depositor_info.one_letter_code_mod'
+    _item.category_id             pdbx_seq_map_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
 
  
 
@@ -380,7 +459,7 @@ save__pdbx_struct_ref_seq_depositor_info.db_name
 save__pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code
     _item_description.description
 ;              Database chemical sequence expressed as string of one-letter 
-               amino acid codes. 
+               residue codes. 
 ;
     _item.name                  '_pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code'
     _item.category_id             pdbx_struct_ref_seq_depositor_info
