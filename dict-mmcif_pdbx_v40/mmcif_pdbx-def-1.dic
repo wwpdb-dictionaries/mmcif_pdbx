@@ -15672,6 +15672,7 @@ save__entity_poly.type
                                  'polysaccharide(L)'
                                  'polydeoxyribonucleotide/polyribonucleotide hybrid'
                                  'cyclic-pseudo-peptide'
+				 'peptide nucleic acid'
                                  'other'
      save_
 
