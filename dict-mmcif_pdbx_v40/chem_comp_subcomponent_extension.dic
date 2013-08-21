@@ -315,7 +315,7 @@ save__chem_comp_atom.pdbx_component_entity_id
 ;
     _item.name                  '_chem_comp_atom.pdbx_component_entity_id'
     _item.category_id             chem_comp_atom
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               int
      save_
 
