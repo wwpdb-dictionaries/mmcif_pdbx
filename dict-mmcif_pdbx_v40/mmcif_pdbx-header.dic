@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.035
+    _dictionary.version         4.036
 #
      loop_
     _dictionary_history.version
@@ -1956,6 +1956,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 	_pdbx_entity_src_syn.pdbx_end_seq_num
 	_entity_poly.pdbx_seq_one_letter_code_sample
 ;
-
+4.036  2013-08-27
+;
+    Changes (jdw):
+    +  change mandatory code for  _pdbx_nmr_sample_details.label,_pdbx_nmr_sample_details.type,_pdbx_nmr_exptl_sample_conditions.label,
+      _pdbx_nmr_exptl.spectrometer_id,_pdbx_nmr_exptl.sample_state  to no.
+;
 ### EOF mmcif_pdbx-header.dic 
 
