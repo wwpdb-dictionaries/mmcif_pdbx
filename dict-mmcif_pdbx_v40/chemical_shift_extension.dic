@@ -1416,7 +1416,7 @@ A descriptive label that uniquely identifies this set of sample conditions.
 
    _item.name                     '_pdbx_nmr_exptl_sample_conditions.label'
    _item.category_id              'pdbx_nmr_exptl_sample_conditions'
-   _item.mandatory_code            yes
+   _item.mandatory_code            no
    _item_default.value            'sample_conditions_1'
    _item_type.code                 line
    _item_examples.case            'conditions_1'
@@ -1566,7 +1566,7 @@ Pointer to '_pdbx_nmr_spectrometer.spectrometer_id'
 
    _item.name                     '_pdbx_nmr_exptl.spectrometer_id'
    _item.category_id              'pdbx_nmr_exptl'
-   _item.mandatory_code            yes
+   _item.mandatory_code            no
    _item_type.code                'int'
 
 save_
@@ -1580,7 +1580,7 @@ Physical state of the sample either anisotropic or isotropic.
 ;
    _item.name                     '_pdbx_nmr_exptl.sample_state'
    _item.category_id              'pdbx_nmr_exptl'
-   _item.mandatory_code            yes
+   _item.mandatory_code            no
    _item_default.value            'isotropic'
    _item_type.code                'line'
 
@@ -1609,7 +1609,7 @@ in the entry.
 
    _item.name                     '_pdbx_nmr_sample_details.label'
    _item.category_id              'pdbx_nmr_sample_details'
-   _item.mandatory_code            yes
+   _item.mandatory_code            no
    _item_default.value            'sample_1'
    _item_type.code                'line'
    _item_examples.case            '15N_sample'
@@ -1629,7 +1629,7 @@ of the sample.
 
    _item.name                     '_pdbx_nmr_sample_details.type'
    _item.category_id              'pdbx_nmr_sample_details'
-   _item.mandatory_code            yes
+   _item.mandatory_code            no
    _item_default.value            'solution'
    _item_type.code                'line'
 
