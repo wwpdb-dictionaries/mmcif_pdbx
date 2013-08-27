@@ -535,13 +535,25 @@ pdbx_reference_entity_poly_link          4  pdbx_reference_entity_poly_link:pdbx
 
 pdbx_molecule                            1  pdbx_molecule:struct_asym:1                                  . . 
 #
-#
 pdbx_distant_solvent_atoms             1  pdbx_distant_solvent_atoms:atom_site:1                                  . .
 pdbx_distant_solvent_atoms             2  pdbx_distant_solvent_atoms:chem_comp:2                                  . .
 pdbx_distant_solvent_atoms             3  pdbx_distant_solvent_atoms:chem_comp:3                                  . .
 pdbx_distant_solvent_atoms             4  pdbx_distant_solvent_atoms:struct_asym:4                                . .
+#
+pdbx_chem_comp_subcomponent_struct_conn  1 pdbx_chem_comp_subcomponent_struct_conn:chem_comp_atom:1               . .
+pdbx_chem_comp_subcomponent_struct_conn  2 pdbx_chem_comp_subcomponent_struct_conn:chem_comp_atom:2               . .
+#
+pdbx_chem_comp_subcomponent_entity_list  1 pdbx_chem_comp_subcomponent_entity_list:chem_comp:1                    . .
 
-
+pdbx_struct_special_symmetry             1 pdbx_struct_special_symmetry:chem_comp:1        .  .
+pdbx_struct_special_symmetry             1 pdbx_struct_special_symmetry:struct_asym:2      .  .
+pdbx_struct_special_symmetry             1 pdbx_struct_special_symmetry:atom_site:3        .  .
+#
+pdbx_nmr_chem_shift_experiment         1  pdbx_nmr_chem_shift_experiment:pdbx_nmr_assigned_chem_shift_list:1         . .
+pdbx_nmr_chem_shift_software           1  pdbx_nmr_chem_shift_software:pdbx_nmr_assigned_chem_shift_list:1           . .
+pdbx_nmr_spectral_dim                  1  pdbx_nmr_spectral_dim:pdbx_nmr_spectral_peak_list:1                        . .
+pdbx_nmr_spectral_peak_software        1  pdbx_nmr_spectral_peak_software:pdbx_nmr_spectral_peak_list:1              . .
+pdbx_nmr_systematic_chem_shift_offset  1  pdbx_nmr_systematic_chem_shift_offset:pdbx_nmr_assigned_chem_shift_list:1  . .
 
 #
 loop_
@@ -1725,3 +1737,29 @@ pdbx_validate_polymer_linkage              2  '_pdbx_validate_polymer_linkage.au
 pdbx_validate_polymer_linkage              2  '_pdbx_validate_polymer_linkage.PDB_ins_code_2'         '_atom_site.pdbx_PDB_ins_code'              atom_site
 pdbx_validate_polymer_linkage              2  '_pdbx_validate_polymer_linkage.label_alt_id_2'         '_atom_site.label_alt_id'                   atom_site
 #
+pdbx_chem_comp_subcomponent_struct_conn  1   '_pdbx_chem_comp_subcomponent_struct_conn.entity_id_1'   '_chem_comp_atom.pdbx_component_entity_id'  chem_comp_atom
+pdbx_chem_comp_subcomponent_struct_conn  1   '_pdbx_chem_comp_subcomponent_struct_conn.atom_id_1'     '_chem_comp_atom.pdbx_component_atom_id'    chem_comp_atom
+pdbx_chem_comp_subcomponent_struct_conn  1   '_pdbx_chem_comp_subcomponent_struct_conn.comp_id_1'     '_chem_comp_atom.pdbx_component_comp_id'    chem_comp_atom
+pdbx_chem_comp_subcomponent_struct_conn  1   '_pdbx_chem_comp_subcomponent_struct_conn.seq_id_1'      '_chem_comp_atom.pdbx_residue_numbering'    chem_comp_atom
+#
+pdbx_chem_comp_subcomponent_struct_conn  2   '_pdbx_chem_comp_subcomponent_struct_conn.atom_id_2'     '_chem_comp_atom.pdbx_component_atom_id'    chem_comp_atom
+pdbx_chem_comp_subcomponent_struct_conn  2   '_pdbx_chem_comp_subcomponent_struct_conn.entity_id_2'   '_chem_comp_atom.pdbx_component_entity_id'  chem_comp_atom
+pdbx_chem_comp_subcomponent_struct_conn  2   '_pdbx_chem_comp_subcomponent_struct_conn.comp_id_2'     '_chem_comp_atom.pdbx_component_comp_id'    chem_comp_atom
+pdbx_chem_comp_subcomponent_struct_conn  2   '_pdbx_chem_comp_subcomponent_struct_conn.seq_id_2'      '_chem_comp_atom.pdbx_residue_numbering'    chem_comp_atom
+#
+pdbx_chem_comp_subcomponent_entity_list  1   '_pdbx_chem_comp_subcomponent_entity_list.parent_comp_id'  '_chem_comp.id'   chem_comp
+
+pdbx_struct_special_symmetry 1   '_pdbx_struct_special_symmetry.auth_comp_id'  '_chem_comp.id'                   chem_comp
+pdbx_struct_special_symmetry 1   '_pdbx_struct_special_symmetry.label_comp_id' '_chem_comp.id'                   chem_comp
+pdbx_struct_special_symmetry 2   '_pdbx_struct_special_symmetry.label_asym_id' '_struct_asym.id'                 struct_asym
+pdbx_struct_special_symmetry 3   '_pdbx_struct_special_symmetry.PDB_model_num'  '_atom_site.pdbx_PDB_model_num'  atom_site
+#
+pdbx_nmr_chem_shift_experiment        1 '_pdbx_nmr_chem_shift_experiment.assigned_chem_shift_list_id'         '_pdbx_nmr_assigned_chem_shift_list.id' pdbx_nmr_assigned_chem_shift_list
+pdbx_nmr_chem_shift_software          1 '_pdbx_nmr_chem_shift_software.assigned_chem_shift_list_id'           '_pdbx_nmr_assigned_chem_shift_list.id' pdbx_nmr_assigned_chem_shift_list
+pdbx_nmr_spectral_dim                 1 '_pdbx_nmr_spectral_dim.spectral_peak_list_id'                        '_pdbx_nmr_spectral_peak_list.id'       pdbx_nmr_spectral_peak_list
+pdbx_nmr_spectral_peak_software       1 '_pdbx_nmr_spectral_peak_software.spectral_peak_list_id'              '_pdbx_nmr_spectral_peak_list.id'       pdbx_nmr_spectral_peak_list
+pdbx_nmr_systematic_chem_shift_offset 1 '_pdbx_nmr_systematic_chem_shift_offset.assigned_chem_shift_list_id'  '_pdbx_nmr_assigned_chem_shift_list.id' pdbx_nmr_assigned_chem_shift_list
+
+
+
+

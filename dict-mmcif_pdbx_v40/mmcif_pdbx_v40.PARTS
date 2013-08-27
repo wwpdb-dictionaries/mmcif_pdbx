@@ -14,9 +14,16 @@ mmcif_pdbx-def-11.dic
 mmcif_pdbx-def-12.dic
 mmcif_pdbx-def-13.dic
 mmcif_pdbx-def-14.dic
+mmcif_pdbx-def-15.dic
 mmcif_pdbx-def-16.dic
 chem_comp_atom_feature.dic
 prd-extension-v5.dic
-mmcif_pdbx-def-15.dic
 distant_solvent-extension.dic
+special_position_extension.dic
+pdbx_reference_publication_list-extension.dic
+chemical_shift_extension.dic
+struct_site_auth_extension.dic
+audit_support-extension.dic
+chem_comp_subcomponent_extension.dic
+entity-poly-multi-src-extension-v4.dic
 mmcif_pdbx_internal-def-ilg-prdv5.dic

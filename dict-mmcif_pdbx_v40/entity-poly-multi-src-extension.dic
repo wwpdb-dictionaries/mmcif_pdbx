@@ -25,6 +25,8 @@
 #
 # Aug 12, 2012 - jdw    Add _entiry_src_gen.pdbx_seq_type to characterize the type of the sequence part.
 #
+# Aug 27, 2013 - jdw    create a version 4 alternate dictionary with only the new attributes in this dictionary as optional
+#
 # Draft dictionary extension for describing polymeric molecules with derived
 # from multiple biological sources.
 #

@@ -52,15 +52,15 @@ save__struct_site.pdbx_auth_ins_code
      save_
 
 
-save__struct_site.pdbx_evidence_code
-    _item_description.description
-;         The evidentiary support for the site assignment.
-;
-    _item.name                  '_struct_site.pdbx_evidence_code'
-    _item.category_id             struct_site
-    _item.mandatory_code          no
-    _item_type.code               line
-    loop_
-    _item_enumeration.value 'Software' 'Author'
-
-     save_
+#save__struct_site.pdbx_evidence_code
+#    _item_description.description
+#;         The evidentiary support for the site assignment.
+#;
+#    _item.name                  '_struct_site.pdbx_evidence_code'
+#    _item.category_id             struct_site
+#    _item.mandatory_code          no
+#    _item_type.code               line
+#    loop_
+#    _item_enumeration.value 'Software' 'Author'
+#
+#     save_

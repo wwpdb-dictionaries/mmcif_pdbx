@@ -13,6 +13,7 @@
 #      20-Feb-2013 jdw  added pdbx_chem_comp_upload_depositor_info category.
 #                       added _pdbx_depui_status_flags.prediction_target and category pdbx_depui_entity_status_flags
 #      04-Mar-2013 jdw  consolidated pdbx_struct_ref_depositor_info  into pdbx_struct_ref_seq_depositor_info
+#      27-Aug-2013 jdw  add local category context to all categories -- 
 # ----------------------------------------------------------------------------------------------------------------------------
 
 save__entity_poly.pdbx_sequence_evidence_code 
@@ -65,6 +66,8 @@ save_pdbx_seq_map_depositor_info
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_seq_map_depositor_info
      save_
 
 save__pdbx_seq_map_depositor_info.entity_id
@@ -129,6 +132,8 @@ save_pdbx_chem_comp_depositor_info
     _category_group.id           'inclusive_group'
                                  'chem_comp_group'
                                  'pdbx_group'
+
+
     loop_
     _category_examples.detail
     _category_examples.case
@@ -150,6 +155,8 @@ save_pdbx_chem_comp_depositor_info
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_chem_comp_depositor_info
      save_
 
 save__pdbx_chem_comp_depositor_info.ordinal
@@ -314,6 +321,7 @@ save_pdbx_struct_ref_seq_depositor_info
                depositor provided information related to the archival cateogory
                STRUCT_REF_SEQ.
 ;
+
     _category.id                  pdbx_struct_ref_seq_depositor_info
     _category.mandatory_code      no
     _category_key.name          '_pdbx_struct_ref_seq_depositor_info.ref_id'
@@ -343,6 +351,8 @@ save_pdbx_struct_ref_seq_depositor_info
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_struct_ref_seq_depositor_info
      save_
 
 save__pdbx_struct_ref_seq_depositor_info.ref_id
@@ -560,6 +570,8 @@ save_pdbx_struct_ref_seq_dif_depositor_info
     _pdbx_struct_ref_seq_dif_depositor_info.details       .
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_struct_ref_seq_dif_depositor_info
      save_
 
 save__pdbx_struct_ref_seq_dif_depositor_info.ordinal
@@ -756,6 +768,8 @@ save_pdbx_struct_assembly_prop_depositor_info
     _pdbx_struct_assembly_prop_depositor_info.value      1456.7
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_struct_assembly_prop_depositor_info
      save_
 
 save__pdbx_struct_assembly_prop_depositor_info.biol_id
@@ -839,6 +853,8 @@ save_pdbx_struct_assembly_depositor_info
     ;
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_struct_assembly_depositor_info
      save_
 
 save__pdbx_struct_assembly_depositor_info.details
@@ -1002,6 +1018,8 @@ save_pdbx_struct_assembly_gen_depositor_info
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_struct_assembly_gen_depositor_info
      save_
 
 save__pdbx_struct_assembly_gen_depositor_info.asym_id_list
@@ -1097,6 +1115,8 @@ save_pdbx_struct_oper_list_depositor_info
     _pdbx_struct_oper_list_depositor_info.type    'point symmetry operation'
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_struct_oper_list_depositor_info
      save_
 
 save__pdbx_struct_oper_list_depositor_info.id
@@ -1341,6 +1361,8 @@ save_pdbx_point_symmetry_depositor_info
     _pdbx_point_symmetry_depositor_info.H-M_notation          532
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_point_symmetry_depositor_info
      save_
 
 save__pdbx_point_symmetry_depositor_info.entry_id
@@ -1453,6 +1475,8 @@ save_pdbx_helical_symmetry_depositor_info
     _pdbx_helical_symmetry_depositor_info.circular_symmetry           1
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_helical_symmetry_depositor_info
     save_
 
 save__pdbx_helical_symmetry_depositor_info.entry_id
@@ -1460,6 +1484,7 @@ save__pdbx_helical_symmetry_depositor_info.entry_id
 ;              This data item is a pointer to _entry.id in the ENTRY category.
 ;
     _item.name                  '_pdbx_helical_symmetry_depositor_info.entry_id'
+    _item.category_id             pdbx_helical_symmetry_depositor_info
     _item.mandatory_code          yes
     _item_type.code             code
     _item_linked.child_name     '_pdbx_helical_symmetry_depositor_info.entry_id'
@@ -1614,6 +1639,8 @@ _pdbx_solvent_atom_site_mapping.pre_Cartn_z
 1 . . . . . . . . . . . . . . . . . . . . .  
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_solvent_atom_site_mapping
      save_
 
 save__pdbx_solvent_atom_site_mapping.id
@@ -2022,6 +2049,8 @@ save_pdbx_molecule_features_depositor_info
   1  "Actinomycin D" "Antitumor Antibiotic"  "polypeptide antibiotic" 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_molecule_features_depositor_info
      save_
 
 
@@ -2187,6 +2216,8 @@ loop_
   X78 102  W . .  Y N
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_chem_comp_instance_depositor_info
      save_
 
 save__pdbx_chem_comp_instance_depositor_info.ordinal
@@ -2363,6 +2394,8 @@ save_pdbx_depui_status_flags
   _pdbx_depui_status_flags.corresponding_author_status  N
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_depui_status_flags
      save_
 
 save__pdbx_depui_status_flags.dep_dataset_id
@@ -2495,6 +2528,28 @@ save__pdbx_depui_status_flags.has_accepted_terms_and_conditions
     _item_enumeration.value    Y N   
      save_
 
+save__pdbx_depui_status_flags.is_ligand_processing_complete
+    _item_description.description
+;   A flag to indicate that ligand processing is complete
+;
+    _item.name                  '_pdbx_depui_status_flags.is_ligand_processing_complete'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+
+save__pdbx_depui_status_flags.sample_xyz_sequence_alignments_valid
+    _item_description.description
+;   A flag to indicate that all sample coordinate sequence alignments are valid.
+;
+    _item.name                  '_pdbx_depui_status_flags.sample_xyz_sequence_alignments_valid'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+
 save_pdbx_depui_upload
     _category.description
 ;              Data items in the PDBX_DEPUI_UPLOAD category record the
@@ -2526,6 +2581,8 @@ save_pdbx_depui_upload
     1  myfile.cif 'PDBx/mmCIF model file' 34567 Y ?  ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_depui_upload
      save_
 
 save__pdbx_depui_upload.ordinal
@@ -2615,6 +2672,7 @@ save__pdbx_depui_upload.sequence_align
     _item_type.code               text
      save_
 
+
 #
 save_pdbx_depui_validation_status_flags
     _category.description
@@ -2644,6 +2702,8 @@ save_pdbx_depui_validation_status_flags
   _pdbx_depui_validation_status_flags.solvent_outliers         0
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_depui_validation_status_flags
      save_
 
 save__pdbx_depui_validation_status_flags.dep_dataset_id
@@ -2748,6 +2808,8 @@ save_pdbx_chem_comp_upload_depositor_info
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_chem_comp_upload_depositor_info
      save_
 
 save__pdbx_chem_comp_upload_depositor_info.ordinal
@@ -2831,6 +2893,8 @@ save_pdbx_depui_entity_status_flags
   _pdbx_depui_entity_status_flags.has_mutation      Y
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_depui_entity_status_flags
      save_
 
 save__pdbx_depui_entity_status_flags.dep_dataset_id
@@ -2865,6 +2929,15 @@ save__pdbx_depui_entity_status_flags.has_mutation
     _item_enumeration.value    Y N   
      save_
 
+save__pdbx_depui_entity_status_flags.sample_xyz_sequence_alignments_valid
+    _item_description.description
+;   A flag to indicate that sample and coordinate sequence alignments is valid for this entity
+;
+    _item.name                  '_pdbx_depui_entity_status_flags.sample_xyz_sequence_alignments_valid'
+    _item.category_id             pdbx_depui_entity_status_flags
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
 
 
 ##
@@ -2895,6 +2968,8 @@ save_pdbx_depui_entity_features
   _pdbx_depui_entity_features.type              'Antibiotic/inhibitor'
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_depui_entity_features
      save_
 
 save__pdbx_depui_entity_features.dep_dataset_id

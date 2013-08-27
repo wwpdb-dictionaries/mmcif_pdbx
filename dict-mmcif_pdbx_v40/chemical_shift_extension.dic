@@ -1481,33 +1481,33 @@ Estimate of the standard error for the value for the sample pressure.
 save_
 
 
-save__pdbx_nmr_exptl_sample_conditions.pressure_units
-
-   _item_description.description
-;
-Units for the value of the sample condition pressure.
-;
-
-   _item.name                     '_pdbx_nmr_exptl_sample_conditions.pressure_units'
-   _item.category_id              'pdbx_nmr_exptl_sample_conditions'
-   _item.mandatory_code            no
-   _item_type.code                'line'
-
-   loop_
-     _item_enumeration.value
-     _item_enumeration.detail
-
-   Pa             "Pascal$ 1 Pa = 1 N m^-2"
-   bar            "bar$ 1 bar = 10^5 Pa"
-   atm             atmospheres
-   mmHg            ?
-   Torr            ?
-   mbar            millibar
-  'Not defined'    ?
-
-    _item_examples.case             'atm'
-
-save_
+#save__pdbx_nmr_exptl_sample_conditions.pressure_units
+#
+#   _item_description.description
+#;
+#Units for the value of the sample condition pressure.
+#;
+#
+#   _item.name                     '_pdbx_nmr_exptl_sample_conditions.pressure_units'
+#   _item.category_id              'pdbx_nmr_exptl_sample_conditions'
+#   _item.mandatory_code            no
+#   _item_type.code                'line'
+#
+#   loop_
+#     _item_enumeration.value
+#     _item_enumeration.detail
+#
+#   Pa             "Pascal$ 1 Pa = 1 N m^-2"
+#   bar            "bar$ 1 bar = 10^5 Pa"
+#   atm             atmospheres
+#   mmHg            ?
+#   Torr            ?
+#   mbar            millibar
+#  'Not defined'    ?
+#
+#    _item_examples.case             'atm'
+#
+#save_
 
 
 save__pdbx_nmr_exptl_sample_conditions.temperature_err

@@ -18,7 +18,7 @@ save__pdbx_audit_author.grant_support_flag
 ;
     _item.name                  '_pdbx_audit_author.grant_support_flag'
     _item.category_id             pdbx_audit_author
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               ucode
      loop_
     _item_enumeration.value

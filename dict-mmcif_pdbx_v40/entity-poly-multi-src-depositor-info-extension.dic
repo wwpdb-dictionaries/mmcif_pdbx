@@ -66,6 +66,8 @@ save_pdbx_entity_src_gen_depositor_info
     4 1  530 535 'synthetic construct'  ?                32630  'Escherichia coli' 562 ? plasmid pGEX6p-2RBS 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.category_id  pdbx_entity_src_gen_depositor_info
      save_
 
 save__pdbx_entity_src_gen_depositor_info.src_id
