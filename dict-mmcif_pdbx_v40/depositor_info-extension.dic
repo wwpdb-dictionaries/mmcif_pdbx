@@ -2574,11 +2574,12 @@ save_pdbx_depui_upload
    _pdbx_depui_upload.ordinal
    _pdbx_depui_upload.file_name                        
    _pdbx_depui_upload.file_type                        
+   _pdbx_depui_upload.file_content_type                        
    _pdbx_depui_upload.file_size                        
    _pdbx_depui_upload.file_valid                       
    _pdbx_depui_upload.diagnostic_message
    _pdbx_depui_upload.sequence_align                   
-    1  myfile.cif 'PDBx/mmCIF model file' 34567 Y ?  ?
+    1  myfile.cif xs-cif 'PDBx/mmCIF model file' 34567 Y ?  ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    _pdbx_category_context.type         RCSB_LOCAL
@@ -2595,21 +2596,34 @@ save__pdbx_depui_upload.ordinal
     _item_type.code               int
     save_
 
+save__pdbx_depui_upload.file_content_type
+    _item_description.description
+;              The content type of the uploaded file.
+;
+    _item.name                  '_pdbx_depui_upload.file_content_type'
+    _item.category_id             pdbx_depui_upload
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_examples.case
+                                 'PDBx/mmCIF model file'    
+                                 'PDB model file'   
+                                 'PDBx/mmCIF structure factor file'
+                                 'other'  
+     save_
+
 save__pdbx_depui_upload.file_type
     _item_description.description
-;              The type of the uploaded file.
+;              The internal file type of the uploaded file.
 ;
     _item.name                  '_pdbx_depui_upload.file_type'
     _item.category_id             pdbx_depui_upload
     _item.mandatory_code          no
     _item_type.code               line
     loop_
-    _item_enumeration.value
-    _item_enumeration.detail
-                                 'PDBx/mmCIF model file'    .
-                                 'PDB model file'   .
-                                 'PDBx/mmCIF structure factor file'    .
-                                 'other'  .
+    _item_examples.case
+                                 'xs-cif'
+                                 'other'  
      save_
 
 save__pdbx_depui_upload.file_name
