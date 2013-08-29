@@ -11221,6 +11221,10 @@ save__database_2.database_id
                                   BMRB
 ;                                 Biological Magnetic Reference Data Bank
 ;
+                                  WWPDB
+;                                 Worldwide Protein Data Bank
+;
+
      save_
 
 save__database_2.database_code

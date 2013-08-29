@@ -1958,9 +1958,10 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
 4.036  2013-08-27
 ;
-    Changes (jdw):
+    Changes (jdw):  OPEN REVISION
     +  change mandatory code for  _pdbx_nmr_sample_details.label,_pdbx_nmr_sample_details.type,_pdbx_nmr_exptl_sample_conditions.label,
       _pdbx_nmr_exptl.spectrometer_id,_pdbx_nmr_exptl.sample_state  to no.
+    + Update enumeration for _database_2.database_id
 ;
 ### EOF mmcif_pdbx-header.dic 
 
