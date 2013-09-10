@@ -3837,7 +3837,8 @@ save__pdbx_family_prd_audit.action_type
     'Remove PRD'                    . 
     'Modify family name'            . 
     'Modify synonyms'               . 
-    'Modify annotation'             . 
+    'Modify annotation'             .
+    'Modify family classification'  . 
     'Modify feature'                .
     'Modify related structures'     . 
     'Modify molecule details'       .
