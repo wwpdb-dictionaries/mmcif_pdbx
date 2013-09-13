@@ -1956,13 +1956,14 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 	_pdbx_entity_src_syn.pdbx_end_seq_num
 	_entity_poly.pdbx_seq_one_letter_code_sample
 ;
-4.036  2013-09-10
+4.036  2013-09-13
 ;
     Changes (jdw):  OPEN REVISION
     +  change mandatory code for  _pdbx_nmr_sample_details.label,_pdbx_nmr_sample_details.type,_pdbx_nmr_exptl_sample_conditions.label,
       _pdbx_nmr_exptl.spectrometer_id,_pdbx_nmr_exptl.sample_state  to no.
     + Update enumeration for _database_2.database_id
     + Update enumeration for __pdbx_family_prd_audit.action_type
+    + Update category group assignments for NMR data categories and change context values to WWPDB_LOCAL
 ;
 ### EOF mmcif_pdbx-header.dic 
 

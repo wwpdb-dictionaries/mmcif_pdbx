@@ -1364,7 +1364,7 @@ save_pdbx_entity_nonpoly
      loop_
     _category_group.id           'inclusive_group'
                                  'entity_group'
-                                 'rcsb_group'
+                                 'ndb_group'
      loop_
     _category_examples.detail
     _category_examples.case

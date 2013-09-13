@@ -166,6 +166,10 @@
                internal processing by the staff of the International Union of
                Crystallography.
 ;
+              'nmr_group'
+              'inclusive_group'
+;              Categories that describe Nuclear Magnetic Spectroscopy experiments.
+;
               'pdb_group'
               'inclusive_group'
 ;              Categories that pertain to the file-format or data-processing

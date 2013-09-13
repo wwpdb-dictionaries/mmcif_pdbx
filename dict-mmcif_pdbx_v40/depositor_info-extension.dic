@@ -67,7 +67,7 @@ save_pdbx_seq_map_depositor_info
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_seq_map_depositor_info
      save_
 
@@ -156,7 +156,7 @@ save_pdbx_chem_comp_depositor_info
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_chem_comp_depositor_info
      save_
 
@@ -352,7 +352,7 @@ save_pdbx_struct_ref_seq_depositor_info
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_struct_ref_seq_depositor_info
      save_
 
@@ -571,7 +571,7 @@ save_pdbx_struct_ref_seq_dif_depositor_info
     _pdbx_struct_ref_seq_dif_depositor_info.details       .
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_struct_ref_seq_dif_depositor_info
      save_
 
@@ -769,7 +769,7 @@ save_pdbx_struct_assembly_prop_depositor_info
     _pdbx_struct_assembly_prop_depositor_info.value      1456.7
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_struct_assembly_prop_depositor_info
      save_
 
@@ -854,7 +854,7 @@ save_pdbx_struct_assembly_depositor_info
     ;
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_struct_assembly_depositor_info
      save_
 
@@ -1019,7 +1019,7 @@ save_pdbx_struct_assembly_gen_depositor_info
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_struct_assembly_gen_depositor_info
      save_
 
@@ -1116,7 +1116,7 @@ save_pdbx_struct_oper_list_depositor_info
     _pdbx_struct_oper_list_depositor_info.type    'point symmetry operation'
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_struct_oper_list_depositor_info
      save_
 
@@ -1362,7 +1362,7 @@ save_pdbx_point_symmetry_depositor_info
     _pdbx_point_symmetry_depositor_info.H-M_notation          532
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_point_symmetry_depositor_info
      save_
 
@@ -1476,7 +1476,7 @@ save_pdbx_helical_symmetry_depositor_info
     _pdbx_helical_symmetry_depositor_info.circular_symmetry           1
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_helical_symmetry_depositor_info
     save_
 
@@ -1640,7 +1640,7 @@ _pdbx_solvent_atom_site_mapping.pre_Cartn_z
 1 . . . . . . . . . . . . . . . . . . . . .  
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_solvent_atom_site_mapping
      save_
 
@@ -2050,7 +2050,7 @@ save_pdbx_molecule_features_depositor_info
   1  "Actinomycin D" "Antitumor Antibiotic"  "polypeptide antibiotic" 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_molecule_features_depositor_info
      save_
 
@@ -2217,7 +2217,7 @@ loop_
   X78 102  W . .  Y N
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_chem_comp_instance_depositor_info
      save_
 
@@ -2395,7 +2395,7 @@ save_pdbx_depui_status_flags
   _pdbx_depui_status_flags.corresponding_author_status  N
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_depui_status_flags
      save_
 
@@ -2583,7 +2583,7 @@ save_pdbx_depui_upload
     1  myfile.cif xs-cif 'PDBx/mmCIF model file' 34567 Y ?  ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_depui_upload
      save_
 
@@ -2717,7 +2717,7 @@ save_pdbx_depui_validation_status_flags
   _pdbx_depui_validation_status_flags.solvent_outliers         0
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_depui_validation_status_flags
      save_
 
@@ -2823,7 +2823,7 @@ save_pdbx_chem_comp_upload_depositor_info
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_chem_comp_upload_depositor_info
      save_
 
@@ -2908,7 +2908,7 @@ save_pdbx_depui_entity_status_flags
   _pdbx_depui_entity_status_flags.has_mutation      Y
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_depui_entity_status_flags
      save_
 
@@ -2983,7 +2983,7 @@ save_pdbx_depui_entity_features
   _pdbx_depui_entity_features.type              'Antibiotic/inhibitor'
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_depui_entity_features
      save_
 
@@ -3068,7 +3068,7 @@ _pdbx_deposition_message_info.send_status
   text  draft  
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_deposition_message_info
      save_
 
@@ -3245,7 +3245,7 @@ _pdbx_deposition_message_file_reference.storage_type
 #
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         RCSB_LOCAL
+   _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_deposition_message_file_reference
      save_
 

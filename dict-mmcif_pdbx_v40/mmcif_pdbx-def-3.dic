@@ -27,6 +27,7 @@ described elsewhere in this deposition.
                                  '_pdbx_nmr_details.entry_id'
      loop_
     _category_group.id           'inclusive_group'
+                                 'nmr_group'            
                                  'pdbx_group'
      save_
 
@@ -87,6 +88,7 @@ system used.
                                  '_pdbx_nmr_sample_details.solution_id'
      loop_
     _category_group.id           'inclusive_group'
+                                 'nmr_group'            
                                  'pdbx_group'
 
      loop_
@@ -196,6 +198,7 @@ save_pdbx_nmr_exptl_sample
                                  '_pdbx_nmr_exptl_sample.component'
      loop_
     _category_group.id           'inclusive_group'
+                                 'nmr_group'            
                                  'pdbx_group'
 
      loop_
@@ -399,6 +402,7 @@ is identified by a numerical code.
                                 '_pdbx_nmr_exptl_sample_conditions.conditions_id'
      loop_
     _category_group.id           'inclusive_group'
+                                 'nmr_group'            
                                  'pdbx_group'
 
      loop_
@@ -543,6 +547,7 @@ deposition.
     _category_key.name          '_pdbx_nmr_spectrometer.spectrometer_id'
      loop_
     _category_group.id           'inclusive_group'
+                                 'nmr_group'            
                                  'pdbx_group'
 
      loop_
@@ -729,6 +734,7 @@ which sample and which sample conditions were used for the experiment.
                           '_pdbx_nmr_exptl.solution_id'
      loop_
     _category_group.id           'inclusive_group'
+                                 'nmr_group'            
                                  'pdbx_group'
 
      loop_
@@ -866,6 +872,7 @@ include the name of the software, the author of the software and the version use
 #    _category_key.name          '_pdbx_nmr_software.ordinal'
      loop_
     _category_group.id           'inclusive_group'
+                                 'nmr_group'            
                                  'pdbx_group'
 
      loop_
@@ -1024,6 +1031,7 @@ save_pdbx_nmr_constraints
     _category_key.name          '_pdbx_nmr_constraints.entry_id'
      loop_
     _category_group.id           'inclusive_group'
+                                 'nmr_group'            
                                  'pdbx_group'
 
      loop_
@@ -1502,6 +1510,7 @@ save_pdbx_nmr_ensemble
     _category_key.name          '_pdbx_nmr_ensemble.entry_id'
      loop_
     _category_group.id           'inclusive_group'
+                                 'nmr_group'            
                                  'pdbx_group'
 
      loop_
@@ -1809,6 +1818,7 @@ save_pdbx_nmr_ensemble_rms
     _category_key.name          '_pdbx_nmr_ensemble_rms.entry_id'
      loop_
     _category_group.id           'inclusive_group'
+                                 'nmr_group'            
                                  'pdbx_group'
 
      loop_
@@ -2179,6 +2189,7 @@ save_pdbx_nmr_representative
     _category_key.name          '_pdbx_nmr_representative.entry_id'
      loop_
     _category_group.id           'inclusive_group'
+                                 'nmr_group'            
                                  'pdbx_group'
 
      loop_
@@ -2272,6 +2283,7 @@ Describe the method and details of the refinement of the deposited structure.
     _category_key.name          '_pdbx_nmr_refine.entry_id'
      loop_
     _category_group.id           'inclusive_group'
+                                 'nmr_group'            
                                  'pdbx_group'
 
      loop_
@@ -2361,6 +2373,7 @@ interaction terms in the target function used for simulated annealing.
                                  '_pdbx_nmr_force_constants.entry_id'
      loop_
     _category_group.id           'inclusive_group'
+                                 'nmr_group'            
                                  'pdbx_group'
 
         loop_

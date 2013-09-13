@@ -21,8 +21,8 @@ Items in the assigned_chem_shift_list category provide information about a list 
 
    loop_
      _category_group.id
-
      'inclusive_group'
+     'nmr_group'            
      'pdbx_group'
 
 save_
@@ -307,8 +307,8 @@ Items in the chem_shift_experiment category provide pointers to the NMR experime
 
    loop_
      _category_group.id
-
      'inclusive_group'
+     'nmr_group'            
      'pdbx_group'
 
 
@@ -440,6 +440,7 @@ Items in the pdbx_nmr_chem_shift_ref category provide the chemical shift referen
      _category_group.id
 
      'inclusive_group'
+     'nmr_group'
      'pdbx_group'
 
    loop_
@@ -870,6 +871,7 @@ Items in the chem_shift_reference category define a set of chemical shift refere
      _category_group.id
 
      'inclusive_group'
+     'nmr_group'
      'pdbx_group'
 
    loop_
@@ -1097,6 +1099,7 @@ Items in the chem_shift_software category provide pointers to the software categ
      _category_group.id
 
      'inclusive_group'
+     'nmr_group'
      'pdbx_group'
 
 save_
@@ -1171,6 +1174,7 @@ to calculate conformers with the constraint file, and the characteristics of the
      _category_group.id
 
      'inclusive_group'
+     'nmr_group'
      'pdbx_group'
 
 save_
@@ -1701,6 +1705,7 @@ Items in the pdbx_nmr_software_task category provide information about software 
      _category_group.id
 
      'inclusive_group'
+     'nmr_group'
      'pdbx_group'
 
 
@@ -1794,6 +1799,7 @@ Items in the spectral_dim category describe the parameters of each dimension in 
      _category_group.id
 
      'inclusive_group'
+     'nmr_group'
      'pdbx_group'
 
 
@@ -1980,6 +1986,7 @@ Items in the pdbx_nmr_spectral_peak_list category provide information about a li
      _category_group.id
 
      'inclusive_group'
+     'nmr_group'
      'pdbx_group'   
 
 save_
@@ -2163,6 +2170,7 @@ and methods category where descriptions of software applications and methods can
      _category_group.id
 
      'inclusive_group'
+     'nmr_group'
      'pdbx_group'
 
 save_
@@ -2251,6 +2259,7 @@ Items in the pdbx_nmr_systematic_chem_shift_offset category define chemical shif
      _category_group.id
 
      'inclusive_group'
+     'nmr_group'
      'pdbx_group'
 
 save_
@@ -2417,6 +2426,7 @@ Items in the pdbx_nmr_upload category provide information about the data files u
      _category_group.id
 
      'inclusive_group'
+     'nmr_group'
      'pdbx_group'
 
 save_
