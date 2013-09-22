@@ -81,7 +81,7 @@
     _category_group_list.parent_id
     _category_group_list.description
               'inclusive_group'   .
-;              Categories that belong to the macromolecular dictionary.
+;              The parent category group containing all of the data categories in the macromolecular dictionary.
 ;
               'atom_group'
               'inclusive_group'
@@ -106,12 +106,29 @@
 ;
               'chemical_group'
               'inclusive_group'
-;              Categories that describe chemical properties and nomenclature.
+;              Categories that describe chemical features derived from the experimental coordinate data.
 ;
               'chem_comp_group'
               'inclusive_group'
-;              Categories that describe components of chemical structure.
+;              Categories that define the chemical structure and nomencature of the momoners and ligands in the experiment. 
 ;
+              'chem_comp_dictionary_group'
+              'inclusive_group'
+;              Categories defining chemical structure and nomencature of the momoners and ligands used in 
+               the Chemical Component Dictionary.
+;
+
+              'bird_dictionary_group'
+              'inclusive_group'
+;              Categories defining chemical structure and nomencature of the small polymer molecules used in 
+               the Biologically Interesting Molecule Reference Dictionary (BIRD).
+;
+
+              'bird_family_dictionary_group'
+              'inclusive_group'
+;              Categories defining families of related molecules used in the Biologically Interesting Molecule Reference Dictionary (BIRD).
+;
+
               'chem_link_group'
               'inclusive_group'
 ;              Categories that describe links between components of
@@ -123,8 +140,7 @@
 ;
               'computing_group'
               'inclusive_group'
-;              Categories that describe the computational details of the
-               experiment.
+;              Categories that describe the computational details of the experiment.
 ;
               'compliance_group'
               'inclusive_group'
@@ -146,7 +162,7 @@
 ;
               'entity_group'
               'inclusive_group'
-;              Categories that describe chemical entities.
+;              Categories that describe the unique chemical and molecular entities.
 ;
               'entry_group'
               'inclusive_group'
@@ -189,8 +205,7 @@
 ;
               'struct_group'
               'inclusive_group'
-;              Categories that contain details about the crystallographic
-               structure.
+;              Categories that contain details about the experimental structure.
 ;
               'symmetry_group'
               'inclusive_group'
@@ -198,7 +213,7 @@
 ;
              'pdbx_group'
              'inclusive_group'
-;             Categories which are part of PDB data exchange protocol.
+;             Categories which have been added to support the data archiving and exchange for the Protein Data Bank.
 ;
              'pdbx_erf_group'
              'inclusive_group'
@@ -235,7 +250,6 @@
              'inclusive_group'
 ;             Categories which are used to storing view transformations.
 ;
-
 
 ####################
 ## ITEM_TYPE_LIST ##

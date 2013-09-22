@@ -6213,6 +6213,7 @@ save_chem_comp
     loop_
     _category_group.id           'inclusive_group'
                                  'chem_comp_group'
+                                 'chem_comp_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -6896,6 +6897,7 @@ save_chem_comp_atom
     loop_
     _category_group.id           'inclusive_group'
                                  'chem_comp_group'
+                                 'chem_comp_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -7288,6 +7290,7 @@ save_chem_comp_bond
     loop_
     _category_group.id           'inclusive_group'
                                  'chem_comp_group'
+                                 'chem_comp_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -11275,7 +11278,7 @@ save_database_PDB_caveat
     loop_
     _category_group.id           'inclusive_group'
                                  'database_group'
-                                 'pdb_group'
+                                 'pdbx_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -11337,7 +11340,7 @@ save_database_PDB_matrix
     loop_
     _category_group.id           'inclusive_group'
                                  'database_group'
-                                 'pdb_group'
+                                 'pdbx_group'
      save_
 
 save__database_PDB_matrix.entry_id
@@ -11665,7 +11668,7 @@ save_database_PDB_remark
     loop_
     _category_group.id           'inclusive_group'
                                  'database_group'
-                                 'pdb_group'
+                                 'pdbx_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -11752,7 +11755,7 @@ save_database_PDB_rev
     loop_
     _category_group.id           'inclusive_group'
                                  'database_group'
-                                 'pdb_group'
+                                 'pdbx_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -11926,7 +11929,7 @@ save_database_PDB_rev_record
     loop_
     _category_group.id           'inclusive_group'
                                  'database_group'
-                                 'pdb_group'
+                                 'pdbx_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -12010,7 +12013,7 @@ save_database_PDB_tvect
     loop_
     _category_group.id           'inclusive_group'
                                  'database_group'
-                                 'pdb_group'
+                                 'pdbx_group'
      save_
 
 save__database_PDB_tvect.details

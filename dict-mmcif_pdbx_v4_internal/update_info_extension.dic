@@ -1,0 +1,128 @@
+##
+## File: update_info_extension.dic
+## Date: 24-Jan-2012  Jdw
+##
+
+
+######################
+## PDBX_UPDATE_INFO ##
+######################
+
+save_pdbx_update_info
+    _category.description
+;              Data items in the PDBX_UPDATE_INFO category records the details of 
+               changes and PDBx data model files.
+;
+    _category.id                  pdbx_update_info
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_update_info.ordinal'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - Update records
+;
+;
+loop_
+_pdbx_update_info.ordinal
+_pdbx_update_info.data_name
+_pdbx_update_info.data_type
+_pdbx_update_info.update_timestamp
+_pdbx_update_info.updated_by
+_pdbx_update_info.update_type
+_pdbx_update_info.update_details
+1  atom_site  category  20120121:08:15  'depositor upload'   'value update'            .
+2  cell       category  20120121:08:15  'depositor upload'   'value update'            .
+3  symmetry   category  20120121:08:15  'depositor upload'   'value update'            .
+#
+4  citation   category  20120121:08:16  'depositor system'   'value_update'            .
+5  atom_site  category  20120122:09:10  'annotation system'  'component name change'   'LIG -> DD9'
+7  chem_comp  category  20120122:09:10  'annotation system'  'component name change'   'LIG -> DD9'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    save_
+
+save__pdbx_update_info.ordinal
+    _item_description.description
+;              Ordinal index which uniquely identifies each record in this category.
+;
+    _item.name                  '_pdbx_update_info.ordinal'
+    _item.category_id             pdbx_update_info
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_update_info.data_name
+    _item_description.description
+;              This data name that is updated.
+;
+    _item.name                  '_pdbx_update_info.data_name'
+    _item.category_id             pdbx_update_info
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
+save__pdbx_update_info.data_type
+    _item_description.description
+;              This data model type that is updated.
+;
+    _item.name                  '_pdbx_update_info.data_type'
+    _item.category_id             pdbx_update_info
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value      'item' 'category' 'other'
+     save_
+
+save__pdbx_update_info.update_type
+    _item_description.description
+;              The type of update. 
+;
+    _item.name                  '_pdbx_update_info.update_type'
+    _item.category_id             pdbx_update_info
+    _item.mandatory_code          yes
+    _item_type.code               line
+    _item_default.value           'value update'    
+    loop_
+    _item_enumeration.value      'value update'
+				 'deletion'
+                                 'component name change'
+     save_
+
+save__pdbx_update_info.update_timestamp
+    _item_description.description
+;              The time of the update. 
+;
+    _item.name                  '_pdbx_update_info.update_timestamp'
+    _item.category_id             pdbx_update_info
+    _item.mandatory_code          yes
+    _item_type.code               yyyy-mm-dd:hh:mm
+     save_
+
+save__pdbx_update_info.updated_by
+    _item_description.description
+;              The agent responsible for the update.
+;
+    _item.name                  '_pdbx_update_info.updated_by'
+    _item.category_id             pdbx_update_info
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value      'depositor upload'
+				 'deposition system'
+				 'annotation system'
+     save_
+
+save__pdbx_update_info.details
+    _item_description.description
+;              Additional details describing the update.
+;
+    _item.name                  '_pdbx_update_info.details'
+    _item.category_id             pdbx_update_info
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_

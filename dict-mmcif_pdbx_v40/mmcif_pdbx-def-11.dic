@@ -1470,6 +1470,7 @@ save_pdbx_chem_comp_feature
     loop_
     _category_group.id           'inclusive_group'
                                  'chem_comp_group'
+                                 'chem_comp_dictionary_group'
                                  'pdbx_group'
     loop_
     _category_examples.detail

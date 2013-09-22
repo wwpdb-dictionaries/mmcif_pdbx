@@ -1964,6 +1964,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + Update enumeration for _database_2.database_id
     + Update enumeration for __pdbx_family_prd_audit.action_type
     + Update category group assignments for NMR data categories and change context values to WWPDB_LOCAL
+    + Update category group assignments for chemical reference dictionaries: ccd_group and bird_group and bird_family_group.
 ;
 ### EOF mmcif_pdbx-header.dic 
 

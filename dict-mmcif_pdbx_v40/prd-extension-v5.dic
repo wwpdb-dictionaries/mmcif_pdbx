@@ -273,6 +273,7 @@ save_pdbx_reference_molecule_family
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_family_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -371,6 +372,7 @@ save_pdbx_reference_molecule_list
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_family_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -443,6 +445,7 @@ save_pdbx_reference_molecule
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -779,6 +782,7 @@ save_pdbx_reference_entity_list
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -879,6 +883,7 @@ save_pdbx_reference_entity_nonpoly
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -979,6 +984,7 @@ save_pdbx_reference_entity_link
      loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_dictionary_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -1277,6 +1283,7 @@ save_pdbx_reference_entity_poly_link
      loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_dictionary_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -1519,6 +1526,7 @@ save_pdbx_reference_entity_poly
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -1632,6 +1640,7 @@ save_pdbx_reference_entity_poly_seq
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -1788,6 +1797,7 @@ save_pdbx_reference_entity_sequence
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -1899,6 +1909,7 @@ save_pdbx_reference_entity_src_nat
      loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_dictionary_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -2076,6 +2087,7 @@ save_pdbx_reference_molecule_details
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_family_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -2201,6 +2213,7 @@ save_pdbx_reference_molecule_synonyms
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_family_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -2320,6 +2333,7 @@ save_pdbx_reference_entity_subcomponents
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -2396,6 +2410,7 @@ save_pdbx_reference_molecule_annotation
      loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_family_dictionary_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -2554,6 +2569,7 @@ save_pdbx_reference_molecule_features
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_family_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -2725,6 +2741,7 @@ save_pdbx_reference_molecule_related_structures
      loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_family_dictionary_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -3611,6 +3628,7 @@ save_pdbx_prd_audit
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -3738,6 +3756,7 @@ save_pdbx_family_prd_audit
     loop_
     _category_group.id           'inclusive_group'
                                  'pdbx_group'
+                                 'bird_family_dictionary_group'
     loop_
     _category_examples.detail
     _category_examples.case

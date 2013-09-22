@@ -1,0 +1,290 @@
+
+############################
+## PDBX_ENTITY_GROUP_LIST ##
+############################
+
+save_pdbx_entity_group_list
+    _category.description
+;              The data items in the PDBX_ENTITY_GROUP_LIST category record
+               molecular grouping within one or a collection of entities.
+;
+    _category.id                  'pdbx_entity_group_list'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name            
+       '_pdbx_entity_group_list.entity_group_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    "Example 1 - quinoxaline"
+;
+ #
+ loop_
+ _pdbx_entity_group_list.entity_group_id
+ _pdbx_entity_group_list.name
+ _pdbx_entity_group_list.description
+ 1 "TRIOSTIN"
+ ; TRIOSTIN IS A IS A BICYCLIC OCTADEPSIPEPTIDE.
+  BICYCLIZATION IS ACHIEVED BY LINKING THE N- AND
+  THE C- TERMINI, AND A DISULPHIDE BOND BETWEEN
+  RESIDUES 3 AND 7.
+  THE TWO QUINOXALINE CHROMOPHORES ARE LINKED
+  TO THE D-SERINE RESIDUES, RESIDUES 1 AND 5.
+ ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_entity_group_list.entity_group_id
+    _item_description.description
+;    The value of _pdbx_entity_group_list.entity_group_id uniquely identifies 
+     for records in the PDBX_ENTITY_GROUP list.
+
+     Note that this item need not be a number; it can be any unique
+     identifier.
+;
+    _item.name                  '_pdbx_entity_group_list.entity_group_id'
+    _item.category_id             pdbx_entity_group_list
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
+save__pdbx_entity_group_list.name
+    _item_description.description
+;    The entity group name.
+;
+    _item.name                  '_pdbx_entity_group_list.name'
+    _item.category_id             pdbx_entity_group_list
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+save__pdbx_entity_group_list.description
+    _item_description.description
+;    The text of the description of entity group.
+;
+    _item.name                  '_pdbx_entity_group_list.description'
+    _item.category_id            pdbx_entity_group_list
+    _item.mandatory_code         no
+    _item_type.code              text
+     save_
+
+save__pdbx_entity_group_list.prd_id
+    _item_description.description
+;    Reference to an identifier from the PDB Reference Dictionary (PRD) of molecular entities.      
+;
+    _item.name                  '_pdbx_entity_group_list.prd_id'
+    _item.category_id            pdbx_entity_group_list
+    _item.mandatory_code         no
+    _item_type.code              ucode
+     save_
+
+##
+##################################
+## PDBX_ENTITY_GROUP_COMPONENTS ##
+##################################
+
+save_pdbx_entity_group_components
+    _category.description
+;   Features associated with each component within a group
+;
+    _category.id                  'pdbx_entity_group_components'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name            
+       '_pdbx_entity_group_components.entity_group_id'
+       '_pdbx_entity_group_components.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    "Example 1 - quinoxaline"
+;
+ #
+ loop_
+ _pdbx_entity_group_components.entity_group_id
+ _pdbx_entity_group_components.id
+ _pdbx_entity_group_components.entity_id
+ _pdbx_entity_group_components.name
+ _pdbx_entity_group_components.begin_seq_id
+ _pdbx_entity_group_components.end_seq_id
+  1 1 1 "PEPTIDE LIKE SEQUENCE"       1 8
+  1 2 2 "QUINALDIC ACID CHROMOPHORE"  . .
+  1 3 3 "QUINALDIC ACID CHROMOPHORE"  . .
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_entity_group_components.entity_id
+    _item_description.description
+;   The value of _pdbx_entity_group_components.entity_id is a reference to 
+    _entity.id' in category ENTITY.
+;
+    _item.name                  '_pdbx_entity_group_components.entity_id'
+    _item.category_id             pdbx_entity_group_components
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_pdbx_entity_group_components.entity_id'
+    _item_linked.parent_name    '_entity.id'
+     save_
+
+save__pdbx_entity_group_components.entity_group_id
+    _item_description.description
+;    The value of _pdbx_entity_group_components.entity_group_id is a reference
+     _pdbx_entity_group_list.id in the  PDBX_ENTITY_GROUP category.
+;
+    _item.name                  '_pdbx_entity_group_components.entity_group_id'
+    _item.category_id             pdbx_entity_group_components
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name	'_pdbx_entity_group_components.entity_group_id'
+    _item_linked.parent_name    '_pdbx_entity_group_list.entity_group_id'
+     save_
+
+save__pdbx_entity_group_components.id
+    _item_description.description
+;    The value of _pdbx_entity_group_components.id is part of the unique identifier 
+     for records in the PDBX_ENTITY_GROUP_COMPONENTS list.   
+
+;
+    _item.name                  '_pdbx_entity_group_components.id'
+    _item.category_id             pdbx_entity_group_components
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_entity_group_components.name
+    _item_description.description
+;    The entity group component name.
+;
+    _item.name                  '_pdbx_entity_group_components.name'
+    _item.category_id             pdbx_entity_group_components
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_entity_group_components.beg_seq_id
+    _item_description.description
+;    For polymer entities the optional starting position in the sequence for this
+     group component.
+
+     The value of _pdbx_entity_group_components.beg_seq_id is a reference to 
+    _entity_poly_seq.num' in category ENTITY_POLY_SEQ.
+;
+    _item.name                  '_pdbx_entity_group_components.beg_seq_id'
+    _item.category_id             pdbx_entity_group_components
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_linked.child_name	'_pdbx_entity_group_components.beg_seq_id'
+    _item_linked.parent_name    '_entity_poly_seq.num'
+     save_
+
+save__pdbx_entity_group_components.end_seq_id
+    _item_description.description
+;    For polymer entities the optional ending position in the sequence for this
+     group component.
+
+     The value of _pdbx_entity_group_components.beg_seq_id is a reference to 
+    _entity_poly_seq.num' in category ENTITY_POLY_SEQ.
+;
+    _item.name                  '_pdbx_entity_group_components.end_seq_id'
+    _item.category_id             pdbx_entity_group_components
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_linked.child_name	'_pdbx_entity_group_components.end_seq_id'
+    _item_linked.parent_name    '_entity_poly_seq.num'
+     save_
+
+save__pdbx_entity_group_components.nonpoly_residue_number
+    _item_description.description
+;    For nonpolymer entities the preferred residue number for this residue molecular complex.
+
+;
+    _item.name                  '_pdbx_entity_group_components.nonpoly_residue_number'
+    _item.category_id             pdbx_entity_group_components
+    _item.mandatory_code          no
+    _item_type.code               int
+
+     save_
+
+
+#################################
+## PDBX_ENTITY_GROUP_INSTANCES ##
+#################################
+
+save_pdbx_entity_group_instances
+    _category.description
+;              Data items in the PDBX_ENTITY_GROUP_INSTANCES category record
+	       the instances of entity groups within the deposited coordinate data.
+;
+    _category.id                  pdbx_entity_group_instances
+    _category.mandatory_code      no
+     loop_
+    _category_key.name           '_pdbx_entity_group_instances.ordinal'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - Actinomycin - 3 copies in the deposited data set.
+;
+;
+ loop_
+ _pdbx_entity_group_instances.ordinal
+ _pdbx_entity_group_instances.entity_group_id
+ _pdbx_entity_group_instances.struct_group_id
+  1  1   1  
+  2  1   2  
+  3  1   3  
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_entity_group_instances.entity_group_id
+    _item_description.description
+;              The value of _pdbx_entity_group_instances.entity_group_id is a reference to 
+               _pdbx_entity_group_list.entity_group_id' in category PDBX_ENTITY_GROUP_LIST.
+;
+    _item.name                  '_pdbx_entity_group_instances.entity_group_id'
+    _item.category_id             pdbx_entity_group_instances
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name	'_pdbx_entity_group_instances.entity_group_id'
+    _item_linked.parent_name    '_pdbx_entity_group_list.entity_group_id'
+     save_
+
+save__pdbx_entity_group_instances.struct_group_id
+    _item_description.description
+;              The value of _pdbx_entity_group_instances.struct_group_id is a reference to
+	       _pdbx_struct_group_list.struct_group_id in the  PDBX_STRUCT_GROUP_LIST category.
+;
+    _item.name                  '_pdbx_entity_group_instances.struct_group_id'
+    _item.category_id             pdbx_entity_group_instances
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name	'_pdbx_entity_group_instances.struct_group_id'
+    _item_linked.parent_name    '_pdbx_struct_group_list.struct_group_id'
+     save_
+
+save__pdbx_entity_group_instances.ordinal
+    _item_description.description
+;              The value of _pdbx_entity_group_instances.ordinal is an ordinal
+	       unique identifier for entity group instances.
+;
+    _item.name                  '_pdbx_entity_group_instances.ordinal'
+    _item.category_id             pdbx_entity_group_instances
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
