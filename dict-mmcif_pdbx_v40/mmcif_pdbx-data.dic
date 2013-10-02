@@ -431,33 +431,33 @@
     _item_units_list.detail
 #
      'metres'                 'metres (metres)'
-     'centimetres'            'centimetres (metres * 10^( -2))'
-     'millimetres'            'millimetres (metres * 10^( -3))'
-     'nanometres'             'nanometres  (metres * 10^( -9))'
-     'angstroms'              'angstroms   (metres * 10^(-10))'
-     'picometres'             'picometres  (metres * 10^(-12))'
-     'femtometres'            'femtometres (metres * 10^(-15))'
+     'centimetres'            'centimetres (metres * 10^( -2)^)'
+     'millimetres'            'millimetres (metres * 10^( -3)^)'
+     'nanometres'             'nanometres  (metres * 10^( -9)^)'
+     'angstroms'              'Angstroms   (metres * 10^(-10)^)'
+     'picometres'             'picometres  (metres * 10^(-12)^)'
+     'femtometres'            'femtometres (metres * 10^(-15)^)'
 #
-     'reciprocal_metres'      'reciprocal metres (metres^(-1))'
+     'reciprocal_metres'      'reciprocal metres (metres^(-1)^)'
      'reciprocal_centimetres'
         'reciprocal centimetres ((metres * 10^( -2))^(-1))'
      'reciprocal_millimetres'
-        'reciprocal millimetres ((metres * 10^( -3))^(-1))'
+        'reciprocal millimetres ((metres * 10^( -3)^)^(-1)^)'
      'reciprocal_nanometres'
-        'reciprocal nanometres  ((metres * 10^( -9))^(-1))'
+        'reciprocal nanometres  ((metres * 10^( -9)^)^(-1)^)'
      'reciprocal_angstroms'
-        'reciprocal angstroms   ((metres * 10^(-10))^(-1))'
+        'reciprocal angstroms   ((metres * 10^(-10)^)^(-1)^)'
      'reciprocal_picometres'
-        'reciprocal picometres  ((metres * 10^(-12))^(-1))'
+        'reciprocal picometres  ((metres * 10^(-12)^)^(-1)^)'
 #
-     'nanometres_squared'     'nanometres squared (metres * 10^( -9))^2'
-     'angstroms_squared'      'angstroms squared  (metres * 10^(-10))^2'
-     '8pi2_angstroms_squared' '8pi^2 * angstroms squared (metres * 10^(-10))^2'
-     'picometres_squared'     'picometres squared (metres * 10^(-12))^2'
+     'nanometres_squared'     'nanometres squared (metres * 10^( -9)^)^2^'
+     'angstroms_squared'      'Angstroms squared  (metres * 10^(-10)^)^2^'
+     '8pi2_angstroms_squared' '8pi^2^ * Angstroms squared (metres * 10^(-10)^)^2^'
+     'picometres_squared'     'picometres squared (metres * 10^(-12)^)^2^'
 #
-     'nanometres_cubed'       'nanometres cubed (metres * 10^( -9))^3'
-     'angstroms_cubed'        'angstroms cubed  (metres * 10^(-10))^3'
-     'picometres_cubed'       'picometres cubed (metres * 10^(-12))^3'
+     'nanometres_cubed'       'nanometres cubed (metres * 10^( -9)^)^3^'
+     'angstroms_cubed'        'Angstroms cubed  (metres * 10^(-10)^)^3^'
+     'picometres_cubed'       'picometres cubed (metres * 10^(-12)^)^3^'
 #
      'kilopascals'            'kilopascals'
      'gigapascals'            'gigapascals'
@@ -479,13 +479,13 @@
      'electrons_squared'      'electrons squared'
 #
      'electrons_per_nanometres_cubed'
-; electrons per nanometres cubed (electrons/(metres * 10^( -9))^(-3))
+; electrons per nanometres cubed (electrons/(metres * 10^( -9)^)^(-3)^)
 ;
      'electrons_per_angstroms_cubed'
-; electrons per angstroms cubed (electrons/(metres * 10^(-10))^(-3))
+; electrons per Angstroms cubed (electrons/(metres * 10^(-10)^)^(-3)^)
 ;
      'electrons_per_picometres_cubed'
-; electrons per picometres cubed (electrons/(metres * 10^(-12))^(-3))
+; electrons per picometres cubed (electrons/(metres * 10^(-12)^)^(-3)^)
 ;
      'kilowatts'              'kilowatts'
      'milliamperes'           'milliamperes'
@@ -495,7 +495,7 @@
 ; arbitrary system of units.
 ;
 #
-     'angstroms_degrees'      'angstroms * degrees'
+     'angstroms_degrees'      'Angstroms * degrees'
 #
      'degrees_squared'        'degrees squared'
 #
@@ -508,10 +508,10 @@
      'milligrams'             'grams / 1000'
 #
      'megadaltons'            'megadaltons'
+     'kilodaltons'            'kilodaltons'
      'microns_squared'        'microns squared'
      'microns'                'microns'
-#     'millimeters'            'millimeters'
-     'electrons_angstrom_squared'   'electrons square angstrom'
+     'electrons_angstrom_squared'   'electrons square Angstrom'
      'electron_volts'         'electron volts'
 #     'mg/ml'                  'mg per milliliter'
      'millimolar'             'millimolar'
@@ -519,7 +519,11 @@
      'pixels_per_millimetre'      'pixels per millimetre'
      'counts'                 'counts'
      'counts_per_photon'      'counts per photon'
-#
+
+###########################
+## ITEM_UNITS_CONVERSION ##
+###########################x
+
      loop_
     _item_units_conversion.from_code
     _item_units_conversion.to_code

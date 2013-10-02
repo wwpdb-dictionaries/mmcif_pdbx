@@ -2,7 +2,7 @@
 ###   File: prd-extension-v5.dic
 ###
 ###   Orginal:     April 1, 2011     jdw
-###   Last update: January 31, 2012  jdw V5 alpha 3
+###   Last update: Oct 2, 2013       jdw adding category for family group index.
 ###
 ### --------------------------------------------------------------------------------------------
 ###
@@ -4157,3 +4157,68 @@ save__chem_comp_atom.pdbx_component_id
     _item.mandatory_code          no
     _item_type.code               int
     save_
+#
+#############################
+## PDBX_FAMILY_GROUP_INDEX ##
+#############################
+
+save_pdbx_family_group_index
+    _category.description
+;              Data items in the PDBX_FAMILY_GROUP_INDEX category record
+               the family membership in family groups.
+;
+    _category.id                  pdbx_family_group_index
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          
+    '_pdbx_family_group_index.id'
+    '_pdbx_family_group_index.family_prd_id'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'bird_family_dictionary_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_family_group_index.id
+    _pdbx_family_group_index.family_prd_id
+     FGR_0000001  FAM_0000001
+     FGR_0000001  FAM_0000002
+     FGR_0000001  FAM_0000021
+     FGR_0000002  FAM_0000022
+     FGR_0000002  FAM_0000023
+     # .....
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_family_group_index.id
+    _item_description.description
+;              This data item is the identifier for the a group of related BIRD families.
+;
+    _item.name                  '_pdbx_family_group_index.id'
+    _item.category_id             pdbx_family_group_index
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
+save__pdbx_family_group_index.family_prd_id
+    _item_description.description
+;              This data item is a reference to the BIRD identifier for families.
+
+               This data item is a pointer to _pdbx_reference_molecule_family.family_prd_id in the 
+	       pdbx_reference_molecule category.
+;
+    _item.name                  '_pdbx_family_group_index.family_prd_id'
+    _item.category_id             pdbx_family_group_index
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+     save_
+
