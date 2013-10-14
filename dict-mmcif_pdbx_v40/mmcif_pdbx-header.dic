@@ -1956,7 +1956,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 	_pdbx_entity_src_syn.pdbx_end_seq_num
 	_entity_poly.pdbx_seq_one_letter_code_sample
 ;
-4.036  2013-10-13
+4.036  2013-10-14
 ;
     Changes (jdw):  OPEN REVISION
     +  change mandatory code for  _pdbx_nmr_sample_details.label,_pdbx_nmr_sample_details.type,_pdbx_nmr_exptl_sample_conditions.label,
@@ -1968,6 +1968,8 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + Added category and items  _pdbx_family_group_index.id and   _pdbx_family_group_index.family_prd_id
     + Update category and item item context values in categories audit_contact_author, pdbx_database_proc, pdbx_entity_name, 
       struct_biol_gen, atom_site and  pdbx_database_status.
+    + add internal items _pdbx_database_status.date_begin_processing, _pdbx_database_status.date_end_processing,
+      _pdbx_database_status.date_begin_deposition
 ;
 ### EOF mmcif_pdbx-header.dic 
 
