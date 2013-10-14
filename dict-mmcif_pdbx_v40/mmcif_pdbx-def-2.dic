@@ -730,7 +730,8 @@ save_pdbx_database_proc
      _pdbx_database_proc.date_begin_cycle   1998-02-27
      _pdbx_database_proc.date_end_cycle     1998-02-27
 ;
-
+   _pdbx_category_context.type         WWPDB_LOCAL
+   _pdbx_category_context.category_id  pdbx_database_proc
      save_
 
 save__pdbx_database_proc.entry_id
@@ -997,9 +998,9 @@ save__pdbx_database_status.status_code_sf
      WDRN  = Entry has been withdrawn by depositor
      WAIT  = Awaiting author approval
 ;
-    _item_aliases.alias_name   '_ndb_database_status.status_code_sf'
-    _item_aliases.dictionary     'cif_rcsb.dic'
-    _item_aliases.version        1.1
+#    _item_aliases.alias_name   '_ndb_database_status.status_code_sf'
+#    _item_aliases.dictionary     'cif_rcsb.dic'
+#    _item_aliases.version        1.1
      save_
 
 save__pdbx_database_status.status_code_mr
@@ -1033,9 +1034,9 @@ save__pdbx_database_status.status_code_mr
      WDRN  = Entry has been withdrawn by depositor
      WAIT  = Awaiting author approval
 ;
-    _item_aliases.alias_name   '_ndb_database_status.status_code_mr'
-    _item_aliases.dictionary     'cif_rcsb.dic'
-    _item_aliases.version        1.1
+#    _item_aliases.alias_name   '_ndb_database_status.status_code_mr'
+#    _item_aliases.dictionary     'cif_rcsb.dic'
+#    _item_aliases.version        1.1
      save_
 
 save__pdbx_database_status.dep_release_code_coordinates
@@ -1502,6 +1503,8 @@ save__pdbx_database_status.rcsb_annotator
 #    _item_aliases.alias_name     '_ndb_database_status.rcsb_annotator'
 #    _item_aliases.dictionary     'cif_rcsb.dic'
 #    _item_aliases.version        1.1
+   _pdbx_item_context.type       WWPDB_LOCAL
+   _pdbx_item_context.item_name  '_pdbx_database_status.rcsb_annotator'
      save_
 
 save__pdbx_database_status.date_of_sf_release
@@ -1548,6 +1551,9 @@ save__pdbx_database_status.date_of_PDB_release
 #    _item_aliases.alias_name     '_ndb_database_status.date_of_PDB_release'
 #    _item_aliases.dictionary     'cif_rcsb.dic'
 #    _item_aliases.version        1.1
+   _pdbx_item_context.type       WWPDB_LOCAL
+   _pdbx_item_context.item_name  '_pdbx_database_status.date_of_PDB_release'
+   #
      save_
 
 save__pdbx_database_status.date_hold_coordinates
@@ -1719,6 +1725,9 @@ the value of this item.
      HOLD FOR 6 MONTHS    =    Hold for 6 months
      HOLD FOR 1 YEAR      =    Hold for 1 year
 ;
+   _pdbx_item_context.type       WWPDB_LOCAL
+   _pdbx_item_context.item_name  '_pdbx_database_status.dep_release_code_chemical_shifts'
+   #
      save_
 
 save__pdbx_database_status.recvd_chemical_shifts
@@ -1736,6 +1745,8 @@ save__pdbx_database_status.recvd_chemical_shifts
      Y  'Yes'
      N  'No'
     _item_examples.case          Y
+   _pdbx_item_context.type       WWPDB_LOCAL
+   _pdbx_item_context.item_name  '_pdbx_database_status.recvd_chemical_shifts'
      save_
 
 save__pdbx_database_status.date_chemical_shifts
@@ -1747,6 +1758,8 @@ save__pdbx_database_status.date_chemical_shifts
     _item.mandatory_code          no
     _item_type.code               yyyy-mm-dd:hh:mm
     _item_examples.case           2010-02-28
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_pdbx_database_status.date_chemical_shifts'
      save_
 
 save__pdbx_database_status.date_hold_chemical_shifts
@@ -1759,6 +1772,8 @@ save__pdbx_database_status.date_hold_chemical_shifts
     _item.mandatory_code          no
     _item_type.code               yyyy-mm-dd:hh:mm
     _item_examples.case           2010-02-28
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_pdbx_database_status.date_hold_chemical_shifts'
      save_
 
 save__pdbx_database_status.status_code_cs
@@ -1799,6 +1814,8 @@ save__pdbx_database_status.status_code_cs
     _item_aliases.alias_name     '_ndb_database_status.status_code_cs'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
+   _pdbx_item_context.type       WWPDB_LOCAL
+   _pdbx_item_context.item_name  '_pdbx_database_status.status_code_cs'
      save_
 
 save__pdbx_database_status.date_of_cs_release
@@ -1811,6 +1828,8 @@ save__pdbx_database_status.date_of_cs_release
     _item.mandatory_code          no
     _item_type.code               yyyy-mm-dd
     _item_examples.case           2010-09-28
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_pdbx_database_status.date_of_cs_release'
      save_
 
 save__pdbx_database_status.methods_development_category 
@@ -1867,6 +1886,8 @@ save_pdbx_entity_name
     1   "Electron transport" 'SWS-KEYWORD'
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         WWPDB_LOCAL
+   _pdbx_category_context.category_id  pdbx_entity_name
      save_
 
 save__pdbx_entity_name.entity_id 
@@ -3823,7 +3844,8 @@ save__atom_site.pdbx_auth_atom_name
     _item_aliases.alias_name     '_atom_site.ndb_auth_atom_name'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
-
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_atom_site.pdbx_auth_atom_name'
      save_
 
 ##

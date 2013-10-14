@@ -1685,6 +1685,8 @@ save__atom_site.footnote_id
 ;
     _item.name                  '_atom_site.footnote_id'
     _item.mandatory_code          no
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_atom_site.footnote_id'
      save_
 
 save__atom_site.fract_x
@@ -5278,6 +5280,8 @@ save_audit_contact_author
     _audit_contact_author.email   'paula_fitzgerald@merck.com'
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         WWPDB_LOCAL  
+   _pdbx_category_context.category_id  audit_contact_author
      save_
 
 save__audit_contact_author.address
@@ -32281,6 +32285,8 @@ save_struct_biol_gen
       3  D  1_555
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         WWPDB_LOCAL
+   _pdbx_category_context.category_id  struct_biol_gen
      save_
 
 save__struct_biol_gen.asym_id
