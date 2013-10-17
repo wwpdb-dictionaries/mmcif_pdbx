@@ -1267,6 +1267,32 @@ save__pdbx_database_status.date_end_processing
    _pdbx_item_context.item_name  '_pdbx_database_status.date_end_processing'
      save_
 
+save__pdbx_database_status.date_begin_release_preparation
+    _item_description.description
+;              The date on which release processing began.
+;
+    _item.name                  '_pdbx_database_status.date_begin_release_preparation'
+    _item.category_id             pdbx_database_status
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd:hh:mm
+    _item_examples.case          2013-03-24
+   _pdbx_item_context.type       WWPDB_LOCAL
+   _pdbx_item_context.item_name  '_pdbx_database_status.date_end_processing'
+     save_
+
+save__pdbx_database_status.date_author_release_request
+    _item_description.description
+;              The date on which the author requests entry release.
+;
+    _item.name                  '_pdbx_database_status.date_author_release_request'
+    _item.category_id             pdbx_database_status
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd:hh:mm
+    _item_examples.case          2013-03-24
+   _pdbx_item_context.type       WWPDB_LOCAL
+   _pdbx_item_context.item_name  '_pdbx_database_status.date_author_release_request'
+     save_
+
 
 
 save__pdbx_database_status.recvd_coordinates
