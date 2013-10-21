@@ -34,6 +34,7 @@ chem_comp_angle                          3  chem_comp_angle:chem_comp_atom:3    
 chem_comp_atom                           2  chem_comp_atom:chem_comp:2                                                . .
 chem_comp_bond                           1  chem_comp_bond:chem_comp_atom:1                                           . .
 chem_comp_bond                           2  chem_comp_bond:chem_comp_atom:2                                           . .
+chem_comp_bond                           3  chem_comp_bond:chem_comp:3                                                . .
 chem_comp_chir                           1  chem_comp_chir:chem_comp:1                                                . .
 chem_comp_chir                           2  chem_comp_chir:chem_comp_atom:2                                           . .
 chem_comp_chir_atom                      1  chem_comp_chir_atom:chem_comp:1                                           . .
@@ -610,10 +611,13 @@ chem_comp_angle                          2  '_chem_comp_angle.atom_id_2'        
 chem_comp_angle                          3  '_chem_comp_angle.atom_id_3'                          '_chem_comp_atom.atom_id'                   chem_comp_atom
 #chem_comp_atom                           1  '_chem_comp_atom.type_symbol'                         '_atom_type.symbol'                         atom_type
 chem_comp_atom                           2  '_chem_comp_atom.comp_id'                             '_chem_comp.id'                             chem_comp
+#
 chem_comp_bond                           1  '_chem_comp_bond.comp_id'                             '_chem_comp_atom.comp_id'                   chem_comp_atom
 chem_comp_bond                           1  '_chem_comp_bond.atom_id_1'                           '_chem_comp_atom.atom_id'                   chem_comp_atom
 chem_comp_bond                           2  '_chem_comp_bond.comp_id'                             '_chem_comp_atom.comp_id'                   chem_comp_atom
 chem_comp_bond                           2  '_chem_comp_bond.atom_id_2'                           '_chem_comp_atom.atom_id'                   chem_comp_atom
+chem_comp_bond                           3  '_chem_comp_bond.comp_id'                             '_chem_comp.id'                             chem_comp
+#
 chem_comp_chir                           1  '_chem_comp_chir.comp_id'                             '_chem_comp.id'                             chem_comp
 chem_comp_chir                           2  '_chem_comp_chir.atom_id'                             '_chem_comp_atom.atom_id'                   chem_comp_atom
 chem_comp_chir_atom                      1  '_chem_comp_chir_atom.comp_id'                        '_chem_comp.id'                             chem_comp

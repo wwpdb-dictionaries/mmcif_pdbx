@@ -6339,17 +6339,17 @@ save__chem_comp.id
     _item_linked.child_name
     _item_linked.parent_name
          '_atom_site.label_comp_id'                 '_chem_comp.id'
-#         '_chem_comp.mon_nstd_parent_comp_id'       '_chem_comp.id'
+#         '_chem_comp.mon_nstd_parent_comp_id'      '_chem_comp.id'
          '_chem_comp_atom.comp_id'                  '_chem_comp.id'
          '_chem_comp_chir.comp_id'                  '_chem_comp.id'
          '_chem_comp_chir_atom.comp_id'             '_chem_comp.id'
          '_chem_comp_plane.comp_id'                 '_chem_comp.id'
          '_chem_comp_plane_atom.comp_id'            '_chem_comp.id'
          '_entity_poly_seq.mon_id'                  '_chem_comp.id'
-         '_chem_comp_angle.comp_id'                 '_chem_comp_atom.comp_id'
-         '_chem_comp_bond.comp_id'                  '_chem_comp_atom.comp_id'
-         '_chem_comp_tor.comp_id'                   '_chem_comp_atom.comp_id'
-         '_chem_comp_tor_value.comp_id'             '_chem_comp_atom.comp_id'
+         '_chem_comp_angle.comp_id'                 '_chem_comp.id'
+         '_chem_comp_bond.comp_id'                  '_chem_comp.id'
+         '_chem_comp_tor.comp_id'                   '_chem_comp.id'
+         '_chem_comp_tor_value.comp_id'             '_chem_comp.id'
          '_geom_angle.atom_site_label_comp_id_1'    '_atom_site.label_comp_id'
          '_geom_angle.atom_site_label_comp_id_2'    '_atom_site.label_comp_id'
          '_geom_angle.atom_site_label_comp_id_3'    '_atom_site.label_comp_id'
@@ -7362,6 +7362,7 @@ save__chem_comp_bond.comp_id
                category.
 ;
     _item.name                  '_chem_comp_bond.comp_id'
+    _item.category_id             chem_comp_bond
     _item.mandatory_code          yes
      save_
 
