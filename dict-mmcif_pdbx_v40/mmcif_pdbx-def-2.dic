@@ -848,6 +848,7 @@ save_pdbx_database_remark
     ;
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
      save_
 
 save__pdbx_database_remark.id
@@ -10242,6 +10243,8 @@ save_pdbx_contact_author
     _pdbx_contact_author.organization_type 'commercial'
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         WWPDB_LOCAL
+   _pdbx_category_context.category_id  pdbx_contact_author
      save_
 
 save__pdbx_contact_author.id

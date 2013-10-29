@@ -11718,6 +11718,8 @@ save_database_PDB_remark
     #  - - - - data truncated for brevity - - - -
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         WWPDB_LOCAL
+   _pdbx_category_context.category_id  database_PDB_remark
      save_
 
 save__database_PDB_remark.id

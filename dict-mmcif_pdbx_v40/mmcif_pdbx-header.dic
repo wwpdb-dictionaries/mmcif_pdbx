@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.036
+    _dictionary.version         4.037
 #
      loop_
     _dictionary_history.version
@@ -1971,6 +1971,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + add internal items _pdbx_database_status.date_begin_processing, _pdbx_database_status.date_end_processing,
       _pdbx_database_status.date_begin_deposition, _pdbx_database_status.date_begin_release_preparation,
       _pdbx_database_status.date_author_release_request
+;
+4.037  2013-10-29
+;
+    Changes (jdw):   (OPEN)
+    + Update context values to WWPDB_LOCAL for categories database_PDB_remark and pdbx_contact_author
 ;
 ### EOF mmcif_pdbx-header.dic 
 

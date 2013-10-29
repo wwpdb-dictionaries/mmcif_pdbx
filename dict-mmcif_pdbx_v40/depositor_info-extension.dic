@@ -30,6 +30,9 @@ save__entity_poly.pdbx_sequence_evidence_code
     _item_enumeration.detail
                                  'depositor provided' .
                                  'derived from coordinates' .
+				
+   _pdbx_item_context.type       WWPDB_LOCAL
+   _pdbx_item_context.item_name  '_entity_poly.pdbx_sequence_evidence_code'
 save_
 
 #################################
