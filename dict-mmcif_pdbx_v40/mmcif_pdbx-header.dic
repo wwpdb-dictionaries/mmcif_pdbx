@@ -1972,10 +1972,10 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
       _pdbx_database_status.date_begin_deposition, _pdbx_database_status.date_begin_release_preparation,
       _pdbx_database_status.date_author_release_request
 ;
-4.037  2013-10-29
+4.037  2013-11-22
 ;
-    Changes (jdw):   (OPEN)
+    Changes (jdw): 
     + Update context values to WWPDB_LOCAL for categories database_PDB_remark and pdbx_contact_author
+    + Update category group memberships
 ;
 ### EOF mmcif_pdbx-header.dic 
-

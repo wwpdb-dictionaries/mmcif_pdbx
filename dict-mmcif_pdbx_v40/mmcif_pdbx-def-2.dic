@@ -3458,6 +3458,7 @@ save_pdbx_database_related
                                 '_pdbx_database_related.content_type'
      loop_
     _category_group.id           'inclusive_group'
+                                 'database_group'
                                  'pdbx_group'
     _category_examples.case
 ;
