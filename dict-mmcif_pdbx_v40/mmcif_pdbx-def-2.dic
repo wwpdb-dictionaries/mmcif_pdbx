@@ -924,6 +924,7 @@ save__pdbx_database_status.status_code
    AUTH  'Processed, waiting for author review and approval'
    POLC  'Processing, waiting for a policy decision'
    REPL  'Author sent new coordinates to be incorporated'    
+   AUCO  'Author corrections pending review'    
    DEL   'Deprecated code'
    REV   'Deprecated code'
    UPD   'Deprecated code'
