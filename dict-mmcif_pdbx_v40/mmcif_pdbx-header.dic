@@ -1978,11 +1978,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + Update context values to WWPDB_LOCAL for categories database_PDB_remark and pdbx_contact_author
     + Update category group memberships
 ;
-4.038  2014-01-09
+4.038  2014-01-16
 ;
     Changes (jdw): 
     + Update enumerations for item _pdbx_database_status.status_code
-    + add category pdbx_related_exp_data_set
+    + add category pdbx_related_exp_data_set 
+    + In pdbx_related_exp_data_set limit references to DOI types
 ;
 
 ### EOF mmcif_pdbx-header.dic 

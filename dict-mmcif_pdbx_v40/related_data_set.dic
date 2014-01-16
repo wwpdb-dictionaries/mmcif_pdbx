@@ -2,6 +2,7 @@
 # File:      pdbx_related_data_set
 # Original:  Dec 2013  jdw
 #
+# Update    Jan 2014   jdw
 ## 
 
 ##############################
@@ -54,7 +55,7 @@ save__pdbx_related_exp_data_set.ordinal
 
 save__pdbx_related_exp_data_set.data_reference 
     _item_description.description
-;        A DOI or URL refernce to the related data set.
+;        A DOI refernce to the related data set.
  
 ;
     _item.name                  '_pdbx_related_exp_data_set.data_reference'
@@ -62,12 +63,12 @@ save__pdbx_related_exp_data_set.data_reference
     _item.mandatory_code          yes
     _item_type.code               line
     loop_
-    _item_examples.case	          'doi:10.000/10002/image_data/cif'  'http://public.cloud.com/image_dat/id10000/data_10000.tar.gz'
+    _item_examples.case	          'doi:10.000/10002/image_data/cif'  
      save_
 
 save__pdbx_related_exp_data_set.metadata_reference 
     _item_description.description
-;        A DOI or URL reference to the metadata decribing the related data set.
+;        A DOI reference to the metadata decribing the related data set.
  
 ;
     _item.name                  '_pdbx_related_exp_data_set.metadata_reference'
@@ -75,7 +76,7 @@ save__pdbx_related_exp_data_set.metadata_reference
     _item.mandatory_code          no
     _item_type.code               line
     loop_
-    _item_examples.case	          'doi:10.000/10002/image_data/txt'  'http://public.cloud.com/image_dat/id10000/README.txt'
+    _item_examples.case	          'doi:10.000/10002/image_data/txt'  
      save_
 
 
