@@ -4278,7 +4278,7 @@ save__citation.pdbx_database_id_DOI
     _item.category_id             citation
     _item.mandatory_code          no
     _item_type.code               code
-    _item_examples.case           'DOI:10.2345/S1384107697000225'
+    _item_examples.case           '10.2345/S1384107697000225'
     _item_aliases.alias_name     '_citation.rcsb_database_id_DOI'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
@@ -4531,10 +4531,9 @@ save__diffrn_source.pdbx_synchrotron_site
 
 save__entity.pdbx_description
     _item_description.description
-;              A description of the entity, with the name of the entity
-               in parenthesis.
+;              A description of the entity.
 
-               Maps to PDB compound name.
+               Corresponds to the compound name in the PDB format.
 ;
     _item.name                  '_entity.pdbx_description'
     _item.category_id             entity
@@ -4856,7 +4855,7 @@ MSHHWGYGKHNGPEHWHKDFPIAKGERQSPVDIDTHTAKYDPSLKPLSVSYDQATSLRILNNGAAFNVEFD
 
 save__entity_poly.pdbx_target_identifier
     _item_description.description
-;              The sequence's target identifier registered at target database. 
+;             For Structural Genomics entries, the sequence's target identifier registered at the TargetTrack database. 
 ;
     _item.name                  '_entity_poly.pdbx_target_identifier'
     _item.category_id             entity_poly
@@ -5516,7 +5515,7 @@ save__entity_src_nat.pdbx_plasmid_details
 ##
 save__exptl_crystal_grow.pdbx_details
     _item_description.description
-; Text description of crystal grow procedure.
+; Text description of crystal growth procedure.
 ;
     _item.name                  '_exptl_crystal_grow.pdbx_details'
     _item.category_id             exptl_crystal_grow
@@ -6609,12 +6608,12 @@ save__reflns.pdbx_Rmerge_I_all
 
 save__reflns.pdbx_Rsym_value
     _item_description.description
-;              R Sym value in percent.
+;              The R sym value as a decimal number.
 ;
     _item.name                  '_reflns.pdbx_Rsym_value'
     _item.category_id             reflns
     _item.mandatory_code          no
-    _item_examples.case          2.0
+    _item_examples.case           0.02
     _item_type.code               float
     _item_aliases.alias_name     '_reflns.ndb_Rsym_value'
     _item_aliases.dictionary     'cif_rcsb.dic'
@@ -10143,7 +10142,7 @@ save__pdbx_refine_tls_group.selection_details
 
 save__refine.pdbx_solvent_vdw_probe_radii
     _item_description.description
-;              CCP4 solvent proble van der Waals radii 
+;              CCP4 solvent probe van der Waals radii 
 ;
     _item.name                  '_refine.pdbx_solvent_vdw_probe_radii'
     _item.category_id             refine
@@ -10162,7 +10161,7 @@ save__refine.pdbx_solvent_vdw_probe_radii
 
 save__refine.pdbx_solvent_ion_probe_radii
     _item_description.description
-;              CCP4 solvent ion proble radii 
+;              CCP4 solvent ion probe radii 
 ;
     _item.name                  '_refine.pdbx_solvent_ion_probe_radii'
     _item.category_id             refine

@@ -1984,6 +1984,9 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + Update enumerations for item _pdbx_database_status.status_code
     + add category pdbx_related_exp_data_set 
     + In pdbx_related_exp_data_set limit references to DOI types
+    + Update item descriptions and examples for _pdbx_depui_entity_features.type,_entity_poly.pdbx_target_identifier,_reflns.pdbx_Rsym_value,
+      _refine.pdbx_solvent_vdw_probe_radii,_refine.pdbx_solvent_ion_probe_radii,_citation.pdbx_database_id_DOI,_entity.pdbx_description,
+      and _exptl_crystal_grow.pdbx_details.
 ;
 
 ### EOF mmcif_pdbx-header.dic 
