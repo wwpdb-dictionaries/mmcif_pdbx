@@ -2522,7 +2522,7 @@ save__pdbx_depui_status_flags.has_cyclic_symmetry
 
 save__pdbx_depui_status_flags.has_accepted_terms_and_conditions
     _item_description.description
-;   A flag to indicate the acceptance of wwPDB deposition and annoation terms and conditions.
+;   A flag to indicate the acceptance of wwPDB deposition and annotation terms and conditions.
 ;
     _item.name                  '_pdbx_depui_status_flags.has_accepted_terms_and_conditions'
     _item.category_id             pdbx_depui_status_flags
