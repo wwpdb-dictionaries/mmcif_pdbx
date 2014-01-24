@@ -60,7 +60,7 @@ save__pdbx_related_exp_data_set.data_reference
 ;
     _item.name                  '_pdbx_related_exp_data_set.data_reference'
     _item.category_id             pdbx_related_exp_data_set
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               line
     loop_
     _item_examples.case	          'doi:10.000/10002/image_data/cif'  
@@ -87,7 +87,7 @@ save__pdbx_related_exp_data_set.data_set_type
 ;
     _item.name                  '_pdbx_related_exp_data_set.data_set_type'
     _item.category_id             pdbx_related_exp_data_set
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               line
     loop_
     _item_examples.case	          'diffraction image data'        'NMR free induction decay data'
