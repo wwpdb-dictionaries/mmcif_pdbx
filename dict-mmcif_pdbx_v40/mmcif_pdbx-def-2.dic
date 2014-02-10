@@ -4101,6 +4101,19 @@ save__atom_site_anisotrop.pdbx_PDB_ins_code
     _item_aliases.version        1.1
 
      save_
+
+save__atom_site_anisotrop.pdbx_PDB_model_num
+    _item_description.description
+;            Pointer to _atom_site.pdbx_PDB_model_num         
+; 
+    _item.name                  '_atom_site_anisotrop.pdbx_PDB_model_num'
+    _item.category_id             atom_site_anisotrop
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_linked.child_name	'_atom_site_anisotrop.pdbx_PDB_model_num'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_model_num'
+     save_
+
 ##
 ##
 
@@ -6396,6 +6409,36 @@ save__refine.pdbx_stereochem_target_val_spec_case
 
      save_
 
+save__refine_hist.pdbx_number_residues_total
+    _item_description.description
+;              Total number of polymer residues included in refinement.
+;
+    _item.name                  '_refine_hist.pdbx_number_residues_total'
+    _item.category_id             refine_hist
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+save__refine_hist.pdbx_B_iso_mean_ligand
+    _item_description.description
+;              Mean isotropic B-value for ligand molecules included in refinement.
+;
+    _item.name                  '_refine_hist.pdbx_B_iso_mean_ligand'
+    _item.category_id             refine_hist
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refine_hist.pdbx_B_iso_mean_solvent
+    _item_description.description
+;              Mean isotropic B-value for solvent molecules included in refinement.
+;
+    _item.name                  '_refine_hist.pdbx_B_iso_mean_solvent'
+    _item.category_id             refine_hist
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
 
 
 save__refine_hist.pdbx_number_atoms_protein

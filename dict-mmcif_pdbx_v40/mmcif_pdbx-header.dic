@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.039
+    _dictionary.version         4.040
 #
      loop_
     _dictionary_history.version
@@ -1993,4 +1993,13 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
       _refine.pdbx_solvent_vdw_probe_radii,_refine.pdbx_solvent_ion_probe_radii,_citation.pdbx_database_id_DOI,_entity.pdbx_description,
       and _exptl_crystal_grow.pdbx_details and category pdbx_related_exp_data_set.
 ;
+4.040  2014-02-10
+;
+    Changes (jdw): 
+    + Added definitions _atom_type.pdbx_scat_Cromer_Mann_a5,_atom_type.pdbx_scat_Cromer_Mann_b5,_refine.pdbx_average_fsc_overall,
+       _refine.pdbx_average_fsc_work,_refine.pdbx_average_fsc_free,_refine_ls_shell.pdbx_fsc_work,_refine_ls_shell.pdbx_fsc_free,
+       _refine_hist.pdbx_number_residues_total,_refine_hist.pdbx_B_iso_mean_ligand,_refine_hist.pdbx_B_iso_mean_solvent,
+       _atom_site_anisotrop.pdbx_PDB_model_num	
+;
+
 ### EOF mmcif_pdbx-header.dic 

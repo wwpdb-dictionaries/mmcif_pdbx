@@ -597,6 +597,7 @@ atom_site_anisotrop                      1  '_atom_site_anisotrop.pdbx_label_asy
 atom_site_anisotrop                      1  '_atom_site_anisotrop.pdbx_label_atom_id'             '_atom_site.label_atom_id'                  atom_site
 atom_site_anisotrop                      1  '_atom_site_anisotrop.pdbx_label_comp_id'             '_atom_site.label_comp_id'                  atom_site
 atom_site_anisotrop                      1  '_atom_site_anisotrop.pdbx_PDB_ins_code'              '_atom_site.pdbx_PDB_ins_code'              atom_site
+atom_site_anisotrop                      1  '_atom_site_anisotrop.pdbx_PDB_model_num'             '_atom_site.pdbx_PDB_model_num'             atom_site
 atom_site_anisotrop                      2  '_atom_site_anisotrop.type_symbol'                    '_atom_type.symbol'                         atom_type
 atom_sites                               1  '_atom_sites.entry_id'                                '_entry.id'                                 entry
 #
