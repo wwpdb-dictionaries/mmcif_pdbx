@@ -1,0 +1,274 @@
+save__atom_type.pdbx_scat_Cromer_Mann_a5
+    _item_description.description
+;              Scattering-factor coefficient a5, used to calculate electron
+               elastic atomic scattering factors for the defined atom type.
+
+               Electron Elastic Scattering Factors Ref: 
+                   International Tables for X-ray Crystallography (2006).
+                   Vol. C, Table 4.3.2.2, pp. 282-283.
+
+               Cromer_Mann equation Ref: 
+                   International Tables for X-ray Crystallography (1974).
+                   Vol. IV, Table 2.2B
+                or: International Tables for Crystallography  (2004). Vol. C,
+                    Tables 6.1.1.4 and 6.1.1.5.
+
+;
+    _item.name                  '_atom_type.pdbx_scat_Cromer_Mann_a5'
+    _item.category_id             atom_type
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_atom_type.scat_Cromer_Mann_a1'
+                                '_atom_type.scat_Cromer_Mann_a2'
+                                '_atom_type.scat_Cromer_Mann_a3'
+                                '_atom_type.scat_Cromer_Mann_a4'
+                                '_atom_type.scat_Cromer_Mann_b1'
+                                '_atom_type.scat_Cromer_Mann_b2'
+                                '_atom_type.scat_Cromer_Mann_b3'
+                                '_atom_type.scat_Cromer_Mann_b4'
+                                '_atom_type.pdbx_scat_Cromer_Mann_b5'
+                                '_atom_type.scat_Cromer_Mann_c'
+    _item_type.code               float
+     save_
+
+
+save__atom_type.pdbx_scat_Cromer_Mann_b5
+    _item_description.description
+
+;              Scattering-factor coefficient b5, used to calculate electron
+               elastic atomic scattering factors for the defined atom type.
+
+               Electron Elastic Scattering Factors Ref: 
+                   International Tables for X-ray Crystallography (2006).
+                   Vol. C, Table 4.3.2.2, pp. 282-283.
+
+               Cromer_Mann equation Ref:
+                   International Tables for X-ray Crystallography (1974).
+                   Vol. IV, Table 2.2B
+                or: International Tables for Crystallography  (2004). Vol. C,
+                    Tables 6.1.1.4 and 6.1.1.5.
+
+;
+    _item.name                  '_atom_type.pdbx_scat_Cromer_Mann_b5'
+    _item.category_id             atom_type
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_atom_type.scat_Cromer_Mann_a1'
+                                '_atom_type.scat_Cromer_Mann_a2'
+                                '_atom_type.scat_Cromer_Mann_a3'
+                                '_atom_type.scat_Cromer_Mann_a4'
+                                '_atom_type.pdbx_scat_Cromer_Mann_a5'
+                                '_atom_type.scat_Cromer_Mann_b1'
+                                '_atom_type.scat_Cromer_Mann_b2'
+                                '_atom_type.scat_Cromer_Mann_b3'
+                                '_atom_type.scat_Cromer_Mann_b4'
+                                '_atom_type.scat_Cromer_Mann_c'
+    _item_type.code               float
+     save_
+
+
+
+save__refine.pdbx_average_fsc_overall
+    _item_description.description
+
+;    Overall average Fourier Shell Correlation (avgFSC) between model and
+     observed structure factors for all reflections.
+
+     The average FSC is a measure of the agreement between observed
+     and calculated structure factors.
+
+                sum(N~i~ FSC~i~)
+     avgFSC   = ----------------
+                sum(N~i~)
+
+
+     N~i~     = the number of all reflections in the resolution shell i
+     FSC~i~   = FSC for all reflections in the i-th resolution shell calculated as:
+
+               (sum(|F~o~| |F~c~| fom cos(phi~c~-phi~o~)))
+     FSC~i~  = -------------------------------------------
+               (sum(|F~o~|^2^) (sum(|F~c~|^2^)))^1/2^
+
+     |F~o~|   = amplitude of observed structure factor
+     |F~c~|   = amplitude of calculated structure factor
+     phi~o~   = phase of observed structure factor
+     phi~c~   = phase of calculated structure factor
+     fom      = figure of merit of the experimental phases.
+
+     Summation of FSC~i~ is carried over all reflections in the resolution shell.
+
+     Summation of avgFSC is carried over all resolution shells.
+
+
+     Ref:  Rosenthal P.B., Henderson R.
+           "Optimal determination of particle orientation, absolute hand,
+           and contrast loss in single-particle electron cryomicroscopy.
+           Journal of Molecular Biology. 2003;333(4):721-745, equation (A6).
+
+;
+
+    _item.name   '_refine.pdbx_average_fsc_overall'
+    _item.category_id   refine
+    _item.mandatory_code     no
+    _item_type.code     float
+     save_
+
+save__refine.pdbx_average_fsc_work
+    _item_description.description
+;    Average Fourier Shell Correlation (avgFSC) between model and 
+     observed structure factors for reflections included in refinement.
+
+     The average FSC is a measure of the agreement between observed 
+     and calculated structure factors.
+
+                      sum(N~i~ FSC~work-i~) 
+     avgFSC~work~   = ---------------------
+                      sum(N~i~)
+
+
+     N~i~          = the number of working reflections in the resolution shell i
+     FSC~work-i~   = FSC for working reflections in the i-th resolution shell calculated as:
+
+                    (sum(|F~o~| |F~c~| fom cos(phi~c~-phi~o~)))
+     FSC~work-i~  = -------------------------------------------
+                    (sum(|F~o~|^2^) (sum(|F~c~|^2^)))^1/2^
+
+     |F~o~|   = amplitude of observed structure factor
+     |F~c~|   = amplitude of calculated structure factor
+     phi~o~   = phase of observed structure factor
+     phi~c~   = phase of calculated structure factor
+     fom      = figure of merit of the experimental phases.
+
+     Summation of FSC~work-i~ is carried over all working reflections in the resolution shell.
+
+     Summation of avgFSC~work~ is carried over all resolution shells.
+
+
+     Ref:  Rosenthal P.B., Henderson R.
+           "Optimal determination of particle orientation, absolute hand,
+           and contrast loss in single-particle electron cryomicroscopy.
+           Journal of Molecular Biology. 2003;333(4):721-745, equation (A6).
+
+;
+    _item.name   '_refine.pdbx_average_fsc_work'
+    _item.category_id   refine
+    _item.mandatory_code     no
+    _item_type.code     float
+     save_
+
+
+save__refine.pdbx_average_fsc_free
+    _item_description.description
+;    Average Fourier Shell Correlation (avgFSC) between model and
+     observed structure factors for reflections not included in refinement.
+
+     The average FSC is a measure of the agreement between observed
+     and calculated structure factors.
+
+                      sum(N~i~ FSC~free-i~)
+     avgFSC~free~   = ---------------------
+                      sum(N~i~)
+
+
+     N~i~          = the number of free reflections in the resolution shell i
+     FSC~free-i~   = FSC for free reflections in the i-th resolution shell calculated as:
+
+                    (sum(|F~o~| |F~c~| fom cos(phi~c~-phi~o~)))
+     FSC~free-i~  = -------------------------------------------
+                    (sum(|F~o~|^2^) (sum(|F~c~|^2^)))^1/2^
+
+     |F~o~|   = amplitude of observed structure factor
+     |F~c~|   = amplitude of calculated structure factor
+     phi~o~   = phase of observed structure factor
+     phi~c~   = phase of calculated structure factor
+     fom      = figure of merit of the experimental phases.
+
+     Summation of FSC~free-i~ is carried over all free reflections in the resolution shell.
+
+     Summation of avgFSC~free~ is carried over all resolution shells.
+
+
+     Ref:  Rosenthal P.B., Henderson R.
+           "Optimal determination of particle orientation, absolute hand,
+           and contrast loss in single-particle electron cryomicroscopy.
+           Journal of Molecular Biology. 2003;333(4):721-745, equation (A6).
+
+;
+    _item.name   '_refine.pdbx_average_fsc_free'
+    _item.category_id   refine
+    _item.mandatory_code     no
+    _item_type.code     float
+     save_
+
+
+
+save__refine_ls_shell.pdbx_fsc_work
+    _item_description.description
+;    Fourier Shell Correlation (FSC) between model and 
+     observed structure factors for reflections included in refinement.
+
+     FSC is a measure of the agreement between observed 
+     and calculated structure factors as complex numbers. 
+
+                  (sum(|F~o~| |F~c~| fom cos(phi~c~-phi~o~)))
+     FSC~work~  = --------------------------------------
+                  (sum(|F~o~|^2^) (sum(|F~c~|^2^)))^1/2^
+
+     |F~o~|   = amplitude of observed structure factor
+     |F~c~|   = amplitude of calculated structure factor
+     phi~o~   = phase of observed structure factor
+     phi~c~   = phase of calculated structure factor
+     fom      = figure of merit of the experimental phases.
+
+     Summation is carried over all working reflections in the resolution shell.
+
+     Ref:  Rosenthal P.B., Henderson R. 
+           "Optimal determination of particle orientation, absolute hand, 
+           and contrast loss in single-particle electron cryomicroscopy.  
+           Journal of Molecular Biology. 2003;333(4):721-745, equation (A6).
+
+;
+    _item.name   '_refine_ls_shell.pdbx_fsc_work'
+    _item.category_id   refine_ls_shell
+    _item.mandatory_code     no
+    _item_type.code     float
+     save_
+
+
+
+save__refine_ls_shell.pdbx_fsc_free
+    _item_description.description
+
+;    Fourier Shell Correlation (FSC) between model and
+     observed structure factors for reflections not included in refinement.
+
+     FSC is a measure of the agreement between observed
+     and calculated structure factors as complex numbers.
+
+                  (sum(|F~o~| |F~c~| fom cos(phi~c~-phi~o~)))
+     FSC~free~  = --------------------------------------
+                  (sum(|F~o~|^2^) (sum(|F~c~|^2^)))^1/2^
+
+     |F~o~|   = amplitude of observed structure factor
+     |F~c~|   = amplitude of calculated structure factor
+     phi~o~   = phase of observed structure factor
+     phi~c~   = phase of calculated structure factor
+     fom      = figure of merit of the experimental phases.
+
+     Summation is carried over all free reflections in the resolution shell.
+
+     Ref:  Rosenthal P.B., Henderson R.
+           "Optimal determination of particle orientation, absolute hand,
+           and contrast loss in single-particle electron cryomicroscopy.
+           Journal of Molecular Biology. 2003;333(4):721-745, equation (A6).
+
+;
+    _item.name   '_refine_ls_shell.pdbx_fsc_free'
+    _item.category_id   refine_ls_shell
+    _item.mandatory_code     no
+    _item_type.code     float
+     save_
+
+
