@@ -425,7 +425,7 @@ save_pdbx_nmr_chem_shift_ref
 Items in the pdbx_nmr_chem_shift_ref category provide the chemical shift referencing values used in assigning the chemical shift positions for peaks in spectral peak lists and assigned atom chemical shifts.
 ;
    _category.id                   'pdbx_nmr_chem_shift_ref'
-
+   _category.mandatory_code      no
    loop_
      _category_key.name
 
@@ -1160,7 +1160,7 @@ Items in the pdbx_nmr_constraint_file category record the name of the constraint
 to calculate conformers with the constraint file, and the characteristics of the constraints in the constraint file.
 ;
    _category.id                   'pdbx_nmr_constraint_file'
-
+   _category.mandatory_code      no
    loop_
      _category_key.name
 
