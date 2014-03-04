@@ -938,7 +938,7 @@ save__pdbx_struct_assembly_depositor_info.oligomeric_count
     _item.name                  '_pdbx_struct_assembly_depositor_info.oligomeric_count'
     _item.category_id             pdbx_struct_assembly_depositor_info
     _item.mandatory_code          no
-    _item_type.code               int
+    _item_type.code               line 
      save_
 
 save__pdbx_struct_assembly_depositor_info.matrix_flag
