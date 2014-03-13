@@ -1,0 +1,70 @@
+#
+# File:  reflns-extension-20140312.txt
+# Date:  March 13, 2014
+#
+#
+
+save__reflns.pdbx_CC_half
+    _item_description.description
+;             The Pearson's correlation coefficient expressed as a percentage between the average 
+              intensities from randomly selected half-datasets.
+
+	      Ref: Karplus & Diederichs (2012), Science 336, 1030-33
+
+;
+    _item.name                  '_reflns.pdbx_CC_half'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__reflns.pdbx_R_split
+    _item_description.description
+;             R split measures the agreement between the sets of intensities created by merging 
+              odd- and even-numbered images  from the overall data.          
+
+	      Ref: T. A. White, R. A. Kirian, A. V. Martin, A. Aquila, K. Nass, A. Barty 
+              and H. N. Chapman (2012), J. Appl. Cryst. 45, 335-341
+
+;
+    _item.name                  '_reflns.pdbx_R_split'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+
+save__reflns_shell.pdbx_CC_half
+    _item_description.description
+;             The Pearson's correlation coefficient expressed as a percentage between the average 
+              intensities from randomly selected half-datasets within the resolution shell.
+
+	      Ref: Karplus & Diederichs (2012), Science 336, 1030-33
+
+;
+    _item.name                  '_reflns_shell.pdbx_CC_half'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__reflns_shell.pdbx_R_split
+    _item_description.description
+;
+              R split measures the agreement between the sets of intensities created by merging 
+              odd- and even-numbered images from the data within the resolution shell.
+
+	      Ref: T. A. White, R. A. Kirian, A. V. Martin, A. Aquila, K. Nass, 
+	      A. Barty and H. N. Chapman (2012), J. Appl. Cryst. 45, 335-341
+
+;
+    _item.name                  '_reflns_shell.pdbx_R_split'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
