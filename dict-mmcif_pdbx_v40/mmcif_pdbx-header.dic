@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.040
+    _dictionary.version         4.041
 #
      loop_
     _dictionary_history.version
@@ -2001,5 +2001,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
        _refine_hist.pdbx_number_residues_total,_refine_hist.pdbx_B_iso_mean_ligand,_refine_hist.pdbx_B_iso_mean_solvent,
        _atom_site_anisotrop.pdbx_PDB_model_num	
 ;
-
+4.041  2014-03-28
+;
+    Changes (ep/jdw): 
+    + Editorial corrections in decriptions for items  _refine.pdbx_solvent_vdw_probe_radii, _refine.pdbx_solvent_ion_probe_radii,
+      _refine.pdbx_solvent_shrinkage_radii, and _refine.pdbx_overall_ESU_R_Free
+;
 ### EOF mmcif_pdbx-header.dic 
+
+

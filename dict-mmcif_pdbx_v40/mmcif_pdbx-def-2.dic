@@ -8487,8 +8487,7 @@ save__refine.pdbx_overall_ESU_R
 
 save__refine.pdbx_overall_ESU_R_Free
     _item_description.description
-;              Overall estimated standard uncertainties of positional
-               parameters based on R value.
+;             Overall estimated standard uncertainties of positional parameters based on R free value. 
 ;
     _item.name                  '_refine.pdbx_overall_ESU_R_Free'
     _item.category_id             refine
@@ -10185,7 +10184,7 @@ save__pdbx_refine_tls_group.selection_details
 
 save__refine.pdbx_solvent_vdw_probe_radii
     _item_description.description
-;              CCP4 solvent probe van der Waals radii 
+;           For bulk solvent mask calculation, the value by which the vdw radii of non-ion atoms (like carbon) are increased and used. 
 ;
     _item.name                  '_refine.pdbx_solvent_vdw_probe_radii'
     _item.category_id             refine
@@ -10204,7 +10203,7 @@ save__refine.pdbx_solvent_vdw_probe_radii
 
 save__refine.pdbx_solvent_ion_probe_radii
     _item_description.description
-;              CCP4 solvent ion probe radii 
+;             For bulk solvent mask calculation, the amount that the ionic radii of atoms, which can be ions, are increased used. 
 ;
     _item.name                  '_refine.pdbx_solvent_ion_probe_radii'
     _item.category_id             refine
@@ -10223,7 +10222,7 @@ save__refine.pdbx_solvent_ion_probe_radii
 
 save__refine.pdbx_solvent_shrinkage_radii
     _item_description.description
-;              CCP4 solvent shrinkage radii 
+;            For bulk solvent mask calculation, amount mask is shrunk after taking away atoms with new radii and a constant value assigned to this new region.
 ;
     _item.name                  '_refine.pdbx_solvent_shrinkage_radii'
     _item.category_id             refine
