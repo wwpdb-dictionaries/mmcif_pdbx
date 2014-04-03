@@ -975,6 +975,10 @@ save__entity_poly.pdbx_explicit_linking_flag
     _item_enumeration.value
     _item_enumeration.detail      Y  'yes'
                                   N  'no'
+
+   _pdbx_item_context.type       WWPDB_LOCAL
+   _pdbx_item_context.item_name  '_entity_poly.pdbx_explicit_linking_flag'
+
      save_
 
 save__pdbx_molecule.linked_entity_id

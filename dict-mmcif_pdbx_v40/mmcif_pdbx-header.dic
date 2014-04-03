@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.041
+    _dictionary.version         4.042
 #
      loop_
     _dictionary_history.version
@@ -2006,6 +2006,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     Changes (ep/jdw): 
     + Editorial corrections in decriptions for items  _refine.pdbx_solvent_vdw_probe_radii, _refine.pdbx_solvent_ion_probe_radii,
       _refine.pdbx_solvent_shrinkage_radii, and _refine.pdbx_overall_ESU_R_Free
+;
+4.042  2014-04-03
+;
+    Changes (ep/jdw): 
+    + extended enumerations for item - _pdbx_contact_author.id
 ;
 ### EOF mmcif_pdbx-header.dic 
 
