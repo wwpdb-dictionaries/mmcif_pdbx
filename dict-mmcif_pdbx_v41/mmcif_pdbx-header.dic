@@ -1,0 +1,53 @@
+###########################################################################
+#
+# File:  mmcif_pdbx-header.dic                                             
+# 
+#                       PDB Exchange Data Dictionary                 
+#
+#     This dictionary supplements the contents of the mmCIF data dictionary 
+#     with additional data items that may be required to store all of the   
+#     information currently included a Protein Data Bank (PDB) format data  
+#     file.  Additional data items describing internal processing status    
+#     are also defined here.                                                
+#                                                                           
+#     The mmCIF dictionary and this supplement provide the provisional      
+#     specifications for the data exchange protocol used by the wwPDB:      
+#     Resource Collaboratory for Structural Bioinformatics (RCSB) PDB, 
+#     Molecular Structure Database (MSD) Group/EBI, PDB Japan (PDBj) at
+#     Osaka University.  This dictionary also includes: data extensions 
+#     for structural genomics projects recommended by International Task 
+#     Force on Data Deposition and Archiving (including protein production), 
+#     NMR and 3D electron microscopy.
+#                                                                           
+#                                                                           
+#                               Header Section 
+#                                                                           
+##############################################################################
+
+data_mmcif_pdbx.dic
+
+    _datablock.id                          mmcif_pdbx.dic
+    _datablock.description
+;
+     This data block holds the Protein Data Bank Exchange Data dictionary.
+;
+
+    _dictionary.title           mmcif_pdbx.dic
+    _dictionary.datablock_id    mmcif_pdbx.dic
+    _dictionary.version         4.100
+#
+     loop_
+    _dictionary_history.version
+    _dictionary_history.update
+    _dictionary_history.revision
+4.100  2014-04-21
+;
+    Version 4.100 is a transitional dictionary used to construct the PDBML schema with
+    extensions the keys to categories ENTITY_SRC_GEN, ENTITY_SRC_NAT, and PDBX_ENTITY_SRC_SYN.
+
+    In all other respects the version 4.1 dictionary and schema track contnet changes in 
+    the V4.0x  dictionaries.
+;
+### EOF mmcif_pdbx-header.dic 
+
+
