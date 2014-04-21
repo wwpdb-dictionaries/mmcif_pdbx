@@ -5,11 +5,11 @@
 # Updated: -- 
 #
 # Aug 27, 2013 - jdw    create a version 4 alternate dictionary with only the new attributes in this dictionary as optional
+# Apr 16, 2014 - jdw    make the formally optional *_src_id items in earch source category implicitly mandatory with 
+#                       default value=1
 #
-# Draft dictionary extension for describing polymeric molecules with derived
-# from multiple biological sources.
+# Draft dictionary extension for describing polymeric molecules with derived from multiple biological sources.
 #
-
 #
 ## 
 
@@ -19,8 +19,9 @@ save__entity_src_gen.pdbx_src_id
 ;
     _item.name                  '_entity_src_gen.pdbx_src_id'
     _item.category_id             entity_src_gen
-    _item.mandatory_code          no
+    _item.mandatory_code          implicit
     _item_type.code		  int
+    _item_default.value           1
      save_
 
 
@@ -85,8 +86,9 @@ save__entity_src_nat.pdbx_src_id
 ;
     _item.name                  '_entity_src_nat.pdbx_src_id'
     _item.category_id             entity_src_nat
-    _item.mandatory_code          no
+    _item.mandatory_code          implicit
     _item_type.code		  int
+    _item_default.value           1
      save_
 
 
@@ -136,8 +138,9 @@ save__pdbx_entity_src_syn.pdbx_src_id
 ;
     _item.name                  '_pdbx_entity_src_syn.pdbx_src_id'
     _item.category_id             pdbx_entity_src_syn
-    _item.mandatory_code          no
+    _item.mandatory_code          implicit
     _item_type.code		  int
+    _item_default.value           1
      save_
 
 save__pdbx_entity_src_syn.pdbx_alt_source_flag
