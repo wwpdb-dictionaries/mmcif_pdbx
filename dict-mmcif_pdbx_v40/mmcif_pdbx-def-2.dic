@@ -3676,20 +3676,6 @@ save__pdbx_entity_assembly.num_copies
 ## PDBX_ENTITY_SRC_SYN ##
 #########################
 
-save_pdbx_entity_src_syn
-    _category.description
-;            PDBX_ENTITY_SRC_SYN records the details about each chemically
-             synthesized molecule (entity) in the asymmetric unit.
-;
-    _category.id                  pdbx_entity_src_syn
-    _category.mandatory_code      no
-    _category_key.name          '_pdbx_entity_src_syn.entity_id'
-     loop_
-    _category_group.id           'inclusive_group'
-                                 'entity_group'
-                                 'pdbx_group'
-     save_
-
 save__pdbx_entity_src_syn.details
     _item_description.description
 ;              A description of special aspects of the source for the 

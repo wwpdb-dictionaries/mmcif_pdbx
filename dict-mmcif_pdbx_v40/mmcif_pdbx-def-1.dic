@@ -15889,46 +15889,6 @@ save__entity_poly_seq.num
 ## ENTITY_SRC_GEN ##
 ####################
 
-save_entity_src_gen
-    _category.description
-;              Data items in the ENTITY_SRC_GEN category record details of
-               the source from which the entity was obtained in cases
-               where the source was genetically manipulated.  The
-               following are treated separately:  items pertaining to the tissue
-               from which the gene was obtained, items pertaining to the host
-               organism for gene expression and items pertaining to the actual
-               producing organism (plasmid).
-;
-    _category.id                  entity_src_gen
-    _category.mandatory_code      no
-    _category_key.name          '_entity_src_gen.entity_id'
-    loop_
-    _category_group.id           'inclusive_group'
-                                 'entity_group'
-    loop_
-    _category_examples.detail
-    _category_examples.case
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-;
-    Example 1 - based on PDB entry 5HVP and laboratory records for the
-                structure corresponding to PDB entry 5HVP.
-;
-;
-    loop_
-    _entity_src_gen.entity_id
-    _entity_src_gen.gene_src_common_name
-    _entity_src_gen.gene_src_genus
-    _entity_src_gen.gene_src_species
-    _entity_src_gen.gene_src_strain
-    _entity_src_gen.host_org_common_name
-    _entity_src_gen.host_org_genus
-    _entity_src_gen.host_org_species
-    _entity_src_gen.plasmid_name
-     1  'HIV-1'  '?'  '?'  'NY-5'
-        'bacteria'  'Escherichia'  'coli'  'pB322'
-;
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-     save_
 
 save__entity_src_gen.entity_id
     _item_description.description
@@ -16133,43 +16093,6 @@ save__entity_src_gen.host_org_species
 ####################
 ## ENTITY_SRC_NAT ##
 ####################
-
-save_entity_src_nat
-    _category.description
-;              Data items in the ENTITY_SRC_NAT category record details of
-               the source from which the entity was obtained in cases
-               where the entity was isolated directly from a natural tissue.
-;
-    _category.id                  entity_src_nat
-    _category.mandatory_code      no
-    _category_key.name          '_entity_src_nat.entity_id'
-    loop_
-    _category_group.id           'inclusive_group'
-                                 'entity_group'
-    loop_
-    _category_examples.detail
-    _category_examples.case
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-;
-    Example 1 - based on PDB entry 5HVP and laboratory records for the
-                structure corresponding to PDB entry 5HVP.
-;
-;
-    loop_
-    _entity_src_nat.entity_id
-    _entity_src_nat.common_name
-    _entity_src_nat.genus
-    _entity_src_nat.species
-    _entity_src_nat.details
-     2  'bacteria'  'Actinomycetes' '?'
-    ;    Acetyl-pepstatin was isolated by Dr. K. Oda, Osaka
-         Prefecture University, and provided to us by Dr. Ben
-         Dunn, University of Florida, and Dr. J. Kay, University
-         of Wales.
-    ;
-;
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-     save_
 
 save__entity_src_nat.common_name
     _item_description.description

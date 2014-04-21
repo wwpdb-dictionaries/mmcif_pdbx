@@ -2,16 +2,112 @@
 # File:      entity-poly-multi-src-extension-v4.dic
 # Original:  Aug 27, 2013  JDW
 #
+# Draft dictionary extension for describing polymeric molecules with derived from multiple biological sources.
+#
 # Updated: -- 
 #
 # Aug 27, 2013 - jdw    create a version 4 alternate dictionary with only the new attributes in this dictionary as optional
 # Apr 16, 2014 - jdw    make the formally optional *_src_id items in earch source category implicitly mandatory with 
 #                       default value=1
+# Apr 21, 2014 - jdw    Retains the original key construction of source categories for backward compatibility.
 #
-# Draft dictionary extension for describing polymeric molecules with derived from multiple biological sources.
 #
 #
 ## 
+
+
+save_entity_src_nat
+    _category.description
+;              Data items in the ENTITY_SRC_NAT category record details of
+               the source from which the entity was obtained in cases
+               where the entity was isolated directly from a natural tissue.
+;
+    _category.id                  entity_src_nat
+    _category.mandatory_code      no
+    _category_key.name          '_entity_src_nat.entity_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - based on PDB entry 5HVP and laboratory records for the
+                structure corresponding to PDB entry 5HVP.
+;
+;
+    loop_
+    _entity_src_nat.entity_id
+    _entity_src_nat.common_name
+    _entity_src_nat.genus
+    _entity_src_nat.species
+    _entity_src_nat.details
+     2  'bacteria'  'Actinomycetes' '?'
+    ;    Acetyl-pepstatin was isolated by Dr. K. Oda, Osaka
+         Prefecture University, and provided to us by Dr. Ben
+         Dunn, University of Florida, and Dr. J. Kay, University
+         of Wales.
+    ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save_entity_src_gen
+    _category.description
+;              Data items in the ENTITY_SRC_GEN category record details of
+               the source from which the entity was obtained in cases
+               where the source was genetically manipulated.  The
+               following are treated separately:  items pertaining to the tissue
+               from which the gene was obtained, items pertaining to the host
+               organism for gene expression and items pertaining to the actual
+               producing organism (plasmid).
+;
+    _category.id                  entity_src_gen
+    _category.mandatory_code      no
+    _category_key.name          '_entity_src_gen.entity_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - based on PDB entry 5HVP and laboratory records for the
+                structure corresponding to PDB entry 5HVP.
+;
+;
+    loop_
+    _entity_src_gen.entity_id
+    _entity_src_gen.gene_src_common_name
+    _entity_src_gen.gene_src_genus
+    _entity_src_gen.gene_src_species
+    _entity_src_gen.gene_src_strain
+    _entity_src_gen.host_org_common_name
+    _entity_src_gen.host_org_genus
+    _entity_src_gen.host_org_species
+    _entity_src_gen.plasmid_name
+     1  'HIV-1'  '?'  '?'  'NY-5'
+        'bacteria'  'Escherichia'  'coli'  'pB322'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save_pdbx_entity_src_syn
+    _category.description
+;            PDBX_ENTITY_SRC_SYN records the details about each chemically
+             synthesized molecule (entity) in the asymmetric unit.
+;
+    _category.id                  pdbx_entity_src_syn
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_entity_src_syn.entity_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+     save_
+
 
 save__entity_src_gen.pdbx_src_id
     _item_description.description
@@ -19,7 +115,7 @@ save__entity_src_gen.pdbx_src_id
 ;
     _item.name                  '_entity_src_gen.pdbx_src_id'
     _item.category_id             entity_src_gen
-    _item.mandatory_code          implicit
+    _item.mandatory_code          no
     _item_type.code		  int
     _item_default.value           1
      save_
@@ -86,7 +182,7 @@ save__entity_src_nat.pdbx_src_id
 ;
     _item.name                  '_entity_src_nat.pdbx_src_id'
     _item.category_id             entity_src_nat
-    _item.mandatory_code          implicit
+    _item.mandatory_code          no
     _item_type.code		  int
     _item_default.value           1
      save_
@@ -138,7 +234,7 @@ save__pdbx_entity_src_syn.pdbx_src_id
 ;
     _item.name                  '_pdbx_entity_src_syn.pdbx_src_id'
     _item.category_id             pdbx_entity_src_syn
-    _item.mandatory_code          implicit
+    _item.mandatory_code          no
     _item_type.code		  int
     _item_default.value           1
      save_

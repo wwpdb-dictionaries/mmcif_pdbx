@@ -24,7 +24,7 @@ mmcif_pdbx-header.dic
 ../dict-mmcif_pdbx_v40/struct_site_auth_extension.dic
 ../dict-mmcif_pdbx_v40/audit_support-extension.dic
 ../dict-mmcif_pdbx_v40/chem_comp_subcomponent_extension.dic
-../dict-mmcif_pdbx_v40/entity-poly-multi-src-extension-v4.dic
+entity-poly-multi-src-extension-v41.dic
 ../dict-mmcif_pdbx_v40/related_data_set.dic
 ../dict-mmcif_pdbx_v40/refine_items_equations_revised.dic
 ../dict-mmcif_pdbx_v40/fsc-extensions.dic
