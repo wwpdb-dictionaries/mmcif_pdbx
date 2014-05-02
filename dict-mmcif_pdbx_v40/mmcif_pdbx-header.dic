@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.042
+    _dictionary.version         4.043
 #
      loop_
     _dictionary_history.version
@@ -2011,6 +2011,13 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
     Changes (ep/jdw): 
     + extended enumerations for item - _pdbx_contact_author.id
+;
+4.043  2014-05-02
+;
+    Changes (jdw):
+    + Add items _reflns.pdbx_CC_half, _reflns.pdbx_R_split, _reflns_shell.pdbx_CC_half, _reflns_shell.pdbx_R_split
+    + Items _entity_src_gen.pdbx_src_id, _entity_src_nat.pdbx_src_id _pdbx_entity_src_syn.pdbx_src_id added to 
+      category key and set to mandatory code implicit with default value of 1.
 ;
 ### EOF mmcif_pdbx-header.dic 
 

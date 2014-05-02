@@ -105,8 +105,9 @@ save_pdbx_entity_src_syn
     _category.id                  pdbx_entity_src_syn
     _category.mandatory_code      no
      loop_
-    _category_key.name          '_pdbx_entity_src_syn.entity_id'
-                                '_pdbx_entity_src_syn.pdbx_src_id'	
+    _category_key.name          
+    '_pdbx_entity_src_syn.entity_id'
+    '_pdbx_entity_src_syn.pdbx_src_id'	
      loop_
     _category_group.id           'inclusive_group'
                                  'entity_group'
