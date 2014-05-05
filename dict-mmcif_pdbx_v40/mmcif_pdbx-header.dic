@@ -2022,7 +2022,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 4.044  2014-05-05
 ;
     Changes (jdw):
-    + update enumerations in category pdbx_SG_project
+    + update enumerations in category  pdbx_SG_project
 ;
 ### EOF mmcif_pdbx-header.dic 
 
