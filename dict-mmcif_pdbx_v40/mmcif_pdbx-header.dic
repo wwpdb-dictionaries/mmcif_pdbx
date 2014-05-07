@@ -2019,7 +2019,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + Items _entity_src_gen.pdbx_src_id, _entity_src_nat.pdbx_src_id _pdbx_entity_src_syn.pdbx_src_id added to 
       category key and set to mandatory code implicit with default value of 1.
 ;
-4.044  2014-05-05
+4.044  2014-05-07
 ;
     Changes (jdw):
     + update enumerations in category  pdbx_SG_project
