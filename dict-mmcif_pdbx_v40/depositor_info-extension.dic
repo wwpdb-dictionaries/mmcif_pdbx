@@ -387,7 +387,7 @@ save__pdbx_struct_ref_seq_depositor_info.db_align_beg
 ;
     _item.name                  '_pdbx_struct_ref_seq_depositor_info.db_align_beg'
     _item.category_id             pdbx_struct_ref_seq_depositor_info
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     loop_
     _item_range.maximum
     _item_range.minimum           .   1
@@ -402,7 +402,7 @@ save__pdbx_struct_ref_seq_depositor_info.db_align_end
 ;
     _item.name                  '_pdbx_struct_ref_seq_depositor_info.db_align_end'
     _item.category_id             pdbx_struct_ref_seq_depositor_info
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     loop_
     _item_range.maximum
     _item_range.minimum           .   1
