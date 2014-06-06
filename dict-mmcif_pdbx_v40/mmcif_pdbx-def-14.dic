@@ -3166,6 +3166,20 @@ save__pdbx_struct_conn_angle.ptnr3_label_seq_id
     _item_linked.parent_name    '_atom_site.label_seq_id'
      save_
 
+save__pdbx_struct_conn_angle.ptnr3_symmetry
+    _item_description.description
+;   Describes the symmetry operation that should be applied to the
+    atom specified by _pdbx_struct_conn_angle.ptnr3_label* to generate the
+    first partner in the structure angle.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr3_symmetry'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               symop
+    _item_examples.case           7_645
+    _item_examples.detail         '7th symm. posn.; +a on x; -b on y'
+     save_
+
 save__pdbx_struct_conn_angle.value
     _item_description.description
 ;   Angle in degrees defined by the three sites
