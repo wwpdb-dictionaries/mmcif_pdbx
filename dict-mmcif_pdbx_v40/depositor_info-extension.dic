@@ -2539,7 +2539,7 @@ save__pdbx_depui_status_flags.has_viewed_validation_report
 ;
     _item.name                  '_pdbx_depui_status_flags.has_viewed_validation_report'
     _item.category_id             pdbx_depui_status_flags
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               code
     loop_
     _item_enumeration.value    Y N   
