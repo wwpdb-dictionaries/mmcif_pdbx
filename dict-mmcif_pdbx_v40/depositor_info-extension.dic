@@ -301,6 +301,7 @@ save__pdbx_chem_comp_depositor_info.in_dictionary_flag
     _item_enumeration.value    Y N   
      save_
 
+
 save__pdbx_chem_comp_depositor_info.details
     _item_description.description
 ;              This data item contains additional details about this 
@@ -2532,6 +2533,18 @@ save__pdbx_depui_status_flags.has_accepted_terms_and_conditions
     _item_enumeration.value    Y N   
      save_
 
+save__pdbx_depui_status_flags.has_viewed_validation_report
+    _item_description.description
+;   A flag to indicate the viewing the latest validation report.
+;
+    _item.name                  '_pdbx_depui_status_flags.has_viewed_validation_report'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          yes
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N   
+     save_
+
 save__pdbx_depui_status_flags.is_ligand_processing_complete
     _item_description.description
 ;   A flag to indicate that ligand processing is complete
@@ -2552,6 +2565,7 @@ save__pdbx_depui_status_flags.sample_xyz_sequence_alignments_valid
     _item.mandatory_code          yes
     _item_type.code               text
      save_
+
 
 
 save_pdbx_depui_upload
