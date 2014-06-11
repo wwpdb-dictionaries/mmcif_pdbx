@@ -2545,6 +2545,46 @@ save__pdbx_depui_status_flags.has_viewed_validation_report
     _item_enumeration.value    Y N   
      save_
 
+save__pdbx_depui_status_flags.validated_model_file_name
+    _item_description.description
+;   The the last validation report operation, the name of the model file last validated.
+;
+    _item.name                  '_pdbx_depui_status_flags.validated_model_file_name'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+save__pdbx_depui_status_flags.merge_prior_model_file_name
+    _item_description.description
+;   For the last model merge operation, the name of the model file containing prior data for the current deposition session.
+;
+    _item.name                  '_pdbx_depui_status_flags.merge_prior_model_file_name'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+save__pdbx_depui_status_flags.merge_replace_model_file_name
+    _item_description.description
+;   For the last model merge operation, the name of the model file containing user provided replacement coordinate and model data.
+;
+    _item.name                  '_pdbx_depui_status_flags.merge_replace_model_file_name'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+save__pdbx_depui_status_flags.merge_output_model_file_name
+    _item_description.description
+;   For the last model merge operation, the name of the model file containing output from the merge operation.
+;
+    _item.name                  '_pdbx_depui_status_flags.merge_output_model_file_name'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
 save__pdbx_depui_status_flags.is_ligand_processing_complete
     _item_description.description
 ;   A flag to indicate that ligand processing is complete
