@@ -6330,7 +6330,7 @@ save__chem_comp.id
         '_struct_mon_nucl.label_comp_id'            struct_mon_nucl      yes
         '_struct_mon_prot.label_comp_id'            struct_mon_prot      yes
         '_struct_mon_prot_cis.label_comp_id'        struct_mon_prot_cis  yes
-        '_struct_ref_seq_dif.db_mon_id'             struct_ref_seq_dif   no
+#        '_struct_ref_seq_dif.db_mon_id'             struct_ref_seq_dif   no
         '_struct_ref_seq_dif.mon_id'                struct_ref_seq_dif   no
         '_struct_sheet_range.beg_label_comp_id'     struct_sheet_range   yes
         '_struct_sheet_range.end_label_comp_id'     struct_sheet_range   yes
