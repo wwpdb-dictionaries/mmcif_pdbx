@@ -3571,6 +3571,7 @@ save_pdbx_data_processing_status
     'site'                'skip'
     'link'                'skip' 
     'secondary structure' 'skip'
+    'solvent position'    'skip'
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -3591,6 +3592,7 @@ save__pdbx_data_processing_status.task_name
     'site'
     'link'
     'secondary structure'
+    'solvent position'
     save_
 
 save__pdbx_data_processing_status.status

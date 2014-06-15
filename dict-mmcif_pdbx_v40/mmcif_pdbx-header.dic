@@ -2024,9 +2024,9 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     Changes (jdw):
     + update enumerations in category  pdbx_SG_project
 ;
-4.045  2014-06-06
+4.045  2014-06-15
 ;
-    Changes (jdw): (open revision)
+    Changes (jdw): 
     + Add item _pdbx_struct_conn_angle.ptnr3_symmetry
 ;
 ### EOF mmcif_pdbx-header.dic 
