@@ -860,7 +860,7 @@ save_pdbx_nmr_chem_shift_reference
 Items in the chem_shift_reference category define a set of chemical shift referencing parameters.
 ;
    _category.id                   'pdbx_nmr_chem_shift_reference'
-
+   _category.mandatory_code      no
    loop_
      _category_key.name
 
@@ -1337,7 +1337,7 @@ save__pdbx_nmr_constraint_file.software_ordinal
 
    _item_description.description
 ;
-Pointer to '_software.ordinal'
+Pointer to _software.ordinal
 ;
 
    _item.name                     '_pdbx_nmr_constraint_file.software_ordinal'
@@ -1733,7 +1733,7 @@ save__pdbx_nmr_software_task.software_ordinal
 
    _item_description.description
 ;
-Pointer to '_software.ordinal'
+Pointer to _software.ordinal
 ;
 
    _item.name                     '_pdbx_nmr_software_task.software_ordinal'

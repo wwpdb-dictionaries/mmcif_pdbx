@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.045
+    _dictionary.version         4.046
 #
      loop_
     _dictionary_history.version
@@ -2028,6 +2028,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
     Changes (jdw): 
     + Add item _pdbx_struct_conn_angle.ptnr3_symmetry
+;
+4.046  2014-07-03 (open)
+;
+    Changes (jdw): 
+    + update enumerations for item _pdbx_molecule_features.class
 ;
 ### EOF mmcif_pdbx-header.dic 
 
