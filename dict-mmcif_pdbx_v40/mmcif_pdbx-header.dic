@@ -2029,9 +2029,9 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     Changes (jdw): 
     + Add item _pdbx_struct_conn_angle.ptnr3_symmetry
 ;
-4.046  2014-07-03 (open)
+4.046  2014-07-10 
 ;
-    Changes (jdw): 
+    Changes (jdw):  
     + update enumerations for item _pdbx_molecule_features.class
 ;
 ### EOF mmcif_pdbx-header.dic 
