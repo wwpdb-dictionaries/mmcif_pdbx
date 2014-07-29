@@ -7737,7 +7737,7 @@ save__struct_mon_prot_cis.pdbx_id
 ##
 save__struct_ref.pdbx_db_accession
     _item_description.description
-;              Accession code of the reference database.
+;              Accession code assigned by the reference database.
 ;
     _item.name                  '_struct_ref.pdbx_db_accession'
     _item.category_id             struct_ref
@@ -7748,6 +7748,21 @@ save__struct_ref.pdbx_db_accession
     _item_aliases.alias_name     '_struct_ref.rcsb_db_accession'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
+     save_
+
+save__struct_ref.pdbx_db_isoform
+    _item_description.description
+;  Database code assigned by the reference database for a sequence isoform.   An isoform sequence is an  
+   alternative protein sequence that can be generated from the same gene by a single or by a combination of 
+   biological events such as: alternative promoter usage, alternative splicing, alternative initiation 
+   and ribosomal frameshifting.
+;
+    _item.name                  '_struct_ref.pdbx_db_isoform'
+    _item.category_id             struct_ref
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+     _item_examples.case          'P29994-6'
      save_
 
 save__struct_ref.pdbx_seq_one_letter_code

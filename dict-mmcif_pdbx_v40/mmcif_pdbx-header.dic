@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.046
+    _dictionary.version         4.047
 #
      loop_
     _dictionary_history.version
@@ -2033,6 +2033,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
     Changes (jdw):  
     + update enumerations for item _pdbx_molecule_features.class
+;
+4.047  2014-07-29 
+;
+    Changes (jdw):  
+    + add optional data item _struct_ref.pdbx_db_isoform
 ;
 ### EOF mmcif_pdbx-header.dic 
 
