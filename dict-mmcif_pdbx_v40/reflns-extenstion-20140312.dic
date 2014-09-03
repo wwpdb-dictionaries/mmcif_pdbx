@@ -1,3 +1,19 @@
+##
+##  refln-extension-20140903.txt
+##  From the PDBx/mmCIF Deposition working group 
+##
+save__refln.pdbx_r_free_flag
+     _item_description.description
+;              The R-free flag originally assigned to the reflection.  The convention used for
+               labeling the work and test sets differs depending on choice of data processing
+               software and refinement program.
+;
+    _item.name                  '_refln.pdbx_r_free_flag'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
 #
 # File:  reflns-extension-20140312.txt
 # Date:  March 13, 2014

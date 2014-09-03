@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.047
+    _dictionary.version         4.048
 #
      loop_
     _dictionary_history.version
@@ -2038,6 +2038,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
     Changes (jdw):  
     + add optional data item _struct_ref.pdbx_db_isoform
+;
+4.048  2014-09-03
+;
+    Changes (PDBx/mmCIF Deposition Working Group,jdw):  
+    + Added item  _refln.pdbx_r_free_flag suggested by PDBx/mmCIF Deposition Working Group
 ;
 ### EOF mmcif_pdbx-header.dic 
 
