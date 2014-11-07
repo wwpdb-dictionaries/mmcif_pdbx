@@ -1923,6 +1923,28 @@ save__pdbx_database_status.methods_development_category
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
     save_ 
+
+save__pdbx_database_status.pdb_format_compatible
+    _item_description.description
+;              A flag indicating that the entry is compatible with the PDB format.
+
+               A value of 'N' indicates that the no PDB format data file is
+               corresponding to this entry is available in the PDB archive.  
+               
+;
+    _item.name                 '_pdbx_database_status.pdb_format_compatible'
+    _item.category_id            pdbx_database_status
+    _item.mandatory_code         no
+    _item_type.code              uchar1
+    _item_default.value          'Y'    
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+     Y  'Yes'
+     N  'No'
+    _item_examples.case          Y
+    save_ 
+
 ###
 ###
 save_pdbx_entity_name
