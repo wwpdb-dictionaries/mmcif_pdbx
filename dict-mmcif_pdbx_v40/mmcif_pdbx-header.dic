@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.049
+    _dictionary.version         4.050
 #
      loop_
     _dictionary_history.version
@@ -2050,6 +2050,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + add item _pdbx_database_status.pdb_format_compatible to distinguish large entries not
       represented in PDB format.
 ;
+4.050  2014-11-20
+;
+    Changes (jdw):  
+    + Update enumeration for item  database_2.database_id
+;
+
 ### EOF mmcif_pdbx-header.dic 
 
 

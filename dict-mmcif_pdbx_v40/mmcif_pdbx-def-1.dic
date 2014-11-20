@@ -11198,6 +11198,9 @@ save__database_2.database_id
 ;                                 Cambridge Structural Database
                                   (organic and metal-organic compounds)
 ;
+                                  EMDB
+;                                 Electron Microscopy Data Bank
+;
                                   ICSD
 ;                                 Inorganic Crystal Structure Database
 ;
@@ -11232,6 +11235,7 @@ save__database_2.database_id
                                   WWPDB
 ;                                 Worldwide Protein Data Bank
 ;
+
 
      save_
 
