@@ -1,0 +1,726 @@
+##########################
+## PDBX_CHEM_COMP_MODEL ##
+##########################
+
+save_pdbx_chem_comp_model
+    _category.description
+;              Data items in the PDBX_CHEM_COMP_MODEL category give details about each
+               of the chemical component model instances.
+;
+    _category.id                  pdbx_chem_comp_model
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_chem_comp_model.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_model_group'
+                                 'pdbx_group'                                 
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+                
+;
+;
+    loop_
+    _pdbx_chem_comp_model.id
+    _pdbx_chem_comp_model.comp_id
+    M_ZZV_00001 ZZV
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_model.id
+    _item_description.description
+;              The value of _pdbx_chem_comp_model.id must uniquely identify each
+               model instance the PDBX_CHEM_COMP_MODEL list.
+;
+    _item.name                   '_pdbx_chem_comp_model.id'                             
+    _item.category_id             pdbx_chem_comp_model           
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_examples.case          'M_ABC_00001'
+
+     save_
+
+save__pdbx_chem_comp_model.comp_id
+    _item_description.description
+;              An identifier for chemical component definition.
+;
+    _item.name                   '_pdbx_chem_comp_model.comp_id'                             
+    _item.category_id             pdbx_chem_comp_model           
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_examples.case          'ABC'
+     save_
+
+###############################
+## PDBX_CHEM_COMP_MODEL_ATOM ##
+###############################
+
+save_pdbx_chem_comp_model_atom
+    _category.description
+;              Data items in the PDBX_CHEM_COMP_MODEL_ATOM category record coordinates
+               for the chemical component model instance.
+;
+    _category.id                  pdbx_chem_comp_model_atom
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_chem_comp_model_atom.model_id'
+                                '_pdbx_chem_comp_model_atom.atom_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_model_group'
+                                 'pdbx_group'                                 
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+ loop_
+ _pdbx_chem_comp_model_atom.model_id 
+ _pdbx_chem_comp_model_atom.atom_id 
+ _pdbx_chem_comp_model_atom.type_symbol 
+ _pdbx_chem_comp_model_atom.charge 
+ _pdbx_chem_comp_model_atom.model_Cartn_x 
+ _pdbx_chem_comp_model_atom.model_Cartn_y 
+ _pdbx_chem_comp_model_atom.model_Cartn_z 
+ _pdbx_chem_comp_model_atom.ordinal_id
+ M_ZZV_00001 CAA  C 0  2.180   6.561  8.402  1  
+ M_ZZV_00001 CAB  C 0  5.709   6.659  8.211  2  
+ M_ZZV_00001 OAC  O 0  1.912  12.185 12.303  3  
+ M_ZZV_00001 OAD  O 0  4.002   7.560  6.491  4  
+ M_ZZV_00001 OAE  O 0  4.992   9.134  8.117  5  
+ M_ZZV_00001 OAF  O 0  2.970  10.013 13.854  6  
+ M_ZZV_00001 FAG  F 0 -3.392  12.249  6.995  7  
+ M_ZZV_00001 CAH  C 0  4.361   5.472 12.379  8  
+ M_ZZV_00001 CAI  C 0  4.277   6.182 13.595  9  
+ M_ZZV_00001 CAJ  C 0 -2.132  12.408  8.958  10 
+ M_ZZV_00001 CAK  C 0 -1.112  12.651  6.807  11 
+ M_ZZV_00001 CAL  C 0 -0.902  12.579  9.557  12 
+ M_ZZV_00001 CAM  C 0  0.139  12.801  7.421  13 
+ M_ZZV_00001 CAN  C 0  4.004   6.101 11.237  14 
+ # ------------abbreviated --------------
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_model_atom.atom_id
+    _item_description.description
+;              The value of _pdbx_chem_comp_model_atom.atom_id uniquely identifies
+               each atom in the PDBX_CHEM_COMP_MODEL_ATOM list.
+;
+    _item.name                   '_pdbx_chem_comp_model_atom.atom_id'                   
+    _item.category_id              pdbx_chem_comp_model_atom        
+    _item.mandatory_code           yes
+    _item_type.code                atcode
+     save_
+
+save__pdbx_chem_comp_model_atom.ordinal_id
+    _item_description.description
+;              The value of _pdbx_chem_comp_model_atom.atom_id is an
+               ordinal identifer for each atom in the PDBX_CHEM_COMP_MODEL_ATOM list.
+;
+    _item.name                   '_pdbx_chem_comp_model_atom.ordinal_id'                   
+    _item.category_id              pdbx_chem_comp_model_atom        
+    _item.mandatory_code           yes
+    _item_type.code                int
+     save_
+
+save__pdbx_chem_comp_model_atom.model_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_chem_comp_model.id in the PDBX_CHEM_COMP_MODEL
+               category.
+;
+    _item.name                  '_pdbx_chem_comp_model_atom.model_id'
+    _item.category_id             pdbx_chem_comp_model_atom
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_chem_comp_model_atom.model_id'
+    _item_linked.parent_name    '_pdbx_chem_comp_model.id'    
+     save_
+
+
+save__pdbx_chem_comp_model_atom.charge
+    _item_description.description
+;              The net integer charge assigned to this atom. This is the
+               formal charge assignment normally found in chemical diagrams.
+;
+    _item.name                  '_pdbx_chem_comp_model_atom.charge'
+    _item.category_id             pdbx_chem_comp_model_atom
+    _item.mandatory_code          no
+    _item_default.value           0
+    loop_
+    _item_range.maximum
+    _item_range.minimum           8    8
+                                  8   -8
+                                 -8   -8
+    _item_type.code               int
+    loop_
+    _item_examples.case
+    _item_examples.detail          1  'for an ammonium nitrogen'
+                                  -1  'for a chloride ion'
+     save_
+
+save__pdbx_chem_comp_model_atom.model_Cartn_x
+    _item_description.description
+;              The x component of the coordinates for this atom in this
+               component model specified as orthogonal angstroms. 
+;
+    _item.name                  '_pdbx_chem_comp_model_atom.model_Cartn_x'
+    _item.category_id             pdbx_chem_comp_model_atom
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_chem_comp_model_atom.model_Cartn_y'
+                                '_pdbx_chem_comp_model_atom.model_Cartn_z'
+    _item_sub_category.id         cartesian_coordinate
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+
+save__pdbx_chem_comp_model_atom.model_Cartn_y
+    _item_description.description
+;              The y component of the coordinates for this atom in this
+               component model specified as orthogonal angstroms. 
+;
+    _item.name                  '_pdbx_chem_comp_model_atom.model_Cartn_y'
+    _item.category_id             pdbx_chem_comp_model_atom
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_chem_comp_model_atom.model_Cartn_x'
+                                '_pdbx_chem_comp_model_atom.model_Cartn_z'
+
+    _item_sub_category.id         cartesian_coordinate
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_chem_comp_model_atom.model_Cartn_z
+    _item_description.description
+;              The z component of the coordinates for this atom in this
+               component model specified as orthogonal angstroms. 
+;
+    _item.name                  '_pdbx_chem_comp_model_atom.model_Cartn_z'
+    _item.category_id             pdbx_chem_comp_model_atom
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_chem_comp_model_atom.model_Cartn_x'
+                                '_pdbx_chem_comp_model_atom.model_Cartn_y'
+    _item_sub_category.id         cartesian_coordinate
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_chem_comp_model_atom.type_symbol
+    _item_description.description
+;              The code used to identify the atom species representing 
+               this atom type. Normally this code is the element
+               symbol. 
+;
+    _item.name                  '_pdbx_chem_comp_model_atom.type_symbol'
+    _item.mandatory_code          yes
+    _item_type.code               code
+     loop_
+    _item_examples.case          'C'
+                                 'N'
+                                 'O'
+     save_
+
+###############################
+## PDBX_CHEM_COMP_MODEL_BOND ##
+###############################
+
+save_pdbx_chem_comp_model_bond
+    _category.description
+;              Data items in the PDBX_CHEM_COMP_MODEL_BOND category record details about
+               the bonds between atoms in a chemical component model instance. 
+;
+    _category.id                  pdbx_chem_comp_model_bond
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_chem_comp_model_bond.model_id'
+                                '_pdbx_chem_comp_model_bond.atom_id_1'
+                                '_pdbx_chem_comp_model_bond.atom_id_2'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_model_group'
+                                 'pdbx_group'                                 
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+                
+;
+;
+# 
+ loop_
+ _pdbx_chem_comp_model_bond.model_id 
+ _pdbx_chem_comp_model_bond.atom_id_1 
+ _pdbx_chem_comp_model_bond.atom_id_2 
+ _pdbx_chem_comp_model_bond.value_order 
+ _pdbx_chem_comp_model_bond.pdbx_ordinal 
+ M_ZZV_00001 CAA NBA  SING 1  
+ M_ZZV_00001 CAA HAA  SING 2  
+ M_ZZV_00001 CAA HAAA SING 3  
+ M_ZZV_00001 CAA HAAB SING 4  
+ M_ZZV_00001 CAB SBC  SING 5  
+ M_ZZV_00001 CAB HAB  SING 6  
+ M_ZZV_00001 CAB HABA SING 7  
+ M_ZZV_00001 CAB HABB SING 8  
+ M_ZZV_00001 OAC CAR  DOUB 9  
+ M_ZZV_00001 OAD SBC  DOUB 10 
+ M_ZZV_00001 OAE SBC  DOUB 11 
+ M_ZZV_00001 OAF CAU  SING 12 
+ M_ZZV_00001 OAF HOAF SING 13 
+ M_ZZV_00001 FAG CAS  SING 14 
+ M_ZZV_00001 CAH CAI  DOUB 15 
+ M_ZZV_00001 CAH CAN  SING 16 
+ M_ZZV_00001 CAH HAH  SING 17 
+ M_ZZV_00001 CAI NAQ  SING 18 
+ M_ZZV_00001 CAI HAI  SING 19 
+ # --- abbreviated ----
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_model_bond.atom_id_1
+    _item_description.description
+;              The ID of the first of the two atoms that define the bond.
+
+               This data item is a pointer to _pdbx_chem_comp_model_atom.atom_id in the
+               PDBX_CHEM_COMP_MODEL_ATOM category.
+;
+    _item.name                  '_pdbx_chem_comp_model_bond.atom_id_1'
+    _item.mandatory_code          yes
+    _item_type.code               atcode    
+    _item_dependent.dependent_name
+                                '_pdbx_chem_comp_model_bond.atom_id_2'
+    _item_linked.child_name     '_pdbx_chem_comp_model_bond.atom_id_1'
+    _item_linked.parent_name    '_pdbx_chem_comp_model_atom.atom_id'                                                                        
+     save_
+
+save__pdbx_chem_comp_model_bond.atom_id_2
+    _item_description.description
+;              The ID of the second of the two atoms that define the bond.
+
+               This data item is a pointer to _pdbx_chem_comp_model_atom.atom_id in the
+               PDBX_CHEM_COMP_MODEL_ATOM category.
+;
+    _item.name                  '_pdbx_chem_comp_model_bond.atom_id_2'
+    _item.mandatory_code          yes
+    _item_type.code               atcode    
+    _item_dependent.dependent_name
+                                '_pdbx_chem_comp_model_bond.atom_id_1'
+    _item_linked.child_name     '_pdbx_chem_comp_model_bond.atom_id_2'
+    _item_linked.parent_name    '_pdbx_chem_comp_model_atom.atom_id'                                        
+     save_
+
+save__pdbx_chem_comp_model_bond.model_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_chem_comp_model.id in the PDBX_CHEM_COMP_MODEL
+               category.
+;
+    _item.name                  '_pdbx_chem_comp_model_bond.model_id'
+    _item.category_id             pdbx_chem_comp_model_bond
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_chem_comp_model_bond.model_id'
+    _item_linked.parent_name    '_pdbx_chem_comp_model.id'        
+     save_
+
+save__pdbx_chem_comp_model_bond.value_order
+    _item_description.description
+;              The value that should be taken as the target for the chemical
+               bond associated with the specified atoms, expressed as a bond
+               order.
+;
+    _item.name                  '_pdbx_chem_comp_model_bond.value_order'
+    _item.category_id             pdbx_chem_comp_model_bond
+    _item.mandatory_code          no
+    _item_default.value           sing
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      SING  'single bond'
+                                  DOUB  'double bond'
+                                  TRIP  'triple bond'
+                                  QUAD  'quadruple bond'
+                                  AROM  'aromatic bond'
+                                  POLY  'polymeric bond'
+                                  DELO  'delocalized double bond'
+                                  PI    'pi bond'
+     save_
+
+##################################
+## PDBX_CHEM_COMP_MODEL_FEATURE ##
+##################################
+
+save_pdbx_chem_comp_model_feature
+    _category.description
+;             Additional features associated with the chemical component.
+;
+    _category.id                  'pdbx_chem_comp_model_feature'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name            '_pdbx_chem_comp_model_feature.model_id'
+                                  '_pdbx_chem_comp_model_feature.feature_name'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_model_group'    
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+# 
+ loop_
+ _pdbx_chem_comp_model_feature.model_id 
+ _pdbx_chem_comp_model_feature.feature_name 
+ _pdbx_chem_comp_model_feature.feature_value 
+  M_ZZV_00001 experiment_temperature 218.0                      
+  M_ZZV_00001 publication_doi        10.1016/j.bmcl.2008.01.018 
+  M_ZZV_00001 r_factor               6.92                       
+  M_ZZV_00001 all_atoms_have_sites   Y                          
+  M_ZZV_00001 has_disorder           Y                          
+# 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_model_feature.model_id
+    _item_description.description
+;              The component model identifier for this feature.
+;
+    _item.name                  '_pdbx_chem_comp_model_feature.model_id'
+    _item.category_id            pdbx_chem_comp_model_feature
+    _item.mandatory_code         yes
+    _item_type.code              ucode
+     loop_
+    _item_examples.case          
+     'M_ABC_00001'  'M_ATP_00001'
+    _item_linked.child_name	    '_pdbx_chem_comp_model_feature.model_id'
+    _item_linked.parent_name    '_pdbx_chem_comp_model.id'
+     save_
+
+
+save__pdbx_chem_comp_model_feature.feature_name
+    _item_description.description
+;              The component model feature type.
+;
+    _item.name                  '_pdbx_chem_comp_model_feature.feature_name'
+    _item.category_id             pdbx_chem_comp_model_feature
+    _item.mandatory_code         yes
+    _item_type.code              line
+     loop_
+    _item_examples.case
+   experiment_temperature
+   publication_doi       
+   r_factor              
+   all_atoms_have_sites  
+   has_disorder          
+     save_
+
+save__pdbx_chem_comp_model_feature.feature_value
+    _item_description.description
+;              The component feature value.
+;
+    _item.name                  '_pdbx_chem_comp_model_feature.feature_value'
+    _item.category_id            pdbx_chem_comp_model_feature
+    _item.mandatory_code         yes
+    _item_type.code              text
+     save_
+
+
+#####################################
+## PDBX_CHEM_COMP_MODEL_DESCRIPTOR ##
+#####################################
+
+save_pdbx_chem_comp_model_descriptor
+    _category.description
+;              Data items in the CHEM_COMP_MODEL_DESCRIPTOR category provide
+               string descriptors for component model structures.
+;
+    _category.id                  pdbx_chem_comp_model_descriptor
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_chem_comp_model_descriptor.model_id'
+                                '_pdbx_chem_comp_model_descriptor.type'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_model_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+loop_
+_pdbx_chem_comp_model_descriptor.model_id 
+_pdbx_chem_comp_model_descriptor.type 
+_pdbx_chem_comp_model_descriptor.descriptor 
+  M_ZZV_00001 SMILES            'CN(c1c2cccnc2c(c3c1CN(C3=O)Cc4ccc(cc4)F)O)S(=O)(=O)C'
+  M_ZZV_00001 SMILES_CANNONICAL 'CN(c1c2cccnc2c(c3c1CN(C3=O)Cc4ccc(cc4)F)O)S(=O)(=O)C'  
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_model_descriptor.model_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_chem_comp_model.id in the PDBX_CHEM_COMP_MODEL
+               category.
+;
+    _item.name                  '_pdbx_chem_comp_model_descriptor.model_id'
+    _item.category_id             pdbx_chem_comp_model_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_chem_comp_model_descriptor.model_id'
+    _item_linked.parent_name    '_pdbx_chem_comp_model.id'
+     save_
+
+save__pdbx_chem_comp_model_descriptor.descriptor
+    _item_description.description
+;              This data item contains the descriptor value for this 
+               component.
+;
+    _item.name                  '_pdbx_chem_comp_model_descriptor.descriptor'
+    _item.category_id             pdbx_chem_comp_model_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+save__pdbx_chem_comp_model_descriptor.type
+    _item_description.description
+;              This data item contains the descriptor type. 
+;
+    _item.name                  '_pdbx_chem_comp_model_descriptor.type'
+    _item.category_id             pdbx_chem_comp_model_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               uline
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+        SMILES_CANONICAL   'Canonical SMILES descriptor'
+        SMILES             'SMILES descriptor'
+        InChI              'InChI descriptor'
+        InChIKey           'InChI descriptor- hash key form'
+     save_
+
+################################
+## PDBX_CHEM_COMP_MODEL_AUDIT ##
+################################
+
+save_pdbx_chem_comp_model_audit
+    _category.description
+;              Data items in the PDBX_CHEM_COMP_MODEL_AUDIT category records
+               the status and tracking information for this component model instance.
+;
+    _category.id                  pdbx_chem_comp_model_audit
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          
+    '_pdbx_chem_comp_model_audit.model_id'
+    '_pdbx_chem_comp_model_audit.date'
+    '_pdbx_chem_comp_model_audit.action_type'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_model_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+_pdbx_chem_comp_model_audit.model_id          M_ZZV_00001 
+_pdbx_chem_comp_model_audit.action_type       'Create component model' 
+_pdbx_chem_comp_model_audit.date              2014-11-30 
+_pdbx_chem_comp_model_audit.processing_site   RCSB 
+_pdbx_chem_comp_model_audit.annotator         JDW 
+_pdbx_chem_comp_model_audit.details           ? 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_chem_comp_model_audit.model_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_chem_comp_model.id in the PDBX_CHEM_COMP_MODEL
+               category.
+;
+    _item.name                  '_pdbx_chem_comp_model_audit.model_id'
+    _item.category_id             pdbx_chem_comp_model_audit
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_chem_comp_model_audit.model_id'
+    _item_linked.parent_name    '_pdbx_chem_comp_model.id'
+     save_
+
+save__pdbx_chem_comp_model_audit.date
+    _item_description.description
+;              The date associated with this audit record.
+;
+    _item.name                  '_pdbx_chem_comp_model_audit.date'
+    _item.category_id             pdbx_chem_comp_model_audit
+    _item.mandatory_code          yes
+    _item_type.code               yyyy-mm-dd
+     save_
+
+save__pdbx_chem_comp_model_audit.annotator
+    _item_description.description
+;              The initials of the annotator creating of modifying the component.
+;
+    _item.name                  '_pdbx_chem_comp_model_audit.annotator'
+    _item.category_id             pdbx_chem_comp_model_audit
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case          'JO' 'SJ' 'KB'
+     save_
+
+save__pdbx_chem_comp_model_audit.processing_site
+    _item_description.description
+;              An identifier for the wwPDB site creating or modifying the component.
+;
+    _item.name                  '_pdbx_chem_comp_model_audit.processing_site'
+    _item.category_id             pdbx_chem_comp_model_audit
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case          'RCSB' 'PDBE' 'PDBJ' 'BMRB'
+     save_
+
+save__pdbx_chem_comp_model_audit.details
+    _item_description.description
+;              Additional details decribing this change.
+;
+    _item.name                  '_pdbx_chem_comp_model_audit.details'
+    _item.category_id             pdbx_chem_comp_model_audit
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case          'Added C14 as a leaving atom.'
+     save_
+
+save__pdbx_chem_comp_model_audit.action_type
+    _item_description.description
+;              The action associated with this audit record.
+;
+    _item.name                  '_pdbx_chem_comp_model_audit.action_type'
+    _item.category_id             pdbx_chem_comp_model_audit
+    _item.mandatory_code          yes
+    _item_type.code               line
+
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+    'Create component'                 .
+    'Modify formal charge'             .
+    'Modify atom id'                   .
+    'Modify charge'                    .
+    'Modify component atom id'         .
+    'Modify component comp_id'         .
+    'Modify value order'               .
+    'Modify descriptor'                .
+    'Modify identifier'                .
+    'Modify coordinates'               .
+    'Other modification'               .
+    'Obsolete model'                   .
+    'Initial release'                  .
+     save_
+
+####################################
+## PDBX_CHEM_COMP_MODEL_REFERENCE ##
+####################################
+
+save_pdbx_chem_comp_model_reference
+    _category.description
+;             Additional features associated with the chemical component.
+;
+    _category.id                  'pdbx_chem_comp_model_reference'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name            '_pdbx_chem_comp_model_reference.model_id'
+                                  '_pdbx_chem_comp_model_reference.db_name'
+                                  '_pdbx_chem_comp_model_reference.db_code'   
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_model_group'    
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+# 
+_pdbx_chem_comp_model_reference.model_id   M_ZZV_00001 
+_pdbx_chem_comp_model_reference.db_name    CCDC 
+_pdbx_chem_comp_model_reference.db_code    PIWVIB 
+#
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_chem_comp_model_reference.model_id
+    _item_description.description
+;              The component model identifier for this feature.
+;
+    _item.name                  '_pdbx_chem_comp_model_reference.model_id'
+    _item.category_id            pdbx_chem_comp_model_reference
+    _item.mandatory_code         yes
+    _item_type.code              ucode
+     loop_
+    _item_examples.case          
+     'M_ABC_00001'  'M_ATP_00001'
+    _item_linked.child_name	    '_pdbx_chem_comp_model_reference.model_id'
+    _item_linked.parent_name    '_pdbx_chem_comp_model.id'
+     save_
+
+
+save__pdbx_chem_comp_model_reference.db_name
+    _item_description.description
+;              The component model feature type.
+;
+    _item.name                  '_pdbx_chem_comp_model_reference.db_name'
+    _item.category_id            pdbx_chem_comp_model_reference
+    _item.mandatory_code         yes
+    _item_type.code              line
+    _item_examples.case          'CCDC'
+     save_
+
+save__pdbx_chem_comp_model_reference.db_code
+    _item_description.description
+;              The component feature value.
+;
+    _item.name                  '_pdbx_chem_comp_model_reference.db_code'
+    _item.category_id            pdbx_chem_comp_model_reference
+    _item.mandatory_code         yes
+    _item_type.code              line
+     save_
+
+
+
