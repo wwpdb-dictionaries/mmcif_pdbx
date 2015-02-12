@@ -1094,7 +1094,7 @@ pdbx_phasing_MR                          1  '_pdbx_phasing_MR.native_set_id'    
 pdbx_point_symmetry                      1  '_pdbx_point_symmetry.entry_id'                       '_entry.id'                                 entry
 pdbx_poly_seq_scheme                     1  '_pdbx_poly_seq_scheme.entity_id'                     '_entity_poly_seq.entity_id'                entity_poly_seq
 pdbx_poly_seq_scheme                     1  '_pdbx_poly_seq_scheme.seq_id'                        '_entity_poly_seq.num'                      entity_poly_seq
-pdbx_poly_seq_scheme                     1  '_pdbx_poly_seq_scheme.hetero'                        '_entity_poly_seq.hetero'                   entity_poly_seq
+#pdbx_poly_seq_scheme                     1  '_pdbx_poly_seq_scheme.hetero'                        '_entity_poly_seq.hetero'                   entity_poly_seq
 pdbx_poly_seq_scheme                     1  '_pdbx_poly_seq_scheme.mon_id'                        '_entity_poly_seq.mon_id'                   entity_poly_seq
 pdbx_poly_seq_scheme                     2  '_pdbx_poly_seq_scheme.asym_id'                       '_struct_asym.id'                           struct_asym
 pdbx_poly_seq_scheme                     2  '_pdbx_poly_seq_scheme.entity_id'                     '_struct_asym.entity_id'                    struct_asym
