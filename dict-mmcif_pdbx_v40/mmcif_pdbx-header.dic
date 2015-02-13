@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.050
+    _dictionary.version         4.051
 #
      loop_
     _dictionary_history.version
@@ -2055,6 +2055,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     Changes (jdw):  
     + Update enumeration for item  database_2.database_id
 ;
+4.051  2015-02-12
+;
+    Changes (jdw):
+    + remove _pdbx_poly_seq_scheme.hetero relationship with _entity_poly_seq.hetero.
+;
+
 
 ### EOF mmcif_pdbx-header.dic 
 
