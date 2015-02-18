@@ -2707,7 +2707,7 @@ save__pdbx_struct_conn_angle.ptnr1_label_seq_id
 ;
     _item.name                  '_pdbx_struct_conn_angle.ptnr1_label_seq_id'
     _item.category_id            pdbx_struct_conn_angle
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               int
     _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr1_label_seq_id'
     _item_linked.parent_name    '_atom_site.label_seq_id'
@@ -2856,7 +2856,7 @@ save__pdbx_struct_conn_angle.ptnr2_label_seq_id
 ;
     _item.name                  '_pdbx_struct_conn_angle.ptnr2_label_seq_id'
     _item.category_id            pdbx_struct_conn_angle
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               int
     _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr2_label_seq_id'
     _item_linked.parent_name    '_atom_site.label_seq_id'
