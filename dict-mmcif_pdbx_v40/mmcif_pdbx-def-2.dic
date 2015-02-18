@@ -2245,8 +2245,8 @@ save__pdbx_poly_seq_scheme.hetero
                                   y
                                  'abbreviation for "yes"'
 
-#    _item_linked.child_name     '_pdbx_poly_seq_scheme.hetero'
-#    _item_linked.parent_name	'_entity_poly_seq.hetero'
+    _item_linked.child_name     '_pdbx_poly_seq_scheme.hetero'
+    _item_linked.parent_name	'_entity_poly_seq.hetero'
 
     _item_aliases.alias_name    '_ndb_poly_seq_scheme.hetero'
     _item_aliases.dictionary     'cif_rcsb.dic'

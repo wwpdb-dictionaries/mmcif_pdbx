@@ -2055,10 +2055,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     Changes (jdw):  
     + Update enumeration for item  database_2.database_id
 ;
-4.051  2015-02-12
+4.051  2015-02-16
 ;
     Changes (jdw):
-    + remove _pdbx_poly_seq_scheme.hetero relationship with _entity_poly_seq.hetero.
+    + removed _pdbx_poly_seq_scheme.hetero relationship with _entity_poly_seq.hetero.
+    + restored the above relationship _pdbx_poly_seq_scheme.hetero relationship with _entity_poly_seq.hetero
+      to avoid schema validation issue.
 ;
 
 
