@@ -3553,6 +3553,18 @@ save__pdbx_depui_entry_details.related_database_code
     '1ABC'
     save_
 
+save__pdbx_depui_entry_details.replace_pdb_id
+    _item_description.description
+;   The PDB ID code of the entry that is superseded by this entry.
+;
+    _item.name                  '_pdbx_depui_entry_details.replace_pdb_id'
+    _item.category_id             pdbx_depui_entry_details
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_examples.case
+    '1ABC'
+    save_
 
 save_pdbx_data_processing_status
     _category.description
