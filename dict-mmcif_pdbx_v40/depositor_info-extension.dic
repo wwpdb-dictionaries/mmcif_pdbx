@@ -17,6 +17,18 @@
 #      29-Aug-2013 jdw  add internal message management categories
 # ----------------------------------------------------------------------------------------------------------------------------
 
+save__pdbx_contact_author.identifier_ORCID
+    _item_description.description
+;    The Open Researcher and Contributor ID (ORCID). 
+;
+    _item.name                  '_pdbx_contact_author.identifier_ORCID'
+    _item.category_id             pdbx_contact_author
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_examples.case          '0000-0002-6686-5475'
+save_
+
+
 save__entity_poly.pdbx_sequence_evidence_code 
     _item_description.description
 ;    Evidence for the assignment of the polymer sequence.
