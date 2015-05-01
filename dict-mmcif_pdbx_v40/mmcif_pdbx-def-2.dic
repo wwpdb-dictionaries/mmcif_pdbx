@@ -10744,6 +10744,7 @@ save__pdbx_SG_project.full_name_of_center
 'NYSGXRC'      'New York SGX Research Center for Structural Genomics'
 'NYSGXRC'      'New York Structural GenomiX Research Consortium'
 'NESG'         'Northeast Structural Genomics Consortium'
+'NHRs'         'Partnership for Nuclear Receptor Signaling Code Biology'
 'OCSP'         'Ontario Centre for Structural Proteomics'
 'OPPF'         'Oxford Protein Production Facility'
 'PCSEP'        'Program for the Characterization of Secreted Effector Proteins'
@@ -10770,6 +10771,7 @@ save__pdbx_SG_project.full_name_of_center
 'XMTB'         'Mycobacterium Tuberculosis Structural Proteomics Project'
 'YSG'          'Paris-Sud Yeast Structural Genomics'
      save_
+
 
 
 
@@ -10810,6 +10812,7 @@ save__pdbx_SG_project.initial_of_center
 'MSGPP'        'Medical Structural Genomics of Pathogenic Protozoa'
 'MTBI'         'Structures of Mtb Proteins Conferring Susceptibility to Known Mtb Inhibitors'
 'NatPro'       'Enzyme Discovery for Natural Product Biosynthesis'
+'NHRs'         'Partnership for Nuclear Receptor Signaling Code Biology'
 'NPCXstals'    'Nucleocytoplasmic Transport: a Target for Cellular Control'
 'NYCOMPS'      'New York Consortium on Membrane Protein Structure'
 'NYSGRC'       'New York Structural Genomics Research Consortium'

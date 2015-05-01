@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.052
+    _dictionary.version         4.053
 #
      loop_
     _dictionary_history.version
@@ -2068,7 +2068,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + removed _pdbx_poly_seq_scheme.hetero relationship with _entity_poly_seq.hetero having resolved
       issues with schema translation and validation issues.
 ;
-
+4.053  2015-04-30
+;
+    Changes (jdw):
+    + update enumerations in category pdbx_SG_project
+;
 
 ### EOF mmcif_pdbx-header.dic 
 
