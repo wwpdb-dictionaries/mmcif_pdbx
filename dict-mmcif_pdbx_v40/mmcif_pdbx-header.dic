@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.053
+    _dictionary.version         4.054
 #
      loop_
     _dictionary_history.version
@@ -2073,6 +2073,13 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     Changes (jdw):
     + update enumerations in category pdbx_SG_project
 ;
+4.054  2015-05-06
+;
+    Changes (jdw):
+    + extend data types for _pdbx_nmr_systematic_chem_shift_offset.atom_type
+    +_pdbx_nmr_systematic_chem_shift_offset.val/atom_type made optional
+;
+
 
 ### EOF mmcif_pdbx-header.dic 
 

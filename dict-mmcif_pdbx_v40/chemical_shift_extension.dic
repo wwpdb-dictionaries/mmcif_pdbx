@@ -2302,8 +2302,8 @@ The kind of atom to which the chemical shift offset value applies.
 
    _item.name                     '_pdbx_nmr_systematic_chem_shift_offset.atom_type'
    _item.category_id              'pdbx_nmr_systematic_chem_shift_offset'
-   _item.mandatory_code            yes
-   _item_type.code                'code'
+   _item.mandatory_code            no
+   _item_type.code                line
 
    loop_
      _item_enumeration.value
@@ -2350,7 +2350,7 @@ the chemical shift referencing that was used.
 
    _item.name                     '_pdbx_nmr_systematic_chem_shift_offset.val'
    _item.category_id              'pdbx_nmr_systematic_chem_shift_offset'
-   _item.mandatory_code            yes
+   _item.mandatory_code            no
    _item_type.code                'float'
    _item_examples.case            '0.75'
    
