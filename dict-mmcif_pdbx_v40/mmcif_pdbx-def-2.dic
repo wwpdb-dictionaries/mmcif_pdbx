@@ -924,7 +924,8 @@ save__pdbx_database_status.status_code
    AUTH  'Processed, waiting for author review and approval'
    POLC  'Processing, waiting for a policy decision'
    REPL  'Author sent new coordinates to be incorporated'    
-   AUCO  'Author corrections pending review'    
+   AUCO  'Author corrections pending review'
+   TRSF  'Entry transferred to another data repository'
    DEL   'Deprecated code'
    REV   'Deprecated code'
    UPD   'Deprecated code'
@@ -3509,6 +3510,7 @@ BMRB - BioMagResBank
 EMDB - Electron Microscopy Database
 BMCD - Biological Macromolecule Crystallization Database
 TargetTrack - Target Registration and Protocol Database
+SASBDB - Small Angle Scattering Biological Data Bank
 ;
     _item_aliases.alias_name     '_rcsb_database_related.db_name'
     _item_aliases.dictionary     'cif_rcsb.dic'
@@ -3568,6 +3570,7 @@ save__pdbx_database_related.content_type
                              'other EM volume'
                              'associated NMR restraints'
                              'associated structure factors'
+                             'associated SAS data'
                              'protein target sequence and/or protocol data'
                              'split'
                              're-refinement'
@@ -3585,6 +3588,7 @@ save__pdbx_database_related.content_type
                              'other EM volume'
                              'associated NMR restraints'
                              'associated structure factors'
+                             'associated SAS data'                             
                              'protein target sequence and/or protocol data'
                              'split'
                              're-refinement'
