@@ -2079,7 +2079,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + extend data types for _pdbx_nmr_systematic_chem_shift_offset.atom_type
     +_pdbx_nmr_systematic_chem_shift_offset.val/atom_type made optional
 ;
-4.055  2015-05-19
+4.055  2015-06-19
 ;
     Changes (jdw):
     + Enumeration updates for items _pdbx_database_related.content_type and _pdbx_database_status.status_code.
