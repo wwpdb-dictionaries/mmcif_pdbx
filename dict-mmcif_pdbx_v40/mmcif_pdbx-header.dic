@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.055
+    _dictionary.version         4.056
 #
      loop_
     _dictionary_history.version
@@ -2084,6 +2084,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     Changes (jdw):
     + Enumeration updates for items _pdbx_database_related.content_type and _pdbx_database_status.status_code.
     + Update examples for _pdbx_database_related.db_name.
+;
+4.056  2015-07-17
+;
+    Changes (jdw):
+    + Add chemical component modeling extension categories: pdbx_chem_comp_model_atom, pdbx_chem_comp_model_bond,
+      pdbx_chem_comp_model_feature, pdbx_chem_comp_model_descriptor, pdbx_chem_comp_model_audit, and pdbx_chem_comp_model_reference.
 ;
 
 ### EOF mmcif_pdbx-header.dic 

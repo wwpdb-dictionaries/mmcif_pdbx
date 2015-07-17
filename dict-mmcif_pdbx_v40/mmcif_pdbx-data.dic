@@ -240,6 +240,10 @@
              'inclusive_group'
 ;             Categories which describe the details of solution scattering experiments.
 ;
+             'chem_comp_model_group'
+             'inclusive_group'
+;             Categories which describe the structural models for chemical components.
+;
               'validate_group'
               'inclusive_group'
 ;              Categories that describe geometric properties

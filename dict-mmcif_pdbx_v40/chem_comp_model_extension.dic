@@ -678,7 +678,7 @@ save_pdbx_chem_comp_model_reference
 ;
 # 
 _pdbx_chem_comp_model_reference.model_id   M_ZZV_00001 
-_pdbx_chem_comp_model_reference.db_name    CCDC 
+_pdbx_chem_comp_model_reference.db_name    CSD 
 _pdbx_chem_comp_model_reference.db_code    PIWVIB 
 #
 ;
@@ -709,7 +709,7 @@ save__pdbx_chem_comp_model_reference.db_name
     _item.category_id            pdbx_chem_comp_model_reference
     _item.mandatory_code         yes
     _item_type.code              line
-    _item_examples.case          'CCDC'
+    _item_examples.case          'CSD'
      save_
 
 save__pdbx_chem_comp_model_reference.db_code
