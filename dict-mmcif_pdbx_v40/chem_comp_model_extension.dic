@@ -122,7 +122,7 @@ save__pdbx_chem_comp_model_atom.atom_id
 
 save__pdbx_chem_comp_model_atom.ordinal_id
     _item_description.description
-;              The value of _pdbx_chem_comp_model_atom.atom_id is an
+;              The value of _pdbx_chem_comp_model_atom.ordinal_id is an
                ordinal identifer for each atom in the PDBX_CHEM_COMP_MODEL_ATOM list.
 ;
     _item.name                   '_pdbx_chem_comp_model_atom.ordinal_id'                   
@@ -268,7 +268,7 @@ save_pdbx_chem_comp_model_bond
  _pdbx_chem_comp_model_bond.atom_id_1 
  _pdbx_chem_comp_model_bond.atom_id_2 
  _pdbx_chem_comp_model_bond.value_order 
- _pdbx_chem_comp_model_bond.pdbx_ordinal 
+ _pdbx_chem_comp_model_bond.ordinal_id
  M_ZZV_00001 CAA NBA  SING 1  
  M_ZZV_00001 CAA HAA  SING 2  
  M_ZZV_00001 CAA HAAA SING 3  
@@ -359,6 +359,17 @@ save__pdbx_chem_comp_model_bond.value_order
                                   POLY  'polymeric bond'
                                   DELO  'delocalized double bond'
                                   PI    'pi bond'
+     save_
+
+save__pdbx_chem_comp_model_bond.ordinal_id
+    _item_description.description
+;              The value of _pdbx_chem_comp_model_bond.ordinal_id is an
+               ordinal identifer for each atom in the PDBX_CHEM_COMP_MODEL_BOND list.
+;
+    _item.name                   '_pdbx_chem_comp_model_bond.ordinal_id'                   
+    _item.category_id              pdbx_chem_comp_model_bond        
+    _item.mandatory_code           yes
+    _item_type.code                int
      save_
 
 ##################################
