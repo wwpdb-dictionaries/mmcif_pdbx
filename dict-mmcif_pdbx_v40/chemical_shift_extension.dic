@@ -2250,10 +2250,10 @@ Items in the pdbx_nmr_systematic_chem_shift_offset category define chemical shif
 
    loop_
      _category_key.name
-
-     '_pdbx_nmr_systematic_chem_shift_offset.type'
-     '_pdbx_nmr_systematic_chem_shift_offset.entry_id'
-     '_pdbx_nmr_systematic_chem_shift_offset.assigned_chem_shift_list_id'
+     '_pdbx_nmr_systematic_chem_shift_offset.ordinal'
+#     '_pdbx_nmr_systematic_chem_shift_offset.type'
+#     '_pdbx_nmr_systematic_chem_shift_offset.entry_id'
+#     '_pdbx_nmr_systematic_chem_shift_offset.assigned_chem_shift_list_id'
 
    loop_
      _category_group.id
@@ -2276,7 +2276,7 @@ shifts observed for a specific type of atom.
 
    _item.name                     '_pdbx_nmr_systematic_chem_shift_offset.type'
    _item.category_id              'pdbx_nmr_systematic_chem_shift_offset'
-   _item.mandatory_code            yes
+   _item.mandatory_code            no
    _item_type.code                'line'
 
    loop_
@@ -2395,6 +2395,21 @@ Pointer to '_pdbx_nmr_assigned_chem_shift_list.id'
 ;
 
    _item.name                     '_pdbx_nmr_systematic_chem_shift_offset.assigned_chem_shift_list_id'
+   _item.category_id              'pdbx_nmr_systematic_chem_shift_offset'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+   _item_examples.case            '1'
+   
+save_
+
+save__pdbx_nmr_systematic_chem_shift_offset.ordinal
+
+   _item_description.description
+;
+An ordinal identifier uniquely identifying records in the pdbx_nmr_systematic_chem_shift_offset category.
+;
+
+   _item.name                     '_pdbx_nmr_systematic_chem_shift_offset.ordinal'
    _item.category_id              'pdbx_nmr_systematic_chem_shift_offset'
    _item.mandatory_code            yes
    _item_type.code                'int'

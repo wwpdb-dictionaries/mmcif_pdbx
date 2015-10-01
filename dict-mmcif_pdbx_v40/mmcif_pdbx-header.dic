@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.057
+    _dictionary.version         4.058
 #
      loop_
     _dictionary_history.version
@@ -2097,7 +2097,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     Changes (jdw):
     + Correct example and item name in  category pdbx_chem_comp_model_bond.
 ;
-
+4.058  2015-10-01
+;
+    Changes (jdw):
+    + _pdbx_nmr_systematic_chem_shift_offset.ordinal replaces the natural category key for this category.
+;
 ### EOF mmcif_pdbx-header.dic 
 
 
