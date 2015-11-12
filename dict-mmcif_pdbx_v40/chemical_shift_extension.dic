@@ -25,6 +25,9 @@ Items in the assigned_chem_shift_list category provide information about a list 
      'nmr_group'            
      'pdbx_group'
 
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_assigned_chem_shift_list
+
 save_
 
 ##### new category items
@@ -311,6 +314,8 @@ Items in the chem_shift_experiment category provide pointers to the NMR experime
      'nmr_group'            
      'pdbx_group'
 
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_chem_shift_experiment
 
 save_
 
@@ -454,6 +459,9 @@ Items in the pdbx_nmr_chem_shift_ref category provide the chemical shift referen
    ?
 ;
 
+
+ _pdbx_category_context.type         WWPDB_LOCAL
+ _pdbx_category_context.category_id  pdbx_nmr_chem_shift_ref
 
 save_
 
@@ -885,6 +893,8 @@ Items in the chem_shift_reference category define a set of chemical shift refere
    ?
 ;
 
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_chem_shift_reference
 
 save_
 
@@ -1102,6 +1112,9 @@ Items in the chem_shift_software category provide pointers to the software categ
      'nmr_group'
      'pdbx_group'
 
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_chem_shift_software
+
 save_
 
 #### new category items
@@ -1176,6 +1189,10 @@ to calculate conformers with the constraint file, and the characteristics of the
      'inclusive_group'
      'nmr_group'
      'pdbx_group'
+
+
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_constraint_file
 
 save_
 
@@ -1802,6 +1819,8 @@ Items in the spectral_dim category describe the parameters of each dimension in 
      'nmr_group'
      'pdbx_group'
 
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_spectral_dim
 
 save_
 
@@ -2261,6 +2280,9 @@ Items in the pdbx_nmr_systematic_chem_shift_offset category define chemical shif
      'inclusive_group'
      'nmr_group'
      'pdbx_group'
+
+   _pdbx_category_context.type         WWPDB_LOCAL
+   _pdbx_category_context.category_id  pdbx_nmr_systematic_chem_shift_offset
 
 save_
 
