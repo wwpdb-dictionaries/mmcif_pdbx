@@ -30,6 +30,7 @@ Items in the assigned_chem_shift_list category provide information about a list 
 
 save_
 
+
 ##### new category items
 
 save__pdbx_nmr_assigned_chem_shift_list.chem_shift_13C_err
@@ -2007,6 +2008,9 @@ Items in the pdbx_nmr_spectral_peak_list category provide information about a li
      'inclusive_group'
      'nmr_group'
      'pdbx_group'   
+
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_spectral_peak_list 
 
 save_
 
