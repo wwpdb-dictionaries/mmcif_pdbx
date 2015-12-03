@@ -2196,6 +2196,9 @@ and methods category where descriptions of software applications and methods can
      'nmr_group'
      'pdbx_group'
 
+   _pdbx_category_context.type         WWPDB_LOCAL
+   _pdbx_category_context.category_id pdbx_nmr_spectral_peak_software 
+
 save_
 
 #### new category tags
