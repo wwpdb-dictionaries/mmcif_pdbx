@@ -1,27 +1,27 @@
 ###########################################################################
 #
-# File:  mmcif_pdbx-header.dic                                             
-# 
-#                       PDB Exchange Data Dictionary                 
+# File:  mmcif_pdbx-header.dic
 #
-#     This dictionary supplements the contents of the mmCIF data dictionary 
-#     with additional data items that may be required to store all of the   
-#     information currently included a Protein Data Bank (PDB) format data  
-#     file.  Additional data items describing internal processing status    
-#     are also defined here.                                                
-#                                                                           
-#     The mmCIF dictionary and this supplement provide the provisional      
-#     specifications for the data exchange protocol used by the wwPDB:      
-#     Resource Collaboratory for Structural Bioinformatics (RCSB) PDB, 
+#                       PDB Exchange Data Dictionary
+#
+#     This dictionary supplements the contents of the mmCIF data dictionary
+#     with additional data items that may be required to store all of the
+#     information currently included a Protein Data Bank (PDB) format data
+#     file.  Additional data items describing internal processing status
+#     are also defined here.
+#
+#     The mmCIF dictionary and this supplement provide the provisional
+#     specifications for the data exchange protocol used by the wwPDB:
+#     Resource Collaboratory for Structural Bioinformatics (RCSB) PDB,
 #     Molecular Structure Database (MSD) Group/EBI, PDB Japan (PDBj) at
-#     Osaka University.  This dictionary also includes: data extensions 
-#     for structural genomics projects recommended by International Task 
-#     Force on Data Deposition and Archiving (including protein production), 
+#     Osaka University.  This dictionary also includes: data extensions
+#     for structural genomics projects recommended by International Task
+#     Force on Data Deposition and Archiving (including protein production),
 #     NMR and 3D electron microscopy.
-#                                                                           
-#                                                                           
-#                               Header Section 
-#                                                                           
+#
+#
+#                               Header Section
+#
 ##############################################################################
 
 data_mmcif_pdbx.dic
@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.059
+    _dictionary.version         4.060
 #
      loop_
     _dictionary_history.version
@@ -53,18 +53,18 @@ data_mmcif_pdbx.dic
    0.003  2000-10-16
 ;  Changes: (jdw)
     + Move enumerations to examples for:
-          _pdbx_nmr_exptl.type           
+          _pdbx_nmr_exptl.type
           _pdbx_nmr_ensemble.conformer_selection_criteria
-          _pdbx_nmr_software.name                        
-          _struct_keywords.pdbx_keywords                 
-    + Added _atom_site_anisotrop.pdbx_auth_* items   
-    + Added _struct_mon_prot_cis.pdbx_               
-    + Added _struct_conn.pdbx_ptnr3_auth_* items.    
+          _pdbx_nmr_software.name
+          _struct_keywords.pdbx_keywords
+    + Added _atom_site_anisotrop.pdbx_auth_* items
+    + Added _struct_mon_prot_cis.pdbx_
+    + Added _struct_conn.pdbx_ptnr3_auth_* items.
 ;
 
   0.004    2000-10-24
 ; Changes: (jdw)
-  + Added optional timestamps to data items.  
+  + Added optional timestamps to data items.
   + Repositioned parent items in PDBX_POLY_SEQ_SCHEME.
 ;
   0.005    2000-10-25
@@ -82,13 +82,13 @@ data_mmcif_pdbx.dic
    0.007  2000-11-09
 ;
  Changes: (jdw)
- + Added mandatory codes for _exptl_crystal_grow.pdbx_details and 
+ + Added mandatory codes for _exptl_crystal_grow.pdbx_details and
    _exptl_crystal_grow.pdbx_pH_range.
- + Added missing data types and category ids in category 
+ + Added missing data types and category ids in category
    pdbx_struct_sheet_hbond.
- + Updated data type for atom name references to atcode.  
+ + Updated data type for atom name references to atcode.
  + Updated aliases for _refine.overall_SU_B and _refine.overall_SU_ML.
- + Trimmed line lengths > 80 characters. 
+ + Trimmed line lengths > 80 characters.
 ;
    0.008  2001-01-22
 ;
@@ -106,7 +106,7 @@ data_mmcif_pdbx.dic
    0.010  2001-04-18
 ;
  Changes: (jdw)
- +  Added missing _item_type.codes for 
+ +  Added missing _item_type.codes for
          _refine_hist.number_atoms_solvent
          _refine_hist.number_atoms_total
          _refine.overall_SU_B
@@ -117,7 +117,7 @@ data_mmcif_pdbx.dic
    0.011  2001-06-14
 ;
  Changes: (jdw)
- +  Moved enumerations to examples for _pdbx_nmr_spectrometer.field_strength 
+ +  Moved enumerations to examples for _pdbx_nmr_spectrometer.field_strength
  +  _atom_site.pdb_auth_atom_name data type changed from code to atcode.
 ;
    0.012  2001-06-28
@@ -153,17 +153,17 @@ data_mmcif_pdbx.dic
 ;
  Changes: (jdw)
  + Final corrections of recommendations for  NMR and X-ray deposition for
-   structural genomics.  
+   structural genomics.
 ;
    0.018  2003-07-07
 ;
  Changes: (jdw)
- +  Integrated protein production data items. 
+ +  Integrated protein production data items.
 ;
    0.019  2003-09-21
 ;
  Changes: (jdw/hy)
- + Added additional phasing items for PDB_EXTRACT.   
+ + Added additional phasing items for PDB_EXTRACT.
 ;
    0.020  2003-10-30
 ;
@@ -190,20 +190,20 @@ data_mmcif_pdbx.dic
   1.002  2004-06-09
 ;
  Changes:  (jdw)
- + Added categories PDBX_DOMAIN, PDBX_SEQUENCE_RANGE, 
+ + Added categories PDBX_DOMAIN, PDBX_SEQUENCE_RANGE,
    PDBX_FEATURE_ENTRY, PDBX_FEATURE_ASSEMBLY, PDBX_FEATURE_DOMAIN,
    and PDBX_FEATURE_SEQUENCE_RANGE.
 ;
   1.003  2004-06-16
 ;
  Changes:  (jdw)
- + Fix miscellaneous unresolved links. 
+ + Fix miscellaneous unresolved links.
 ;
   1.004  2004-08-04
 ;
  Changes:  (jdw)
  + Fix many data type errors in phasing section.
- + Add pdbx_contact_author 
+ + Add pdbx_contact_author
 ;
  1.005  2004-09-28
 ;
@@ -213,17 +213,17 @@ data_mmcif_pdbx.dic
  + Add missing pdbx_contact_author.state_province item
  + Add enumerations in pdbx_contact_author.id
  + Modify enumerations in pdbx_contact_author.role
-; 
+;
  1.006  2004-10-10
 ;
  Changes: (jdw)
- + Update enumerations in cryo-em dictionary. 
+ + Update enumerations in cryo-em dictionary.
 ;
  1.007  2004-11-02
 ;
  Changes: (jdw)
- + added pdbx_entity_prod_protocol, pdbx_exptl_crystal_grow_sol, 
-   pdbx_exptl_crystal_grow_comp, and pdbx_exptl_crystal_cryo_treatment 
+ + added pdbx_entity_prod_protocol, pdbx_exptl_crystal_grow_sol,
+   pdbx_exptl_crystal_grow_comp, and pdbx_exptl_crystal_cryo_treatment
    categories
  + relax enumerations in cryo-em dictionary.
  + remove upper-bound for refine.occupancy_max
@@ -248,7 +248,7 @@ data_mmcif_pdbx.dic
  1.010 2005-01-25
 ;
  Changes: (jdw)
-  + change mandatory doc for  _pdbx_database_status.SG_entry 
+  + change mandatory doc for  _pdbx_database_status.SG_entry
   + fix key in category pdbx_database_PDB_obs_spr
 ;
  1.011 2005-03-08
@@ -262,7 +262,7 @@ data_mmcif_pdbx.dic
     _pdbx_SG_project.initial_of_center
   + add enumeration values 'Structural Genomics Consortium' and
         'National Project on Protein Structural and Functional Analyses'
-        for _pdbx_SG_project.full_name_of_center 
+        for _pdbx_SG_project.full_name_of_center
   + fix _item_description.description for _entity_poly.pdbx_target_identifier
 ;
  1.012 2005-03-29
@@ -275,14 +275,14 @@ data_mmcif_pdbx.dic
   _pdbx_exptl_pd.spec_preparation_pH
   _pdbx_exptl_pd.spec_preparation_pH_range
   _pdbx_exptl_pd.spec_preparation
-  _diffrn_radiation.pdbx_analyzer 
+  _diffrn_radiation.pdbx_analyzer
   _refine.pdbx_pd_number_of_powder_patterns
   _refine.pdbx_pd_number_of_points
   _refine.pdbx_pd_meas_number_of_points
   _refine.pdbx_pd_proc_ls_prof_R_factor
   _refine.pdbx_pd_proc_ls_prof_wR_factor
   _refine.pdbx_pd_Marquardt_correlation_coeff
-  _refine.pdbx_pd_Fsqrd_R_factor 
+  _refine.pdbx_pd_Fsqrd_R_factor
   _refine.pdbx_pd_ls_matrix_band_width
  Changes: (fzk)
   removed 'National Project on Protein Structural and Functional Analyses' from
@@ -296,9 +296,9 @@ data_mmcif_pdbx.dic
  Changes: (jdw)
  + Temporarily remove definitions from Image CIF dictionary
  + Added mandatory code for _cell.reciprocal_angle_beta
- + Added mandatory code for _pdbx_entity_nonpoly.entity_id 
+ + Added mandatory code for _pdbx_entity_nonpoly.entity_id
  + Fixed category attribute for  _reflns_shell.pdbx_chi_squared
- + Changed mandatory code for _software.citation_id 
+ + Changed mandatory code for _software.citation_id
 ;
  1.014 2005-04-08
 ;
@@ -346,7 +346,7 @@ data_mmcif_pdbx.dic
 ;
  Changes: (jdw)
  + Added PDB_SOLN_SCATTER* definitions
- + Added _refln.pdbx_[F,I]_[minus,plus] and 
+ + Added _refln.pdbx_[F,I]_[minus,plus] and
          _refln.pdbx_[F,I]_[minus,plus]_sigma
  + Extend enumeration for _pdbx_database_status.status_code_sf
 ;
@@ -356,7 +356,7 @@ data_mmcif_pdbx.dic
  Changes: (jdw)
  + Added _struct.pdbx_formula_weight and  _struct.pdbx_formula_weight_method
  + Added _refln.pdbx_HL_A_iso, _refln.pdbx_HL_B_iso, _refln.pdbx_HL_C_iso,
-          and _refln.pdbx_HL_D_iso 
+          and _refln.pdbx_HL_D_iso
  + Added _phasing_set.pdbx_d_res_low/high _pdbx_phasing_MR.native_data_set_id
  + Added category pdbx_feature_monomer
 ;
@@ -372,9 +372,9 @@ data_mmcif_pdbx.dic
  + added categories pdbx_refine_component, pdbx_chem_comp_descriptor,
    pdbx_chem_comp_identifier, pdbx_chem_comp_import,pdbx_chem_comp_atom_edit,
    pdbx_chem_comp_bond_edit, and pdbx_chem_comp_audit.
- + added stereochemistry and aromaticity flags to chem_comp_atom and 
+ + added stereochemistry and aromaticity flags to chem_comp_atom and
    chem_comp_bond.
- + added alternate component and atom nomenclature to chem_comp_atom.  
+ + added alternate component and atom nomenclature to chem_comp_atom.
  + added alternate model coordinates to chem_comp_atom category
 ;
  1.022 2006-02-24
@@ -389,9 +389,9 @@ data_mmcif_pdbx.dic
  Changes: (jdw)
  + Add _pdbx_contact_author.continent
  + Remove enums for _pdbx_contact_author.country
- + Added EMDB, TARGETDB, PEPCDB to _pdbx_database_related.db_name examples and 
-   associated EM volume, associated NMR restraints, associated 
-   structure factors, and associated protein target sequence/protocol 
+ + Added EMDB, TARGETDB, PEPCDB to _pdbx_database_related.db_name examples and
+   associated EM volume, associated NMR restraints, associated
+   structure factors, and associated protein target sequence/protocol
    data to _pdbx_database_related.content_type.
 ;
 
@@ -439,7 +439,7 @@ data_mmcif_pdbx.dic
   1.031 2006-08-10
 ;
  Changes: (jdw)
- + Correct typo in new definitions - change  
+ + Correct typo in new definitions - change
    _chem_comp_atom.pdbx_model_Cartn_[xyz]_2  to [xyz]_ideal
  + Add enum for NYSGXRC
  + Add enum for HOLD FOR 8 WEEKS.
@@ -449,7 +449,7 @@ data_mmcif_pdbx.dic
  Changes: (jdw)
 
 +Added Categories:
- 
+
 pdbx_helical_symmetry
 pdbx_point_symmetry
 pdbx_struct_entity_inst
@@ -552,8 +552,8 @@ _pdbx_struct_ref_seq_feature.feature_id
 _pdbx_struct_ref_seq_feature.align_id
 _pdbx_struct_ref_seq_feature.type
 _pdbx_struct_ref_seq_feature.details
-_pdbx_struct_ref_seq_feature.pdb_strand_id 
-_pdbx_struct_ref_seq_feature.asym_id 
+_pdbx_struct_ref_seq_feature.pdb_strand_id
+_pdbx_struct_ref_seq_feature.asym_id
 _pdbx_struct_ref_seq_feature.beg_auth_seq_id
 _pdbx_struct_ref_seq_feature.end_auth_seq_id
 _pdbx_struct_ref_seq_feature.beg_seq_num
@@ -594,9 +594,9 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
  Changes: (jdw)
  + revise category keys in pdbx_chem_comp_atom_edit
-   and pdbx_chem_comp_bond_edit.  
+   and pdbx_chem_comp_bond_edit.
  + removed unused category pdbx_chem_comp_protonation_site
- + added _chem_comp.pdbx_model_coordinates_details and 
+ + added _chem_comp.pdbx_model_coordinates_details and
    _chem_comp.pdbx_ideal_coordinates_details.
 ;
   1.037 2006-12-15
@@ -606,7 +606,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   _chem_comp.pdbx_model_coordinates_details definitions.
  + added _chem_comp.pdbx_ideal_coordinates_missing_flag
  + added _chem_comp.pdbx_model_coordinates_missing_flag
- + In chem_comp_atom /bond - added missing enumerations for atom/bond 
+ + In chem_comp_atom /bond - added missing enumerations for atom/bond
    stereo_config and aromatic flags.
  + added PUBCHEM_SID and PUBCHEM_CID to pdbx_chem_comp_identifier.type.
 ;
@@ -620,7 +620,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  Changes: (jdw)
  + skip version 1.039 to sync with remediation dictionary version.
  + Updated enumerations and boundary values for _pdbx_database_status.deposit_site
-   *.isotopic_labeling, _citation.pdbx_database_id_PubMed.  
+   *.isotopic_labeling, _citation.pdbx_database_id_PubMed.
 ;
   1.041 2007-04-04
 ;
@@ -635,29 +635,29 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  + Change enumerations for _pdbx_chem_comp_descriptors.program and
    _pdbx_chem_comp_identifiers.program to examples.
  + Make category keys in audit_conform mandatory
- + remove incorrect parent-child link to 
+ + remove incorrect parent-child link to
    _pdbx_struct_assembly_gen.oper_expression
  +  Added _pdbx_struct_assembly_gen.asym_id_list and replaced
-   _pdbx_struct_assembly_gen.entity_inst_id with this item 
-   in the key for this category.   Suppressed parent child 
-   relationships between _pdbx_struct_entity_inst.id and 
+   _pdbx_struct_assembly_gen.entity_inst_id with this item
+   in the key for this category.   Suppressed parent child
+   relationships between _pdbx_struct_entity_inst.id and
    categories outside the _pdbx_struct_* group.
  + Added _chem_comp.pdbx_model_coordinates_db_code, _chem_comp.pdbx_initial_date,
-   _chem_comp.pdbx_modified_date.  
- + Data types changed to int for -  _atom_site.pdbx_PDB_model_num, 
+   _chem_comp.pdbx_modified_date.
+ + Data types changed to int for -  _atom_site.pdbx_PDB_model_num,
    _struct_conf.pdbx_PDB_helix_length, _pdbx_poly_seq_scheme.ndb_seq_num,
-   _pdbx_struct_sheet_hbond.range_1_label_seq_id,   
+   _pdbx_struct_sheet_hbond.range_1_label_seq_id,
    _pdbx_struct_sheet_hbond.range_2_label_seq_id,
    _atom_site_anisotrop.pdbx_label_seq_id, _struct_conn.pdbx_ptnr3_label_seq_id.
  + _em_vitrification.humidity data type changed to float.
- + category key for refine_ls_restr_ncs changed  to 
+ + category key for refine_ls_restr_ncs changed  to
    _refine_ls_restr_ncs.dom_id, _refine_ls_restr_ncs.pdbx_type,
-  _refine_ls_restr_ncs.pdbx_asym_id.  
+  _refine_ls_restr_ncs.pdbx_asym_id.
 ;
   1.043 2007-05-28
 ;
  Changes: (jdw)
- + adjust child data types for consistency with parent types. 
+ + adjust child data types for consistency with parent types.
  + removed aliases to local status items in pdbx_database_status.
 ;
   1.044 2007-05-30
@@ -668,7 +668,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  + miscellaneous corrections to data item references in definitions
  + make all 'replaces/replacedby' relationships reciprocal
  + make all key items mandatory.
- + add program and program_version to the key of category 
+ + add program and program_version to the key of category
    pdbx_chem_comp_identifier
  + suppress aliases to the ebi_extension dictionary.
 ;
@@ -680,11 +680,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  + extend enumerations for _pdbx_SG_project
  + data type _diffrn_detector.pdbx_collection_date made yyyy-mm-dd:hh:mm-flex
  + extend enumerations for _pdbx_nmr_exptl_sample.concentration_units
- + make pdbx_database_status - author_release_status and 
+ + make pdbx_database_status - author_release_status and
    recvd_initial_deposition_date items optional
- + adjust enumeration case for  _pdbx_chem_comp_descriptor.type 
+ + adjust enumeration case for  _pdbx_chem_comp_descriptor.type
  + supress parent relationship for _phasing_MIR_der_site.atom_type_symbol
- + uchar3 adjusted to accept all possible 3-letter-code values - 
+ + uchar3 adjusted to accept all possible 3-letter-code values -
  + extended enumeration for _software.language
  + data type for _chem_comp.mon_nstd_parent_comp_id changed to uline
 ;
@@ -692,8 +692,8 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
   Changes: (jdw/kh/zf)
   + Replace ebi_validate_* categories with pdbx_validate_* categories including
-    categories describing planar deviations. These categories provide placeholder 
-    definitions for mapping PDB REMARK 500 validation data and other PDB remarks -     
+    categories describing planar deviations. These categories provide placeholder
+    definitions for mapping PDB REMARK 500 validation data and other PDB remarks -
 
     Added categories:
 
@@ -715,18 +715,18 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
   Changes: (jdw/kh)
   + allow leading '+' for data type int
-  + add '[]' to allowed characters for data types code and ucode - 
+  + add '[]' to allowed characters for data types code and ucode -
   + make items other than the category key in ENTITY_SRC_NAT optional.
 ;
   1.049 2008-01-09
 ;
-  + Added _entity_poly.rcsb_build_self_reference, _refine.pdbx_overall_phase_error and 
+  + Added _entity_poly.rcsb_build_self_reference, _refine.pdbx_overall_phase_error and
           _refine_ls_shell.pdbx_phase_error
   + Added contributed items from Howard Einsphar and Manfred Weiss - _reflns.pdbx_Rpim_I_all
       _reflns_shell.pdbx_Rpim_I_all
 ;
-  1.050 2008-01-24  
-; 
+  1.050 2008-01-24
+;
  Changes (jdw,zf):
 
  + make _pdbx_validate_close_contact.symm_as_xyz_1,2 optional
@@ -742,7 +742,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes: (jdw)
   + Added- _refine_ls_restr_ncs.pdb_ens_id, _struct_ncs_dom.pdbx_ens_id,
            _struct_ncs_dom_lim.pdbx_ens_id.
-  + Removed parent-child references to the atom_site category from categories 
+  + Removed parent-child references to the atom_site category from categories
     pdbx_unobs_or_zero_occ_atoms/residues.
   ** Note this is the last version of the dictionary supporting version PDB 3.1 files.
 ;
@@ -751,22 +751,22 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes: (jdw)
   + This dictionary is the first version supporting PDB V3.2
   + Added- _refine_ls_restr_ncs.pdbx_ens_id, _struct_ncs_dom.pdbx_ens_id,
-           _struct_ncs_dom_lim.pdbx_ens_id to category keys - 
+           _struct_ncs_dom_lim.pdbx_ens_id to category keys -
 ;
   1.054 2008-06-09
 ;
   Changes: (jdw)
-  + Removed parent child constraints from items - 
-    _pdbx_refine_tls_group.beg_label_seq_id   
-    _pdbx_refine_tls_group.beg_label_asym_id  
-    _pdbx_refine_tls_group.end_label_seq_id   
-    _pdbx_refine_tls_group.end_label_asym_id  
+  + Removed parent child constraints from items -
+    _pdbx_refine_tls_group.beg_label_seq_id
+    _pdbx_refine_tls_group.beg_label_asym_id
+    _pdbx_refine_tls_group.end_label_seq_id
+    _pdbx_refine_tls_group.end_label_asym_id
 ;
   1.055 2008-06-20
 ;
   Changes: (jdw)
 
-   Make the following items made optional - 
+   Make the following items made optional -
        _pdbx_struct_assembly_prop.details
        _ndb_struct_na_base_pair.i_PDB_ins_code
        _ndb_struct_na_base_pair.j_PDB_ins_code
@@ -776,9 +776,9 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
        _ndb_struct_na_base_pair_step.j_PDB_ins_code_2
        _struct_ref_seq_dif.db_mon_id
 
-       _struct_ncs_dom_lim.beg_label_alt_id    
-       _struct_ncs_dom_lim.end_label_alt_id    
-       _struct_site_gen.label_alt_id           
+       _struct_ncs_dom_lim.beg_label_alt_id
+       _struct_ncs_dom_lim.end_label_alt_id
+       _struct_site_gen.label_alt_id
 
        _pdbx_struct_mod_residue.details
        _refine.ls_d_res_low
@@ -787,7 +787,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
        _struct_ref_seq_dif.mon_id
        _struct_ref_seq_dif.seq_num
 
-  Parent child corrections in categories 
+  Parent child corrections in categories
      pdbx_poly_seq_scheme          (entity_id  exchange parent and child references)
      struct_ref_seq_dif
 
@@ -804,11 +804,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes: (jdw/cl)
 
   Added items:
-   _em_experiment.entry_id           
+   _em_experiment.entry_id
    _em_experiment.reconstruction_method
-   _em_experiment.specimen_type 
+   _em_experiment.specimen_type
    _em_single_particle_entity.entry_id
-   _em_single_particle_entity.symmetry_type 
+   _em_single_particle_entity.symmetry_type
 
    Updated enumerations for:  _em_assembly.aggregation_state
 ;
@@ -825,7 +825,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
      + add _chem_comp_atom.pdbx_component_atom_id
      + add _chem_comp_atom.pdbx_component_comp_id
      + add _chem_comp_atom.pdbx_subcomponent_list
-     + added _pdbx_chem_comp_feature.comp_id, _pdbx_chem_comp_feature.type, 
+     + added _pdbx_chem_comp_feature.comp_id, _pdbx_chem_comp_feature.type,
              _pdbx_chem_comp_feature.value and _pdbx_chem_comp_feature.source
      + _chem_comp.type added enumeration - 'peptide-like'
      + added _pdbx_coordinate_model.asym_id and  _pdbx_coordinate_model.type
@@ -858,7 +858,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   1.062 2008-08-19
 ;
   Changes: (jdw)
-  + Added _pdbx_poly_seq_scheme.hetero  
+  + Added _pdbx_poly_seq_scheme.hetero
 ;
   1.063 2008-08-26
 ;
@@ -870,7 +870,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     refine_hist
     refine_ls_restr
     refine_ls_restr_ncs
-    refine_ls_shell 
+    refine_ls_shell
     pdbx_refine_tls
     pdbx_refine_tls_group
     pdbx_refine
@@ -887,7 +887,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
   Changes: (jdw)
   + Removed item_linked constraints on author identifiers and residue ranges
-    in pdbx_refine_tls_group.   Residue ranges treated as author provided 
+    in pdbx_refine_tls_group.   Residue ranges treated as author provided
     parameters used for program input not necessarily corresponding to observed
     residues in the deposited entry.
   + Added _pdbx_refine_tls_group.selection_details to capture text description
@@ -963,7 +963,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    1.0663 2008-11-12
 ;
   + add enumeration for oligomeric_details
-  + added items  - 
+  + added items  -
     _exptl_crystal.pdbx_mosaicity
     _exptl_crystal.pdbx_mosaicity_esd
     _reflns_shell.pdbx_rejects
@@ -995,11 +995,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
    1.0665 2008-11-21
 ;
-  + change oligomeric_details enumerations from -mer to -meric 
+  + change oligomeric_details enumerations from -mer to -meric
 ;
    1.0666 2008-11-25
 ;
-  + make _struct_mon_prot_cis.pdbx_id ordinal key for this category. 
+  + make _struct_mon_prot_cis.pdbx_id ordinal key for this category.
 ;
    1.0667 2008-12-11
 ;
@@ -1010,22 +1010,22 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
        cyclic tetrahedral dihedral octahedral icosahedral to oligomeric_details
      + Add pseudo-merohedral to _pdbx_reflns_twin.type enumeration
      + Add item _pdbx_struct_assembly.oligomeric_count which provides integer count
-       of the members of the assembly corresponding to the text description in 
+       of the members of the assembly corresponding to the text description in
        oligomeric_details.
      + Add item _pdbx_struct_oper_list.symmetry_operation to hold symop in (x,y,z) format.
 
-     + _pdbx_entity_src_gen.ncbi_taxonomy_id, _pdbx_entity_src_gen.organism_scientific and 
-       _pdbx_entity_src_gen.organism_common_name added to capture biological origin of 
+     + _pdbx_entity_src_gen.ncbi_taxonomy_id, _pdbx_entity_src_gen.organism_scientific and
+       _pdbx_entity_src_gen.organism_common_name added to capture biological origin of
        synthetic molecule.
 
    Updates in EM data items:  (cb,cl,jw):
      + Modified the data type code - change "line" to "text":
        _em_assembly.composition
        _em_assembly.name
-       _em_3d_fitting.software_name 
-       _em_entity_assembly.ebi_expression_system 
-       _em_vitrification.instrument 
-       _em_imaging.specimen_holder_type 
+       _em_3d_fitting.software_name
+       _em_entity_assembly.ebi_expression_system
+       _em_vitrification.instrument
+       _em_imaging.specimen_holder_type
      + Inserted missing items.
        _em_3d_reconstruction.euler_angles_details
        _em_3d_reconstruction.num_class_averages
@@ -1038,7 +1038,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
      + Added "NONE" to the enumeration list for _em_vitrification.cryogen_name
      + Added "OTHER" to the enumeration list for _em_virus_entity.virus_isolate
      + Updated enumeration list for _em_image_scans.scanner_model
-           'NIKON SUPER COOLSCAN 9000' 
+           'NIKON SUPER COOLSCAN 9000'
            'NIKON COOLSCAN'
            'PRIMESCAN'
            'IMAGE SCIENCE PATCHWORK DENSITOMETER'
@@ -1050,7 +1050,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
            'PHILIPS ROTATION HOLDER'
            'HOME BUILD'
            'JEOL'
-           'SIDE ENTRY, EUCENTRIC' 
+           'SIDE ENTRY, EUCENTRIC'
 
      + Updated the enumeration list for _em_microscope.model:
        _item_enumeration.value
@@ -1064,7 +1064,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
            'TECNAI G2'
 
 
-     + Added the following items for the polymer reference dictionary. 
+     + Added the following items for the polymer reference dictionary.
        These items will appear only in the polymer reference dictionary,
        and not in any PDB entry data files.
 
@@ -1122,13 +1122,13 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
    1.0670 2009-03-13
 ;
-   Changes (jdw):   
+   Changes (jdw):
 
       +	Add  '_refine_ls_restr_ncs.pdbx_ordinal' as new category key for this category.
       +	Add  '_refine_ls_restr_ncs.pdbx_auth_asym_id' as new category key for this category.
-      +	Add  optional identifier _pdbx_refine_component.PDB_ins_code.	
+      +	Add  optional identifier _pdbx_refine_component.PDB_ins_code.
 
-      + Make '_atom_sites_alt.id' child of '_atom_site.label_alt_id' to avoid 
+      + Make '_atom_sites_alt.id' child of '_atom_site.label_alt_id' to avoid
         unspecified parent identifier issue with this item.
       +  Update missing values in category examples accross the dictionary.
       + _pdbx_struct_assembly.oligomeric_details enumeration suppressed.
@@ -1140,20 +1140,20 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
    1.0671 2009-05-12
 ;
-   Changes (jdw):   
+   Changes (jdw):
    + Add '_struct_conn.pdbx_value_order'
 ;
    1.0672 2009-06-02
 ;
-   Changes (jdw):   
+   Changes (jdw):
    + Add category pdbx_remediation_atom_site_mapping
    + update internal tables of link relationships
    + minor typographical corrections in several examples.
 ;
    1.0673 2009-07-23
 ;
-   Changes (jdw):   
-   + Complete missing definition elements for chem_comp_atom.type_symbol and 
+   Changes (jdw):
+   + Complete missing definition elements for chem_comp_atom.type_symbol and
      remove parent-child for this item which is not supported in the current
      packaging of the chemical components dictionary.
    + Add _chem_comp.type's for 'L-RNA linking' 'L-DNA linking'
@@ -1171,9 +1171,9 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
      _pdbx_remediation_atom_site_mapping.auth_seq_id
 ;
    1.0675 2010-02-04
-; 
- Changes (jdw):  
- + update aliases to local dictionaries 
+;
+ Changes (jdw):
+ + update aliases to local dictionaries
  + added _pdbx_soln_scatter_model.representative_conformer
  + added _pdbx_remediation_atom_site_mapping.occupancy
  + added _pdbx_remediation_atom_site_mapping.pre_occupancy
@@ -1187,90 +1187,90 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
    1.0676 2010-06-03
 ;
-  Changes (jdw): 
+  Changes (jdw):
   + revisions for peptide reference dictionary in the pdbx_reference_entity_* category hierarchy.
   + added _pdbx_entity_src_syn.strain.
   + added _atom_site.pdbx_auth_asym_id,_atom_site.pdbx_auth_comp_id,
           _atom_site.pdbx_auth_seq_id
   + updated examples for the pdbx_reference_entity_* categories -
-  + added category pdbx_reference_entity_sequence 
+  + added category pdbx_reference_entity_sequence
   + added   item _pdbx_reference_entity_instances.published_name
   + removed unused item _pdbx_reference_entity_feature.support
   + added _pdbx_reference_entity_feature.source_ordinal
           _pdbx_reference_entity_src_nat.source
           _pdbx_reference_entity.class
           _pdbx_reference_entity_related_structures.db_accession
-  + renamed items in pdbx_reference_entity_related_structures category -  
+  + renamed items in pdbx_reference_entity_related_structures category -
           _pdbx_reference_entity_related_structures.db_name
           _pdbx_reference_entity_related_structures.db_code
   + add category pdbx_bond_distance_limits
   + remove _pdbx_reference_entity_poly_seq.mon_id from category key
-  + added items - 
-    _pdbx_reference_entity_instances.auth_asym_id 
-    _pdbx_reference_entity_instances.auth_seq_id 
+  + added items -
+    _pdbx_reference_entity_instances.auth_asym_id
+    _pdbx_reference_entity_instances.auth_seq_id
     _pdbx_reference_entity_instances.label_alt_id
-    _pdbx_reference_entity_instances.PDB_ins_code 
+    _pdbx_reference_entity_instances.PDB_ins_code
     _pdbx_reference_entity_instances.published_subcomponent
-  + Added REFI to enumerations for _pdbx_database_status.status_code and 
+  + Added REFI to enumerations for _pdbx_database_status.status_code and
     _pdbx_database_status.release_status_code
 ;
 
    3.300 2010-06-04
 ;
-  PRELIMINARY DICTIONARY SUPPORT V3.3 FORMAT (jdw): 
-  + added _refine.pdbx_adp_type - to differentiate entries containing mark residual or full 
-    temperature factors 
-  + Modified _atom_site.B_iso_or_equiv definition modified to reflect new type information 
+  PRELIMINARY DICTIONARY SUPPORT V3.3 FORMAT (jdw):
+  + added _refine.pdbx_adp_type - to differentiate entries containing mark residual or full
+    temperature factors
+  + Modified _atom_site.B_iso_or_equiv definition modified to reflect new type information
     in _refine.pdbx_adp_type
   + Change _refln.wavelength_id mandatory code to NO (optional)
   + Change _diffrn_refln.wavelength_id mandatory code to NO (optional)
   + Change _refln.crystal_id mandatory code to NO (optional)
   + Change _refln.scale_group_code mandatory code to NO (optional)
   + Change _diffrn_radiation.wavelength_id mandatory code to NO (optional)
-  + Add _diffrn_radiation.pdbx_scattering_type 
+  + Add _diffrn_radiation.pdbx_scattering_type
   + Add _refln.pdbx_diffrn_id  as optional child item of _diffrn.id
   + Add _reflns.pdbx_diffrn_id as optional child of item _diffrn.id
   + Add _refine.pdbx_diffrn_id as optional child of item _diffrn.id
   + Add _reflns_shell.pdbx_ordinal  as ordinal category key for reflns_shell category.
   + Add _reflns_shell.pdbx_diffrn_id as optional child of item _diffrn.id
-  + Deprecate catetory  PDBX_DIFFRN_REFLNS_SHELL 
+  + Deprecate catetory  PDBX_DIFFRN_REFLNS_SHELL
   + Change category key for REFLNS to _reflns.pdbx_diffrn_id
   + Change cateogry key for REFLNS_SHELL to _reflns_shell.pdbx_ordinal
 ;
    3.301 2010-06-10
-; 
+;
   Changes (jdw):
   + Change to ordinal key in category REFLNS adding pdbx_ordinal.
   + Admit multiple comma separated values for child items of pdbx_diffrn_id.
   + added - _pdbx_database_status.date_hold_chemical_shifts
            _pdbx_database_status.date_chemical_shifts
            _pdbx_database_status.recvd_chemical_shifts
-           _pdbx_database_status.dep_release_code_chemical_shifts                    
+           _pdbx_database_status.dep_release_code_chemical_shifts
            _pdbx_database_status.date_of_cs_release
            _pdbx_database_status.status_code_cs
 
 ;
    3.302 2010-06-16
-; 
+;
   Changes (jdw):
-  + _exptl.method - updated enumerations and details 
+  + _exptl.method - updated enumerations and details
 	  'INFRARED SPECTROSCOPY'      'IR and FTIR only as supporting methods'
 	  'EPR'                        'EPR only as a supporting method'
 ;
    3.303 2010-06-29
 ;
-  Changes (jdw): 
-  + Added items for fiber diffraction data collection - 
+  Changes (jdw):
+  + Added items for fiber diffraction data collection -
     _refln.pdbx_fiber_layer, _refln.pdbx_fiber_coordinate, _refln.pdbx_fiber_F_meas_au
 ;
    3.304 2010-08-02
 ;
-  Changes (jdw): 
+  Changes (jdw):
   + Updated enumerations for item _pdbx_chem_comp_audit.action_type and the example for this category.
 ;
    3.305 2010-09-16
 ;
-  Changes (jdw): 
+  Changes (jdw):
   + Data type for _pdbx_chem_comp_audit.action_type changed from code to line.
   + Enumerations details corrected for _chem_comp_bond.pdbx_stereo_config
 ;
@@ -1288,14 +1288,14 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
   Changes (jdw):
   + change data type for _chem_comp.name from line to text.
-  + add pdbx_entity_reference_family category and add pdbx_entity_reference_family.family_prd_id 
+  + add pdbx_entity_reference_family category and add pdbx_entity_reference_family.family_prd_id
     as a part of key in pdbx_entity_reference* categories.
   + _pdbx_reference_entity_poly.db_code and _pdbx_reference_entity_poly.db_name
 ;
    3.308 2010-11-19
 ;
   Changes (jdw):
-  + Added __reflns.phase_calculation_details from the v3.2 dictionary 
+  + Added __reflns.phase_calculation_details from the v3.2 dictionary
   + Replaced _refine.pdbx_adp_type with _refine.pdbx_TLS_residual_ADP_flag
 ;
    3.309 2010-11-22
@@ -1343,7 +1343,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    PDBX_REFERENCE_ENTITY_LIST
    PDBX_REFERENCE_ENTITY_NONPOLY
    PDBX_REFERENCE_ENTITY_LINK
- 
+
    ref_entity_id incorporated as an additional key where appropriate.
 
   _pdbx_reference_entity_list.ref_entity_id
@@ -1353,9 +1353,9 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   _pdbx_reference_entity_poly_seq.ref_entity_id
   _pdbx_reference_entity_sequence.ref_entity_id
 
-   + New categories to be included within PDB entries -- 
+   + New categories to be included within PDB entries --
 
-   PDBX_ENTITY_GROUP_LIST and 
+   PDBX_ENTITY_GROUP_LIST and
 
    PDBX_STRUCT_GROUP_LIST and related categories are provided to map
    entity level information to the copies in the deposited coordinates.
@@ -1365,34 +1365,34 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
   3.316  2011-04-05
 ;
-  Changes (jdw):  
+  Changes (jdw):
 
   + Added non-standard polymer linking details in category  PDBX_REFERENCE_ENTITY_POLY_NSTD_LINK
-  + Added  _pdbx_reference_entity_list.nonpoly_residue_number 
+  + Added  _pdbx_reference_entity_list.nonpoly_residue_number
   + Changed the representative flag item name to _pdbx_reference_entity_instances.prd_representative_flag.
   + Added instance level nonpolymer residue preference,  _pdbx_entity_group_components.nonpoly_residue_number
 ;
 
   4.000  2011-04-06
 ;
-  Changes (jdw):  
+  Changes (jdw):
   + Release as provision version 4.000
 ;
    4.001   2011-04-07
 ;
  Changes:  (jdw):
-  + Added items - 
+  + Added items -
     _pdbx_reference_entity_list.component
-    _pdbx_reference_entity_entity_link.link_class        
-    _pdbx_reference_entity_entity_link.entity_seq_num_1  
-    _pdbx_reference_entity_entity_link.nonpoly_res_num_1 
-    _pdbx_reference_entity_entity_link.entity_seq_num_2  
-    _pdbx_reference_entity_entity_link.nonpoly_res_num_2 
+    _pdbx_reference_entity_entity_link.link_class
+    _pdbx_reference_entity_entity_link.entity_seq_num_1
+    _pdbx_reference_entity_entity_link.nonpoly_res_num_1
+    _pdbx_reference_entity_entity_link.entity_seq_num_2
+    _pdbx_reference_entity_entity_link.nonpoly_res_num_2
 ;
    4.002   2011-04-08
 ;
  Changes:  (jdw):
-  + Added items - 
+  + Added items -
     _pdbx_reference_entity_link.component_1
     _pdbx_reference_entity_link.component_2
     _pdbx_reference_entity_poly_nstd_link.component
@@ -1409,10 +1409,10 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    4.004   2011-04-13
 ;
  Changes:  (jdw):
-  +  The roles of _pdbx_reference_entity_poly_seq.modified_mon_id and _pdbx_reference_entity_poly_seq.mon_id 
-     swapped.   
+  +  The roles of _pdbx_reference_entity_poly_seq.modified_mon_id and _pdbx_reference_entity_poly_seq.mon_id
+     swapped.
   + _pdbx_reference_entity_poly_seq.modified_mon_id removed
-  + _pdbx_reference_entity_poly_seq.parent_mon_id added as an optional item for the 
+  + _pdbx_reference_entity_poly_seq.parent_mon_id added as an optional item for the
      parent items in ribosomal proteins.
   + _pdbx_reference_entity_poly_seq.mon_id made mandatory and part of key
   +  corrected examples link examples with bond orders  = 'sing'
@@ -1432,18 +1432,18 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    4.007 2011-05-13
 ;
   Changes (jdw):
-  + _exptl.method enumeration and details extended with 	  
+  + _exptl.method enumeration and details extended with
      'THEORETICAL MODEL'          'THEORETICAL MODEL only as a supporting method'
-  + added new items -_refln.pdbx_FWT,_refln.pdbx_DELFWT,_refln.pdbx_PHWT, and 
+  + added new items -_refln.pdbx_FWT,_refln.pdbx_DELFWT,_refln.pdbx_PHWT, and
     _refln.pdbx_DELPHWT
   + updated examples for _symmetry.space_group_name_H-M
   + add _refine_ls_restr.pdbx_refine_id to category key
   + add item pdbx_version.revision_type as key item in this category
-  + _pdbx_version.minor_version data type changed to code.  
+  + _pdbx_version.minor_version data type changed to code.
   + update aliases for _pdbx_database_status.status_code_cs
   + add enumerations for _pdbx_version.revision_type
   + update enumerations for PSI centers -
-  + extended enumeratio for _refine.pdbx_TLS_residual_ADP_flag 
+  + extended enumeratio for _refine.pdbx_TLS_residual_ADP_flag
   + _em_imaging.microscope_id made optional -
   + relax parent child relationship for _pdbx_remediation_atom_site_mapping.auth_alt_id
 ;
@@ -1454,8 +1454,8 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
    + correct typo in example for _em_vitrification.time_resolved_state
    + correct typo in definition of _pdbx_struct_group_component_range.PDB_model_num
    + correct typo in example for _reflns.phase_calculation_details
-   + remove redunant information in the following items  _pdbx_atom_site_aniso_tls.auth_comp_id,  
-     _pdbx_struct_conn_angle.ptnr1_label_alt_id,  _pdbx_struct_conn_angle.ptnr2_label_alt_id, and 
+   + remove redunant information in the following items  _pdbx_atom_site_aniso_tls.auth_comp_id,
+     _pdbx_struct_conn_angle.ptnr1_label_alt_id,  _pdbx_struct_conn_angle.ptnr2_label_alt_id, and
      _pdbx_reference_entity_annotation.source
    + update enumerations for  _pdbx_SG_project.project_name
    + update enumerations for  _pdbx_SG_project.full_name_of_center
@@ -1474,35 +1474,35 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
 4.011 2011-06-14
 ;
-  Changes (jdw): 
+  Changes (jdw):
    + update enumeration for _database_2.database_id
 ;
 4.012 2011-07-11
 ;
-  Changes (jdw): 
+  Changes (jdw):
    + removed trailing space in enumeration of value for _pdbx_version.revision_type
 ;
 4.013 2011-07-22
 ;
-  Changes (jdw): 
+  Changes (jdw):
    + Update enumerations for pdbx_sg_projects category.
 ;
 4.014 2011-08-29
 ;
   Changes (jdw):
   + correct typo in enumerations for item _pdbx_struct_group_list.type.
-; 
+;
 4.015 2011-09-14
 ;
   Changes (jdw):
    + Update enumerations for pdbx_sg_projects category.
-; 
+;
 4.016 2011-10-21
 ;
   Changes (jdw):
   + Added item  _pdbx_reference_entity_poly_seq.observed
   + Added item  _pdbx_reference_entity_poly_seq.hetero
-  + Corrected typos in the defintions of _pdbx_reference_entity_annotation.source 
+  + Corrected typos in the defintions of _pdbx_reference_entity_annotation.source
     and _pdbx_struct_group_components.PDB_model_num
   + correct data type  and parent references for  _pdbx_struct_group_components.auth_comp_id,
    _pdbx_struct_group_component_range.beg_auth_comp_id, and  _pdbx_struct_group_component_range.end_auth_comp_id
@@ -1518,7 +1518,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   + Restore provisional data data items:
 
  _pdbx_reference_entity_instances.PDB_chain_id_list
- _pdbx_reference_entity_instances.PDB_residue_number 
+ _pdbx_reference_entity_instances.PDB_residue_number
  _pdbx_reference_entity_list.component
  _pdbx_reference_entity_link.component_1
  _pdbx_reference_entity_link.component_2
@@ -1546,7 +1546,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   Changes (jdw):
   + Revise enumerations for item  _pdbx_coordinate_model.type
   + Update enumerations for pdbx_sg_projects category.
-  + Added item _pdbx_database_status.methods_development_category 
+  + Added item _pdbx_database_status.methods_development_category
   + Update examples for _pdbx_database_related.db_name
 ;
 4.020 2012-01-04
@@ -1567,14 +1567,14 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  pdbx_reference_entity_annotatoin           -> pdbx_reference_molecule_annotation
  pdbx_reference_entity_synonyms             -> pdbx_reference_molecule_synonyms
  pdbx_reference_entity_related_structures   -> pdbx_reference_molecule_related_structures
- pdbx_reference_entity_family               -> pdbx_reference_molecule_family  
+ pdbx_reference_entity_family               -> pdbx_reference_molecule_family
  pdbx_reference_entity_instance             -> pdbx_reference_molecule_instances
 
  _pdbx_reference_entity_list.component           -> _pdbx_reference_entity_list.component_id
  _pdbx_reference_entity_list.component renamed   -> _pdbx_reference_entity_list.component_id
  _pdbx_reference_entity_poly_nstd_link.component -> _pdbx_reference_entity_poly_nstd_link.component_id
 
-  Renamed three_letter_code -> chem_comp_id  in items: 
+  Renamed three_letter_code -> chem_comp_id  in items:
 
  _pdbx_reference_molecule.chem_comp_id
  _pdbx_reference_entity_nonpoly.chem_comp_id
@@ -1585,7 +1585,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  _pdbx_reference_molecule_features.chem_comp_id
 
  Added audit categories for molecule and family information:
- 
+
  pdbx_prd_audit and pdbx_family_prd_audit
 
  Added items:
@@ -1593,18 +1593,18 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  _pdbx_reference_molecule_list.family_prd_id
  _pdbx_reference_molecule_list.prd_id
  _pdbx_reference_entity_list.auth_asym_id
- _pdbx_reference_entity_nonpoly.auth_asym_id 
- _pdbx_reference_entity_nonpoly.auth_seq_id 
- _pdbx_reference_entity_nonpoly.PDB_ins_code 
+ _pdbx_reference_entity_nonpoly.auth_asym_id
+ _pdbx_reference_entity_nonpoly.auth_seq_id
+ _pdbx_reference_entity_nonpoly.PDB_ins_code
  _pdbx_reference_entity_nonpoly.label_auth_id
  _pdbx_reference_molecule.type_evidence_code
  _pdbx_reference_molecule.class_evidence_code
 
  Removed provisional categories -
-  pdbx_reference_entity_group              
-  pdbx_reference_entity_group_components   
-  pdbx_reference_entity_group_components   
-  pdbx_reference_entity_grouping           
+  pdbx_reference_entity_group
+  pdbx_reference_entity_group_components
+  pdbx_reference_entity_group_components
+  pdbx_reference_entity_grouping
 
  Removed provisional items -
  _pdbx_reference_molecule.family_prd_id
@@ -1612,7 +1612,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  _pdbx_reference_entity_nonpoly.family_prd_id
  _pdbx_reference_molecule_instancess.family_prd_id
  _pdbx_reference_molecule_instancess.PDB_chain_id_list
- _pdbx_reference_molecule_instancess.PDB_residue_number 
+ _pdbx_reference_molecule_instancess.PDB_residue_number
  _pdbx_reference_entity_subcomponents.family_prd_id
  _pdbx_reference_entity_link.family_prd_id
  _pdbx_reference_entity_poly.family_prd_id
@@ -1623,15 +1623,15 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
 4.022 2012-02-03
 ;
-  Changes (jdw): 
+  Changes (jdw):
    + Remove parent link from  '_struct_ref_seq_dif.db_mon_id' to '_chem_comp.id'.
    + Remove items:.
- 
+
  _pdbx_reference_entity_poly.nstd_chirality
  _pdbx_reference_entity_poly.nstd_linkage
  _pdbx_reference_entity_poly.nstd_monomer
  _pdbx_reference_entity_poly.number_of_monomers
- 
+
  _pdbx_reference_entity_poly_seq.insert_code
  _pdbx_reference_entity_poly_seq.modification_details
  _pdbx_reference_entity_poly_seq.modified_mon_id
@@ -1644,14 +1644,14 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
  _pdbx_reference_entity_nonpoly.label_alt_id
  _pdbx_reference_entity_nonpoly.PDB_ins_code
  _pdbx_reference_entity_poly_link.insert_code_1
- _pdbx_reference_entity_poly_link.insert_code_2 
+ _pdbx_reference_entity_poly_link.insert_code_2
  _pdbx_reference_entity_link.nonpoly_res_num_1
  _pdbx_reference_entity_link.nonpoly_res_num_2
- 
+
   +  Remove category
 
  _pdbx_reference_molecule_instances
- 
+
   + Add new items
 
   _pdb_reference_molecule.representative_PDB_id_code
@@ -1663,48 +1663,48 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
   _pdbx_reference_molecule_family.replaced_by
   _pdbx_reference_entity_src_nat.source_id
   _pdbx_reference_molecule_details.source_id
- 
+
   + Add new category PDBX_MOLECULE to entry files to identify  PRD reference molecules:
 
  _pdbx_molecule.instance_id
  _pdbx_molecule.asym_id
  _pdbx_molecule.prd_id
- 
-  + Rename category - 
+
+  + Rename category -
 
   pdbx_reference_entity_poly_nstd_link   to  pdbx_reference_entity_poly_link
- 
+
    this category expanded to include both standard and non-standard linkages.
 
  + Update categories pdbx_item_linked_group and pdbx_item_linked_group_list.
 ;
 4.023 2012-02-24
 ;
-  Changes (jdw): 
+  Changes (jdw):
    + Correct typo in definition for _refine_ls_restr_ncs.pdbx_rms.
    + Add category pdbx_molecule_features
    + correct several parent child data type inconsistencies
 ;
 4.024 2012-08-13
 ;
-  Changes (jdw):  
+  Changes (jdw):
   + add category pdbx_distant_solvent_atoms
-  + remove unused categories pdbx_entity_group_list, pdbx_entity_group_components, pdbx_entity_group_instances 
-  + add items _pdbx_validate_chiral.auth_atom_id and _pdbx_validate_chiral.label_alt_id 
+  + remove unused categories pdbx_entity_group_list, pdbx_entity_group_components, pdbx_entity_group_instances
+  + add items _pdbx_validate_chiral.auth_atom_id and _pdbx_validate_chiral.label_alt_id
   + add items _pdbx_validate_rmsd_bond.bond_target_value,_pdbx_validate_rmsd_bond.bond_standard_deviation,
        _pdbx_validate_rmsd_angle.angle_target_value, _pdbx_validate_rmsd_angle.angle_standard_deviation
   + add enumeration 'Initial release' to item _pdbx_chem_comp_audit.action_type
 ;
 4.025 2012-11-13
 ;
-  Changes (jdw):  
+  Changes (jdw):
   + Update enumerations for _pdbx_family_prd_audit.action_type and _pdbx_prd_audit.action_type
   + Update enumerations for _pdbx_reference_molecule.class/type, _pdbx_molecule_features.class/type
   + Update enumerations for _pdbx_chem_comp_identifier.type/program
-  + Add _chem_comp_atom.pdbx_residue_numbering  
-  + Add _chem_comp_atom.pdbx_polymer_type       
-  + Add _chem_comp_atom.pdbx_ref_id             
-  + Add _chem_comp_atom.pdbx_component_id       
+  + Add _chem_comp_atom.pdbx_residue_numbering
+  + Add _chem_comp_atom.pdbx_polymer_type
+  + Add _chem_comp_atom.pdbx_ref_id
+  + Add _chem_comp_atom.pdbx_component_id
   + Update item descriptions within the pdbx_poly_seq_scheme and pdbx_nonpoly_scheme categories.
   + Update description for _pdbx_struct_assembly_prop.biol_id
   + Update joint enumerations for _pdbx_reference_molecule.class.
@@ -1712,39 +1712,39 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
 4.026 2012-11-30
 ;
-  Changes (jdw):  
+  Changes (jdw):
   + Update enumerations for _pdbx_reference_molecule.class/type, _pdbx_reference_entity_list.type
 ;
 4.027 2012-12-13
 ;
-  Changes (cl,eu,jdw):  
-  + Update the following EM enumerations - 
+  Changes (cl,eu,jdw):
+  + Update the following EM enumerations -
   _em_experiment.reconstruction_method: Add "SUBTOMOGRAM AVERAGING"
   _em_assembly.aggregation_state: Add "HELICAL CRYSTAL"
-  _em_imaging.specimen_holder_model: Add "JEOL 3200FSC CRYOHOLDER"  
-  _em_image_scans.scanner_model: Add "PATCHWORK DENSITOMETER" 
+  _em_imaging.specimen_holder_model: Add "JEOL 3200FSC CRYOHOLDER"
+  _em_image_scans.scanner_model: Add "PATCHWORK DENSITOMETER"
 ;
 4.028 2013-02-13
 ;
   Changes (jdw):
-  + Update description for item _database_PDB_rev.mod_type  
+  + Update description for item _database_PDB_rev.mod_type
   + Update enumeration content for _pdbx_reference_molecule_family.release_status _pdbx_reference_molecule.release_status
 ;
-4.029 2013-03-01  
+4.029 2013-03-01
 ;
-  Changes (jdw): 
+  Changes (jdw):
   + add optional item _struct_ref.pdbx_align_end.
 ;
 
 4.030 2013-03-22
 ;
-  Changes (jdw): 
+  Changes (jdw):
   + add optional items _pdbx_validate_main_chain_plane.label_alt_id, _pdbx_validate_planes.lable_alt_id, _pdbx_validate_torsion.label_alt_id
   + update enumerations for _pdbx_reference_molecule.class and _pdbx_molecule_features.class
 ;
 4.031 2013-04-30
 ;
-  Changes (jdw): 
+  Changes (jdw):
   +   Add category pdbx_validate_polymer_linkage
   +   Adjust mandatory codes for items in category pdbx_contact_author.
 ;
@@ -1753,21 +1753,21 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
   Changes (jdw):
   +  updated enumeration for item _pdbx_database_related.content_type
-; 
+;
 4.033 2013-07-01
 ;
   Changes (jdw):
   +  updated enumeration for item _entity_poly.type
-; 
+;
 4.034 2013-08-08
 ;
   Changes (jdw):
   +  updated enumeration for item _pdbx_database_related.content_type
-; 
+;
 4.035  2013-08-27
 ;
     Changes (jdw):
-    + Added categories - 
+    + Added categories -
 	pdbx_struct_special_symmetry
 	pdbx_reference_publication_list
 	pdbx_nmr_assigned_chem_shift_list
@@ -1819,7 +1819,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 	_pdbx_nmr_assigned_chem_shift_list.id
 	_pdbx_nmr_chem_shift_experiment.assigned_chem_shift_list_id
 	_pdbx_nmr_chem_shift_experiment.entry_id
-	_pdbx_nmr_chem_shift_experiment.experiment_id 
+	_pdbx_nmr_chem_shift_experiment.experiment_id
 	_pdbx_nmr_chem_shift_experiment.experiment_name
 	_pdbx_nmr_chem_shift_experiment.sample_state
 	_pdbx_nmr_chem_shift_experiment.solution_id
@@ -1854,13 +1854,13 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 	_pdbx_nmr_chem_shift_software.entry_id
 	_pdbx_nmr_chem_shift_software.software_id
 	_pdbx_nmr_constraint_file.constraint_filename
-	_pdbx_nmr_constraint_file.constraint_number 
-	_pdbx_nmr_constraint_file.constraint_subtype 
-	_pdbx_nmr_constraint_file.constraint_type 
-	_pdbx_nmr_constraint_file.entry_id 
-	_pdbx_nmr_constraint_file.id 
-	_pdbx_nmr_constraint_file.software_name 
-	_pdbx_nmr_constraint_file.software_ordinal 
+	_pdbx_nmr_constraint_file.constraint_number
+	_pdbx_nmr_constraint_file.constraint_subtype
+	_pdbx_nmr_constraint_file.constraint_type
+	_pdbx_nmr_constraint_file.entry_id
+	_pdbx_nmr_constraint_file.id
+	_pdbx_nmr_constraint_file.software_name
+	_pdbx_nmr_constraint_file.software_ordinal
 	_pdbx_nmr_exptl_sample_conditions.details
 	_pdbx_nmr_exptl_sample_conditions.ionic_strength_err
 	_pdbx_nmr_exptl_sample_conditions.ionic_strength_units
@@ -1922,7 +1922,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 	_struct_site.pdbx_auth_seq_id
 	_struct_site.pdbx_auth_ins_code
 	_pdbx_audit_support.funding_organization
-	_pdbx_audit_support.country 
+	_pdbx_audit_support.country
 	_pdbx_audit_support.grant_number
 	_pdbx_audit_support.ordinal
 	_pdbx_chem_comp_subcomponent_struct_conn.id
@@ -1958,7 +1958,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
 4.036  2013-10-17
 ;
-    Changes (jdw):  
+    Changes (jdw):
     +  change mandatory code for  _pdbx_nmr_sample_details.label,_pdbx_nmr_sample_details.type,_pdbx_nmr_exptl_sample_conditions.label,
       _pdbx_nmr_exptl.spectrometer_id,_pdbx_nmr_exptl.sample_state  to no.
     + Update enumeration for _database_2.database_id
@@ -1966,7 +1966,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + Update category group assignments for NMR data categories and change context values to WWPDB_LOCAL
     + Update category group assignments for chemical reference dictionaries: ccd_group and bird_group and bird_family_group.
     + Added category and items  _pdbx_family_group_index.id and   _pdbx_family_group_index.family_prd_id
-    + Update category and item item context values in categories audit_contact_author, pdbx_database_proc, pdbx_entity_name, 
+    + Update category and item item context values in categories audit_contact_author, pdbx_database_proc, pdbx_entity_name,
       struct_biol_gen, atom_site and  pdbx_database_status.
     + add internal items _pdbx_database_status.date_begin_processing, _pdbx_database_status.date_end_processing,
       _pdbx_database_status.date_begin_deposition, _pdbx_database_status.date_begin_release_preparation,
@@ -1974,49 +1974,49 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
 4.037  2013-11-22
 ;
-    Changes (jdw): 
+    Changes (jdw):
     + Update context values to WWPDB_LOCAL for categories database_PDB_remark and pdbx_contact_author
     + Update category group memberships
 ;
 4.038  2014-01-09
 ;
-    Changes (jdw): 
+    Changes (jdw):
     + Update enumerations for item _pdbx_database_status.status_code
-    + add category pdbx_related_exp_data_set 
+    + add category pdbx_related_exp_data_set
 
 ;
 
 4.039  2014-01-17
 ;
-    Changes (jdw): 
+    Changes (jdw):
     + Update item descriptions and examples for _pdbx_depui_entity_features.type,_entity_poly.pdbx_target_identifier,_reflns.pdbx_Rsym_value,
       _refine.pdbx_solvent_vdw_probe_radii,_refine.pdbx_solvent_ion_probe_radii,_citation.pdbx_database_id_DOI,_entity.pdbx_description,
       and _exptl_crystal_grow.pdbx_details and category pdbx_related_exp_data_set.
 ;
 4.040  2014-02-10
 ;
-    Changes (jdw): 
+    Changes (jdw):
     + Added definitions _atom_type.pdbx_scat_Cromer_Mann_a5,_atom_type.pdbx_scat_Cromer_Mann_b5,_refine.pdbx_average_fsc_overall,
        _refine.pdbx_average_fsc_work,_refine.pdbx_average_fsc_free,_refine_ls_shell.pdbx_fsc_work,_refine_ls_shell.pdbx_fsc_free,
        _refine_hist.pdbx_number_residues_total,_refine_hist.pdbx_B_iso_mean_ligand,_refine_hist.pdbx_B_iso_mean_solvent,
-       _atom_site_anisotrop.pdbx_PDB_model_num	
+       _atom_site_anisotrop.pdbx_PDB_model_num
 ;
 4.041  2014-03-28
 ;
-    Changes (ep/jdw): 
+    Changes (ep/jdw):
     + Editorial corrections in decriptions for items  _refine.pdbx_solvent_vdw_probe_radii, _refine.pdbx_solvent_ion_probe_radii,
       _refine.pdbx_solvent_shrinkage_radii, and _refine.pdbx_overall_ESU_R_Free
 ;
 4.042  2014-04-03
 ;
-    Changes (ep/jdw): 
+    Changes (ep/jdw):
     + extended enumerations for item - _pdbx_contact_author.id
 ;
 4.043  2014-05-02
 ;
     Changes (jdw):
     + Add items _reflns.pdbx_CC_half, _reflns.pdbx_R_split, _reflns_shell.pdbx_CC_half, _reflns_shell.pdbx_R_split
-    + Items _entity_src_gen.pdbx_src_id, _entity_src_nat.pdbx_src_id _pdbx_entity_src_syn.pdbx_src_id added to 
+    + Items _entity_src_gen.pdbx_src_id, _entity_src_nat.pdbx_src_id _pdbx_entity_src_syn.pdbx_src_id added to
       category key and set to mandatory code implicit with default value of 1.
 ;
 4.044  2014-05-07
@@ -2026,33 +2026,33 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
 4.045  2014-06-15
 ;
-    Changes (jdw): 
+    Changes (jdw):
     + Add item _pdbx_struct_conn_angle.ptnr3_symmetry
 ;
-4.046  2014-07-10 
+4.046  2014-07-10
 ;
-    Changes (jdw):  
+    Changes (jdw):
     + update enumerations for item _pdbx_molecule_features.class
 ;
-4.047  2014-07-29 
+4.047  2014-07-29
 ;
-    Changes (jdw):  
+    Changes (jdw):
     + add optional data item _struct_ref.pdbx_db_isoform
 ;
 4.048  2014-09-03
 ;
-    Changes (PDBx/mmCIF Deposition Working Group,jdw):  
+    Changes (PDBx/mmCIF Deposition Working Group,jdw):
     + Added item  _refln.pdbx_r_free_flag suggested by PDBx/mmCIF Deposition Working Group
 ;
 4.049  2014-11-07
 ;
-    Changes (jdw):  
+    Changes (jdw):
     + add item _pdbx_database_status.pdb_format_compatible to distinguish large entries not
       represented in PDB format.
 ;
 4.050  2014-11-20
 ;
-    Changes (jdw):  
+    Changes (jdw):
     + Update enumeration for item  database_2.database_id
 ;
 4.051  2015-02-16
@@ -2107,6 +2107,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     Changes (jdw):
     + Category context changed for pdbx_nmr_spectral_peak_list
 ;
-### EOF mmcif_pdbx-header.dic 
+4.060  2016-01-26
+;
+    Changes (cl):
+    + Update enumerations for item _em_entity_assembly.type
+    + Change enumerations to examples for item _em_sample_support.grid_type
+;
+### EOF mmcif_pdbx-header.dic
 
 
