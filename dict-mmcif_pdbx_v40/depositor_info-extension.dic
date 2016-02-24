@@ -13,13 +13,37 @@
 #      20-Feb-2013 jdw  added pdbx_chem_comp_upload_depositor_info category.
 #                       added _pdbx_depui_status_flags.prediction_target and category pdbx_depui_entity_status_flags
 #      04-Mar-2013 jdw  consolidated pdbx_struct_ref_depositor_info  into pdbx_struct_ref_seq_depositor_info
-#      27-Aug-2013 jdw  add local category context to all categories -- 
+#      27-Aug-2013 jdw  add local category context to all categories --
 #      29-Aug-2013 jdw  add internal message management categories
+#      24-Feb-2016 ep,jw add _pdbx_database_status.auth_req_rel_date
 # ----------------------------------------------------------------------------------------------------------------------------
+
+save__pdbx_database_status.auth_req_rel_date
+   #
+   _item_description.description
+;                      The release date requested by the depositor.
+
+                       This is used when the depositor has provided
+                       the release hold date expiration or a one year
+                       hold interval.
+;
+   #
+   _item.name            '_pdbx_database_status.auth_req_rel_date'
+   _item.category_id     pdbx_database_status
+   _item.mandatory_code  no
+   #
+   _item_type.code  yyyy-mm-dd
+   #
+   _item_examples.case  2016-02-29
+   #
+   _pdbx_item_context.type        WWPDB_LOCAL
+   _pdbx_item_context.item_name  '_pdbx_database_status.auth_req_rel_date'
+   #
+save_
 
 save__pdbx_contact_author.identifier_ORCID
     _item_description.description
-;    The Open Researcher and Contributor ID (ORCID). 
+;    The Open Researcher and Contributor ID (ORCID).
 ;
     _item.name                  '_pdbx_contact_author.identifier_ORCID'
     _item.category_id             pdbx_contact_author
@@ -29,7 +53,7 @@ save__pdbx_contact_author.identifier_ORCID
 save_
 
 
-save__entity_poly.pdbx_sequence_evidence_code 
+save__entity_poly.pdbx_sequence_evidence_code
     _item_description.description
 ;    Evidence for the assignment of the polymer sequence.
 ;
@@ -42,7 +66,7 @@ save__entity_poly.pdbx_sequence_evidence_code
     _item_enumeration.detail
                                  'depositor provided' .
                                  'derived from coordinates' .
-				
+
    _pdbx_item_context.type       WWPDB_LOCAL
    _pdbx_item_context.item_name  '_entity_poly.pdbx_sequence_evidence_code'
 save_
@@ -70,7 +94,7 @@ save_pdbx_seq_map_depositor_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
     loop_
@@ -78,7 +102,7 @@ save_pdbx_seq_map_depositor_info
     _pdbx_seq_map_depositor_info.auth_asym_id
     _pdbx_seq_map_depositor_info.one_letter_code
     _pdbx_seq_map_depositor_info.one_letter_code_mod
-     1    A     'AAAAAAAAAAAAAAAAA'   'AAAAAAAAAAAAAAAAA'  
+     1    A     'AAAAAAAAAAAAAAAAA'   'AAAAAAAAAAAAAAAAA'
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -108,7 +132,7 @@ save__pdbx_seq_map_depositor_info.auth_asym_id
 
 save__pdbx_seq_map_depositor_info.one_letter_code
     _item_description.description
-;              Coordinate sequence expressed as string of one-letter residue codes. 
+;              Coordinate sequence expressed as string of one-letter residue codes.
 ;
     _item.name                  '_pdbx_seq_map_depositor_info.one_letter_code'
     _item.category_id             pdbx_seq_map_depositor_info
@@ -119,7 +143,7 @@ save__pdbx_seq_map_depositor_info.one_letter_code
 
 save__pdbx_seq_map_depositor_info.one_letter_code_mod
     _item_description.description
-;              Coordinate sequence expressed as string of one-letter residue codes with 
+;              Coordinate sequence expressed as string of one-letter residue codes with
                nonstandard residues expressed as 3-letter codes in parentheses.
 ;
     _item.name                  '_pdbx_seq_map_depositor_info.one_letter_code_mod'
@@ -129,7 +153,7 @@ save__pdbx_seq_map_depositor_info.one_letter_code_mod
      save_
 
 
- 
+
 
 ###################################
 ## PDBX_CHEM_COMP_DEPOSITOR_INFO ##
@@ -137,7 +161,7 @@ save__pdbx_seq_map_depositor_info.one_letter_code_mod
 
 save_pdbx_chem_comp_depositor_info
     _category.description
-;              Data items in the PDBX_CHEM_COMP_DEPOSITOR_INFO category record additional 
+;              Data items in the PDBX_CHEM_COMP_DEPOSITOR_INFO category record additional
                details provided by depositors about deposited chemical components.
 ;
     _category.id                  pdbx_chem_comp_depositor_info
@@ -155,7 +179,7 @@ save_pdbx_chem_comp_depositor_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
     loop_
@@ -252,7 +276,7 @@ save__pdbx_chem_comp_depositor_info.formula
 
 save__pdbx_chem_comp_depositor_info.type
     _item_description.description
-;              This data item contains the chemical component type. 
+;              This data item contains the chemical component type.
 ;
     _item.name                  '_pdbx_chem_comp_depositor_info.type'
     _item.category_id             pdbx_chem_comp_depositor_info
@@ -270,13 +294,13 @@ save__pdbx_chem_comp_depositor_info.type
                                  'saccharide'    .
                                  'non-polymer'   .
                                  'peptide linking'  .
-                                 'peptide-like'     . 
+                                 'peptide-like'     .
                                  'other' .
     save_
 
 save__pdbx_chem_comp_depositor_info.descriptor
     _item_description.description
-;              This data item contains the descriptor value for this 
+;              This data item contains the descriptor value for this
                component.
 ;
     _item.name                  '_pdbx_chem_comp_depositor_info.descriptor'
@@ -287,7 +311,7 @@ save__pdbx_chem_comp_depositor_info.descriptor
 
 save__pdbx_chem_comp_depositor_info.descriptor_type
     _item_description.description
-;              This data item contains the descriptor type. 
+;              This data item contains the descriptor type.
 ;
     _item.name                  '_pdbx_chem_comp_depositor_info.descriptor_type'
     _item.category_id             pdbx_chem_comp_depositor_info
@@ -295,13 +319,13 @@ save__pdbx_chem_comp_depositor_info.descriptor_type
     _item_type.code               uline
     loop_
     _item_enumeration.value
-    _item_enumeration.detail      
+    _item_enumeration.detail
         SMILES             'SMILES descriptor'
         InChI              'InChI descriptor'
         InChIKey           'InChI descriptor- hash key form'
      save_
 
-save__pdbx_chem_comp_depositor_info.in_dictionary_flag 
+save__pdbx_chem_comp_depositor_info.in_dictionary_flag
     _item_description.description
 ;   A flag to indicate if the chemical component is defined in the chemical component dictionary.
 ;
@@ -310,13 +334,13 @@ save__pdbx_chem_comp_depositor_info.in_dictionary_flag
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 
 save__pdbx_chem_comp_depositor_info.details
     _item_description.description
-;              This data item contains additional details about this 
+;              This data item contains additional details about this
                component.
 ;
     _item.name                  '_pdbx_chem_comp_depositor_info.details'
@@ -351,7 +375,7 @@ save_pdbx_struct_ref_seq_depositor_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
     _pdbx_struct_ref_seq_depositor_info.ref_id            1
@@ -472,7 +496,7 @@ save__pdbx_struct_ref_seq_depositor_info.db_name
     _item.mandatory_code          no
     _item_type.code               line
     loop_
-    _item_examples.case          
+    _item_examples.case
     'UNP'
     'GB'
    loop_
@@ -485,8 +509,8 @@ save__pdbx_struct_ref_seq_depositor_info.db_name
 
 save__pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code
     _item_description.description
-;              Database chemical sequence expressed as string of one-letter 
-               residue codes. 
+;              Database chemical sequence expressed as string of one-letter
+               residue codes.
 ;
     _item.name                  '_pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code'
     _item.category_id             pdbx_struct_ref_seq_depositor_info
@@ -526,7 +550,7 @@ X  for other
 
 save__pdbx_struct_ref_seq_depositor_info.seq_align_begin
     _item_description.description
-;         
+;
                Beginning index in the author provided chemical sequence.
 ;
     _item.name                  '_pdbx_struct_ref_seq_depositor_info.seq_align_begin'
@@ -539,7 +563,7 @@ save__pdbx_struct_ref_seq_depositor_info.seq_align_begin
 
 save__pdbx_struct_ref_seq_depositor_info.seq_align_end
     _item_description.description
-;         
+;
                Ending index in the author provided chemical sequence.
 ;
     _item.name                  '_pdbx_struct_ref_seq_depositor_info.seq_align_end'
@@ -559,13 +583,13 @@ save_pdbx_struct_ref_seq_dif_depositor_info
     _category.description
 ;              Data items in the PDBX_STRUCT_REF_SEQ_DIF_DEPOSITOR_INFO category capture
                depositor provided information related to the archival cateogory
-               STRUCT_REF_SEQ_DIF.     
+               STRUCT_REF_SEQ_DIF.
 
 ;
     _category.id                  pdbx_struct_ref_seq_dif_depositor_info
     _category.mandatory_code      no
     _category_key.name          '_pdbx_struct_ref_seq_dif_depositor_info.ordinal'
-	
+
     loop_
     _category_group.id           'inclusive_group'
                                  'struct_group'
@@ -575,7 +599,7 @@ save_pdbx_struct_ref_seq_dif_depositor_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
     _pdbx_struct_ref_seq_dif_depositor_info.ordinal     1
@@ -738,12 +762,12 @@ save__pdbx_struct_ref_seq_dif_depositor_info.annotation
     _item.mandatory_code          no
     _item_type.code               uline
     loop_
-    _item_enumeration.value    
-    'engineered mutation' 
-    'cloning artifact' 
+    _item_enumeration.value
+    'engineered mutation'
+    'cloning artifact'
     variant
     'expression tag'
-    insertion 
+    insertion
     deletion
     microheterogeneity
     chromophore
@@ -752,7 +776,7 @@ save__pdbx_struct_ref_seq_dif_depositor_info.annotation
     acetylation
     amidation
     'initiating methionine'
-    
+
      save_
 ###
 ###
@@ -760,7 +784,7 @@ save_pdbx_struct_assembly_prop_depositor_info
     _category.description
 ;              Data items in the PDBX_STRUCT_ASSEMBLY_PROP_DEPOSITOR_INFO category capture
                depositor provided information related to the archival cateogory
-               PDBX_STRUCT_ASSEMBLY_PROP.     
+               PDBX_STRUCT_ASSEMBLY_PROP.
 ;
     _category.id                  pdbx_struct_assembly_prop_depositor_info
     _category.mandatory_code      no
@@ -777,7 +801,7 @@ save_pdbx_struct_assembly_prop_depositor_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
     _pdbx_struct_assembly_prop_depositor_info.biol_id    1
@@ -808,9 +832,9 @@ save__pdbx_struct_assembly_prop_depositor_info.type
     _item.mandatory_code          yes
     _item_type.code               line
     loop_
-    _item_enumeration.value    
-       'ABSA (A^2)' 
-       'SSA (A^2)' 
+    _item_enumeration.value
+       'ABSA (A^2)'
+       'SSA (A^2)'
        'MORE'
 save_
 
@@ -844,7 +868,7 @@ save_pdbx_struct_assembly_depositor_info
     _category.description
 ;              Data items in the PDBX_STRUCT_ASSEMBLY_DEPOSITOR_INFO category capture
                depositor provided information related to the archival cateogory
-               PDBX_STRUCT_ASSEMBLY.     
+               PDBX_STRUCT_ASSEMBLY.
 
 ;
     _category.id                  pdbx_struct_assembly_depositor_info
@@ -859,7 +883,7 @@ save_pdbx_struct_assembly_depositor_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
     loop_
@@ -892,15 +916,15 @@ save__pdbx_struct_assembly_depositor_info.id
 ;              The value of _pdbx_struct_assembly_depositor_info.id must uniquely identify a record in
                the PDBX_STRUCT_ASSEMBLY_DEPOSITOR_INFO list.
 ;
-    _item.name             '_pdbx_struct_assembly_depositor_info.id'                
-    _item.category_id        pdbx_struct_assembly_depositor_info           
+    _item.name             '_pdbx_struct_assembly_depositor_info.id'
+    _item.category_id        pdbx_struct_assembly_depositor_info
     _item.mandatory_code     yes
     _item_type.code          line
      save_
 
 save__pdbx_struct_assembly_depositor_info.method_details
     _item_description.description
-;   Provides details of the method used to determine or 
+;   Provides details of the method used to determine or
     compute the assembly.
 ;
     _item.name                  '_pdbx_struct_assembly_depositor_info.method_details'
@@ -934,7 +958,7 @@ save__pdbx_struct_assembly_depositor_info.oligomeric_details
 #     tetrameric  undecameric     octadecameric
 #     pentameric  dodecameric     nonadecameric
 #     hexameric   tridecameric    eicosameric
-#     heptameric  tetradecameric  
+#     heptameric  tetradecameric
 #     21-meric 22-meric 23-meric 24-meric 25-meric 26-meric 27-meric 28-meric 29-meric 30-meric
 #     31-meric 32-meric 33-meric 34-meric 35-meric 36-meric 37-meric 38-meric 39-meric 40-meric
 #     41-meric 42-meric 43-meric 44-meric 45-meric 46-meric 47-meric 48-meric 49-meric 50-meric
@@ -951,7 +975,7 @@ save__pdbx_struct_assembly_depositor_info.oligomeric_count
     _item.name                  '_pdbx_struct_assembly_depositor_info.oligomeric_count'
     _item.category_id             pdbx_struct_assembly_depositor_info
     _item.mandatory_code          no
-    _item_type.code               line 
+    _item_type.code               line
      save_
 
 save__pdbx_struct_assembly_depositor_info.matrix_flag
@@ -963,7 +987,7 @@ save__pdbx_struct_assembly_depositor_info.matrix_flag
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 
@@ -986,7 +1010,7 @@ save_pdbx_struct_assembly_gen_depositor_info
     _category.description
 ;              Data items in the PDBX_STRUCT_ASSEMBLY_GEN_DEPOSITOR_INFO category capture
                depositor provided information related to the archival cateogory
-               PDBX_STRUCT_ASSEMBLY_GEN.     
+               PDBX_STRUCT_ASSEMBLY_GEN.
 
 ;
     _category.id                  pdbx_struct_assembly_gen_depositor_info
@@ -1004,7 +1028,7 @@ save_pdbx_struct_assembly_gen_depositor_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
     loop_
@@ -1018,11 +1042,11 @@ save_pdbx_struct_assembly_gen_depositor_info
       2  C  2
       3  A  3
       3  B  3
-      3  D  3 
+      3  D  3
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 2 - 
+    Example 2 -
 ;
 ;
     loop_
@@ -1041,7 +1065,7 @@ save_pdbx_struct_assembly_gen_depositor_info
 
 save__pdbx_struct_assembly_gen_depositor_info.asym_id_list
     _item_description.description
-;              This data item is a pointer to _struct_asym.id in 
+;              This data item is a pointer to _struct_asym.id in
                the STRUCT_ASYM category.
 
                This item may be expressed as a comma separated list of identifiers.
@@ -1054,7 +1078,7 @@ save__pdbx_struct_assembly_gen_depositor_info.asym_id_list
 
 save__pdbx_struct_assembly_gen_depositor_info.assembly_id
     _item_description.description
-;              This data item is a pointer to _pdbx_struct_assembly.id in the 
+;              This data item is a pointer to _pdbx_struct_assembly.id in the
                PDBX_STRUCT_ASSEMBLY category.
 ;
     _item.name                  '_pdbx_struct_assembly_gen_depositor_info.assembly_id'
@@ -1065,8 +1089,8 @@ save__pdbx_struct_assembly_gen_depositor_info.assembly_id
 
 save__pdbx_struct_assembly_gen_depositor_info.oper_expression
     _item_description.description
-;              Identifies the operation of collection of operations 
-               from category PDBX_STRUCT_OPER_LIST.  
+;              Identifies the operation of collection of operations
+               from category PDBX_STRUCT_OPER_LIST.
 
                Operation expressions may have the forms:
 
@@ -1077,7 +1101,7 @@ save__pdbx_struct_assembly_gen_depositor_info.oper_expression
                            3 and 4 followed by 1 and 2 (i.e.
                            the cartesian product of parenthetical
                            groups applied from right to left)
-               
+
 ;
     _item.name                  '_pdbx_struct_assembly_gen_depositor_info.oper_expression'
     _item.category_id             pdbx_struct_assembly_gen_depositor_info
@@ -1099,7 +1123,7 @@ save_pdbx_struct_oper_list_depositor_info
     _category.description
 ;              Data items in the PDBX_STRUCT_OPER_LIST_DEPOSITOR_INFO category capture
                depositor provided information related to the archival cateogory
-               PDBX_STRUCT_OPER_LIST.     
+               PDBX_STRUCT_OPER_LIST.
 ;
     _category.id                  pdbx_struct_oper_list_depositor_info
     _category.mandatory_code      no
@@ -1113,7 +1137,7 @@ save_pdbx_struct_oper_list_depositor_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
     _pdbx_struct_oper_list_depositor_info.id              2
@@ -1142,7 +1166,7 @@ save__pdbx_struct_oper_list_depositor_info.id
                record in the PDBX_STRUCT_OPER_LIST_DEPOSITOR_INFO list.
 ;
     _item.name                    '_pdbx_struct_oper_list_depositor_info.id'
-    _item.category_id             pdbx_struct_oper_list_depositor_info      
+    _item.category_id             pdbx_struct_oper_list_depositor_info
     _item.mandatory_code          yes
     _item_type.code               code
      save_
@@ -1355,7 +1379,7 @@ save_pdbx_point_symmetry_depositor_info
     _category.description
 ;              Data items in the PDBX_POINT_SYMMETRY_DEPOSITOR_INFO category capture
                depositor provided information related to the archival cateogory
-               PDBX_POINT_SYMMETRY.     
+               PDBX_POINT_SYMMETRY.
 
 ;
     _category.id                  pdbx_point_symmetry_depositor_info
@@ -1370,7 +1394,7 @@ save_pdbx_point_symmetry_depositor_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
     _pdbx_point_symmetry_depositor_info.entry_id              1ABC
@@ -1402,7 +1426,7 @@ save__pdbx_point_symmetry_depositor_info.Schoenflies_symbol
     _item.mandatory_code          yes
     _item_type.code               code
     loop_
-    _item_enumeration.value 
+    _item_enumeration.value
      'I'
      'O'
      'T'
@@ -1451,7 +1475,7 @@ save__pdbx_point_symmetry_depositor_info.status_flag
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
 
     save_
 
@@ -1465,7 +1489,7 @@ save_pdbx_helical_symmetry_depositor_info
     _category.description
 ;              Data items in the PDBX_HELICAL_SYMMETRY_DEPOSITOR_INFO category capture
                depositor provided information related to the archival cateogory
-               PDBX_HELICAL_SYMMETRY.     
+               PDBX_HELICAL_SYMMETRY.
 
 ;
     _category.id                  pdbx_helical_symmetry_depositor_info
@@ -1480,7 +1504,7 @@ save_pdbx_helical_symmetry_depositor_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
     _pdbx_helical_symmetry_depositor_info.entry_id                    '1ABC'
@@ -1488,7 +1512,7 @@ save_pdbx_helical_symmetry_depositor_info
     _pdbx_helical_symmetry_depositor_info.rotation_per_n_subunits     131.84
     _pdbx_helical_symmetry_depositor_info.rise_per_n_subunits         6.10
     _pdbx_helical_symmetry_depositor_info.n_subunits_divisor          1
-    _pdbx_helical_symmetry_depositor_info.dyad_axis                   no             
+    _pdbx_helical_symmetry_depositor_info.dyad_axis                   no
     _pdbx_helical_symmetry_depositor_info.circular_symmetry           1
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1525,7 +1549,7 @@ save__pdbx_helical_symmetry_depositor_info.number_of_operations
 
 save__pdbx_helical_symmetry_depositor_info.rotation_per_n_subunits
     _item_description.description
-;              Angular rotation (degrees) in N subunits 
+;              Angular rotation (degrees) in N subunits
 ;
     _item.name                  '_pdbx_helical_symmetry_depositor_info.rotation_per_n_subunits'
     _item.category_id             pdbx_helical_symmetry_depositor_info
@@ -1536,7 +1560,7 @@ save__pdbx_helical_symmetry_depositor_info.rotation_per_n_subunits
 
 save__pdbx_helical_symmetry_depositor_info.rise_per_n_subunits
     _item_description.description
-;              Angular rotation (degrees) in N subunits 
+;              Angular rotation (degrees) in N subunits
 ;
     _item.name                  '_pdbx_helical_symmetry_depositor_info.rise_per_n_subunits'
     _item.category_id             pdbx_helical_symmetry_depositor_info
@@ -1547,7 +1571,7 @@ save__pdbx_helical_symmetry_depositor_info.rise_per_n_subunits
 
 save__pdbx_helical_symmetry_depositor_info.n_subunits_divisor
     _item_description.description
-;              Number of subunits used in the calculation of rise and 
+;              Number of subunits used in the calculation of rise and
                rotation.
 ;
     _item.name                  '_pdbx_helical_symmetry_depositor_info.n_subunits_divisor'
@@ -1569,14 +1593,14 @@ save__pdbx_helical_symmetry_depositor_info.dyad_axis
     _item.mandatory_code          no
     _item_type.code               code
      loop_
-    _item_enumeration.value       
+    _item_enumeration.value
       'no'
       'yes'
     save_
 
 save__pdbx_helical_symmetry_depositor_info.circular_symmetry
     _item_description.description
-;              Rotational n-fold symmetry about the helical axis. 
+;              Rotational n-fold symmetry about the helical axis.
 ;
     _item.name                  '_pdbx_helical_symmetry_depositor_info.circular_symmetry'
     _item.category_id             pdbx_helical_symmetry_depositor_info
@@ -1598,7 +1622,7 @@ save__pdbx_helical_symmetry_depositor_info.status_flag
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
 
     save_
 
@@ -1613,7 +1637,7 @@ save_pdbx_solvent_atom_site_mapping
     _category.description
 ;   Data items in the PDBX_SOLVENT_ATOM_SITE_MAPPING category records
     mapping information between solvent atoms before and after symmetry
-    repositioning. 
+    repositioning.
 ;
     _category.id                 'pdbx_solvent_atom_site_mapping'
     _category.mandatory_code      no
@@ -1627,7 +1651,7 @@ save_pdbx_solvent_atom_site_mapping
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example - 
+    Example -
 ;
 ;
 loop_
@@ -1653,7 +1677,7 @@ _pdbx_solvent_atom_site_mapping.pre_auth_alt_id
 _pdbx_solvent_atom_site_mapping.pre_Cartn_x
 _pdbx_solvent_atom_site_mapping.pre_Cartn_y
 _pdbx_solvent_atom_site_mapping.pre_Cartn_z
-1 . . . . . . . . . . . . . . . . . . . . .  
+1 . . . . . . . . . . . . . . . . . . . . .
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    _pdbx_category_context.type         WWPDB_LOCAL
@@ -2011,14 +2035,14 @@ save__pdbx_solvent_atom_site_mapping.symmetry
     _item_type.code               symop
     loop_
     _item_examples.case
-    _item_examples.detail         
+    _item_examples.detail
                                   7_645  '7th symm. posn.; +a on x; -b on y'
      save_
 
 save__pdbx_solvent_atom_site_mapping.symmetry_as_xyz
     _item_description.description
-;  The symmetry applied to the target solvent atom.  The symmetry equivalent position 
-   is given in the 'xyz' representation. 
+;  The symmetry applied to the target solvent atom.  The symmetry equivalent position
+   is given in the 'xyz' representation.
 ;
     _item.name                  '_pdbx_solvent_atom_site_mapping.symmetry_as_xyz'
     _item.category_id             pdbx_solvent_atom_site_mapping
@@ -2055,7 +2079,7 @@ save_pdbx_molecule_features_depositor_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
  loop_
@@ -2063,7 +2087,7 @@ save_pdbx_molecule_features_depositor_info
  _pdbx_molecule_features_depositor_info.name
  _pdbx_molecule_features_depositor_info.type
  _pdbx_molecule_features_depositor_info.class
-  1  "Actinomycin D" "Antitumor Antibiotic"  "polypeptide antibiotic" 
+  1  "Actinomycin D" "Antitumor Antibiotic"  "polypeptide antibiotic"
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    _pdbx_category_context.type         WWPDB_LOCAL
@@ -2073,7 +2097,7 @@ save_pdbx_molecule_features_depositor_info
 
 save__pdbx_molecule_features_depositor_info.entity_id
     _item_description.description
-;               The value of _pdbx_molecule_features_depositor_info.entity_id is a reference to 
+;               The value of _pdbx_molecule_features_depositor_info.entity_id is a reference to
                 to the entity identifier for this molecule.
 ;
     _item.name                  '_pdbx_molecule_features_depositor_info.entity_id'
@@ -2091,7 +2115,7 @@ save__pdbx_molecule_features_depositor_info.class
     _item.mandatory_code          no
     _item_type.code               uline
      loop_
-    _item_enumeration.value   
+    _item_enumeration.value
     Antibiotic
     Inhibitor
     Antitumor
@@ -2100,19 +2124,19 @@ save__pdbx_molecule_features_depositor_info.class
     Toxin
     'Enzyme inhibitor'
     Anticancer
-    Antimicrobial 
+    Antimicrobial
     Antifungal
-    Anthelmintic 
+    Anthelmintic
     Antiviral
-    Antineoplastic 
+    Antineoplastic
     Antiparasitic
     Antiretroviral
     Antithrombotic
     Anticoagulant
     Chaperone binding
-    Antiinflammatory 
+    Antiinflammatory
     'CASPASE inhibitor'
-    'Metal transport' 
+    'Metal transport'
     'Growth factor'
     'Oxidation-reduction'
     Receptor
@@ -2137,7 +2161,7 @@ save__pdbx_molecule_features_depositor_info.type
                                 'peptide-like'
                                 'macrolide'
      loop_
-    _item_enumeration.value   
+    _item_enumeration.value
     macrolide
     'amino acid'
     'non-polymer'
@@ -2170,7 +2194,7 @@ save__pdbx_molecule_features_depositor_info.type
     'peptaibol'
     'anthraquinone'
 
-    
+
      save_
 
 save__pdbx_molecule_features_depositor_info.name
@@ -2196,7 +2220,7 @@ save__pdbx_molecule_features_depositor_info.details
     _item_type.code               text
     save_
 
- 
+
 
 ############################################
 ## PDBX_CHEM_COMP_INSTANCE_DEPOSITOR_INFO ##
@@ -2218,7 +2242,7 @@ save_pdbx_chem_comp_instance_depositor_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example - 
+    Example -
 ;
 ;
 loop_
@@ -2229,7 +2253,7 @@ loop_
  _pdbx_chem_comp_instance_depositor_info.PDB_ins_code
  _pdbx_chem_comp_instance_depositor_info.label_alt_id
  _pdbx_chem_comp_instance_depositor_info.author_provided_flag    Y/N
- _pdbx_chem_comp_instance_depositor_info.in_polymer_flag    Y/N 
+ _pdbx_chem_comp_instance_depositor_info.in_polymer_flag    Y/N
   X78 102  W . .  Y N
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -2327,7 +2351,7 @@ save__pdbx_chem_comp_instance_depositor_info.auth_seq_id
      save_
 
 
-save__pdbx_chem_comp_instance_depositor_info.in_polymer_flag 
+save__pdbx_chem_comp_instance_depositor_info.in_polymer_flag
     _item_description.description
 ;   A flag to indicate if the chemical component instance is a part of a polymer molecule.
 ;
@@ -2336,7 +2360,7 @@ save__pdbx_chem_comp_instance_depositor_info.in_polymer_flag
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_chem_comp_instance_depositor_info.author_provided_flag
@@ -2348,7 +2372,7 @@ save__pdbx_chem_comp_instance_depositor_info.author_provided_flag
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_chem_comp_instance_depositor_info.formula
@@ -2399,7 +2423,7 @@ save_pdbx_depui_status_flags
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
   _pdbx_depui_status_flags.dep_dataset_id    D_000000
@@ -2434,7 +2458,7 @@ save__pdbx_depui_status_flags.primary_citation_status
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_depui_status_flags.corresponding_author_status
@@ -2446,7 +2470,7 @@ save__pdbx_depui_status_flags.corresponding_author_status
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_depui_status_flags.reference_citation_status
@@ -2458,7 +2482,7 @@ save__pdbx_depui_status_flags.reference_citation_status
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_depui_status_flags.is_grant_funded
@@ -2470,7 +2494,7 @@ save__pdbx_depui_status_flags.is_grant_funded
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_depui_status_flags.has_ncs_data
@@ -2482,7 +2506,7 @@ save__pdbx_depui_status_flags.has_ncs_data
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_depui_status_flags.prediction_target
@@ -2494,7 +2518,7 @@ save__pdbx_depui_status_flags.prediction_target
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_depui_status_flags.has_helical_symmetry
@@ -2506,7 +2530,7 @@ save__pdbx_depui_status_flags.has_helical_symmetry
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_depui_status_flags.has_point_symmetry
@@ -2518,7 +2542,7 @@ save__pdbx_depui_status_flags.has_point_symmetry
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_depui_status_flags.has_cyclic_symmetry
@@ -2530,7 +2554,7 @@ save__pdbx_depui_status_flags.has_cyclic_symmetry
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_depui_status_flags.has_accepted_terms_and_conditions
@@ -2542,7 +2566,7 @@ save__pdbx_depui_status_flags.has_accepted_terms_and_conditions
     _item.mandatory_code          yes
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_depui_status_flags.has_viewed_validation_report
@@ -2554,7 +2578,7 @@ save__pdbx_depui_status_flags.has_viewed_validation_report
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_depui_status_flags.validated_model_file_name
@@ -2637,18 +2661,18 @@ save_pdbx_depui_upload
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
    loop_
    _pdbx_depui_upload.ordinal
-   _pdbx_depui_upload.file_name                        
-   _pdbx_depui_upload.file_type                        
-   _pdbx_depui_upload.file_content_type                        
-   _pdbx_depui_upload.file_size                        
-   _pdbx_depui_upload.file_valid                       
+   _pdbx_depui_upload.file_name
+   _pdbx_depui_upload.file_type
+   _pdbx_depui_upload.file_content_type
+   _pdbx_depui_upload.file_size
+   _pdbx_depui_upload.file_valid
    _pdbx_depui_upload.diagnostic_message
-   _pdbx_depui_upload.sequence_align                   
+   _pdbx_depui_upload.sequence_align
     1  myfile.cif xs-cif 'PDBx/mmCIF model file' 34567 Y ?  ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -2676,10 +2700,10 @@ save__pdbx_depui_upload.file_content_type
     _item_type.code               line
     loop_
     _item_examples.case
-                                 'PDBx/mmCIF model file'    
-                                 'PDB model file'   
+                                 'PDBx/mmCIF model file'
+                                 'PDB model file'
                                  'PDBx/mmCIF structure factor file'
-                                 'other'  
+                                 'other'
      save_
 
 save__pdbx_depui_upload.file_type
@@ -2693,7 +2717,7 @@ save__pdbx_depui_upload.file_type
     loop_
     _item_examples.case
                                  'xs-cif'
-                                 'other'  
+                                 'other'
      save_
 
 save__pdbx_depui_upload.file_name
@@ -2731,7 +2755,7 @@ save__pdbx_depui_upload.valid_flag
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 
@@ -2775,13 +2799,13 @@ save_pdbx_depui_validation_status_flags
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
 
   _pdbx_depui_validation_status_flags.dep_dataset_id    D_000000
-  _pdbx_depui_validation_status_flags.occupancy_outliers_low   0 
-  _pdbx_depui_validation_status_flags.occupancy_outliers_high  0 
+  _pdbx_depui_validation_status_flags.occupancy_outliers_low   0
+  _pdbx_depui_validation_status_flags.occupancy_outliers_high  0
   _pdbx_depui_validation_status_flags.adp_outliers_low         0
   _pdbx_depui_validation_status_flags.solvent_outliers         0
 ;
@@ -2809,7 +2833,7 @@ save__pdbx_depui_validation_status_flags.residual_B_factors_flag
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_depui_validation_status_flags.occupancy_outliers_low
@@ -2891,7 +2915,7 @@ save_pdbx_chem_comp_upload_depositor_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
     loop_
@@ -2900,7 +2924,7 @@ save_pdbx_chem_comp_upload_depositor_info
     _pdbx_chem_comp_upload_depositor_info.comp_id
     _pdbx_chem_comp_upload_depositor_info.upload_file_name
     _pdbx_chem_comp_upload_depositor_info.upload_file_type
-     1 GNC GNC.gif gif  
+     1 GNC GNC.gif gif
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -2981,7 +3005,7 @@ save_pdbx_depui_entity_status_flags
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
   _pdbx_depui_entity_status_flags.dep_dataset_id    D_000000
@@ -3022,7 +3046,7 @@ save__pdbx_depui_entity_status_flags.has_mutation
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_enumeration.value    Y N   
+    _item_enumeration.value    Y N
      save_
 
 save__pdbx_depui_entity_status_flags.sample_xyz_sequence_alignments_valid
@@ -3056,7 +3080,7 @@ save_pdbx_depui_entity_features
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
   _pdbx_depui_entity_features.dep_dataset_id    D_000000
@@ -3090,14 +3114,14 @@ save__pdbx_depui_entity_features.entity_id
 
 save__pdbx_depui_entity_features.type
     _item_description.description
-;    A flag to indicate the molecule class for the entity. 
+;    A flag to indicate the molecule class for the entity.
 ;
     _item.name                  '_pdbx_depui_entity_features.type'
     _item.category_id             pdbx_depui_entity_features
     _item.mandatory_code          yes
     _item_type.code               uline
     loop_
-    _item_enumeration.value 
+    _item_enumeration.value
      'Chimera'
      'Antibiotic/inhibitor'
      'Carbohydrate'
@@ -3122,7 +3146,7 @@ save_pdbx_deposition_message_info
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
 #
@@ -3139,14 +3163,14 @@ _pdbx_deposition_message_info.message_subject
 _pdbx_deposition_message_info.message_text
 _pdbx_deposition_message_info.message_type
 _pdbx_deposition_message_info.send_status
-   1  83ae9530-194c-4360-93d2-90598491012a  D_000000  "2013-08-15 12:49:26"  depositor  report  validation  83ae9530-194c-4360-93d2-90598491012a  
-      "Repsonse to validation report"                              
+   1  83ae9530-194c-4360-93d2-90598491012a  D_000000  "2013-08-15 12:49:26"  depositor  report  validation  83ae9530-194c-4360-93d2-90598491012a
+      "Repsonse to validation report"
  ;          All of the C-alpha and C-beta atom coordinates have gone missing.
             We looked all over the lab and could not find them.  There were a few reflections that
             we misplaced earlier.   We are hoping that we will find these data before the manuscript
             is reviewed.
  ;
-  text  draft  
+  text  draft
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    _pdbx_category_context.type         WWPDB_LOCAL
@@ -3266,7 +3290,7 @@ save__pdbx_deposition_message_info.message_text
 
 save__pdbx_deposition_message_info.message_type
     _item_description.description
-;   The message type.  
+;   The message type.
 ;
     _item.name                  '_pdbx_deposition_message_info.message_type'
     _item.category_id             pdbx_deposition_message_info
@@ -3291,7 +3315,7 @@ save__pdbx_deposition_message_info.send_status
 ##
 save_pdbx_deposition_message_file_reference
     _category.description
-;              Data items in the PDBX_DEPOSITION_MESSAGE_FILE_REFERENCE category record details of 
+;              Data items in the PDBX_DEPOSITION_MESSAGE_FILE_REFERENCE category record details of
                files references associated with messages defined in the PDBX_DEPOSITION_MESSAGE_INFO
 	       data category.
 ;
@@ -3307,7 +3331,7 @@ save_pdbx_deposition_message_file_reference
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
 #
@@ -3320,8 +3344,8 @@ _pdbx_deposition_message_file_reference.content_format
 _pdbx_deposition_message_file_reference.partition_number
 _pdbx_deposition_message_file_reference.version_id
 _pdbx_deposition_message_file_reference.storage_type
-   1  8bf7a60b-066d-4fff-8ee9-c5b820e19b3c  D_000000  model-annotate  pdbx  1  1  archive  
-   2  8bf7a60b-066d-4fff-8ee9-c5b820e19b3c  D_000000  model-annotate  pdbx  1  1  archive  
+   1  8bf7a60b-066d-4fff-8ee9-c5b820e19b3c  D_000000  model-annotate  pdbx  1  1  archive
+   2  8bf7a60b-066d-4fff-8ee9-c5b820e19b3c  D_000000  model-annotate  pdbx  1  1  archive
 
 #
 ;
@@ -3417,8 +3441,8 @@ save__pdbx_deposition_message_file_reference.storage_type
 ##
 save_pdbx_depui_entry_details
     _category.description
-;              Data items in the PDBX_DEPUI_ENTRY_DETAILS category record  
-               information required to identify the depositor and route 
+;              Data items in the PDBX_DEPUI_ENTRY_DETAILS category record
+               information required to identify the depositor and route
                deposition to an appropriate processing site.
 ;
     _category.id                  pdbx_depui_entry_details
@@ -3433,7 +3457,7 @@ save_pdbx_depui_entry_details
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
   _pdbx_depui_entry_details.dep_dataset_id               D_0000000000
@@ -3467,7 +3491,7 @@ save__pdbx_depui_entry_details.wwpdb_site_id
     _item.mandatory_code          no
     _item_type.code               code
     loop_
-    _item_examples.case    
+    _item_examples.case
         "WWPDB_DEPLOY_C5"
         "WWPDB_DEPLOY_STAGING_RU"
         "WWPDB_DEPLOY_ALPHA_RU"
@@ -3606,13 +3630,13 @@ save__pdbx_depui_entry_details.replace_pdb_id
 
 save_pdbx_data_processing_status
     _category.description
-;              Data items in the PDBX_DATA_PROCESSING_STATUS category record  
+;              Data items in the PDBX_DATA_PROCESSING_STATUS category record
                data processing instructions for workflow processing tasks.
 ;
     _category.id                  pdbx_data_processing_status
     _category.mandatory_code      no
     loop_
-    _category_key.name          
+    _category_key.name
      '_pdbx_data_processing_status.task_name'
      '_pdbx_data_processing_status.status'
 
@@ -3624,14 +3648,14 @@ save_pdbx_data_processing_status
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
    loop_
    _pdbx_data_processing_status.task_name
    _pdbx_data_processing_status.status
     'site'                'skip'
-    'link'                'skip' 
+    'link'                'skip'
     'secondary structure' 'skip'
     'solvent position'    'skip'
 
