@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.062
+    _dictionary.version         4.063
 #
      loop_
     _dictionary_history.version
@@ -2122,6 +2122,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
     Changes (cl):
     + enumeration update for item _em_imaging.specimen_holder_model
+;
+4.063  2016-03-03
+;
+    Changes (cl):
+    + enumeration update for item _em_vitrification.cryogen_name
 ;
 ### EOF mmcif_pdbx-header.dic
 
