@@ -2124,7 +2124,7 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + enumeration update for item _em_imaging.specimen_holder_model
 ;
 4.063  2016-03-03
-;s
+;
     Changes (cl):
     + enumeration update for item _em_vitrification.cryogen_name
 ;
