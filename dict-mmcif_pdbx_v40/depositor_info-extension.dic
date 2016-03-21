@@ -48,7 +48,8 @@ save__pdbx_contact_author.identifier_ORCID
     _item.name                  '_pdbx_contact_author.identifier_ORCID'
     _item.category_id             pdbx_contact_author
     _item.mandatory_code          no
-    _item_type.code               code
+#    _item_type.code               code
+    _item_type.code               orcid_id
     _item_examples.case          '0000-0002-6686-5475'
 save_
 
