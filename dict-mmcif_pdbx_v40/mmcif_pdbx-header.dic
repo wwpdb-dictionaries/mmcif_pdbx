@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.063
+    _dictionary.version         4.064
 #
      loop_
     _dictionary_history.version
@@ -2127,6 +2127,13 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
 ;
     Changes (cl):
     + enumeration update for item _em_vitrification.cryogen_name
+;
+4.064  2016-05-03
+;
+    Changes (ep):
+    + CAPRI added to _pdbx_database_status.methods_development_category
+    + Correct pdbx_nmr_chem_shift_ref.mol_common_name enumeration
+    + Add RDC to pdbx_nmr_constraint_file.constraint_subtype enumeration
 ;
 ### EOF mmcif_pdbx-header.dic
 

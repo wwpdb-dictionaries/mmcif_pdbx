@@ -1916,6 +1916,7 @@ save__pdbx_database_status.methods_development_category
     _item_examples.case          'CASP' 'CASD-NMR'
      loop_
     _item_enumeration.value
+       'CAPRI'
        'CASP'
        'CASD-NMR'
        'FoldIt'

@@ -742,7 +742,7 @@ as a chemical shift reference.
    'ammonium hydroxide'                'N ammonium nitrogen'
    'ammonium nitrate'                  'N ammonium nitrogen'
    '[15N] ammonium nitrate'            'N ammonium nitrogen'
-   '[15N$ 15N] ammonium nitrate'       'N ammonium nitrogen'
+   '[15N, 15N] ammonium nitrate'       'N ammonium nitrogen'
    'ammonium nitrite'                  'N ammonium nitrogen'
    'ammonium sulfate'                  'N ammonium nitrogen'
    '[15N] ammonium sulfate'            'N ammonium nitrogen'
@@ -1257,6 +1257,7 @@ Specific type of constraint.
    'disulfide bond'      ?
    'hydrogen bond'       ?
    'symmetry'            ?
+   'RDC'                 ?
    'ROE'                 ?
    'peptide'             ?
    'ring'                ?
