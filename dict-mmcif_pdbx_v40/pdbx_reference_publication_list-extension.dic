@@ -33,10 +33,9 @@ save_pdbx_reference_publication_list
         _pdbx_reference_publication_list.country
         _pdbx_reference_publication_list.ISSN_code_type
         _pdbx_reference_publication_list.ISSN_code_value
-        _pdbx_reference_publication_list.PDB_coden
         _pdbx_reference_publication_list.start_year
         _pdbx_reference_publication_list.end_year
-        'ACC.CHEM.RES.'   ASTM ACHRE4 US  ISSN 0001-4842         0411 ? ? 
+        'acc.CHEM.RES.'   ASTM ACHRE4 US  ISSN 0001-4842        ? ? 
 ;
      save_
 

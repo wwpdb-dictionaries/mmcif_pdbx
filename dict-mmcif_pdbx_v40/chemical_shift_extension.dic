@@ -452,14 +452,34 @@ Items in the pdbx_nmr_chem_shift_ref category provide the chemical shift referen
    loop_
      _category_examples.detail
      _category_examples.case
-
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-   ?
+    Example 1 
 ;
 ;
-   ?
+    loop_
+    _pdbx_nmr_chem_shift_ref.atom_group 
+    _pdbx_nmr_chem_shift_ref.atom_isotope_number 
+    _pdbx_nmr_chem_shift_ref.atom_type 
+    _pdbx_nmr_chem_shift_ref.chem_shift_reference_id 
+    _pdbx_nmr_chem_shift_ref.chem_shift_units 
+    _pdbx_nmr_chem_shift_ref.chem_shift_val 
+    _pdbx_nmr_chem_shift_ref.correction_val 
+    _pdbx_nmr_chem_shift_ref.entry_id 
+    _pdbx_nmr_chem_shift_ref.external_ref_axis 
+    _pdbx_nmr_chem_shift_ref.external_ref_loc 
+    _pdbx_nmr_chem_shift_ref.external_ref_sample_geometry 
+    _pdbx_nmr_chem_shift_ref.indirect_shift_ratio 
+    _pdbx_nmr_chem_shift_ref.mol_common_name 
+    _pdbx_nmr_chem_shift_ref.rank 
+    _pdbx_nmr_chem_shift_ref.ref_correction_type 
+    _pdbx_nmr_chem_shift_ref.ref_method 
+    _pdbx_nmr_chem_shift_ref.ref_type 
+    _pdbx_nmr_chem_shift_ref.solvent 
+    "methyl protons" 1  H 1 ppm 0.000 ? 1ABC ? ? ? 1.00000000  DSS ? ? external direct   ? 
+    "methyl protons" 13 C 1 ppm 0.000 ? 1ABC ? ? ? 0.251449530 DSS ? ? external indirect ? 
+    "methyl protons" 15 N 1 ppm 0.000 ? 1ABC ? ? ? 0.101329118 DSS ? ? external indirect ? 
 ;
-
 
  _pdbx_category_context.type         WWPDB_LOCAL
  _pdbx_category_context.category_id  pdbx_nmr_chem_shift_ref
@@ -886,12 +906,16 @@ Items in the chem_shift_reference category define a set of chemical shift refere
    loop_
      _category_examples.detail
      _category_examples.case
-
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-   ?
+    Example 1 
 ;
 ;
-   ?
+    _pdbx_nmr_chem_shift_reference.carbon_shifts_flag       ? 
+    _pdbx_nmr_chem_shift_reference.details                  "External DSS sample" 
+    _pdbx_nmr_chem_shift_reference.entry_id                 1ABC
+    _pdbx_nmr_chem_shift_reference.id                       1 
+    _pdbx_nmr_chem_shift_reference.label                    chemical_shift_reference_
 ;
 
   _pdbx_category_context.type         WWPDB_LOCAL
@@ -1253,9 +1277,11 @@ Specific type of constraint.
    'general distance'    ?
    'alignment tensor'    ?
    'chirality'           ?
+   'dipolar recoupling'  ?
    'prochirality'        ?
    'disulfide bond'      ?
    'hydrogen bond'       ?
+   'spin diffusion'      ?
    'symmetry'            ?
    'RDC'                 ?
    'ROE'                 ?

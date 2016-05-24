@@ -26,8 +26,7 @@ _pdbx_struct_special_symmetry.auth_asym_id
 _pdbx_struct_special_symmetry.auth_seq_id
 _pdbx_struct_special_symmetry.PDB_ins_code
 _pdbx_struct_special_symmetry.label_alt_id
-_pdbx_struct_special_symmetry.details
-  1 1  ATP  Q 412 . . .
+  1 1  ATP  Q 412 . . 
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;

@@ -1295,7 +1295,7 @@ save_pdbx_reference_entity_poly_link
 loop_
 _pdbx_reference_entity_poly_link.prd_id
 _pdbx_reference_entity_poly_link.ref_entity_id
-_pdbx_reference_entity_poly_link.component
+_pdbx_reference_entity_poly_link.component_id
 _pdbx_reference_entity_poly_link.link_id
 _pdbx_reference_entity_poly_link.entity_seq_num_1
 _pdbx_reference_entity_poly_link.comp_id_1
@@ -1316,7 +1316,7 @@ PRD_000001 1 1 8 6 ALA C 7 NCY N  'single'
 PRD_000001 1 1 9 6 ALA C 7 N2C N  'single'
 PRD_000001 1 1 8 7 NCY C 8 MVA N  'single'
 PRD_000001 1 1 9 7 N2C C 8 MVZ N  'single'
-....
+# ....
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_

@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.064
+    _dictionary.version         4.065
 #
      loop_
     _dictionary_history.version
@@ -2134,6 +2134,17 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + CAPRI added to _pdbx_database_status.methods_development_category
     + Correct pdbx_nmr_chem_shift_ref.mol_common_name enumeration
     + Add RDC to pdbx_nmr_constraint_file.constraint_subtype enumeration
+;
+4.065  2016-05-24
+;
+    Changes (ep):
+    + Add 'dipolar recoupling' and 'spin diffusion' to _pdbx_nmr_constraint_file.constraint_subtype
+    + Update examples for:
+       _pdbx_struct_special_symmetry
+       _pdbx_reference_publication_list
+       _pdbx_nmr_chem_shift_ref
+       _pdbx_nmr_chem_shift_reference
+       _pdbx_reference_entity_poly_link
 ;
 ### EOF mmcif_pdbx-header.dic
 
