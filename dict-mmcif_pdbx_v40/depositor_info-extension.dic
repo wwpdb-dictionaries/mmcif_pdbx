@@ -16,6 +16,7 @@
 #      27-Aug-2013 jdw  add local category context to all categories --
 #      29-Aug-2013 jdw  add internal message management categories
 #      24-Feb-2016 ep,jw add _pdbx_database_status.auth_req_rel_date
+#      23-May-2016 ep   clean up examples of pdbx_chem_comp_depositor_info and pdbx_chem_comp_instance_depositor_info, pdbx_depui_upload, pdbx_deposition_message_info, pdbx_deposition_message_file_reference, pdbx_struct_ref_seq_depositor_info
 # ----------------------------------------------------------------------------------------------------------------------------
 
 save__pdbx_database_status.auth_req_rel_date
@@ -78,7 +79,7 @@ save_
 
 save_pdbx_seq_map_depositor_info
     _category.description
-;              Data items in the PDBX_CHEM_COMP_DEPOSITOR_INFO record the
+;              Data items in the PDBX_SEQ_MAP_DEPOSITOR_INFO record the
                details about the mapping sample and coordinate sequences.
 ;
     _category.id                  pdbx_seq_map_depositor_info
@@ -192,7 +193,7 @@ save_pdbx_chem_comp_depositor_info
     _pdbx_chem_comp_depositor_info.descriptor
     _pdbx_chem_comp_depositor_info.descriptor_type
     _pdbx_chem_comp_depositor_info.alt_comp_id
-     1 GNC "N-acetyl-beta-D-glucosamine"  GNC.gif gif  "C8 H15 N O6" "CC(=O)N[C@H]1[C@H](O)O[C@H](CO)[C@@H](O)[C@@H]1O" SMILES .
+     1 GNC "N-acetyl-beta-D-glucosamine" "C8 H15 N O6" "CC(=O)N[C@H]1[C@H](O)O[C@H](CO)[C@@H](O)[C@@H]1O" SMILES .
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -387,7 +388,7 @@ save_pdbx_struct_ref_seq_depositor_info
     _pdbx_struct_ref_seq_depositor_info.db_name                           .
     _pdbx_struct_ref_seq_depositor_info.db_accession                      .
     _pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code            .
-    _pdbx_struct_ref_seq_depositor_info.seq_align_beg                     .
+    _pdbx_struct_ref_seq_depositor_info.seq_align_begin                   .
     _pdbx_struct_ref_seq_depositor_info.seq_align_end                     .
     _pdbx_struct_ref_seq_depositor_info.details                           .
 
@@ -2253,9 +2254,9 @@ loop_
  _pdbx_chem_comp_instance_depositor_info.auth_asym_id
  _pdbx_chem_comp_instance_depositor_info.PDB_ins_code
  _pdbx_chem_comp_instance_depositor_info.label_alt_id
- _pdbx_chem_comp_instance_depositor_info.author_provided_flag    Y/N
- _pdbx_chem_comp_instance_depositor_info.in_polymer_flag    Y/N
-  X78 102  W . .  Y N
+ _pdbx_chem_comp_instance_depositor_info.author_provided_flag    
+ _pdbx_chem_comp_instance_depositor_info.in_polymer_flag    
+  1 X78 102  W . .  Y N
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    _pdbx_category_context.type         WWPDB_LOCAL
@@ -2671,7 +2672,7 @@ save_pdbx_depui_upload
    _pdbx_depui_upload.file_type
    _pdbx_depui_upload.file_content_type
    _pdbx_depui_upload.file_size
-   _pdbx_depui_upload.file_valid
+   _pdbx_depui_upload.valid_flag
    _pdbx_depui_upload.diagnostic_message
    _pdbx_depui_upload.sequence_align
     1  myfile.cif xs-cif 'PDBx/mmCIF model file' 34567 Y ?  ?
@@ -3151,21 +3152,21 @@ save_pdbx_deposition_message_info
 ;
 ;
 #
-loop__
-_pdbx_deposition_message_info.ordinal_id
+loop_
+_pdbx_deposition_message_info.ordinal
 _pdbx_deposition_message_info.message_id
 _pdbx_deposition_message_info.deposition_data_set_id
 _pdbx_deposition_message_info.timestamp
 _pdbx_deposition_message_info.sender
-_pdbx_deposition_message_info.context_type
-_pdbx_deposition_message_info.context_value
+_pdbx_deposition_message_info.content_type
+_pdbx_deposition_message_info.content_value
 _pdbx_deposition_message_info.parent_message_id
 _pdbx_deposition_message_info.message_subject
 _pdbx_deposition_message_info.message_text
 _pdbx_deposition_message_info.message_type
 _pdbx_deposition_message_info.send_status
    1  83ae9530-194c-4360-93d2-90598491012a  D_000000  "2013-08-15 12:49:26"  depositor  report  validation  83ae9530-194c-4360-93d2-90598491012a
-      "Repsonse to validation report"
+      "Response to validation report"
  ;          All of the C-alpha and C-beta atom coordinates have gone missing.
             We looked all over the lab and could not find them.  There were a few reflections that
             we misplaced earlier.   We are hoping that we will find these data before the manuscript
@@ -3337,7 +3338,7 @@ save_pdbx_deposition_message_file_reference
 ;
 #
 loop_
-_pdbx_deposition_message_file_reference.ordinal_id
+_pdbx_deposition_message_file_reference.ordinal
 _pdbx_deposition_message_file_reference.message_id
 _pdbx_deposition_message_file_reference.deposition_data_set_id
 _pdbx_deposition_message_file_reference.content_type
