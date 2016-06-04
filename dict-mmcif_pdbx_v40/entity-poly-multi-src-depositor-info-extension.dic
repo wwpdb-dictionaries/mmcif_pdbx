@@ -57,7 +57,7 @@ save_pdbx_entity_src_gen_depositor_info
     _pdbx_entity_src_gen_depositor_info.gene_src_ncbi_taxonomy_id    
     _pdbx_entity_src_gen_depositor_info.host_org_scientific_name
     _pdbx_entity_src_gen_depositor_info.host_org_ncbi_taxonomy_id 
-    _pdbx_entity_src_gen_depositor_info.host_org_species
+    _pdbx_entity_src_gen_depositor_info.host_org_strain
     _pdbx_entity_src_gen_depositor_info.host_org_vector_type    
     _pdbx_entity_src_gen_depositor_info.plasmid_name
     1 1  1   364 'Escherichia coli'    'b4034, JW3994'   83333  'Escherichia coli' 562 ? plasmid pGEX6p-2RBS 
