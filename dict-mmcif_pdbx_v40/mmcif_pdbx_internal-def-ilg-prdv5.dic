@@ -21,7 +21,7 @@ atom_site_anisotrop                      1  atom_site_anisotrop:atom_site:1     
 atom_site_anisotrop                      2  atom_site_anisotrop:atom_type:2                                           . .
 atom_sites                               1  atom_sites:entry:1                                                        . .
 #
-atom_sites_alt                           1  atom_sites_alt:atom_site:1                                                . . 
+atom_sites_alt                           1  atom_sites_alt:atom_site:1                                                . .
 #
 atom_sites_alt_gen                       1  atom_sites_alt_gen:atom_sites_alt:1                                       . .
 atom_sites_alt_gen                       2  atom_sites_alt_gen:atom_sites_alt_ens:2                                   . .
@@ -398,7 +398,7 @@ refine_occupancy                         1  refine_occupancy:refine:1           
 refln                                    1  refln:diffrn_radiation_wavelength:1                                       . .
 refln                                    2  refln:exptl_crystal:2                                                     . .
 refln                                    3  refln:reflns_scale:3                                                      . .
-refln                                    4  refln:diffrn:4                                                            . . 
+refln                                    4  refln:diffrn:4                                                            . .
 #
 reflns                                   1  reflns:entry:1                                                            . .
 software                                 1  software:citation:1                                                       . .
@@ -464,15 +464,15 @@ struct_site_view                         1  struct_site_view:struct_site:1      
 symmetry                                 1  symmetry:entry:1                                                          . .
 #
 #
-em_sample_preparation                    4  em_sample_preparation:em_entity_assembly:4                                . . 
+em_sample_preparation                    4  em_sample_preparation:em_entity_assembly:4                                . .
 em_2d_crystal_entity                     1  em_2d_crystal_entity:em_entity_assembly:1                                 . .
 em_helical_entity                        1  em_helical_entity:em_entity_assembly:1                                    . .
 #
-pdbx_remediation_atom_site_mapping       1  pdbx_remediation_atom_site_mapping:atom_site:1                            . .  
-pdbx_remediation_atom_site_mapping       2  pdbx_remediation_atom_site_mapping:atom_site:2                            . .  
+pdbx_remediation_atom_site_mapping       1  pdbx_remediation_atom_site_mapping:atom_site:1                            . .
+pdbx_remediation_atom_site_mapping       2  pdbx_remediation_atom_site_mapping:atom_site:2                            . .
 #
 #
-pdbx_chem_comp_atom_feature              1  pdbx_chem_comp_atom_feature:chem_comp_atom:1                              . . 
+pdbx_chem_comp_atom_feature              1  pdbx_chem_comp_atom_feature:chem_comp_atom:1                              . .
 #
 #pdbx_struct_comp_nstd_link               1  pdbx_struct_comp_nstd_link:atom_site:1      . .
 #
@@ -485,56 +485,56 @@ pdbx_struct_group_component_range   3  pdbx_struct_group_component_range:atom_si
 
 ##
 ##
-#pdbx_entity_group_components   1  pdbx_entity_group_components:pdbx_entity_group_list:1    . .  
-#pdbx_entity_group_components   2  pdbx_entity_group_components:entity:2               . .  
-#pdbx_entity_group_components   3  pdbx_entity_group_components:entity_poly_seq:3      . .  
-#pdbx_entity_group_components   4  pdbx_entity_group_components:entity_poly_seq:4      . .  
+#pdbx_entity_group_components   1  pdbx_entity_group_components:pdbx_entity_group_list:1    . .
+#pdbx_entity_group_components   2  pdbx_entity_group_components:entity:2               . .
+#pdbx_entity_group_components   3  pdbx_entity_group_components:entity_poly_seq:3      . .
+#pdbx_entity_group_components   4  pdbx_entity_group_components:entity_poly_seq:4      . .
 
 #pdbx_entity_group_instances    1  pdbx_entity_group_instances:pdbx_struct_group_list:1   . .
 #pdbx_entity_group_instances    2  pdbx_entity_group_instances:pdbx_entity_group_list:1   . .
 ##
 ##           ------ PRD V5 items -------
 ##
-pdbx_prd_audit                             1  pdbx_prd_audit:pdbx_reference_molecule:1                  . . 
-pdbx_family_prd_audit                      1  pdbx_family_prd_audit:pdbx_reference_molecule_family:1                  . . 
-pdbx_reference_molecule_list               1  pdbx_reference_molecule_list:pdbx_reference_molecule_family:1                  . . 
-pdbx_reference_molecule_annotation         1  pdbx_reference_molecule_annotation:pdbx_reference_molecule_list:1                  . . 
-pdbx_reference_molecule_details            1  pdbx_reference_molecule_details:pdbx_reference_molecule_list:1                    . . 
-pdbx_reference_molecule_synonyms           1  pdbx_reference_molecule_synonyms:pdbx_reference_molecule_list:1                    . . 
+pdbx_prd_audit                             1  pdbx_prd_audit:pdbx_reference_molecule:1                  . .
+pdbx_family_prd_audit                      1  pdbx_family_prd_audit:pdbx_reference_molecule_family:1                  . .
+pdbx_reference_molecule_list               1  pdbx_reference_molecule_list:pdbx_reference_molecule_family:1                  . .
+pdbx_reference_molecule_annotation         1  pdbx_reference_molecule_annotation:pdbx_reference_molecule_list:1                  . .
+pdbx_reference_molecule_details            1  pdbx_reference_molecule_details:pdbx_reference_molecule_list:1                    . .
+pdbx_reference_molecule_synonyms           1  pdbx_reference_molecule_synonyms:pdbx_reference_molecule_list:1                    . .
 
-pdbx_reference_molecule_features            1  pdbx_reference_molecule_features:pdbx_reference_molecule_list:1                     . . 
-#pdbx_reference_molecule_features            2  pdbx_reference_molecule_features:citation:2                                  . . 
-pdbx_reference_molecule_related_structures 1  pdbx_reference_molecule_related_structures:pdbx_reference_molecule_list:1          . . 
+pdbx_reference_molecule_features            1  pdbx_reference_molecule_features:pdbx_reference_molecule_list:1                     . .
+#pdbx_reference_molecule_features            2  pdbx_reference_molecule_features:citation:2                                  . .
+pdbx_reference_molecule_related_structures 1  pdbx_reference_molecule_related_structures:pdbx_reference_molecule_list:1          . .
 pdbx_reference_molecule_related_structures 2  pdbx_reference_molecule_related_structures:citation:2                       . .
-#pdbx_reference_molecule_instances          1  pdbx_reference_molecule_instances:pdbx_reference_molecule_list:1                   . .  
+#pdbx_reference_molecule_instances          1  pdbx_reference_molecule_instances:pdbx_reference_molecule_list:1                   . .
 
-#pdbx_reference_entity_group              1  pdbx_reference_entity_group:pdbx_reference_molecule:1                   . .  
-#pdbx_reference_entity_group_components   1  pdbx_reference_entity_group_components:pdbx_reference_molecule:1        . .  
-#pdbx_reference_entity_group_components   2  pdbx_reference_entity_group_components:pdbx_reference_entity_group:2  . .  
-#pdbx_reference_entity_grouping           1  pdbx_reference_entity_grouping:pdbx_reference_entity:1                . .  
+#pdbx_reference_entity_group              1  pdbx_reference_entity_group:pdbx_reference_molecule:1                   . .
+#pdbx_reference_entity_group_components   1  pdbx_reference_entity_group_components:pdbx_reference_molecule:1        . .
+#pdbx_reference_entity_group_components   2  pdbx_reference_entity_group_components:pdbx_reference_entity_group:2  . .
+#pdbx_reference_entity_grouping           1  pdbx_reference_entity_grouping:pdbx_reference_entity:1                . .
 #
-pdbx_reference_entity_subcomponents      1  pdbx_reference_entity_subcomponents:pdbx_reference_molecule:1                  . . 
-pdbx_reference_entity_poly               1  pdbx_reference_entity_poly:pdbx_reference_entity_list:1                       . . 
-pdbx_reference_entity_poly_seq           1  pdbx_reference_entity_poly_seq:pdbx_reference_entity_list:1                   . . 
-pdbx_reference_entity_src_nat            1  pdbx_reference_entity_src_nat:pdbx_reference_entity_list:1                    . . 
-pdbx_reference_entity_sequence           1  pdbx_reference_entity_sequence:pdbx_reference_entity_list:1                   . .  
+pdbx_reference_entity_subcomponents      1  pdbx_reference_entity_subcomponents:pdbx_reference_molecule:1                  . .
+pdbx_reference_entity_poly               1  pdbx_reference_entity_poly:pdbx_reference_entity_list:1                       . .
+pdbx_reference_entity_poly_seq           1  pdbx_reference_entity_poly_seq:pdbx_reference_entity_list:1                   . .
+pdbx_reference_entity_src_nat            1  pdbx_reference_entity_src_nat:pdbx_reference_entity_list:1                    . .
+pdbx_reference_entity_sequence           1  pdbx_reference_entity_sequence:pdbx_reference_entity_list:1                   . .
 
-pdbx_reference_entity_nonpoly            1  pdbx_reference_entity_nonpoly:pdbx_reference_entity_list:1           . .  
-pdbx_reference_entity_list               1  pdbx_reference_entity_list:pdbx_reference_molecule:1                   . .  
+pdbx_reference_entity_nonpoly            1  pdbx_reference_entity_nonpoly:pdbx_reference_entity_list:1           . .
+pdbx_reference_entity_list               1  pdbx_reference_entity_list:pdbx_reference_molecule:1                   . .
 #
-pdbx_reference_entity_link               1  pdbx_reference_entity_link:pdbx_reference_entity_list:1              . .  
+pdbx_reference_entity_link               1  pdbx_reference_entity_link:pdbx_reference_entity_list:1              . .
 pdbx_reference_entity_link               2  pdbx_reference_entity_link:pdbx_reference_entity_list:2              . .
 pdbx_reference_entity_link               3  pdbx_reference_entity_link:pdbx_reference_entity_list:3              . .
 pdbx_reference_entity_link               4  pdbx_reference_entity_link:pdbx_reference_entity_poly_seq:4          . .
 pdbx_reference_entity_link               5  pdbx_reference_entity_link:pdbx_reference_entity_poly_seq:5          . .
 
 #
-pdbx_reference_entity_poly_link          1  pdbx_reference_entity_poly_link:pdbx_reference_entity_poly:1              . .  
+pdbx_reference_entity_poly_link          1  pdbx_reference_entity_poly_link:pdbx_reference_entity_poly:1              . .
 pdbx_reference_entity_poly_link          2  pdbx_reference_entity_poly_link:pdbx_reference_entity_poly_seq:2         . .
 pdbx_reference_entity_poly_link          3  pdbx_reference_entity_poly_link:pdbx_reference_entity_poly_seq:3          . .
 pdbx_reference_entity_poly_link          4  pdbx_reference_entity_poly_link:pdbx_reference_entity_list:4              . .
 
-pdbx_molecule                            1  pdbx_molecule:struct_asym:1                                  . . 
+pdbx_molecule                            1  pdbx_molecule:struct_asym:1                                  . .
 #
 pdbx_distant_solvent_atoms             1  pdbx_distant_solvent_atoms:atom_site:1                                  . .
 pdbx_distant_solvent_atoms             2  pdbx_distant_solvent_atoms:chem_comp:2                                  . .
@@ -547,8 +547,8 @@ pdbx_chem_comp_subcomponent_struct_conn  2 pdbx_chem_comp_subcomponent_struct_co
 pdbx_chem_comp_subcomponent_entity_list  1 pdbx_chem_comp_subcomponent_entity_list:chem_comp:1                    . .
 
 pdbx_struct_special_symmetry             1 pdbx_struct_special_symmetry:chem_comp:1        .  .
-pdbx_struct_special_symmetry             1 pdbx_struct_special_symmetry:struct_asym:2      .  .
-pdbx_struct_special_symmetry             1 pdbx_struct_special_symmetry:atom_site:3        .  .
+pdbx_struct_special_symmetry             2 pdbx_struct_special_symmetry:struct_asym:2      .  .
+pdbx_struct_special_symmetry             3 pdbx_struct_special_symmetry:atom_site:3        .  .
 #
 pdbx_nmr_chem_shift_experiment         1  pdbx_nmr_chem_shift_experiment:pdbx_nmr_assigned_chem_shift_list:1         . .
 pdbx_nmr_chem_shift_software           1  pdbx_nmr_chem_shift_software:pdbx_nmr_assigned_chem_shift_list:1           . .
@@ -1626,7 +1626,7 @@ pdbx_struct_group_component_range    3 '_pdbx_struct_group_component_range.end_l
 
 #
 #pdbx_entity_group_components   1  '_pdbx_entity_group_components.entity_group_id' '_pdbx_entity_group_list.entity_group_id'   pdbx_entity_group_list
-#pdbx_entity_group_components   2  '_pdbx_entity_group_components.entity_id'       '_entity.id'                                entity 
+#pdbx_entity_group_components   2  '_pdbx_entity_group_components.entity_id'       '_entity.id'                                entity
 #pdbx_entity_group_components   3  '_pdbx_entity_group_components.beg_seq_id'      '_entity_poly_seq.num'                      entity_poly_seq
 #pdbx_entity_group_components   4  '_pdbx_entity_group_components.end_seq_id'      '_entity_poly_seq.num'                      entity_poly_seq
 
@@ -1635,31 +1635,31 @@ pdbx_struct_group_component_range    3 '_pdbx_struct_group_component_range.end_l
 #
 
 #
-#  -- PRD V5b relationships --- 
-pdbx_family_prd_audit                      1  '_pdbx_family_prd_audit.family_prd_id'                '_pdbx_reference_molecule_family.family_prd_id'   pdbx_reference_molecule_family 
+#  -- PRD V5b relationships ---
+pdbx_family_prd_audit                      1  '_pdbx_family_prd_audit.family_prd_id'                '_pdbx_reference_molecule_family.family_prd_id'   pdbx_reference_molecule_family
 pdbx_prd_audit                             1  '_pdbx_prd_audit.prd_id'                              '_pdbx_reference_molecule.prd_id'                 pdbx_reference_molecule
-pdbx_reference_molecule_list               1  '_pdbx_reference_molecule_list.family_prd_id'         '_pdbx_reference_molecule_family.family_prd_id'   pdbx_reference_molecule_family 
+pdbx_reference_molecule_list               1  '_pdbx_reference_molecule_list.family_prd_id'         '_pdbx_reference_molecule_family.family_prd_id'   pdbx_reference_molecule_family
 #
 pdbx_reference_molecule_annotation         1  '_pdbx_reference_molecule_annotation.family_prd_id'    '_pdbx_reference_molecule_list.family_prd_id'   pdbx_reference_molecule_list
 pdbx_reference_molecule_annotation         1  '_pdbx_reference_molecule_annotation.prd_id'           '_pdbx_reference_molecule_list.prd_id'          pdbx_reference_molecule_list
-pdbx_reference_molecule_details            1  '_pdbx_reference_molecule_details.family_prd_id'       '_pdbx_reference_molecule_list.family_prd_id'   pdbx_reference_molecule_list 
+pdbx_reference_molecule_details            1  '_pdbx_reference_molecule_details.family_prd_id'       '_pdbx_reference_molecule_list.family_prd_id'   pdbx_reference_molecule_list
 pdbx_reference_molecule_details            1  '_pdbx_reference_molecule_details.prd_id'              '_pdbx_reference_molecule_list.prd_id'          pdbx_reference_molecule_list
 pdbx_reference_molecule_synonyms           1  '_pdbx_reference_molecule_synonyms.family_prd_id'      '_pdbx_reference_molecule_list.family_prd_id'   pdbx_reference_molecule_list
-pdbx_reference_molecule_synonyms           1  '_pdbx_reference_molecule_synonyms.prd_id'             '_pdbx_reference_molecule_list.prd_id'          pdbx_reference_molecule_list 
+pdbx_reference_molecule_synonyms           1  '_pdbx_reference_molecule_synonyms.prd_id'             '_pdbx_reference_molecule_list.prd_id'          pdbx_reference_molecule_list
 
 pdbx_reference_molecule_features            1  '_pdbx_reference_molecule_features.family_prd_id'       '_pdbx_reference_molecule_list.family_prd_id'   pdbx_reference_molecule_list
 pdbx_reference_molecule_features            1  '_pdbx_reference_molecule_features.prd_id'              '_pdbx_reference_molecule_list.prd_id'          pdbx_reference_molecule_list
 #pdbx_reference_molecule_features            2  '_pdbx_reference_molecule_features.citation_id'         '_citation.id'                           citation
-#pdbx_reference_molecule_instances          1  '_pdbx_reference_molecule_instances.family_prd_id'     '_pdbx_reference_molecule_list.family_prd_id'   pdbx_reference_molecule_list 
+#pdbx_reference_molecule_instances          1  '_pdbx_reference_molecule_instances.family_prd_id'     '_pdbx_reference_molecule_list.family_prd_id'   pdbx_reference_molecule_list
 #pdbx_reference_molecule_instances          1  '_pdbx_reference_molecule_instances.prd_id'            '_pdbx_reference_molecule_list.prd_id'          pdbx_reference_molecule_list
 
-pdbx_reference_molecule_related_structures 1  '_pdbx_reference_molecule_related_structures.family_prd_id'  '_pdbx_reference_molecule_list.family_prd_id'   pdbx_reference_molecule_list 
+pdbx_reference_molecule_related_structures 1  '_pdbx_reference_molecule_related_structures.family_prd_id'  '_pdbx_reference_molecule_list.family_prd_id'   pdbx_reference_molecule_list
 pdbx_reference_molecule_related_structures 2  '_pdbx_reference_molecule_related_structures.citation_id'    '_citation.id'                           citation
 ##
 pdbx_reference_entity_subcomponents        1  '_pdbx_reference_entity_subcomponents.prd_id'          '_pdbx_reference_molecule.prd_id'          pdbx_reference_molecule
 ##
-#pdbx_reference_entity_list               1  '_pdbx_reference_entity_list.family_prd_id'          '_pdbx_reference_entity.family_prd_id'   pdbx_reference_entity 
-pdbx_reference_entity_list               1  '_pdbx_reference_entity_list.prd_id'                 '_pdbx_reference_molecule.prd_id'          pdbx_reference_molecule 
+#pdbx_reference_entity_list               1  '_pdbx_reference_entity_list.family_prd_id'          '_pdbx_reference_entity.family_prd_id'   pdbx_reference_entity
+pdbx_reference_entity_list               1  '_pdbx_reference_entity_list.prd_id'                 '_pdbx_reference_molecule.prd_id'          pdbx_reference_molecule
 
 #pdbx_reference_entity_nonpoly            1  '_pdbx_reference_entity_nonpoly.family_prd_id'       '_pdbx_reference_entity_list.family_prd_id'   pdbx_reference_entity_list
 pdbx_reference_entity_nonpoly            1  '_pdbx_reference_entity_nonpoly.prd_id'              '_pdbx_reference_entity_list.prd_id'          pdbx_reference_entity_list
@@ -1673,16 +1673,16 @@ pdbx_reference_entity_poly               1  '_pdbx_reference_entity_poly.ref_ent
 pdbx_reference_entity_poly_seq           1  '_pdbx_reference_entity_poly_seq.prd_id'             '_pdbx_reference_entity_poly.prd_id'          pdbx_reference_entity_poly
 pdbx_reference_entity_poly_seq           1  '_pdbx_reference_entity_poly_seq.ref_entity_id'      '_pdbx_reference_entity_poly.ref_entity_id'   pdbx_reference_entity_poly
 
-#pdbx_reference_entity_src_nat            1  '_pdbx_reference_entity_src_nat.family_prd_id'       '_pdbx_reference_entity_list.family_prd_id'   pdbx_reference_entity_list 
+#pdbx_reference_entity_src_nat            1  '_pdbx_reference_entity_src_nat.family_prd_id'       '_pdbx_reference_entity_list.family_prd_id'   pdbx_reference_entity_list
 pdbx_reference_entity_src_nat            1  '_pdbx_reference_entity_src_nat.prd_id'              '_pdbx_reference_entity_list.prd_id'          pdbx_reference_entity_list
 pdbx_reference_entity_src_nat            1  '_pdbx_reference_entity_src_nat.ref_entity_id'       '_pdbx_reference_entity_list.ref_entity_id'   pdbx_reference_entity_list
 
-#pdbx_reference_entity_sequence           1  '_pdbx_reference_entity_sequence.family_prd_id'      '_pdbx_reference_entity_list.family_prd_id'   pdbx_reference_entity_list 
+#pdbx_reference_entity_sequence           1  '_pdbx_reference_entity_sequence.family_prd_id'      '_pdbx_reference_entity_list.family_prd_id'   pdbx_reference_entity_list
 pdbx_reference_entity_sequence           1  '_pdbx_reference_entity_sequence.prd_id'             '_pdbx_reference_entity_list.prd_id'          pdbx_reference_entity_list
 pdbx_reference_entity_sequence           1  '_pdbx_reference_entity_sequence.ref_entity_id'      '_pdbx_reference_entity_list.ref_entity_id'   pdbx_reference_entity_list
 #
 #
-#pdbx_reference_entity_link               1  '_pdbx_reference_entity_link.family_prd_id'          '_pdbx_reference_entity_list.family_prd_id'   pdbx_reference_entity_list 
+#pdbx_reference_entity_link               1  '_pdbx_reference_entity_link.family_prd_id'          '_pdbx_reference_entity_list.family_prd_id'   pdbx_reference_entity_list
 pdbx_reference_entity_link               1  '_pdbx_reference_entity_link.prd_id'                 '_pdbx_reference_entity_list.prd_id'          pdbx_reference_entity_list
 
 pdbx_reference_entity_link               2  '_pdbx_reference_entity_link.ref_entity_id_1'    '_pdbx_reference_entity_list.ref_entity_id'   pdbx_reference_entity_list
@@ -1695,13 +1695,13 @@ pdbx_reference_entity_link               4  '_pdbx_reference_entity_link.entity_
 pdbx_reference_entity_link               5  '_pdbx_reference_entity_link.entity_seq_num_2'    '_pdbx_reference_entity_poly_seq.num'   pdbx_reference_entity_poly_seq
 
 #
-#pdbx_reference_entity_group              1  '_pdbx_reference_entity_group.prd_id'                    '_pdbx_reference_entity.prd_id'          pdbx_reference_entity 
-#pdbx_reference_entity_group              1  '_pdbx_reference_entity_group.family_prd_id'             '_pdbx_reference_entity.family_prd_id'   pdbx_reference_entity 
-#pdbx_reference_entity_group_components   1  '_pdbx_reference_entity_group_components.prd_id'         '_pdbx_reference_entity.prd_id'          pdbx_reference_entity 
-#pdbx_reference_entity_group_components   1  '_pdbx_reference_entity_group_components.family_prd_id'  '_pdbx_reference_entity.family_prd_id'   pdbx_reference_entity 
+#pdbx_reference_entity_group              1  '_pdbx_reference_entity_group.prd_id'                    '_pdbx_reference_entity.prd_id'          pdbx_reference_entity
+#pdbx_reference_entity_group              1  '_pdbx_reference_entity_group.family_prd_id'             '_pdbx_reference_entity.family_prd_id'   pdbx_reference_entity
+#pdbx_reference_entity_group_components   1  '_pdbx_reference_entity_group_components.prd_id'         '_pdbx_reference_entity.prd_id'          pdbx_reference_entity
+#pdbx_reference_entity_group_components   1  '_pdbx_reference_entity_group_components.family_prd_id'  '_pdbx_reference_entity.family_prd_id'   pdbx_reference_entity
 #pdbx_reference_entity_group_components   2  '_pdbx_reference_entity_group_components.group_id'       '_pdbx_reference_entity_group.id'        pdbx_reference_entity_group
-#pdbx_reference_entity_grouping           1  '_pdbx_reference_entity_grouping.prd_id'                 '_pdbx_reference_entity.prd_id'          pdbx_reference_entity 
-#pdbx_reference_entity_grouping           1  '_pdbx_reference_entity_grouping.family_prd_id'          '_pdbx_reference_entity.family_prd_id'   pdbx_reference_entity 
+#pdbx_reference_entity_grouping           1  '_pdbx_reference_entity_grouping.prd_id'                 '_pdbx_reference_entity.prd_id'          pdbx_reference_entity
+#pdbx_reference_entity_grouping           1  '_pdbx_reference_entity_grouping.family_prd_id'          '_pdbx_reference_entity.family_prd_id'   pdbx_reference_entity
 #
 #
 pdbx_reference_entity_poly_link     1  '_pdbx_reference_entity_poly_link.prd_id'             '_pdbx_reference_entity_poly.prd_id'          pdbx_reference_entity_poly
