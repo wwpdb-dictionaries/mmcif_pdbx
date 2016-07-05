@@ -510,6 +510,7 @@ chemical shift reference for the defined observed nuclei.
    'methylene protons'    ?
    'nitrogen'             ?
    'protons'              ?
+   'phosphorous'          ?
 
    _item_examples.case             'methyl protons'
 
@@ -1507,6 +1508,7 @@ Units for the value of the sample condition pH.
 
     pH              ?
     pD              ?
+    pH*             ?
    'Not defined'    ?
 
     _item_examples.case            'pH'

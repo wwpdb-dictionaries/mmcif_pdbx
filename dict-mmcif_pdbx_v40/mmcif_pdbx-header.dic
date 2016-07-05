@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.065
+    _dictionary.version         4.066
 #
      loop_
     _dictionary_history.version
@@ -2145,6 +2145,18 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
        _pdbx_nmr_chem_shift_ref
        _pdbx_nmr_chem_shift_reference
        _pdbx_reference_entity_poly_link
+;
+4.066  2016-07-05
+;
+    Changes (ep):
+    + Change description of reflns.pdbx_CC_half and reflns_shell.pdbx_CC_half
+      to refer to a decimal value.
+    + Include deposit-group-extension with export of _pdbx_deposit_group.group_id
+    + Update enumerations for _pdbx_nmr_chem_shift_ref.atom_group and 
+      _pdbx_nmr_exptl_sample_conditions.pH_units
+    + _pdbx_item_linked_group and _pdbx_item_linked_group_list updates for 
+      pdbx_chem_comp_model_*, pdbx_struct_special_symmetry and 
+      pdbx_deposit_group_index
 ;
 ### EOF mmcif_pdbx-header.dic
 

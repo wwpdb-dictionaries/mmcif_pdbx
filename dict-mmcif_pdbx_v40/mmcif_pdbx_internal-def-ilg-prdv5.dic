@@ -180,6 +180,12 @@ pdbx_chem_comp_descriptor                1  pdbx_chem_comp_descriptor:chem_comp:
 pdbx_chem_comp_feature                   1  pdbx_chem_comp_feature:chem_comp:1                                        . .
 pdbx_chem_comp_identifier                1  pdbx_chem_comp_identifier:chem_comp:1                                     . .
 pdbx_chem_comp_import                    1  pdbx_chem_comp_import:chem_comp:1                                         . .
+pdbx_chem_comp_model_atom                1  pdbx_chem_comp_model_atom:pdbx_chem_comp_model:1                          . .
+pdbx_chem_comp_model_audit               1  pdbx_chem_comp_model_audit:pdbx_chem_comp_model_atom:1                    . .
+pdbx_chem_comp_model_bond                1  pdbx_chem_comp_model_bond:pdbx_chem_comp_model_atom:1                     . .
+pdbx_chem_comp_model_descriptor          1  pdbx_chem_comp_model_descriptor:pdbx_chem_comp_model:1                    . .
+pdbx_chem_comp_model_feature             1  pdbx_chem_comp_model_feature:pdbx_chem_comp_model:1                       . .
+pdbx_chem_comp_model_reference           1  pdbx_chem_comp_model_reference:pdbx_chem_comp_model:1                     . .
 pdbx_construct                           1  pdbx_construct:entity:1                                                   . .
 pdbx_construct                           2  pdbx_construct:entry:2                                                    . .
 pdbx_construct                           3  pdbx_construct:pdbx_robot_system:3                                        . .
@@ -189,6 +195,7 @@ pdbx_coordinate_model                    1  pdbx_coordinate_model:struct_asym:1 
 pdbx_database_message                    1  pdbx_database_message:entry:1                                             . .
 pdbx_database_proc                       1  pdbx_database_proc:entry:1                                                . .
 pdbx_database_status                     1  pdbx_database_status:entry:1                                              . .
+pdbx_deposit_group_index                 1  pdbx_deposit_group_index:pdbx_deposit_group:1                             . .                              
 pdbx_diffrn_reflns_shell                 1  pdbx_diffrn_reflns_shell:diffrn:1                                         . .
 pdbx_domain_range                        1  pdbx_domain_range:atom_site:1                                             . .
 pdbx_domain_range                        2  pdbx_domain_range:atom_site:2                                             . .
@@ -942,6 +949,14 @@ pdbx_chem_comp_descriptor                1  '_pdbx_chem_comp_descriptor.comp_id'
 pdbx_chem_comp_feature                   1  '_pdbx_chem_comp_feature.comp_id'                     '_chem_comp.id'                             chem_comp
 pdbx_chem_comp_identifier                1  '_pdbx_chem_comp_identifier.comp_id'                  '_chem_comp.id'                             chem_comp
 pdbx_chem_comp_import                    1  '_pdbx_chem_comp_import.comp_id'                      '_chem_comp.id'                             chem_comp
+pdbx_chem_comp_model_atom                1  '_pdbx_chem_comp_model_atom.model_id'                 '_pdbx_chem_comp_model.id'                  pdbx_chem_comp_model
+pdbx_chem_comp_model_audit               1  '_pdbx_chem_comp_model_audit.model_id'                '_pdbx_chem_comp_model_atom.model_id'       pdbx_chem_comp_model_atom
+pdbx_chem_comp_model_bond                1  '_pdbx_chem_comp_model_bond.atom_id_1'                '_pdbx_chem_comp_model_atom.atom_id'        pdbx_chem_comp_model_atom
+pdbx_chem_comp_model_bond                1  '_pdbx_chem_comp_model_bond.atom_id_2'                '_pdbx_chem_comp_model_atom.atom_id'        pdbx_chem_comp_model_atom
+pdbx_chem_comp_model_bond                1  '_pdbx_chem_comp_model_bond.model_id'                 '_pdbx_chem_comp_model_atom.model_id'       pdbx_chem_comp_model_atom
+pdbx_chem_comp_model_descriptor          1  '_pdbx_chem_comp_model_descriptor.model_id'           '_pdbx_chem_comp_model.id'                  pdbx_chem_comp_model
+pdbx_chem_comp_model_feature             1  '_pdbx_chem_comp_model_feature.model_id'              '_pdbx_chem_comp_model.id'                  pdbx_chem_comp_model
+pdbx_chem_comp_model_reference           1  '_pdbx_chem_comp_model_reference.model_id'            '_pdbx_chem_comp_model.id'                  pdbx_chem_comp_model
 pdbx_construct                           1  '_pdbx_construct.entity_id'                           '_entity.id'                                entity
 pdbx_construct                           2  '_pdbx_construct.entry_id'                            '_entry.id'                                 entry
 pdbx_construct                           3  '_pdbx_construct.robot_id'                            '_pdbx_robot_system.id'                     pdbx_robot_system
@@ -951,6 +966,7 @@ pdbx_coordinate_model                    1  '_pdbx_coordinate_model.asym_id'    
 pdbx_database_message                    1  '_pdbx_database_message.entry_id'                     '_entry.id'                                 entry
 pdbx_database_proc                       1  '_pdbx_database_proc.entry_id'                        '_entry.id'                                 entry
 pdbx_database_status                     1  '_pdbx_database_status.entry_id'                      '_entry.id'                                 entry
+pdbx_deposit_group_index                 1  '_pdbx_deposit_group_index.group_id'                  '_pdbx_deposit_group.group_id'              pdbx_deposit_group
 pdbx_diffrn_reflns_shell                 1  '_pdbx_diffrn_reflns_shell.diffrn_id'                 '_diffrn.id'                                diffrn
 pdbx_domain_range                        1  '_pdbx_domain_range.beg_label_alt_id'                 '_atom_site.label_alt_id'                   atom_site
 pdbx_domain_range                        1  '_pdbx_domain_range.beg_label_asym_id'                '_atom_site.label_asym_id'                  atom_site

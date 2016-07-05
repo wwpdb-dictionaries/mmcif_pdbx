@@ -22,8 +22,9 @@ save__refln.pdbx_r_free_flag
 
 save__reflns.pdbx_CC_half
     _item_description.description
-;             The Pearson's correlation coefficient expressed as a percentage between the average 
-              intensities from randomly selected half-datasets.
+;             The Pearson's correlation coefficient expressed as a decimal value
+              between the average intensities from randomly selected 
+              half-datasets.
 
 	      Ref: Karplus & Diederichs (2012), Science 336, 1030-33
 
@@ -54,8 +55,9 @@ save__reflns.pdbx_R_split
 
 save__reflns_shell.pdbx_CC_half
     _item_description.description
-;             The Pearson's correlation coefficient expressed as a percentage between the average 
-              intensities from randomly selected half-datasets within the resolution shell.
+;             The Pearson's correlation coefficient expressed as a decimal value
+              between the average intensities from randomly selected
+              half-datasets within the resolution shell.
 
 	      Ref: Karplus & Diederichs (2012), Science 336, 1030-33
 
