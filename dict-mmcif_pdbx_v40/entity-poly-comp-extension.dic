@@ -1521,16 +1521,16 @@ save_pdbx_reference_linked_entity_link
 ;
 #
 loop_
-_pdbx_reference_linked_entity_entity_link.linked_entity_id
-_pdbx_reference_linked_entity_entity_link.link_id
-_pdbx_reference_linked_entity_entity_link.to_comp_id
-_pdbx_reference_linked_entity_entity_link.to_atom__id
-_pdbx_reference_linked_entity_entity_link.from_list_id
-_pdbx_reference_linked_entity_entity_link.from_comp_id
-_pdbx_reference_linked_entity_entity_link.from_atom_id
-_pdbx_reference_linked_entity_entity_link.from_leaving_atom
-_pdbx_reference_linked_entity_entity_link.from_atom_stereo_config
-_pdbx_reference_linked_entity_entity_link.value_order
+_pdbx_reference_linked_entity_link.linked_entity_id
+_pdbx_reference_linked_entity_link.link_id
+_pdbx_reference_linked_entity_link.to_comp_id
+_pdbx_reference_linked_entity_link.to_atom_id
+_pdbx_reference_linked_entity_link.from_list_id
+_pdbx_reference_linked_entity_link.from_comp_id
+_pdbx_reference_linked_entity_link.from_atom_id
+_pdbx_reference_linked_entity_link.from_leaving_atom_id
+_pdbx_reference_linked_entity_link.from_atom_stereo_config
+_pdbx_reference_linked_entity_link.value_order
  0 1  ASN  ND2    1 NAG C1 O1 R sing 
  1 1  ASN  ND2    1 NAG C1 O1 R sing 
  2 1  ASN  ND2    1 NAG C1 O1 R sing 

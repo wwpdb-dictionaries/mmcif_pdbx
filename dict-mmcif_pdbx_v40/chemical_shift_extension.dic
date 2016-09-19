@@ -510,7 +510,7 @@ chemical shift reference for the defined observed nuclei.
    'methylene protons'    ?
    'nitrogen'             ?
    'protons'              ?
-   'phosphorous'          ?
+   'phosphorus'           ?
 
    _item_examples.case             'methyl protons'
 
@@ -756,6 +756,7 @@ as a chemical shift reference.
    'DMSO-d6'                           'H methyl deuterons'
    'methanol'                          'H methyl protons'
    'TMS'                               'H methyl protons'
+   'methionine'                        'H methyl protons'
    'acetate'                           'C methyl carbons'
    'dioxane'                           'C methylene carbons'
    'ammonium chloride'                 'N ammonium nitrogen'
@@ -777,6 +778,7 @@ as a chemical shift reference.
    'phosphoric acid (85%)'             'P phosphate'
    'TMP'                               'P phosphate'
    'cadmium perchlorate'               'Cd cadmium'
+   'Deuterium Oxide'                   'D deuterium'
 
    _item_examples.case                  'DSS'
 

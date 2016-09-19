@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.066
+    _dictionary.version         4.067
 #
      loop_
     _dictionary_history.version
@@ -2157,6 +2157,12 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + _pdbx_item_linked_group and _pdbx_item_linked_group_list updates for 
       pdbx_chem_comp_model_*, pdbx_struct_special_symmetry and 
       pdbx_deposit_group_index
+;
+4.067  2016-09-19
+;
+    Changes (ep):
+    + Extend enumeration for pdbx_nmr_chem_shift_ref.mol_common_name to include
+      'methionine' and 'deuterium oxide'
 ;
 ### EOF mmcif_pdbx-header.dic
 
