@@ -33,6 +33,13 @@ save__reflns.pdbx_CC_half
     _item.category_id             reflns
     _item.mandatory_code          no
     _item_type.code               float
+    loop_
+    _item_range.name
+    _item_range.minimum
+    _item_range.maximum
+      "_reflns.pdbx_CC_half"  -1  -1  
+      "_reflns.pdbx_CC_half"  -1   1  
+      "_reflns.pdbx_CC_half"   1   1  
      save_
 
 
@@ -66,6 +73,13 @@ save__reflns_shell.pdbx_CC_half
     _item.category_id             reflns_shell
     _item.mandatory_code          no
     _item_type.code               float
+    loop_
+    _item_range.name
+    _item_range.minimum
+    _item_range.maximum
+      "_reflns_shell.pdbx_CC_half"  -1  -1  
+      "_reflns_shell.pdbx_CC_half"  -1   1  
+      "_reflns_shell.pdbx_CC_half"   1   1  
      save_
 
 
