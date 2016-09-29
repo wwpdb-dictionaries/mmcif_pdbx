@@ -1876,6 +1876,7 @@ save__em_imaging.microscope_model
   '_em_imaging.microscope_model'    "HITACHI HF2000"    .
   '_em_imaging.microscope_model'    "HITACHI HF3000"    .
   '_em_imaging.microscope_model'    "HITACHI H-9500SD"    .
+  '_em_imaging.microscope_model'    "JEOL 100B"     .
   '_em_imaging.microscope_model'    "JEOL 100CX"    .
   '_em_imaging.microscope_model'    "JEOL 1010"    .
   '_em_imaging.microscope_model'    "JEOL 1200"    .
@@ -1903,6 +1904,7 @@ save__em_imaging.microscope_model
   '_em_imaging.microscope_model'    "JEOL 3200FSC"    .
   '_em_imaging.microscope_model'    "JEOL 4000"    .
   '_em_imaging.microscope_model'    "JEOL 4000EX"    .
+  '_em_imaging.microscope_model'    "SIEMENS SULEIKA"    .
   '_em_imaging.microscope_model'    "ZEISS LEO912"    .
   '_em_imaging.microscope_model'    "ZEISS LIBRA120PLUS"    .
      save_
