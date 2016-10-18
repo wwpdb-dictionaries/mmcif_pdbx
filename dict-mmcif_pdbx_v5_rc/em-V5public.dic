@@ -30,6 +30,10 @@
 # commenting out for either V4 or V5 specific lines
 ##V4 : indicates lines for V4 archive support version 
 #V5 : indicates lines for V5 public release version          
+#
+# October 2016: data item _em_3d_reconstruction.refinement_type added
+# in response to community input. Updates to vitrification and microscope
+# model enumerations.
 ###########################################################################
 
 ##############START: UPDATED (V4) CATEGORIES################
@@ -1598,6 +1602,7 @@ save__em_vitrification.instrument
   '_em_vitrification.instrument'       "LEICA EM CPC"  .
   '_em_vitrification.instrument'       "LEICA KF80"  .
   '_em_vitrification.instrument'       "REICHERT-JUNG PLUNGER"  .
+  '_em_vitrification.instrument'       "ZEISS PLUNGE FREEZER CRYOBOX"  .
      save_
 
 save__em_vitrification.method
@@ -1993,12 +1998,9 @@ save__em_imaging.accelerating_voltage
 ;
     _item.name                  '_em_imaging.accelerating_voltage'
     _item.category_id             em_imaging
-    _item.mandatory_code          no  #V4
-#    _item.mandatory_code          yes  #V5
-#
-    _pdbx_item.name              '_em_imaging.accelerating_voltage'  #V4
-    _pdbx_item.mandatory_code     yes  #V4
-#
+    _item.mandatory_code          no  
+    _pdbx_item.name              '_em_imaging.accelerating_voltage'  
+    _pdbx_item.mandatory_code     yes 
     _item_type.code               int
     _item_units.code              kilovolts
     _item_examples.case           300
@@ -2776,15 +2778,13 @@ save_em_2d_projection_selection
      loop_
     _category_examples.detail
     _category_examples.case
-;  Example 1 - based on PDB entry 1DYL and laboratory records for the
-                structure corresponding to PDB entry 1DYL
+;  Example 1 
 ;
 ;
-   _em_2d_projection_selection.entry_id              1DYL
-   _em_2d_projection_selection.id                    1
-   _em_2d_projection_selection.num_particles       5267
-   _em_2d_projection_selection.software_name         1
-   _em_2d_projection_selection.method              'INTERACTIVE'
+   _em_2d_projection_selection.entry_id             1ABC
+   _em_2d_projection_selection.num_particles         52346
+   _em_2d_projection_selection.software_name        'EMAN2 BOXER' 
+   _em_2d_projection_selection.method              INTERACTIVE
    _em_2d_projection_selection.details             .
 ;
     _pdbx_category_context.type         WWPDB_LOCAL       #V5
@@ -3164,7 +3164,6 @@ save__em_3d_reconstruction.software
      save_
 
 save__em_3d_reconstruction.fsc_type
-#new V5
     _item_description.description
 ; type of FSC curve used to determine map resolution
 ;
@@ -3178,9 +3177,31 @@ save__em_3d_reconstruction.fsc_type
         'EVEN/ODD MAPS REFINED TOTALLY INDEPENDENT (GOLD STANDARD)'
         'EVEN/ODD MAPS REFINED AGAINST THE SAME MODEL (SEMI-INDEPENDENT)'
 
-#    _pdbx_item_context.type       WWPDB_LOCAL  #V4
-#    _pdbx_item_context.item_name '_em_3d_reconstruction.fsc_type'  #V4
+    _pdbx_item_context.type       WWPDB_LOCAL  
+    _pdbx_item_context.item_name '_em_3d_reconstruction.fsc_type'  
      save_
+
+save__em_3d_reconstruction.refinement_type
+    _item_description.description
+; type of refinement performed in order to determine map resolution
+;
+    _item.name                   '_em_3d_reconstruction.refinement_type'
+    _item.category_id            em_3d_reconstruction
+    _item.mandatory_code         no
+    _item_type.code              text
+    _item_examples.case          'HALF-MAPS REFINED INDEPENDENTLY'
+    loop_
+    _item_enumeration.value
+        'HALF-MAPS REFINED AGAINST SAME DATA'
+        'HALF-MAPS REFINED INDEPENDENTLY'
+        'HALF-MAPS REFINED WITH FREQUENCY RANGE OMITTED'
+        'HALF-MAPS REFINED INDEPENDENTLY WITH FREQUENCY RANGE OMITTED'
+         OTHER
+
+#    _pdbx_item_context.type       WWPDB_LOCAL  #V4
+#    _pdbx_item_context.item_name '_em_3d_reconstruction.refinement_type'  #V4
+     save_
+
 
 save__em_3d_reconstruction.image_processing_id
 #new V5
@@ -7217,6 +7238,7 @@ save__em_image_recording.avg_electron_dose_per_image
 ;
     _item.name                  '_em_image_recording.avg_electron_dose_per_image'
     _item.category_id             em_image_recording
+    _pdbx_item.name             '_em_image_recording.avg_electron_dose_per_image'
     _pdbx_item.mandatory_code     yes
     _item.mandatory_code          no
     _item_type.code               float
@@ -7262,16 +7284,14 @@ save__em_image_recording.film_or_detector_model
 ;
     _item.name                   '_em_image_recording.film_or_detector_model'
     _item.category_id              em_image_recording
-    _pdbx_item.mandatory_code      yes
-    _item.mandatory_code           no
+    _pdbx_item.name              '_em_image_recording.film_or_detector_model'
+    _pdbx_item.mandatory_code     yes
+    _item.mandatory_code           no  
     _item_type.code                line
      loop_
-#    _pdbx_item_enumeration.name  #V4
-#    _pdbx_item_enumeration.value  #V4
-#    _pdbx_item_enumeration.detail  #V4
-    _pdbx_item_enumeration.name  #V5
-    _pdbx_item_enumeration.value  #V5
-    _pdbx_item_enumeration.detail  #V5
+    _pdbx_item_enumeration.name  
+    _pdbx_item_enumeration.value 
+    _pdbx_item_enumeration.detail 
   '_em_image_recording.film_or_detector_model'    "AGFA SCIENTA FILM"   .
   '_em_image_recording.film_or_detector_model'    "KODAK 4489 FILM"   .
   '_em_image_recording.film_or_detector_model'    "KODAK SO-163 FILM"   .
@@ -8280,8 +8300,9 @@ save__em_ctf_correction.type
 ;
     _item.name                  '_em_ctf_correction.type'
     _item.category_id           em_ctf_correction
-    _pdbx_item.mandatory_code   yes
     _item.mandatory_code        no
+    _pdbx_item.name            '_em_ctf_correction.type'
+    _pdbx_item.mandatory_code   yes
     _item_type.code             line
     loop_
     _pdbx_item_enumeration.name
