@@ -2230,7 +2230,7 @@ save__pdbx_nmr_representative.conformer_id
     _item.name                   '_pdbx_nmr_representative.conformer_id'
     _item.category_id              pdbx_nmr_representative
     _item.mandatory_code           no
-    _item_type.code                int
+    _item_type.code                line
      loop_
     _item_examples.case          
                             '15'  
@@ -2280,7 +2280,9 @@ Describe the method and details of the refinement of the deposited structure.
 ;
     _category.id                  pdbx_nmr_refine
     _category.mandatory_code      no
+    loop_
     _category_key.name          '_pdbx_nmr_refine.entry_id'
+                                '_pdbx_nmr_refine.software_ordinal'
      loop_
     _category_group.id           'inclusive_group'
                                  'nmr_group'            
@@ -2296,7 +2298,8 @@ Describe the method and details of the refinement of the deposited structure.
   loop_
   _pdbx_nmr_refine.entry_id
   _pdbx_nmr_refine.method	
-  1ABC 'torsion angle dynamics'
+  _pdbx_nmr_refine.software_ordinal 	
+  1ABC 'torsion angle dynamics' 1
 ;
      save_
 

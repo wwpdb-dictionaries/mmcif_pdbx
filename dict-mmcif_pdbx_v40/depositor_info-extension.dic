@@ -3658,7 +3658,7 @@ save_pdbx_data_processing_status
    _pdbx_data_processing_status.status
     'site'                'skip'
     'link'                'skip'
-    'secondary structure' 'skip'
+    'helix'               'skip'
     'solvent position'    'skip'
 
 ;
@@ -3679,7 +3679,8 @@ save__pdbx_data_processing_status.task_name
     _item_examples.case
     'site'
     'link'
-    'secondary structure'
+    'helix'
+    'sheet'
     'solvent position'
     save_
 
