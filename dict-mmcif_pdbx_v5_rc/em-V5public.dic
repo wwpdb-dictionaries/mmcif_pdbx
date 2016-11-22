@@ -3081,6 +3081,8 @@ save__em_3d_reconstruction.ctf_correction_method
     _item_examples.case
 ;    The volumes were CTF-corrected in defocus groups, with an average of approximately 999 individual images per group
 ;
+    _pdbx_item_context.type       WWPDB_LOCAL                       #V5
+    _pdbx_item_context.item_name '_em_3d_reconstruction.ctf_correction_method'    #V5
      save_
 
 save__em_3d_reconstruction.nominal_pixel_size
@@ -4747,7 +4749,7 @@ save__em_entity_assembly_molwt.units
 ;
     _item.name                   '_em_entity_assembly_molwt.units'
     _item.category_id            em_entity_assembly_molwt
-    _item.mandatory_code         yes
+    _item.mandatory_code         no
     _item_type.code              code
      loop_
     _item_enumeration.value
@@ -4761,7 +4763,7 @@ save__em_entity_assembly_molwt.value
 ;
     _item.name                   '_em_entity_assembly_molwt.value'
     _item.category_id            em_entity_assembly_molwt
-    _item.mandatory_code         yes
+    _item.mandatory_code         no
     _item_type.code              float
     _item_examples.case          0.53
     _item_range.minimum          0.0
