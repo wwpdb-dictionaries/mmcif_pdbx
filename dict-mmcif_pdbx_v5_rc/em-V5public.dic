@@ -112,6 +112,10 @@ save__em_assembly.name
     _item.category_id            em_assembly
     _item.mandatory_code         no
     _item_type.code              text
+    _pdbx_item_context.type       WWPDB_DEPRECATED                #V5
+    _pdbx_item_context.item_name '_em_assembly.name'              #V5
+    _item_related.related_name   '_em_entity_assembly.name'       #V5
+    _item_related.function_code  replacedby                       #V5
     _item_examples.case
        'MaB1 Fab Fragment bound to Human Rhinovirus'
       save_
@@ -135,6 +139,11 @@ save__em_assembly.aggregation_state
     PARTICLE
     TISSUE
     CELL
+    _pdbx_item_context.type       WWPDB_DEPRECATED                      #V5
+    _pdbx_item_context.item_name '_em_assembly.aggregation_state'       #V5
+    _item_related.related_name   '_em_experiment.aggregation_state'     #V5
+    _item_related.function_code  replacedby                             #V5
+
       save_
 
 save__em_assembly.composition
@@ -149,6 +158,11 @@ save__em_assembly.composition
     _item_examples.case
        "Protein/DNA complex"
         Virus
+    _pdbx_item_context.type       WWPDB_DEPRECATED                        #V5
+    _pdbx_item_context.item_name '_em_assembly.composition'               #V5
+    _item_related.related_name   '_em_entity_assembly.oligomeric_details' #V5
+    _item_related.function_code  replacedby                               #V5
+
       save_
 
 
@@ -173,6 +187,14 @@ save__em_assembly.mol_wt_exp
     _item.mandatory_code         no
     _item_type.code              float
     _item_units.code             megadaltons
+    _pdbx_item_context.type       WWPDB_DEPRECATED                       #V5
+    _pdbx_item_context.item_name '_em_assembly.mol_wt_exp'               #V5
+    loop_                                                                #V5
+    _item_related.related_name                                           #V5
+    _item_related.function_code                                          #V5
+                         '_em_entity_assembly_molwt.value'   replacedby  #V5
+                         '_em_entity_assembly_molwt.units'   replacedby  #V5
+                         '_em_entity_assembly_molwt.experimental_flag'   replacedby  #V5
     _item_examples.case          3.5
       save_
 
@@ -186,6 +208,14 @@ save__em_assembly.mol_wt_theo
     _item.mandatory_code         no
     _item_type.code              float
     _item_units.code             megadaltons
+    _pdbx_item_context.type       WWPDB_DEPRECATED                       #V5
+    _pdbx_item_context.item_name '_em_assembly.mol_wt_theo'              #V5
+    loop_                                                                #V5
+    _item_related.related_name                                           #V5
+    _item_related.function_code                                          #V5
+                         '_em_entity_assembly_molwt.value'   replacedby  #V5
+                         '_em_entity_assembly_molwt.units'   replacedby  #V5
+                         '_em_entity_assembly_molwt.experimental_flag'   replacedby  #V5
     _item_examples.case          3.5
       save_
 
@@ -198,6 +228,10 @@ save__em_assembly.mol_wt_method
     _item.category_id            em_assembly
     _item.mandatory_code         no
     _item_type.code              text
+    _pdbx_item_context.type       WWPDB_DEPRECATED                       #V5
+    _pdbx_item_context.item_name '_em_assembly.mol_wt_method'            #V5
+    _item_related.related_name   '_em_entity_assembly_molwt.method'      #V5
+    _item_related.function_code  replacedby                              #V5
       save_
 
 
@@ -209,6 +243,10 @@ save__em_assembly.details
     _item.category_id            em_assembly
     _item.mandatory_code         no
     _item_type.code              text
+    _pdbx_item_context.type       WWPDB_DEPRECATED               #V5
+    _pdbx_item_context.item_name '_em_assembly.details'          #V5
+    _item_related.related_name   '_em_entity_assembly.details'   #V5
+    _item_related.function_code  replacedby                      #V5
      loop_
     _item_examples.case
 ; The sample was monodisperse
@@ -778,8 +816,11 @@ save__em_virus_entity.virus_host_species
           'homo sapiens'
           'gallus gallus'
 
-    _pdbx_item_context.type       WWPDB_LOCAL                       #V5
+    _pdbx_item_context.type       WWPDB_DEPRECATED                        #V5
     _pdbx_item_context.item_name '_em_virus_entity.virus_host_species'    #V5
+    _item_related.related_name   '_em_virus_natural_host.organism'        #V5
+    _item_related.function_code  replacedby                               #V5
+
 
      save_
 
@@ -796,8 +837,10 @@ save__em_virus_entity.virus_host_growth_cell
            'HELA'
            'CHO'
 
-    _pdbx_item_context.type       WWPDB_LOCAL                       #V5
+    _pdbx_item_context.type       WWPDB_DEPRECATED                            #V5
     _pdbx_item_context.item_name '_em_virus_entity.virus_host_growth_cell'    #V5
+    _item_related.related_name   '_em_virus_natural_host.strain'              #V5
+    _item_related.function_code  replacedby                                   #V5
 
      save_
 
@@ -1007,6 +1050,11 @@ save__em_sample_preparation.ph
     _item.mandatory_code          no
     _item_type.code               float
     _item_examples.case          '5.5'
+    _pdbx_item_context.type       WWPDB_DEPRECATED                #V5
+    _pdbx_item_context.item_name '_em_sample_preparation.ph'      #V5
+    _item_related.related_name   '_em_buffer.pH'                  #V5
+    _item_related.function_code  replacedby                       #V5
+
      save_
 
 save__em_sample_preparation.buffer_id
@@ -1034,6 +1082,10 @@ save__em_sample_preparation.sample_concentration
     _item_type.code               float
     _item_units.code              mg_per_ml
     _item_examples.case          '1.35'
+    _pdbx_item_context.type       WWPDB_DEPRECATED                             #V5
+    _pdbx_item_context.item_name '_em_sample_preparation.sample_concentration' #V5
+    _item_related.related_name   '_em_specimen.concentration'                  #V5
+    _item_related.function_code  replacedby                                    #V5
      save_
 
 
@@ -1110,7 +1162,11 @@ save__em_sample_preparation.details
     4
 ;  embedded in vitreous ice.
 ;
-        save_
+    _pdbx_item_context.type       WWPDB_DEPRECATED                #V5
+    _pdbx_item_context.item_name '_em_sample_preparation.details' #V5
+    _item_related.related_name   '_em_specimen.details'           #V5
+    _item_related.function_code  replacedby                       #V5
+     save_
 
 
 #######################
@@ -1877,6 +1933,7 @@ save__em_imaging.microscope_model
   '_em_imaging.microscope_model'  "FEI/PHILIPS EM400"    .
   '_em_imaging.microscope_model'  "FEI/PHILIPS EM420"    .
   '_em_imaging.microscope_model'    "HITACHI EF2000"    .
+  '_em_imaging.microscope_model'    "HITACHI EF3000"    .
   '_em_imaging.microscope_model'    "HITACHI H7600"    .
   '_em_imaging.microscope_model'    "HITACHI HF2000"    .
   '_em_imaging.microscope_model'    "HITACHI HF3000"    .
@@ -2222,8 +2279,10 @@ save__em_imaging.electron_dose
     _item_type.code               float
     _item_units.code               electrons_angstrom_squared
     _item_examples.case           0.9
-    _pdbx_item_context.type       WWPDB_LOCAL                       #V5
-    _pdbx_item_context.item_name '_em_imaging.electron_dose'    #V5
+    _pdbx_item_context.type       WWPDB_DEPRECATED                        #V5
+    _pdbx_item_context.item_name '_em_imaging.electron_dose'              #V5
+    _item_related.related_name   '_em_image_recording.avg_electron_dose_per_image' #V5
+    _item_related.function_code  replacedby                               #V5
 
      save_
 
@@ -2237,8 +2296,11 @@ save__em_imaging.energy_filter
     _item.mandatory_code          no
     _item_type.code               line
     _item_examples.case          'FEI'
-    _pdbx_item_context.type       WWPDB_LOCAL                       #V5
-    _pdbx_item_context.item_name '_em_imaging.energy_filter'    #V5
+    _pdbx_item_context.type       WWPDB_DEPRECATED                      #V5
+    _pdbx_item_context.item_name '_em_imaging.energy_filter'            #V5
+    _item_related.related_name   '_em_imaging_optics.energyfilter_name' #V5
+    _item_related.function_code  replacedby                             #V5
+
      save_
 
 save__em_imaging.energy_window
@@ -2251,8 +2313,13 @@ save__em_imaging.energy_window
     _item_type.code               line
     _item_units.code              electron_volts
     _item_examples.case          '0 - 15'
-    _pdbx_item_context.type       WWPDB_LOCAL                       #V5
-    _pdbx_item_context.item_name '_em_imaging.energy_window'       #V5
+    _pdbx_item_context.type       WWPDB_DEPRECATED                       #V5
+    _pdbx_item_context.item_name '_em_imaging.energy_window'             #V5
+     loop_                                                               #V5
+    _item_related.related_name                                           #V5
+    _item_related.function_code                                          #V5
+             '_em_imaging_optics.energyfilter_lower' replacedby          #V5
+             '_em_imaging_optics.energyfilter_upper' replacedby          #V5
 
      save_
 
@@ -2461,6 +2528,10 @@ save__em_detector.details
     _item.category_id              em_detector
     _item.mandatory_code           no
     _item_type.code                text
+    _pdbx_item_context.type       WWPDB_DEPRECATED               #V5
+    _pdbx_item_context.item_name '_em_detector.details'          #V5
+    _item_related.related_name   '_em_image_recording.details'   #V5
+    _item_related.function_code  replacedby                      #V5
     _item_examples.case
        'Any other details regarding the detector.'
      save_
@@ -2474,6 +2545,10 @@ save__em_detector.type
     _item.category_id              em_detector
     _item.mandatory_code           no
     _item_type.code                line
+    _pdbx_item_context.type       WWPDB_DEPRECATED                              #V5
+    _pdbx_item_context.item_name '_em_detector.type'                            #V5
+    _item_related.related_name   '_em_image_recording.film_or_detector_model'   #V5
+    _item_related.function_code  replacedby                                     #V5
     save_
 
 
@@ -2787,9 +2862,8 @@ save_em_2d_projection_selection
    _em_2d_projection_selection.method              INTERACTIVE
    _em_2d_projection_selection.details             .
 ;
-    _pdbx_category_context.type         WWPDB_LOCAL       #V5
-    _pdbx_category_context.category_id  em_2d_projection_selection     #V5
-
+    _pdbx_category_context.type         WWPDB_LOCAL                     #V5
+    _pdbx_category_context.category_id  em_2d_projection_selection      #V5
      save_
 
 
@@ -2831,6 +2905,10 @@ save__em_2d_projection_selection.num_particles
     _item.mandatory_code           no
     _item_type.code                int
     _item_examples.case            840
+    _pdbx_item_context.type       WWPDB_DEPRECATED                                #V5
+    _pdbx_item_context.item_name '_em_2d_projection_selection.num_particles'      #V5
+    _item_related.related_name   '_em_particle_selection.num_particles_selected'  #V5
+    _item_related.function_code  replacedby                                       #V5
      save_
 
 
@@ -2842,6 +2920,10 @@ save__em_2d_projection_selection.software_name
     _item.category_id              em_2d_projection_selection
     _item.mandatory_code           no
     _item_type.code                line
+    _pdbx_item_context.type       WWPDB_DEPRECATED                                #V5
+    _pdbx_item_context.item_name '_em_2d_projection_selection.software_name'      #V5
+    _item_related.related_name   '_em_software.name'                              #V5
+    _item_related.function_code  replacedby                                       #V5
      save_
 
 save__em_2d_projection_selection.method
@@ -2853,6 +2935,10 @@ save__em_2d_projection_selection.method
     _item.mandatory_code           no
     _item_type.code                text
     _item_examples.case           'particles picked interactively from monitor'
+    _pdbx_item_context.type       WWPDB_DEPRECATED                      #V5
+    _pdbx_item_context.item_name '_em_2d_projection_selection.method'   #V5
+    _item_related.related_name          '_em_particle_selection.method' #V5
+    _item_related.function_code         replacedby                      #V5
      save_
 
 save__em_2d_projection_selection.details
@@ -3081,8 +3167,11 @@ save__em_3d_reconstruction.ctf_correction_method
     _item_examples.case
 ;    The volumes were CTF-corrected in defocus groups, with an average of approximately 999 individual images per group
 ;
-    _pdbx_item_context.type       WWPDB_LOCAL                       #V5
+    _pdbx_item_context.type       WWPDB_DEPRECATED                                #V5
     _pdbx_item_context.item_name '_em_3d_reconstruction.ctf_correction_method'    #V5
+    _item_related.related_name   '_em_ctf_correction.details'                     #V5
+    _item_related.function_code         replacedby                                #V5
+
      save_
 
 save__em_3d_reconstruction.nominal_pixel_size
@@ -3160,9 +3249,10 @@ save__em_3d_reconstruction.software
     _item.category_id           em_3d_reconstruction
     _item.mandatory_code        no
     _item_type.code             text
-    _pdbx_item_context.type       WWPDB_LOCAL                       #V5
-    _pdbx_item_context.item_name '_em_3d_reconstruction.software'    #V5
-
+    _pdbx_item_context.type       WWPDB_DEPRECATED                  #V5
+    _pdbx_item_context.item_name '_em_3d_reconstruction.software'   #V5
+    _item_related.related_name   '_em_software.name'                #V5
+    _item_related.function_code  replacedby                         #V5
      save_
 
 save__em_3d_reconstruction.fsc_type
@@ -3376,8 +3466,11 @@ save__em_3d_fitting.software_name
     _item_type.code                text
     _item_examples.case
        'Situs, NMFF, YUP.scx, etc.'
-    _pdbx_item_context.type       WWPDB_LOCAL                       #V5
-    _pdbx_item_context.item_name '_em_3d_fitting.software_name'     #V5
+    _pdbx_item_context.type       WWPDB_DEPRECATED                       #V5
+    _pdbx_item_context.item_name '_em_3d_fitting.software_name'          #V5
+    _item_related.related_name   '_em_software.name'                     #V5
+    _item_related.function_code  replacedby                              #V5
+
      save_
 
 
@@ -3656,6 +3749,10 @@ save__em_helical_entity.dyad
                 YES
                 NO
       save_
+    _pdbx_item_context.type       WWPDB_DEPRECATED                  #V5
+    _pdbx_item_context.item_name '_em_helical_entity.dyad'         #V5
+
+
 
 save__em_helical_entity.axial_symmetry
     _item_description.description
@@ -3669,8 +3766,7 @@ save__em_helical_entity.axial_symmetry
 #    _pdbx_item.name               '_em_helical_entity.axial_symmetry' #V4
 #    _pdbx_item.mandatory_code      yes #V4
 #
-#    _item_type.code              code        #V4
-    _item_type.code              point_group_helical  #V5
+    _item_type.code              point_group_helical
 #
     loop_
     _item_examples.case          'C1'
@@ -3867,8 +3963,15 @@ save__em_experiment.specimen_type
      "VITREOUS ICE (CRYO EM)"
      "NEGATIVE STAIN"
      "FREEZE SUBSTITUTION"
-    _pdbx_item_context.type       WWPDB_LOCAL                       #V5
-    _pdbx_item_context.item_name '_em_experiment.specimen_type'    #V5
+    _pdbx_item_context.type       WWPDB_DEPRECATED                          #V5
+    _pdbx_item_context.item_name '_em_experiment.specimen_type'             #V5
+    loop_                                                                   #V5
+    _item_related.related_name                                              #V5
+    _item_related.function_code                                             #V5
+                         '_em_specimen.vitrification_applied'   replacedby  #V5
+                         '_em_specimen.staining_applied'        replacedby  #V5
+                         '_em_specimen.embedding_applied'       replacedby  #V5
+
       save_
 
 save__em_experiment.entity_assembly_id
@@ -7301,7 +7404,9 @@ save__em_image_recording.film_or_detector_model
   '_em_image_recording.film_or_detector_model'    "GENERIC IMAGE PLATES"   .
   '_em_image_recording.film_or_detector_model'    "DIRECT ELECTRON DE-10 (5k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "DIRECT ELECTRON DE-12 (4k x 3k)"   .
+  '_em_image_recording.film_or_detector_model'    "DIRECT ELECTRON DE-16 (4k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "DIRECT ELECTRON DE-20 (5k x 3k)"   .
+  '_em_image_recording.film_or_detector_model'    "DIRECT ELECTRON DE-64 (8k x 8k)"   .
   '_em_image_recording.film_or_detector_model'    "FEI CETA (4k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "FEI EAGLE (2k x 2k)"   .
   '_em_image_recording.film_or_detector_model'    "FEI EAGLE (4k x 4k)"   .
@@ -7315,6 +7420,10 @@ save__em_image_recording.film_or_detector_model
   '_em_image_recording.film_or_detector_model'    "GATAN ULTRASCAN 4000 (4k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "GATAN ULTRASCAN 10000 (10k x 10k)"   .
   '_em_image_recording.film_or_detector_model'    "GATAN K2 (4k x 4k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN K2 BASE (4k x 4k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN K2 IS (4k x 4k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN K2 QUANTUM (4k x 4k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN K2 SUMMIT (4k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "GENERIC GATAN (2k x 2k)"   .
   '_em_image_recording.film_or_detector_model'    "GENERIC GATAN (4k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "GENERIC GATAN"   .
