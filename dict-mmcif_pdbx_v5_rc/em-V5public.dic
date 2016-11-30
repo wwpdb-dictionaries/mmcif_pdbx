@@ -3748,11 +3748,12 @@ save__em_helical_entity.dyad
     _item_enumeration.value
                 YES
                 NO
-      save_
     _pdbx_item_context.type       WWPDB_DEPRECATED                      #V5
     _pdbx_item_context.item_name  '_em_helical_entity.dyad'             #V5
     _item_related.related_name    '_em_helical_entity.axial_symmetry'   #V5
     _item_related.function_code   replacedby                            #V5
+
+      save_
 
 
 
