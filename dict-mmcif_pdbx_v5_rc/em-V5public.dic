@@ -910,7 +910,7 @@ save__em_virus_entity.ictvdb_id
     _item_examples.case
            'NL-54'
 
-    _pdbx_item_context.type       WWPDB_LOCAL                       #V5
+    _pdbx_item_context.type       WWPDB_DEPRECATED               #V5
     _pdbx_item_context.item_name '_em_virus_entity.ictvdb_id'    #V5
 
      save_
@@ -3749,8 +3749,10 @@ save__em_helical_entity.dyad
                 YES
                 NO
       save_
-    _pdbx_item_context.type       WWPDB_DEPRECATED                  #V5
-    _pdbx_item_context.item_name '_em_helical_entity.dyad'         #V5
+    _pdbx_item_context.type       WWPDB_DEPRECATED                      #V5
+    _pdbx_item_context.item_name  '_em_helical_entity.dyad'             #V5
+    _item_related.related_name    '_em_helical_entity.axial_symmetry'   #V5
+    _item_related.function_code   replacedby                            #V5
 
 
 
@@ -3827,8 +3829,10 @@ save__em_helical_entity.hand
         loop_
         _item_examples.case      'Right'
                                  'Left'
-    _pdbx_item_context.type       WWPDB_LOCAL                       #V5
-    _pdbx_item_context.item_name '_em_helical_entity.hand'         #V5
+    _pdbx_item_context.type       WWPDB_DEPRECATED                     #V5
+    _pdbx_item_context.item_name '_em_helical_entity.hand'             #V5
+    _item_related.related_name    '_em_helical_entity.angular_rotation_per_subunit'  #V5
+    _item_related.function_code   replacedby                           #V5
 
         save_
 
@@ -4076,8 +4080,11 @@ save__em_single_particle_entity.symmetry_type
     OCTAHEDRAL
     ICOSAHEDRAL
    "MIXED SYMMETRY"
-    _pdbx_item_context.type       WWPDB_LOCAL                       #V5
-    _pdbx_item_context.item_name '_em_single_particle_entity.symmetry_type'    #V5
+    _pdbx_item_context.type       WWPDB_DEPRECATED                            #V5
+    _pdbx_item_context.item_name  '_em_single_particle_entity.symmetry_type'  #V5
+    _item_related.related_name    '_em_single_particle_entity.point_symmetry' #V5
+    _item_related.function_code   replacedby                                  #V5
+
       save_
 
 save__em_single_particle_entity.image_processing_id
@@ -5159,7 +5166,7 @@ save__em_entity_assembly_recombinant.plasmid
 ;
     _item.name                  '_em_entity_assembly_recombinant.plasmid'
     _item.category_id             em_entity_assembly_recombinant
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               line
      loop_
     _item_examples.case
@@ -7039,8 +7046,11 @@ save__em_diffraction_stats.overall_phase_error
     _item_type.code             float
     _item_units.code            degrees
     _item_examples.case         17.5
-    _item_range.minimum         0.0
-    _item_range.maximum       180.0
+     loop_
+    _item_range.minimum         
+    _item_range.maximum       
+                                0.0  0.0
+                                0.0  180.0
      save_
 
 save__em_diffraction_stats.overall_phase_residual
