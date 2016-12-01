@@ -30,7 +30,6 @@ mmcif_pdbx-def-3.dic
 ../dict-mmcif_pdbx_v40/reflns-extenstion-20140312.dic
 ../dict-mmcif_pdbx_v40/database_status_history_extension.dic
 em-V5public.dic
-#../dict-mmcif_pdbx_v5_next/emd-DA-v1.01.dic
 ../dict-mmcif_pdbx_v5_next/em-depositor_info-extension.dic
 chemical_shift_extensions_v5_rc.dic
 ../dict-mmcif_pdbx_v40/depositor_info-extension.dic

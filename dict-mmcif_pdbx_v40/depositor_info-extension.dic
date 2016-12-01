@@ -54,6 +54,19 @@ save__pdbx_contact_author.identifier_ORCID
     _item_examples.case          '0000-0002-6686-5475'
 save_
 
+save__audit_author.identifier_ORCID
+    _item_description.description
+;    The Open Researcher and Contributor ID (ORCID).
+;
+    _item.name                  '_audit_author.identifier_ORCID'
+    _item.category_id             audit_author
+    _item.mandatory_code          no
+    _item_type.code               orcid_id
+    _item_examples.case          '0000-0002-6686-5475'
+    #
+   _pdbx_item_context.type        WWPDB_LOCAL
+   _pdbx_item_context.item_name  '_audit_author.identifier_ORCID'
+save_
 
 save__entity_poly.pdbx_sequence_evidence_code
     _item_description.description
@@ -2254,8 +2267,8 @@ loop_
  _pdbx_chem_comp_instance_depositor_info.auth_asym_id
  _pdbx_chem_comp_instance_depositor_info.PDB_ins_code
  _pdbx_chem_comp_instance_depositor_info.label_alt_id
- _pdbx_chem_comp_instance_depositor_info.author_provided_flag    
- _pdbx_chem_comp_instance_depositor_info.in_polymer_flag    
+ _pdbx_chem_comp_instance_depositor_info.author_provided_flag
+ _pdbx_chem_comp_instance_depositor_info.in_polymer_flag
   1 X78 102  W . .  Y N
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -3702,7 +3715,146 @@ save__pdbx_data_processing_status.status
 
 ##
 ##
+###################################
+## pdbx_entity_instance_feature ##
+###################################
 
+save_pdbx_entity_instance_feature
+    _category.description
+;              Data items in the pdbx_entity_instance_feature category records
+               special features of selected entity instances.
+;
+    _category.id                  'pdbx_entity_instance_feature'
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_entity_instance_feature.ordinal'
+
+#
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 -
+;
+;
+    _pdbx_entity_instance_feature.ordinal        1
+    _pdbx_entity_instance_feature.comp_id       Q20
+    _pdbx_entity_instance_feature.autn_asym_id   A
+    _pdbx_entity_instance_feature.feature_type           'SUBJECT OF INVESTIGATION'
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   _pdbx_category_context.type         WWPDB_LOCAL
+   _pdbx_category_context.category_id  pdbx_entity_instance_feature
+     save_
+
+
+save__pdbx_entity_instance_feature.details
+    _item_description.description
+;             Special structural details about this entity instance.
+;
+    _item.name                  '_pdbx_entity_instance_feature.details'
+    _item.category_id             'pdbx_entity_instance_feature'
+    _item.mandatory_code          no
+    _item_type.code               text
+    save_
+
+save__pdbx_entity_instance_feature.feature_type
+    _item_description.description
+;              A feature type associated with entity instance.
+;
+    _item.name                  '_pdbx_entity_instance_feature.feature_type'
+    _item.category_id             'pdbx_entity_instance_feature'
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_enumeration.value
+        'SUBJECT OF INVESTIGATION'
+        'NO FUNCTIONAL ROLE'
+        'OTHER'
+     save_
+
+save__pdbx_entity_instance_feature.auth_asym_id
+    _item_description.description
+;              Author instance identifier (formerly PDB Chain ID)
+;
+    _item.name                  '_pdbx_entity_instance_feature.auth_asym_id'
+    _item.category_id             pdbx_entity_instance_feature
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case       'A' 'B'
+    _item_linked.child_name    '_pdbx_entity_instance_feature.auth_asym_id'
+    _item_linked.parent_name   '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_entity_instance_feature.asym_id
+    _item_description.description
+;              Instance identifier for this entity.
+;
+    _item.name                  '_pdbx_entity_instance_feature.asym_id'
+    _item.category_id             pdbx_entity_instance_feature
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case       'A' 'B'
+    _item_linked.child_name    '_pdbx_entity_instance_feature.asym_id'
+    _item_linked.parent_name   '_atom_site.label_asym_id'
+
+     save_
+
+save__pdbx_entity_instance_feature.seq_num
+    _item_description.description
+;
+               Position in the sequence.
+;
+    _item.name                  '_pdbx_entity_instance_feature.seq_num'
+    _item.category_id             pdbx_entity_instance_feature
+    _item.mandatory_code          no
+    _item_type.code               int
+     loop_
+    _item_examples.case      '1' '2'
+    _item_linked.child_name    '_pdbx_entity_instance_feature.seq_num'
+    _item_linked.parent_name   '_atom_site.label_seq_id'
+
+     save_
+
+
+save__pdbx_entity_instance_feature.comp_id
+    _item_description.description
+;
+               Chemical component identifier
+;
+    _item.name                  '_pdbx_entity_instance_feature.comp_id'
+    _item.category_id             pdbx_entity_instance_feature
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case      'NAG' 'ATP'
+
+    _item_linked.child_name    '_pdbx_entity_instance_feature.comp_id'
+    _item_linked.parent_name   '_atom_site.auth_comp_id'
+     save_
+
+
+save__pdbx_entity_instance_feature.ordinal
+    _item_description.description
+;
+               An ordinal index for this category
+;
+    _item.name                  '_pdbx_entity_instance_feature.ordinal'
+    _item.category_id             pdbx_entity_instance_feature
+    _item.mandatory_code          yes
+    _item_type.code               int
+     loop_
+    _item_examples.case      1 2
+     save_
+#
 
 
 
