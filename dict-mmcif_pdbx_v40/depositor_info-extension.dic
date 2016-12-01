@@ -3744,7 +3744,7 @@ save_pdbx_entity_instance_feature
 ;
     _pdbx_entity_instance_feature.ordinal        1
     _pdbx_entity_instance_feature.comp_id       Q20
-    _pdbx_entity_instance_feature.autn_asym_id   A
+    _pdbx_entity_instance_feature.auth_asym_id   A
     _pdbx_entity_instance_feature.feature_type           'SUBJECT OF INVESTIGATION'
 
 ;

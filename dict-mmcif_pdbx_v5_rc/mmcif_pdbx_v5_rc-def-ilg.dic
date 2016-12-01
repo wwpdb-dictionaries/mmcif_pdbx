@@ -239,6 +239,7 @@ pdbx_domain_range                        3  pdbx_domain_range:pdbx_domain:3     
 #pdbx_entity_annotation                   1  pdbx_entity_annotation:entity:1                                           . .
 pdbx_entity_assembly                     1  pdbx_entity_assembly:entity:1                                             . .
 pdbx_entity_assembly                     2  pdbx_entity_assembly:struct_biol:2                                        . .
+pdbx_entity_instance_feature             1  pdbx_entity_instance_feature:atom_site:1                                  , ,
 pdbx_entity_name                         1  pdbx_entity_name:entity:1                                                 . .
 pdbx_entity_nonpoly                      1  pdbx_entity_nonpoly:chem_comp:1                                           . .
 pdbx_entity_nonpoly                      2  pdbx_entity_nonpoly:entity:2                                              . .
@@ -1164,6 +1165,10 @@ pdbx_domain_range                        3  '_pdbx_domain_range.domain_id'      
 #pdbx_entity_annotation                   1  '_pdbx_entity_annotation.entity_id'                   '_entity.id'                                entity
 pdbx_entity_assembly                     1  '_pdbx_entity_assembly.entity_id'                     '_entity.id'                                entity
 pdbx_entity_assembly                     2  '_pdbx_entity_assembly.biol_id'                       '_struct_biol.id'                           struct_biol
+pdbx_entity_instance_feature             1  '_pdbx_entity_instance_feature.asym_id'               '_atom_site.label_asym_id'                  atom_site 
+pdbx_entity_instance_feature             1  '_pdbx_entity_instance_feature.auth_asym_id'          '_atom_site.auth_asym_id'                   atom_site 
+pdbx_entity_instance_feature             1  '_pdbx_entity_instance_feature.comp_id'               '_atom_site.auth_comp_id'                   atom_site 
+pdbx_entity_instance_feature             1  '_pdbx_entity_instance_feature.seq_num'               '_atom_site.label_seq_id'                   atom_site 
 pdbx_entity_name                         1  '_pdbx_entity_name.entity_id'                         '_entity.id'                                entity
 pdbx_entity_nonpoly                      1  '_pdbx_entity_nonpoly.comp_id'                        '_chem_comp.id'                             chem_comp
 pdbx_entity_nonpoly                      2  '_pdbx_entity_nonpoly.entity_id'                      '_entity.id'                                entity
