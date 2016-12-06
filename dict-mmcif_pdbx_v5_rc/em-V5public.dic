@@ -57,7 +57,7 @@ save_em_assembly
      loop_
     _category_group.id
                                  'inclusive_group'
-                                 'em_group'
+                                 'em_legacy_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -995,7 +995,7 @@ save_em_sample_preparation
      loop_
     _category_group.id
                                  'inclusive_group'
-                                 'em_group'
+                                 'em_legacy_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -2849,7 +2849,7 @@ save_em_2d_projection_selection
 
      loop_
     _category_group.id           'inclusive_group'
-                                 'em_group'
+                                 'em_legacy_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -4142,7 +4142,7 @@ save_em_admin
     _category_key.name         '_em_admin.entry_id'
     loop_
     _category_group.id         'inclusive_group'
-                               'em_group'
+                               'emdb_admin_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -4326,7 +4326,7 @@ save_em_author_list
      loop_
     _category_group.id
                                  'inclusive_group'
-                                 'em_group'
+                                 'emdb_admin_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -4378,7 +4378,7 @@ save_em_db_reference
     _category_key.name         '_em_db_reference.id'
     loop_
     _category_group.id         'inclusive_group'
-                               'em_group'
+                               'emdb_admin_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -4476,7 +4476,7 @@ save_em_db_reference_auxiliary
     _category_key.name         '_em_db_reference_auxiliary.id'
     loop_
     _category_group.id         'inclusive_group'
-                               'em_group'
+                               'emdb_admin_group'
     loop_
     _category_examples.detail
     _category_examples.case
@@ -4541,7 +4541,7 @@ save_em_depui
      loop_
     _category_group.id
                                  'inclusive_group'
-                                 'em_group'
+                                 'emdb_admin_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -4670,7 +4670,7 @@ save_em_obsolete
     _category_key.name         '_em_obsolete.id'
     loop_
     _category_group.id         'inclusive_group'
-                               'em_group'
+                               'emdb_admin_group'
     _pdbx_category_context.type         WWPDB_LOCAL
     _pdbx_category_context.category_id  em_obsolete
     save_
@@ -4731,7 +4731,7 @@ save_em_supersede
     _category_key.name         '_em_supersede.id'
     loop_
     _category_group.id         'inclusive_group'
-                               'em_group'
+                               'emdb_admin_group'
     _pdbx_category_context.type         WWPDB_LOCAL
     _pdbx_category_context.category_id  em_supersede
     save_
@@ -5611,7 +5611,7 @@ save_em_fiducial_markers
     _category_key.name          '_em_fiducial_markers.id'
      loop_
     _category_group.id           'inclusive_group'
-                                 'em_group'
+                                 'emdb_extension_group'
 
     _pdbx_category_context.type         WWPDB_LOCAL
     _pdbx_category_context.category_id  em_fiducial_markers
@@ -5675,7 +5675,7 @@ save_em_focused_ion_beam
     _category_key.name          '_em_focused_ion_beam.id'
      loop_
     _category_group.id           'inclusive_group'
-                                 'em_group'
+                                 'emdb_extension_group'
 
     _pdbx_category_context.type         WWPDB_LOCAL
     _pdbx_category_context.category_id  em_focused_ion_beam
@@ -5833,7 +5833,7 @@ save_em_grid_pretreatment
      loop_
     _category_group.id
                                  'inclusive_group'
-                                 'em_group'
+                                 'emdb_extension_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -5929,7 +5929,7 @@ save_em_ultramicrotomy
     _category_key.name          '_em_ultramicrotomy.id'
      loop_
     _category_group.id           'inclusive_group'
-                                 'em_group'
+                                 'emdb_extension_group'
     _pdbx_category_context.type         WWPDB_LOCAL
     _pdbx_category_context.category_id  em_ultramicrotomy
      save_
@@ -6014,7 +6014,7 @@ save_em_high_pressure_freezing
     _category_key.name          '_em_high_pressure_freezing.id'
      loop_
     _category_group.id           'inclusive_group'
-                                 'em_group'
+                                 'emdb_extension_group'
     _pdbx_category_context.type         WWPDB_LOCAL
     _pdbx_category_context.category_id  em_high_pressure_freezing
      save_
@@ -6081,7 +6081,7 @@ save_em_shadowing
                                 '_em_shadowing.specimen_id'
      loop_
     _category_group.id           'inclusive_group'
-                                 'em_group'
+                                 'emdb_extension_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -6181,7 +6181,7 @@ save_em_tomography_specimen
     _category_key.name          '_em_tomography_specimen.id'
      loop_
     _category_group.id           'inclusive_group'
-                                 'em_group'
+                                 'emdb_extension_group'
     _pdbx_category_context.type         WWPDB_LOCAL
     _pdbx_category_context.category_id  em_tomography_specimen
      save_
@@ -6528,7 +6528,7 @@ save_em_support_film
      loop_
     _category_group.id
                                  'inclusive_group'
-                                 'em_group'
+                                 'emdb_extension_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -7129,7 +7129,7 @@ save_em_tomography
      loop_
     _category_group.id
                                  'inclusive_group'
-                                 'em_group'
+                                 'emdb_extension_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -7654,7 +7654,7 @@ save_em_final_classification
      loop_
     _category_group.id
                                  'inclusive_group'
-                                 'em_group'
+                                 'emdb_extension_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -7755,7 +7755,7 @@ save_em_start_model
      loop_
     _category_group.id
                                  'inclusive_group'
-                                 'em_group'
+                                 'emdb_extension_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -9067,7 +9067,7 @@ save_em_map
      loop_
     _category_group.id
                                  'inclusive_group'
-                                 'em_group'
+                                 'emdb_admin_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -9684,7 +9684,7 @@ save_em_fsc_curve
     _category_key.name           '_em_fsc_curve.id'
      loop_
     _category_group.id           'inclusive_group'
-                                 'em_group'
+                                 'emdb_admin_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -9741,7 +9741,7 @@ save_em_interpret_figure
     _category_key.name           '_em_interpret_figure.id'
      loop_
     _category_group.id           'inclusive_group'
-                                 'em_group'
+                                 'emdb_admin_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -9800,7 +9800,7 @@ save_em_layer_lines
                                  '_em_layer_lines.experiment_id'
      loop_
     _category_group.id           'inclusive_group'
-                                 'em_group'
+                                 'emdb_admin_group'
      loop_
     _category_examples.detail
     _category_examples.case
@@ -9873,7 +9873,7 @@ save_em_structure_factors
                                  '_em_structure_factors.experiment_id'
      loop_
     _category_group.id           'inclusive_group'
-                                 'em_group'
+                                 'emdb_admin_group'
      loop_
     _category_examples.detail
     _category_examples.case
