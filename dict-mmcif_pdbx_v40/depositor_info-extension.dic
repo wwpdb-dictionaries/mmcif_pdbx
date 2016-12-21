@@ -17,6 +17,7 @@
 #      29-Aug-2013 jdw  add internal message management categories
 #      24-Feb-2016 ep,jw add _pdbx_database_status.auth_req_rel_date
 #      23-May-2016 ep   clean up examples of pdbx_chem_comp_depositor_info and pdbx_chem_comp_instance_depositor_info, pdbx_depui_upload, pdbx_deposition_message_info, pdbx_deposition_message_file_reference, pdbx_struct_ref_seq_depositor_info
+#      18-Dec-2016 ep   add auth_seq_num and auth_comp_id to pdbx_entity_instance_feature.  Add full_matrices, at_unit_matrix, chain_id_list, helical_rotation and helical_rise to pdbx_struct_assembly_gen_info
 # ----------------------------------------------------------------------------------------------------------------------------
 
 save__pdbx_database_status.auth_req_rel_date
@@ -52,20 +53,6 @@ save__pdbx_contact_author.identifier_ORCID
 #    _item_type.code               code
     _item_type.code               orcid_id
     _item_examples.case          '0000-0002-6686-5475'
-save_
-
-save__audit_author.identifier_ORCID
-    _item_description.description
-;    The Open Researcher and Contributor ID (ORCID).
-;
-    _item.name                  '_audit_author.identifier_ORCID'
-    _item.category_id             audit_author
-    _item.mandatory_code          no
-    _item_type.code               orcid_id
-    _item_examples.case          '0000-0002-6686-5475'
-    #
-   _pdbx_item_context.type        WWPDB_LOCAL
-   _pdbx_item_context.item_name  '_audit_author.identifier_ORCID'
 save_
 
 save__entity_poly.pdbx_sequence_evidence_code
@@ -1007,6 +994,7 @@ save__pdbx_struct_assembly_depositor_info.matrix_flag
 
 
 save__pdbx_struct_assembly_depositor_info.upload_file_name
+# Deprecated
     _item_description.description
 ;   The name of a file containing matrix records.
 ;
@@ -1129,6 +1117,73 @@ save__pdbx_struct_assembly_gen_depositor_info.oper_expression
                                  '(1-60)(61)'
 
      save_
+
+save__pdbx_struct_assembly_gen_depositor_info.full_matrices
+    _item_description.description
+;              Transformation matrix as provided by depositor
+
+;
+    _item.name                  '_pdbx_struct_assembly_gen_depositor_info.full_matrices'
+    _item.category_id             pdbx_struct_assembly_gen_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_struct_assembly_gen_depositor_info.at_unit_matrix
+    _item_description.description
+;              Flag indicating unit matrix
+
+;
+    _item.name                  '_pdbx_struct_assembly_gen_depositor_info.at_unit_matrix'
+    _item.category_id             pdbx_struct_assembly_gen_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               uchar1
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+      Y  'Yes'
+      N  'No'
+    _item_examples.case        Y
+     save_
+
+save__pdbx_struct_assembly_gen_depositor_info.chain_id_list
+    _item_description.description
+;              This data item is the author provided chain names for the
+               assembly
+
+               This item may be expressed as a comma separated list of identifiers.
+;
+    _item.name                  '_pdbx_struct_assembly_gen_depositor_info.chain_id_list'
+    _item.category_id             pdbx_struct_assembly_gen_depositor_info
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+save__pdbx_struct_assembly_gen_depositor_info.helical_rotation
+    _item_description.description
+;              Angular rotation (degrees) along the helical axis
+;
+    _item.name                  '_pdbx_struct_assembly_gen_depositor_info.helical_rotation'
+    _item.category_id             pdbx_struct_assembly_gen_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__pdbx_struct_assembly_gen_depositor_info.helical_rise
+    _item_description.description
+;              The axial rise per subunit in the helical assembly.
+;
+    _item.name                  '_pdbx_struct_assembly_gen_depositor_info.helical_rise'
+    _item.category_id             pdbx_struct_assembly_gen_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+    _item_examples.case           '17.400000'
+    _item_range.minimum           0.0
+    _item_range.maximum           .
+     save_
+
 
 ##########################################
 ## PDBX_STRUCT_OPER_LIST_DEPOSITOR_INFO ##
@@ -3743,9 +3798,11 @@ save_pdbx_entity_instance_feature
 ;
 ;
     _pdbx_entity_instance_feature.ordinal        1
-    _pdbx_entity_instance_feature.comp_id       Q20
+    _pdbx_entity_instance_feature.comp_id        Q20
     _pdbx_entity_instance_feature.auth_asym_id   A
     _pdbx_entity_instance_feature.feature_type           'SUBJECT OF INVESTIGATION'
+    _pdbx_entity_instance_feature.auth_seq_num   47
+    _pdbx_entity_instance_feature.auth_comp_id   R77
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -3808,6 +3865,19 @@ save__pdbx_entity_instance_feature.asym_id
 
      save_
 
+save__pdbx_entity_instance_feature.auth_seq_num
+    _item_description.description
+;
+               Author provided residue number.
+;
+    _item.name                  '_pdbx_entity_instance_feature.auth_seq_num'
+    _item.category_id             pdbx_entity_instance_feature
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case      '1' '2'
+     save_
+
 save__pdbx_entity_instance_feature.seq_num
     _item_description.description
 ;
@@ -3839,6 +3909,19 @@ save__pdbx_entity_instance_feature.comp_id
 
     _item_linked.child_name    '_pdbx_entity_instance_feature.comp_id'
     _item_linked.parent_name   '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_entity_instance_feature.auth_comp_id
+    _item_description.description
+;
+               The author provided chemical component identifier
+;
+    _item.name                  '_pdbx_entity_instance_feature.auth_comp_id'
+    _item.category_id             pdbx_entity_instance_feature
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case      'NAG' 'ATP'
      save_
 
 

@@ -425,6 +425,7 @@
                Approximate format of Enzyme Commission EC number. 1.2.3.4 with 
                optional parts.
 ;
+               orcid_id char "[0-9]{4}-[0-9]{4}-[0-9]{4}-([0-9]{3}X|[0-9]{4})"  'ORCID pattern - dddd-dddd-dddd-dddd|dddX'
 
 #####################
 ## ITEM_UNITS_LIST ##
