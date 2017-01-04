@@ -18,6 +18,7 @@
 #      24-Feb-2016 ep,jw add _pdbx_database_status.auth_req_rel_date
 #      23-May-2016 ep   clean up examples of pdbx_chem_comp_depositor_info and pdbx_chem_comp_instance_depositor_info, pdbx_depui_upload, pdbx_deposition_message_info, pdbx_deposition_message_file_reference, pdbx_struct_ref_seq_depositor_info
 #      18-Dec-2016 ep   add auth_seq_num and auth_comp_id to pdbx_entity_instance_feature.  Add full_matrices, at_unit_matrix, chain_id_list, helical_rotation and helical_rise to pdbx_struct_assembly_gen_info
+#      04-Jan-2017 ep   add _pdbx_struct_assembly_gen_depositor_info.all_chains
 # ----------------------------------------------------------------------------------------------------------------------------
 
 save__pdbx_database_status.auth_req_rel_date
@@ -1157,6 +1158,23 @@ save__pdbx_struct_assembly_gen_depositor_info.chain_id_list
     _item.category_id             pdbx_struct_assembly_gen_depositor_info
     _item.mandatory_code          yes
     _item_type.code               line
+     save_
+
+save__pdbx_struct_assembly_gen_depositor_info.all_chains
+    _item_description.description
+;              Flag indicating that all polymer chains are used in the assembly
+
+;
+    _item.name                  '_pdbx_struct_assembly_gen_depositor_info.all_chains'
+    _item.category_id             pdbx_struct_assembly_gen_depositor_info
+    _item.mandatory_code          no
+    _item_type.code               uchar1
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+      Y  'Yes'
+      N  'No'
+    _item_examples.case        Y
      save_
 
 save__pdbx_struct_assembly_gen_depositor_info.helical_rotation
