@@ -3,7 +3,7 @@
 ../dict-mmcif_pdbx_v40/mmcif_pdbx-def-1.dic
 ../dict-mmcif_std/mmcif_std-def-2.dic
 ../dict-mmcif_pdbx_v40/mmcif_pdbx-def-2.dic
-mmcif_pdbx-def-3.dic
+../dict-mmcif_pdbx_v5_next/mmcif_pdbx-def-3.dic
 ../dict-mmcif_pdbx_v40/mmcif_pdbx-def-4.dic
 ../dict-mmcif_pdbx_v40/mmcif_pdbx-def-5.dic
 ../dict-mmcif_pdbx_v40/mmcif_pdbx-def-6.dic
@@ -42,5 +42,5 @@ chemical_shift_extensions_v5_rc.dic
 ../dict-mmcif_pdbx_v5_next/dcc-extension.dic
 ../dict-mmcif_pdbx_v5_next/deposit-group-extension.dic
 ../dict-mmcif_pdbx_v5_next/binding-assay-extension.dic
-../dict-mmcif_pdbx_v5_next/struct-assembly-extension.dic
+struct-assembly-extension-rc.dic
 mmcif_pdbx_v5_rc-def-ilg.dic

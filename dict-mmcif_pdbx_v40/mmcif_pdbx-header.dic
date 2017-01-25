@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.069
+    _dictionary.version         4.070
 #
      loop_
     _dictionary_history.version
@@ -2176,6 +2176,17 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + Add audit_author.identifier_ORCID
     + Item context added for audit_author.address
 ;
-### EOF mmcif_pdbx-header.dic
+4.070  2016-01-19
+;
+    Changes (ep/M. Hekkelman):
+    + Correct inconsistent mandatory setting for _atom_site.label_alt_id, 
+      _atom_site.label_comp_id, _atom_site.label_atom_id, 
+      _diffrn_refln.wavelength_id, _atom_site.label_entity_id, 
+      _atom_site.label_seq_id, _refln.wavelength_id, _atom_site.label_asym_id,
+      _struct_conn.ptnr1_label_atom_id, _struct_conn.ptnr2_label_atom_id,
+      _struct_mon_prot_cis.label_alt_id, _struct_site_gen.label_alt_id
+    + Add optional pdbx_nmr_refine.software_ordinal
+    + Add adamantane to _pdbx_nmr_chem_shift_ref.mol_common_name enumeration
+;
 
-
+### EOF mmcif_pdbx-header.

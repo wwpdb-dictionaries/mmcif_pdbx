@@ -759,6 +759,7 @@ as a chemical shift reference.
    'methionine'                        'H methyl protons'
    'acetate'                           'C methyl carbons'
    'dioxane'                           'C methylene carbons'
+   'adamantane'                        'C methylene carbons'
    'ammonium chloride'                 'N ammonium nitrogen'
    '[15N] ammonium chloride'           'N ammonium nitrogen'
    'ammonium hydroxide'                'N ammonium nitrogen'

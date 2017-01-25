@@ -4042,7 +4042,7 @@ save__atom_sites_alt.id
     _item.category_id
     _item.mandatory_code
          '_atom_sites_alt.id'                       atom_sites_alt      yes
-         '_atom_site.label_alt_id'                  atom_site           no
+         '_atom_site.label_alt_id'                  atom_site           yes
          '_atom_sites_alt_gen.alt_id'               atom_sites_alt_gen  yes
          '_geom_angle.atom_site_label_alt_id_1'     geom_angle          no
          '_geom_angle.atom_site_label_alt_id_2'     geom_angle          no
@@ -6299,7 +6299,7 @@ save__chem_comp.id
     _item.category_id
     _item.mandatory_code
         '_chem_comp.id'                             chem_comp            yes
-        '_atom_site.label_comp_id'                  atom_site            no
+        '_atom_site.label_comp_id'                  atom_site            yes
  #       '_chem_comp.mon_nstd_parent_comp_id'        chem_comp            no
         '_chem_comp_atom.comp_id'                   chem_comp_atom       yes
         '_chem_comp_angle.comp_id'                  chem_comp_angle      yes
@@ -6972,7 +6972,7 @@ save__chem_comp_atom.atom_id
     _item.category_id
     _item.mandatory_code
         '_chem_comp_atom.atom_id'                   chem_comp_atom        yes
-        '_atom_site.label_atom_id'                  atom_site             no
+        '_atom_site.label_atom_id'                  atom_site             yes
         '_chem_comp_angle.atom_id_1'                chem_comp_angle       yes
         '_chem_comp_angle.atom_id_2'                chem_comp_angle       yes
         '_chem_comp_angle.atom_id_3'                chem_comp_angle       yes
@@ -14142,7 +14142,7 @@ save__diffrn_refln.wavelength_id
                the DIFFRN_RADIATION category.
 ;
     _item.name                  '_diffrn_refln.wavelength_id'
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_aliases.alias_name    '_diffrn_refln_wavelength_id'
     _item_aliases.dictionary      cif_core.dic
     _item_aliases.version         2.0.1
@@ -15171,7 +15171,7 @@ save__entity.id
     _item.category_id
     _item.mandatory_code
                '_entity.id'                      entity               yes
-               '_atom_site.label_entity_id'      atom_site            no
+               '_atom_site.label_entity_id'      atom_site            yes
                '_entity_keywords.entity_id'      entity_keywords      yes
                '_entity_link.entity_id_1'        entity_link          yes
                '_entity_link.entity_id_2'        entity_link          yes
@@ -15811,7 +15811,7 @@ save__entity_poly_seq.num
     _item.category_id
     _item.mandatory_code
        '_entity_poly_seq.num'                         entity_poly_seq     yes
-       '_atom_site.label_seq_id'                      atom_site           no
+       '_atom_site.label_seq_id'                      atom_site           yes
        '_entity_link.entity_seq_num_1'                entity_link         no
        '_entity_link.entity_seq_num_2'                entity_link         no
        '_geom_angle.atom_site_label_seq_id_1'         geom_angle          no
@@ -30088,7 +30088,7 @@ save__refln.wavelength_id
                the DIFFRN_RADIATION category.
 ;
     _item.name                  '_refln.wavelength_id'
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_aliases.alias_name    '_refln_wavelength_id'
     _item_aliases.dictionary      cif_core.dic
     _item_aliases.version         2.0.1
@@ -31744,7 +31744,7 @@ save__struct_asym.id
     _item.category_id
     _item.mandatory_code
                '_struct_asym.id'                         struct_asym         yes
-               '_atom_site.label_asym_id'                atom_site           no
+               '_atom_site.label_asym_id'                atom_site           yes
                '_geom_angle.atom_site_label_asym_id_1'   geom_angle          no
                '_geom_angle.atom_site_label_asym_id_2'   geom_angle          no
                '_geom_angle.atom_site_label_asym_id_3'   geom_angle          no
@@ -32908,7 +32908,7 @@ save__struct_conn.ptnr1_label_atom_id
                CHEM_COMP_ATOM category.
 ;
     _item.name                  '_struct_conn.ptnr1_label_atom_id'
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
      save_
 
 save__struct_conn.ptnr1_label_comp_id
@@ -33053,7 +33053,7 @@ save__struct_conn.ptnr2_label_atom_id
                CHEM_COMP_ATOM category.
 ;
     _item.name                  '_struct_conn.ptnr2_label_atom_id'
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
      save_
 
 save__struct_conn.ptnr2_label_comp_id
@@ -34646,7 +34646,7 @@ save__struct_mon_prot_cis.label_alt_id
                ATOM_SITES_ALT category.
 ;
     _item.name                  '_struct_mon_prot_cis.label_alt_id'
-    _item.mandatory_code          no
+    _item.mandatory_code          yes
      save_
 
 save__struct_mon_prot_cis.label_asym_id
@@ -37038,7 +37038,7 @@ save__struct_site_gen.label_alt_id
                ATOM_SITES_ALT category.
 ;
     _item.name                  '_struct_site_gen.label_alt_id'
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
      save_
 
 save__struct_site_gen.label_asym_id

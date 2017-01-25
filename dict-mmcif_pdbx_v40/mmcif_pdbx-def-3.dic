@@ -1018,6 +1018,17 @@ save__pdbx_nmr_software.authors
     _item_aliases.version        1.1
      save_
 
+# Optional in v4 and changed to a mandatory key in v5
+save__pdbx_nmr_refine.software_ordinal
+    _item_description.description
+;  Pointer to pdbx_nmr_software.ordinal
+;
+   _item.name           '_pdbx_nmr_refine.software_ordinal'
+   _item.category_id     'pdbx_nmr_refine'
+   _item.mandatory_code  no
+   _item_type.code       int
+save_
+
 ###
 ### ##########################################################################
 ###
