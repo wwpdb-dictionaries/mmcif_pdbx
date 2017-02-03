@@ -1144,7 +1144,8 @@ save__pdbx_struct_assembly_gen_depositor_info.full_matrices
     _item.category_id             pdbx_struct_assembly_gen_depositor_info
     _item.mandatory_code          no
     _pdbx_item.mandatory_code     yes
-    _item_type.code               text
+    #_item_type.code               text
+    _item_type.code               4x3_matrix
     _item_examples.case
 ;
 1 0 0 0
@@ -1182,7 +1183,8 @@ save__pdbx_struct_assembly_gen_depositor_info.chain_id_list
     _item.category_id             pdbx_struct_assembly_gen_depositor_info
     _item.mandatory_code          no
     _pdbx_item.mandatory_code     yes
-    _item_type.code               line
+    #_item_type.code               line
+    _item_type.code               id_list
     loop_
     _item_examples.case           'A,B,C'
                                   'D,E,F,G,H'
