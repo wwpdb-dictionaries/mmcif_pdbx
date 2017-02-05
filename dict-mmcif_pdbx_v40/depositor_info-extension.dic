@@ -21,6 +21,7 @@
 #      04-Jan-2017 ep   add _pdbx_struct_assembly_gen_depositor_info.all_chains
 #      19-Jan-2017 ep   make _pdbx_struct_assembly_gen_depositor_info.chain_id_list,_pdbx_struct_assembly_gen_depositor_info.full_matrices,
 #                       _pdbx_struct_assembly_gen_depositor_info.at_unit_matrix,  non-mandatory for archive, but mandatory depui
+#      05-Feb-2017 ep   add pdbx_struct_assembly_gen_depositor_info.symmetry_operation
 # ---------------------------------------------------------------------------------------------------------------_pdbx_struct_assembly_gen_depositor_info.all_chains-------------
 
 save__pdbx_database_status.auth_req_rel_date
@@ -1152,6 +1153,20 @@ save__pdbx_struct_assembly_gen_depositor_info.full_matrices
 0 1 0 0
 0 0 1 0
 ;
+     save_
+
+save__pdbx_struct_assembly_gen_depositor_info.symmetry_operation
+    _item_description.description
+;
+               This item expresses the transformation 
+               on an X, Y and Z basis.
+;
+    _item.name                  '_pdbx_struct_assembly_gen_depositor_info.symmetry_operation'
+    _item.category_id             pdbx_struct_assembly_gen_depositor_info
+    _item.mandatory_code          no
+    _pdbx_item.mandatory_code     yes
+    _item_type.code               symmetry_operation
+    _item_examples.case           '1/2+x, 1/2-y, -z'
      save_
 
 save__pdbx_struct_assembly_gen_depositor_info.at_unit_matrix
