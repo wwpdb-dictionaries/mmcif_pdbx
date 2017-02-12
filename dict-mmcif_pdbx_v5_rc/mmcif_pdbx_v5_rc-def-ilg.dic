@@ -358,8 +358,9 @@ pdbx_soln_scatter                        1  pdbx_soln_scatter:entry:1           
 pdbx_soln_scatter_model                  1  pdbx_soln_scatter_model:pdbx_soln_scatter:1                               . .
 pdbx_struct_assembly_auth_classification 1  pdbx_struct_asssembly_auth_classification:pdbx_struct_assembly:1          . .
 pdbx_struct_assembly_auth_evidence       1  pdbx_struct_asssembly_auth_evidence:pdbx_struct_assembly:1                . .
+pdbx_struct_assembly_auth_evidence_depositor_info 1  pdbx_struct_asssembly_auth_evidence_depositor_info:pdbx_struct_assembly_depositor_info:1  . .
 pdbx_struct_assembly_gen                 1  pdbx_struct_assembly_gen:pdbx_struct_assembly:1                           . .
-pdbx_struct_assembly_gen_depositor_info  1  pdbx_struct_assembly_gen_depositor_info:pdbx_struct_assembly:1            . .
+pdbx_struct_assembly_gen_depositor_info  1  pdbx_struct_assembly_gen_depositor_info:pdbx_struct_assembly_depositor_info:1  . .
 pdbx_struct_asym_gen                     1  pdbx_struct_asym_gen:pdbx_struct_entity_inst:1                            . .
 pdbx_struct_asym_gen                     2  pdbx_struct_asym_gen:struct_asym:2                                        . .
 pdbx_struct_chem_comp_diagnostics        1  pdbx_struct_chem_comp_diagnostics:atom_site:1                             . .
@@ -1333,8 +1334,9 @@ pdbx_soln_scatter                        1  '_pdbx_soln_scatter.entry_id'       
 pdbx_soln_scatter_model                  1  '_pdbx_soln_scatter_model.scatter_id'                 '_pdbx_soln_scatter.id'                     pdbx_soln_scatter
 pdbx_struct_assembly_auth_classification 1  '_pdbx_struct_assembly_auth_classification.assembly_id' '_pdbx_struct_assembly.id'                pdbx_struct_assembly
 pdbx_struct_assembly_auth_evidence       1  '_pdbx_struct_assembly_auth_evidence.assembly_id'     '_pdbx_struct_assembly.id'                  pdbx_struct_assembly
+pdbx_struct_assembly_auth_evidence_depositor_info  1  '_pdbx_struct_assembly_auth_evidence_depositor_info.assembly_id'     '_pdbx_struct_assembly_depositor_info.id'  pdbx_struct_assembly_depositor_info
 pdbx_struct_assembly_gen                 1  '_pdbx_struct_assembly_gen.assembly_id'               '_pdbx_struct_assembly.id'                  pdbx_struct_assembly
-pdbx_struct_assembly_gen_depositor_info  1  '_pdbx_struct_assembly_gen_depositor_info.assembly_id' '_pdbx_struct_assembly.id'                 pdbx_struct_assembly
+pdbx_struct_assembly_gen_depositor_info  1  '_pdbx_struct_assembly_gen_depositor_info.assembly_id' '_pdbx_struct_assembly_depositor_info.id' pdbx_struct_assembly_depositor_info
 pdbx_struct_asym_gen                     1  '_pdbx_struct_asym_gen.entity_inst_id'                '_pdbx_struct_entity_inst.id'               pdbx_struct_entity_inst
 pdbx_struct_asym_gen                     2  '_pdbx_struct_asym_gen.asym_id'                       '_struct_asym.id'                           struct_asym
 pdbx_struct_chem_comp_diagnostics        1  '_pdbx_struct_chem_comp_diagnostics.pdb_strand_id'    '_atom_site.auth_asym_id'                   atom_site
