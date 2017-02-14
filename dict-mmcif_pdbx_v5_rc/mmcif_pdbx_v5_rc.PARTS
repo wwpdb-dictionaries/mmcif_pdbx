@@ -41,6 +41,6 @@ chemical_shift_extensions_v5_rc.dic
 ../dict-mmcif_pdbx_v5_next/audit-conform-extension.dic
 ../dict-mmcif_pdbx_v5_next/dcc-extension.dic
 ../dict-mmcif_pdbx_v5_next/deposit-group-extension.dic
-../dict-mmcif_pdbx_v5_next/binding-assay-extension.dic
+binding-assay-extension-rc.dic
 struct-assembly-extension-rc.dic
 mmcif_pdbx_v5_rc-def-ilg.dic
