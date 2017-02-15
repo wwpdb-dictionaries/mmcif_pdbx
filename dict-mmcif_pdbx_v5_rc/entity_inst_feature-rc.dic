@@ -36,8 +36,8 @@ save_pdbx_entity_instance_feature
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         WWPDB_LOCAL
-   _pdbx_category_context.category_id  pdbx_entity_instance_feature
+#   _pdbx_category_context.type         WWPDB_LOCAL
+#   _pdbx_category_context.category_id  pdbx_entity_instance_feature
      save_
 
 
