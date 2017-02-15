@@ -33,6 +33,7 @@ em-V5public.dic
 ../dict-mmcif_pdbx_v5_next/em-depositor_info-extension.dic
 chemical_shift_extensions_v5_rc.dic
 ../dict-mmcif_pdbx_v40/depositor_info-extension.dic
+entity_inst_feature-rc.dic
 ../dict-mmcif_pdbx_v40/entity-poly-multi-src-depositor-info-extension.dic
 ../dict-mmcif_pdbx_v40/fsc-extensions.dic
 ../dict-mmcif_pdbx_v40/chem_comp_model_extension.dic
