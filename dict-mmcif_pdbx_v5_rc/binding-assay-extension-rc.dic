@@ -196,3 +196,19 @@ save__pdbx_binding_assay.details
     _item.mandatory_code          no
     _item_type.code               text
      save_
+
+save__pdbx_binding_assay.auth_comp_id
+    _item_description.description
+;
+               The author provided chemical component identifier
+;
+    _item.name                  '_pdbx_binding_assay.auth_comp_id'
+    _item.category_id             pdbx_binding_assay
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case      'NAG' 'ATP'
+
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_pdbx_binding_assay.auth_comp_id'
+     save_
