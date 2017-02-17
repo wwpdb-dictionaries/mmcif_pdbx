@@ -126,7 +126,7 @@ save__pdbx_binding_assay.assay_type
 ;
     _item.name                  '_pdbx_binding_assay.assay_type'
     _item.category_id             pdbx_binding_assay
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               text
     loop_
     _item_examples.case
@@ -144,7 +144,7 @@ save__pdbx_binding_assay.assay_value_type
 ;
     _item.name                  '_pdbx_binding_assay.assay_value_type'
     _item.category_id             pdbx_binding_assay
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               text
     loop_
     _item_enumeration.value
@@ -161,7 +161,7 @@ save__pdbx_binding_assay.assay_value
 ;
     _item.name                  '_pdbx_binding_assay.assay_value'
     _item.category_id             pdbx_binding_assay
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               float
      save_
 
@@ -173,6 +173,8 @@ save__pdbx_binding_assay.assay_pH
     _item.category_id             pdbx_binding_assay
     _item.mandatory_code          no
     _item_type.code               float
+    _item_range.minimum           0.0
+    _item_range.maximum          14.0
      save_
 
 
@@ -185,6 +187,10 @@ save__pdbx_binding_assay.assay_temperature
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              kelvins
+     loop_
+    _item_range.maximum           
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
      save_
 
 save__pdbx_binding_assay.details
