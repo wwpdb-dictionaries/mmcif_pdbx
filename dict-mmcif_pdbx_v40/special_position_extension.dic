@@ -10,6 +10,9 @@ save_pdbx_struct_special_symmetry
      _category.id                  pdbx_struct_special_symmetry
      _category.mandatory_code      no
      _category_key.name          '_pdbx_struct_special_symmetry.id'
+     loop_
+     _category_group.id           'inclusive_group'
+                                  'pdbx_group'
       loop_
      _category_examples.detail
      _category_examples.case

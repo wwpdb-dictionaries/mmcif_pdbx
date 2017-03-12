@@ -928,6 +928,8 @@ save__pdbx_struct_assembly_depositor_info.id
     _item.category_id        pdbx_struct_assembly_depositor_info
     _item.mandatory_code     yes
     _item_type.code          line
+    _pdbx_item_description.name        '_pdbx_struct_assembly_depositor_info.id'
+    _pdbx_item_description.description 'The unique identifier for this assembly'
      save_
 
 save__pdbx_struct_assembly_depositor_info.method_details
@@ -3502,16 +3504,6 @@ save__pdbx_deposition_message_info.message_subject
 ;   The subject text of the message.
 ;
     _item.name                  '_pdbx_deposition_message_info.message_subject'
-    _item.category_id             pdbx_deposition_message_info
-    _item.mandatory_code          yes
-    _item_type.code               text
-     save_
-
-save__pdbx_deposition_message_info.message_text
-    _item_description.description
-;   The body of the message.
-;
-    _item.name                  '_pdbx_deposition_message_info.message_text'
     _item.category_id             pdbx_deposition_message_info
     _item.mandatory_code          yes
     _item_type.code               text

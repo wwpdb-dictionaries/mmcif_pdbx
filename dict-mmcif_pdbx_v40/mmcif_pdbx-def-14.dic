@@ -3223,6 +3223,9 @@ save_pdbx_unobs_or_zero_occ_residues
      _category.id                  pdbx_unobs_or_zero_occ_residues
      _category.mandatory_code      no
      _category_key.name          '_pdbx_unobs_or_zero_occ_residues.id'
+     loop_
+     _category_group.id          'inclusive_group'
+                                 'pdbx_group'
       loop_
      _category_examples.detail
      _category_examples.case
@@ -3418,6 +3421,9 @@ save_pdbx_unobs_or_zero_occ_atoms
      _category.id                  pdbx_unobs_or_zero_occ_atoms
      _category.mandatory_code      no
      _category_key.name          '_pdbx_unobs_or_zero_occ_atoms.id'
+     loop_
+     _category_group.id          'inclusive_group'
+                                 'pdbx_group'
       loop_
      _category_examples.detail
      _category_examples.case
@@ -3861,6 +3867,9 @@ save_pdbx_struct_mod_residue
      _category.id                  pdbx_struct_mod_residue
      _category.mandatory_code      no
      _category_key.name          '_pdbx_struct_mod_residue.id'
+     loop_
+     _category_group.id          'inclusive_group'
+                                 'pdbx_group'
       loop_
      _category_examples.detail
      _category_examples.case
@@ -4396,6 +4405,8 @@ _pdbx_remediation_atom_site_mapping.auth_alt_id
 2 HETATM 1 C11 QUA C 0 . . HETATM 1 C11 QUA C 7 . . C11 QUA C 7 . 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     _pdbx_category_context.type         WWPDB_LOCAL  
+     _pdbx_category_context.category_id  pdbx_remediation_atom_site_mapping
      save_
 
 save__pdbx_remediation_atom_site_mapping.id

@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.070
+    _dictionary.version         4.071
 #
      loop_
     _dictionary_history.version
@@ -2187,6 +2187,13 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
       _struct_mon_prot_cis.label_alt_id, _struct_site_gen.label_alt_id
     + Add optional pdbx_nmr_refine.software_ordinal
     + Add adamantane to _pdbx_nmr_chem_shift_ref.mol_common_name enumeration
+;
+4.071  2016-03-09
+;
+    Changes (ep):
+    + Add category group assignments for pdbx_unobs_or_zero_occ_residues, 
+      pdbx_unobs_or_zero_occ_atoms, pdbx_struct_mod_residue
+    + Update context values to WWPDB_LOCAL for pdbx_remediation_atom_site_mapping
 ;
 
 ### EOF mmcif_pdbx-header.

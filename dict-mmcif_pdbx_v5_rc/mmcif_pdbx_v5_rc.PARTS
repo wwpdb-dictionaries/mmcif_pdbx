@@ -1,6 +1,6 @@
 ../dict-mmcif_pdbx_v5_next/mmcif_pdbx_v5_next-header.dic
 ../dict-mmcif_pdbx_v5_next/mmcif_pdbx-data.dic
-../dict-mmcif_pdbx_v40/mmcif_pdbx-def-1.dic
+mmcif_pdbx-def-1.dic
 ../dict-mmcif_std/mmcif_std-def-2.dic
 ../dict-mmcif_pdbx_v40/mmcif_pdbx-def-2.dic
 ../dict-mmcif_pdbx_v5_next/mmcif_pdbx-def-3.dic
@@ -44,4 +44,6 @@ entity_inst_feature-rc.dic
 ../dict-mmcif_pdbx_v5_next/deposit-group-extension.dic
 binding-assay-extension-rc.dic
 struct-assembly-extension-rc.dic
+../dict-mmcif_pdbx_v5_next/pdb_extract_extension.dic
+versioning_extension_v5_rc.dic
 mmcif_pdbx_v5_rc-def-ilg.dic

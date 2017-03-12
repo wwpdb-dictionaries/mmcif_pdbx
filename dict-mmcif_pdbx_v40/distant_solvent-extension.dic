@@ -8,6 +8,9 @@ save_pdbx_distant_solvent_atoms
      _category.id                  pdbx_distant_solvent_atoms
      _category.mandatory_code      no
      _category_key.name          '_pdbx_distant_solvent_atoms.id'
+     loop_
+     _category_group.id          'inclusive_group'
+                                 'pdbx_group'
       loop_
      _category_examples.detail
      _category_examples.case
