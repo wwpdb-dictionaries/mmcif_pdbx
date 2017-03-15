@@ -2,7 +2,7 @@
 ../dict-mmcif_pdbx_v5_next/mmcif_pdbx-data.dic
 mmcif_pdbx-def-1.dic
 ../dict-mmcif_std/mmcif_std-def-2.dic
-../dict-mmcif_pdbx_v40/mmcif_pdbx-def-2.dic
+mmcif_pdbx-def-2.dic
 ../dict-mmcif_pdbx_v5_next/mmcif_pdbx-def-3.dic
 ../dict-mmcif_pdbx_v40/mmcif_pdbx-def-4.dic
 ../dict-mmcif_pdbx_v40/mmcif_pdbx-def-5.dic

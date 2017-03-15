@@ -8758,6 +8758,8 @@ save__em_2d_crystal_entity.c_sampling_length
     _item_range.minimum          0.0
     _item_type.code             float
     _item_units.code            angstroms
+#    _pdbx_item_context.type       WWPDB_LOCAL  #V4
+#    _pdbx_item_context.item_name '_em_2d_crystal_entity.c_sampling_length'  #V4
      save_
 
 save__em_2d_crystal_entity.image_processing_id
