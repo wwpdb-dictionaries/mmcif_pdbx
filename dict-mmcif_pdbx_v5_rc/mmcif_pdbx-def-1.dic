@@ -1411,8 +1411,6 @@ save__atom_site.B_iso_or_equiv_esd
                                   conversion_constant
     _item_type.code               float
     _item_units.code              8pi2_angstroms_squared
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_atom_site.B_iso_or_equiv_esd'
      save_
 
 save__atom_site.calc_attached_atom
@@ -1499,8 +1497,6 @@ save__atom_site.Cartn_x_esd
     _item_sub_category.id         cartesian_coordinate_esd
     _item_type.code               float
     _item_units.code              angstroms
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_atom_site.Cartn_x_esd'
      save_
 
 save__atom_site.Cartn_y
@@ -1546,8 +1542,6 @@ save__atom_site.Cartn_y_esd
     _item_sub_category.id         cartesian_coordinate_esd
     _item_type.code               float
     _item_units.code              angstroms
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_atom_site.Cartn_y_esd'
      save_
 
 save__atom_site.Cartn_z
@@ -1593,8 +1587,6 @@ save__atom_site.Cartn_z_esd
     _item_sub_category.id         cartesian_coordinate_esd
     _item_type.code               float
     _item_units.code              angstroms
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_atom_site.Cartn_z_esd'
      save_
 
 save__atom_site.chemical_conn_number
@@ -2021,8 +2013,6 @@ save__atom_site.occupancy_esd
     _item_related.related_name  '_atom_site.occupancy'
     _item_related.function_code   associated_value
     _item_type.code               float
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_atom_site.occupancy_esd'
      save_
 
 #save__atom_site.refinement_flags
@@ -2877,8 +2867,6 @@ save__atom_site_anisotrop.U[1][1]_esd
     _item_sub_category.id         matrix
     _item_type.code               float
     _item_units.code              angstroms_squared
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_atom_site_anisotrop.U[1][1]_esd'
      save_
 
 save__atom_site_anisotrop.U[1][2]
@@ -2953,8 +2941,6 @@ save__atom_site_anisotrop.U[1][2]_esd
     _item_sub_category.id         matrix
     _item_type.code               float
     _item_units.code              angstroms_squared
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_atom_site_anisotrop.U[1][2]_esd'
      save_
 
 save__atom_site_anisotrop.U[1][3]
@@ -3029,8 +3015,6 @@ save__atom_site_anisotrop.U[1][3]_esd
     _item_sub_category.id         matrix
     _item_type.code               float
     _item_units.code              angstroms_squared
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_atom_site_anisotrop.U[1][3]_esd'
      save_
 
 save__atom_site_anisotrop.U[2][2]
@@ -3105,8 +3089,6 @@ save__atom_site_anisotrop.U[2][2]_esd
     _item_sub_category.id         matrix
     _item_type.code               float
     _item_units.code              angstroms_squared
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_atom_site_anisotrop.U[2][2]_esd'
      save_
 
 save__atom_site_anisotrop.U[2][3]
@@ -3181,8 +3163,6 @@ save__atom_site_anisotrop.U[2][3]_esd
     _item_sub_category.id         matrix
     _item_type.code               float
     _item_units.code              angstroms_squared
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_atom_site_anisotrop.U[2][3]_esd'
      save_
 
 save__atom_site_anisotrop.U[3][3]
@@ -3256,8 +3236,6 @@ save__atom_site_anisotrop.U[3][3]_esd
                                   alternate_exclusive
     _item_type.code               float
     _item_units.code              angstroms_squared
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_atom_site_anisotrop.U[3][3]_esd'
      save_
 
 ################
@@ -10856,6 +10834,8 @@ save_computing
     _computing.publication_material 'PARST (Nardelli, 1983)'
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    _pdbx_category_context.type         WWPDB_LOCAL  
+    _pdbx_category_context.category_id  computing
      save_
 
 save__computing.entry_id
