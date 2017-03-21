@@ -220,7 +220,7 @@ save__pdbx_audit_revision_group.group
     _item.name                    '_pdbx_audit_revision_group.group'
     _item.category_id             pdbx_audit_revision_group
     _item.mandatory_code          yes
-    _item_type.code               code
+    _item_type.code               line
     _item_examples.case           citation
     loop_
     _item_enumeration.value
@@ -231,6 +231,7 @@ save__pdbx_audit_revision_group.group
     'Data collection'                 'Categories describing the data collection experiment and summary statistics'
     'Database references'             'Categories describing citation and correspondences with related archives'
     'Derived calculations'            'Categories describing secondary structurem linkages, binding sites and quaternary structure'
+    'Experimental data'               'Method-specific experimental data'
     'Experimental preparation'        'Categories describing the experimental sample preparation'
     'Initial release'                 'Reports the initial release of the data contents'
     'Non-polymer description'         'Categories describing non-polymer chemical description'
@@ -239,6 +240,7 @@ save__pdbx_audit_revision_group.group
     'Refinement description'          'Categories pertaining to the refinement of the model'
     'Structure summary'               'Categories that describe the title, authorship and molecular description' 
     'Source and taxonomy'             'Categories describing the sample source'
+    'Version format compliance'       'Categories to conform to the version of the mmCIF dictionary'
      save_
 
 ###########################################
