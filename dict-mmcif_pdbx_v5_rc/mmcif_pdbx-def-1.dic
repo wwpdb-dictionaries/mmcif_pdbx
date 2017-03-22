@@ -11791,8 +11791,6 @@ save_database_PDB_rev
          'full release'  0
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    _pdbx_category_context.type         WWPDB_LOCAL  
-    _pdbx_category_context.category_id  database_PDB_rev
      save_
 
 save__database_PDB_rev.author_name
@@ -11967,8 +11965,6 @@ save_database_PDB_rev_record
       3  ORIGX   'Based on new data from author'
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    _pdbx_category_context.type         WWPDB_LOCAL  
-    _pdbx_category_context.category_id  database_PDB_rev_record
      save_
 
 save__database_PDB_rev_record.details
