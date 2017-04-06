@@ -94,7 +94,7 @@ save_pdbx_version
     ;
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    _pdbx_category_context.type         WWPDB_LOCAL
+    _pdbx_category_context.type         WWPDB_DEPRECATED
     _pdbx_category_context.category_id  pdbx_version
      save_
 
@@ -126,6 +126,8 @@ save__pdbx_version.revision_date
     _item_aliases.alias_name     '_rcsb_version.revision_date'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
+    _item_related.related_name   '_pdbx_audit_revision_history.revision_date'
+    _item_related.function_code  replacedby
     save_
 
 save__pdbx_version.major_version
@@ -141,6 +143,8 @@ save__pdbx_version.major_version
     _item_aliases.alias_name     '_rcsb_version.major_version'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
+    _item_related.related_name   '_pdbx_audit_revision_history.major_revision'
+    _item_related.function_code  replacedby
      save_
 
 save__pdbx_version.minor_version
@@ -157,6 +161,8 @@ save__pdbx_version.minor_version
     _item_aliases.alias_name     '_rcsb_version.minor_version'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
+    _item_related.related_name   '_pdbx_audit_revision_history.minor_revision'
+    _item_related.function_code  replacedby
      save_
 
 
@@ -172,6 +178,8 @@ save__pdbx_version.details
     _item_aliases.alias_name     '_rcsb_version.details'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
+    _item_related.related_name   '_pdbx_audit_revision_details.description'
+    _item_related.function_code  replacedby
      save_
 
 save__pdbx_version.revision_type
@@ -216,6 +224,8 @@ save__pdbx_version.revision_type
          'Flag residual B-value'                  .
          'Initial release'                        .
          'Other'                                 .
+    _item_related.related_name   '_pdbx_audit_revision_group.group'
+    _item_related.function_code  replacedby
      save_
 
 
@@ -4346,7 +4356,11 @@ save__computing.pdbx_structure_refinement_method
     _item_aliases.alias_name     '_computing.ndb_structure_refinement_method'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
-
+    loop_
+    _item_related.related_name   
+    _item_related.function_code  
+                                 '_software.name'           replacedby
+                                 '_software.classification' replacedby
      save_
 
 save__computing.pdbx_data_reduction_ii
@@ -4360,7 +4374,11 @@ save__computing.pdbx_data_reduction_ii
     _item_aliases.alias_name     '_computing.rcsb_data_reduction_ii'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
-
+    loop_
+    _item_related.related_name   
+    _item_related.function_code  
+                                 '_software.name'           replacedby
+                                 '_software.classification' replacedby
      save_
 
 save__computing.pdbx_data_reduction_ds
@@ -4374,7 +4392,11 @@ save__computing.pdbx_data_reduction_ds
     _item_aliases.alias_name     '_computing.rcsb_data_reduction_ds'
     _item_aliases.dictionary     'cif_rcsb.dic'
     _item_aliases.version        1.1
-
+    loop_
+    _item_related.related_name   
+    _item_related.function_code  
+                                 '_software.name'           replacedby
+                                 '_software.classification' replacedby
      save_
 
 ##

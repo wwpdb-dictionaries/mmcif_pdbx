@@ -37,12 +37,11 @@ entity_inst_feature-rc.dic
 ../dict-mmcif_pdbx_v40/entity-poly-multi-src-depositor-info-extension.dic
 ../dict-mmcif_pdbx_v40/fsc-extensions.dic
 ../dict-mmcif_pdbx_v40/chem_comp_model_extension.dic
-../dict-mmcif_pdbx_v5_next/renamedDict.dic
+renamedDict.dic
 ../dict-mmcif_pdbx_v5_next/extra-meta-data.dic
 ../dict-mmcif_pdbx_v5_next/audit-conform-extension.dic
 ../dict-mmcif_pdbx_v5_next/dcc-extension.dic
 ../dict-mmcif_pdbx_v5_next/deposit-group-extension.dic
-binding-assay-extension-rc.dic
 struct-assembly-extension-rc.dic
 ../dict-mmcif_pdbx_v5_next/pdb_extract_extension.dic
 versioning_extension_v5_rc.dic

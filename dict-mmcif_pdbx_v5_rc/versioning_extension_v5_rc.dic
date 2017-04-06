@@ -77,6 +77,8 @@ save__pdbx_audit_revision_history.major_revision
     _item.mandatory_code          yes
     _item_type.code               int
     _item_examples.case          1
+    _item_related.related_name   '_pdbx_version.major_version'
+    _item_related.function_code  replaces
      save_
 
 save__pdbx_audit_revision_history.minor_revision
@@ -88,6 +90,8 @@ save__pdbx_audit_revision_history.minor_revision
     _item.mandatory_code          yes
     _item_type.code               int
     _item_examples.case          1
+    _item_related.related_name   '_pdbx_version.minor_version'
+    _item_related.function_code  replaces
      save_
 
 save__pdbx_audit_revision_history.revision_date
@@ -99,6 +103,8 @@ save__pdbx_audit_revision_history.revision_date
     _item.mandatory_code          yes
     _item_type.code               yyyy-mm-dd
     _item_examples.case           2017-03-08
+    _item_related.related_name   '_pdbx_version.revision_date'
+    _item_related.function_code  replaces
      save_
 
 save__pdbx_audit_revision_history.internal_version
@@ -241,6 +247,8 @@ save__pdbx_audit_revision_group.group
     'Structure summary'               'Categories that describe the title, authorship and molecular description' 
     'Source and taxonomy'             'Categories describing the sample source'
     'Version format compliance'       'Categories to conform to the version of the mmCIF dictionary'
+    _item_related.related_name    '_pdbx_version.revision_type'
+    _item_related.function_code   replaces
      save_
 
 ###########################################
@@ -466,6 +474,8 @@ save__pdbx_audit_revision_details.description
     _item.category_id             pdbx_audit_revision_details
     _item.mandatory_code          no
     _item_type.code               text
+    _item_related.related_name   '_pdbx_version.details'
+    _item_related.function_code  replaces
      save_
 
 ###########################################

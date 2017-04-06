@@ -10834,7 +10834,7 @@ save_computing
     _computing.publication_material 'PARST (Nardelli, 1983)'
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    _pdbx_category_context.type         WWPDB_LOCAL  
+    _pdbx_category_context.type         WWPDB_DEPRECATED
     _pdbx_category_context.category_id  computing
      save_
 
@@ -10860,6 +10860,11 @@ save__computing.cell_refinement
     _item_aliases.version         2.0.1
     _item_type.code               text
     _item_examples.case          'CAD4 (Enraf-Nonius, 1989)'
+    loop_
+    _item_related.related_name   
+    _item_related.function_code  
+                                 '_software.name'           replacedby
+                                 '_software.classification' replacedby
      save_
 
 save__computing.data_collection
@@ -10876,6 +10881,11 @@ save__computing.data_collection
     _item_aliases.version         2.0.1
     _item_type.code               text
     _item_examples.case          'CAD4 (Enraf-Nonius, 1989)'
+    loop_
+    _item_related.related_name   
+    _item_related.function_code  
+                                 '_software.name'           replacedby
+                                 '_software.classification' replacedby
      save_
 
 save__computing.data_reduction
@@ -10893,6 +10903,11 @@ save__computing.data_reduction
     _item_type.code               text
     _item_examples.case
            'DIFDAT, SORTRF, ADDREF (Hall & Stewart, 1990)'
+    loop_
+    _item_related.related_name   
+    _item_related.function_code  
+                                 '_software.name'           replacedby
+                                 '_software.classification' replacedby
      save_
 
 save__computing.molecular_graphics
@@ -10909,6 +10924,11 @@ save__computing.molecular_graphics
     _item_aliases.version         2.0.1
     _item_type.code               text
     _item_examples.case          'FRODO (Jones, 1986), ORTEP (Johnson, 1965)'
+    loop_
+    _item_related.related_name   
+    _item_related.function_code  
+                                 '_software.name'           replacedby
+                                 '_software.classification' replacedby
      save_
 
 save__computing.publication_material
@@ -10924,6 +10944,11 @@ save__computing.publication_material
     _item_aliases.dictionary      cif_core.dic
     _item_aliases.version         2.0.1
     _item_type.code               text
+    loop_
+    _item_related.related_name   
+    _item_related.function_code  
+                                 '_software.name'           replacedby
+                                 '_software.classification' replacedby
      save_
 
 save__computing.structure_refinement
@@ -10942,6 +10967,11 @@ save__computing.structure_refinement
     loop_
     _item_examples.case          'SHELX85 (Sheldrick, 1985)'
                                  'X-PLOR (Brunger, 1992)'
+    loop_
+    _item_related.related_name   
+    _item_related.function_code  
+                                 '_software.name'           replacedby
+                                 '_software.classification' replacedby
      save_
 
 save__computing.structure_solution
@@ -10958,6 +10988,11 @@ save__computing.structure_solution
     _item_aliases.version         2.0.1
     _item_type.code               text
     _item_examples.case          'SHELX85 (Sheldrick, 1985)'
+    loop_
+    _item_related.related_name   
+    _item_related.function_code  
+                                 '_software.name'           replacedby
+                                 '_software.classification' replacedby
      save_
 
 ##############
@@ -11833,6 +11868,8 @@ save__database_PDB_rev.date_original
     _item.mandatory_code          no
     _item_type.code               yyyy-mm-dd
     _item_examples.case          '1980-08-21'
+    _item_related.related_name   '_pdbx_database_status.recvd_initial_deposition_date'
+    _item_related.function_code  replacedby
      save_
 
 save__database_PDB_rev.mod_type
@@ -31347,6 +31384,19 @@ save__software.classification
                                  'refinement'
                                  'validation'
                                  'other'
+    loop_
+    _item_related.related_name   
+    _item_related.function_code  
+                      '_computing.cell_refinement'                    replaces
+                      '_computing.data_collection'                    replaces
+                      '_computing.data_reduction'                     replaces
+                      '_computing.molecular_graphics'                 replaces
+                      '_computing.publication_material'               replaces
+                      '_computing.structure_refinement'               replaces
+                      '_computing.structure_solution'                 replaces
+                      '_computing.pdbx_data_reduction_ds'             replaces
+                      '_computing.pdbx_data_reduction_ii'             replaces
+                      '_computing.pdbx_structure_refinement_method'   replaces
      save_
 
 save__software.compiler_name
@@ -31527,6 +31577,19 @@ save__software.name
                                  'O'
                                  'Xengen'
                                  'X-plor'
+    loop_
+    _item_related.related_name   
+    _item_related.function_code  
+                      '_computing.cell_refinement'                    replaces
+                      '_computing.data_collection'                    replaces
+                      '_computing.data_reduction'                     replaces
+                      '_computing.molecular_graphics'                 replaces
+                      '_computing.publication_material'               replaces
+                      '_computing.structure_refinement'               replaces
+                      '_computing.structure_solution'                 replaces
+                      '_computing.pdbx_data_reduction_ds'             replaces
+                      '_computing.pdbx_data_reduction_ii'             replaces
+                      '_computing.pdbx_structure_refinement_method'   replaces
      save_
 
 save__software.os

@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.071
+    _dictionary.version         4.072
 #
      loop_
     _dictionary_history.version
@@ -2194,6 +2194,14 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
     + Add category group assignments for pdbx_unobs_or_zero_occ_residues, 
       pdbx_unobs_or_zero_occ_atoms, pdbx_struct_mod_residue
     + Update context values to WWPDB_LOCAL for pdbx_remediation_atom_site_mapping
+;
+4.072  2017-04-06
+;
+    Changes (ep):
+    + Update archive enumerations for pdbx_nmr_exptl_sample.concentration_units
+      to match deposition enumeration
+    + Extend enumeration for _pdbx_nmr_constraint_file.constraint_subtype 
+      ('PRE', 'PRE solvent', 'CSP')
 ;
 
 ### EOF mmcif_pdbx-header.

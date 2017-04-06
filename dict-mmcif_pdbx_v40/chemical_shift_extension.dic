@@ -1278,6 +1278,9 @@ Specific type of constraint.
    'NOE'                 ?
    'NOE buildup'         ?
    'NOE not seen'        ?
+   'PRE'                 ?
+   'PRE solvent'         ?
+   'CSP'                 ?
    'general distance'    ?
    'alignment tensor'    ?
    'chirality'           ?
