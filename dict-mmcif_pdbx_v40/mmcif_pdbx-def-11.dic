@@ -535,6 +535,8 @@ save__entry.pdbx_DOI
     _item.category_id            'entry'
     _item.mandatory_code          no
     _item_type.code               code
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_entry.pdbx_DOI'
 save_
 ##
  

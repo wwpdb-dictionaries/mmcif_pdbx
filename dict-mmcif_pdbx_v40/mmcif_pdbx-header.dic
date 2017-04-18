@@ -34,7 +34,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         4.072
+    _dictionary.version         4.073
 #
      loop_
     _dictionary_history.version
@@ -2202,6 +2202,11 @@ _pdbx_struct_ref_seq_feature_prop.end_db_seq_id
       to match deposition enumeration
     + Extend enumeration for _pdbx_nmr_constraint_file.constraint_subtype 
       ('PRE', 'PRE solvent', 'CSP')
+;
+4.073  2017-04-18
+;
+    Changes (ep):
+    + Add WWPDB_LOCAL context for entry.pdbx_DOI
 ;
 
 ### EOF mmcif_pdbx-header.
