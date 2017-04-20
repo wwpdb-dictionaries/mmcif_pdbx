@@ -235,6 +235,7 @@ save__pdbx_audit_revision_group.group
     'Atomic model'                    'Categories describing the model coordinates'
     'Author supporting evidence'      'Categories supporting author provided experimental evidence'
     'Data collection'                 'Categories describing the data collection experiment and summary statistics'
+    'Data processing'                 'Categories describing data processing'
     'Database references'             'Categories describing citation and correspondences with related archives'
     'Derived calculations'            'Categories describing secondary structurem linkages, binding sites and quaternary structure'
     'Experimental data'               'Method-specific experimental data'
@@ -462,6 +463,7 @@ save__pdbx_audit_revision_details.type
     loop_
     _item_enumeration.value       'Initial release'
                                   'Coordinate replacement'
+                                  'Obsolete'
     loop_
     _item_examples.case           'Initial release'
      save_

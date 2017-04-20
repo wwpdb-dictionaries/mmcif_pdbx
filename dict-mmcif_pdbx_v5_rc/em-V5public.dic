@@ -9417,7 +9417,7 @@ save__em_map.endian_type
     _item_enumeration.value
     _item_enumeration.detail
         big
-        small
+        little
      save_
 
 
