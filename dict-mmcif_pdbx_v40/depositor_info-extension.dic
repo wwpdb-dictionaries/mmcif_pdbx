@@ -2892,7 +2892,7 @@ save__pdbx_depui_status_flags.has_sas_data
 ;
     _item.name                  '_pdbx_depui_status_flags.has_sas_data'
     _item.category_id             pdbx_depui_status_flags
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               code
     loop_
     _item_enumeration.value       Y N
@@ -2904,7 +2904,7 @@ save__pdbx_depui_status_flags.is_sas_deposited
 ;
     _item.name                  '_pdbx_depui_status_flags.is_sas_deposited'
     _item.category_id             pdbx_depui_status_flags
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               code
     loop_
     _item_enumeration.value       Y N
