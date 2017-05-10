@@ -24,6 +24,8 @@
 #      05-Feb-2017 ep   add pdbx_struct_assembly_gen_depositor_info.symmetry_operation
 #      11-Feb-2017 ep   add pdbx_struct_assembly_auth_evidence_depositor_info. Change parent of pdbx_struct_assembly_gen_depositor_info
 #                       to pdbx_struct_assembly_depositor_info
+#      28-Apr-2017 ep   add _pdbx_depui_status_flags.has_sas_data and
+#                       _pdbx_depui_status_flags.is_sas_deposited
 #------------------------------------------------------------------------------------------------------------------------------------
 
 save__pdbx_database_status.auth_req_rel_date
@@ -2884,6 +2886,29 @@ save__pdbx_depui_status_flags.sample_xyz_sequence_alignments_valid
      save_
 
 
+save__pdbx_depui_status_flags.has_sas_data
+    _item_description.description
+;   A flag to indicate whether the author has related SAXS/SANS data.
+;
+    _item.name                  '_pdbx_depui_status_flags.has_sas_data'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          yes
+    _item_type.code               code
+    loop_
+    _item_enumeration.value       Y N
+     save_
+
+save__pdbx_depui_status_flags.is_sas_deposited
+    _item_description.description
+;   A flag to indicate whether related SAXS/SANS data is already deposited elsewhere
+;
+    _item.name                  '_pdbx_depui_status_flags.is_sas_deposited'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          yes
+    _item_type.code               code
+    loop_
+    _item_enumeration.value       Y N
+     save_ 
 
 save_pdbx_depui_upload
     _category.description

@@ -310,47 +310,4 @@ save__pdbx_entity_src_gen_depositor_info.plasmid_name
     _item_examples.case          'pET3C'
                                  'pT123sab'
 save_
-
-
-##
-save__entity_poly.pdbx_seq_one_letter_code_sample
-    _item_description.description
-;              For cases in which the sample and model sequence differ this item contains 
-               the sample chemical sequence expressed as string of one-letter amino acid codes. 
-
-               Modified may be include as 'X' or with their 3-letter codes in parentheses. 
-;
-    _item.name                  '_entity_poly.pdbx_seq_one_letter_code_sample'
-    _item.category_id             entity_poly
-    _item.mandatory_code          no
-    _item_type.code               seq-one-letter-code
-    _item_examples.case
-;
-A  for alanine or adenine
-B  for ambiguous asparagine/aspartic-acid
-R  for arginine
-N  for asparagine
-D  for aspartic-acid
-C  for cysteine or cystine or cytosine
-Q  for glutamine
-E  for glutamic-acid
-Z  for ambiguous glutamine/glutamic acid
-G  for glycine or guanine
-H  for histidine
-I  for isoleucine
-L  for leucine
-K  for lysine
-M  for methionine
-F  for phenylalanine
-P  for proline
-S  for serine
-T  for threonine or thymine
-W  for tryptophan
-Y  for tyrosine
-V  for valine
-U  for uracil
-O  for water
-X  for other
-;
-     save_
-
+#

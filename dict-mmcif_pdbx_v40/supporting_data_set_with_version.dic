@@ -1,6 +1,7 @@
 ##
 # File:      pdbx_supporting_exp_data_set
 # Date:      Mar 16, 2017   jdw
+# Update:    Apr 29, 2017   ep
 ##
 
 #################################
@@ -30,9 +31,10 @@ save_pdbx_supporting_exp_data_set
      loop_
      _pdbx_supporting_exp_data_set.ordinal
      _pdbx_supporting_exp_data_set.data_content_type
-     _pdbx_supporting_exp_data_set.data_version
+     _pdbx_supporting_exp_data_set.data_version_major
+     _pdbx_supporting_exp_data_set.data_version_minor
      _pdbx_supporting_exp_data_set.details
-     1  'X-ray structure factor amplitudes'  V1-2 .
+     1  'X-ray structure factor amplitudes'  1 2 ?
 
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -63,16 +65,28 @@ save__pdbx_supporting_exp_data_set.data_content_type
     _item_examples.case	          'X-ray structure factor amplitudes' 'NMR chemical shifts' 'NMR restraints'
      save_
 
-save__pdbx_supporting_exp_data_set.details
+save__pdbx_supporting_exp_data_set.data_version_major
     _item_description.description
-;        The version on data of the experimental data content on which this entry depends.
+;        The major version on data of the experimental data content on which this entry depends.
 ;
-    _item.name                  '_pdbx_supporting_exp_data_set.details'
+    _item.name                  '_pdbx_supporting_exp_data_set.data_version_major'
     _item.category_id             pdbx_supporting_exp_data_set
     _item.mandatory_code          no
-    _item_type.code               code
+    _item_type.code               int
     loop_
-    _item_examples.case        'V2-1' 'V1-2'
+    _item_examples.case           2   1
+     save_
+
+save__pdbx_supporting_exp_data_set.data_version_minor
+    _item_description.description
+;        The major version on data of the experimental data content on which this entry depends.
+;
+    _item.name                  '_pdbx_supporting_exp_data_set.data_version_minor'
+    _item.category_id             pdbx_supporting_exp_data_set
+    _item.mandatory_code          no
+    _item_type.code               int
+    loop_
+    _item_examples.case           1   2
      save_
 
 save__pdbx_supporting_exp_data_set.details
