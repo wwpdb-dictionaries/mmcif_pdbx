@@ -26,6 +26,7 @@
 #                       to pdbx_struct_assembly_depositor_info
 #      28-Apr-2017 ep   add _pdbx_depui_status_flags.has_sas_data and
 #                       _pdbx_depui_status_flags.is_sas_deposited
+#      30-Jun-2017 ep   add _pdbx_depui_status_flags.use_sas_refine
 #------------------------------------------------------------------------------------------------------------------------------------
 
 save__pdbx_database_status.auth_req_rel_date
@@ -2911,6 +2912,20 @@ save__pdbx_depui_status_flags.is_sas_deposited
     loop_
     _item_enumeration.value       Y N
      save_ 
+
+save__pdbx_depui_status_flags.use_sas_refine
+    _item_description.description
+;   A flag to indicate whether related SAXS/SANS data was used in refinement
+;
+    _item.name                  '_pdbx_depui_status_flags.use_sas_refine'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _pdbx_item.mandatory_code     yes
+    _item_type.code               code
+    loop_
+    _item_enumeration.value       Y N
+     save_ 
+
 
 save_pdbx_depui_upload
     _category.description
