@@ -1,0 +1,754 @@
+##
+# File:  xfel-extension.dic
+# Date:  08-Nov-2016
+#
+# Data items and extensions items to support XFEL data collection and related
+# experiments.
+#
+# Updates:
+#  8-Nov-2016  Revised categories into independent pdbx_xfel categories
+#  3-Jan-2017  Updated with suggestions from Nicholas Sauter
+# 12-Jul-2017  Update type for _pdbx_xfel_detector.detector
+# 16-Jul-2017  Added Nicholas Sauters comments, _pdbx_xfel_data_reduction.lattices_indexed,
+#              _pdbx_xfel_data_reduction.crystal_hits, _pdbx_xfel_data_reduction.droplet_hits.
+#              Changed _pdbx_xfel_data_reduction.frames_hits to _pdbx_xfel_data_reduction.frame_hits.
+#
+
+###################
+# PDBX_XFEL_SOURCE
+###################
+save_pdbx_xfel_source
+    _category.description
+;              Data items in the PDBX_XFEL_SOURCE category record
+               details about the source used in the experiment
+;
+    _category.id                  pdbx_xfel_source
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_xfel_source.diffrn_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'xfel_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1
+;
+;
+    _pdbx_xfel_source.diffrn_id       1
+    _pdbx_xfel_source.site            'SLAC LCLS'
+    _pdbx_xfel_source.site_beamline   'SLAC LCLS BEAMLINE CXI (SC1)'
+;
+     save_
+
+save__pdbx_xfel_source.diffrn_id
+    _item_description.description
+;              The data item is a pointer to _diffrn.id in the DIFFRN
+               category.
+;
+    _item.name                    '_pdbx_xfel_source.diffrn_id'
+    _item.category_id             pdbx_xfel_source
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_pdbx_xfel_source.diffrn_id'
+    _item_linked.parent_name      '_diffrn.id'
+    loop_
+    _item_examples.case          1
+     save_
+
+
+save__pdbx_xfel_source.site
+    _item_description.description
+;              The site of the free electron laser (FEL) source.
+;
+    _item.name                  '_pdbx_xfel_source.site'
+    _item.category_id             pdbx_xfel_source
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value      'SLAC LCLS'
+                                 'SACLA'
+    loop_
+    _item_examples.case          'SLAC LCLS'
+                                 'SACLA'
+    save_
+
+
+save__pdbx_xfel_source.site_beamline
+    _item_description.description
+;             The Free Electron Laser (FEL) facility, beamline and 
+              sample chamber identification.
+;
+    _item.name                  '_pdbx_xfel_source.site_beamline'
+    _item.category_id             pdbx_xfel_source
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+                                 'SACLA BEAMLINE BL3'
+                                 'SLAC LCLS BEAMLINE CXI (SC01)'
+                                 'SLAC LCLS BEAMLINE CXI (SC1)'
+                                 'SLAC LCLS BEAMLINE CXI (SC2)'
+                                 'SLAC LCLS BEAMLINE MFX'
+                                 'SLAC LCLS BEAMLINE XPP'
+    loop_
+    _item_examples.case          'SACLA BEAMLINE BL3'
+                                 'SLAC LCLS BEAMLINE CXI (SC01)'
+
+     save_
+
+
+
+#######################
+# PDBX_XFEL_MEASUREMENT
+#######################
+
+save_pdbx_xfel_measurement
+    _category.description
+;              Data items in the PDBX_XFEL_MEASUREMENT category record
+               details the beam that is impinging on the sample
+;
+    _category.id                  pdbx_xfel_measurement
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_xfel_measurement.diffrn_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'xfel_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1
+;
+;
+    _pdbx_xfel_measurement.diffrn_id                1
+    _pdbx_xfel_measurement.pulse_duration           45
+    _pdbx_xfel_measurement.photons_per_pulse        .17
+    _pdbx_xfel_measurement.focal_spot_size          1.8
+    _pdbx_xfel_measurement.collection_time_total   61036
+;
+     save_
+
+save__pdbx_xfel_measurement.diffrn_id
+    _item_description.description
+;              The data item is a pointer to _diffrn.id in the DIFFRN
+               category.
+;
+    _item.name                  '_pdbx_xfel_measurement.diffrn_id'
+    _item.category_id             pdbx_xfel_measurement
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_pdbx_xfel_measurement.diffrn_id'
+    _item_linked.parent_name      '_diffrn.id'
+    loop_
+    _item_examples.case          '1'
+     save_
+
+save__pdbx_xfel_measurement.pulse_energy
+    _item_description.description
+;              The energy/pulse of the X-ray pulse impacting the sample measured in microjoules.
+;
+    _item.name                  '_pdbx_xfel_measurement.pulse_energy'
+    _item.category_id             pdbx_xfel_measurement
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              microjoules
+     save_
+
+save__pdbx_xfel_measurement.pulse_duration
+    _item_description.description
+;              Average duration (femtoseconds) of the pulse energy
+               measured at the sample.
+;
+    _item.name                  '_pdbx_xfel_measurement.pulse_duration'
+    _item.category_id             pdbx_xfel_measurement
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              femtoseconds
+     save_
+
+save__pdbx_xfel_measurement.pulse_repetition_rate
+    _item_description.description
+;              The pulse repetition rate measured in cycles per seconds.
+;
+    _item.name                  '_pdbx_xfel_measurement.pulse_repetition_rate'
+    _item.category_id             pdbx_xfel_measurement
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              hertz
+     save_
+
+save__pdbx_xfel_measurement.pulse_photon_energy
+    _item_description.description
+;              The photon energy of the X-ray pulse measured in KeV.
+;
+    _item.name                  '_pdbx_xfel_measurement.pulse_photon_energy'
+    _item.category_id             pdbx_xfel_measurement
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              kiloelectron_volts
+     save_
+
+save__pdbx_xfel_measurement.photons_per_pulse
+    _item_description.description
+;              The photons per pulse measured in  (tera photons (10^(12)^)/pulse units).
+;
+    _item.name                  '_pdbx_xfel_measurement.photons_per_pulse'
+    _item.category_id             pdbx_xfel_measurement
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              teraphotons_per_pulse
+     save_
+
+save__pdbx_xfel_measurement.source_size
+    _item_description.description
+;              The dimension of the source beam measured at the source (micrometres squared).
+;
+    _item.name                  '_pdbx_xfel_measurement.source_size'
+    _item.category_id             pdbx_xfel_measurement
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              micrometres_squared
+     save_
+
+save__pdbx_xfel_measurement.source_distance
+    _item_description.description
+;              The distance from source to the sample along the optical axis (metres).
+;
+    _item.name                  '_pdbx_xfel_measurement.source_distance'
+    _item.category_id             pdbx_xfel_measurement
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              metres
+     save_
+
+save__pdbx_xfel_measurement.focal_spot_size
+    _item_description.description
+;           Focal spot size of the beam impinging on the sample (micrometres squared).
+;
+    _item.name                   '_pdbx_xfel_measurement.focal_spot_size'
+    _item.category_id             pdbx_xfel_measurement
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              micrometres_squared
+     save_
+
+save__pdbx_xfel_measurement.collimation
+    _item_description.description
+;              The collimation or type of focusing optics applied to the radiation.
+;
+    _item.name                  '_pdbx_xfel_measurement.collimation'
+    _item.category_id             pdbx_xfel_measurement
+    _item.mandatory_code          no
+    _item_type.code               text
+    loop_
+    _item_examples.case
+    'Kirkpatrick-Baez mirrors'
+    'Beryllium compound refractive lenses'
+    'Fresnel zone plates'
+     save_
+
+save__pdbx_xfel_measurement.collection_time_total
+    _item_description.description
+;           The total number of seconds required to measure this data set.
+;
+    _item.name                  '_pdbx_xfel_measurement.collection_time_total'
+    _item.category_id             pdbx_xfel_measurement
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              seconds
+     loop_
+    _item_examples.case          120.0
+     save_
+
+#############################
+##  PDBX_XFEL_SAMPLE_DELIVERY
+#############################
+
+save_pdbx_xfel_sample_delivery
+    _category.description
+;              Data items in the PDBX_XFEL_SAMPLE_DELIVERY category
+               record general details about XFEL the sample delivery
+;
+    _category.id                  pdbx_xfel_sample_delivery
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_xfel_sample_delivery.diffrn_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'xfel_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1
+;
+;
+    _pdbx_xfel_sample_delivery.diffrn_id   1
+    _pdbx_xfel_sample_delivery.description 'LCP injector'
+
+;
+     save_
+
+save__pdbx_xfel_sample_delivery.diffrn_id
+    _item_description.description
+;              The data item is a pointer to _diffrn.id in the DIFFRN
+               category.
+;
+    _item.name                  '_pdbx_xfel_sample_delivery.diffrn_id'
+    _item.category_id             pdbx_xfel_sample_delivery
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_pdbx_xfel_sample_delivery.diffrn_id'
+    _item_linked.parent_name      '_diffrn.id'
+    loop_
+    _item_examples.case          1
+     save_
+
+save__pdbx_xfel_sample_delivery.description
+    _item_description.description
+;              The description of the mechanism by which the specimen in placed in the path
+               of the source.
+;
+    _item.name                  '_pdbx_xfel_sample_delivery.description'
+    _item.category_id             pdbx_xfel_sample_delivery
+    _item.mandatory_code          yes
+    _item_type.code               text
+    loop_
+    _item_examples.case          'fixed target'
+                                 'electrospin'
+                                 'MESH'
+                                 'CoMESH'
+                                 'gas dynamic virtual nozzle'
+                                 'LCP injector'
+                                 'addressable microarray'
+
+     save_
+
+
+########################################
+##  PDBX_XFEL_SAMPLE_DELIVERY_INJECTION
+########################################
+
+save_pdbx_xfel_sample_delivery_injection
+    _category.description
+;              Data items in the PDBX_XFEL_SAMPLE_DELIVERY_INJECTION
+               category record details about sample delivery by injection
+;
+    _category.id                  pdbx_xfel_sample_delivery_injection
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_xfel_sample_delivery_injection.diffrn_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'xfel_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1
+;
+;
+    _pdbx_xfel_sample_delivery_injection.diffrn_id               1
+    _pdbx_xfel_sample_delivery_injection.description             'microextrusion injector'
+    _pdbx_xfel_sample_delivery_injection.injector_diameter       50
+    _pdbx_xfel_sample_delivery_injection.flow_rate               0.22
+    _pdbx_xfel_sample_delivery_injection.carrier_solvent         'Crystallization bufer with 7.9 MAG'
+;
+     save_
+
+save__pdbx_xfel_sample_delivery_injection.diffrn_id
+    _item_description.description
+;              The data item is a pointer to _diffrn.id in the DIFFRN
+               category.
+;
+    _item.name                  '_pdbx_xfel_sample_delivery_injection.diffrn_id'
+    _item.category_id           pdbx_xfel_sample_delivery_injection
+    _item.mandatory_code        yes
+    _item_type.code             code
+    _item_linked.child_name     '_pdbx_xfel_sample_delivery_injection.diffrn_id'
+    _item_linked.parent_name    '_diffrn.id'
+
+    loop_
+    _item_examples.case          1
+     save_
+
+save__pdbx_xfel_sample_delivery_injection.description
+    _item_description.description
+;              For continuous sample flow experiments, a description of the injector used
+               to move the sample into the beam.
+;
+    _item.name                  '_pdbx_xfel_sample_delivery_injection.description'
+    _item.category_id             pdbx_xfel_sample_delivery_injection
+    _item.mandatory_code          no
+    _item_type.code               text
+    loop_
+    _item_examples.case       'microextrusion injector'
+
+    save_
+
+save__pdbx_xfel_sample_delivery_injection.injector_diameter
+    _item_description.description
+;              For continuous sample flow experiments, the diameter of the
+               injector in micrometres.
+;
+    _item.name                  '_pdbx_xfel_sample_delivery_injection.injector_diameter'
+    _item.category_id             pdbx_xfel_sample_delivery_injection
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              micrometres
+
+    save_
+
+save__pdbx_xfel_sample_delivery_injection.injector_temperature
+    _item_description.description
+;              For continuous sample flow experiments, the temperature in
+               Kelvins of the speciman injected. This may be different from
+               the temperature of the sample.
+;
+    _item.name                  '_pdbx_xfel_sample_delivery_injection.injector_temperature'
+    _item.category_id             pdbx_xfel_sample_delivery_injection
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_type_conditions.code    esd
+    _item_units.code              kelvins
+
+     save_
+
+save__pdbx_xfel_sample_delivery_injection.injector_pressure
+    _item_description.description
+;              For continuous sample flow experiments, the mean pressure
+               in kilopascals at which the sample is injected into the beam.
+;
+    _item.name                  '_pdbx_xfel_sample_delivery_injection.injector_pressure'
+    _item.category_id             pdbx_xfel_sample_delivery_injection
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_type_conditions.code    esd
+    _item_units.code              kilopascals
+
+ save_
+
+save__pdbx_xfel_sample_delivery_injection.flow_rate
+    _item_description.description
+;              For continuous sample flow experiments, the flow rate of
+               solution being injected  measured in ul/min.
+;
+    _item.name                  '_pdbx_xfel_sample_delivery_injection.flow_rate'
+    _item.category_id             pdbx_xfel_sample_delivery_injection
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              microliters_per_min
+ save_
+
+save__pdbx_xfel_sample_delivery_injection.carrier_solvent
+    _item_description.description
+;              For continuous sample flow experiments, the carrier buffer used
+               to move the sample into the beam. Should include protein
+               concentration.
+;
+    _item.name                  '_pdbx_xfel_sample_delivery_injection.carrier_solvent'
+    _item.category_id             pdbx_xfel_sample_delivery_injection
+    _item.mandatory_code          no
+    _item_type.code               text
+
+    save_
+
+save__pdbx_xfel_sample_delivery_injection.sample_concentration
+    _item_description.description
+;              For continuous sample flow experiments, the concentration of
+               crystals in the solution being injected.
+
+               The concentration is measured in million crystals/ml.
+;
+    _item.name                  '_pdbx_xfel_sample_delivery_injection.sample_concentration'
+    _item.category_id             pdbx_xfel_sample_delivery_injection
+    _item.mandatory_code          no
+    _item_type.code               float
+    #_item_units.code            'millions_per_ml'
+ save_
+
+save__pdbx_xfel_sample_delivery_injection.preparation
+    _item_description.description
+;              Details of crystal growth and preparation of the crystals
+;
+    _item.name                  '_pdbx_xfel_sample_delivery_injection.preparation'
+    _item.category_id             pdbx_xfel_sample_delivery_injection
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_examples.case          'Crystals transfered to carrier solvent at room temperature'
+     save_
+
+
+#####################
+# PDBX_XFEL_DETECTOR
+#####################
+
+save_pdbx_xfel_detector
+    _category.description
+;              Data items in the PDBX_XFEL_DETECTOR category record
+               details the detector used in the experiment
+;
+    _category.id                  pdbx_xfel_detector
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_xfel_detector.diffrn_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'xfel_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1
+;
+;
+    _pdbx_xfel_detector.diffrn_id     1
+    _pdbx_xfel_detector.type          'CS-PAD CXI-1'
+    _pdbx_xfel_detector.detector      'PIXEL ARRAY DETECTOR'
+    _pdbx_xfel_detector.frequency     120
+;
+     save_
+
+save__pdbx_xfel_detector.diffrn_id
+    _item_description.description
+;              The data item is a pointer to _diffrn.id in the DIFFRN
+               category.
+;
+    _item.name                  '_pdbx_xfel_detector.diffrn_id'
+    _item.category_id             pdbx_xfel_detector
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_pdbx_xfel_detector.diffrn_id'
+    _item_linked.parent_name      '_diffrn.id'
+    loop_
+    _item_examples.case          '1'
+     save_
+
+
+save__pdbx_xfel_detector.type
+    _item_description.description
+;              The type of detector used for data collection
+;
+    _item.name                  '_pdbx_xfel_detector.type'
+    _item.category_id             pdbx_xfel_detector
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value       CUSTOM-MADE
+                                 'CS-PAD CXI-1'
+                                 'CS-PAD CXI-2'
+                                 'CS-PAD XPP'
+                                 'RAYONIX MX-325'
+                                 'RAYONIX MX170-HS'
+                                 'RAYONIX MX325HE'
+                                 'RAYONIX SX-165mm'
+   #
+save_
+
+save__pdbx_xfel_detector.detector
+    _item_description.description
+;              The class of detector used for data collection
+;
+    _item.name                  '_pdbx_xfel_detector.detector'
+    _item.category_id             pdbx_xfel_detector
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value      'CCD'
+                                 'CMOS'
+                                 'PIXEL ARRAY DETECTOR'
+    save_
+
+save__pdbx_xfel_detector.details
+    _item_description.description
+;              A description of special aspects of the radiation detector.
+;
+    _item.name                  '_pdbx_xfel_detector.details'
+    _item.category_id             pdbx_xfel_detector
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_xfel_detector.frequency
+    _item_description.description
+;              The frequency of the detector (Hz) used in data collection.
+;
+    _item.name                  '_pdbx_xfel_detector.frequency'
+    _item.category_id             pdbx_xfel_detector
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+
+##############################
+##  PDBX_XFEL_DATA_REDUCTION
+##############################
+save_pdbx_xfel_data_reduction
+    _category.description
+;              Data items in the PDBX_XFEL_DATA_REDUCTION category record
+               details about data processing that are unique to XFEL experiments.
+               These will compliment data recorded in category pdbx_diffrn_merge_stat.
+;
+    _category.id                  pdbx_xfel_data_reduction
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_xfel_data_reduction.diffrn_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'xfel_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1
+;
+;
+    _pdbx_xfel_data_reduction.diffrn_id           1
+    _pdbx_xfel_data_reduction.frames_total        7324430
+    _pdbx_xfel_data_reduction.crystal_hits         1797503
+    _pdbx_xfel_data_reduction.frames_indexed      578620
+;
+     save_
+
+
+save__pdbx_xfel_data_reduction.diffrn_id
+    _item_description.description
+;              The data item is a pointer to _diffrn.id in the DIFFRN
+               category.
+;
+    _item.name                   '_pdbx_xfel_data_reduction.diffrn_id'
+    _item.category_id             pdbx_xfel_data_reduction
+    _item.mandatory_code          yes
+    _item_linked.child_name       '_pdbx_xfel_data_reduction.diffrn_id'
+    _item_linked.parent_name      '_diffrn.id'
+    _item_type.code               code
+    loop_
+    _item_examples.case          1
+     save_
+
+
+save__pdbx_xfel_data_reduction.frames_total
+    _item_description.description
+;           The total number of data frames collected for this
+            data set.
+;
+    _item.name                  '_pdbx_xfel_data_reduction.frames_total'
+    _item.category_id             pdbx_xfel_data_reduction
+    _item.mandatory_code          no
+    _item_type.code               int
+     loop_
+    _item_examples.case          20 100
+     save_
+
+
+save__pdbx_xfel_data_reduction.pulse_events
+    _item_description.description
+;           For FEL experiments, the number of pulse events in the dataset.
+;
+    _item.name                  '_pdbx_xfel_data_reduction.pulse_events'
+    _item.category_id             pdbx_xfel_data_reduction
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+save__pdbx_xfel_data_reduction.frame_hits
+    _item_description.description
+;           For experiments in which samples are provided in a
+            continuous stream, the total number of data frames collected
+            in which the sample was hit.
+;
+    _item.name                  '_pdbx_xfel_data_reduction.frame_hits'
+    _item.category_id             pdbx_xfel_data_reduction
+    _item.mandatory_code          no
+    _item_type.code               int
+     loop_
+    _item_examples.case          1200 5750
+     save_
+
+save__pdbx_xfel_data_reduction.crystal_hits
+    _item_description.description
+;           For experiments in which samples are provided in a
+            continuous stream, the total number of frames collected
+            in which the crystal was hit.
+;
+    _item.name                  '_pdbx_xfel_data_reduction.crystal_hits'
+    _item.category_id             pdbx_xfel_data_reduction
+    _item.mandatory_code          no
+    _item_type.code               int
+     loop_
+    _item_examples.case          1200 5750
+     save_
+
+save__pdbx_xfel_data_reduction.droplet_hits
+    _item_description.description
+;           For experiments in which samples are provided in a
+            continuous stream, the total number of frames collected
+            in which a droplet was hit.
+;
+    _item.name                  '_pdbx_xfel_data_reduction.droplet_hits'
+    _item.category_id             pdbx_xfel_data_reduction
+    _item.mandatory_code          no
+    _item_type.code               int
+     loop_
+    _item_examples.case          1200 5750
+     save_
+
+save__pdbx_xfel_data_reduction.frames_failed_index
+    _item_description.description
+;           For experiments in which samples are provided in a
+            continuous stream, the total number of data frames collected
+            that contained a "hit" but failed to index.
+;
+    _item.name                  '_pdbx_xfel_data_reduction.frames_failed_index'
+    _item.category_id             pdbx_xfel_data_reduction
+    _item.mandatory_code          no
+    _item_type.code               int
+     loop_
+    _item_examples.case          1200 5750
+     save_
+
+save__pdbx_xfel_data_reduction.frames_indexed
+    _item_description.description
+;           For experiments in which samples are provided in a
+            continuous stream, the total number of data frames collected
+            that were indexed.
+;
+    _item.name                  '_pdbx_xfel_data_reduction.frames_indexed'
+    _item.category_id             pdbx_xfel_data_reduction
+    _item.mandatory_code          no
+    _item_type.code               int
+     loop_
+    _item_examples.case          1200 5750
+     save_
+
+save__pdbx_xfel_data_reduction.lattices_indexed
+    _item_description.description
+;           For experiments in which samples are provided in a
+            continuous stream, the total number of lattices indexed.
+;
+    _item.name                  '_pdbx_xfel_data_reduction.lattices_indexed'
+    _item.category_id             pdbx_xfel_data_reduction
+    _item.mandatory_code          no
+    _item_type.code               int
+     loop_
+    _item_examples.case          1200 5750
+     save_
+
+save__pdbx_xfel_data_reduction.run_numbers
+    _item_description.description
+;              For data collection using different batches,
+               indicates which subset of the data collected
+               were used in producing this dataset.
+;
+    _item.name                  '_pdbx_xfel_data_reduction.run_numbers'
+    _item.category_id             pdbx_xfel_data_reduction
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+#
+

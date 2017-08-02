@@ -1,0 +1,2616 @@
+#
+# File: diffrn-data-set-extension-v2.dic
+# Date: 6-Oct-2016 J. Westbrook
+#
+# Draft PDBx/mmCIF extension dictionary supporting the PDBx/mmCIF Deposition Working Group
+# diffraction reflection data proposal from Sep 19, 2016 Cambridge meeting.
+#
+# Updates:
+# 2016-11-07: Add pdbx_diffrn_data_section_experiment and _pdbx_diffrn_data_section_site
+# 2016-12-23: Updates from 21-Dec-2016 WG conference call
+# 2017-01-03: Add category group diffrn_data_set_group and category pdbx_diffrn_merge_stat_shell
+# 2017-01-20: corrected item_enumeration for _pdbx_diffrn_data_section.type_scaled
+# 2017-07-12: remove boundary values on _pdbx_diffrn_image_proc.phi_value
+# 2917-07-17: replace items names d_resolution_* with d_limit_* and update related definitions.
+#             add item _pdbx_diffrn_merge_rejected_list.details
+#             add items _pdbx_diffrn_merge_image_list.image_id_begin and _pdbx_diffrn_merge_image_list.image_id_end
+#             add items _pdbx_diffrn_unmerged_cell.Bravais_lattice
+#             add items _pdbx_diffrn_unmerged_refln.scan_id and _pdbx_diffrn_unmerged_refln.scale_value
+#             add category pdbx_diffrn_scan
+#
+### -----------------------------------------------------------------------------------
+###
+#
+#data_diffrn-data-set-extension
+
+save_pdbx_diffrn_data_section
+    _category.description
+;             The pdbx_diffrn_data_section category records the contents of a diffraction
+              data section.
+;
+    _category.id                 'pdbx_diffrn_data_section'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_diffrn_data_section.id'
+
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+    _category_examples.case
+;
+#
+ _pdbx_diffrn_data_section.id              'ds-merged-1'
+ _pdbx_diffrn_data_section.type_scattering 'x-ray'
+ _pdbx_diffrn_data_section.type_merged     'true'
+ _pdbx_diffrn_data_section.type_scaled     'true'
+ _pdbx_diffrn_data_section.details         'Optional details describing this example diffraction data section'
+
+;
+   _pdbx_category_context.type         WWPDB_DIFFRN_DATA
+   _pdbx_category_context.category_id  'pdbx_diffrn_data_section'
+     save_
+
+save__pdbx_diffrn_data_section.id
+    _item_description.description
+;     The value of _pdbx_diffrn_data_section.id uniquely identifies a data section.
+;
+    _item.name                  '_pdbx_diffrn_data_section.id'
+    _item.category_id            'pdbx_diffrn_data_section'
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_examples.case          'ds-merged-1'
+     save_
+
+
+save__pdbx_diffrn_data_section.type_scattering
+    _item_description.description
+;     The diffraction scattering type.
+;
+    _item.name                  '_pdbx_diffrn_data_section.type_scattering'
+    _item.category_id            'pdbx_diffrn_data_section'
+    _item.mandatory_code         yes
+    _item_type.code              code
+
+    loop_
+    _item_enumeration.value
+    'x-ray' 'neutron' 'electron'
+    #
+    _item_examples.case          'x-ray'
+     save_
+
+save__pdbx_diffrn_data_section.type_merged
+    _item_description.description
+;     A flag to indicate merged diffraction data.
+;
+    _item.name                  '_pdbx_diffrn_data_section.type_merged'
+    _item.category_id            'pdbx_diffrn_data_section'
+    _item.mandatory_code         yes
+    _item_type.code              code
+
+    loop_
+    _item_enumeration.value      'true'
+                                 'false'
+    #
+    _item_examples.case          'true'
+     save_
+
+save__pdbx_diffrn_data_section.type_scaled
+    _item_description.description
+;     A flag to indicate scaled diffraction data.
+;
+    _item.name                  '_pdbx_diffrn_data_section.type_scaled'
+    _item.category_id            'pdbx_diffrn_data_section'
+    _item.mandatory_code         yes
+    _item_type.code              code
+
+    loop_
+    _item_enumeration.value
+    'true' 'false'
+    #
+    _item_examples.case          'true'
+     save_
+
+save__pdbx_diffrn_data_section.details
+    _item_description.description
+;     Additional details describing the contents of the diffraction data set.
+;
+    _item.name                  '_pdbx_diffrn_data_section.details'
+    _item.category_id            'pdbx_diffrn_data_section'
+    _item.mandatory_code         no
+    _item_type.code              text
+    #
+    _item_examples.case          'Optional details describing this example diffraction data section'
+     save_
+
+### -----------------------------------------------------------------------------------
+###
+save_pdbx_diffrn_data_section_index
+    _category.description
+;             The pdbx_diffrn_data_section_index category records an index
+              of the parent or primary data sections contributing to the contents to
+              a target data section.
+
+;
+    _category.id                 'pdbx_diffrn_data_section_index'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_diffrn_data_section_index.data_section_id'
+                                '_pdbx_diffrn_data_section_index.parent_data_section_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+    _category_examples.case
+;
+ loop_
+ _pdbx_diffrn_data_section_index.data_section_id
+ _pdbx_diffrn_data_section_index.parent_data_section_id
+ 'ds-merged-1'  ds-unmerged-1'
+ 'ds-merged-1'  ds-unmerged-2'
+;
+   _pdbx_category_context.type         WWPDB_DIFFRN_DATA
+   _pdbx_category_context.category_id  'pdbx_diffrn_data_section_index'
+     save_
+
+save__pdbx_diffrn_data_section_index.data_section_id
+    _item_description.description
+;     The value of data_set_id uniquely identifies a data section.
+;
+    _item.name                  '_pdbx_diffrn_data_section_index.data_section_id'
+    _item.category_id             pdbx_diffrn_data_section_index
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_linked.child_name     '_pdbx_diffrn_data_section_index.data_section_id'
+    _item_linked.parent_name    '_pdbx_diffrn_data_section.id'
+    #
+    _item_examples.case          'ds-merged-1'
+     save_
+
+save__pdbx_diffrn_data_section_index.parent_data_section_id
+    _item_description.description
+;     The value of parent_data_set_id identifies a parent or contributing data section.
+;
+    _item.name                  '_pdbx_diffrn_data_section_index.parent_data_section_id'
+    _item.category_id             pdbx_diffrn_data_section_index
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_examples.case          'ds-unmerged-1'
+     save_
+
+### -----------------------------------------------------------------------------------
+###
+save_pdbx_diffrn_data_section_experiment
+    _category.description
+;             The pdbx_diffrn_data_section_experiment category records an admin
+              of the parent or primary data sections contributing to the contents to
+              a target data section.
+
+;
+    _category.id                 'pdbx_diffrn_data_section_experiment'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_diffrn_data_section_experiment.data_section_id'
+                                '_pdbx_diffrn_data_section_experiment.ordinal'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+
+    _category_examples.case
+;
+ loop_
+ _pdbx_diffrn_data_section_experiment.ordinal
+ _pdbx_diffrn_data_section_experiment.data_section_id
+ _pdbx_diffrn_data_section_experiment.proposal_id
+  1 'ds-unmerged-1' 1234A
+;
+   _pdbx_category_context.type         WWPDB_DIFFRN_DATA
+   _pdbx_category_context.category_id  'pdbx_diffrn_data_section_experiment'
+     save_
+
+save__pdbx_diffrn_data_section_experiment.data_section_id
+    _item_description.description
+;     The value of data_set_id uniquely identifies a data section.
+;
+    _item.name                  '_pdbx_diffrn_data_section_experiment.data_section_id'
+    _item.category_id             pdbx_diffrn_data_section_experiment
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_linked.child_name     '_pdbx_diffrn_data_section_experiment.data_section_id'
+    _item_linked.parent_name    '_pdbx_diffrn_data_section.id'
+    #
+    _item_examples.case          'ds-merged-1'
+     save_
+
+save__pdbx_diffrn_data_section_experiment.ordinal
+    _item_description.description
+;     Ordinal index for the admin section.
+;
+    _item.name                  '_pdbx_diffrn_data_section_experiment.ordinal'
+    _item.category_id             pdbx_diffrn_data_section_experiment
+    _item.mandatory_code         yes
+    _item_type.code              int
+    #
+    _item_examples.case          '1'
+     save_
+
+save__pdbx_diffrn_data_section_experiment.proposal_id
+    _item_description.description
+;     A site specific 'proposal' identifier for this dataset.
+;
+    _item.name                  '_pdbx_diffrn_data_section_experiment.proposal_id'
+    _item.category_id             pdbx_diffrn_data_section_experiment
+    _item.mandatory_code         no
+    _item_type.code              line
+    #
+    _item_examples.case          '1124A'
+     save_
+
+save__pdbx_diffrn_data_section_experiment.details
+    _item_description.description
+;     A description of any additional details with the data collection
+;
+    _item.name                  '_pdbx_diffrn_data_section_experiment.details'
+    _item.category_id             pdbx_diffrn_data_section_experiment
+    _item.mandatory_code         no
+    _item_type.code              line
+    #
+     save_
+
+### -----------------------------------------------------------------------------------
+###
+save_pdbx_diffrn_data_section_site
+    _category.description
+;             This pdbx_diffrn_data_section_site category records the site that data collection occured.
+;
+    _category.id                 'pdbx_diffrn_data_section_site'
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_diffrn_data_section_site.data_section_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+    _category_examples.case
+;
+ loop_
+ _pdbx_diffrn_data_section_site.data_section_id
+ _pdbx_diffrn_data_section_site.instrument
+ _pdbx_diffrn_data_section_site.collection_date
+ _pdbx_diffrn_data_section_site.detector
+ _pdbx_diffrn_data_section_site.detector_type
+ _pdbx_diffrn_data_section_site.radiation_source
+  'ds-unmerged-1' APS 14-BM-C' 2016-09-11 'ADSC QUANTUM 315' CCD synchrotron
+;
+   _pdbx_category_context.type         WWPDB_DIFFRN_DATA
+   _pdbx_category_context.category_id  'pdbx_diffrn_data_section_site'
+     save_
+
+save__pdbx_diffrn_data_section_site.data_section_id
+    _item_description.description
+;     The value of data_set_id uniquely identifies a data section.
+;
+    _item.name                  '_pdbx_diffrn_data_section_site.data_section_id'
+    _item.category_id             pdbx_diffrn_data_section_site
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_linked.child_name     '_pdbx_diffrn_data_section_site.data_section_id'
+    _item_linked.parent_name    '_pdbx_diffrn_data_section.id'
+    #
+    _item_examples.case          'ds-merged-1'
+     save_
+
+save__pdbx_diffrn_data_section_site.instrument
+    _item_description.description
+;     The name of instrument used for data collection including the facility, beamline
+      or apparatus name.
+;
+    _item.name                  '_pdbx_diffrn_data_section_site.instrument'
+    _item.category_id             pdbx_diffrn_data_section_site
+    _item.mandatory_code         no
+    _item_type.code              line
+    #
+    _item_examples.case          'APS 14-BM-C'
+    #
+    #  Enumerations to be included ...
+    #
+     save_
+
+save__pdbx_diffrn_data_section_site.collection_date
+    _item_description.description
+;     The date that data collection starts
+;
+    _item.name                  '_pdbx_diffrn_data_section_site.collection_date'
+    _item.category_id             pdbx_diffrn_data_section_site
+    _item.mandatory_code         no
+    _item_type.code               yyyy-mm-dd:hh:mm-flex
+    _item_examples.case          '1996-12-25'
+    #
+     save_
+
+save__pdbx_diffrn_data_section_site.detector
+    _item_description.description
+;      Detector used for data collection
+;
+    _item.name                  '_pdbx_diffrn_data_section_site.detector'
+    _item.category_id             pdbx_diffrn_data_section_site
+    _item.mandatory_code         no
+    _item_type.code              line
+    #
+    _item_examples.case          'ADSC QUANTUM 315'
+    loop_
+    _item_enumeration.value     'ADSC QUANTUM 315'
+    #                           ...
+     save_
+
+save__pdbx_diffrn_data_section_site.detector_type
+    _item_description.description
+;      Detector type used for data collection
+;
+    _item.name                  '_pdbx_diffrn_data_section_site.detector_type'
+    _item.category_id             pdbx_diffrn_data_section_site
+    _item.mandatory_code         no
+    _item_type.code              line
+    #
+    _item_examples.case          'CCD'
+    loop_
+    _item_enumeration.value     'CCD' 'CMOS' 'PIXEL'
+    #                           ...
+     save_
+
+save__pdbx_diffrn_data_section_site.radiation_source
+    _item_description.description
+;      Detector type used for data collection
+;
+    _item.name                  '_pdbx_diffrn_data_section_site.radiation_source'
+    _item.category_id             pdbx_diffrn_data_section_site
+    _item.mandatory_code         no
+    _item_type.code              line
+    #
+    loop_
+    _item_examples.case          'sealed X-ray tube'
+                                 'nuclear reactor'
+                                 'spallation source'
+                                 'electron microscope'
+                                 'rotating-anode X-ray tube'
+                                 'synchrotron'
+                                 'X-ray free electron laser'
+                                 #  ...
+     save_
+## -----------------------------------------------------------------------------------
+###
+
+save_pdbx_diffrn_merged_cell
+    _category.description
+;              Data items in the pdbx_diffrn_merged_cell category record details about the
+               crystallographic cell parameters for this merged data set
+;
+    _category.id                  pdbx_diffrn_merged_cell
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_diffrn_merged_cell.data_section_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+
+    _category_examples.case
+;
+ _pdbx_diffrn_merged_cell.data_section_id   'ds-merged-1'
+ _pdbx_diffrn_merged_cell.cell_length_a      51.3940
+ _pdbx_diffrn_merged_cell.cell_length_b     109.0130
+ _pdbx_diffrn_merged_cell.cell_length_c     137.3070
+ _pdbx_diffrn_merged_cell.cell_angle_alpha   90.0000
+ _pdbx_diffrn_merged_cell.cell_angle_beta    90.0000
+ _pdbx_diffrn_merged_cell.cell_angle_gamma   90.0000
+
+;
+   _pdbx_category_context.type         WWPDB_DIFFRN_DATA
+   _pdbx_category_context.category_id  'pdbx_diffrn_data_section_index'
+     save_
+
+save__pdbx_diffrn_merged_cell.data_section_id
+    _item_description.description
+;     The value of data_section_id uniquely identifies a data section.
+;
+    _item.name                  '_pdbx_diffrn_merged_cell.data_section_id'
+    _item.category_id           'pdbx_diffrn_merged_cell'
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_linked.child_name     '_pdbx_diffrn_merged_cell.data_section_id'
+    _item_linked.parent_name    '_pdbx_diffrn_data_section.id'
+    #
+    _item_examples.case          'ds-merged-1'
+     save_
+
+save__pdbx_diffrn_merged_cell.cell_angle_alpha
+    _item_description.description
+;              Unit-cell angle alpha in degrees.
+;
+    _item.name                  '_pdbx_diffrn_merged_cell.cell_angle_alpha'
+    _item.category_id             pdbx_diffrn_merged_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_merged_cell.cell_angle_beta'
+                                '_pdbx_diffrn_merged_cell.cell_angle_gamma'
+    loop_
+    _item_range.maximum
+    _item_range.minimum           180.0   180.0
+                                  180.0     0.0
+                                    0.0     0.0
+    _item_sub_category.id         cell_angle
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__pdbx_diffrn_merged_cell.cell_angle_beta
+    _item_description.description
+;              Unit-cell angle beta in degrees.
+;
+    _item.name                  '_pdbx_diffrn_merged_cell.cell_angle_beta'
+    _item.category_id             pdbx_diffrn_merged_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_merged_cell.cell_angle_alpha'
+                                '_pdbx_diffrn_merged_cell.cell_angle_gamma'
+    loop_
+    _item_range.maximum
+    _item_range.minimum           180.0   180.0
+                                  180.0     0.0
+                                    0.0     0.0
+    _item_sub_category.id         cell_angle
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__pdbx_diffrn_merged_cell.cell_angle_gamma
+    _item_description.description
+;              Unit-cell angle gamma in degrees.
+;
+    _item.name                  '_pdbx_diffrn_merged_cell.cell_angle_gamma'
+    _item.category_id             pdbx_diffrn_merged_cell
+    _item.mandatory_code          no
+    _item_default.value           90.0
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_merged_cell.cell_angle_alpha'
+                                '_pdbx_diffrn_merged_cell.cell_angle_beta'
+    loop_
+    _item_range.maximum
+    _item_range.minimum           180.0   180.0
+                                  180.0     0.0
+                                    0.0     0.0
+    _item_sub_category.id         cell_angle
+    _item_type.code               float
+    _item_type_conditions.code    esd
+    _item_units.code              degrees
+     save_
+
+
+save__pdbx_diffrn_merged_cell.cell_length_a
+    _item_description.description
+;              Unit-cell length a in angstroms.
+;
+    _item.name                  '_pdbx_diffrn_merged_cell.cell_length_a'
+    _item.category_id             pdbx_diffrn_merged_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_merged_cell.cell_length_b'
+                                '_pdbx_diffrn_merged_cell.cell_length_c'
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_sub_category.id         cell_length
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_merged_cell.cell_length_b
+    _item_description.description
+;              Unit-cell length b reported in angstroms.
+;
+    _item.name                  '_pdbx_diffrn_merged_cell.cell_length_b'
+    _item.category_id             pdbx_diffrn_merged_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_merged_cell.cell_length_a'
+                                '_pdbx_diffrn_merged_cell.cell_length_c'
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_sub_category.id         cell_length
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_merged_cell.cell_length_c
+    _item_description.description
+;              Unit-cell length c reported in angstroms.
+;
+    _item.name                  '_pdbx_diffrn_merged_cell.cell_length_c'
+    _item.category_id             pdbx_diffrn_merged_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_merged_cell.cell_length_a'
+                                '_pdbx_diffrn_merged_cell.cell_length_b'
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_sub_category.id         cell_length
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_merged_cell.cell_volume
+    _item_description.description
+;              Cell volume V in angstroms cubed.
+
+               V = a b c (1 - cos^2^~alpha~ - cos^2^~beta~ - cos^2^~gamma~
+                          + 2 cos~alpha~ cos~beta~ cos~gamma~)^1/2^
+
+               a     = _pdbx_diffrn_merged_cell.cell_length_a
+               b     = _pdbx_diffrn_merged_cell.cell_length_b
+               c     = _pdbx_diffrn_merged_cell.cell_length_c
+               alpha = _pdbx_diffrn_merged_cell.cell_angle_alpha
+               beta  = _pdbx_diffrn_merged_cell.cell_angle_beta
+               gamma = _pdbx_diffrn_merged_cell.cell_angle_gamma
+;
+    _item.name                  '_pdbx_diffrn_merged_cell.cell_volume'
+    _item.category_id             pdbx_diffrn_merged_cell
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+    _item_units.code              angstroms_cubed
+     save_
+
+
+### -----------------------------------------------------------------------------------
+###
+
+save_pdbx_diffrn_symmetry
+    _category.description
+;              Data items in the category record details about the space-group symmetry.
+;
+    _category.id                  pdbx_diffrn_symmetry
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_diffrn_symmetry.data_section_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+    _category_examples.case
+;
+_pdbx_diffrn_symmetry.data_section_id        'ds-merged-1'
+_pdbx_diffrn_symmetry.space_group_name_H-M   'P 21 21 21'
+#
+;
+     save_
+
+save__pdbx_diffrn_symmetry.data_section_id
+    _item_description.description
+;     The value of data_section_id uniquely identifies a data section.
+;
+    _item.name                  '_pdbx_diffrn_symmetry.data_section_id'
+    _item.category_id           'pdbx_diffrn_symmetry'
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_linked.child_name     '_pdbx_diffrn_symmetry.data_section_id'
+    _item_linked.parent_name    '_pdbx_diffrn_data_section.id'
+    #
+    _item_examples.case          'ds-merged-1'
+     save_
+
+save__pdbx_diffrn_symmetry.space_group_name_H-M
+    _item_description.description
+;              Hermann-Mauguin space-group symbol.
+;
+    _item.name                  '_pdbx_diffrn_symmetry.space_group_name_H-M'
+    _item.category_id             pdbx_diffrn_symmetry
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_examples.case
+    'P 1'
+    'P 1-'
+    'P 2'
+    'P 1 2 1'
+    'P 1 1 2'
+    'P 2 2 2'
+    'P 2 3'
+    'P 2 2 21'
+    'P 2 21 21'
+    'P 21'
+    'P 1 21 1'
+    'P 1 21/c 1'
+    'P 1 1 21'
+    'P 21(C)'
+    'P 21 2 21'
+    'P 21 3'
+    'P 21 21 2'
+    'P 21 21 21'
+     save_
+
+
+### -----------------------------------------------------------------------------------
+##
+
+save_pdbx_diffrn_merge_wavelength_list
+    _category.description
+;              Data items in the pdbx_diffrn_merge_wavelength_list category
+               record the wavelength(s) of the radiation used to measure the
+               diffraction intensities in this merged data set.
+;
+    _category.id                  pdbx_diffrn_merge_wavelength_list
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_diffrn_merge_wavelength_list.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+    _category_examples.case
+;
+#
+ loop_
+ _pdbx_diffrn_merge_wavelength_list.id
+ _pdbx_diffrn_merge_wavelength_list.wavelength
+ 1  0.91837
+;
+     save_
+
+save__pdbx_diffrn_merge_wavelength_list.id
+    _item_description.description
+;       The code identifying each value of _pdbx_diffrn_merge_wavelength_list.wavelength.
+;
+    _item.name                  '_pdbx_diffrn_merge_wavelength_list.id'
+    _item.category_id             pdbx_diffrn_merge_wavelength_list
+    _item.mandatory_code          yes
+    _item_type.code               int
+    loop_
+    _item_examples.case          1  2  3
+     save_
+
+save__pdbx_diffrn_merge_wavelength_list.wavelength
+    _item_description.description
+;              The radiation wavelength in angstroms.
+;
+    _item.name                  '_pdbx_diffrn_merge_wavelength_list.wavelength'
+    _item.category_id             pdbx_diffrn_merge_wavelength_list
+    _item.mandatory_code          yes
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+
+### -----------------------------------------------------------------------------------
+##
+
+save_pdbx_diffrn_merge_stat
+    _category.description
+;              Data items in the pdbx_diffrn_merge_stat category record details about the
+               reflection data in this merged data set.
+;
+    _category.id                  pdbx_diffrn_merge_stat
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_diffrn_merge_stat.data_section_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+    _category_examples.case
+;
+    _pdbx_diffrn_merge_stat.data_section_id               'ds-merge-1'
+    _pdbx_diffrn_merge_stat.d_limit_high              1.32
+    _pdbx_diffrn_merge_stat.d_limit_low               150.0
+    _pdbx_diffrn_merge_stat.number_obs                     300000
+    _pdbx_diffrn_merge_stat.number_all                     308123
+    _pdbx_diffrn_merge_stat.mean_I_over_sigI_all           10.7
+    _pdbx_diffrn_merge_stat.Rmerge_all                     0.069
+    _pdbx_diffrn_merge_stat.Rpim_I_all                     0.033
+    _pdbx_diffrn_merge_stat.CC_half_all                    0.999
+    _pdbx_diffrn_merge_stat.percent_possible_obs           98.2
+;
+     save_
+
+save__pdbx_diffrn_merge_stat.data_section_id
+    _item_description.description
+;     The value of data_section_id uniquely identifies a data section.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.data_section_id'
+    _item.category_id           'pdbx_diffrn_merge_stat'
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_linked.child_name     '_pdbx_diffrn_merge_stat.data_section_id'
+    _item_linked.parent_name    '_pdbx_diffrn_data_section.id'
+    #
+    _item_examples.case          'ds-merged-1'
+     save_
+
+save__pdbx_diffrn_merge_stat.d_limit_high
+    _item_description.description
+;              The smallest value for the interplanar spacings for
+               the reflection data. This is called the highest resolution.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.d_limit_high'
+    _item.category_id             pdbx_diffrn_merge_stat
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_merge_stat.d_limit_low
+    _item_description.description
+;              The largest value for the interplanar spacings for the
+               reflection data. This is called the lowest resolution.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.d_limit_low'
+    _item.category_id             pdbx_diffrn_merge_stat
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_merge_stat.details
+    _item_description.description
+;              A description of reflection data not covered by other data
+               names.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.details'
+    _item.category_id             pdbx_diffrn_merge_stat
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_diffrn_merge_stat.number_all
+    _item_description.description
+;              The total number of reflections contributing to this data set.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.number_all'
+    _item.category_id             pdbx_diffrn_merge_stat
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   0
+                                  0   0
+    _item_type.code               int
+     save_
+
+save__pdbx_diffrn_merge_stat.number_obs
+    _item_description.description
+;              The number of reflections satisfying the observed criteria.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.number_obs'
+    _item.category_id             pdbx_diffrn_merge_stat
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   0
+                                  0   0
+    _item_type.code               int
+     save_
+
+save__pdbx_diffrn_merge_stat.observed_criterion_I_max
+    _item_description.description
+;              The criterion used to classify a reflection as 'observed'
+               expressed as an upper limit for the value of I.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.observed_criterion_I_max'
+    _item.category_id             pdbx_diffrn_merge_stat
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merge_stat.observed_criterion_I_min
+    _item_description.description
+;              The criterion used to classify a reflection as 'observed'
+               expressed as a lower limit for the value of I.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.observed_criterion_I_min'
+    _item.category_id             pdbx_diffrn_merge_stat
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_diffrn_merge_stat.observed_criterion_sigma_I
+    _item_description.description
+;              The criterion used to classify a reflection as 'observed'
+               expressed as a multiple of the value of sigma(I).
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.observed_criterion_sigma_I'
+    _item.category_id             pdbx_diffrn_merge_stat
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merge_stat.percent_possible_obs
+    _item_description.description
+;              The percentage of geometrically possible reflections that satisfy
+               the resolution limits established by _pdbx_diffrn_merge_stat.d_limit_high and _pdbx_diffrn_merge_stat.d_limit_low and the observation limit established
+                in creating this data set.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.percent_possible_obs'
+    _item.category_id             pdbx_diffrn_merge_stat
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum         100.0 100.0
+                                100.0   0.0
+                                  0.0   0.0
+
+    _item_type.code               float
+     save_
+
+
+save__pdbx_diffrn_merge_stat.mean_I_over_sigI_all
+    _item_description.description
+;              The mean of the ratio of the intensities of all reflections
+               in this shell to the mean of the standard uncertainties of the
+               intensities of all reflections.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.mean_I_over_sigI_all'
+    _item.category_id             pdbx_diffrn_merge_stat
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merge_stat.Rmerge_all
+    _item_description.description
+;              Residual factor Rmerge for all reflections that satisfy the
+               resolution limits established by _pdbx_diffrn_merge_stat.d_limit_high
+               and _pdbx_diffrn_merge_stat.d_limit_low.
+
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.Rmerge_all'
+    _item.category_id             pdbx_diffrn_merge_stat
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+    save_
+
+save__pdbx_diffrn_merge_stat.Rpim_I_all
+    _item_description.description
+;             The precision-indicating merging R factor value Rpim,
+              for merging all intensities in this data set.
+
+              Ref: Diederichs, K. & Karplus, P. A. (1997). Nature Struct.
+                   Biol. 4, 269-275.
+                   Weiss, M. S. & Hilgenfeld, R. (1997). J. Appl. Cryst.
+                   30, 203-205.
+                   Weiss, M. S. (2001). J. Appl. Cryst. 34, 130-135.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.Rpim_I_all'
+    _item.category_id             pdbx_diffrn_merge_stat
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merge_stat.CC_half_all
+    _item_description.description
+;             The Pearson's correlation coefficient expressed as a decimal value
+              between the average intensities from randomly selected
+              half-datasets.
+
+          Ref: Karplus & Diederichs (2012), Science 336, 1030-33
+;
+    _item.name                  '_pdbx_diffrn_merge_stat.CC_half_all'
+    _item.category_id             pdbx_diffrn_merge_stat
+    _item.mandatory_code          no
+    _item_type.code               float
+    loop_
+    _item_range.minimum
+    _item_range.maximum
+    -1.0  -1.0
+    -1.0   1.0
+     1.0   1.0
+     save_
+
+
+### -----------------------------------------------------------------------------------
+##
+
+save_pdbx_diffrn_merge_stat_shell
+    _category.description
+;              Data items in the pdbx_diffrn_merge_stat_shell category record details about the
+               reflection data in resolution shells in this merged data set.
+;
+    _category.id                  pdbx_diffrn_merge_stat_shell
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_diffrn_merge_stat_shell.ordinal_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+    _category_examples.case
+;
+    _pdbx_diffrn_merge_stat_shell.ordinal_id                        1
+    _pdbx_diffrn_merge_stat_shell.d_limit_high              1.32
+    _pdbx_diffrn_merge_stat_shell.d_limit_low               1.60
+    _pdbx_diffrn_merge_stat_shell.number_obs                     1500
+    _pdbx_diffrn_merge_stat_shell.number_all                     1530
+    _pdbx_diffrn_merge_stat_shell.mean_I_over_sigI_all           10.7
+    _pdbx_diffrn_merge_stat_shell.Rmerge_all                     0.072
+    _pdbx_diffrn_merge_stat_shell.Rpim_I_all                     0.037
+    _pdbx_diffrn_merge_stat_shell.CC_half_all                    0.980
+    _pdbx_diffrn_merge_stat_shell.percent_possible_obs           98.0
+;
+     save_
+
+save__pdbx_diffrn_merge_stat_shell.ordinal_id
+    _item_description.description
+;     The value of ordinal_id uniquely identifies a resolution shell.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat_shell.ordinal_id'
+    _item.category_id           'pdbx_diffrn_merge_stat_shell'
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_examples.case          '1'
+     save_
+
+save__pdbx_diffrn_merge_stat_shell.d_limit_high
+    _item_description.description
+;              The smallest value for the interplanar spacings for
+               the reflection data in the shell.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat_shell.d_limit_high'
+    _item.category_id             pdbx_diffrn_merge_stat_shell
+    _item.mandatory_code          yes
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_merge_stat_shell.d_limit_low
+    _item_description.description
+;              The largest value for the interplanar spacings for the
+               reflection data in the shell.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat_shell.d_limit_low'
+    _item.category_id             pdbx_diffrn_merge_stat_shell
+    _item.mandatory_code          yes
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_merge_stat_shell.number_all
+    _item_description.description
+;              The total number of reflections contributing to this resolution shell.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat_shell.number_all'
+    _item.category_id             pdbx_diffrn_merge_stat_shell
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   0
+                                  0   0
+    _item_type.code               int
+     save_
+
+save__pdbx_diffrn_merge_stat_shell.number_obs
+    _item_description.description
+;              The number of reflections satisfying the observed criteria.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat_shell.number_obs'
+    _item.category_id             pdbx_diffrn_merge_stat_shell
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   0
+                                  0   0
+    _item_type.code               int
+     save_
+
+save__pdbx_diffrn_merge_stat_shell.observed_criterion_I_max
+    _item_description.description
+;              The criterion used to classify a reflection as 'observed'
+               expressed as an upper limit for the value of I.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat_shell.observed_criterion_I_max'
+    _item.category_id             pdbx_diffrn_merge_stat_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merge_stat_shell.observed_criterion_I_min
+    _item_description.description
+;              The criterion used to classify a reflection as 'observed'
+               expressed as a lower limit for the value of I.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat_shell.observed_criterion_I_min'
+    _item.category_id             pdbx_diffrn_merge_stat_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_diffrn_merge_stat_shell.observed_criterion_sigma_I
+    _item_description.description
+;              The criterion used to classify a reflection as 'observed'
+               expressed as a multiple of the value of sigma(I).
+;
+    _item.name                  '_pdbx_diffrn_merge_stat_shell.observed_criterion_sigma_I'
+    _item.category_id             pdbx_diffrn_merge_stat_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merge_stat_shell.percent_possible_obs
+    _item_description.description
+;              The percentage of geometrically possible reflections that satisfy
+               the resolution limits established by _pdbx_diffrn_merge_stat_shell.d_limit_high and
+               _pdbx_diffrn_merge_stat_shell.d_limit_low and the observation limit established
+                for this shell.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat_shell.percent_possible_obs'
+    _item.category_id             pdbx_diffrn_merge_stat_shell
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum         100.0 100.0
+                                100.0   0.0
+                                  0.0   0.0
+    _item_type.code               float
+     save_
+
+
+save__pdbx_diffrn_merge_stat_shell.mean_I_over_sigI_all
+    _item_description.description
+;              The mean of the ratio of the intensities of all reflections
+               in this shell to the mean of the standard uncertainties of the
+               intensities of reflections in this resoution shell.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat_shell.mean_I_over_sigI_all'
+    _item.category_id             pdbx_diffrn_merge_stat_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merge_stat_shell.Rmerge_all
+    _item_description.description
+;              Residual factor Rmerge for all reflections that satisfy the
+               limits established by _pdbx_diffrn_merge_stat_shell.d_limit_high
+               and _pdbx_diffrn_merge_stat_shell.d_limit_low.
+
+;
+    _item.name                  '_pdbx_diffrn_merge_stat_shell.Rmerge_all'
+    _item.category_id             pdbx_diffrn_merge_stat_shell
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+    save_
+
+save__pdbx_diffrn_merge_stat_shell.Rpim_I_all
+    _item_description.description
+;             The precision-indicating merging R factor value Rpim,
+              for merging all intensities in this resoution shell.
+
+              Ref: Diederichs, K. & Karplus, P. A. (1997). Nature Struct.
+                   Biol. 4, 269-275.
+                   Weiss, M. S. & Hilgenfeld, R. (1997). J. Appl. Cryst.
+                   30, 203-205.
+                   Weiss, M. S. (2001). J. Appl. Cryst. 34, 130-135.
+;
+    _item.name                  '_pdbx_diffrn_merge_stat_shell.Rpim_I_all'
+    _item.category_id             pdbx_diffrn_merge_stat_shell
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merge_stat_shell.CC_half_all
+    _item_description.description
+;             The Pearson's correlation coefficient expressed as a decimal value
+              between the average intensities from randomly selected
+              half-sets in this shell.
+
+          Ref: Karplus & Diederichs (2012), Science 336, 1030-33
+;
+    _item.name                  '_pdbx_diffrn_merge_stat_shell.CC_half_all'
+    _item.category_id             pdbx_diffrn_merge_stat_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    loop_
+    _item_range.minimum
+    _item_range.maximum
+    -1.0  -1.0
+    -1.0   1.0
+     1.0   1.0
+     save_
+
+
+### -----------------------------------------------------------------------------------
+##
+
+save_pdbx_diffrn_merged_refln
+    _category.description
+;              Data items in the pdbx_diffrn_merged_refln category record details about the
+               merged reflection data set.
+;
+    _category.id                  pdbx_diffrn_merged_refln
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_diffrn_merged_refln.reflection_id'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+    loop_
+    _category_examples.case
+;
+    loop_
+    _pdbx_diffrn_merged_refln.reflection_id
+    _pdbx_diffrn_merged_refln.index_h
+    _pdbx_diffrn_merged_refln.index_k
+    _pdbx_diffrn_merged_refln.index_l
+    _pdbx_diffrn_merged_refln.F_meas_au
+    _pdbx_diffrn_merged_refln.F_meas_sigma_au
+    _pdbx_diffrn_merged_refln.F_calc_au
+    _pdbx_diffrn_merged_refln.phase_calc
+    _pdbx_diffrn_merged_refln.R_free_flag
+    1    0    0    8  918.100   7.0000  2128.50   0.0000   1
+    2    0    0   10  450.700   5.3000  787.600  180.000   1
+    3    0    0   12  875.000   7.1000  851.000  180.000   10
+    4    0    0   14  628.700   6.4000  468.400  180.000   10
+    5    0    0   18  492.000   7.3000  565.200  180.000   5
+    # ...
+;
+     save_
+
+save__pdbx_diffrn_merged_refln.reflection_id
+    _item_description.description
+;           A unique identifier for each reflection.
+;
+
+    _item.name                  '_pdbx_diffrn_merged_refln.reflection_id'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          yes
+    _item_type.code               int
+    loop_
+    _item_examples.case          1  2  3
+     save_
+
+save__pdbx_diffrn_merged_refln.F_calc_au
+    _item_description.description
+;              The calculated value of the structure factor in arbitrary units.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.F_calc_au'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              arbitrary
+     save_
+
+save__pdbx_diffrn_merged_refln.F_meas_au
+    _item_description.description
+;              The measured value of the structure factor after merging in arbitrary units.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.F_meas_au'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              arbitrary
+     save_
+
+save__pdbx_diffrn_merged_refln.F_meas_sigma_au
+    _item_description.description
+;              The standard uncertainty (estimated standard deviation) of
+                _pdbx_diffrn_merged_refln.F_meas in arbitrary units.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.F_meas_sigma_au'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              arbitrary
+     save_
+
+save__pdbx_diffrn_merged_refln.fom
+    _item_description.description
+;              The figure of merit m for this reflection.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.fom'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merged_refln.index_h
+    _item_description.description
+;              Miller index h of the reflection. The values of the Miller
+               indices in this category must correspond to the cell
+               defined by cell lengths and cell angles in the pdbx_diffrn_merged_cell category.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.index_h'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          yes
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_merged_refln.index_k'
+                                '_pdbx_diffrn_merged_refln.index_l'
+    _item_sub_category.id         miller_index
+    _item_type.code               int
+     save_
+
+save__pdbx_diffrn_merged_refln.index_k
+    _item_description.description
+;              Miller index k of the reflection. The values of the Miller
+               indices in this category must correspond to the cell
+               defined by cell lengths and cell angles in the pdbx_diffrn_merged_cell category.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.index_k'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          yes
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_merged_refln.index_h'
+                                '_pdbx_diffrn_merged_refln.index_l'
+    _item_sub_category.id         miller_index
+    _item_type.code               int
+     save_
+
+save__pdbx_diffrn_merged_refln.index_l
+    _item_description.description
+;              Miller index l of the reflection. The values of the Miller
+               indices in this category must correspond to the cell
+               defined by cell lengths and cell angles in the pdbx_diffrn_merged_cell category.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.index_l'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          yes
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_merged_refln.index_h'
+                                '_pdbx_diffrn_merged_refln.index_k'
+    _item_sub_category.id         miller_index
+    _item_type.code               int
+     save_
+
+save__pdbx_diffrn_merged_refln.intensity_calc
+    _item_description.description
+;              The calculated value of the intensity in the same units as
+               _pdbx_diffrn_merged_refln.intensity_meas.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.intensity_calc'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merged_refln.intensity_meas
+    _item_description.description
+;              The measured value of the intensity.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.intensity_meas'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merged_refln.intensity_sigma
+    _item_description.description
+;              The standard uncertainty (derived from measurement) of the
+               intensity in the same units as _pdbx_diffrn_merged_refln.intensity_meas.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.intensity_sigma'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merged_refln.status
+    _item_description.description
+;              Classification of a reflection so as to indicate its status with
+               respect to inclusion in the refinement and the calculation of
+               R factors.
+
+               The current flags definitions are included but these should
+               be reviewed and/or updated as required.
+
+               DEPRECATED CODE
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.status'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      o
+;                                     satisfies _refine.ls_d_res_high,
+                                      satisfies _refine.ls_d_res_low,
+                                      observed by _reflns.observed_criterion,
+                                      not flagged as systematically absent,
+                                      not flagged as unreliable
+;
+                                  <
+;                                     satisfies _refine.ls_d_res_high,
+                                      satisfies _refine.ls_d_res_low,
+                                      unobserved by _reflns.observed_criterion,
+                                      not flagged as systematically absent,
+                                      not flagged as unreliable
+;
+                                  -  'systematically absent reflection'
+                                  x  'unreliable measurement -- not used'
+                                  h  'does not satisfy _refine.ls_d_res_high'
+                                  l  'does not satisfy _refine.ls_d_res_low'
+                                  f
+;                                     satisfies _refine.ls_d_res_high,
+                                      satisfies _refine.ls_d_res_low,
+                                      observed by _reflns.observed_criterion,
+                                      not flagged as systematically absent,
+                                      not flagged as unreliable,
+                                      excluded from refinement so as to be
+                                      included in the calculation of a 'free' R
+                                      factor
+;
+     save_
+
+save__pdbx_diffrn_merged_refln.R_free_flag
+     _item_description.description
+;              The R-free flag originally assigned to the reflection.  The convention used for
+               labeling the work and test sets differs depending on choice of data processing
+               software and refinement program.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.R_free_flag'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+save__pdbx_diffrn_merged_refln.phase_calc
+    _item_description.description
+;              The calculated structure-factor phase in degrees.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.phase_calc'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__pdbx_diffrn_merged_refln.phase_meas
+    _item_description.description
+;              The measured structure-factor phase in degrees.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.phase_meas'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__pdbx_diffrn_merged_refln.FWT
+    _item_description.description
+;  The weighted structure factor amplitude for the 2mFo-DFc map.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.FWT'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merged_refln.PHWT
+    _item_description.description
+;  The weighted phase for the 2mFo-DFc map.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.PHWT'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merged_refln.DELFWT
+    _item_description.description
+;  The weighted structure factor amplitude for the mFo-DFc map.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.DELFWT'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_merged_refln.DELPHWT
+    _item_description.description
+;  The weighted phase for the mFo-DFc map.
+;
+    _item.name                  '_pdbx_diffrn_merged_refln.DELPHWT'
+    _item.category_id             pdbx_diffrn_merged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+### -----------------------------------------------------------------------------------
+###
+save_pdbx_diffrn_merge_crystal_list
+    _category.description
+;             The pdbx_diffrn_merge_crystal_list category lists the identities
+              of the crystal samples on which diffraction measurements were
+              obtained to make this merged data set.
+
+;
+    _category.id                 'pdbx_diffrn_merge_crystal_list'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_diffrn_merge_crystal_list.data_section_id'
+                                '_pdbx_diffrn_merge_crystal_list.crystal_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+
+    loop_
+    _category_examples.case
+;
+    loop_
+    _pdbx_diffrn_merge_crystal_list.data_section_id
+    _pdbx_diffrn_merge_crystal_list.crystal_id
+    'ds-unmerged-1'  1
+    'ds-unmerged-2'  1
+;
+   _pdbx_category_context.type          WWPDB_DIFFRN_DATA
+   _pdbx_category_context.category_id  'pdbx_diffrn_merge_crystal_list'
+     save_
+
+save__pdbx_diffrn_merge_crystal_list.data_section_id
+    _item_description.description
+;     The value of data_section_id uniquely identifies a data section.
+;
+    _item.name                  '_pdbx_diffrn_merge_crystal_list.data_section_id'
+    _item.category_id             pdbx_diffrn_merge_crystal_list
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_linked.child_name     '_pdbx_diffrn_merge_crystal_list.data_section_id'
+    _item_linked.parent_name    '_pdbx_diffrn_data_section_index.parent_data_section_id'
+    #
+    _item_examples.case          'ds-merged-1'
+     save_
+
+save__pdbx_diffrn_merge_crystal_list.crystal_id
+    _item_description.description
+;     The value of crystal_id uniquely identifies a crystal sample within a data section.
+;
+    _item.name                  '_pdbx_diffrn_merge_crystal_list.crystal_id'
+    _item.category_id             pdbx_diffrn_merge_crystal_list
+    _item.mandatory_code         yes
+    _item_type.code              int
+    #
+    #
+    _item_examples.case          1
+     save_
+
+
+### -----------------------------------------------------------------------------------
+###
+save_pdbx_diffrn_merge_image_list
+    _category.description
+;             The pdbx_diffrn_merge_image_list category lists the image locations
+              (spots) on each crystal on which diffraction measurements were
+              obtained to make this merged data set.
+
+;
+    _category.id                 'pdbx_diffrn_merge_image_list'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_diffrn_merge_image_list.data_section_id'
+                                '_pdbx_diffrn_merge_image_list.crystal_id'
+                                '_pdbx_diffrn_merge_image_list.image_id_begin'
+                                '_pdbx_diffrn_merge_image_list.image_id_end'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+
+    _category_examples.case
+;
+    loop_
+    _pdbx_diffrn_merge_image_list.data_section_id
+    _pdbx_diffrn_merge_image_list.crystal_id
+    _pdbx_diffrn_merge_image_list.image_id_begin
+    _pdbx_diffrn_merge_image_list.image_id_end
+    'ds-unmerged-1'  1  1    10
+    'ds-unmerged-1'  1  11  100
+    'ds-unmerged-2'  1  1   100
+    'ds-unmerged-2'  1  101 150
+
+;
+   _pdbx_category_context.type          WWPDB_DIFFRN_DATA
+   _pdbx_category_context.category_id  'pdbx_diffrn_merge_image_list'
+     save_
+
+save__pdbx_diffrn_merge_image_list.data_section_id
+    _item_description.description
+;     The value of data_section_id uniquely identifies a data section.
+;
+    _item.name                  '_pdbx_diffrn_merge_image_list.data_section_id'
+    _item.category_id            'pdbx_diffrn_merge_image_list'
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_linked.child_name     '_pdbx_diffrn_merge_image_list.data_section_id'
+    _item_linked.parent_name    '_pdbx_diffrn_data_section_index.parent_data_section_id'
+    #
+    _item_examples.case          'ds-merged-1'
+     save_
+
+save__pdbx_diffrn_merge_image_list.crystal_id
+    _item_description.description
+;     The value of crystal_id uniquely identifies a crystal sample within a data section.
+;
+    _item.name                  '_pdbx_diffrn_merge_image_list.crystal_id'
+    _item.category_id            'pdbx_diffrn_merge_image_list'
+    _item.mandatory_code         yes
+    _item_type.code              int
+    #
+    _item_linked.child_name     '_pdbx_diffrn_merge_image_list.crystal_id'
+    _item_linked.parent_name    '_pdbx_diffrn_merge_crystal_list.crystal_id'
+    #
+    _item_examples.case          1
+     save_
+
+save__pdbx_diffrn_merge_image_list.image_id_begin
+    _item_description.description
+;     The initial value of a range of image_id values.
+;
+    _item.name                  '_pdbx_diffrn_merge_image_list.image_id_begin'
+    _item.category_id            'pdbx_diffrn_merge_image_list'
+    _item.mandatory_code         yes
+    _item_type.code              int
+    #
+    #
+    _item_examples.case          1
+     save_
+
+save__pdbx_diffrn_merge_image_list.image_id_end
+    _item_description.description
+;      The initial value of a range of image_id values.
+;
+    _item.name                  '_pdbx_diffrn_merge_image_list.image_id_end'
+    _item.category_id            'pdbx_diffrn_merge_image_list'
+    _item.mandatory_code         yes
+    _item_type.code              int
+    #
+    #
+    _item_examples.case          100
+     save_
+### -----------------------------------------------------------------------------------
+###
+save_pdbx_diffrn_merge_rejected_list
+    _category.description
+;             The pdbx_diffrn_merge_rejected_list category lists the rejected reflections
+              from the image spots from the crystals from the parent data set used to make
+              this merged data set.
+;
+    _category.id                 'pdbx_diffrn_merge_rejected_list'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_diffrn_merge_rejected_list.data_section_id'
+                                '_pdbx_diffrn_merge_rejected_list.reflection_id'
+                                '_pdbx_diffrn_merge_rejected_list.image_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+
+    _category_examples.case
+;
+   loop_
+    _pdbx_diffrn_merge_rejected_list.data_section_id
+    _pdbx_diffrn_merge_rejected_list.reflection_id
+    _pdbx_diffrn_merge_rejected_list.image_id
+    _pdbx_diffrn_merge_rejected_list.details
+    'ds-unmerged-1'  1  1  'intensity outlier'
+    'ds-unmerged-1'  2  1  'intensity outlier'
+    'ds-unmerged-2'  5  1  'intensity outlier'
+
+
+;
+   _pdbx_category_context.type          WWPDB_DIFFRN_DATA
+   _pdbx_category_context.category_id  'pdbx_diffrn_merge_rejected_list'
+     save_
+
+save__pdbx_diffrn_merge_rejected_list.data_section_id
+    _item_description.description
+;     The value of data_section_id uniquely identifies a data section.
+;
+    _item.name                  '_pdbx_diffrn_merge_rejected_list.data_section_id'
+    _item.category_id            'pdbx_diffrn_merge_rejected_list'
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_linked.child_name     '_pdbx_diffrn_merge_rejected_list.data_section_id'
+    _item_linked.parent_name    '_pdbx_diffrn_data_section_index.parent_data_section_id'
+    #
+    _item_examples.case          'ds-merged-1'
+     save_
+
+save__pdbx_diffrn_merge_rejected_list.reflection_id
+    _item_description.description
+;     The value of reflection_id uniquely identifies a reflection in the parent data section.
+;
+    _item.name                  '_pdbx_diffrn_merge_rejected_list.reflection_id'
+    _item.category_id            'pdbx_diffrn_merge_rejected_list'
+    _item.mandatory_code         yes
+    _item_type.code              int
+    #
+    _item_examples.case          1
+     save_
+
+save__pdbx_diffrn_merge_rejected_list.image_id
+    _item_description.description
+;     The value of image_id uniquely identifies a location (spot) on a crystal sample.
+;
+    _item.name                  '_pdbx_diffrn_merge_rejected_list.image_id'
+    _item.category_id            'pdbx_diffrn_merge_rejected_list'
+    _item.mandatory_code         yes
+    _item_type.code              int
+    #
+    #
+    _item_examples.case          1
+     save_
+
+save__pdbx_diffrn_merge_rejected_list.details
+    _item_description.description
+;     Explanation for the rejected reflection.
+;
+    _item.name                  '_pdbx_diffrn_merge_rejected_list.details'
+    _item.category_id            'pdbx_diffrn_merge_rejected_list'
+    _item.mandatory_code         yes
+    _item_type.code              text
+    #
+    #
+    _item_examples.case          'intensity outlier'
+     save_
+
+## -----------------------------------------------------------------------------------
+###
+
+save_pdbx_diffrn_unmerged_cell
+    _category.description
+;              Data items in the pdbx_diffrn_unmerged_cell category record details about the
+               crystallographic cell parameters for this unmerged data set
+;
+    _category.id                  pdbx_diffrn_unmerged_cell
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_diffrn_unmerged_cell.ordinal'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+
+    _category_examples.case
+;
+    #
+    loop_
+    _pdbx_diffrn_unmerged_cell.ordinal
+    _pdbx_diffrn_unmerged_cell.crystal_id
+    _pdbx_diffrn_unmerged_cell.wavelength
+    _pdbx_diffrn_unmerged_cell.cell_length_a
+    _pdbx_diffrn_unmerged_cell.cell_length_b
+    _pdbx_diffrn_unmerged_cell.cell_length_c
+    _pdbx_diffrn_unmerged_cell.cell_angle_alpha
+    _pdbx_diffrn_unmerged_cell.cell_angle_beta
+    _pdbx_diffrn_unmerged_cell.cell_angle_gamma
+    _pdbx_diffrn_unmerged_cell.cell_angle_gamma
+    _pdbx_diffrn_unmerged_cell.Bravais_lattice
+    1 1 .91837  51.3940 109.0130 137.3070 90.000 90.000 90.000 'oP'
+    2 2 .91837  51.3940 109.0130 137.3070 90.000 90.000 90.000 'oP'
+    # ...  abbreviated ...
+;
+   _pdbx_category_context.type         WWPDB_DIFFRN_DATA
+   _pdbx_category_context.category_id  'pdbx_diffrn_unmerged_cell'
+     save_
+
+save__pdbx_diffrn_unmerged_cell.ordinal
+    _item_description.description
+;     Ordinal index for the admin section.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_cell.ordinal'
+    _item.category_id             pdbx_diffrn_unmerged_cell
+    _item.mandatory_code         yes
+    _item_type.code              int
+    #
+    _item_examples.case          '1'
+     save_
+
+save__pdbx_diffrn_unmerged_cell.crystal_id
+    _item_description.description
+;     The value of crystal_id uniquely identifies a crystal sample within a data section.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_cell.crystal_id'
+    _item.category_id             pdbx_diffrn_unmerged_cell
+    _item.mandatory_code         yes
+    _item_type.code              int
+    #
+    #
+    _item_examples.case          1
+     save_
+
+save__pdbx_diffrn_unmerged_cell.wavelength
+    _item_description.description
+;              The radiation wavelength in angstroms.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_cell.wavelength'
+    _item.category_id             pdbx_diffrn_unmerged_cell
+    _item.mandatory_code          yes
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_unmerged_cell.cell_angle_alpha
+    _item_description.description
+;              Unit-cell angle alpha in degrees.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_cell.cell_angle_alpha'
+    _item.category_id             pdbx_diffrn_unmerged_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_unmerged_cell.cell_angle_beta'
+                                '_pdbx_diffrn_unmerged_cell.cell_angle_gamma'
+    loop_
+    _item_range.maximum
+    _item_range.minimum           180.0   180.0
+                                  180.0     0.0
+                                    0.0     0.0
+    _item_sub_category.id         cell_angle
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__pdbx_diffrn_unmerged_cell.cell_angle_beta
+    _item_description.description
+;              Unit-cell angle beta in degrees.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_cell.cell_angle_beta'
+    _item.category_id             pdbx_diffrn_unmerged_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_unmerged_cell.cell_angle_alpha'
+                                '_pdbx_diffrn_unmerged_cell.cell_angle_gamma'
+    loop_
+    _item_range.maximum
+    _item_range.minimum           180.0   180.0
+                                  180.0     0.0
+                                    0.0     0.0
+    _item_sub_category.id         cell_angle
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__pdbx_diffrn_unmerged_cell.cell_angle_gamma
+    _item_description.description
+;              Unit-cell angle gamma in degrees.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_cell.cell_angle_gamma'
+    _item.category_id             pdbx_diffrn_unmerged_cell
+    _item.mandatory_code          no
+    _item_default.value           90.0
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_unmerged_cell.cell_angle_alpha'
+                                '_pdbx_diffrn_unmerged_cell.cell_angle_beta'
+    loop_
+    _item_range.maximum
+    _item_range.minimum           180.0   180.0
+                                  180.0     0.0
+                                    0.0     0.0
+    _item_sub_category.id         cell_angle
+    _item_type.code               float
+    _item_type_conditions.code    esd
+    _item_units.code              degrees
+     save_
+
+
+save__pdbx_diffrn_unmerged_cell.cell_length_a
+    _item_description.description
+;              Unit-cell length a in angstroms.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_cell.cell_length_a'
+    _item.category_id             pdbx_diffrn_unmerged_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_unmerged_cell.cell_length_b'
+                                '_pdbx_diffrn_unmerged_cell.cell_length_c'
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_sub_category.id         cell_length
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_unmerged_cell.cell_length_b
+    _item_description.description
+;              Unit-cell length b reported in angstroms.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_cell.cell_length_b'
+    _item.category_id             pdbx_diffrn_unmerged_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_unmerged_cell.cell_length_a'
+                                '_pdbx_diffrn_unmerged_cell.cell_length_c'
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_sub_category.id         cell_length
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_unmerged_cell.cell_length_c
+    _item_description.description
+;              Unit-cell length c reported in angstroms.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_cell.cell_length_c'
+    _item.category_id             pdbx_diffrn_unmerged_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_unmerged_cell.cell_length_a'
+                                '_pdbx_diffrn_unmerged_cell.cell_length_b'
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_sub_category.id         cell_length
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_unmerged_cell.cell_volume
+    _item_description.description
+;              Cell volume V in angstroms cubed.
+
+               V = a b c (1 - cos^2^~alpha~ - cos^2^~beta~ - cos^2^~gamma~
+                          + 2 cos~alpha~ cos~beta~ cos~gamma~)^1/2^
+
+               a     = _pdbx_diffrn_unmerged_cell.cell_length_a
+               b     = _pdbx_diffrn_unmerged_cell.cell_length_b
+               c     = _pdbx_diffrn_unmerged_cell.cell_length_c
+               alpha = _pdbx_diffrn_unmerged_cell.cell_angle_alpha
+               beta  = _pdbx_diffrn_unmerged_cell.cell_angle_beta
+               gamma = _pdbx_diffrn_unmerged_cell.cell_angle_gamma
+;
+    _item.name                  '_pdbx_diffrn_unmerged_cell.cell_volume'
+    _item.category_id             pdbx_diffrn_unmerged_cell
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+    _item_units.code              angstroms_cubed
+     save_
+
+save__pdbx_diffrn_unmerged_cell.Bravais_lattice
+    _item_description.description
+;              The Bravais lattice.
+
+One of the Bravais lattice types defined in International Tables for Crystallography (2006). Vol. A, Table 9.2.5.1, p. 753
+using the 2-letter symbols.
+
+;
+    _item.name                  '_pdbx_diffrn_unmerged_cell.Bravais_lattice'
+    _item.category_id             pdbx_diffrn_unmerged_cell
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    cF hR cP cI tI oI mC tP hP oC oF aP oP mI
+     save_
+
+
+#
+## -
+##
+
+save_pdbx_diffrn_scan
+    _category.description
+;              Data items in the pdbx_diffrn_scan category record details of
+               individual scans. Each scan consists of a contiguous series of
+               images related by an axis of rotation.
+;
+    _category.id                  pdbx_diffrn_scan
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_diffrn_scan.scan_id'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+    loop_
+    _category_examples.case
+;
+    #
+     loop_
+    _pdbx_diffrn_scan.scan_id
+    _pdbx_diffrn_scan.crystal_id
+    _pdbx_diffrn_scan.image_id_begin
+    _pdbx_diffrn_scan.image_id_end
+    _pdbx_diffrn_scan.scan_angle_begin
+    _pdbx_diffrn_scan.scan_angle_end
+    1  1  1   720  0.  360.
+    2  2  1   720  0.  360.
+    # ... abbreviated ...
+;
+     save_
+
+save__pdbx_diffrn_scan.scan_id
+    _item_description.description
+;           A unique identifier for each scan.
+;
+
+    _item.name                  '_pdbx_diffrn_scan.scan_id'
+    _item.category_id             pdbx_diffrn_scan
+    _item.mandatory_code          yes
+    _item_type.code               int
+    loop_
+    _item_examples.case          1  2  3
+     save_
+
+save__pdbx_diffrn_scan.crystal_id
+    _item_description.description
+;           The crystal identifier.
+;
+
+    _item.name                  '_pdbx_diffrn_scan.crystal_id'
+    _item.category_id             pdbx_diffrn_scan
+    _item.mandatory_code          yes
+    _item_type.code               int
+    loop_
+    _item_examples.case          1  2  3
+     save_
+
+save__pdbx_diffrn_scan.image_id_begin
+    _item_description.description
+;     The initial value of a range of image_id values.
+;
+    _item.name                  '_pdbx_diffrn_scan.image_id_begin'
+    _item.category_id            'pdbx_diffrn_scan'
+    _item.mandatory_code         yes
+    _item_type.code              int
+    #
+    #
+    _item_examples.case          1
+     save_
+
+save__pdbx_diffrn_scan.image_id_end
+    _item_description.description
+;     The terminal value of a range of image_id values.
+;
+    _item.name                  '_pdbx_diffrn_scan.image_id_end'
+    _item.category_id            'pdbx_diffrn_scan'
+    _item.mandatory_code         yes
+    _item_type.code              int
+    #
+    #
+    _item_examples.case          100
+     save_
+
+save__pdbx_diffrn_scan.scan_angle_begin
+    _item_description.description
+;     The initial value of the scan angle value.
+;
+    _item.name                  '_pdbx_diffrn_scan.scan_angle_begin'
+    _item.category_id            'pdbx_diffrn_scan'
+    _item.mandatory_code         yes
+    _item_type.code              float
+    _item_units.code              degrees
+    #
+    #
+    _item_examples.case          1
+     save_
+
+save__pdbx_diffrn_scan.scan_angle_end
+    _item_description.description
+;     The terminal value of the scan angle value.
+;
+    _item.name                  '_pdbx_diffrn_scan.scan_angle_end'
+    _item.category_id            'pdbx_diffrn_scan'
+    _item.mandatory_code         yes
+    _item_type.code              float
+    _item_units.code              degrees
+    #
+    #
+    _item_examples.case          100
+     save_
+
+
+
+### -----------------------------------------------------------------------------------
+##
+save_pdbx_diffrn_unmerged_refln
+    _category.description
+;              Data items in the pdbx_diffrn_unmerged_refln category record details about an
+               unmerged reflection data set.
+;
+    _category.id                  pdbx_diffrn_unmerged_refln
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_diffrn_unmerged_refln.reflection_id'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+    loop_
+    _category_examples.case
+;
+    #
+     loop_
+    _pdbx_diffrn_unmerged_refln.reflection_id
+    _pdbx_diffrn_unmerged_refln.image_id_begin
+    _pdbx_diffrn_unmerged_refln.image_id_end
+    _pdbx_diffrn_unmerged_refln.scan_id
+    _pdbx_diffrn_unmerged_refln.index_h
+    _pdbx_diffrn_unmerged_refln.index_k
+    _pdbx_diffrn_unmerged_refln.index_l
+    _pdbx_diffrn_unmerged_refln.intensity_sum
+    _pdbx_diffrn_unmerged_refln.intensity_sum_sigma
+    _pdbx_diffrn_unmerged_refln.scan_angle_reflection
+    _pdbx_diffrn_unmerged_refln.scale_value
+    1  1  2  1   0    0    5     28.800  264.700  3.51 0.90
+    # ... abbreviated ...
+;
+     save_
+
+
+save__pdbx_diffrn_unmerged_refln.reflection_id
+    _item_description.description
+;           A unique identifier for each reflection.
+;
+
+    _item.name                  '_pdbx_diffrn_unmerged_refln.reflection_id'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          yes
+    _item_type.code               int
+    loop_
+    _item_examples.case          1  2  3
+     save_
+
+
+save__pdbx_diffrn_unmerged_refln.scan_id
+    _item_description.description
+;           A unique identifier for a scan.
+;
+
+    _item.name                  '_pdbx_diffrn_unmerged_refln.scan_id'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          yes
+    _item_type.code               int
+    #
+    _item_linked.child_name     '_pdbx_diffrn_unmerged_refln.scan_id'
+    _item_linked.parent_name    '_pdbx_diffrn_scan.scan_id'
+    loop_
+    _item_examples.case          1  2  3
+     save_
+
+save__pdbx_diffrn_unmerged_refln.image_id_begin
+    _item_description.description
+;     The initial value of a range of image_id values.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.image_id_begin'
+    _item.category_id            'pdbx_diffrn_unmerged_refln'
+    _item.mandatory_code         yes
+    _item_type.code              int
+    #
+    #
+    _item_examples.case          1
+     save_
+
+save__pdbx_diffrn_unmerged_refln.image_id_end
+    _item_description.description
+;     The terminal value of a range of image_id values.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.image_id_end'
+    _item.category_id            'pdbx_diffrn_unmerged_refln'
+    _item.mandatory_code         yes
+    _item_type.code              int
+    #
+    #
+    _item_examples.case          1
+     save_
+
+save__pdbx_diffrn_unmerged_refln.index_h
+    _item_description.description
+;              Miller index h of the reflection. The values of the Miller
+               indices in this category must correspond to the cell
+               defined by cell lengths and cell angles in the pdbx_diffrn_unmerged_cell category.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.index_h'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          yes
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_unmerged_refln.index_k'
+                                '_pdbx_diffrn_unmerged_refln.index_l'
+    _item_sub_category.id         miller_index
+    _item_type.code               int
+     save_
+
+save__pdbx_diffrn_unmerged_refln.index_k
+    _item_description.description
+;              Miller index k of the reflection. The values of the Miller
+               indices in this category must correspond to the cell
+               defined by cell lengths and cell angles in the pdbx_diffrn_unmerged_cell category.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.index_k'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          yes
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_unmerged_refln.index_h'
+                                '_pdbx_diffrn_unmerged_refln.index_l'
+    _item_sub_category.id         miller_index
+    _item_type.code               int
+     save_
+
+save__pdbx_diffrn_unmerged_refln.index_l
+    _item_description.description
+;              Miller index l of the reflection. The values of the Miller
+               indices in this category must correspond to the cell
+               defined by cell lengths and cell angles in the pdbx_diffrn_unmerged_cell category.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.index_l'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          yes
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_unmerged_refln.index_h'
+                                '_pdbx_diffrn_unmerged_refln.index_k'
+    _item_sub_category.id         miller_index
+    _item_type.code               int
+     save_
+
+save__pdbx_diffrn_unmerged_refln.intensity_meas
+    _item_description.description
+;              The measured value of the intensity.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.intensity_meas'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_unmerged_refln.intensity_sigma
+    _item_description.description
+;              The standard uncertainty (derived from measurement) of the
+               intensity in the same units as _pdbx_diffrn_unmerged_refln.intensity_meas.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.intensity_sigma'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_unmerged_refln.intensity_profile
+    _item_description.description
+;              The intensity obtained from profile.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.intensity_profile'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_unmerged_refln.intensity_profile_sigma
+    _item_description.description
+;              The standard uncertainty (derived from profile) of the
+               intensity in the same units as _pdbx_diffrn_unmerged_refln.intensity_profile.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.intensity_profile_sigma'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_unmerged_refln.intensity_sum
+    _item_description.description
+;              The intensity obtained from summation.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.intensity_sum'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_unmerged_refln.intensity_sum_sigma
+    _item_description.description
+;              The standard uncertainty (derived from summation) of the
+               intensity in the same units as _pdbx_diffrn_unmerged_refln.intensity_sum.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.intensity_sum_sigma'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_unmerged_refln.scan_angle_reflection
+    _item_description.description
+;              The predicted centroid position of the scan angle for the reflection.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.scan_angle_reflection'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_unmerged_refln.partiality
+    _item_description.description
+;              The partiality value for the reflection.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.partiality'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+    loop_
+    _item_range.maximum
+    _item_range.minimum           1.0   1.0
+                                  1.0   0.0
+                                  0.0   0.0
+     save_
+
+save__pdbx_diffrn_unmerged_refln.scale_value
+    _item_description.description
+;              The scale value applied to this reflection.
+;
+    _item.name                  '_pdbx_diffrn_unmerged_refln.scale_value'
+    _item.category_id             pdbx_diffrn_unmerged_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+    loop_
+    _item_range.maximum
+    _item_range.minimum
+                                  .   0.0
+     save_
+##
+##
+##   The following categories would be added and maintained by the PDB ...
+### -----------------------------------------------------------------------------------
+###
+
+save_pdbx_diffrn_data_section_correspondence
+    _category.description
+;             The pdbx_diffrn_data_section_correspondence category records the correspondences
+              between diffraction data sets references in PDB coordinate entry files and
+              the data sections diffraction data files.
+
+;
+    _category.id                 'pdbx_diffrn_data_section_correspondence'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_diffrn_data_section_correspondence.diffrn_id'
+                                '_pdbx_diffrn_data_section_correspondence.data_section_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+    _category_examples.case
+;
+    #
+     loop_
+    _pdbx_diffrn_data_section_correspondence.diffrn_id
+    _pdbx_diffrn_data_section_correspondence.data_section_id
+    1 'ds-merged-1'
+;
+   _pdbx_category_context.type         WWPDB_DIFFRN_DATA
+   _pdbx_category_context.category_id  'pdbx_diffrn_data_section_correspondence'
+     save_
+
+save__pdbx_diffrn_data_section_correspondence.data_section_id
+    _item_description.description
+;     The value of _pdbx_diffrn_data_section_correspondence.data_section_id uniquely identifies
+      a data section in a diffraction data file.
+;
+    _item.name                  '_pdbx_diffrn_data_section_correspondence.data_section_id'
+    _item.category_id            'pdbx_diffrn_data_section_correspondence'
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_examples.case          'ds-merged-1'
+     save_
+
+save__pdbx_diffrn_data_section_correspondence.diffrn_id
+    _item_description.description
+;     The value of _pdbx_diffrn_data_section_correspondence.diffrn_id uniquely identifies
+      a diffraction data set in a PDB coordinate model data file.
+;
+    _item.name                  '_pdbx_diffrn_data_section_correspondence.diffrn_id'
+    _item.category_id            'pdbx_diffrn_data_section_correspondence'
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_examples.case          1
+     save_
+
+##
+### -----------------------------------------------------------------------------------
+###
+
+save_pdbx_diffrn_data_section_contents
+    _category.description
+;             The pdbx_diffrn_data_section_contents category records the correspondences
+              between diffraction data sets references in PDB coordinate entry files and
+              the data sections diffraction data files.
+
+;
+    _category.id                 'pdbx_diffrn_data_section_contents'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_diffrn_data_section_contents.data_section_id'
+                                '_pdbx_diffrn_data_section_contents.content_type'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refln_group'
+                                 'diffrn_data_set_group'
+    _category_examples.case
+;
+    #
+    #
+    loop_
+    _pdbx_diffrn_data_section_contents.data_section_id
+    _pdbx_diffrn_data_section_contents.content_type
+    'ds-merged-1'   'X-ray structure factor amplitudes'
+    'ds-merged-1'   'X-ray calculated amplitudes'
+;
+   _pdbx_category_context.type         WWPDB_DIFFRN_DATA
+   _pdbx_category_context.category_id  'pdbx_diffrn_data_section_contents'
+     save_
+
+save__pdbx_diffrn_data_section_contents.data_section_id
+    _item_description.description
+;     The value of _pdbx_diffrn_data_section_contents.data_section_id uniquely identifies
+      a data section in a diffraction data file.
+;
+    _item.name                  '_pdbx_diffrn_data_section_contents.data_section_id'
+    _item.category_id            'pdbx_diffrn_data_section_contents'
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_examples.case          'ds-merged-1'
+     save_
+
+save__pdbx_diffrn_data_section_contents.content_type
+    _item_description.description
+;     The value of _pdbx_diffrn_data_section_contents.content_type uniquely identifies
+      a data section in a diffraction data file.
+;
+    _item.name                  '_pdbx_diffrn_data_section_contents.content_type'
+    _item.category_id            'pdbx_diffrn_data_section_contents'
+    _item.mandatory_code         yes
+    _item_type.code              line
+    #
+    _item_examples.case           'X-ray structure factor amplitudes'
+    #
+    loop_
+    _item_enumeration.value
+     'X-ray structure factor amplitudes'
+     'X-ray calculated amplitudes'
+     'X-ray calculated phases'
+     'X-ray unmerged intensities'
+     'X-ray experimental phases'
+     'X-ray density modified experimental phases'
+     'X-ray structure factor amplitudes'
+     'X-ray intensity(+)'
+     'X-ray intensity(-)'
+     'X-ray 2FO-FC map coeff'
+     'X-ray FO-FC map coeff'
+     'X-ray structure factor intensities, unmerged'
+     'X-ray FEM map coeff'
+     'X-ray structure factor amplitudes'
+     'X-ray calculated amplitudes'
+     'X-ray calculated phases'
+     'X-ray 2FOFC map coefficients'
+     'X-ray FOM, X-ray batch flag from mtz'
+     'X-ray R-free set flag'
+     'Neutron structure factor amplitudes'
+     'Electron structure factor amplitudes'
+    save_
+
+
+
+save_pdbx_data_section_audit
+    _category.description
+;              Data items in the pdbx_data_section_audit category records
+               the status and tracking information for this data section.
+;
+    _category.id                  pdbx_data_section_audit
+    _category.mandatory_code      no
+     loop_
+    _category_key.name
+    '_pdbx_data_section_audit.data_section_id'
+    '_pdbx_data_section_audit.date'
+    '_pdbx_data_section_audit.action_type'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.case
+;
+    loop_
+    _pdbx_data_section_audit.data_section_id
+    _pdbx_data_section_audit.date
+    _pdbx_data_section_audit.version
+    _pdbx_data_section_audit.processing_site
+    _pdbx_data_section_audit.action_type
+    _pdbx_data_section_audit.annotator
+     'DIFFRN-PDB_00001ABC' 2016-10-01 1.0  RCSB  'Initial release'    JW
+
+;
+     save_
+
+save__pdbx_data_section_audit.data_section_id
+    _item_description.description
+;     The value of _pdbx_diffrn_data_section_contents.data_section_id uniquely identifies
+      a data section in a data file.
+;
+    _item.name                  '_pdbx_data_section_audit.data_section_id'
+    _item.category_id            'pdbx_data_section_audit'
+    _item.mandatory_code         yes
+    _item_type.code              code
+    #
+    _item_examples.case          'DIFFRN-PDB_00001ABC'
+     save_
+
+
+save__pdbx_data_section_audit.date
+    _item_description.description
+;              The date associated with this audit record.
+;
+    _item.name                  '_pdbx_data_section_audit.date'
+    _item.category_id             pdbx_data_section_audit
+    _item.mandatory_code          yes
+    _item_type.code               yyyy-mm-dd
+     save_
+
+save__pdbx_data_section_audit.annotator
+    _item_description.description
+;              The initials of the annotator creating of modifying the component.
+;
+    _item.name                  '_pdbx_data_section_audit.annotator'
+    _item.category_id             pdbx_data_section_audit
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case          'JY' 'JB' 'RA'
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_pdbx_data_section_audit.annotator'
+     save_
+
+save__pdbx_data_section_audit.processing_site
+    _item_description.description
+;              An identifier for the wwPDB site creating or modifying the component.
+;
+    _item.name                  '_pdbx_data_section_audit.processing_site'
+    _item.category_id             pdbx_data_section_audit
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case          'RCSB' 'PDBE' 'PDBJ' 'BMRB'
+     save_
+
+save__pdbx_data_section_audit.details
+    _item_description.description
+;              Additional details decribing this change.
+;
+    _item.name                  '_pdbx_data_section_audit.details'
+    _item.category_id             pdbx_data_section_audit
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case          'Added content type.'
+     save_
+
+save__pdbx_data_section_audit.action_type
+    _item_description.description
+;              The action associated with this audit record.
+;
+    _item.name                  '_pdbx_data_section_audit.action_type'
+    _item.category_id             pdbx_data_section_audit
+    _item.mandatory_code          yes
+    _item_type.code               line
+
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+    'Initial release'                  .
+     save_
+
+save__pdbx_data_section_audit.version
+    _item_description.description
+;              The value of _pdbx_data_section_audit.version must uniquely identify a record
+               in the PDBX_DATA_SECTION_AUDIT list.
+;
+    _item.name                  '_pdbx_data_section_audit.version'
+    _item.category_id             pdbx_data_section_audit
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_examples.case          '1.0'
+     save_
+
+#

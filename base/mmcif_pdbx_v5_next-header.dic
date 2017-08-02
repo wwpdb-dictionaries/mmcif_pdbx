@@ -1,0 +1,2645 @@
+###########################################################################
+#
+#        PDB Exchange Data Dictionary (V5)
+#
+#
+#
+###########################################################################
+
+data_mmcif_pdbx.dic
+
+    _datablock.id                          mmcif_pdbx.dic
+    _datablock.description
+;
+     This data block holds the Protein Data Bank Exchange Data dictionary.
+
+;
+
+    _dictionary.title           mmcif_pdbx.dic
+    _dictionary.datablock_id    mmcif_pdbx.dic
+    _dictionary.version         5.288
+#
+     loop_
+    _dictionary_history.version
+    _dictionary_history.update
+    _dictionary_history.revision
+  5.100   2012-08-21
+;
+  Changes (jdw):
+  + Release as provisional version 5.100
+;
+  5.101   2012-08-22
+;
+  Changes (jdw):
+  +  added provisional extension for multi-source entities
+  +  added provisional extension for branched entities
+  +  added provisional extension for residues on special positions
+  +  added provisional extension for NMR data items for D&A deposition system
+  +  added provisional extension for identifying the ligand in a site
+;
+  5.102   2012-08-28
+;
+  Changes (jdw/cl):
+  + added category group em_group_da
+  + added EM extension dictionaries for D&A project.
+     _em_experiment.entry_id
+     _em_experiment.reconstruction_method
+     _em_experiment.specimen_type
+     _em_software.ordinal
+     _em_software.classification
+     _em_software.name
+     _em_software.version
+     _em_assembly.entry_id
+     _em_assembly.name
+     _em_assembly.composition
+     _em_assembly.num_components
+     _em_assembly.mol_wt_exp
+     _em_assembly.mol_wt_theo
+     _em_assembly.mol_wt_method
+     _em_assembly.details
+     _em_entity_assembly.id
+     _em_entity_assembly.type
+     _em_entity_assembly.name
+     _em_entity_assembly.details
+     _em_entity_assembly.organism_scientific
+     _em_entity_assembly.organism_common
+     _em_entity_assembly.strain
+     _em_entity_assembly.tissue
+     _em_entity_assembly.cell
+     _em_entity_assembly.organelle
+     _em_entity_assembly.cellular_location
+     _em_entity_assembly.engineered_flag
+     _em_entity_assembly.expression_system
+     _em_entity_assembly.expression_system_plasmid
+     _em_entity_assembly.go_id
+     _em_entity_assembly.ipr_id
+     _em_entity_assembly.ncbi_taxonomy_id
+     _em_entity_assembly.synonym
+     _em_entity_assembly.mutant_flag
+     _em_entity_assembly.number_of_copies
+     _em_entity_assembly.oligomeric_details
+     _em_entity_assembly.entity_list
+     _em_entity_assembly.mol_wt
+     _em_entity_assembly.mol_wt_method
+     _em_entity_assembly.entity_parent_id
+     _em_virus_entity.id
+     _em_virus_entity.virus_host_category
+     _em_virus_entity.virus_host_species
+     _em_virus_entity.virus_host_ncbi_taxonomy_id
+     _em_virus_entity.virus_host_growth_cell
+     _em_virus_entity.virus_type
+     _em_virus_entity.virus_isolate
+     _em_virus_entity.entity_assembly_id
+     _em_virus_entity.enveloped
+     _em_virus_entity.empty
+     _em_virus_entity.details
+     _em_icos_virus_shells.virus_entity_id
+     _em_icos_virus_shells.id
+     _em_icos_virus_shells.shell_diameter
+     _em_icos_virus_shells.triangulation_num
+     _em_specimen.id
+     _em_specimen.sample_state
+     _em_specimen.num_grids
+     _em_specimen.cryoprotectant
+     _em_specimen.embedding_material
+     _em_specimen.details
+     _em_sample_preparation.id
+     _em_sample_preparation.specimen_id
+     _em_sample_preparation.entity_assembly_id
+     _em_sample_preparation.ph
+     _em_sample_preparation.buffer_id
+     _em_sample_preparation.sample_concentration
+     _em_sample_preparation.details
+     _em_specimen_support.id
+     _em_specimen_support.specimen_id
+     _em_specimen_support.method
+     _em_specimen_support.grid_model
+     _em_specimen_support.grid_material
+     _em_specimen_support.grid_mesh_size
+     _em_specimen_support.grid_type
+     _em_specimen_support.pretreatment
+     _em_specimen_support.details
+     _em_specimen_support.film_material
+     _em_specimen_support.film_topology
+     _em_specimen_support.film_thickness
+     _em_array_formation.id
+     _em_array_formation.specimen_id
+     _em_array_formation.method
+     _em_array_formation.apparatus
+     _em_array_formation.atmosphere
+     _em_array_formation.pH
+     _em_array_formation.temp
+     _em_array_formation.time
+     _em_array_formation.buffer_id
+     _em_array_formation.details
+     _em_array_formation.number_arrays
+     _em_array_formation.mean_2d_crystal_size
+     _em_stain.id
+     _em_stain.specimen_id
+     _em_stain.type
+     _em_stain.material
+     _em_stain.details
+     _em_buffer.id
+     _em_buffer.name
+     _em_buffer.details
+     _em_buffer_components.id
+     _em_buffer_components.buffer_id
+     _em_buffer_components.name
+     _em_buffer_components.conc
+     _em_buffer_components.conc_units
+     _em_buffer_components.details
+     _em_vitrification.id
+     _em_vitrification.specimen_id
+     _em_vitrification.cryogen_name
+     _em_vitrification.freezing_technique
+     _em_vitrification.humidity
+     _em_vitrification.temp
+     _em_vitrification.ambient_temp
+     _em_vitrification.instrument
+     _em_vitrification.method
+     _em_vitrification.time_resolved_state
+     _em_vitrification.details
+     _em_imaging.id
+     _em_imaging.astigmatism
+     _em_imaging.electron_beam_tilt_params
+     _em_imaging.specimen_id
+     _em_imaging.detector_id
+     _em_imaging.scans_id
+     _em_imaging.microscope_model
+     _em_imaging.specimen_holder_model
+     _em_imaging.details
+     _em_imaging.date
+     _em_imaging.accelerating_voltage
+     _em_imaging.illumination_mode
+     _em_imaging.mode
+     _em_imaging.nominal_cs
+     _em_imaging.nominal_defocus_min
+     _em_imaging.nominal_defocus_max
+     _em_imaging.tilt_angle_min
+     _em_imaging.tilt_angle_max
+     _em_imaging.tilt_angle_increment
+     _em_imaging.second_tilt_axis_flag
+     _em_imaging.nominal_magnification
+     _em_imaging.calibrated_magnification
+     _em_imaging.electron_source
+     _em_imaging.electron_dose
+     _em_imaging.energy_filter
+     _em_imaging.energy_window_min
+     _em_imaging.energy_window_max
+     _em_imaging.temperature
+     _em_imaging.cryogen
+     _em_imaging.detector_distance
+     _em_imaging.recording_temperature_minimum
+     _em_imaging.recording_temperature_maximum
+     _em_imaging.c2_aperture_diameter
+     _em_imaging.alignment_procedure
+     _em_imaging.Cs_corrector
+     _em_imaging.Cc_corrector
+     _em_imaging.phase_plate
+     _em_detector.id
+     _em_detector.details
+     _em_detector.class
+     _em_detector.type
+     _em_detector.detective_quantum_efficiency
+     _em_image_scans.id
+     _em_image_scans.number_digital_images
+     _em_image_scans.details
+     _em_image_scans.scanner_model
+     _em_image_scans.scanner_sampling_size
+     _em_image_scans.apix_sampling
+     _em_image_scans.od_range
+     _em_image_scans.quant_bit_size
+     _em_image_scans.width
+     _em_image_scans.height
+     _em_image_scans.sampling_size
+     _em_image_scans.frames_per_image
+     _em_2d_crystal_symmetry.id
+     _em_2d_crystal_symmetry.length_a
+     _em_2d_crystal_symmetry.length_b
+     _em_2d_crystal_symmetry.angle_gamma
+     _em_2d_crystal_symmetry.details
+     _em_2d_crystal_symmetry.angle_alpha
+     _em_2d_crystal_symmetry.angle_beta
+     _em_2d_crystal_symmetry.length_c
+     _em_2d_crystal_symmetry.thickness_c
+     _em_2d_crystal_symmetry.space_group_name_H-M
+     _em_point_symmetry.entry_id
+     _em_point_symmetry.symmetry_type
+     _em_point_symmetry.cyclic_symmetry
+     _em_helical_symmetry.id
+     _em_helical_symmetry.entity_assembly_id
+     _em_helical_symmetry.details
+     _em_helical_symmetry.dyad
+     _em_helical_symmetry.axial_symmetry
+     _em_helical_symmetry.angular_rotation_per_subunit
+     _em_helical_symmetry.axial_rise_per_subunit
+     _em_helical_symmetry.hand
+     _em_2d_projection_selection.entry_id
+     _em_2d_projection_selection.num_particles
+     _em_2d_projection_selection.method
+     _em_2d_projection_selection.details
+     _em_3d_reconstruction.entry_id
+     _em_3d_reconstruction.entity_assembly_id
+     _em_3d_reconstruction.method
+     _em_3d_reconstruction.spatial_filtering
+     _em_3d_reconstruction.masking
+     _em_3d_reconstruction.details
+     _em_3d_reconstruction.resolution
+     _em_3d_reconstruction.resolution_method
+     _em_3d_reconstruction.magnification_calibration
+     _em_3d_reconstruction.ctf_correction_method
+     _em_3d_reconstruction.ctf_correction_type
+     _em_3d_reconstruction.nominal_pixel_size
+     _em_3d_reconstruction.actual_pixel_size
+     _em_3d_reconstruction.num_particles
+     _em_3d_reconstruction.num_class_averages
+     _em_3d_reconstruction.software
+     _em_3d_reconstruction.initial_model_type
+     _em_3d_reconstruction.initial_model_details
+     _em_euler_assignment.id
+     _em_euler_assignment.name
+     _em_euler_assignment.method
+     _em_euler_assignment.num_reference_projections
+     _em_euler_assignment.merit_function
+     _em_euler_assignment.angular_sampling
+     _em_euler_assignment.details
+     _em_electron_crystallography.entry_id
+     _em_electron_crystallography.num_meas_intensities
+     _em_electron_crystallography.num_structure_factors
+     _em_electron_crystallography.details
+     _em_electron_crystallography.d_res_high
+     _em_electron_crystallography.overall_phase_residual
+     _em_electron_crystallography.overall_phase_error
+     _em_electron_crystallography.rejection_criteria_phase_error
+     _em_electron_crystallography.Fourier_space_coverage
+     _em_electron_crystallography.r_merge
+     _em_electron_crystallography.r_sym
+     _em_electron_crystallography_shell.id
+     _em_electron_crystallography_shell.res_low
+     _em_electron_crystallography_shell.res_high
+     _em_electron_crystallography_shell.phase_residual
+     _em_electron_crystallography_shell.num_structure_factors
+     _em_electron_crystallography_shell.num_meas_intensities
+     _em_electron_crystallography_tilt.id
+     _em_electron_crystallography_tilt.tilt_angle
+     _em_electron_crystallography_tilt.num_diffraction_patterns
+     _em_electron_crystallography_tilt.num_micrograph_images
+     _em_tomography.id
+     _em_tomography.entry_id
+     _em_tomography.tilt_angle_incr
+     _em_tomography.num_raw_images
+     _em_tomography.details
+     _em_3d_subvolume_selection.entry_id
+     _em_3d_subvolume_selection.num_subvolumes
+     _em_3d_subvolume_selection.num_tomograms
+     _em_3d_subvolume_selection.method
+     _em_3d_subvolume_selection.details
+     _em_3d_subvolume_classification.id
+     _em_3d_subvolume_classification.name
+     _em_3d_subvolume_classification.method
+     _em_3d_subvolume_classification.num_classes
+     _em_3d_subvolume_classification.merit_function
+     _em_3d_subvolume_classification.details
+     _em_3d_fitting.id
+     _em_3d_fitting.method
+     _em_3d_fitting.target_criteria
+     _em_3d_fitting.software_name
+     _em_3d_fitting.details
+     _em_3d_fitting.overall_b_value
+     _em_3d_fitting.ref_space
+     _em_3d_fitting.ref_protocol
+     _em_3d_fitting_list.id
+     _em_3d_fitting_list.3d_fitting_id
+     _em_3d_fitting_list.pdb_entry_id
+     _em_3d_fitting_list.pdb_chain_id
+     _em_3d_fitting_list.details
+     _emd.emd_entry_id
+     _emd.title
+     _emd_map.emd_entry_id
+     _emd_map.annotation_details
+     _emd_map.format
+     _emd_map.sizeKb
+     _emd_map.axisOrderFast
+     _emd_map.axisOrderMedium
+     _emd_map.axisOrderSlow
+     _emd_map.cell_angle_alpha
+     _emd_map.cell_angle_beta
+     _emd_map.cell_angle_gamma
+     _emd_map.cell_length_a
+     _emd_map.cell_length_b
+     _emd_map.cell_length_c
+     _emd_map.data_type
+     _emd_map.details
+     _emd_map.num_columns
+     _emd_map.num_rows
+     _emd_map.num_sections
+     _emd_map.origin_column
+     _emd_map.origin_row
+     _emd_map.origin_section
+     _emd_map.pixel_x
+     _emd_map.pixel_y
+     _emd_map.pixel_z
+     _emd_map.spaceGroupNumber
+     _emd_map.spacing_x
+     _emd_map.spacing_y
+     _emd_map.spacing_z
+     _emd_map.density_min
+     _emd_map.density_max
+     _emd_map.density_mean
+     _emd_map.density_stddev
+     _emd_map.contour_level
+     _emd_map.contour_level_source
+     _emd_files.id
+     _emd_files.type
+     _emd_files.file_name
+     _emd_status.emd_entry_id
+     _emd_status.current_status
+     _emd_status.last_update
+     _emd_status.deposition_date
+     _emd_status.map_release_date
+     _emd_status_history.id
+     _emd_status_history.date
+     _emd_status_history.code
+     _emd_status_history.processing_site
+     _emd_status_history.annotator_initials
+     _emd_status_history.details
+     _emd_obsolete_supersede.id
+     _emd_obsolete_supersede.obsoleted_emd_entry_id
+     _emd_obsolete_supersede.supersede_emd_entry_id
+     _emd_obsolete_supersede.date
+     _emd_obsolete_supersede.details
+     _emd_auxiliary.id
+     _emd_auxiliary.link
+     _emd_auxiliary.link_data_type
+     _emd_auxiliary.details
+     _emd_database_related.db_name
+     _emd_database_related.db_id
+     _emd_database_related.details
+     _emd_database_related.frame_relationship_flag
+     _emd_database_related.fitted_coordinates_flag
+     _emd_mask.id
+     _emd_mask.annotation_details
+     _emd_mask.format
+     _emd_mask.sizeKb
+     _emd_mask.axisOrderFast
+     _emd_mask.axisOrderMedium
+     _emd_mask.axisOrderSlow
+     _emd_mask.cell_angle_alpha
+     _emd_mask.cell_angle_beta
+     _emd_mask.cell_angle_gamma
+     _emd_mask.cell_length_a
+     _emd_mask.cell_length_b
+     _emd_mask.cell_length_c
+     _emd_mask.data_type
+     _emd_mask.details
+     _emd_mask.num_columns
+     _emd_mask.num_rows
+     _emd_mask.num_sections
+     _emd_mask.origin_column
+     _emd_mask.origin_row
+     _emd_mask.origin_section
+     _emd_mask.pixel_x
+     _emd_mask.pixel_y
+     _emd_mask.pixel_z
+     _emd_mask.spaceGroupNumber
+     _emd_mask.spacing_x
+     _emd_mask.spacing_y
+     _emd_mask.spacing_z
+     _emd_mask.density_min
+     _emd_mask.density_max
+     _emd_mask.density_mean
+     _emd_mask.density_stddev
+     _emd_mask.contour_level
+     _emd_mask.contour_level_source
+
+  + added various items to capture depositor information for the wwPDB
+    deposition and annotation system.
+    _pdbx_chem_comp_depositor_info.ordinal
+    _pdbx_chem_comp_depositor_info.comp_id
+    _pdbx_chem_comp_depositor_info.name
+    _pdbx_chem_comp_depositor_info.upload_file_type
+    _pdbx_chem_comp_depositor_info.upload_file_name
+    _pdbx_chem_comp_depositor_info.formula
+    _pdbx_chem_comp_depositor_info.type
+    _pdbx_chem_comp_depositor_info.descriptor
+    _pdbx_chem_comp_depositor_info.descriptor_type
+    _pdbx_chem_comp_depositor_info.detailes
+    _pdbx_struct_ref_depositor_info.biol_id
+    _pdbx_struct_ref_depositor_info.db_code
+    _pdbx_struct_ref_depositor_info.db_name
+    _pdbx_struct_ref_depositor_info.entity_id
+    _pdbx_struct_ref_depositor_info.id
+    _pdbx_struct_ref_depositor_info.db_accession
+    _pdbx_struct_ref_depositor_info.seq_one_letter_code
+    _pdbx_struct_ref_depositor_info.align_begin
+    _pdbx_struct_ref_seq_depositor_info.align_id
+    _pdbx_struct_ref_seq_depositor_info.db_align_beg
+    _pdbx_struct_ref_seq_depositor_info.db_align_end
+    _pdbx_struct_ref_seq_depositor_info.details
+    _pdbx_struct_ref_seq_depositor_info.ref_id
+    _pdbx_struct_ref_seq_depositor_info.db_accession
+    _pdbx_struct_ref_seq_depositor_info.db_code
+    _pdbx_struct_ref_depositor_info.db_name
+    _pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code
+    _pdbx_struct_ref_seq_dif_depositor_info.align_id
+    _pdbx_struct_ref_seq_dif_depositor_info.db_mon_id
+    _pdbx_struct_ref_seq_dif_depositor_info.db_seq_id
+    _pdbx_struct_ref_seq_dif_depositor_info.details
+    _pdbx_struct_ref_seq_dif_depositor_info.auth_mon_id
+    _pdbx_struct_ref_seq_dif_depositor_info.auth_seq_id
+    _pdbx_struct_ref_seq_dif_depositor_info.db_accession
+    _pdbx_struct_ref_seq_dif_depositor_info.db_code
+    _pdbx_struct_ref_dif_depositor_info.db_name
+    _pdbx_struct_ref_dif_depositor_info.annotation
+    _pdbx_struct_assembly_prop_depositor_info.biol_id
+    _pdbx_struct_assembly_prop_depositor_info.type
+    _pdbx_struct_assembly_prop_depositor_info.value
+    _pdbx_struct_assembly_prop_depositor_info.details
+    _pdbx_struct_assembly_depositor_info.details
+    _pdbx_struct_assembly_depositor_info.id
+    _pdbx_struct_assembly_depositor_info.method_details
+    _pdbx_struct_assembly_depositor_info.oligomeric_details
+    _pdbx_struct_assembly_depositor_info.oligomeric_count
+    _pdbx_struct_assembly_depositor_info.matrix_flag
+    _pdbx_struct_assembly_depositor_info.upload_file_name
+    _pdbx_struct_assembly_gen_depositor_info.asym_id_list
+    _pdbx_struct_assembly_gen_depositor_info.assembly_id
+    _pdbx_struct_assembly_gen_depositor_info.oper_expression
+    _pdbx_struct_oper_list_depositor_info.id
+    _pdbx_struct_oper_list_depositor_info.type
+    _pdbx_struct_oper_list_depositor_info.name
+    _pdbx_struct_oper_list_depositor_info.symmetry_operation
+    _pdbx_struct_oper_list_depositor_info.matrix[1][1]
+    _pdbx_struct_oper_list_depositor_info.matrix[1][2]
+    _pdbx_struct_oper_list_depositor_info.matrix[1][3]
+    _pdbx_struct_oper_list_depositor_info.matrix[2][1]
+    _pdbx_struct_oper_list_depositor_info.matrix[2][2]
+    _pdbx_struct_oper_list_depositor_info.matrix[2][3]
+    _pdbx_struct_oper_list_depositor_info.matrix[3][1]
+    _pdbx_struct_oper_list_depositor_info.matrix[3][2]
+    _pdbx_struct_oper_list_depositor_info.matrix[3][3]
+    _pdbx_struct_oper_list_depositor_info.vector[1]
+    _pdbx_struct_oper_list_depositor_info.vector[2]
+    _pdbx_struct_oper_list_depositor_info.vector[3]
+    _pdbx_point_symmetry_depositor_info.entry_id
+    _pdbx_point_symmetry_depositor_info.Schoenflies_symbol
+    _pdbx_point_symmetry_depositor_info.circular_symmetry
+    _pdbx_point_symmetry_depositor_info.H-M_notation
+    _pdbx_helical_symmetry_depositor_info.entry_id
+    _pdbx_helical_symmetry_depositor_info.number_of_operations
+    _pdbx_helical_symmetry_depositor_info.rotation_per_n_subunits
+    _pdbx_helical_symmetry_depositor_info.rise_per_n_subunits
+    _pdbx_helical_symmetry_depositor_info.n_subunits_divisor
+    _pdbx_helical_symmetry_depositor_info.dyad_axis
+    _pdbx_helical_symmetry_depositor_info.circular_symmetry
+    _pdbx_solvent_atom_site_mapping.id
+    _pdbx_solvent_atom_site_mapping.label_alt_id
+    _pdbx_solvent_atom_site_mapping.label_asym_id
+    _pdbx_solvent_atom_site_mapping.label_atom_id
+    _pdbx_solvent_atom_site_mapping.label_comp_id
+    _pdbx_solvent_atom_site_mapping.label_seq_id
+    _pdbx_solvent_atom_site_mapping.pdbx_align
+    _pdbx_solvent_atom_site_mapping.PDB_ins_code
+    _pdbx_solvent_atom_site_mapping.pre_auth_asym_id
+    _pdbx_solvent_atom_site_mapping.pre_auth_atom_id
+    _pdbx_solvent_atom_site_mapping.pre_auth_comp_id
+    _pdbx_solvent_atom_site_mapping.pre_auth_seq_id
+    _pdbx_solvent_atom_site_mapping.pre_PDB_ins_code
+    _pdbx_solvent_atom_site_mapping.pre_auth_alt_id
+    _pdbx_solvent_atom_site_mapping.auth_asym_id
+    _pdbx_solvent_atom_site_mapping.auth_atom_id
+    _pdbx_solvent_atom_site_mapping.auth_comp_id
+    _pdbx_solvent_atom_site_mapping.auth_seq_id
+    _pdbx_solvent_atom_site_mapping.auth_alt_id
+    _pdbx_solvent_atom_site_mapping.occupancy
+    _pdbx_solvent_atom_site_mapping.Cartn_x
+    _pdbx_solvent_atom_site_mapping.Cartn_y
+    _pdbx_solvent_atom_site_mapping.Cartn_z
+    _pdbx_solvent_atom_site_mapping.pre_Cartn_x
+    _pdbx_solvent_atom_site_mapping.pre_Cartn_y
+    _pdbx_solvent_atom_site_mapping.pre_Cartn_z
+    _pdbx_entity_src_gen_depositor_info.alt_source_flag
+    _pdbx_entity_src_gen_depositor_info.seq_type
+    _pdbx_entity_src_gen_depositor_info.beg_seq_num
+    _pdbx_entity_src_gen_depositor_info.end_seq_num
+    _pdbx_molecule_features_depositor_info.entity_id
+    _pdbx_molecule_features_depositor_info.class
+    _pdbx_molecule_features_depositor_info.type
+    _pdbx_molecule_features_depositor_info.name
+    _pdbx_molecule_features_depositor_info.details
+  + added flag for filtering  STRUCT_CONN linkages relative to chemical component
+    leaving atom assignments.
+    _struct_conn.pdbx_leaving_atom_flag
+;
+  5.103   2012-08-29
+;
+  Changes (jdw/jy):
+  + Update enumerations for _pdbx_family_prd_audit.action_type and _pdbx_prd_audit.action_type
+  + Update enumerations for _pdbx_reference_molecule.class/type, _pdbx_molecule_features.class/type
+  + Added category for publication reference data - PDBX_REFERENCE_PUBLICATION_LIST
+;
+  5.104   2012-09-01
+;
+  Changes (jdw):
+  + Added category pdbx_audit_support extension.
+  + Incorporated D&A alternate descriptions and boundary values.
+;
+  5.105   2012-09-06
+;
+  Changes (jdw):
+  + Revised definition of _struct_conn.pdbx_leaving_atom_flag.
+  + Add definition _pdbx_solvent_atom_site_mapping.symmetry/symmetry_as_xyz
+;
+
+  5.106   2012-09-18
+;
+  Changes (jdw):
+  + remove existing EM dictionary which duplicates new EM item definitions
+  + add categories pdbx_reference_linked_entity,  pdbx_reference_linked_entity_list,  pdbx_reference_linked_entity_link.
+;
+  5.107   2012-09-19
+;
+  Changes (jdw):
+  +  Rename categories to: pdbx_reference_linked_entity, pdbx_reference_linked_entity_comp_list,
+     pdbx_reference_linked_entity_link, and  pdbx_reference_linked_entity_comp_link
+     and distinguish inter and intra entity linkages.
+  +  Revised enumeration for _pdbx_reference_linked_entity.link_to_entity_type
+;
+  5.108   2012-10-03
+;
+  Changes (jdw):
+  + Adjust mandatory codes for items in the pdbx_contact_author category.
+  + Update all current extension dictionaries in
+  + Correct version number typo.
+;
+  5.109   2012-10-15
+;
+  Changes (jdw):
+  + pdbx_chem_comp_instance_depositor_info
+  + Update joint enumerations for _pdbx_reference_molecule.class.
+  + Update enumeration list for _em_imaging.specimen_holder_model
+;
+  5.110   2012-11-07
+;
+  Changes (ss,sv,jdw):
+  +Added item _pdbx_entity_src_gen_depositor_info.entity_id
+  +Removed item _pdbx_entity_src_gen_depositor_info.alt_source_flag and _pdbx_entity_src_gen_depositor_info.gene_src_strain
+  +Items _pdbx_entity_src_gen_depositor_info.beg_seq_num and _pdbx_entity_src_gen_depositor_info.end_seq_num set to mandatory
+  +Data types for _pdbx_entity_src_gen_depositor_info.host_org_ncbi_taxonomy_id set to int
+;
+ 5.111   2012-11-08
+;
+  Changes (cl,jdw):
+  + Update to the 3DEM data categories -
+;
+
+ 5.112   2012-11-12
+;
+  Changes (cl,jdw):
+  + Update to the 3DEM data categories -
+;
+
+ 5.113   2012-12-04
+;
+  Changes (eu,ag):
+  + Add _pdbx_nmr_exptl.sample_state
+;
+ 5.114   2012-12-14
+;
+  Changes (eu,ag):
+  + Added items   _pdbx_nmr_assigned_chem_shift_list.label,   _pdbx_nmr_assigned_chem_shift_list.conditions_label,
+   _pdbx_nmr_spectral_peak_list.label, and   _pdbx_nmr_spectral_peak_list.conditions_label
+;
+ 5.115   2013-02-06
+;
+  Changes (jdw,kh):
+  + Add categories pdbx_chem_comp_subcomponent_struct_conn and pdbx_chem_comp_subcomponent_entity_list.
+  + For item _pdbx_chem_comp_subcomponent_entity_list.type change data type to uline and extend enumeration.
+  + Set mandatory codes to optional for categories emd, emd_map and pdbx_nmr_software_task
+;
+ 5.116   2013-02-13
+;
+  Changes (jdw):
+  + added _pdbx_helical_symmetry_depositor_info.status_flag and _pdbx_point_symmetry_depositor_info.status_flag
+  + updated the collection of advisory boundary values --
+;
+ 5.117   2013-02-13
+;
+  Changes (jdw):
+   + Added internal categories -depui_validation_status_flags, pdbx_depui_upload, pdbx_depui_status_flags
+;
+ 5.118   2013-02-20
+;
+  Changes (jdw):
+   + Added internal category pdbx_chem_comp_upload_depositor_info to hold potentially multiple
+     data files per chemical component.
+;
+ 5.119   2013-02-20
+;
+  Changes (jdw):
+      + restore main public version of mmcif_pdbx-def-2.dic
+      + added _pdbx_depui_status_flags.prediction_target and category pdbx_depui_entity_status_flags
+;
+ 5.120   2013-03-01
+;
+  Changes (jdw):
+     + consolidated pdbx_struct_ref_depositor_info  into pdbx_struct_ref_seq_depositor_info
+;
+ 5.121   2013-03-07
+;
+  Changes (jdw):
+     + bulk import of RCSB local enumerations into internal pdbx_item_enumeration containers,
+;
+ 5.122   2013-03-11
+;
+  Changes (jdw):
+  + add items  _pdbx_depui_status_flags.primary_citation_status,  _pdbx_depui_status_flags.reference_citation_status,
+               _pdbx_depui_status_flags.corresponding_author_status
+;
+
+ 5.123   2013-03-12
+;
+  Changes (jdw):
+  + add category pdbx_depui_entity_features
+;
+ 5.124   2013-03-15
+;
+  Changes (jdw):
+  + add optional items _pdbx_validate_main_chain_plane.label_alt_id, _pdbx_validate_planes.lable_alt_id, _pdbx_validate_torsion.label_alt_id
+;
+ 5.125   2013-04-08
+;
+  Changes (jdw):
+  + add items _pdbx_struct_ref_seq_dif_depositor_info.entity_id and _pdbx_chem_comp_instance_depositor_info.formula
+;
+ 5.126   2013-04-16
+;
+  Changes (jdw):
+  + Set _pdbx_contact_author.role and _pdbx_contact_author.role internally mandatory.
+  + Set _pdbx_contact_author.name_mi  optional
+  + Relax regular expression for  _pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code
+  + Set _entity_poly.pdbx_seq_one_letter_code, _entity_src_gen.pdbx_gene_src_scientific_name, _entity_src_nat.pdbx_organism_scientific internally mandatory.
+  + Add _pdbx_depui_status_flags.has_helical_symmetry, _pdbx_depui_status_flags.has_point_symmetry, _pdbx_depui_status_flags.has_cyclic_symmetry
+  +
+;
+ 5.127   2013-04-27
+;
+  Changes (jdw):
+  + Update alternate descriptions and enumerations for deposition system.
+;
+ 5.128   2013-05-23
+;
+  Changes (jdw):
+  + add item _entity_poly.pdbx_sequence_evidence_code
+;
+ 5.129   2013-05-29
+;
+  Changes (jdw):
+  + _pdbx_database_status.pdbx_annotator replaces _pdbx_database_status.rcsb_annotator
+;
+ 5.130   2013-06-14
+;
+  Changes (jdw):
+  + added _pdbx_depui_status_flags.has_accepted_terms_and_conditions
+  + updated advisory and hard limits to include equivalence on the boundary endpoints.
+;
+ 5.131   2013-06-14
+;
+  Changes (jdw):
+ + update enumerations for _pdbx_struct_ref_seq_depositor_info.db_name
+;
+ 5.132   2013-06-16
+;
+  Changes (jdw):
+ + add
+    _pdbx_seq_map_depositor_info.entity_id
+    _pdbx_seq_map_depositor_info.auth_asym_id
+    _pdbx_seq_map_depositor_info.one_letter_code
+    _pdbx_seq_map_depositor_info.one_letter_code_mod
+;
+ 5.133   2013-06-18
+;
+  Changes (jdw):
+   + updated advisory limits for  _reflns_shell.d_res_low and _refine_ls_shell.d_res_low
+;
+ 5.134   2013-08-27
+;
+  Changes (jdw):
+    + Added status flags --
+      _pdbx_depui_status_flags.is_ligand_processing_complete
+      _pdbx_depui_status_flags.sample_xyz_sequence_alignments_valid
+      _pdbx_depui_entity_status_flags.sample_xyz_sequence_alignments_valid
+    + Added local category context to all internal categories.
+;
+ 5.135   2013-10-17
+;
+  Changes (jdw):
+    + added _pdbx_depui_upload.file_content_type and remove enumeration from
+      _pdbx_depui_upload.file_type.
+    + includes any local meta-data changes coded into the deposition system.
+    + update internal metadata for deposition system
+    + add data categories for messaging pdbx_deposition_message_file_reference and pdbx_deposition_message_info
+    + update mandatory codes and category group assignments
+    + Reassign context RCSB_LOCAL to WWPDB_LOCAL
+    + update software application enumerations.
+    + Update category and item item context values in categories audit_contact_author, pdbx_database_proc, pdbx_entity_name,
+      struct_biol_gen, atom_site and  pdbx_database_status.
+    + add internal items _pdbx_database_status.date_begin_processing, _pdbx_database_status.date_end_processing,
+      _pdbx_database_status.date_begin_deposition, _pdbx_database_status.date_begin_release_preparation,
+      _pdbx_database_status.date_author_release_request
+;
+ 5.136   2013-11-22
+;
+  Changes (cl/jdw):
+  + new EMD mapping extension dictionary added.
+  + local context of _pdbx_database_status.status_code_sf removed.
+  + Update context to  WWPDB_LOCAL for item  _entity_poly.pdbx_sequence_evidence_code
+  + Update context values to WWPDB_LOCAL for categories database_PDB_remark and pdbx_contact_author
+  + multiple updates of EMD/EM extensions.
+  + category group updates
+;
+ 5.137   2013-12-10
+;
+  Changes (jdw):
+  + Update mandatory codes for category pdbx_contact_author.
+  + Update enumerations for category software.
+;
+ 5.138   2013-12-20
+;
+  Changes (jdw):
+  + Update mandatory codes for category pdbx_contact_author.
+  + Update enumerations for category software.
+;
+5.139  2014-01-17
+;
+    Changes (jdw):
+    + Update enumerations for item _pdbx_database_status.status_code
+    + add category pdbx_related_exp_data_set
+    + In pdbx_related_exp_data_set limit references to DOI types
+    + Update item descriptions and examples for _pdbx_depui_entity_features.type,_entity_poly.pdbx_target_identifier,_reflns.pdbx_Rsym_value,
+      _refine.pdbx_solvent_vdw_probe_radii,_refine.pdbx_solvent_ion_probe_radii,_citation.pdbx_database_id_DOI,_entity.pdbx_description,
+      and _exptl_crystal_grow.pdbx_details.
+    + Update of internal descriptions and enumerations for deposition system.
+;
+5.140  2014-01-20
+;
+    Changes (ep/jdw):
+    + Update of internal descriptions and enumerations for deposition system.
+;
+5.141  2014-01-21
+;
+    Changes (ep/jdw):
+    + Update of internal descriptions and enumerations for deposition system.
+;
+5.142  2014-01-23
+;
+    Changes (ep/jdw):
+    + Update of internal descriptions and enumerations for deposition system.
+;
+
+5.143  2014-01-24
+;
+    Changes (ep/jdw):
+    + Update of internal descriptions and enumerations for deposition system.
+;
+5.144  2014-02-06
+;
+    Changes (cl/jdw):
+    + Update of enumerations for save__em_experiment.reconstruction_method
+;
+5.145  2014-02-10
+;
+    Changes (cl/jdw):
+    + Update of enumerations for 3DEM extension dictionary.
+    + Add categories pdbx_depui_entry_details and pdbx_data_processing_status.
+    + Added definitions _atom_type.pdbx_scat_Cromer_Mann_a5,_atom_type.pdbx_scat_Cromer_Mann_b5,_refine.pdbx_average_fsc_overall,
+       _refine.pdbx_average_fsc_work,_refine.pdbx_average_fsc_free,_refine_ls_shell.pdbx_fsc_work,_refine_ls_shell.pdbx_fsc_free,
+       _refine_hist.pdbx_number_residues_total,_refine_hist.pdbx_B_iso_mean_ligand,_refine_hist.pdbx_B_iso_mean_solvent,
+       _atom_site_anisotrop.pdbx_PDB_model_num
+;
+5.146  2014-02-11
+;
+    Changes (eu/jdw):
+    + new items _pdbx_nmr_software.details,_pdbx_nmr_exptl_sample.concentration_err,_pdbx_nmr_spectrometer.name,
+    _pdbx_nmr_assigned_chem_shift_list.conditions_label,_pdbx_nmr_spectral_dim.sweep_width_units,
+    _pdbx_nmr_spectral_dim.center_frequency_offset,_pdbx_nmr_spectral_dim.under_sampling_type,
+    _pdbx_nmr_chem_shift_software.software_label
+    + updates for deposition enumerations and mandator codes for NMR extensions.
+;
+5.147  2014-02-18
+;
+    Changes (jdw):
+    + update diffraction detector enumerations/
+;
+5.148  2014-02-19
+;
+    Changes (jdw):
+    + update regular expressions one-letter code sequences
+    + add mandatory codes to pdbx_nmr_chem_shift_ref and pdbx_nmr_constraint_file
+;
+5.149  2014-02-20
+;
+    Changes (jdw):
+    + update deposition mandatory codes and enumerations.
+;
+5.150  2014-02-25
+;
+    Changes (cl/ep/jdw):
+    + update EM deposition specific metadata items.
+;
+
+5.151  2014-03-01
+;
+    Changes (ep/jdw):
+    + update  deposition specific enumerations in category pdbx_database_related
+;
+5.152  2014-03-04
+;
+    Changes (ep/jdw):
+    + change type of _pdbx_struct_assembly_depositor_info.oligomeric_count to line
+    + update  deposition specific enumerations in category software
+;
+5.153  2014-03-07
+;
+    Changes (eu/jdw):
+    + add item _pdbx_nmr_refine.software_ordinal
+    + update enumeration for _pdbx_database_status.dep_release_code_struct_fact
+;
+5.154  2014-03-10
+;
+    Changes (ag/eu/jdw):
+    + Update deposition closed enumeration flags for NMR extension definitions.
+;
+5.155  2014-03-12
+;
+    Changes (hy/jdw):
+    + Add preliminary items for _reflns.pdbx_CC_half,_reflns.pdbx_R_split,_reflns_shell.pdbx_CC_half and _reflns_shell.pdbx_R_split.
+;
+5.156  2014-03-24
+;
+    Changes (ep/jdw):
+    + Update detector enumerations
+;
+5.157  2014-03-28
+;
+    Changes (ep/jdw):
+    + Update internal enumerations and boundary values for deposition system -
+;
+5.158  2014-04-03
+;
+    Changes (jdw):
+    + Make context for _entity_poly.pdbx_explicit_linking_flag local.
+    + extend enumeration for _pdbx_contact_author.id.
+;
+5.159  2014-04-10
+;
+    Changes (cl/jdw):
+    + Update in EM extension dictionary in support of new  deposition system.
+;
+5.160  2014-05-02
+;
+    Changes (jdw):
+    + Items _entity_src_gen.pdbx_src_id, _entity_src_nat.pdbx_src_id _pdbx_entity_src_syn.pdbx_src_id added to
+      category key and set to mandatory code  = yes.
+    + Update internal enumerations for deposition system.
+;
+5.161  2014-05-07
+;
+    Changes (jdw):
+    + update enumerations in category  pdbx_SG_project
+;
+5.162  2014-05-08
+;
+    Changes (ep/jdw):
+    + update enumerations in category  software
+;
+5.163  2014-05-30
+;
+    Changes (jdw):
+    + remove redundant mandatory code for _pdbx_database_status.data_hold_nmr_contraints
+;
+5.164  2014-06-03
+;
+    Changes (jdw):
+    + Update mandatory codes in category pdbx_database_status
+;
+5.165  2014-06-05
+;
+    Changes (cl/jdw):
+    + Update em extensions and add deposition specific em categories -
+    + Add save__pdbx_depui_status_flags.has_viewed_validation_report
+;
+5.166  2014-06-06
+;
+    Changes (jdw):
+    + Add item _pdbx_struct_conn_angle.ptnr3_symmetry
+    + Add category pdbx_database_status_history
+;
+5.167  2014-06-15
+;
+    Changes (jdw):
+    + added _pdbx_depui_status_flags.validated_model_file_name, _pdbx_depui_status_flags.merge_prior_model_file_name,
+            _pdbx_depui_status_flags.merge_replace_model_file_name, _pdbx_depui_status_flags.merge_output_model_file_name
+    + Corrected/removed item-linked relation to _struct_ref_seq_dif.db_mon_id.
+    + Updated _refine.pdbx_method_to_determine_structure
+    + Update examples in category pdbx_data_processing_status
+;
+5.168  2014-07-10
+;
+    Changes (cl,ep,jdw):
+    + update of EM extensions definitions, examples and enumerations
+    + update of enumerations for deposition forms.
+;
+5.169  2014-07-16
+;
+    Changes (ep,jdw):
+    + update of enumerations for deposition forms.
+;
+5.170  2014-07-17
+;
+    Changes (cl,ep,jdw):
+    + update of enumerations for 3DEM and other deposition forms.
+;
+5.171  2014-07-21
+;
+    Changes (jdw):
+    + _pdbx_depui_status_flags.has_viewed_validation_report made optional
+;
+
+5.172  2014-07-30
+;
+    Changes (cl,jdw):
+    + update of EM extensions definitions, examples and enumerations
+;
+
+5.173  2014-08-28
+;
+    Changes (cl,jdw):
+    + update of EM extensions definitions, examples and enumerations
+;
+
+5.174  2014-09-02
+;
+    Changes (cl,ep,jdw):
+    + update of EM extensions definitions, examples and enumerations
+;
+5.175  2014-09-10
+;
+    Changes (ep,jdw):
+    + update of NMR alternative mandatory codes and examples
+;
+
+5.176  2014-09-11
+;
+    Changes (to,jdw):
+    + add _pdbx_depui_validation_status_flags.residual_B_factors_flag
+;
+5.177  2014-09-25
+;
+    Changes (ep,jdw):
+    + update detector enumerations for deposition system.
+;
+5.178  2014-10-14
+;
+    Changes (ep,jdw):
+    + update enumerations for deposition system.
+;
+
+5.179  2014-10-20
+;
+    Changes (es,cl,jdw):
+    + EMD dictionary update
+;
+
+5.180  2014-10-21
+;
+    Changes (es,cl,jdw):
+    + EMD dictionary update - make all categories optional --
+;
+
+5.181  2014-10-28
+;
+    Changes (ag,ez,jdw):
+    + NMR updates for deposition system -
+;
+
+5.182  2014-11-07
+;
+    Changes (ag,ez,jdw):
+    + NMR updates for deposition system -
+;
+5.183  2014-11-21
+;
+    Changes (es,cl,jdw):
+    + EMD extension dictionary update
+;
+5.184  2014-12-02
+;
+    Changes (es,jdw):
+    + EMD extension dictionary update
+;
+5.185  2014-12-17
+;
+    Changes (ag,ep,jdw):
+    + NMR updates for deposition system
+;
+5.186  2015-02-01
+;
+    Changes (zf,jdw):
+    + NMR updates for deposition system
+;
+5.187  2015-02-03
+;
+    Changes (es,cl,jdw):
+    + EMD extension dictionary update
+;
+
+5.188  2015-02-10
+;
+    Changes (es,jdw):
+    + EMD extension dictionary update
+;
+5.189  2015-02-20
+;
+    Changes (es,ep,jdw):
+    + EMD extension dictionary update
+    + Enumeration updates
+;
+5.190  2015-02-28
+;
+    Changes (ep,jdw):
+    + Enumeration updates -
+    + removed _pdbx_poly_seq_scheme.hetero relationship with _entity_poly_seq.hetero
+;
+5.191  2015-03-10
+;
+    Changes (es,jdw):
+    + EMD extension dictionary update
+;
+5.192  2015-03-18
+;
+    Changes (ep,jdw):
+    + Add item _pdbx_depui_entry_details.replace_pdb_id
+    + Enumeration updates
+;
+5.193  2015-03-31
+;
+    Changes (cs,jdw):
+    + remove relationship between _pdbx_reference_entity_subcomponents.prd_id and _pdbx_reference_molecule_list.prd_id
+;
+5.194  2015-04-22
+;
+    Changes (ep,jdw):
+    + enumeration updates
+    + add item _pdbx_contact_author.identifier_ORCID.
+    + add chem_comp_model_group extensions.
+;
+5.195  2015-04-28
+;
+    Changes (es,jdw):
+    + EMD  extension dictionary update
+;
+5.196  2015-04-30
+;
+    Changes (ep,jdw):
+    + enumeration updates
+;
+5.197  2015-05-06
+;
+    Changes (ep,ms,jdw):
+    + enumeration updates
+;
+5.198  2015-06-03
+;
+    Changes (es,cl,jdw):
+    + EMD extension update
+;
+5.199  2015-06-09
+;
+    Changes (cl):
+    + EMD extension update
+;
+
+5.200  2015-06-19
+;
+    Changes (cl):
+    + EMD extension update
+;
+
+5.201  2015-06-24
+;
+    Changes (es):
+    + EMD extension update
+;
+5.202  2015-06-26
+;
+    Changes (es):
+    + EMD regular expression update
+;
+5.203  2015-06-30
+;
+    Changes (es):
+    + EMD data type refinement
+;
+
+5.204  2015-07-06
+;
+    Changes (es,cl):
+    + EMD data type refinement
+;
+5.205  2015-07-17
+;
+    Changes (ep,jw):
+    + enumeration updates
+;
+5.206  2015-07-20
+;
+    Changes (jw):
+    + add new category pdbx_audit_conform_extension
+;
+5.207  2015-08-06
+;
+    Changes (ep,jw):
+    + enumeration updates
+;
+5.208  2015-08-14
+;
+    Changes (cl,jw):
+    + EM extension update
+;
+5.209  2015-08-30
+;
+    Changes (ep,jw):
+    + Enumeration updates
+;
+5.210  2015-08-31
+;
+    Changes (cl,jw):
+    + EM extension update
+;
+5.211  2015-09-08
+;
+    Changes (es):
+    + EMD extension update
+;
+5.212  2015-09-08
+;
+    Changes (cl):
+    + EM extension update
+;
+5.213  2015-10-01
+;
+    Changes (jdw):
+    + _pdbx_nmr_systematic_chem_shift_offset.ordinal replaces the natural category key for this category.
+    + Enumeration updates
+;
+5.214  2015-10-08
+;
+    Changes (ep):
+    + Enumeration updates
+    + regex update for type author
+;
+5.215  2015-10-13
+;
+    Changes (es):
+    + EMD extension update
+;
+5.216  2015-10-14
+;
+    Changes (cl):
+    + Add  _emd_admin.header_release_date,   _emd_admin.obsoleted_date and  _em_admin.header_release_date
+;
+5.217  2015-10-15
+;
+    Changes (jw):
+    + add item _pdbx_depui_entry_details.wwpdb_site_id
+;
+5.218  2015-10-22
+;
+    Changes (es):
+    + EMD extension update
+;
+5.219  2015-10-22
+;
+    Changes (cl):
+    + EM extension update
+;
+5.220  2015-10-30
+;
+    Changes (ep):
+    + Enumeration updates
+;
+5.221  2015-11-02
+;
+    Changes (ep):
+    + Enumeration updates
+;
+5.222  2015-11-11
+;
+    Changes (es):
+    + EMD extension update
+;
+
+5.223  2015-11-11
+;
+    Changes (jw):
+    + Adjust local context for selected NMR and EM data categories.
+;
+5.224  2015-11-19
+;
+    Changes (es):
+    + EMD extension update
+;
+5.225  2015-11-24
+;
+    Changes (es):
+    + EMD extension update
+;
+5.226  2015-11-24
+;
+    Changes (cl):
+    + EM extension update
+;
+5.227  2015-11-24
+;
+    Changes (ep):
+    + DCC extension update
+;
+5.228  2015-11-28
+;
+    Changes (es):
+    + EMD extension update
+;
+5.229  2015-12-03
+;
+    Changes (jdw):
+    + Category context changed for pdbx_nmr_spectral_peak_list
+;
+5.230  2015-12-03
+;
+    Changes (es):
+    + EMD extension update
+;
+5.231  2015-12-04
+;
+    Changes (cl):
+    + EM extension update
+;
+5.232  2015-12-07
+;
+    Changes (ep):
+    + enumeration updates
+;
+5.233  2015-12-08
+;
+    Changes (cl,ep):
+    + EM extension update
+;
+5.234  2016-01-06
+;
+    Changes (ep):
+    + description text updates
+;
+
+5.235  2016-01-21
+;
+    Changes (jw):
+    + update context for EM data items -
+    + add _em_admin.map_hold_date
+;
+
+5.236  2016-01-26
+;
+    Changes (cl,ep):
+    + update enumerations and descriptions for EM data items -
+;
+
+5.237  2016-02-01
+;
+    Changes (es):
+    + update enumerations and descriptions for EMD data items -
+;
+5.238  2016-02-03
+;
+    Changes (jy):
+    + enumeration update for item _pdbx_database_status.methods_development_category
+;
+5.239  2016-02-09
+;
+    Changes (cl,ap):
+    + enumeration update for item _em_imaging.specimen_holder_model
+      and _emd_microscopy.specimen_holder_model
+    + set local context for categories em_virus_natural_host and em_virus_shell
+;
+5.240  2016-02-24
+;
+    Changes (cl,ep):
+    + Update local context for selected em_* categories.
+    + Add internal data item _pdbx_database_status.auth_req_rel_date
+;
+5.241  2016-03-08
+;
+    Changes (ep):
+    + Update local context for selected em_* categories.
+    + Update internal enumerations for detectors and secondary structure types.
+;
+5.242  2016-03-21
+;
+    Changes (jw):
+    + add regular expression for ORCID
+;
+5.243  2016-03-25
+;
+    Changes (jy,zf):
+    + add extensions for group depositions
+;
+5.244  2016-03-31
+;
+    Changes (jw):
+    + add extensions to capture results from ligand binding assays
+;
+5.245  2016-04-02
+;
+    Changes (PDBj):
+    + _diffrn_source.type/_diffrn_source.pdbx_synchrotron_beamline deposition enumeration update BL-21 -> PX-BL21
+;
+5.246  2016-04-11
+;
+    Changes (ep):
+    + deposition beamline enumeration updates
+;
+5.247  2016-04-27
+;
+    Changes (ep):
+    + deposition beamline enumeration updates
+    + add extensions to support pdbx_struct_assembly evidence
+;
+5.248  2016-05-03
+;
+    Changes (ep):
+    + CAPRI added to _pdbx_database_status.methods_development_category
+    + Correct pdbx_nmr_chem_shift_ref.mol_common_name enumeration
+    + Add RDC to pdbx_nmr_constraint_file.constraint_subtype enumeration
+    + Correct limits of em_3d_crystal_entity.space_group_num
+    + EMD updates to status (HOLD8W), remove 'JEM3400FSC CRYOHOLDER', add new microscopes
+;
+5.249  2016-05-24
+;
+    Changes (ep):
+    + deposition _software.name enumerations updated (CRANK, CRANK2, EVAL15, KYLIN)
+    + Add AichiSR synchrotron and beamline BL2S1 to deposiiton diffrn_source
+    + Add 'dipolar recoupling' and 'spin diffusion' to _pdbx_nmr_constraint_file.constraint_subtype
+    + Add DECTRIS PILATUS3 R 300K detector
+    + Update examples to include correct items:
+        _pdbx_audit_conform_extension
+        _pdbx_chem_comp_depositor_info
+        _pdbx_chem_comp_instance_depositor_info
+        _pdbx_depui_upload
+        _pdbx_deposition_message_info
+        _pdbx_deposition_message_file_reference
+        _pdbx_struct_ref_seq_depositor_info
+        _em_db_reference
+        _em_entity_assembly_molwt
+        _em_entity_assembly_naturalsource
+        _em_image_recording
+        _em_interpret_figure
+        _em_structure_factors_depositor_info
+        _em_volume_selection
+        _em_particle_selection
+        _em_mask_depositor_info
+        _pdbx_struct_special_symmetry
+        _pdbx_reference_publication_list
+        _pdbx_nmr_chem_shift_ref
+        _pdbx_nmr_chem_shift_reference
+        _pdbx_reference_entity_poly_link
+;
+5.250  2016-06-04
+;
+    Changes (ep):
+    + Reduce _pdbx_nmr_exptl_sample_conditions.temperature_units enumeration for deposition system
+    + Add deposition system enumeration _diffrn_detector.type with numerous DECTRIS detectors
+    + Update examples for:
+        _em_author_list
+        _em_depui
+        _em_grid_pretreatment
+        _em_diffraction
+        _em_diffraction_shell
+        _em_diffraction_stats
+        _em_final_classification
+        _em_euler_angle_assignment
+        _em_ctf_correction
+        _em_image_processing
+        _em_fsc_curve
+        _emd_microscopy
+        _emd_image_recording
+        _pdbx_deposit_group_index
+        _pdbx_entity_src_gen_depositor_info
+    + Create parent/child definitions for:
+        _em_imaging.specimen_id
+        _em_image_scans.image_recording_id
+        _em_3d_reconstruction.image_processing_id
+        _em_diffraction_stats.image_processing_id
+        _em_image_recording.imaging_id
+        _em_final_classification.image_processing_id
+        _em_startup_model.image_processing_id
+        _em_euler_angle_assignment.image_processing_id
+        _em_ctf_correction.image_processing_id
+        _em_volume_selection.image_processing_id
+        _em_image_processing.image_recording.id
+        _emd_microscopy.emd_specimen_id
+        _emd_image_recording.emd_microscopy_id
+        _emd_image_digitization.emd_image_recording_id'
+        _emd_image_processing.emd_image_recording_id'
+        _emd_startup_model.emd_image_processing_id
+        _emd_angle_assignment.emd_image_processing_id
+        _emd_final_reconstruction.emd_image_processing_id
+        _emd_final_classification.emd_image_processing_id
+        _emd_particle_selection.emd_image_processing_id
+        _emd_volume_selection.emd_image_processing_id
+        _emd_ctf_correction.emd_image_processing_id
+        _emd_crystallography_stats.emd_image_processing_id
+;
+5.251  2016-07-05
+;
+    Changes (ep):
+    + Change description of reflns.pdbx_CC_half and reflns_shell.pdbx_CC_half
+      to refer to a decimal value.
+    + Remove local context for _pdbx_deposit_group.group_id
+    + Update enumerations for _pdbx_nmr_chem_shift_ref.atom_group and
+      _pdbx_nmr_exptl_sample_conditions.pH_units
+    + Description updates to several emd related categories
+    + Deposition updates to BRUKER IMUS MICROFOCUS source and RAYONIX
+      MX225-HS/MX170-HS detectors
+    + Range limits for reflns.pdbx_CC_half
+    + _pdbx_item_linked_group and _pdbx_item_linked_group_list updates for
+      pdbx_chem_comp_model_*, em_*, emd_* and_pdbx_struct_special_symmetry
+      categories
+;
+5.252  2016-07-27
+;
+    Changes (ep):
+    + emd_virus_shell.triangulation and _em_virus_shell.triangulation, changle value to positive integer
+    + Add DECTRIS PILATUS3 R CdTe detectors to diffrn_detector.type
+;
+5.253  2016-08-26
+;
+    Changes (ep):
+    + Add enumeration for emd_map.contour_level_source and em_map.contour_level_source
+;
+5.254  2016-09-19
+;
+    Changes (ep):
+    + Extend enumeration for pdbx_nmr_chem_shift_ref.mol_common_name to include
+      'methionine' and 'deuterium oxide'
+    + Add SLAC sector MFX
+    + Correct example for pdbx_reference_linked_entity_link
+    + Enhanced EM extension dictionary
+;
+5.255  2016-09-28
+;
+    Changes (ep):
+    + Add range limits for reflns.pdbx_CC_half and reflns_shell.pdbx_CC_half
+    + Add pdbx_deposit_group.group_title and pdbx_deposit_group.group_description
+    + emd_microscopy.microscope add FEI/PHILIPS CM10
+    + em_imaging.microscope_model add FEI/PHILIPS CM10, JEOL 100B, SIEMENS SULEIKA
+    + Enhanced EM extension dictionary
+    + Add_ndb_struct_na_base_pair.propel as alias for _ndb_struct_na_base_pair.propeller
+;
+5.256  2016-10-18
+;
+    Changes (ep):
+    + em_vitrification.instrument add ZEISS PLUNGE FREEZER CRYOBOX
+    + Add em_3d_reconstruction/emd_final_reconstruction refinement_type
+      attribute to replace fsc_type.
+    + _emd_admin.hold_expiry_date renamed _emd_admin.map_hold_date
+;
+5.257  2016-11-22
+;
+    Changes (ep):
+    + struct_keywords.pdbx_keywords add documented enumerations
+    + pdbx_released_exp_data_set.data_set_type add EMPIAR
+    + diffrn_detector.type: Add Bruker PHOTON II, TVIPS TEMCAM-F416
+    + diffrn_source.type add Excillum MetalJet sealed tube generators
+    + pdbx_data_processing_status.task_name: update examples and provide
+      annotation enumeration
+    + make pdbx_nmr_refine.software_ordinal a key for category
+    + em_entity_assembly_molwt: Make units and value non-mandatory
+;
+5.258  2016-11-29
+;
+    Changes (ep):
+    + Add missing detectors to em_image_recording.file_or_detector_model
+    + Add HITACHI EF3000 to em_imaging.microscope_model
+    + For deprecated em_* categories, change context to WWPDB_DEPRECATED and
+      provide mapping to replacement
+;
+5.259  2016-11-30
+;
+    Changes (ep):
+    + Allow 0.0 in range for em_diffraction_stats.overall_phase_error
+    + _em_entity_assembly_recombinant.plasmid: make non-mandatory
+    + Flag _em_helical_entity, em_helical_entity.hand,
+     _em_single_particle_entity, _em_virus_entity.ictvdb_id, as deprecated
+     in V5RC and provide forward reference possible.
+;
+5.260  2016-11-30
+;
+    Changes (jdw):
+     + Add item _audit_author.identifier_ORCID
+     + Add category pdbx_entity_instance_feature
+;
+5.261  2016-12-06
+;
+    Changes (ep/esg/cl):
+    + Allow 0.0 in range for emd_crystallography_stats.overall_phase_error
+    + emd_recombinant_expression.plasmid: make non-mandatory
+    + Reclassify the category_group for em_ categories
+    + Add pdbx_biocurator_comment and pdbx_depositor_comment
+;
+5.262  2016-12-19
+;
+    Changes (ep/jb):
+    + Update pdbx_struct_assembly_gen_depositor_info category for better support
+      of assemblies.
+    + Add pdbx_entity_instance_feature.auth_seq_num and auth_comp_id
+    + Add DECTRIS EIGER X 500K to diffrn_detector.type
+    + Add "FRM II BEAMLINE BIODIFF" to diffrn_source.type
+    + Remove context for audit_author.identifier_ORCID
+    + Item context added for audit_author.address
+;
+5.263  2017-01-03
+;
+    Changes (jw/ep):
+    + add units micrometres, micrometres_squared, teraphotons_per_pulse, kiloelectron_volts,
+      microjoules, hertz, femtoseconds, microliters_per_min
+    + add category group xfel_group
+    + incorporate draft xfel dictionary extension
+    + incorporate draft diffraction data extension and supporting category group
+    + Add _pdbx_struct_assembly_gen_depositor_info.all_chains
+;
+5.264  2017-01-05
+;
+    Changes (ep/M. Hekkelman):
+    + Change _pdbx_struct_assembly_gen_depositor_info.chain_id_list non-mandatory
+    + Correct inconsistent mandatory setting for _atom_site.label_alt_id,
+      _atom_site.label_comp_id, _atom_site.label_atom_id,
+      _diffrn_refln.wavelength_id, _atom_site.label_entity_id,
+      _atom_site.label_seq_id, _refln.wavelength_id, _atom_site.label_asym_id,
+      _struct_conn.ptnr1_label_atom_id, _struct_conn.ptnr2_label_atom_id,
+      _struct_mon_prot_cis.label_alt_id, _struct_site_gen.label_alt_id
+    + Split up pdbx_struct_assembly_auth_evidence into
+      pdbx_struct_assembly_auth_classification. Export categories to v5rc
+    + Make _pdbx_struct_assembly_gen_depositor_info.chain_id_list,
+      _pdbx_struct_assembly_gen_depositor_info.full_matrices,
+      _pdbx_struct_assembly_gen_depositor_info.at_unit_matrix,
+      non-mandatory for archive, but mandatory depui
+    + Make pdbx_nmr_refine.software_ordinal a key for category internally
+    + Add adamantane to _pdbx_nmr_chem_shift_ref.mol_common_name enumeration
+;
+5.265  2017-02-05
+;
+    Changes (ep):
+    + Add BRUKER TURBO X-RAY SOURCE and OXFORD DIFFRACTION NOVA to list of
+      X-ray sources for deposition system.
+    + Define 4x3_matrix, id_list, symmetry_operation as regular expressions
+      for use in deposition system to validate
+      pdbx_struct_assembly_gen_depositor_info
+    + Add pdbx_struct_assembly_gen_depositor_info.symmetry_operation
+
+;
+5.266  2017-02-11
+;
+    Changes (ep):
+    + For 4x3_matrix - allow spaces at start of row
+    + add pdbx_struct_assembly_auth_evidence_depositor_info. Change parent of pdbx_struct_assembly_gen_depositor_info
+      to pdbx_struct_assembly_depositor_info
+    + export pdbx_binding_assay to public in v5rc
+;
+5.267  2017-02-15
+;
+    Changes (ep):
+    + Export pdbx_entity_instance_feature to public in v5rc
+    + For pdbx_entity_instance_feature.comp_id change parent to atom_site.label_comp_id
+    + Add parent atom_site.auth_comp_id to pdbx_entity_instance_feature.auth_comp_id
+;
+5.268  2017-02-17
+;
+    Changes (ep):
+    + Add internal pdbx_binding_assay.auth_comp_id
+    + Provide limits for pdbx_binding_assay.assay_pH and
+      pdbx_binding_assay.assay_temperature
+    + Make pdbx_binding_assay.assay_type, pdbx_binding_assay.assay_value and
+      pdbx_binding_assay.assay_value_type non-mandatory
+;
+5.269  2017-02-27
+;
+    Changes (ep):
+    + Add STARANISO to deposition software.name enumeration list
+    + Add NSRRC BEAMLINE TPS 05A synchrotron beamline to diffrn.source.type
+    + Update deposition example for refins.pdbx_starting_model
+    + Add "MAATEL BIODIFF" to diffrn_detector.type
+    + Update pdbx_struct_assembly_auth_evidence.experimental_support
+      enumeration to include 'immunoprecipitation'
+;
+5.270  2017-03-01
+;
+    Changes (ep):
+    + Update pdbx_struct_assembly_auth_evidence_depositor_info.experimental_support
+      enumeration to include 'immunoprecipitation'
+;
+5.271  2017-03-09
+;
+    Changes (ep):
+    + Add category group assignments for pdbx_unobs_or_zero_occ_residues,
+      pdbx_unobs_or_zero_occ_atoms, pdbx_struct_mod_residue,
+      pdbx_distant_solvent_atoms, _pdbx_struct_special_symmetry, pdbx_pdb_compnd,
+      pdbx_pdb_source
+    + Update context values to WWPDB_LOCAL for pdbx_remediation_atom_site_mapping
+    + Parent for _pdbx_remediation_atom_site_mapping.auth_alt_id removed.
+    + Add MIRAS, SIR to deposition enumeration for _refine.pdbx_method_to_determine_struct
+    + Change type for pdbx_hybrid.residue_names to line based on usage
+    + Add category keys for pdbx_source and pdbx_refine_ls_restr_ncs
+    + To support data from pdb_extract, added pdbx_crystal_alignment category
+      and updates to exisitin pdbx_phasing_MR, reflns_shell, reflns categories
+    + For 4x3 matrix - require space between columns
+    + Add new categories to support versioning: pdbx_audit_revision_history,
+      pdbx_audit_revision_category, pdbx_audit_revision_group, pdbx_audit_revision_item,
+      pdbx_audit_revision_details
+    + For v5rc: Set item context on the following to WWPDB_LOCAL:
+      _atom_site.Cartn_x_esd, _atom_site.Cartn_y_esd, _atom_site.Cartn_z_esd,
+      _atom_site.occupancy_esd, _atom_site.B_iso_or_equiv_esd,
+      _atom_site_anisotrop.U[1][1]_esd, _atom_site_anisotrop.U[2][2]_esd,
+      _atom_site_anisotrop.U[3][3]_esd, _atom_site_anisotrop.U[1][2]_esd,
+      _atom_site_anisotrop.U[1][3]_esd, _atom_site_anisotrop.U[2][3]_esd
+;
+5.272  2017-03-14
+;
+    Changes (ep):
+    + For v5rc: Set category context to WWPDB_LOCAL for pdbx_version,
+      database_PDB_rev and database_PDB_rev_record
+    + Add ssbond to enumeration for pdbx_data_processing_status.status
+    + Set WWPDB_LOCAL context for em_2d_crystal_entity.c_sampling_length in
+      v5_next but not v5rc.
+;
+5.273  2017-03-20
+;
+    Changes (ep):
+    + For v5rc: Set category context to WWPDB_LOCAL for computing
+    + For v5rc: Remove context on the following due to existing data in archive
+      _atom_site.Cartn_x_esd, _atom_site.Cartn_y_esd, _atom_site.Cartn_z_esd,
+      _atom_site.occupancy_esd, _atom_site.B_iso_or_equiv_esd,
+      _atom_site_anisotrop.U[1][1]_esd, _atom_site_anisotrop.U[2][2]_esd,
+      _atom_site_anisotrop.U[3][3]_esd, _atom_site_anisotrop.U[1][2]_esd,
+      _atom_site_anisotrop.U[1][3]_esd, _atom_site_anisotrop.U[2][3]_esd
+    + Add 'Bruker METALJET' to _diffrn_detector.type enumeration
+    + Flag _pdbx_audit_revision_details.type as mandatory for deposition.
+    + Add _pdbx_crystal_alignment.ybeam_esd
+    + Make _refine_B_iso.pdbx_residue_num, _refine_B_iso.pdbx_strand,
+      _refine_B_iso.pdbx_residue_name non-mandatory
+    + Correct examples for pdbx_audit_revision_history and
+      pdbx_audit_revision_group
+    + Update enumeration for _pdbx_audit_revision_group.group
+    + Create/update examples for emd_molecular_mass, emd_vitrification,
+      emd_angle_assignment, emd_particle, emd_volume, emd_modelling_initial_model
+;
+5.274  2017-03-20
+;
+    Changes (ep):
+    + For v5rc: Remove category context for database_PDB_rev
+      and database_PDB_rev_record
+    + Add 'Force Field X' to deposition enumeration for software.name
+;
+5.275  2017-03-28
+;
+    Changes (ep/mg):
+    + Move 'Bruker METLJET' from diffrn_detector.type enumeration to
+      diffrn_source.type
+    + Change 'SSRF BEAMLINE BL17U' ine diffrn_source.type enumerate to
+      'SSRF BEAMLINE BL17U1'
+    + Add 'Agrovata', 'DIMPLE', 'SHELXL-97' to software.name deposition
+      enumeration
+;
+5.276  2017-04-06
+;
+    Changes (ep/mrs):
+    + Correct capitalization of enumerations in pdbx_contact_author.contry
+      and pdbx_audit_support.country.
+    + Correct capitalization of enumerations of _
+      pdbx_SG_project.full_name_of_center
+    + Update archive enumerations for pdbx_nmr_exptl_sample.concentration_units
+      to match deposition enumeration
+    + For deprecated em_* categories, in which a forward reference is provided
+      to new item in dictonary, provide the reverse mapping as well.
+    + For v5rc: For deprecated computing category provide forward references
+      to software category
+    + For v5rc: export _pdbx_database_status.recvd_initial_deposition_date
+      and indicate replaces database_PDB_rev.date_original
+    + For v5rc: remove pdbx_binding_assay category
+    + Extend enumeration for _pdbx_nmr_constraint_file.constraint_subtype
+      ('PRE', 'PRE solvent', 'CSP')
+    + For v5rc: For deprecated pdbx_version category provide replacement
+      items names
+;
+5.277  2017-04-08
+;
+    Changes (ep):
+    + For v50: correct  WWPDB_LOCAL context for
+      _pdbx_database_status.date_begin_release_preparation, and remove
+      context for _pdbx_database_status.status_code_cs
+;
+5.278  2017-04-18
+;
+    Changes (ep):
+    + Add WWPDB_LOCAL context for entry.pdbx_DOI
+    + Add 'Direct Drive' to _pdbx_nmr_spectrometer.model deposition enumeration
+    + For v50: Mark as WWPDB_LOCAL context for database_PDB_rev
+      and database_PDB_rev_record
+;
+5.279  2017-04-20
+;
+    Changes (ep):
+    + Add 'Data processing' to _pdbx_audit_revision_group.group enumeration
+    + Add 'Obsolete' to _pdbx_audit_revision_details.type
+    + Change enumeration in _emd_map.endian_type and _em_map.endian_type
+      from 'small' to 'little'
+;
+5.280  2017-05-18
+;
+    Changes (ep):
+    + Add pdbx_supporting_exp_data_set category
+    + Add _pdbx_depui_status_flags.has_sas_data and
+      _pdbx_depui_status_flags.is_sas_deposited
+    + Add NSLS-II and MAX_IV synchrotrons to deposition enumeration lists
+    + Extend software.name enumeration list for deposition system.
+    + Add BIOISIS to pdbx_database_release.db_name enumeration list.
+    + Add regular expression for author names (audit_author.name,
+      citation_author.name) for deposition system
+    + Make deposition taxonomy mandatory (_entity_src_nat.pdbx_ncbi_taxonomy_id,
+     _pdbx_entity_src_syn.ncbi_taxonomy_id,
+     _entity_src_gen.pdbx_gene_src_ncbi_taxonomy_id,
+     _entity_src_gen.pdbx_host_org_ncbi_taxonomy_id)
+    + Add detector types and scattering types to deposition enumerations for
+      diffrn_detector.type and diffrn_source.source
+;
+5.281  2017-05-29
+;
+    Changes (ep):
+    + Add depositon specific enumerations for
+      diffrn_detector.pdbx_collection_date and
+      entity_poly.pdbx_seq_one_letter_code.
+    + Make pdbx_depui_status_flags.has_viewed_validation_report mandatory
+      for deposition
+    + Add pdbx_contact_author.legacy_address to replace audit_contact_author.address.
+    + Correct enumerations for deposition _diffrn_source.pdbx_synchrotron_site
+      (MAX II, MAX IV)
+    + Add beamlines 'PAL/PLS BEAMLINE 6D', 'ILL BEAMLINE LADI',
+      'ILL BEAMLINE LADI III' to deposition diffrn_source.type
+;
+5.282  2017-06-19
+;
+    Changes (ep):
+    + Add depositon specific open enumeration for
+      _pdbx_audit_support.funding_organization
+;
+5.283  2017-06-27
+;
+    Changes (ep):
+    + Change type for pdbx_database_status.recvd_initial_deposition_date to
+      yyyy-mm-dd from yyyy-mm-dd:hh:mm for xsd type checking
+    + Add 'FEI FALCON III (4k x 4k)' to enumeration for
+      em/emd_image_recording.film_or_detector_model
+    + Correct type of source for deposition for 'Xenocs GeniX 3D Cu HF' in
+      diffrn_source.type enumeration
+;
+5.284  2017-07-01
+;
+    Changes (ep):
+    + Add pdbx_depui_status_flags.use_sas_refine
+    + Extend deposition enumeration of software.name
+;
+5.285  2017-07-08
+;
+    Changes (ep):
+    + Extend deposition enumeration for _pdbx_audit_support.funding_organization
+    + For em_ related categories, set context based on public V50
+    + Add 'carbohydrate dihedral angle' to _pdbx_nmr_constraint_file.constraint_type
+    + Extend soft limit range for em_image_recording.avg_electron_dose_per_image/
+      emd_image_recording.average_electron_dose_per_image
+    + Set pdbx_depui_status_flags.is_grant_funded mandatory for deposition
+;
+5.286  2017-07-12
+;
+    Changes (jw):
+    + _pdbx_diffrn_data_section.type_scaled correct enumeration
+    + Remove range limits for _pdbx_diffrn_image_proc.phi_value
+    + Rename _pdbx_xfel_sample_delivery_injection.type to
+      _pdbx_xfel_sample_delivery_injection.description
+    + Change type of _pdbx_xfel_detector.detector from 'code' to 'line'
+;
+5.287  2017-07-16
+;
+    Changes (jw/ns):
+    + Correct enumeration in _pdbx_diffrn_data_section_contents.content_type
+    + Changed _pdbx_xfel_data_reduction.frames_hits to
+      _pdbx_xfel_data_reduction.frame_hits.
+    + Add _pdbx_xfel_data_reduction.crystal_hits,
+      _pdbx_xfel_data_reduction.droplet_hits,
+      and _pdbx_xfel_data_reduction.lattices_indexed
+;
+5.288  2017-07-17
+;
+    Changes (Pdbx/mmCIF Working Group):
+        + replace items names d_resolution_* with d_limit_* and update related definitions.
+        + add item _pdbx_diffrn_merge_rejected_list.details
+        + add items _pdbx_diffrn_merge_image_list.image_id_begin and _pdbx_diffrn_merge_image_list.image_id_end
+        + add items _pdbx_diffrn_unmerged_cell.Bravais_lattice
+        + add items _pdbx_diffrn_unmerged_refln.scan_id and _pdbx_diffrn_unmerged_refln.scale_value
+        + add category pdbx_diffrn_scan
+;
+#
+###########################################################################
+#
+# File:  mmcif_pdbx-data.dic
+#
+#               Protein Data Bank Exchange Data Dictionary
+#
+#
+#                           Data Section
+#
+#
+###########################################################################
+
+
+
+##################
+## SUB_CATEGORY ##
+##################
+
+     loop_
+    _sub_category.id
+    _sub_category.description
+              'cartesian_coordinate'
+;              The collection of x, y, and z components of a position specified
+               with reference to a Cartesian (orthogonal Angstrom) coordinate
+               system.
+;
+              'cartesian_coordinate_esd'
+;              The collection of estimated standard deviations of the x, y, and
+               z components of a position specified with reference to a
+               Cartesian (orthogonal Angstrom) coordinate system.
+;
+              'fractional_coordinate'
+;              The collection of x, y, and z components of a position specified
+               with reference to unit cell directions.
+;
+              'fractional_coordinate_esd'
+;              The collection of estimated standard deviations of the x, y, and
+               z components of a position specified with reference to unit cell
+               directions.
+;
+              'matrix'
+;              The collection of elements of a matrix.
+;
+               miller_index
+;              The collection of h, k, and l components of the Miller index of
+               a reflection.
+;
+              'cell_length'
+;              The collection of a, b, and c axis lengths of a unit cell.
+;
+              'cell_length_esd'
+;              The collection of estimated standard deviations of the a, b, and
+               c axis lengths of a unit cell.
+;
+              'cell_angle'
+;              The collection of alpha, beta, and gamma angles of a unit cell.
+;
+              'cell_angle_esd'
+;              The collection of estimated standard deviations of the alpha,
+               beta, and gamma angles of a unit cell.
+;
+              'mm_atom_site_auth_label'
+;              The collection of asym id, atom id, comp id and seq id
+               components of an author's alternative specification for
+               a macromolecular atom site.
+;
+              'mm_atom_site_label'
+;              The collection of alt id, asym id, atom id, comp id and seq id
+               components of the label for a macromolecular atom site.
+;
+              'vector'
+;              The collection of elements of a vector.
+;
+
+#########################
+## CATEGORY_GROUP_LIST ##
+#########################
+
+     loop_
+    _category_group_list.id
+    _category_group_list.parent_id
+    _category_group_list.description
+##
+              'inclusive_group'   .
+;              The parent category group containing all of the data categories in the macromolecular dictionary.
+;
+              'atom_group'
+              'inclusive_group'
+;              Categories that describe the properties of atoms.
+;
+             'array_data_group'
+             'inclusive_group'
+;             Categories that describe array data.
+;
+             'axis_group'
+             'inclusive_group'
+;             Categories that describe axes.
+;
+              'audit_group'
+              'inclusive_group'
+;              Categories that describe dictionary maintenance and
+               identification.
+;
+              'cell_group'
+              'inclusive_group'
+;              Categories that describe the unit cell.
+;
+              'chemical_group'
+              'inclusive_group'
+;              Categories that describe chemical features derived from the experimental coordinate data.
+;
+              'chem_comp_group'
+              'inclusive_group'
+;              Categories that define the chemical structure and nomencature of the momoners and ligands in the experiment.
+;
+              'chem_comp_dictionary_group'
+              'inclusive_group'
+;              Categories defining chemical structure and nomencature of the momoners and ligands used in
+               the Chemical Component Dictionary.
+;
+
+              'chem_comp_model_group'
+              'inclusive_group'
+;              Categories defining structural models for chemical components defined in the Chemical Component Dictionary.
+;
+
+              'bird_dictionary_group'
+              'inclusive_group'
+;              Categories defining chemical structure and nomencature of the small polymer molecules used in
+               the Biologically Interesting Molecule Reference Dictionary (BIRD).
+;
+
+              'bird_family_dictionary_group'
+              'inclusive_group'
+;              Categories defining families of related molecules used in the Biologically Interesting Molecule Reference Dictionary (BIRD).
+;
+
+              'chem_link_group'
+              'inclusive_group'
+;              Categories that describe links between components of
+               chemical structure.
+;
+              'citation_group'
+              'inclusive_group'
+;              Categories that provide bibliographic references.
+;
+              'computing_group'
+              'inclusive_group'
+;              Categories that describe the computational details of the experiment.
+;
+              'compliance_group'
+              'inclusive_group'
+;              Categories that are included in this dictionary specifically to
+               comply with previous dictionaries.
+;
+              'database_group'
+              'inclusive_group'
+;              Categories that hold references to entries in databases that
+               contain related information.
+;
+              'diffrn_group'
+              'inclusive_group'
+;              Categories that describe details of the diffraction experiment.
+;
+              'em_group'
+              'inclusive_group'
+;              Categories that describe 3-dimensional electron microscopy.
+;
+              'em_legacy_group'
+              'inclusive_group'
+;              Categories that describe 3-dimensional electron microscopy (legacy).
+;
+              'emdb_admin_group'
+              'inclusive_group'
+;              Administrative Categories for Electron Microscopy Data Bank.
+;
+              'emdb_extension_group'
+              'inclusive_group'
+;              Categories that describe 3-dimensional electron microscopy (EMDB extension).
+;
+              'entity_group'
+              'inclusive_group'
+;              Categories that describe the unique chemical and molecular entities.
+;
+              'entry_group'
+              'inclusive_group'
+;              Categories that pertain to the entire data block.
+;
+              'exptl_group'
+              'inclusive_group'
+;              Categories that hold details of the experimental conditions.
+;
+              'geom_group'
+              'inclusive_group'
+;              Categories that hold details of molecular and crystal geometry.
+;
+              'iucr_group'
+              'inclusive_group'
+;              Categories that are used for manuscript submission and
+               internal processing by the staff of the International Union of
+               Crystallography.
+;
+              'nmr_group'
+              'inclusive_group'
+;              Categories that describe Nuclear Magnetic Spectroscopy experiments.
+;
+              'pdb_group'
+              'inclusive_group'
+;              Categories that pertain to the file-format or data-processing
+               codes used by the Protein Data Bank.
+;
+              'phasing_group'
+              'inclusive_group'
+;              Categories that describe phasing.
+;
+              'refine_group'
+              'inclusive_group'
+;              Categories that describe refinement.
+;
+              'refln_group'
+              'inclusive_group'
+;              Categories that describe the details of reflection measurements.
+;
+              'struct_group'
+              'inclusive_group'
+;              Categories that contain details about the experimental structure.
+;
+              'symmetry_group'
+              'inclusive_group'
+;              Categories that describe symmetry information.
+;
+             'pdbx_group'
+             'inclusive_group'
+;             Categories which have been added to support the data archiving and exchange for the Protein Data Bank.
+;
+             'pdbx_erf_group'
+             'inclusive_group'
+;             Categories which are used by RCSB PDB to store derived
+              and computed data.
+;
+             'ccp4_group'
+             'inclusive_group'
+;             Categories from the CCP4 harvest dictionary.
+;
+             'ndb_group'
+             'inclusive_group'
+;             Categories which are used by the Nucleic Acid Database.
+;
+             'rcsb_group'
+             'inclusive_group'
+;             Categories which are used internally by the RCSB PDB.
+;
+             'protein_production_group'
+             'inclusive_group'
+;             Categories which describe the details of protein production.
+;
+             'solution_scattering_group'
+             'inclusive_group'
+;             Categories which describe the details of solution scattering experiments.
+;
+              'validate_group'
+              'inclusive_group'
+;              Categories that describe geometric properties
+               of residues that deviate from expected standards
+               by 6 * the expected RMSD
+;
+             'view_group'
+             'inclusive_group'
+;             Categories which are used to storing view transformations.
+;
+
+              'em_specimen'
+              'inclusive_group'
+;              Categories that describe electron microscopy specimens.
+;
+
+              'em_sample'
+              'inclusive_group'
+;              Categories that describe electron microscopy samples.
+;
+
+              'em_crystallography'
+              'inclusive_group'
+;              Categories that describe electron crystallography.
+;
+              'em_fitting'
+              'inclusive_group'
+;              Categories that describe electron microscopy fitting.
+;
+              'em_tomography'
+              'inclusive_group'
+;              Categories that describe electron tomography.
+;
+              'em_imaging'
+              'inclusive_group'
+;              Categories that describe electron microscopy imaging.
+;
+
+              'em_reconstruction'
+              'inclusive_group'
+;              Categories that describe electron microscopy reconstruction.
+;
+              'em_symmetry_group'
+              'inclusive_group'
+;              Categories that describe electron microscopy symmetry.
+;
+              'em_experiment'
+              'inclusive_group'
+;              Categories that describe electron microscopy experimental details.
+;
+              'em_symmetry'
+              'inclusive_group'
+;              Categories that describe electron microscopy symmetry details.
+;
+
+              'emd_group'
+              'inclusive_group'
+;              Categories describing electron microscopy that are used by the wwPDB deposition and annotation system.
+;
+              'chem_comp_model_group'
+              'inclusive_group'
+;              Categories describing experimental and computational models for individual chemical components.
+;
+              'dcc_group'
+              'inclusive_group'
+;              Categories output by the crystallographic data utility application DCC.
+;
+              'xfel_group'
+              'inclusive_group'
+;              Categories that describe X-ray Free Electron Laser (XFEL) data collection and experimental details.
+;
+              'diffrn_data_set_group'
+              'inclusive_group'
+;              Categories extending the description of measured diffraction data.
+;
+
+####################
+## ITEM_TYPE_LIST ##
+####################
+#
+#
+#  The regular expressions defined here are not compliant
+#  with the POSIX 1003.2 standard as they include the
+#  '\n' and '\t' special characters.  These regular expressions
+#  have been tested using version 0.12 of Richard Stallman's
+#  GNU regular expression library in POSIX mode.
+#
+#
+# For some data items, a standard syntax is assumed. The syntax is
+#   described for each data item in the dictionary, but is summarized here:
+#
+#   Names:     The family name(s) followed by a comma, precedes the first
+#              name(s) or initial(s).
+#
+#   Telephone numbers:
+#              The international code is given in brackets and any extension
+#              number is preceded by 'ext'.
+#
+#   Dates:     In the form yyyy-mm-dd.
+#
+##############################################################################
+
+     loop_
+    _item_type_list.code
+    _item_type_list.primitive_code
+    _item_type_list.construct
+    _item_type_list.detail
+               code      char
+               '[][_,.;:"&<>()/\{}'`~!@#$%A-Za-z0-9*|+-]*'
+;              code item types/single words ...
+;
+               ucode      uchar
+               '[][_,.;:"&<>()/\{}'`~!@#$%A-Za-z0-9*|+-]*'
+;              code item types/single words  (case insensitive) ...
+;
+               line      char
+               '[][ \t_(),.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*'
+;              char item types / multi-word items ...
+;
+               uline      uchar
+               '[][ \t_(),.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*'
+;              char item types / multi-word items (case insensitive)...
+;
+               text      char
+               '[][ \n\t()_,.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*'
+;              text item types / multi-line text ...
+;
+               int       numb
+               '[+-]?[0-9]+'
+;              int item types are the subset of numbers that are the negative
+               or positive integers.
+;
+               float     numb
+          '-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)?'
+;              float item types are the subset of numbers that are the floating
+               numbers.
+;
+               name      uchar
+               '_[_A-Za-z0-9]+\.[][_A-Za-z0-9%-]+'
+;              name item types take the form...
+;
+               idname    uchar
+               '[_A-Za-z0-9]+'
+;              idname item types take the form...
+;
+               any       char
+               '.*'
+;              A catch all for items that may take any form...
+;
+               yyyy-mm-dd  char
+                '[0-9]?[0-9]?[0-9][0-9]-[0-9]?[0-9]-[0-9][0-9]'
+;
+               Standard format for CIF dates.
+;
+               yyyy-mm-dd:hh:mm-flex  char
+                '[0-9][0-9][0-9][0-9](-[0-9]?[0-9])?(-[0-9][0-9])?(:[0-9]?[0-9]:[0-9][0-9])?'
+;
+               Flexible date-time format.
+;
+               uchar3    uchar
+              '[+]?[A-Za-z0-9][A-Za-z0-9]?[A-Za-z0-9]?'
+;
+               data item for 3 character codes
+;
+               uchar1    uchar
+              '[+]?[A-Za-z0-9]'
+;
+               data item for 1 character codes
+;
+               symop    char
+               '([1-9]|[1-9][0-9]|1[0-8][0-9]|19[0-2])(_[1-9][1-9][1-9])?'
+;              symop item types take the form n_klm, where n refers to the
+               symmetry operation that is applied to the coordinates in the
+               ATOM_SITE category identified by _atom_site_label.  It must
+               match a number given in _symmetry_equiv_pos_site_id.
+
+               k, l, and m refer to the translations that are subsequently
+               applied to the symmetry transformed coordinates to generate
+               the atom used.  These translations (x,y,z) are related to
+               (k,l,m) by
+                     k = 5 + x
+                     l = 5 + y
+                     m = 5 + z
+               By adding 5 to the translations, the use of negative numbers
+               is avoided.
+;
+               atcode      char
+               '[][ _(),.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*'
+;              Character data type for atom names  ...
+;
+               yyyy-mm-dd:hh:mm  char
+    '[0-9]?[0-9]?[0-9][0-9]-[0-9]?[0-9](-[0-9]?[0-9])?(:[0-9]?[0-9]:[0-9][0-9])?'
+;
+               Standard format for CIF dates with optional time stamp.
+;
+               fax      uchar
+               '[_,.;:"&<>/\{}'`~!@#$%A-Za-z0-9*|+-]*'
+;              code item types/single words  (case insensitive) ...
+;
+               phone      uchar
+               '[_,.;:"&<>/\{}'`~!@#$%A-Za-z0-9*|+-]*'
+;              code item types/single words  (case insensitive) ...
+;
+               email      uchar
+               '[_,.;:"&<>/\{}'`~!@#$%A-Za-z0-9*|+-]*'
+;              code item types/single words  (case insensitive) ...
+;
+               int-range       numb
+               '[+-]?[0-9]+-[+-]?[0-9]+'
+#               '-?[0-9]+(--?[0-9]+)?'
+;              range of integer item types are the subset of numbers that are the negative
+               or positive integers.
+;
+               float-range     numb
+ '-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)?(--?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)?)?'
+;              int item types are the subset of numbers that are the floating
+               numbers.
+;
+              code30  char
+        '.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?.?'
+        'A string value, not allowed to exceed 30 characters.'
+#
+               binary    char
+;\n--CIF-BINARY-FORMAT-SECTION--\n\
+[][ \n\t()_,.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*\
+\n--CIF-BINARY-FORMAT-SECTION----
+;
+;              binary items are presented as MIME-like ascii-encoded
+               sections in an imgCIF.  In a CBF, raw octet streams
+               are used to convey the same information.
+;
+# Place-holder regex for this to avoid breaking any software.
+               operation_expression      char
+               '[][ \t_(),.;:"&<>/\{}'`~!@#$%?+=*A-Za-z0-9|^-]*'
+;              sequence of parenthetical integer ranges and character codes
+;
+               ec-type   char
+#    '[1-6](.[1-9][0-9]?)?(.[1-9][0-9]?)?(.[1-9][0-9]?[0-9]?)?'
+    '([1-6]((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?[0-9]?)|(.-)))(([ ]*,[ ]*)([1-6]((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?[0-9]?)|(.-))))*'
+;
+               Approximate format of Enzyme Commission EC number. 1.2.3.4 with
+               optional parts.
+;
+
+	       seq-one-letter-code char
+	'(([\nUGPAVLIMCFYWHKRQNEDSTX]+)?|(\([0-9A-Z][0-9A-Z]?[0-9A-Z]?\))?)+'
+;  One letter code sequence supporting parenthetical modified residues with 3-letter codes
+;
+               ucode-alphanum-csv      uchar
+               '[A-Za-z0-9]+(,[A-Za-z0-9]+)?'
+;              comma separated alpha numeric codes (single words)  (case insensitive) ...
+;
+               point_symmetry      char
+               '[CD][1-9]|[CD][1-9][0-9]*|T|O|I'
+;              Encodes point symmetry as Cn, Dn, T, O, or I  (case sensitive), where n is a positive integer.
+;
+               id_list              char
+               '[A-Za-z0-9]+(,[A-Za-z0-9]+)*'
+;              A list of comma separated chain or asym ids.
+;
+               4x3_matrix           char
+               '([ \t]*(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n)){2}([ \t]*(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *[\n]*))'
+;              A 4x3 matrix separated by spaces and newlines on each line.
+               Final newline optional. Optional spaces at start of lines.
+;
+   non_negative_int    numb '[0-9]|[1-9][0-9]*' 'Non negative integers (0,1,2,..)'
+   positive_int        numb '[1-9][0-9]*'       'Positive integers (1,2,3,..)'
+   emd_id              char 'EMD-[1-9][0-9][0-9][0-9]' 'EMDB code'
+   pdb_id              char '[1-9][A-Z0-9][A-Z0-9][A-Z0-9]' 'PDB code (upper cases)'
+   point_group         char 'C[1-9][0-9]*|D[2-9]|D[1-9][0-9]+|O|T|I' 'Point group symmetry in Schoenflies notation'
+   point_group_helical char '[CD][1-9][0-9]*' 'Point group symmetry for helices in Schoenflies notation'
+   boolean char 'YES|NO' 'Boolean type'
+   #author char "[A-Za-z '\-]+,\s+([A-Z\-]+\.)+$" 'Author name in PDB format: Taylor, C.A.'
+   author char "[A-Za-z0-9_]+(( |-|'|\. )[A-Za-z0-9_]+)*( Jr.| III)?, [A-Za-z0-9_]\.(-?[A-Za-z0-9_]+\.)*$" 'Author name in PDB format: Taylor, C.A.'
+   orcid_id char "[0-9]{4}-[0-9]{4}-[0-9]{4}-([0-9]{3}X|[0-9]{4})"  'ORCID pattern - dddd-dddd-dddd-dddd|dddX'
+   symmetry_operation char '[-+0-9XxYyZ/ ]+,[-+0-9XxYyZ/ ]+,[-+0-9XxYyZ/ ]+' 'Allowed characters for use in symmetry operation such as 1/2-x,y,1/2-z'
+   sequence_dep        char '[a-zA-Z0-9\t \r\n\v\f\(\)]+$'  'Deposition specific one letter code'
+   date_dep            char '((([0-9][0-9])(([02468][048])|([13579][26]))-02-29)|((([0-9][0-9])([0-9][0-9])))-((((0[0-9])|(1[0-2]))-((0[0-9])|(1[0-9])|(2[0-8])))|((((0[13578])|(1[02]))-31)|(((0[1,3-9])|(1[0-2]))-(29|30)))))'  'Deposition specific date with better checking'
+
+#####################
+## ITEM_UNITS_LIST ##
+#####################
+
+     loop_
+    _item_units_list.code
+    _item_units_list.detail
+#
+     'metres'                 'metres (metres)'
+     'centimetres'            'centimetres (metres * 10^( -2)^)'
+     'millimetres'            'millimetres (metres * 10^( -3)^)'
+     'micrometres'            'micrometres (metres * 10^( -6)^)'
+     'nanometres'             'nanometres  (metres * 10^( -9)^)'
+     'nanometers'             'nanometers  (metres * 10^( -9)^)'
+     'angstroms'              'Angstroms   (metres * 10^(-10)^)'
+     'picometres'             'picometres  (metres * 10^(-12)^)'
+     'femtometres'            'femtometres (metres * 10^(-15)^)'
+#
+     'reciprocal_metres'      'reciprocal metres (metres^(-1)^)'
+     'reciprocal_centimetres'
+        'reciprocal centimetres ((metres * 10^( -2))^(-1))'
+     'reciprocal_millimetres'
+        'reciprocal millimetres ((metres * 10^( -3)^)^(-1)^)'
+     'reciprocal_nanometres'
+        'reciprocal nanometres  ((metres * 10^( -9)^)^(-1)^)'
+     'reciprocal_angstroms'
+        'reciprocal angstroms   ((metres * 10^(-10)^)^(-1)^)'
+     'reciprocal_picometres'
+        'reciprocal picometres  ((metres * 10^(-12)^)^(-1)^)'
+#
+     'micrometres_squared'    'micrometres squared (metres * 10^( -6)^)^2^'
+     'nanometres_squared'     'nanometres squared (metres * 10^( -9)^)^2^'
+     'angstroms_squared'      'Angstroms squared  (metres * 10^(-10)^)^2^'
+     '8pi2_angstroms_squared' '8pi^2^ * Angstroms squared (metres * 10^(-10)^)^2^'
+     'picometres_squared'     'picometres squared (metres * 10^(-12)^)^2^'
+#
+     'nanometres_cubed'       'nanometres cubed (metres * 10^( -9)^)^3^'
+     'angstroms_cubed'        'Angstroms cubed  (metres * 10^(-10)^)^3^'
+     'picometres_cubed'       'picometres cubed (metres * 10^(-12)^)^3^'
+#
+     'kilopascals'            'kilopascals'
+     'gigapascals'            'gigapascals'
+#
+     'hours'                  'hours'
+     'minutes'                'minutes'
+     'seconds'                'seconds'
+     'microseconds'           'microseconds (seconds * 10^( -6)^)'
+     'femtoseconds'           'femtoseconds (seconds * 10^( -15)^)'
+#
+     'degrees'                'degrees (of arc)'
+     'milliradians'           'milliradians (of arc)'
+#
+     'degrees_per_minute'     'degrees (of arc) per minute'
+#
+     'celsius'                'degrees (of temperature) Celsius'
+     'kelvins'                'degrees (of temperature) Kelvin'
+#
+     'electrons'              'electrons'
+#
+     'electrons_squared'      'electrons squared'
+#
+     'electrons_per_nanometres_cubed'
+; electrons per nanometres cubed (electrons/(metres * 10^( -9)^)^(-3)^)
+;
+     'electrons_per_angstroms_cubed'
+; electrons per Angstroms cubed (electrons/(metres * 10^(-10)^)^(-3)^)
+;
+     'electrons_per_picometres_cubed'
+; electrons per picometres cubed (electrons/(metres * 10^(-12)^)^(-3)^)
+;
+     'kilowatts'              'kilowatts'
+     'milliamperes'           'milliamperes'
+     'kilovolts'              'kilovolts'
+     'volts'                  'volts'
+#
+     'arbitrary'
+; arbitrary system of units.
+;
+#
+     'angstroms_degrees'      'Angstroms * degrees'
+#
+     'degrees_squared'        'degrees squared'
+#
+     'mg_per_ml'              'milliliter per milligram'
+#
+     'ml_per_min'             'milliliters per minute'
+     'microliters_per_min'     'microliters per minute'
+#
+     'milliliters'             'liter / 1000'
+#
+     'milligrams'             'grams / 1000'
+#
+     'megadaltons'            'megadaltons'
+     'kilodaltons'            'kilodaltons'
+     "kilodaltons/nanometer"  "kilodaltons/nanometer"
+#
+     'microns_squared'        'micrometres squared (metres * 10^( -6)^)^2^'
+     'microns'                'micrometres  (metres * 10^( -6)^)'
+#
+     'electrons_angstrom_squared'   'electrons square Angstrom'
+     'electron_volts'         'electron volts'
+     'kiloelectron_volts'     'KeV (electron volts * 10^( 3)^)'
+#     'mg/ml'                  'mg per milliliter'
+     'millimolar'             'millimolar'
+     'megagrams_per_cubic_metre'       'megagrams per cubic metre'
+     'pixels_per_millimetre'      'pixels per millimetre'
+     'counts'                 'counts'
+     'counts_per_photon'      'counts per photon'
+     'pascals'                'pascals'
+     'teraphotons_per_pulse'  '(photons * 10^( 12)^) per pulse'
+     'joules'                 'Joules'
+     'microjoules'             'joules * 10^( -6)^'
+     'hertz'                   'reciprocal seconds'
+#
+     loop_
+    _item_units_conversion.from_code
+    _item_units_conversion.to_code
+    _item_units_conversion.operator
+    _item_units_conversion.factor
+###
+     'metres'                   'centimetres'              '*'   1.0E+02
+     'metres'                   'millimetres'              '*'   1.0E+03
+     'metres'                   'nanometres'               '*'   1.0E+09
+     'metres'                   'angstroms'                '*'   1.0E+10
+     'metres'                   'picometres'               '*'   1.0E+12
+     'metres'                   'femtometres'              '*'   1.0E+15
+
+     'centimetres'              'millimetres'              '*'   1.0E+01
+     'centimetres'              'nanometres'               '*'   1.0E+07
+     'centimetres'              'angstroms'                '*'   1.0E+08
+     'centimetres'              'picometres'               '*'   1.0E+10
+     'centimetres'              'femtometres'              '*'   1.0E+13
+#
+     'millimetres'              'centimetres'              '*'   1.0E-01
+     'millimetres'              'nanometres'               '*'   1.0E+06
+     'millimetres'              'angstroms'                '*'   1.0E+07
+     'millimetres'              'picometres'               '*'   1.0E+09
+     'millimetres'              'femtometres'              '*'   1.0E+12
+#
+     'nanometres'               'centimetres'              '*'   1.0E-07
+     'nanometres'               'millimetres'              '*'   1.0E-06
+     'nanometres'               'angstroms'                '*'   1.0E+01
+     'nanometres'               'picometres'               '*'   1.0E+03
+     'nanometres'               'femtometres'              '*'   1.0E+06
+#
+     'angstroms'                'centimetres'              '*'   1.0E-08
+     'angstroms'                'millimetres'              '*'   1.0E-07
+     'angstroms'                'nanometres'               '*'   1.0E-01
+     'angstroms'                'picometres'               '*'   1.0E+02
+     'angstroms'                'femtometres'              '*'   1.0E+05
+#
+     'picometres'               'centimetres'              '*'   1.0E-10
+     'picometres'               'millimetres'              '*'   1.0E-09
+     'picometres'               'nanometres'               '*'   1.0E-03
+     'picometres'               'angstroms'                '*'   1.0E-02
+     'picometres'               'femtometres'              '*'   1.0E+03
+#
+     'femtometres'              'centimetres'              '*'   1.0E-13
+     'femtometres'              'millimetres'              '*'   1.0E-12
+     'femtometres'              'nanometres'               '*'   1.0E-06
+     'femtometres'              'angstroms'                '*'   1.0E-05
+     'femtometres'              'picometres'               '*'   1.0E-03
+###
+     'reciprocal_centimetres'   'reciprocal_millimetres'   '*'   1.0E-01
+     'reciprocal_centimetres'   'reciprocal_nanometres'    '*'   1.0E-07
+     'reciprocal_centimetres'   'reciprocal_angstroms'     '*'   1.0E-08
+     'reciprocal_centimetres'   'reciprocal_picometres'    '*'   1.0E-10
+#
+     'reciprocal_millimetres'   'reciprocal_centimetres'   '*'   1.0E+01
+     'reciprocal_millimetres'   'reciprocal_nanometres'    '*'   1.0E-06
+     'reciprocal_millimetres'   'reciprocal_angstroms'     '*'   1.0E-07
+     'reciprocal_millimetres'   'reciprocal_picometres'    '*'   1.0E-09
+#
+     'reciprocal_nanometres'    'reciprocal_centimetres'   '*'   1.0E+07
+     'reciprocal_nanometres'    'reciprocal_millimetres'   '*'   1.0E+06
+     'reciprocal_nanometres'    'reciprocal_angstroms'     '*'   1.0E-01
+     'reciprocal_nanometres'    'reciprocal_picometres'    '*'   1.0E-03
+#
+     'reciprocal_angstroms'     'reciprocal_centimetres'   '*'   1.0E+08
+     'reciprocal_angstroms'     'reciprocal_millimetres'   '*'   1.0E+07
+     'reciprocal_angstroms'     'reciprocal_nanometres'    '*'   1.0E+01
+     'reciprocal_angstroms'     'reciprocal_picometres'    '*'   1.0E-02
+#
+     'reciprocal_picometres'    'reciprocal_centimetres'   '*'   1.0E+10
+     'reciprocal_picometres'    'reciprocal_millimetres'   '*'   1.0E+09
+     'reciprocal_picometres'    'reciprocal_nanometres'    '*'   1.0E+03
+     'reciprocal_picometres'    'reciprocal_angstroms'     '*'   1.0E+01
+###
+     'nanometres_squared'       'angstroms_squared'        '*'   1.0E+02
+     'nanometres_squared'       'picometres_squared'       '*'   1.0E+06
+#
+     'angstroms_squared'        'nanometres_squared'       '*'   1.0E-02
+     'angstroms_squared'        'picometres_squared'       '*'   1.0E+04
+     'angstroms_squared'        '8pi2_angstroms_squared'   '*'   78.9568
+
+#
+     'picometres_squared'       'nanometres_squared'       '*'   1.0E-06
+     'picometres_squared'       'angstroms_squared'        '*'   1.0E-04
+###
+     'nanometres_cubed'         'angstroms_cubed'          '*'   1.0E+03
+     'nanometres_cubed'         'picometres_cubed'         '*'   1.0E+09
+#
+     'angstroms_cubed'          'nanometres_cubed'         '*'   1.0E-03
+     'angstroms_cubed'          'picometres_cubed'         '*'   1.0E+06
+#
+     'picometres_cubed'         'nanometres_cubed'         '*'   1.0E-09
+     'picometres_cubed'         'angstroms_cubed'          '*'   1.0E-06
+###
+     'kilopascals'              'gigapascals'              '*'   1.0E-06
+     'gigapascals'              'kilopascals'              '*'   1.0E+06
+###
+     'hours'                    'minutes'                  '*'   6.0E+01
+     'hours'                    'seconds'                  '*'   3.6E+03
+     'hours'                    'microseconds'             '*'   3.6E+09
+#
+     'minutes'                  'hours'                    '/'   6.0E+01
+     'minutes'                  'seconds'                  '*'   6.0E+01
+     'minutes'                  'microseconds'             '*'   6.0E+07
+#
+     'seconds'                  'hours'                    '/'   3.6E+03
+     'seconds'                  'minutes'                  '/'   6.0E+01
+     'seconds'                  'microseconds'             '*'   1.0E+06
+#
+     'microseconds'             'hours'                    '/'   3.6E+09
+     'microseconds'             'minutes'                  '/'   6.0E+07
+     'microseconds'             'seconds'                  '/'   1.0E+06
+###
+     'celsius'                  'kelvins'                  '-'     273.0
+     'kelvins'                  'celsius'                  '+'     273.0
+###
+     'electrons_per_nanometres_cubed'
+     'electrons_per_angstroms_cubed'                       '*'   1.0E+03
+     'electrons_per_nanometres_cubed'
+     'electrons_per_picometres_cubed'                      '*'   1.0E+09
+#
+     'electrons_per_angstroms_cubed'
+     'electrons_per_nanometres_cubed'                      '*'   1.0E-03
+     'electrons_per_angstroms_cubed'
+     'electrons_per_picometres_cubed'                      '*'   1.0E+06
+#
+     'electrons_per_picometres_cubed'
+     'electrons_per_nanometres_cubed'                      '*'   1.0E-09
+     'electrons_per_picometres_cubed'
+     'electrons_per_angstroms_cubed'                       '*'   1.0E-06
+###
+
+### EOF mmcif_pdbx-data.dic
