@@ -4,7 +4,8 @@ EXTERNAL_DATA_DIRS = mmcif_ddl mmcif_std mmcif_em mmcif_pdbx_v40
 INTERNAL_DATA_DIRS = mmcif_pdbx_v41 mmcif_pdbx_v42 mmcif_nmr-star mmcif_sas mmcif_biosync mmcif_ccp4 mmcif_img mmcif_mdb mmcif_rcsb_nmr mmcif_rcsb_xray mmcif_sym  mmcif_pdbx_v5_next mmcif_pdbx_v50 mmcif_pdbx_v31 mmcif_pdbx_v32 mmcif_nef mmcif_ihm
 
 DATADIRS = $(INTERNAL_DATA_DIRS) $(EXTERNAL_DATA_DIRS)
-
+# Directories in which we perform a checkout function
+CHECKOUTDIRS = mmcif_ihm
 
 install: all
 
@@ -40,6 +41,12 @@ clean:
 	done
 
 	@cd mmcif; rm -f *.dic
+
+checkout:
+	@for datadir in $(CHECKOUTDIRS); do \
+		echo checkout $$datadir; \
+		(cd dict-$$datadir && make checkout) || exit 1; \
+	done
 
 export:
 	mkdir -p $(EXPORT_DIR)
