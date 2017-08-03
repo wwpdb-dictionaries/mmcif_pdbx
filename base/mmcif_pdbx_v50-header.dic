@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.283
+    _dictionary.version         5.284
 #
      loop_
     _dictionary_history.version
@@ -1792,6 +1792,17 @@ data_mmcif_pdbx.dic
       _pdbx_nmr_constraint_file.constraint_type
     + Extend soft limit range for em_image_recording.avg_electron_dose_per_image
     + Set pdbx_depui_status_flags.is_grant_funded mandatory for deposition
+;
+5.284  2017-08-03
+;
+    Changes (ep):
+    + Merge in all deposition interface enumerations, descriptions and 
+      mandatory codes
+    + Add 'PDB_ACC' to database_2.database_id  enumeration
+    + Correct type for pdbx_nmr_exptl_sample.concentration_units to
+      match enumeration
+    + Add MCMR (Midwest Center for Macromolecular Research) to 
+      pdbx_SG_project.initial_of_center and pdbx_SG_project.full_name_of_center
 ;
 
 #

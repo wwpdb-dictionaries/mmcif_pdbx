@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.288
+    _dictionary.version         5.289
 #
      loop_
     _dictionary_history.version
@@ -1855,6 +1855,16 @@ data_mmcif_pdbx.dic
         + add items _pdbx_diffrn_unmerged_cell.Bravais_lattice
         + add items _pdbx_diffrn_unmerged_refln.scan_id and _pdbx_diffrn_unmerged_refln.scale_value
         + add category pdbx_diffrn_scan
+;
+5.289  2017-08-03
+;
+    Changes (ep):
+    + Reintegrate duplicate save frames
+    + Add 'PDB_ACC' to database_2.database_id  enumeration
+    + Correct type for pdbx_nmr_exptl_sample.concentration_units to
+      match enumeration
+    + Add MCMR (Midwest Center for Macromolecular Research) to 
+      pdbx_SG_project.initial_of_center and pdbx_SG_project.full_name_of_center
 ;
 #
 ###########################################################################
