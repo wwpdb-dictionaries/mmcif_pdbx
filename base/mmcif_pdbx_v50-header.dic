@@ -1814,6 +1814,7 @@ data_mmcif_pdbx.dic
       reflns_shell.pdbx_Rpim_I_all, reflns_shell.pdbx_Rrim_I_all_anomalous,
       reflns_shell.pdbx_Rpim_I_all_anomalous, reflns.pdbx_Rrim_I_all_anomalous,
       reflns.pdbx_Rpim_I_all_anomalous
+    + Add DepUI enumeration for em_software.name
 ;
 
 #

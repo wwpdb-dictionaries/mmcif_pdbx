@@ -754,6 +754,123 @@ encouraged to provide a value in this field.
  Spider
  Bsoft
  UCSF-Chimera
+    loop_
+    _pdbx_item_enumeration.name
+    _pdbx_item_enumeration.value
+    _pdbx_item_enumeration.detail
+        '_emd_software.name'  3dmod                             .
+        '_emd_software.name'  ADP_EM                            .
+        '_emd_software.name'  AIMLESS                           .
+        '_emd_software.name'  AmiraFPM                          .
+        '_emd_software.name'  Appion                            .
+        '_emd_software.name'  Auto3DEM                          .
+        '_emd_software.name'  AV3                               .
+        '_emd_software.name'  BUSTER                            .
+        '_emd_software.name'  Bsoft                             .
+        '_emd_software.name'  Build_Fspace                      .
+        '_emd_software.name'  'CCP4 package'                    .
+        '_emd_software.name'  CNS                               .
+        '_emd_software.name'  Coot                              .
+        '_emd_software.name'  Cow                               .
+        '_emd_software.name'  cryoSPARC                         .
+        '_emd_software.name'  CTFFIND                           .
+        '_emd_software.name'  ctfit                             .
+        '_emd_software.name'  CTFPHASEFLIP                      .
+        '_emd_software.name'  CTFTILT                           .
+        '_emd_software.name'  CryoSPARC                         .
+        '_emd_software.name'  DE-IM                             .
+        '_emd_software.name'  DigitalMicrograph                 .
+        '_emd_software.name'  DireX                             .
+        '_emd_software.name'  'DoG Picker'                      .
+        '_emd_software.name'  Dynamo                            .
+        '_emd_software.name'  EM-Menu                           .
+        '_emd_software.name'  EM-Tools                          .
+        '_emd_software.name'  EM3DR                             .
+        '_emd_software.name'  EMAN                              .
+        '_emd_software.name'  EMAN2                             .
+        '_emd_software.name'  EMPFT                             .
+        '_emd_software.name'  EMfit                             .
+        '_emd_software.name'  EPU                               .
+        '_emd_software.name'  ETHAN                             .
+        '_emd_software.name'  eTomo                             .
+        '_emd_software.name'  FindEM                            .
+        '_emd_software.name'  FitCTF2                           .
+        '_emd_software.name'  Flex-EM                           .
+        '_emd_software.name'  FREALIGN                          .
+        '_emd_software.name'  FREALIX                           .
+        '_emd_software.name'  Gautomatch                        .
+        '_emd_software.name'  Gctf                              .
+        '_emd_software.name'  HADDOCK                           .
+        '_emd_software.name'  hsearch_lorentz                   .
+        '_emd_software.name'  I-TASSER                          .
+        '_emd_software.name'  IHRSR                             .
+        '_emd_software.name'  IMAGIC                            .
+        '_emd_software.name'  IMIRS                             .
+        '_emd_software.name'  IMOD                              .
+        '_emd_software.name'  iMODFIT                           .
+        '_emd_software.name'  IMP                               .
+        '_emd_software.name'  J3DR                              .
+        '_emd_software.name'  JALIGN                            .
+        '_emd_software.name'  jspr                              .
+        '_emd_software.name'  JSUBTOMO                          .
+        '_emd_software.name'  LIBG                              .
+        '_emd_software.name'  Latitude                          .
+        '_emd_software.name'  Leginon                           .
+        '_emd_software.name'  MATLAB                            .
+        '_emd_software.name'  MDFF                              .
+        '_emd_software.name'  MODELLER                          .
+        '_emd_software.name'  MOLREP                            .
+        '_emd_software.name'  MPSA                              .
+        '_emd_software.name'  'MRC IMAGE PROCESSING PACKAGE'    .
+        '_emd_software.name'  MotionCorr2                       .
+        '_emd_software.name'  NAMD                              .
+        '_emd_software.name'  NOVACTF                           .
+        '_emd_software.name'  O                                 .
+        '_emd_software.name'  PEET                              .
+        '_emd_software.name'  PHENIX                            .
+        '_emd_software.name'  POINTLESS                         .
+        '_emd_software.name'  PowerFit                          .
+        '_emd_software.name'  PRIISM/IVE                        .
+        '_emd_software.name'  PRIME                             .
+        '_emd_software.name'  PROTOMO                           .
+        '_emd_software.name'  PyMOL                             .
+        '_emd_software.name'  PyTom                             .
+        '_emd_software.name'  RAPTOR                            .
+        '_emd_software.name'  Refine_Fspace                     .
+        '_emd_software.name'  REFMAC                            .
+        '_emd_software.name'  ResMap                            .
+        '_emd_software.name'  RELION                            .
+        '_emd_software.name'  RSRef                             .
+        '_emd_software.name'  RobEM                             .
+        '_emd_software.name'  Rosetta                           .
+        '_emd_software.name'  RosettaEM                         .
+        '_emd_software.name'  Ruby-Helix                        .
+        '_emd_software.name'  Scipion                           .
+        '_emd_software.name'  SerialEM                          .
+        '_emd_software.name'  SHELXD                            .
+        '_emd_software.name'  Signature                         .
+        '_emd_software.name'  SIMPLE                            .
+        '_emd_software.name'  Situs                             .
+        '_emd_software.name'  SPARX                             .
+        '_emd_software.name'  SPHIRE                            .
+        '_emd_software.name'  SPIDER                            .
+        '_emd_software.name'  SPRING                            .
+        '_emd_software.name'  'Super-sampling SART'             .
+        '_emd_software.name'  TEMPy                             .
+        '_emd_software.name'  TOM                               .
+        '_emd_software.name'  'TOM Toolbox'                     .
+        '_emd_software.name'  TOMO3D                            .
+        '_emd_software.name'  TOMOCTF                           .
+        '_emd_software.name'  'UCSF Chimera'                    .
+        '_emd_software.name'  'UCSF Tomography'                 .
+        '_emd_software.name'  'UCSFImage'                       .
+        '_emd_software.name'  'UCSFImage4'                      .
+        '_emd_software.name'  URO                               .
+        '_emd_software.name'  VMD                               .
+        '_emd_software.name'  Warp                              .
+        '_emd_software.name'  X-PLOR                            .
+        '_emd_software.name'  X3D                               .
+        '_emd_software.name'  Xmipp                             .
      save_
 
 save__emd_software.version
@@ -2936,7 +3053,10 @@ save_emd_buffer
     _category_examples.case
 ; Example 1
 ;
-;   TODO--category example
+;   
+    emd_buffer.id                 1
+    emd_buffer.emd_speciment_id   1
+    emd_buffer.pH                 7.5
 ;
      save_
 
