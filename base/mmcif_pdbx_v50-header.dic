@@ -1809,6 +1809,11 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Add 'FISCHIONE INSTRUMENTS DUAL AXIS TOMOGRAPHY HOLDER' to 
       em_imaging.specimen_holder_model enumeration
+    + Add soft and hard limits for reflns.pdbx_Rrim_I_all, 
+      reflns_shell.pdbx_Rrim_I_all, reflns.pdbx_Rpim_I_all,
+      reflns_shell.pdbx_Rpim_I_all, reflns_shell.pdbx_Rrim_I_all_anomalous,
+      reflns_shell.pdbx_Rpim_I_all_anomalous, reflns.pdbx_Rrim_I_all_anomalous,
+      reflns.pdbx_Rpim_I_all_anomalous
 ;
 
 #
