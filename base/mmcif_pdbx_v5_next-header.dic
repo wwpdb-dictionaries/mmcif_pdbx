@@ -1882,7 +1882,7 @@ data_mmcif_pdbx.dic
       pdbx_struct_assembly_depositor_info.details mandatory at deposition
     + Update enumeration for _pdbx_audit_support.funding_organization
     + Add _pdbx_deposit_group.group_type
-
+    + Remove ESRF BEAMLINE ID30A from diffrn_source.type
 ;
 #
 ###########################################################################
