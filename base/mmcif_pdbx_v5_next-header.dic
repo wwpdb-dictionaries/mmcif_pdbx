@@ -1879,7 +1879,9 @@ data_mmcif_pdbx.dic
       reflns.pdbx_Rpim_I_all_anomalous
     + Add DepUI enumeration for em_software.name and emd_software.name
     + Make pdbx_struct_assembly_auth_evidence.details and 
-      pdbx_strct_assembly_depositor_info.details mandatory at deposition
+      pdbx_struct_assembly_depositor_info.details mandatory at deposition
+    + Update enumeration for _pdbx_audit_support.funding_organization
+
 ;
 #
 ###########################################################################
