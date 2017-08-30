@@ -1818,6 +1818,7 @@ data_mmcif_pdbx.dic
     + Make pdbx_struct_assembly_auth_evidence.details and 
       pdbx_struct_assembly_depositor_info.details mandatory at deposition
     + Update enumeration for _pdbx_audit_support.funding_organization
+    + Add _pdbx_deposit_group.group_type
 ;
 
 #
