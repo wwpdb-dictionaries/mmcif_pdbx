@@ -4195,6 +4195,7 @@ save__emd_microscopy.specimen_holder_model
             'JEOL 3200FSC CRYOHOLDER'
             'PHILIPS ROTATION HOLDER'
             'SIDE ENTRY, EUCENTRIC'
+	    'FISCHIONE INSTRUMENTS DUAL AXIS TOMOGRAPHY HOLDER'
             OTHER
      save_
 

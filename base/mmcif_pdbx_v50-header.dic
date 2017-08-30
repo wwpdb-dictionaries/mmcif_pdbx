@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.284
+    _dictionary.version         5.285
 #
      loop_
     _dictionary_history.version
@@ -1803,6 +1803,12 @@ data_mmcif_pdbx.dic
       match enumeration
     + Add MCMR (Midwest Center for Macromolecular Research) to 
       pdbx_SG_project.initial_of_center and pdbx_SG_project.full_name_of_center
+;
+5.285  2017-08-30
+;
+    Changes (ep):
+    + Add 'FISCHIONE INSTRUMENTS DUAL AXIS TOMOGRAPHY HOLDER' to 
+      em_imaging.specimen_holder_model enumeration
 ;
 
 #
