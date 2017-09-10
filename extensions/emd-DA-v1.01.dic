@@ -3497,9 +3497,22 @@ save__emd_grid.model
     _item.category_id             emd_grid
     _item.mandatory_code          no
     _item_type.code               line
-    _item_examples.case           'Quantifoil R2/1'
-    # loop_
-    #_item_enumeration.value TODO-enumeration
+    _item_examples.case           'Quantifoil R2/2'
+     loop_
+    _item_enumeration.value
+        'Quantifoil R2/2'
+        'Quantifoil R1.2/1.3'
+        'Quantifoil, UltrAuFoil, R1.2/1.3'
+        C-flat
+        C-flat-1.2/1.3
+        C-flat-2/1
+        C-flat-1/1
+        C-flat-2/2
+        'C-flat-2/0.5 4C'
+        'C-flat-2/2 4C'
+        'C-flat-1.2/1.3 4C'
+        Homemade
+
      save_
 
 save__emd_grid.material
