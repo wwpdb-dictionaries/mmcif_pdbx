@@ -288,7 +288,7 @@ save_pdbx_diffrn_data_section_site
  _pdbx_diffrn_data_section_site.detector
  _pdbx_diffrn_data_section_site.detector_type
  _pdbx_diffrn_data_section_site.radiation_source
-  'ds-unmerged-1' APS 14-BM-C' 2016-09-11 'ADSC QUANTUM 315' CCD synchrotron
+  'ds-unmerged-1' 'APS 14-BM-C' 2016-09-11 'ADSC QUANTUM 315' CCD synchrotron
 ;
    _pdbx_category_context.type         WWPDB_DIFFRN_DATA
    _pdbx_category_context.category_id  'pdbx_diffrn_data_section_site'
@@ -1759,7 +1759,6 @@ save_pdbx_diffrn_unmerged_cell
     _pdbx_diffrn_unmerged_cell.cell_length_c
     _pdbx_diffrn_unmerged_cell.cell_angle_alpha
     _pdbx_diffrn_unmerged_cell.cell_angle_beta
-    _pdbx_diffrn_unmerged_cell.cell_angle_gamma
     _pdbx_diffrn_unmerged_cell.cell_angle_gamma
     _pdbx_diffrn_unmerged_cell.Bravais_lattice
     1 1 .91837  51.3940 109.0130 137.3070 90.000 90.000 90.000 'oP'
