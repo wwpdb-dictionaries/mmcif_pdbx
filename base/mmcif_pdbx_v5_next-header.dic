@@ -1895,6 +1895,8 @@ data_mmcif_pdbx.dic
     + Add enumeration for em_imaging_optics.energyfilter_name 
       and emd_specialist_optics.energyfilter_name
     + Correct capitalization of BRUKER METALJET in diffrn_source.type
+    + Add entity_branch_extension to dictionary (adds pdbx_entity_branch_link,
+      pdbx_entity_branch_list and adds to entity.type)
 ;
 #
 ###########################################################################
