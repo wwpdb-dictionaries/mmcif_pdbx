@@ -1894,6 +1894,7 @@ data_mmcif_pdbx.dic
     + Add enumeration for emd_grid.model and em_sample_support.grid_type
     + Add enumeration for em_imaging_optics.energyfilter_name 
       and emd_specialist_optics.energyfilter_name
+    + Correct capitalization of BRUKER METALJET in diffrn_source.type
 ;
 #
 ###########################################################################
