@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.290
+    _dictionary.version         5.291
 #
      loop_
     _dictionary_history.version
@@ -1884,6 +1884,13 @@ data_mmcif_pdbx.dic
     + Add _pdbx_deposit_group.group_type
     + Remove ESRF BEAMLINE ID30A from diffrn_source.type
     + Update software.name enumeration with role software used (for deposition)
+;
+5.291  2017-09-10
+;
+    Changes (ep):
+    + Add 'RMVD' to enumeration for pdbx_database_status.status_code,
+      pdbx_database_status.status_code_sf, pdbx_database_status.status_code_mr, 
+      pdbx_database_status.status_code_cs
 ;
 #
 ###########################################################################
