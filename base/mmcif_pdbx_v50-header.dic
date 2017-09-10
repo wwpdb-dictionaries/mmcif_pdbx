@@ -1829,7 +1829,7 @@ data_mmcif_pdbx.dic
       pdbx_database_status.status_code_sf, pdbx_database_status.status_code_mr, 
       pdbx_database_status.status_code_cs
     + Add enumeration for em_sample_support.grid_type
-
+    + Add enumeration for em_imaging_optics.energyfilter_name 
 ;
 
 #

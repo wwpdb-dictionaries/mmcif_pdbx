@@ -4538,7 +4538,19 @@ save__emd_specialist_optics.energyfilter_name
     _item.category_id             emd_specialist_optics
     _item.mandatory_code          no
     _item_type.code               line
-    _item_examples.case          'FEI'
+    _item_examples.case          'GIF 200'
+     loop_
+    _item_enumeration.value
+         'GIF Quantum ERS'
+         'GIF Quantum ER'
+         'GIF Quantum SE'
+         'GIF Quantum LS'
+         'GIF Tridiem 4K'
+         'GIF Tridiem 2K'
+         'GIF 2002'
+         'GIF 2000'
+         'GIF 200'
+         'In-column Omega Filter'
      save_
 
 save__emd_specialist_optics.energyfilter_lower
