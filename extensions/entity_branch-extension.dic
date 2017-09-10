@@ -51,6 +51,8 @@ save_pdbx_entity_branch_list
       1  1  MAN   1  2  MAN   1  3  MAN
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    _pdbx_category_context.type         WWPDB_LOCAL
+    _pdbx_category_context.category_id  pdbx_entity_branch_list
      save_
 
 save__pdbx_entity_branch_list.entity_id
@@ -158,6 +160,8 @@ _pdbx_entity_branch_link.value_order
 1 1 .  .  . . .  .  . . 'sing'
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    _pdbx_category_context.type         WWPDB_LOCAL
+    _pdbx_category_context.category_id  pdbx_entity_branch_link
      save_
 
 save__pdbx_entity_branch_link.link_id
