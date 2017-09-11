@@ -3500,9 +3500,15 @@ save__emd_grid.model
     _item_examples.case           'Quantifoil R2/2'
      loop_
     _item_enumeration.value
-        'Quantifoil R2/2'
+        'Quantifoil R0.6/1'
         'Quantifoil R1.2/1.3'
+        'Quantifoil R2/1'
+        'Quantifoil R2/2'
+        'Quantifoil R2/4'
+        'Quantifoil R3/3'
+        'Quantifoil R3.5/1'
         'Quantifoil, UltrAuFoil, R1.2/1.3'
+        UltrAuFoil
         C-flat
         C-flat-1.2/1.3
         C-flat-2/1
