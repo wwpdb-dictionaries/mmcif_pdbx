@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.286
+    _dictionary.version         5.287
 #
      loop_
     _dictionary_history.version
@@ -1833,7 +1833,12 @@ data_mmcif_pdbx.dic
     + Correct capitalization of BRUKER METALJET in diffrn_source.type
     + To support entity_branch_extension, extend deposition entity.type
 ;
-
+5.287  2017-10-09
+;
+    Changes (ep):
+    + Add _pdbx_depui_validation_status_flags.tls_no_aniso to flag TLS 
+      records without anisotropic ones during deposition
+;
 #
 ###########################################################################
 #
