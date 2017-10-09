@@ -1839,6 +1839,9 @@ data_mmcif_pdbx.dic
     + Add _pdbx_depui_validation_status_flags.tls_no_aniso to flag TLS 
       records without anisotropic ones during deposition
     + Update _pdbx_audit_support.funding_organization enumeration
+    + Add European XFEL site and beamlines to diffrn_source.type,
+      diffrn_source.pdbx_synchrotron_beamline and 
+      diffrn_source.pdbx_synchrotron_site
 ;
 #
 ###########################################################################
