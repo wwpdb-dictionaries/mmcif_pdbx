@@ -1848,6 +1848,8 @@ data_mmcif_pdbx.dic
       reflns_shell.percent_possible_obs
     + Require reflns.pdbx_R_split and reflns_shell.pdbx_R_split to be positive
       and create advisory limits for deposition.
+    + Make reflns_shell.d_res_low and reflns_shell.d_res_high mandatory 
+      for deposition system. 
 ;
 #
 ###########################################################################
