@@ -1842,6 +1842,8 @@ data_mmcif_pdbx.dic
     + Add European XFEL site and beamlines to diffrn_source.type,
       diffrn_source.pdbx_synchrotron_beamline and 
       diffrn_source.pdbx_synchrotron_site
+    + pdbx_database_related.db_name deposition enumeration extended to 
+      include matching content_type context.
 ;
 #
 ###########################################################################
