@@ -1913,6 +1913,8 @@ data_mmcif_pdbx.dic
       reflns_shell.percent_possible_obs
     + Require reflns.pdbx_R_split and reflns_shell.pdbx_R_split to be positive
       and create advisory limits for deposition.
+    + Add 'LIQUID ANODE' to Deposition enumeration for diffrn_source.source. 
+      Change METALJET generators in diffrn_source.type to match.
 ;
 #
 ###########################################################################

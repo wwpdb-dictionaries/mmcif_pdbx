@@ -1850,6 +1850,8 @@ data_mmcif_pdbx.dic
       and create advisory limits for deposition.
     + Make reflns_shell.d_res_low and reflns_shell.d_res_high mandatory 
       for deposition system. 
+    + Add 'LIQUID ANODE' to Deposition enumeration for diffrn_source.source. 
+      Change METALJET generators in diffrn_source.type to match.
 ;
 #
 ###########################################################################
