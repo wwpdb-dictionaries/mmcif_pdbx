@@ -1911,6 +1911,8 @@ data_mmcif_pdbx.dic
       include matching content_type context.
     + Add upper range limit for reflns.percent_possible_obs and
       reflns_shell.percent_possible_obs
+    + Require reflns.pdbx_R_split and reflns_shell.pdbx_R_split to be positive
+      and create advisory limits for deposition.
 ;
 #
 ###########################################################################
