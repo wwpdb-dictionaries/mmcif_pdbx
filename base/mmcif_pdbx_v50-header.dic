@@ -1844,6 +1844,8 @@ data_mmcif_pdbx.dic
       diffrn_source.pdbx_synchrotron_site
     + pdbx_database_related.db_name deposition enumeration extended to 
       include matching content_type context.
+    + Add upper range limit for reflns.percent_possible_obs and
+      reflns_shell.percent_possible_obs
 ;
 #
 ###########################################################################
