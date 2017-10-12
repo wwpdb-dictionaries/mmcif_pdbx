@@ -1833,11 +1833,13 @@ data_mmcif_pdbx.dic
     + Correct capitalization of BRUKER METALJET in diffrn_source.type
     + To support entity_branch_extension, extend deposition entity.type
 ;
-5.287  2017-10-09
+5.287  2017-10-12
 ;
     Changes (ep):
     + Add _pdbx_depui_validation_status_flags.tls_no_aniso to flag TLS 
       records without anisotropic ones during deposition
+    + Add _pdbx_depui_validation_status_flags.adp_outliers_zero to flag
+      zero B factors during deposition
     + Update _pdbx_audit_support.funding_organization enumeration
     + Add European XFEL site and beamlines to diffrn_source.type,
       diffrn_source.pdbx_synchrotron_beamline and 
