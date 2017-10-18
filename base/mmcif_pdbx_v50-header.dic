@@ -1833,9 +1833,9 @@ data_mmcif_pdbx.dic
     + Correct capitalization of BRUKER METALJET in diffrn_source.type
     + To support entity_branch_extension, extend deposition entity.type
 ;
-5.287  2017-10-12
+5.287  2017-10-18
 ;
-    Changes (ep):
+    Changes (ep/jmb):
     + Add _pdbx_depui_validation_status_flags.tls_no_aniso to flag TLS 
       records without anisotropic ones during deposition
     + Add _pdbx_depui_validation_status_flags.adp_outliers_zero to flag
@@ -1854,6 +1854,7 @@ data_mmcif_pdbx.dic
       for deposition system. 
     + Add 'LIQUID ANODE' to Deposition enumeration for diffrn_source.source. 
       Change METALJET generators in diffrn_source.type to match.
+    + Extend enumeration for pdbx_struct_assembly_auth_evidence.experimental_support
 ;
 #
 ###########################################################################
