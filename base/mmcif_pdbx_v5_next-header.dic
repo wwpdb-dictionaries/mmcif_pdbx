@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.292
+    _dictionary.version         5.293
 #
      loop_
     _dictionary_history.version
@@ -1919,6 +1919,11 @@ data_mmcif_pdbx.dic
       Change METALJET generators in diffrn_source.type to match.
     + Extend enumeration for pdbx_struct_assembly_auth_evidence.experimental_support
 ;
+5.293  2017-11-15
+;
+    Changes (ep):
+    + Correct spelling errors in category_group_list.description
+;
 #
 ###########################################################################
 #
@@ -2033,11 +2038,11 @@ data_mmcif_pdbx.dic
 ;
               'chem_comp_group'
               'inclusive_group'
-;              Categories that define the chemical structure and nomencature of the momoners and ligands in the experiment.
+;              Categories that define the chemical structure and nomenclature of the momoners and ligands in the experiment.
 ;
               'chem_comp_dictionary_group'
               'inclusive_group'
-;              Categories defining chemical structure and nomencature of the momoners and ligands used in
+;              Categories defining chemical structure and nomenclature of the momoners and ligands used in
                the Chemical Component Dictionary.
 ;
 
@@ -2048,7 +2053,7 @@ data_mmcif_pdbx.dic
 
               'bird_dictionary_group'
               'inclusive_group'
-;              Categories defining chemical structure and nomencature of the small polymer molecules used in
+;              Categories defining chemical structure and nomenclature of the small polymer molecules used in
                the Biologically Interesting Molecule Reference Dictionary (BIRD).
 ;
 
