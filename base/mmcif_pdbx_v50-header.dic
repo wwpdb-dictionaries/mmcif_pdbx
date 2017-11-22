@@ -1861,6 +1861,7 @@ data_mmcif_pdbx.dic
     Changes (ep/ar):
     + Correct spelling errors in category_group_list.description
     + Add item_sub_category.id for TLS definitions in pdbx_refine_tls
+    + Add _citation_author.identifier_ORCID with WWPDB_LOCAL context
 ;
 #
 ###########################################################################
