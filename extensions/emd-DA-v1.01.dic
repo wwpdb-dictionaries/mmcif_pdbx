@@ -3907,6 +3907,7 @@ save__emd_vitrification.instrument
        "LEICA EM CPC"
        "LEICA KF80"
        "REICHERT-JUNG PLUNGER"
+       "SPOTITON" 
      save_
 
 save__emd_vitrification.details
@@ -4547,6 +4548,7 @@ save__emd_specialist_optics.energyfilter_name
     _item_examples.case          'GIF 200'
      loop_
     _item_enumeration.value
+         'GIF Bioquantum'
          'GIF Quantum ERS'
          'GIF Quantum ER'
          'GIF Quantum SE'
@@ -5031,6 +5033,8 @@ save__emd_image_recording.film_or_detector_model
     "GATAN K2 SUMMIT (4k x 4k)"
     "GATAN K2 IS (4k x 4k)"
     "GATAN K2 QUANTUM (4k x 4k)"
+    "GATAN K3 (6k x 4k)"
+    "GATAN K3 BIOQUANTUM (6k x 4k)"
     "GENERIC GATAN (2k x 2k)"
     "GENERIC GATAN (4k x 4k)"
     "GENERIC GATAN"

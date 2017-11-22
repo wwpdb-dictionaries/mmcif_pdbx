@@ -1921,10 +1921,16 @@ data_mmcif_pdbx.dic
 ;
 5.293  2017-11-22
 ;
-    Changes (ep/ar):
+    Changes (ep/ar/cl):
     + Correct spelling errors in category_group_list.description
     + Add item_sub_category.id for TLS definitions in pdbx_refine_tls
     + Add _citation_author.identifier_ORCID with WWPDB_LOCAL context
+    + Add SPOTITON to em_virtification.instrument/emd_vitrification.instrument
+      enumeration
+    + Add GATAN K3 detectors to _emd_image_recording.film_or_detector_model and
+      _em_image_recording.film_or_detector_model enumeration
+    + Add 'GIF Bioquantum' to _em_imaging_optics.energyfilter_name and
+      _emd_specialist_optics.energyfilter_name enumeration
 ;
 #
 ###########################################################################
