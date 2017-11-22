@@ -1931,6 +1931,7 @@ data_mmcif_pdbx.dic
       _em_image_recording.film_or_detector_model enumeration
     + Add 'GIF Bioquantum' to _em_imaging_optics.energyfilter_name and
       _emd_specialist_optics.energyfilter_name enumeration
+    + Update deposition description for citation_author.name
 ;
 #
 ###########################################################################

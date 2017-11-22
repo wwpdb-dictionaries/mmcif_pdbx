@@ -1865,6 +1865,7 @@ data_mmcif_pdbx.dic
     + Add SPOTITON to em_virtification.instrument enumeration
     + Add GATAN K3 detectors to _emd_image_recording.film_or_detector_model enumeration
     + Add 'GIF Bioquantum' to _em_imaging_optics.energyfilter_name enumeration
+    + Update deposition description for citation_author.name
 ;
 #
 ###########################################################################
