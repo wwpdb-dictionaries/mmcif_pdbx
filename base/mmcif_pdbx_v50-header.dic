@@ -1867,6 +1867,7 @@ data_mmcif_pdbx.dic
     + Add 'GIF Bioquantum' to _em_imaging_optics.energyfilter_name enumeration
     + Update deposition description for citation_author.name
     + Add SwissFEL and PAL-XFEL enumerations to diffrn_source category enumerations
+    + Set maximum of 30 seconds for _em_image_recording.average_exposure_time
 ;
 #
 ###########################################################################
