@@ -1947,6 +1947,8 @@ data_mmcif_pdbx.dic
     + Update range limits for _emd_microscopy.nominal_defocus_max,
       _emd_microscopy.nominal_defocus_min, _em_imaging.nominal_defocus_max,
       _em_imaging.nominal_defocus_min.
+    + Update soft/hard limits for _emd_image_recording.average_exposure_time
+      and _em_image_recording.average_exposure_time.
 ;
 #
 ###########################################################################

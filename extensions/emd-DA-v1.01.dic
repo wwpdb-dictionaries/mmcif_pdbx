@@ -5128,12 +5128,12 @@ save__emd_image_recording.average_exposure_time
     _item_units.code               seconds
     _item_examples.case           2.0
     _item_range.minimum           0.0
-    _item_range.maximum          30.0
+    _item_range.maximum          60.0
     loop_
     _pdbx_item_range.name
     _pdbx_item_range.minimum
     _pdbx_item_range.maximum
-     "_emd_image_recording.average_exposure_time"  0 5
+     "_emd_image_recording.average_exposure_time"  0 30
      save_
 
 save__emd_image_recording.average_electron_dose_per_image
