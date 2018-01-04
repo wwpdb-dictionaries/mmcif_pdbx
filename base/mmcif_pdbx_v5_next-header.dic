@@ -1943,6 +1943,7 @@ data_mmcif_pdbx.dic
     + Add "SLAC LCLS BEAMLINE AMO" to _diffrn_source.type, add
       "AMO" to _diffrn_source.pdbx_synchrotron_breamline to deposition
       enumerations.
+    + Correct _diffrn_source.type for "BRUKER D8 QUEST" - is a SEALED TUBE. 
 ;
 #
 ###########################################################################
