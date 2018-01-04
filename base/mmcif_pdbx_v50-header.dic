@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.288
+    _dictionary.version         5.289
 #
      loop_
     _dictionary_history.version
@@ -1869,6 +1869,13 @@ data_mmcif_pdbx.dic
     + Add SwissFEL and PAL-XFEL enumerations to diffrn_source category enumerations
     + Set maximum of 30 seconds for _em_image_recording.average_exposure_time
     + Add 'HOLD FOR 4 WEEKS' to enumeration pdbx_database_status.dep_release_code_struct_fact
+;
+5.289  2018-01-06
+;
+    Changes (ep):
+    + Add "SLAC LCLS BEAMLINE AMO" to _diffrn_source.type, add
+      "AMO" to _diffrn_source.pdbx_synchrotron_breamline to deposition
+      enumerations.
 ;
 #
 ###########################################################################
