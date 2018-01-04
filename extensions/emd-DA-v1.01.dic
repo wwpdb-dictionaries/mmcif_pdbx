@@ -4214,7 +4214,7 @@ save__emd_microscopy.nominal_defocus_min
     _pdbx_item_range.name
     _pdbx_item_range.minimum
     _pdbx_item_range.maximum
-     "_emd_microscopy.nominal_defocus_min"  200 10000
+     "_emd_microscopy.nominal_defocus_min"  -20000 20000
      save_
 
 save__emd_microscopy.calibrated_defocus_min
@@ -4250,7 +4250,7 @@ save__emd_microscopy.nominal_defocus_max
     _pdbx_item_range.name
     _pdbx_item_range.minimum
     _pdbx_item_range.maximum
-     "_emd_microscopy.nominal_defocus_max"  200 50000
+     "_emd_microscopy.nominal_defocus_max"  -20000 20000
      save_
 
 save__emd_microscopy.calibrated_defocus_max
