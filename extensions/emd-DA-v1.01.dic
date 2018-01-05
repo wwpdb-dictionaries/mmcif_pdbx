@@ -2770,6 +2770,15 @@ save__emd_sectioning_focused_ion_beam.initial_thickness
     _item.mandatory_code        yes
     _item_units.code            nanometers
     _item_type.code             positive_int
+    _item_range.minimum         0.0
+    _item_range.maximum         .
+    loop_
+    _pdbx_item_range.name     
+    _pdbx_item_range.minimum  
+    _pdbx_item_range.maximum
+      '_emd_sectioning_focused_ion_beam.initial_thickness' 10     10
+      '_emd_sectioning_focused_ion_beam.initial_thickness' 10   1000
+      '_emd_sectioning_focused_ion_beam.initial_thickness' 1000 1000
      save_
 
 save__emd_sectioning_focused_ion_beam.final_thickness
