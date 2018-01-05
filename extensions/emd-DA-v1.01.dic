@@ -4285,11 +4285,8 @@ save__emd_microscopy.calibrated_defocus_max
     _item_type.code               float
     _item_units.code             nanometers
     _item_examples.case           5000
-    loop_
-    _pdbx_item_range.name
-    _pdbx_item_range.minimum
-    _pdbx_item_range.maximum
-     "_emd_microscopy.calibrated_defocus_max"  200 50000
+    _item_range.minimum         -20000
+    _item_range.maximum          20000
      save_
 
 save__emd_microscopy.nominal_magnification
