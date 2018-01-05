@@ -1883,7 +1883,7 @@ data_mmcif_pdbx.dic
     + Update limits of _em_imaging.nominal_magnification.
     + Add soft limits for _em_focused_ion_beam.initial_thickness
     + Update limits for _em_focused_ion_beam.current
-    + Add limits for em_imaging.nominal_cs
+    + Add limits for _em_imaging.nominal_cs, _em_imaging.c2_aperature_diameter.
 ;
 #
 ###########################################################################

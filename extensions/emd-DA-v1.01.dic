@@ -4188,8 +4188,12 @@ save__emd_microscopy.c2_aperture_diameter
     _item_type.code             float
     _item_units.code            microns
     _item_examples.case           100
-    _item_range.minimum         0.0
-    _item_range.maximum         .
+    loop_
+     _item_range.minimum        
+     _item_range.maximum
+                                10  10
+                                10 150
+                               150 150 
     loop_
     _pdbx_item_range.name
     _pdbx_item_range.minimum
