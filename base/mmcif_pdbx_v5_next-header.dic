@@ -1959,6 +1959,7 @@ data_mmcif_pdbx.dic
       _em_imaging.calibrated_defocus_max and update
       _emd_microscopy.nominal_cs, _emd_microscopy.c2_aperature_diameter,
       _emd_microscopy.calibrated_defocus_max
+    + Add 'ISOLDE" to enumeration for _software.name
 ;
 #
 ###########################################################################
