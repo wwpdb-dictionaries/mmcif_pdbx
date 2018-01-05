@@ -1955,6 +1955,9 @@ data_mmcif_pdbx.dic
       _emd_sectioning_focused_ion_beam.initial_thickness
     + Update limits for _em_focused_ion_beam.current and
       _emd_sectioning_focused_ion_beam.current
+    + Add limits for _em_imaging.nominal_cs and update
+      _emd_microscopy.nominal_cs
+
 ;
 #
 ###########################################################################

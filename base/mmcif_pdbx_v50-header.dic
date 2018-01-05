@@ -1882,7 +1882,8 @@ data_mmcif_pdbx.dic
     + Update soft/hard limits for _em_image_recording.average_exposure_time.
     + Update limits of _em_imaging.nominal_magnification.
     + Add soft limits for _em_focused_ion_beam.initial_thickness
-    + Update limits for _em_focused_ion_beam.current 
+    + Update limits for _em_focused_ion_beam.current
+    + Add limits for em_imaging.nominal_cs
 ;
 #
 ###########################################################################
