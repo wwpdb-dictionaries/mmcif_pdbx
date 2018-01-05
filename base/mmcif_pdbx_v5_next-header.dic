@@ -1949,6 +1949,8 @@ data_mmcif_pdbx.dic
       _em_imaging.nominal_defocus_min.
     + Update soft/hard limits for _emd_image_recording.average_exposure_time
       and _em_image_recording.average_exposure_time.
+    + Update limits of _emd_microscopy.nominal_magnification and
+      _em_imaging.nominal_magnification.
 ;
 #
 ###########################################################################
