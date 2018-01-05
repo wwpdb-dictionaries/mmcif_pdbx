@@ -2724,8 +2724,12 @@ save__emd_sectioning_focused_ion_beam.current
     _item.mandatory_code        yes
 #    _item_units.code            nanoamperes
     _item_type.code             float
-    _item_range.minimum         0.0
-    _item_range.maximum         .
+    loop_
+     _item_range.minimum         
+     _item_range.maximum
+                               0.001 0.001
+			       0.001 20
+			       20    20
      save_
 
 save__emd_sectioning_focused_ion_beam.dose_rate
