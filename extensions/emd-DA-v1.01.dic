@@ -4104,6 +4104,8 @@ save__emd_microscopy.microscope
     "JEOL 3200FSC"
     "JEOL 4000"
     "JEOL 4000EX"
+    "JEOL CRYO ARM 200"
+    "JEOL CRYO ARM 300"
     "ZEISS LEO912"
     "ZEISS LIBRA120PLUS"
 #    "OTHER"

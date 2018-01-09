@@ -1886,6 +1886,8 @@ data_mmcif_pdbx.dic
     + Add limits for _em_imaging.nominal_cs, _em_imaging.c2_aperature_diameter,
       _em_imaging.calibrated_defocus_max
     + Add 'ISOLDE" to enumeration for _software.name
+    + Add "JEOL CRYO ARM 200" and "JEOL CRYO ARM 300" to 
+      _em_imaging.microscope_model
 ;
 #
 ###########################################################################
