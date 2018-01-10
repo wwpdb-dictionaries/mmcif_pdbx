@@ -1964,6 +1964,7 @@ data_mmcif_pdbx.dic
       _emd_microscopy.microscope and _em_imaging.microscope_model
     + Improve date_dep regular expression to prevent zero dates
     + Extend _pdbx_audit_support.funding_organization enumeration
+    + Add 'HOLD FOR 8 WEEKS' to enumeration pdbx_database_status.dep_release_code_struct_fact
 ;
 #
 ###########################################################################
