@@ -1963,6 +1963,7 @@ data_mmcif_pdbx.dic
     + Add "JEOL CRYO ARM 200" and "JEOL CRYO ARM 300" to 
       _emd_microscopy.microscope and _em_imaging.microscope_model
     + Improve date_dep regular expression to prevent zero dates
+    + Extend _pdbx_audit_support.funding_organization enumeration
 ;
 #
 ###########################################################################
