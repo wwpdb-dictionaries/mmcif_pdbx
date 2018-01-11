@@ -1962,6 +1962,7 @@ data_mmcif_pdbx.dic
     + Add 'HOLD FOR 8 WEEKS' to enumeration pdbx_database_status.dep_release_code_struct_fact
     + Add 'Bruker PHOTON III' and correct type of 'Bruker PHOTON II' in
       _diffrn_detector.type enumeration.
+    + Add 'GRAPHENE OXIDE' to _em_sample_support.grid_material enumeration
 ;
 #
 ###########################################################################
