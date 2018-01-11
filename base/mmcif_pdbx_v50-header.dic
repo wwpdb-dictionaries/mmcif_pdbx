@@ -1870,7 +1870,7 @@ data_mmcif_pdbx.dic
     + Set maximum of 30 seconds for _em_image_recording.average_exposure_time
     + Add 'HOLD FOR 4 WEEKS' to enumeration pdbx_database_status.dep_release_code_struct_fact
 ;
-5.289  2018-01-10
+5.289  2018-01-11
 ;
     Changes (ep):
     + Add "SLAC LCLS BEAMLINE AMO" to _diffrn_source.type, add
@@ -1888,6 +1888,9 @@ data_mmcif_pdbx.dic
     + Improve date_dep regular expression to prevent zero dates
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Add 'HOLD FOR 8 WEEKS' to enumeration pdbx_database_status.dep_release_code_struct_fact
+    + Add 'Bruker PHOTON III' and correct type of 'Bruker PHOTON II' in
+      _diffrn_detector.type enumeration.
+
 ;
 #
 ###########################################################################
