@@ -1970,6 +1970,7 @@ data_mmcif_pdbx.dic
     + Add SIMBAD to _software.name enumeration
     + Add 'Sculptor', 'SUPER' and 'FOCUS' to em_software.name and 
       _emd_software.name enumerations
+    + Extend _pdbx_audit_support.funding_organization enumeration
 ;
 
 #
