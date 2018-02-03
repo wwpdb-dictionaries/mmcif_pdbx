@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.294
+    _dictionary.version         5.295
 #
      loop_
     _dictionary_history.version
@@ -1964,6 +1964,14 @@ data_mmcif_pdbx.dic
       _diffrn_detector.type enumeration.
     + Add 'GRAPHENE OXIDE' to _em_sample_support.grid_material enumeration
 ;
+5.295  2018-02-05
+;
+    Changes (ep):
+    + Add SIMBAD to _software.name enumeration
+    + Add 'Sculptor', 'SUPER' and 'FOCUS' to em_software.name and 
+      _emd_software.name enumerations
+;
+
 #
 ###########################################################################
 #

@@ -796,6 +796,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  FindEM                            .
         '_emd_software.name'  FitCTF2                           .
         '_emd_software.name'  Flex-EM                           .
+        '_emd_software.name'  FOCUS                             .
         '_emd_software.name'  FREALIGN                          .
         '_emd_software.name'  FREALIX                           .
         '_emd_software.name'  Gautomatch                        .
@@ -846,6 +847,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  RosettaEM                         .
         '_emd_software.name'  Ruby-Helix                        .
         '_emd_software.name'  Scipion                           .
+        '_emd_software.name'  Sculptor                          .
         '_emd_software.name'  SerialEM                          .
         '_emd_software.name'  SHELXD                            .
         '_emd_software.name'  Signature                         .
@@ -855,6 +857,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  SPHIRE                            .
         '_emd_software.name'  SPIDER                            .
         '_emd_software.name'  SPRING                            .
+        '_emd_software.name'  SUPER                             .
         '_emd_software.name'  'Super-sampling SART'             .
         '_emd_software.name'  TEMPy                             .
         '_emd_software.name'  TOM                               .
