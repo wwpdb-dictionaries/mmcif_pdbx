@@ -1898,6 +1898,8 @@ data_mmcif_pdbx.dic
     + Add SIMBAD to _software.name enumeration
     + Add 'Sculptor', 'SUPER' and 'FOCUS' to em_software.name enumeration
     + Extend _pdbx_audit_support.funding_organization enumeration
+    + Extend _pdbx_struct_assembly_auth_evidence_depositor_info.experimental_support
+      enumeration
 ;
 #
 ###########################################################################

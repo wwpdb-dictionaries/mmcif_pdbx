@@ -1971,6 +1971,8 @@ data_mmcif_pdbx.dic
     + Add 'Sculptor', 'SUPER' and 'FOCUS' to em_software.name and 
       _emd_software.name enumerations
     + Extend _pdbx_audit_support.funding_organization enumeration
+    + Extend _pdbx_struct_assembly_auth_evidence_depositor_info.experimental_support
+      enumeration
 ;
 
 #
