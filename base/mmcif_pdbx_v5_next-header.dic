@@ -1973,6 +1973,8 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Extend _pdbx_struct_assembly_auth_evidence_depositor_info.experimental_support
       enumeration
+    + Change data type for _emd_specialist_optics.energyfilter_upper and 
+      _emd_specialist_optics.energyfilter_lower to float from text
 ;
 
 #

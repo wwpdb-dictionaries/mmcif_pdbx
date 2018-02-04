@@ -4495,7 +4495,14 @@ save_emd_specialist_optics
     _category_examples.case
 ; Example 1
 ;
-;   TODO-category example
+;  _emd_specialist_optics.id                        1
+   _emd_specialist_optics.emd_microscopy_id         1
+   _emd_specialist_optics.chr_aberration_corrector 'CEOS manufactured Cc corrector'
+   _emd_specialist_optics.phase_plate               ?
+   _emd_specialist_optics.sph_aberration_corrector  ?  
+   _emd_specialist_optics.energyfilter_lower        0
+   _emd_specialist_optics.energyfilter_upper        15
+   _emd_specialist_optics.energyfilter_name         'GIF Bioquantum'
 ;
     save_
 
@@ -4590,9 +4597,9 @@ save__emd_specialist_optics.energyfilter_lower
     _item.name                  '_emd_specialist_optics.energyfilter_lower'
     _item.category_id             emd_specialist_optics
     _item.mandatory_code          no
-    _item_type.code               line
+    _item_type.code               float
     _item_units.code              electron_volts
-    _item_examples.case          '0'
+    _item_examples.case           0
      save_
 
 save__emd_specialist_optics.energyfilter_upper
@@ -4602,9 +4609,9 @@ save__emd_specialist_optics.energyfilter_upper
     _item.name                  '_emd_specialist_optics.energyfilter_upper'
     _item.category_id             emd_specialist_optics
     _item.mandatory_code          no
-    _item_type.code               line
+    _item_type.code               float
     _item_units.code              electron_volts
-    _item_examples.case          '15'
+    _item_examples.case           15
      save_
 
 #save__emd_microscopy.astigmatism
