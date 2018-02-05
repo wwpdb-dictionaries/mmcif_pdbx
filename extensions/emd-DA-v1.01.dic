@@ -4614,6 +4614,24 @@ save__emd_specialist_optics.energyfilter_upper
     _item_examples.case           15
      save_
 
+save__emd_specialist_optics.energyfilter_slit_width
+    _item_description.description
+;   The energy filter range slit width in electron volts (eV) set by spectrometer.
+;
+    _item.name                  '_emd_specialist_optics.energyfilter_slit_width'
+    _item.category_id             emd_specialist_optics
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              electron_volts
+    _item_examples.case           35
+    loop_
+      _item_range.minimum         
+      _item_range.maximum
+           0.0        0.0
+	   0.0     1000.0
+	   1000.0  1000.0
+     save_
+
 #save__emd_microscopy.astigmatism
 #    _item_description.description
 #;   Description of the astigmatism correction protocol.
