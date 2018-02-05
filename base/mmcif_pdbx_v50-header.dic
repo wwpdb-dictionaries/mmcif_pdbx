@@ -1901,6 +1901,7 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_struct_assembly_auth_evidence_depositor_info.experimental_support
       enumeration
     + Remove 4x3_matrix and implement 3x4_matrices
+    + Add enumeration for _pdbx_deposit_group.group_type
 ;
 #
 ###########################################################################

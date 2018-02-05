@@ -1976,6 +1976,7 @@ data_mmcif_pdbx.dic
     + Change data type for _emd_specialist_optics.energyfilter_upper and 
       _emd_specialist_optics.energyfilter_lower to float from text
     + Remove 4x3_matrix and implement 3x4_matrices
+    + Add enumeration for _pdbx_deposit_group.group_type
 ;
 
 #
