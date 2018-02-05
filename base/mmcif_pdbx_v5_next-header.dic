@@ -1975,6 +1975,7 @@ data_mmcif_pdbx.dic
       enumeration
     + Change data type for _emd_specialist_optics.energyfilter_upper and 
       _emd_specialist_optics.energyfilter_lower to float from text
+    + Remove 4x3_matrix and implement 3x4_matrices
 ;
 
 #
@@ -2498,11 +2499,12 @@ data_mmcif_pdbx.dic
                '[A-Za-z0-9]+(,[A-Za-z0-9]+)*'
 ;              A list of comma separated chain or asym ids.
 ;
-               4x3_matrix           char
-               '([ \t]*(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n)){2}([ \t]*(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *[\n]*))'
-;              A 4x3 matrix separated by spaces and newlines on each line.
-               Final newline optional. Optional spaces at start of lines.
+               3x4_matrices         char
+               '((([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *[\n \t]+)){3})*(([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *[\n \t]+)){2}(([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *[\n \t]*))'
+;              A set of 3x4 matrices separated by spaces and newlines on each line.
+               Final newline optional. Optional spaces at start of lines. Blank lines accepted.
 ;
+
    non_negative_int    numb '[0-9]|[1-9][0-9]*' 'Non negative integers (0,1,2,..)'
    positive_int        numb '[1-9][0-9]*'       'Positive integers (1,2,3,..)'
    emd_id              char 'EMD-[1-9][0-9][0-9][0-9]' 'EMDB code'
