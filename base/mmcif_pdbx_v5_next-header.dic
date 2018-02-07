@@ -1980,6 +1980,7 @@ data_mmcif_pdbx.dic
     + Add _em_imaging_optics.energyfilter_slit_width and
       _emd_specialist_optics.energyfilter_slit_width.
     + Switch to closed enumeration for _pdbx_audit_support.funding_organization.
+    + Change type of _pdbx_depui_validation_status_flags.adp_outliers_zero to text
 ;
 
 #
