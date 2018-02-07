@@ -1892,7 +1892,7 @@ data_mmcif_pdbx.dic
       _diffrn_detector.type enumeration.
     + Add 'GRAPHENE OXIDE' to _em_sample_support.grid_material enumeration
 ;
-5.290  2018-02-05
+5.290  2018-02-07
 ;
     Changes (ep):
     + Add SIMBAD to _software.name enumeration
@@ -1903,6 +1903,7 @@ data_mmcif_pdbx.dic
     + Remove 4x3_matrix and implement 3x4_matrices
     + Add enumeration for _pdbx_deposit_group.group_type
     + Add _em_imaging_optics.energyfilter_slit_width
+    + Switch to closed enumeration for _pdbx_audit_support.funding_organization.
 ;
 #
 ###########################################################################
