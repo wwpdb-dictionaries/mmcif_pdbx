@@ -4616,7 +4616,7 @@ save__emd_specialist_optics.energyfilter_upper
 
 save__emd_specialist_optics.energyfilter_slit_width
     _item_description.description
-;   The energy filter range slit width in electron volts (eV) set by spectrometer.
+;   The energy filter range slit width in electron volts (eV).
 ;
     _item.name                  '_emd_specialist_optics.energyfilter_slit_width'
     _item.category_id             emd_specialist_optics

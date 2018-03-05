@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.290
+    _dictionary.version         5.291
 #
      loop_
     _dictionary_history.version
@@ -1905,6 +1905,13 @@ data_mmcif_pdbx.dic
     + Add _em_imaging_optics.energyfilter_slit_width
     + Switch to closed enumeration for _pdbx_audit_support.funding_organization.
     + Change type of _pdbx_depui_validation_status_flags.adp_outliers_zero to text
+;
+5.291  2018-03-05
+;
+    Changes (ep):
+    + Ensure _diffrn_detector.type, _diffrn_source.pdbx_synchrotron_beamline,
+      _diffrn_source.pdbx_synchrotron_site enumerations complete
+    + Extend _pdbx_audit_support.funding_organization enumeration
 ;
 #
 ###########################################################################
