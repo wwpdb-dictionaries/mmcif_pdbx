@@ -1989,6 +1989,7 @@ data_mmcif_pdbx.dic
       _diffrn_source.pdbx_synchrotron_site enumerations complete
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Add RNA-Puzzles to _pdbx_database_status.methods_development_category enumeration
+    + Add _pdbx_audit_support.details
 ;
 
 #
