@@ -57,7 +57,7 @@ export:
 	@cp -r dict-mmcif_std $(EXPORT_DIR)
 	@rm -rf $(EXPORT_DIR)/dict-mmcif_std/.svn
 	@cp -r dict-mmcif_em $(EXPORT_DIR)
-	@rm -rf $(EXPORT_DIR)/dict-mmcif_iims/.svn
+	@rm -rf $(EXPORT_DIR)/dict-mmcif_em/.svn
 	@cp -r dict-mmcif_pdbx_v40 $(EXPORT_DIR)
 	@rm -rf $(EXPORT_DIR)/dict-mmcif_pdbx_v40/.svn
 	@cp -r dict-mmcif_pdbx_v50 $(EXPORT_DIR)
