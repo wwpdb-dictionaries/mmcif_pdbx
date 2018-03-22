@@ -6373,6 +6373,7 @@ save__emd_angle_assignment.type
         "COMMON LINE"
         "RANDOM ASSIGNMENT"
         "NOT APPLICABLE"
+	"MAXIMUM LIKELIHOOD"
         "OTHER"
      save_
 

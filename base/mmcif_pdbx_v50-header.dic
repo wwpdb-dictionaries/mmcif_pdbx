@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.291
+    _dictionary.version         5.292
 #
      loop_
     _dictionary_history.version
@@ -1914,6 +1914,11 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Add RNA-Puzzles to _pdbx_database_status.methods_development_category enumeration
     + Add _pdbx_audit_support.details
+;
+5.292  2018-03-26
+;
+    Changes (ep):
+    + Add "MAXIMUM LIKELIHOOD" to _emd_angle_assignment.type enumeration
 ;
 #
 ###########################################################################
