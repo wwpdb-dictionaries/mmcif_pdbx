@@ -1996,6 +1996,8 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Add "MAXIMUM LIKELIHOOD" to _emd_angle_assignment.type and
       _emd_angle_assignment.type enumeration
+    + Extend range for _em_image_recording.average_exposure_time and
+      _emd_image_recording.average_exposure_time
 ;
 #
 ###########################################################################
