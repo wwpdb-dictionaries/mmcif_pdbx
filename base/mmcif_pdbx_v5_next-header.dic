@@ -1998,6 +1998,7 @@ data_mmcif_pdbx.dic
       _emd_angle_assignment.type enumeration
     + Extend range for _em_image_recording.average_exposure_time and
       _emd_image_recording.average_exposure_time
+    + Update diffrn_source category deposition related enumerations
 ;
 #
 ###########################################################################

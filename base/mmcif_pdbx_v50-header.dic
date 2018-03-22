@@ -1920,6 +1920,7 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Add "MAXIMUM LIKELIHOOD" to _emd_angle_assignment.type enumeration
     + Extend range for _em_image_recording.average_exposure_time
+    + Update diffrn_source category deposition related enumerations
 ;
 #
 ###########################################################################
