@@ -1915,7 +1915,7 @@ data_mmcif_pdbx.dic
     + Add RNA-Puzzles to _pdbx_database_status.methods_development_category enumeration
     + Add _pdbx_audit_support.details
 ;
-5.292  2018-03-26
+5.292  2018-03-22
 ;
     Changes (ep):
     + Add "MAXIMUM LIKELIHOOD" to _emd_angle_assignment.type enumeration
