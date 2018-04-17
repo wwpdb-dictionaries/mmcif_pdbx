@@ -2005,6 +2005,7 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Allow any number of digits for emd_id
     + Add "PSI JUNGFRAU 1M" to diffn_detector.type enumeration
+    + Add pdbx_depui_status_flags.merged_fail
 ;
 #
 ###########################################################################
