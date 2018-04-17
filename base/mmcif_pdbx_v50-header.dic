@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.292
+    _dictionary.version         5.293
 #
      loop_
     _dictionary_history.version
@@ -1922,6 +1922,11 @@ data_mmcif_pdbx.dic
     + Extend range for _em_image_recording.average_exposure_time
     + Update diffrn_source category deposition related enumerations
 ;
+5.293  2018-04-17
+;
+    Changes (ep):
+    + Allow any number of digits for emd_id
+;
 #
 ###########################################################################
 #
@@ -2450,7 +2455,7 @@ data_mmcif_pdbx.dic
 ;
    non_negative_int    numb '[0-9]|[1-9][0-9]*' 'Non negative integers (0,1,2,..)'
    positive_int        numb '[1-9][0-9]*'       'Positive integers (1,2,3,..)'
-   emd_id              char 'EMD-[1-9][0-9][0-9][0-9]' 'EMDB code'
+   emd_id              char 'EMD-[0-9]{4,}'     'EMDB code'
    pdb_id              char '[1-9][A-Z0-9][A-Z0-9][A-Z0-9]' 'PDB code (upper cases)'
    point_group         char 'C[1-9][0-9]*|D[2-9]|D[1-9][0-9]+|O|T|I' 'Point group symmetry in Schoenflies notation'
    point_group_helical char '[CD][1-9][0-9]*' 'Point group symmetry for helices in Schoenflies notation'
