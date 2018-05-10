@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.298
+    _dictionary.version         5.299
 #
      loop_
     _dictionary_history.version
@@ -2006,6 +2006,12 @@ data_mmcif_pdbx.dic
     + Allow any number of digits for emd_id
     + Add "PSI JUNGFRAU 1M" to diffn_detector.type enumeration
     + Add pdbx_depui_status_flags.merged_fail
+;
+5.299  2018-05-10
+;
+    Changes (ep):
+    + Update pdbx_item_enumeration.detail for _pdbx_nmr_spectrometer.model
+    + Extend enumeration for _pdbx_audit_support.funding_organization
 ;
 #
 ###########################################################################
