@@ -2007,7 +2007,7 @@ data_mmcif_pdbx.dic
     + Add "PSI JUNGFRAU 1M" to diffn_detector.type enumeration
     + Add pdbx_depui_status_flags.merged_fail
 ;
-5.299  2018-05-10
+5.299  2018-05-12
 ;
     Changes (ep):
     + Update pdbx_item_enumeration.detail for _pdbx_nmr_spectrometer.model
