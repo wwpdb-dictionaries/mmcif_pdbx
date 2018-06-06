@@ -1939,6 +1939,9 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Update pdbx_deposit_group.group_type enumeration
+    + Extend ranges to match EMDB schema for em_imaging.calibrated_defocus_max
+      _em_start_model.random_conical_tilt_angle,
+      _em_imaging.nominal_cs,
 ;
 #
 ###########################################################################

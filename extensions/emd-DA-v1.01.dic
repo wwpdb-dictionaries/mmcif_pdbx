@@ -2630,7 +2630,7 @@ save__emd_fiducial_markers.diameter
     _item.name                  '_emd_fiducial_markers.diameter'
     _item.category_id           emd_fiducial_markers
     _item.mandatory_code        yes
-    _item_units.code            angstroms
+    _item_units.code            nanometres
     _item_type.code             positive_int
     _item_examples.case         14
      save_
@@ -4221,8 +4221,8 @@ save__emd_microscopy.nominal_cs
     _item_range.minimum           
     _item_range.maximum
                              0    0
-			     0   10
-			    10   10
+			     0   20
+			    20   20
      save_
 
 save__emd_microscopy.nominal_defocus_min
@@ -4290,8 +4290,12 @@ save__emd_microscopy.calibrated_defocus_max
     _item_type.code               float
     _item_units.code             nanometers
     _item_examples.case           5000
-    _item_range.minimum         -20000
-    _item_range.maximum          20000
+    loop_
+      _item_range.minimum         
+      _item_range.maximum      
+                                 -30000 -30000   
+                                 -30000  30000
+                                  30000  30000
      save_
 
 save__emd_microscopy.nominal_magnification
@@ -6190,8 +6194,12 @@ save__emd_startup_model.random_conical_tilt_angle
     _item_type.code             float
     _item_units.code            degrees
     _item_examples.case         60
-    _item_range.minimum        0.0
-    _item_range.maximum       180.0
+    loop_
+      _item_range.minimum        
+      _item_range.maximum
+                                0.0   0.0
+                                0.0   180.0
+                                180.0 180.0	
      save_
 
 save__emd_startup_model.orthogonal_tilt_number_images
