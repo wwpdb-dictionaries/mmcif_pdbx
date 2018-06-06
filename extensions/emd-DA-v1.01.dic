@@ -2744,8 +2744,8 @@ save__emd_sectioning_focused_ion_beam.dose_rate
     _item.mandatory_code        no
     _item_type.code             positive_int
     _item_units.code            ions_per_cm_squared_per_sec
-    _item_type.code             positive_int
     _item_range.maximum         .
+    _item_range.minimum         0
      save_
 
 save__emd_sectioning_focused_ion_beam.duration
