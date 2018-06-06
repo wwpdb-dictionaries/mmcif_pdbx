@@ -2027,6 +2027,8 @@ data_mmcif_pdbx.dic
       _em_fiducial_markers.diameter
     + Change units, range, and mandatory flag for
       _em_focused_ion_beam.dose_rate
+    + Add 'JEOL 3100FEF' to em_imaging.microscope_model and
+      emd_microscopy.microscope
 
 ;
 #
