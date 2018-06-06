@@ -2022,7 +2022,7 @@ data_mmcif_pdbx.dic
       _em_start_model.random_conical_tilt_angle,
       _emd_startup_model.random_conical_tilt_angle,
       _emd_microscopy.nominal_cs,
-      _em_imaging.nominal_cs,
+      _em_imaging.nominal_cs
     + Change units for emd_fiducial_markers.diameter and
       _em_fiducial_markers.diameter
     + Change units, range, and mandatory flag for
