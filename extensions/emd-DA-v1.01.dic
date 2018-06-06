@@ -2737,12 +2737,15 @@ save__emd_sectioning_focused_ion_beam.current
 
 save__emd_sectioning_focused_ion_beam.dose_rate
     _item_description.description
-;  ions per sq area per unit time
+;  ions per sq centimetre per second
 ;
     _item.name                  '_emd_sectioning_focused_ion_beam.dose_rate'
     _item.category_id           emd_sectioning_focused_ion_beam
-    _item.mandatory_code        yes
+    _item.mandatory_code        no
     _item_type.code             positive_int
+    _item_units.code            ions_per_cm_squared_per_sec
+    _item_type.code             positive_int
+    _item_range.maximum         .
      save_
 
 save__emd_sectioning_focused_ion_beam.duration

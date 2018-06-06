@@ -1942,6 +1942,10 @@ data_mmcif_pdbx.dic
     + Extend ranges to match EMDB schema for em_imaging.calibrated_defocus_max
       _em_start_model.random_conical_tilt_angle,
       _em_imaging.nominal_cs,
+    + Change units for emd_fiducial_markers.diameter, _em_fiducial_markers.diameter
+    + Change units, range, and mandatory flag for
+      _em_focused_ion_beam.dose_rate and 
+      _emd_sectioning_focused_ion_beam.dose_rate
 ;
 #
 ###########################################################################
@@ -2552,6 +2556,9 @@ data_mmcif_pdbx.dic
 ;
      'electrons_per_picometres_cubed'
 ; electrons per picometres cubed (electrons/(metres * 10^(-12)^)^(-3)^)
+;
+     'ions_per_cm_squared_per_sec'
+; ions per centimetre squared per second (ions/(meters * 10^(-2)^)^(-2)/second^)
 ;
      'kilowatts'              'kilowatts'
      'milliamperes'           'milliamperes'
