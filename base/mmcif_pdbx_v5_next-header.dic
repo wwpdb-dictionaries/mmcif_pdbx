@@ -2013,7 +2013,7 @@ data_mmcif_pdbx.dic
     + Update pdbx_item_enumeration.detail for _pdbx_nmr_spectrometer.model
     + Extend enumeration for _pdbx_audit_support.funding_organization
 ;
-5.300  2018-06-06
+5.300  2018-06-07
 ;
     Changes (ep):
     + Update pdbx_deposit_group.group_type enumeration

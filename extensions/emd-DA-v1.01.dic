@@ -2631,7 +2631,13 @@ save__emd_fiducial_markers.diameter
     _item.category_id           emd_fiducial_markers
     _item.mandatory_code        yes
     _item_units.code            nanometres
-    _item_type.code             positive_int
+    _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                                  0.1   0.1
+                                  0.1 100
+                                100   100
     _item_examples.case         14
      save_
 
