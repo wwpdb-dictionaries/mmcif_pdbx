@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.295
+    _dictionary.version         5.296
 #
      loop_
     _dictionary_history.version
@@ -1948,6 +1948,11 @@ data_mmcif_pdbx.dic
       _emd_sectioning_focused_ion_beam.dose_rate
     + Add 'JEOL 3100FEF' to em_imaging.microscope_model
 ;
+5.296  2018-06-25
+;
+    Changes (ep):
+    + Update point_group regular expression type
+;
 #
 ###########################################################################
 #
@@ -2478,7 +2483,7 @@ data_mmcif_pdbx.dic
    positive_int        numb '[1-9][0-9]*'       'Positive integers (1,2,3,..)'
    emd_id              char 'EMD-[0-9]{4,}'     'EMDB code'
    pdb_id              char '[1-9][A-Z0-9][A-Z0-9][A-Z0-9]' 'PDB code (upper cases)'
-   point_group         char 'C[1-9][0-9]*|D[2-9]|D[1-9][0-9]+|O|T|I' 'Point group symmetry in Schoenflies notation'
+   point_group         char '(C[1-9][0-9]*|D[2-9]|D[1-9][0-9]+|O|T|I)' 'Point group symmetry in Schoenflies notation'
    point_group_helical char '[CD][1-9][0-9]*' 'Point group symmetry for helices in Schoenflies notation'
    boolean char 'YES|NO' 'Boolean type'
    #author char "[A-Za-z '\-]+,\s+([A-Z\-]+\.)+$" 'Author name in PDB format: Taylor, C.A.'
