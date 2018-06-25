@@ -2035,6 +2035,8 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Update point_group regular expression type
+    + Add beamline 'SACLA BEAMLINE BL2' and 'APS BEAMLINE 34-ID' 
+      to _diffrn_source.type enumeration
 ;
 #
 ###########################################################################
