@@ -2037,6 +2037,8 @@ data_mmcif_pdbx.dic
     + Update point_group regular expression type
     + Add beamline 'SACLA BEAMLINE BL2' and 'APS BEAMLINE 34-ID' 
       to _diffrn_source.type enumeration
+    + Change context of _citation_author.identifier_ORCID to make public
+    + Extend enumerations with _pdbx_audit_support.funding_organization
 ;
 #
 ###########################################################################
