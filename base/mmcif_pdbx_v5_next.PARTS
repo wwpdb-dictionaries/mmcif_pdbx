@@ -1,6 +1,6 @@
 base/mmcif_pdbx_v5_next-header.dic
 base/mmcif_pdbx-base.dic
-extensions/xfel-extensions-v2.dic
+extensions/xfel-extensions-v3.dic
 extensions/diffrn-data-set-extension-v2.dic
 extensions/emd-DA-v1.01.dic
 extensions/comment-ext.dic
