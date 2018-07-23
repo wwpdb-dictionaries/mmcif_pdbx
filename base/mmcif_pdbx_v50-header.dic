@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.296
+    _dictionary.version         5.297
 #
      loop_
     _dictionary_history.version
@@ -1958,6 +1958,11 @@ data_mmcif_pdbx.dic
     + Extend enumerations with _pdbx_audit_support.funding_organization
     + Provide deposition specific help text for _pdbx_nmr_representative.conformer_id
     + Make _pdbx_contact_author.identifier_ORCID mandatory during deposition
+;
+5.297  2018-07-24
+;
+    Changes (ep):
+    + Extend _software.language enumeration
 ;
 #
 ###########################################################################

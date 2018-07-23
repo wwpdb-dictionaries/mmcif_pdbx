@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.302
+    _dictionary.version         5.303
 #
      loop_
     _dictionary_history.version
@@ -2046,6 +2046,11 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Update xfel extension to v3
+;
+5.303  2018-07-24
+;
+    Changes (ep):
+    + Extend _software.language enumeration
 ;
 #
 ###########################################################################
