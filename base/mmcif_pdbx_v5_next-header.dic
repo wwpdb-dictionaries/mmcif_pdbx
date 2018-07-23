@@ -2053,6 +2053,8 @@ data_mmcif_pdbx.dic
     + Extend _software.language enumeration
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Add COUNTER-DIFFUSION to deposition enumeration for _exptl_crystal_grow.method
+    + Add 'JEOL CRYOSPECPORTER' to _em_imaging.specimen_holder_model and 
+      _emd_microscopy.specimen_holder_model enumerations
 ;
 #
 ###########################################################################
