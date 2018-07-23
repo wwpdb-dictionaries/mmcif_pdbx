@@ -2047,7 +2047,7 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Update xfel extension to v3
 ;
-5.303  2018-07-24
+5.303  2018-07-23
 ;
     Changes (ep):
     + Extend _software.language enumeration
@@ -2057,6 +2057,8 @@ data_mmcif_pdbx.dic
       _emd_microscopy.specimen_holder_model enumerations
     + Extend deposition enumerations for _software.name
     + Add range limits to xfel extension
+    + Require _atom_site.pdbx_PDB_model_num non-zero positive integer
+    + For deposition, require _pdbx_nmr_representative.conformer_id to be positive integer
 ;
 #
 ###########################################################################

@@ -1959,7 +1959,7 @@ data_mmcif_pdbx.dic
     + Provide deposition specific help text for _pdbx_nmr_representative.conformer_id
     + Make _pdbx_contact_author.identifier_ORCID mandatory during deposition
 ;
-5.297  2018-07-24
+5.297  2018-07-23
 ;
     Changes (ep):
     + Extend _software.language enumeration
@@ -1967,6 +1967,8 @@ data_mmcif_pdbx.dic
     + Add COUNTER-DIFFUSION to deposition enumeration for _exptl_crystal_grow.method
     + Add 'JEOL CRYOSPECPORTER' to _em_imaging.specimen_holder_model enumeration
     + Extend deposition enumerations for _software.name
+    + Require _atom_site.pdbx_PDB_model_num non-zero positive integer
+    + For deposition, require _pdbx_nmr_representative.conformer_id to be positive integer
 ;
 #
 ###########################################################################
