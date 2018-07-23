@@ -98,6 +98,8 @@ save__pdbx_serial_crystallography_measurement.pulse_energy
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              microjoules
+    _item_range.maximum           .
+    _item_range.minimum           0.0
      save_
 
 save__pdbx_serial_crystallography_measurement.pulse_duration
@@ -110,6 +112,8 @@ save__pdbx_serial_crystallography_measurement.pulse_duration
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              femtoseconds
+    _item_range.maximum           .
+    _item_range.minimum           0.0
      save_
 
 save__pdbx_serial_crystallography_measurement.xfel_pulse_repetition_rate
@@ -121,6 +125,8 @@ save__pdbx_serial_crystallography_measurement.xfel_pulse_repetition_rate
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              hertz
+    _item_range.maximum           .
+    _item_range.minimum           0.0
      save_
 
 save__pdbx_serial_crystallography_measurement.pulse_photon_energy
@@ -132,6 +138,8 @@ save__pdbx_serial_crystallography_measurement.pulse_photon_energy
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              kiloelectron_volts
+    _item_range.maximum           .
+    _item_range.minimum           0.0
      save_
 
 save__pdbx_serial_crystallography_measurement.photons_per_pulse
@@ -143,6 +151,8 @@ save__pdbx_serial_crystallography_measurement.photons_per_pulse
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              teraphotons_per_pulse
+    _item_range.maximum           .
+    _item_range.minimum           0.0
      save_
 
 save__pdbx_serial_crystallography_measurement.source_size
@@ -154,6 +164,8 @@ save__pdbx_serial_crystallography_measurement.source_size
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              micrometres_squared
+    _item_range.maximum           .
+    _item_range.minimum           0.0
      save_
 
 save__pdbx_serial_crystallography_measurement.source_distance
@@ -165,6 +177,8 @@ save__pdbx_serial_crystallography_measurement.source_distance
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              metres
+    _item_range.maximum           .
+    _item_range.minimum           0.0
      save_
 
 save__pdbx_serial_crystallography_measurement.focal_spot_size
@@ -177,6 +191,8 @@ save__pdbx_serial_crystallography_measurement.focal_spot_size
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              micrometres_squared
+    _item_range.maximum           .
+    _item_range.minimum           0.0
      save_
 
 save__pdbx_serial_crystallography_measurement.collimation
@@ -204,7 +220,9 @@ save__pdbx_serial_crystallography_measurement.collection_time_total
     _item_type.code               float
     _item_units.code              hours
      loop_
-    _item_examples.case          120.0
+    _item_examples.case           120.0
+    _item_range.maximum           .
+    _item_range.minimum           0.0
      save_
 
 ###############################################
@@ -359,7 +377,8 @@ save__pdbx_serial_crystallography_sample_delivery_injection.injector_diameter
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              micrometres
-
+    _item_range.maximum           .
+    _item_range.minimum           0.0
     save_
 
 save__pdbx_serial_crystallography_sample_delivery_injection.injector_temperature
@@ -374,7 +393,8 @@ save__pdbx_serial_crystallography_sample_delivery_injection.injector_temperature
     _item_type.code               float
     _item_type_conditions.code    esd
     _item_units.code              kelvins
-
+    _item_range.maximum           .
+    _item_range.minimum           0.0
      save_
 
 save__pdbx_serial_crystallography_sample_delivery_injection.injector_pressure
@@ -388,7 +408,8 @@ save__pdbx_serial_crystallography_sample_delivery_injection.injector_pressure
     _item_type.code               float
     _item_type_conditions.code    esd
     _item_units.code              kilopascals
-
+    _item_range.maximum           .
+    _item_range.minimum           0.0
  save_
 
 save__pdbx_serial_crystallography_sample_delivery_injection.flow_rate
@@ -401,6 +422,8 @@ save__pdbx_serial_crystallography_sample_delivery_injection.flow_rate
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              microliters_per_min
+    _item_range.maximum           .
+    _item_range.minimum           0.0
  save_
 
 save__pdbx_serial_crystallography_sample_delivery_injection.carrier_solvent
@@ -432,6 +455,8 @@ save__pdbx_serial_crystallography_sample_delivery_injection.crystal_concentratio
     _item.mandatory_code          no
     _item_type.code               float
     #_item_units.code            'millions_per_ml'
+    _item_range.maximum           .
+    _item_range.minimum           0.0
  save_
 
 save__pdbx_serial_crystallography_sample_delivery_injection.preparation
@@ -481,7 +506,8 @@ save__pdbx_serial_crystallography_sample_delivery_injection.jet_diameter
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              micrometres
-
+    _item_range.maximum           .
+    _item_range.minimum           0.0
      save_
 
 save__pdbx_serial_crystallography_sample_delivery_injection.filter_size
@@ -493,6 +519,8 @@ save__pdbx_serial_crystallography_sample_delivery_injection.filter_size
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              micrometres
+    _item_range.maximum           .
+    _item_range.minimum           0.0
      save_
 
 
@@ -587,6 +615,8 @@ save__pdbx_serial_crystallography_sample_delivery_fixed_target.sample_unit_size
     _item.mandatory_code          no
     _item_type.code               float
     _item_units.code              micrometres
+    _item_range.maximum           .
+    _item_range.minimum           0.0
     save_
 
 save__pdbx_serial_crystallography_sample_delivery_fixed_target.crystals_per_unit
@@ -597,6 +627,8 @@ save__pdbx_serial_crystallography_sample_delivery_fixed_target.crystals_per_unit
     _item.category_id             pdbx_serial_crystallography_sample_delivery_fixed_target
     _item.mandatory_code          no
     _item_type.code               int
+    _item_range.maximum           .
+    _item_range.minimum           0
     save_
 
 save__pdbx_serial_crystallography_sample_delivery_fixed_target.sample_solvent
@@ -644,8 +676,8 @@ save__pdbx_serial_crystallography_sample_delivery_fixed_target.velocity_horizont
     _item.category_id             pdbx_serial_crystallography_sample_delivery_fixed_target
     _item.mandatory_code          no
     _item_type.code               float
-    #_item_examples.case          goniometer
-    #_item_units.code              nanometres_cubed
+    _item_range.maximum           .
+    _item_range.minimum           0.0
     save_
 
 save__pdbx_serial_crystallography_sample_delivery_fixed_target.velocity_vertical
@@ -656,6 +688,8 @@ save__pdbx_serial_crystallography_sample_delivery_fixed_target.velocity_vertical
     _item.category_id             pdbx_serial_crystallography_sample_delivery_fixed_target
     _item.mandatory_code          no
     _item_type.code               float
+    _item_range.maximum           .
+    _item_range.minimum           0.0
     save_
 
 save__pdbx_serial_crystallography_sample_delivery_fixed_target.details
@@ -680,6 +714,8 @@ save__diffrn_detector.pdbx_frequency
     _item.category_id             diffrn_detector
     _item.mandatory_code          no
     _item_type.code               float
+    _item_range.maximum           .
+    _item_range.minimum           0.0
      save_
 
 
@@ -740,7 +776,9 @@ save__pdbx_serial_crystallography_data_reduction.frames_total
     _item.mandatory_code          no
     _item_type.code               int
      loop_
-    _item_examples.case          20 100
+    _item_examples.case           20 100
+    _item_range.maximum           .
+    _item_range.minimum           0
      save_
 
 
@@ -752,6 +790,8 @@ save__pdbx_serial_crystallography_data_reduction.xfel_pulse_events
     _item.category_id             pdbx_serial_crystallography_data_reduction
     _item.mandatory_code          no
     _item_type.code               int
+    _item_range.maximum           .
+    _item_range.minimum           0
      save_
 
 
@@ -766,7 +806,9 @@ save__pdbx_serial_crystallography_data_reduction.frame_hits
     _item.mandatory_code          no
     _item_type.code               int
      loop_
-    _item_examples.case          1200 5750
+    _item_examples.case           1200 5750
+    _item_range.maximum           .
+    _item_range.minimum           0
      save_
 
 save__pdbx_serial_crystallography_data_reduction.crystal_hits
@@ -780,7 +822,9 @@ save__pdbx_serial_crystallography_data_reduction.crystal_hits
     _item.mandatory_code          no
     _item_type.code               int
      loop_
-    _item_examples.case          1200 5750
+    _item_examples.case           1200 5750
+    _item_range.maximum           .
+    _item_range.minimum           0
      save_
 
 save__pdbx_serial_crystallography_data_reduction.droplet_hits
@@ -794,7 +838,9 @@ save__pdbx_serial_crystallography_data_reduction.droplet_hits
     _item.mandatory_code          no
     _item_type.code               int
      loop_
-    _item_examples.case          1200 5750
+    _item_examples.case           1200 5750
+    _item_range.maximum           .
+    _item_range.minimum           0
      save_
 
 save__pdbx_serial_crystallography_data_reduction.frames_failed_index
@@ -808,7 +854,11 @@ save__pdbx_serial_crystallography_data_reduction.frames_failed_index
     _item.mandatory_code          no
     _item_type.code               int
      loop_
-    _item_examples.case          1200 5750
+    _item_examples.case           1200 5750
+    loop_
+    _item_range.maximum           
+    _item_range.minimum           0 0
+                                  . 0
      save_
 
 save__pdbx_serial_crystallography_data_reduction.frames_indexed
@@ -822,7 +872,9 @@ save__pdbx_serial_crystallography_data_reduction.frames_indexed
     _item.mandatory_code          no
     _item_type.code               int
      loop_
-    _item_examples.case          1200 5750
+    _item_examples.case           1200 5750
+    _item_range.maximum           .
+    _item_range.minimum           0
      save_
 
 save__pdbx_serial_crystallography_data_reduction.lattices_indexed
@@ -835,7 +887,9 @@ save__pdbx_serial_crystallography_data_reduction.lattices_indexed
     _item.mandatory_code          no
     _item_type.code               int
      loop_
-    _item_examples.case          1200 5750
+    _item_examples.case           1200 5750
+    _item_range.maximum           .
+    _item_range.minimum           0
      save_
 
 save__pdbx_serial_crystallography_data_reduction.xfel_run_numbers
