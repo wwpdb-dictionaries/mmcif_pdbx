@@ -1963,6 +1963,7 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Extend _software.language enumeration
+    + Extend _pdbx_audit_support.funding_organization enumeration
 ;
 #
 ###########################################################################
