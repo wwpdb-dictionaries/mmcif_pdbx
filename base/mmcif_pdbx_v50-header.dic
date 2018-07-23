@@ -1964,6 +1964,7 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Extend _software.language enumeration
     + Extend _pdbx_audit_support.funding_organization enumeration
+    + Add COUNTER-DIFFUSION to deposition enumeration for _exptl_crystal_grow.method
 ;
 #
 ###########################################################################
