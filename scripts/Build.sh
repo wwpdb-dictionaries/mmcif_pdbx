@@ -24,5 +24,11 @@ for part in `cat $basedir/$dict.PARTS`; do
     cat $TOPDIR/$part  >> $outdict
 done
 
+if [ -e $basedir/$dict'.SED' ]; then
+    echo "Running sed"
+    sed -f $basedir/$dict'.SED' < $outdict > $outdict.tmp
+    mv $outdict.tmp $outdict
+fi
+
 echo "Completed generation of $dictname"
 exit 0
