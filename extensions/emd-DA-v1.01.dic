@@ -704,7 +704,7 @@ save__emd_software.emd_microscopy_id
     _item.mandatory_code          yes
     _item_type.code               positive_int
     _item_linked.child_name      '_emd_software.emd_microscopy_id'
-    _item_linked.parent_name     '_emd_modelling.id'
+    _item_linked.parent_name     '_emd_microscopy.id'
       save_
 
 save__emd_software.category
