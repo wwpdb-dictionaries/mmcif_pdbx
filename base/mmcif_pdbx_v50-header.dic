@@ -1970,7 +1970,7 @@ data_mmcif_pdbx.dic
     + Require _atom_site.pdbx_PDB_model_num non-zero positive integer
     + For deposition, require _pdbx_nmr_representative.conformer_id to be positive integer
 ;
-5.298  2018-07-31
+5.298  2018-08-01
 ;
     Changes (ep):
     + Extend _pdbx_audit_support.funding_organization enumeration
