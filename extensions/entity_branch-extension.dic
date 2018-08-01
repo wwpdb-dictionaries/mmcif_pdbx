@@ -859,7 +859,7 @@ save__pdbx_branch_scheme.asym_id
 
 save__pdbx_branch_scheme.mon_id
     _item_description.description
-;              This data item is a pointer to _pdbx_entity_branch_list.comp_id in the
+;              This data item is a pointer to _atom_site.label_comp_id in the
                PDBX_ENTITY_BRANCH_LIST category.
 ;
     _item.name                  '_pdbx_branch_scheme.mon_id'
@@ -867,7 +867,7 @@ save__pdbx_branch_scheme.mon_id
     _item.mandatory_code          yes
     _item_type.code               ucode
     _item_linked.child_name       '_pdbx_branch_scheme.mon_id'
-    _item_linked.parent_name      '_pdbx_entity_branch_list.comp_id'
+    _item_linked.parent_name      '_atom_site.label_comp_id'
      save_
 
 save__pdbx_branch_scheme.num
