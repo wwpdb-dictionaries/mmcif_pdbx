@@ -2396,6 +2396,10 @@ data_mmcif_pdbx.dic
               'inclusive_group'
 ;              Categories extending the description of measured diffraction data.
 ;
+              'branch_group'
+              'inclusive_group'
+;              Categories that describe branched chain carbohydrates.
+;
 
 ####################
 ## ITEM_TYPE_LIST ##

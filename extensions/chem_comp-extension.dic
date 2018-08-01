@@ -1,0 +1,145 @@
+# ----------------------------------------------------------------------------------------------------------------------------
+#
+#  File: chem_comp-extension.dic
+#  Date: 1-Aug-2018 Ep
+#  Update: 
+#
+#  Draft dictionary extensions for extending the chemical components definition to support carbohydrates
+#
+#  CHEM_COMP - Adds new _chem_comp.pdbx_core_comp_id to support generic 'core' parent
+#
+#  CHEM_COMP_ATOM - Adds _chem_comp_atom.pdbx_standard_atom_id, and _chem_comp_atom.pdbx_core_atom_id to provide mappings
+#
+#  PDBX_CHEM_COMP_SYNONYMS - reuse of existing but never used category to provide synonyms
+#
+# ----------------------------------------------------------------------------------------------------------------------------
+
+###############
+## CHEM_COMP ##
+###############
+
+save__chem_comp.pdbx_core_comp_id
+    _item_description.description
+;              This data item is a pointer to _chem_comp.id in the CHEM_COMP
+               category. This item links to the core component from which this
+	       is derived.
+;
+    _item.name                  '_chem_comp.pdbx_core_comp_id'
+    _item.category_id           chem_comp
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_chem_comp.pdbx_core_comp_id'
+     save_
+
+
+
+####################
+## CHEM_COMP_ATOM ##
+####################
+
+save__chem_comp_atom.pdbx_standard_atom_id
+    _item_description.description
+;              The value of _chem_comp_atom.pdbx_standard_atom_id must uniquely identify
+               each atom in each monomer in the CHEM_COMP_ATOM list.
+
+               This item is a holding place during remediation efforts and will not be exported.
+;
+    _item.name                    '_chem_comp_atom.pdbx_standard_atom_id'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               atcode
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_chem_comp_atom.pdbx_standard_atom_id'
+     save_
+
+
+save__chem_comp_atom.pdbx_core_atom_id
+    _item_description.description
+;              The value of _chem_comp_atom.pdbx_core_atom_id maps this components
+               atoms to a core component specified by
+	       _chem_comp_atom.pdbx_core_comp_id.
+;
+    _item.name                  '_chem_comp_atom.pdbx_core_atom_id'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               atcode
+    # Maybe need a different linking to different category
+    #_item_linked.child_name       '_chem_comp_atom.pdbx_core_atom_id'
+    #_item_linked.parent_name      '_chem_comp_atom.atom_id'
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_chem_comp_atom.pdbx_core_atom_id'
+     save_
+
+#############################
+## PDBX_CHEM_COMP_SYNONYMS ##
+#############################
+save_pdbx_chem_comp_synonyms
+   #
+   _category.description     'PDBX_CHEM_COMP_SYNONYMS holds chemical name and synonym correspondences.'
+   _category.id              pdbx_chem_comp_synonyms
+   _category.mandatory_code  no
+   #
+   loop_
+   _category_key.name
+     '_pdbx_chem_comp_synonyms.comp_id'
+     '_pdbx_chem_comp_synonyms.name'
+   #
+   loop_
+   _category_group.id
+     inclusive_group
+     pdbx_group
+     chem_comp_group
+   #
+   _pdbx_category_context.type         WWPDB_LOCAL
+   _pdbx_category_context.category_id  pdbx_chem_comp_synonyms
+   #
+save_
+#
+save__pdbx_chem_comp_synonyms.name
+   #
+   _item_description.description  'The synonym.'
+   #
+   _item.name            '_pdbx_chem_comp_synonyms.name'
+   _item.category_id     pdbx_chem_comp_synonyms
+   _item.mandatory_code  yes
+   #
+   _item_type.code  text
+   #
+   _item_aliases.alias_name  '_rcsb_chem_comp_synonyms.name'
+   _item_aliases.dictionary  cif_rcsb.dic
+   _item_aliases.version     1.1
+   #
+save_
+#
+save__pdbx_chem_comp_synonyms.comp_id
+   #
+   _item_description.description  'The chemical component for which this synonym applies.'
+   #
+   _item.name                    '_pdbx_chem_comp_synonyms.comp_id'
+   _item.category_id             pdbx_chem_comp_synonyms
+   _item.mandatory_code          yes
+   _item_type.code               ucode
+   _item_linked.child_name       '_pdbx_chem_comp_synonyms.comp_id'
+   _item_linked.parent_name      '_chem_comp.id'
+   #
+save_
+
+save__pdbx_chem_comp_synonyms.synonym
+   #
+   _item_description.description  'Component synonym.'
+   #
+   _item.name            '_pdbx_chem_comp_synonyms.synonym'
+   _item.category_id     pdbx_chem_comp_synonyms
+   _item.mandatory_code  yes
+   #
+   _item_type.code  text
+   #
+   _item_aliases.alias_name  '_rcsb_chem_comp_synonyms.synonym'
+   _item_aliases.dictionary  cif_rcsb.dic
+   _item_aliases.version     1.1
+   #
+   _pdbx_item_context.type       WWPDB_DEPRECATED
+   _pdbx_item_context.item_name  '_pdbx_chem_comp_synonyms.synonym'
+   #
+save_
