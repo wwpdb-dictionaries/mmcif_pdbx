@@ -576,8 +576,8 @@ save_pdbx_struct_binding_mode
     _pdbx_struct_binding_mode.id
     _pdbx_struct_binding_mode.entity_id
     _pdbx_struct_binding_mode.bind_to
-    _pdbx_struct_binding_mode.bind_site
-    _pdbx_struct_binding_mode.bind_type
+    _pdbx_struct_binding_mode.binding_site
+    _pdbx_struct_binding_mode.binding_type
     _pdbx_struct_binding_mode.comp_id
     _pdbx_struct_binding_mode.asym_id
     _pdbx_struct_binding_mode.seq_id
@@ -724,12 +724,12 @@ save__pdbx_struct_binding_mode.bind_to
     _item_enumeration.detail      carbohydrate  .
      save_
 
-save__pdbx_struct_binding_mode.bind_site
+save__pdbx_struct_binding_mode.binding_site
     _item_description.description
 ;              The type of modification of the polymer chain 
 
 ;
-    _item.name                   '_pdbx_struct_binding_mode.bind_site'
+    _item.name                   '_pdbx_struct_binding_mode.binding_site'
     _item.category_id            pdbx_struct_binding_mode
     _item.mandatory_code         no
     _item_type.code              code
@@ -737,15 +737,15 @@ save__pdbx_struct_binding_mode.bind_site
     _item_examples.case          glycosylation
     loop_
     _item_enumeration.value
-    _item_enumeration.detail      glycosylation  .
+    _item_enumeration.detail     glycosylation  .
      save_
 
-save__pdbx_struct_binding_mode.bind_type
+save__pdbx_struct_binding_mode.binding_type
     _item_description.description
 ;              The type of binding that takes place to the polymer
 
 ;
-    _item.name                   '_pdbx_struct_binding_mode.bind_type'
+    _item.name                   '_pdbx_struct_binding_mode.binding_type'
     _item.category_id            pdbx_struct_binding_mode
     _item.mandatory_code         no
     _item_type.code              line
@@ -753,7 +753,7 @@ save__pdbx_struct_binding_mode.bind_type
     _item_examples.case          'N-linked glycan'
     loop_
     _item_enumeration.value
-    _item_enumeration.detail      'N-linked glycan' .
+    _item_enumeration.detail     'N-linked glycan' .
      save_
 
 
