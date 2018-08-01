@@ -8,7 +8,8 @@
 #
 #  CHEM_COMP - Adds new _chem_comp.pdbx_core_comp_id to support generic 'core' parent
 #
-#  CHEM_COMP_ATOM - Adds _chem_comp_atom.pdbx_standard_atom_id, and _chem_comp_atom.pdbx_core_atom_id to provide mappings
+#  CHEM_COMP_ATOM - Adds _chem_comp_atom.pdbx_standard_atom_id, _chem_comp_atom.pdbx_core_comp_id, and
+#                   _chem_comp_atom.pdbx_core_atom_id to provide mappings
 #
 #  PDBX_CHEM_COMP_SYNONYMS - reuse of existing but never used category to provide synonyms
 #
@@ -71,6 +72,21 @@ save__chem_comp_atom.pdbx_core_atom_id
     _pdbx_item_context.item_name  '_chem_comp_atom.pdbx_core_atom_id'
      save_
 
+save__chem_comp_atom.pdbx_core_comp_id
+    _item_description.description
+;              The value of _chem_comp_atom.pdbx_core_comp_id maps this components
+               atoms to a core component specified by _chem_comp.pdbx_core_comp_id.
+;
+    _item.name                  '_chem_comp_atom.pdbx_core_comp_id'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_linked.child_name       '_chem_comp_atom.pdbx_core_comp_id'
+    _item_linked.parent_name      '_chem_comp.pdbx_core_comp_id'
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_chem_comp_atom.pdbx_core_atom_id'
+     save_
+
 #############################
 ## PDBX_CHEM_COMP_SYNONYMS ##
 #############################
@@ -98,7 +114,7 @@ save_
 #
 save__pdbx_chem_comp_synonyms.name
    #
-   _item_description.description  'The synonym.'
+   _item_description.description  'The synonym of this particular chemical component.'
    #
    _item.name            '_pdbx_chem_comp_synonyms.name'
    _item.category_id     pdbx_chem_comp_synonyms
@@ -141,5 +157,22 @@ save__pdbx_chem_comp_synonyms.synonym
    #
    _pdbx_item_context.type       WWPDB_DEPRECATED
    _pdbx_item_context.item_name  '_pdbx_chem_comp_synonyms.synonym'
+   #
+save_
+
+save__pdbx_chem_comp_synonyms.provenance
+   #
+   _item_description.description  'The provenance of this synonym.'
+   #
+   _item.name                    '_pdbx_chem_comp_synonyms.provenance'
+   _item.category_id             pdbx_chem_comp_synonyms
+   _item.mandatory_code          no
+   _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      AUTHOR    .
+                                  DRUGBANK  .
+                                  CHEBIR    .
+				  PDB       .
    #
 save_
