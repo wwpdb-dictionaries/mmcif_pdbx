@@ -141,25 +141,6 @@ save__pdbx_chem_comp_synonyms.comp_id
    #
 save_
 
-save__pdbx_chem_comp_synonyms.synonym
-   #
-   _item_description.description  'Component synonym.'
-   #
-   _item.name            '_pdbx_chem_comp_synonyms.synonym'
-   _item.category_id     pdbx_chem_comp_synonyms
-   _item.mandatory_code  yes
-   #
-   _item_type.code  text
-   #
-   _item_aliases.alias_name  '_rcsb_chem_comp_synonyms.synonym'
-   _item_aliases.dictionary  cif_rcsb.dic
-   _item_aliases.version     1.1
-   #
-   _pdbx_item_context.type       WWPDB_DEPRECATED
-   _pdbx_item_context.item_name  '_pdbx_chem_comp_synonyms.synonym'
-   #
-save_
-
 save__pdbx_chem_comp_synonyms.provenance
    #
    _item_description.description  'The provenance of this synonym.'
@@ -172,7 +153,9 @@ save__pdbx_chem_comp_synonyms.provenance
     _item_enumeration.value
     _item_enumeration.detail      AUTHOR    .
                                   DRUGBANK  .
-                                  CHEBIR    .
-				  PDB       .
+                                  CHEBI     .
+                                  CHEMBL    .
+                                  PDB       .
+                                  PUBCHEM   .
    #
 save_
