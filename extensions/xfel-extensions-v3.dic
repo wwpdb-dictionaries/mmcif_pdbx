@@ -393,8 +393,11 @@ save__pdbx_serial_crystallography_sample_delivery_injection.injector_temperature
     _item_type.code               float
     _item_type_conditions.code    esd
     _item_units.code              kelvins
-    _item_range.maximum           .
-    _item_range.minimum           0.0
+    loop_
+    _item_range.maximum           
+    _item_range.minimum           .       100.0
+                                  100.0   370.0
+                                  370.0   370.0
      save_
 
 save__pdbx_serial_crystallography_sample_delivery_injection.injector_pressure

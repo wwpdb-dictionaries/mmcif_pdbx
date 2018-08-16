@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.304
+    _dictionary.version         5.305
 #
      loop_
     _dictionary_history.version
@@ -2066,6 +2066,12 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Correct _emd_software.emd_microscopy_id parent relationship
     + Update entity_branch_extension
+;
+5.305  2018-08-16
+;
+    Changes (ep):
+    + Update entity_branch_extension
+    + Update limits of pdbx_serial_crystallography_sample_delivery_injection.injector_temperature
 ;
 #
 ###########################################################################
