@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.298
+    _dictionary.version         5.299
 #
      loop_
     _dictionary_history.version
@@ -1973,6 +1973,12 @@ data_mmcif_pdbx.dic
 5.298  2018-08-01
 ;
     Changes (ep):
+    + Extend _pdbx_audit_support.funding_organization enumeration
+;
+5.299  2018-08-29
+;
+    Changes (ep):
+    + Correct _diffrn_source.type enumeration for 'MICROMAX-003'
     + Extend _pdbx_audit_support.funding_organization enumeration
 ;
 #

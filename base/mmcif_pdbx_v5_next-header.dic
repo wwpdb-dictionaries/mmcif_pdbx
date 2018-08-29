@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.305
+    _dictionary.version         5.306
 #
      loop_
     _dictionary_history.version
@@ -2072,6 +2072,12 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Update entity_branch_extension
     + Update limits of pdbx_serial_crystallography_sample_delivery_injection.injector_temperature
+;
+5.306  2018-08-29
+;
+    Changes (ep):
+    + Correct _diffrn_source.type enumeration for 'MICROMAX-003'
+    + Extend _pdbx_audit_support.funding_organization enumeration
 ;
 #
 ###########################################################################
