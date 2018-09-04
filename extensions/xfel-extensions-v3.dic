@@ -393,8 +393,8 @@ save__pdbx_serial_crystallography_sample_delivery_injection.injector_temperature
     _item_units.code              kelvins
     loop_
     _item_range.maximum           
-    _item_range.minimum           .       100.0
-                                  100.0   370.0
+    _item_range.minimum           100.0   100.0
+                                  370.0   100.0
                                   370.0   370.0
      save_
 
