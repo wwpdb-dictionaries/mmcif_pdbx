@@ -1975,11 +1975,14 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Extend _pdbx_audit_support.funding_organization enumeration
 ;
-5.299  2018-08-29
+5.299  2018-09-04
 ;
     Changes (ep):
     + Correct _diffrn_source.type enumeration for 'MICROMAX-003'
     + Extend _pdbx_audit_support.funding_organization enumeration
+    + Incorporate XFEL extension
+    + Add Diamond beamlines VMXi and VMXm to _diffrn_source.type
+    + Add "Gorgon" and "Pathwalking" to _em_software.name
 ;
 #
 ###########################################################################

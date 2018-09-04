@@ -2073,11 +2073,13 @@ data_mmcif_pdbx.dic
     + Update entity_branch_extension
     + Update limits of pdbx_serial_crystallography_sample_delivery_injection.injector_temperature
 ;
-5.306  2018-08-29
+5.306  2018-09-04
 ;
     Changes (ep):
     + Correct _diffrn_source.type enumeration for 'MICROMAX-003'
     + Extend _pdbx_audit_support.funding_organization enumeration
+    + Add Diamond beamlines VMXi and VMXm to _diffrn_source.type
+    + Add "Gorgon" and "Pathwalking" to _em_software.name and _emd_software.name
 ;
 #
 ###########################################################################

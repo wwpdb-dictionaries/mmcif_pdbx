@@ -39,8 +39,6 @@ save__diffrn.pdbx_serial_crystal_experiment
      "_diffrn.pdbx_serial_crystal_experiment"  N  .  
      "_diffrn.pdbx_serial_crystal_experiment"  Y  .  
    #
-   _pdbx_item_context.type       WWPDB_LOCAL
-   _pdbx_item_context.item_name  '_diffrn.pdbx_serial_crystal_experiment'
 save_
 
 #######################

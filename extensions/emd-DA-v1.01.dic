@@ -801,6 +801,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  FREALIX                           .
         '_emd_software.name'  Gautomatch                        .
         '_emd_software.name'  Gctf                              .
+	'_emd_software.name'  Gorgon                            .
         '_emd_software.name'  HADDOCK                           .
         '_emd_software.name'  hsearch_lorentz                   .
         '_emd_software.name'  I-TASSER                          .
@@ -827,6 +828,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  NAMD                              .
         '_emd_software.name'  NOVACTF                           .
         '_emd_software.name'  O                                 .
+        '_emd_software.name'  Pathwalking                       .	
         '_emd_software.name'  PEET                              .
         '_emd_software.name'  PHENIX                            .
         '_emd_software.name'  POINTLESS                         .
