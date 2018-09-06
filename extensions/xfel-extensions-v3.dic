@@ -300,7 +300,6 @@ save__pdbx_serial_crystallography_sample_delivery.method
     loop_
     _item_enumeration.value      'fixed target'
                                  'injection'
-                                 'gas dynamic virtual nozzle'
      save_
 
 #########################################################
