@@ -2,14 +2,9 @@
 #
 #  File: chem_comp-extension.dic
 #  Date: 1-Aug-2018 Ep
-#  Update: 
+#  Update: 10-Oct-2018
 #
 #  Draft dictionary extensions for extending the chemical components definition to support carbohydrates
-#
-#  CHEM_COMP - Adds new _chem_comp.pdbx_core_comp_id to support generic 'core' parent
-#
-#  CHEM_COMP_ATOM - Adds _chem_comp_atom.pdbx_standard_atom_id, _chem_comp_atom.pdbx_core_comp_id, and
-#                   _chem_comp_atom.pdbx_core_atom_id to provide mappings
 #
 #  PDBX_CHEM_COMP_SYNONYMS - reuse of existing but never used category to provide synonyms
 #
@@ -17,80 +12,8 @@
 #  PDBX_CHEM_COMP_RELATED - Describes relationship between monosaccaharide and
 #                           its core structure
 #
-# PDBX_CHEM_COMP_ATOM_RELATED - Desribes tha atom mapping between related components
+# PDBX_CHEM_COMP_ATOM_RELATED - Describes the atom level nomenclature mapping between related components
 # ----------------------------------------------------------------------------------------------------------------------------
-
-###############
-## CHEM_COMP ##
-###############
-
-save__chem_comp.pdbx_core_comp_id
-    _item_description.description
-;              This data item is a pointer to _chem_comp.id in the CHEM_COMP
-               category. This item links to the core component from which this
-	       is derived.
-;
-    _item.name                  '_chem_comp.pdbx_core_comp_id'
-    _item.category_id           chem_comp
-    _item.mandatory_code          no
-    _item_type.code               ucode
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_chem_comp.pdbx_core_comp_id'
-     save_
-
-
-
-####################
-## CHEM_COMP_ATOM ##
-####################
-
-save__chem_comp_atom.pdbx_standard_atom_id
-    _item_description.description
-;              The value of _chem_comp_atom.pdbx_standard_atom_id must uniquely identify
-               each atom in each monomer in the CHEM_COMP_ATOM list.
-
-               This item is a holding place during remediation efforts and will not be exported.
-;
-    _item.name                    '_chem_comp_atom.pdbx_standard_atom_id'
-    _item.category_id             chem_comp_atom
-    _item.mandatory_code          no
-    _item_type.code               atcode
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_chem_comp_atom.pdbx_standard_atom_id'
-     save_
-
-
-save__chem_comp_atom.pdbx_core_atom_id
-    _item_description.description
-;              The value of _chem_comp_atom.pdbx_core_atom_id maps this components
-               atoms to a core component specified by
-	       _chem_comp_atom.pdbx_core_comp_id.
-;
-    _item.name                  '_chem_comp_atom.pdbx_core_atom_id'
-    _item.category_id             chem_comp_atom
-    _item.mandatory_code          no
-    _item_type.code               atcode
-    # Maybe need a different linking to different category
-    #_item_linked.child_name       '_chem_comp_atom.pdbx_core_atom_id'
-    #_item_linked.parent_name      '_chem_comp_atom.atom_id'
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_chem_comp_atom.pdbx_core_atom_id'
-     save_
-
-save__chem_comp_atom.pdbx_core_comp_id
-    _item_description.description
-;              The value of _chem_comp_atom.pdbx_core_comp_id maps this components
-               atoms to a core component specified by _chem_comp.pdbx_core_comp_id.
-;
-    _item.name                  '_chem_comp_atom.pdbx_core_comp_id'
-    _item.category_id             chem_comp_atom
-    _item.mandatory_code          no
-    _item_type.code               ucode
-    _item_linked.child_name       '_chem_comp_atom.pdbx_core_comp_id'
-    _item_linked.parent_name      '_chem_comp.pdbx_core_comp_id'
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_chem_comp_atom.pdbx_core_atom_id'
-     save_
 
 #############################
 ## PDBX_CHEM_COMP_SYNONYMS ##
@@ -187,7 +110,7 @@ save_
 ############################
 save_pdbx_chem_comp_related
    #
-   _category.description     'PDBX_CHEM_COMP_RELATED describes the relationship between a monosaccharide and its core structure.'
+   _category.description     'PDBX_CHEM_COMP_RELATED describes the relationship between two chemical components.'
    _category.id              pdbx_chem_comp_related
    _category.mandatory_code  no
    #
@@ -258,7 +181,7 @@ save__pdbx_chem_comp_related.relationship_type
    loop_
    _item_enumeration.value
    _item_enumeration.detail      
-        'Carbohydrate core'      'References a core carbohydrate structure'
+        'Carbohydrate core'      'References a common core carbohydrate structure'
         'Precursor'              'The related component is a precursor for this one'
    #
 save_
@@ -279,7 +202,7 @@ save_
 #################################
 save_pdbx_chem_comp_atom_related
    #
-   _category.description     'PDBX_CHEM_COMP_ATOM_RELATED describes the relationship between a monosaccharide and its core structure at the atomic level.'
+   _category.description     'PDBX_CHEM_COMP_ATOM_RELATED provides atom level nomenclature mapping between two related chemical components.'
    _category.id              pdbx_chem_comp_atom_related
    _category.mandatory_code  no
    #

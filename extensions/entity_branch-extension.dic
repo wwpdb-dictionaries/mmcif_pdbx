@@ -80,7 +80,7 @@ save__struct_conn.pdbx_ptnr2_atom_stereo_config
 
 save__struct_conn.pdbx_ptnr2_leaving_atom_id
     _item_description.description
-;              The leaving atom that is removed from seoncd atom making the linkage. 
+;              The leaving atom that is removed from second atom making the linkage. 
 
 ;
     _item.name                  '_struct_conn.pdbx_ptnr2_leaving_atom_id'
@@ -106,8 +106,8 @@ save__struct_conn.pdbx_role
                                  'acceptor'
                                  'negative'
                                  'positive'
-                                 'metal'
                                  'metal coordination'
+                                 'Glycosylation'
     loop_
     _item_enumeration.value
     _item_enumeration.detail     Glycosylation                      .
@@ -234,7 +234,7 @@ save__pdbx_entity_branch_list.num
 save_pdbx_entity_branch_link
     _category.description
 ;              Data items in the PDBX_ENTITY_BRANCH_LINK category give details about
-               the linkages between components within branched entities.
+               the linkages between components within a branched entity.
 ;
     _category.id                  pdbx_entity_branch_link
     _category.mandatory_code      no
@@ -548,7 +548,7 @@ save__pdbx_entity_branch.type
 save_pdbx_branch_scheme
     _category.description
 ;              The PDBX_BRANCH_SCHEME category provides residue level nomenclature
-  	       mapping for branch chain entitie.
+  	       mapping for branch chain entities.
 ;
     _category.id                  pdbx_branch_scheme
     _category.mandatory_code      no
