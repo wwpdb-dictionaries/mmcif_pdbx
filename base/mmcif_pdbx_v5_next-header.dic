@@ -2087,6 +2087,7 @@ data_mmcif_pdbx.dic
     + Correct examples for _pdbx_related_exp_data_set
     + _diffrn_detector.type correct type for 'BRUKER PHOTON 100'
     + Extend audit content types to support 'Chemical component'
+    + Add cisTEM and Toaz to em_software.name and emd_software.name
 ;
 #
 ###########################################################################

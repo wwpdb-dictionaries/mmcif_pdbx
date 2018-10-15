@@ -769,6 +769,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  Bsoft                             .
         '_emd_software.name'  Build_Fspace                      .
         '_emd_software.name'  'CCP4 package'                    .
+        '_emd_software.name'  cisTEM                            .
         '_emd_software.name'  CNS                               .
         '_emd_software.name'  Coot                              .
         '_emd_software.name'  Cow                               .
@@ -866,6 +867,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  'TOM Toolbox'                     .
         '_emd_software.name'  TOMO3D                            .
         '_emd_software.name'  TOMOCTF                           .
+        '_emd_software.name'  Topaz                             .
         '_emd_software.name'  'UCSF Chimera'                    .
         '_emd_software.name'  'UCSF Tomography'                 .
         '_emd_software.name'  'UCSFImage'                       .
