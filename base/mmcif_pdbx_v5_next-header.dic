@@ -2086,6 +2086,7 @@ data_mmcif_pdbx.dic
     Changes (ep/jmb):
     + Correct examples for _pdbx_related_exp_data_set
     + _diffrn_detector.type correct type for 'BRUKER PHOTON 100'
+    + Extend audit content types to support 'Chemical component'
 ;
 #
 ###########################################################################
