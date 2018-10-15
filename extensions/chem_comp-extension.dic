@@ -291,7 +291,7 @@ save__pdbx_chem_comp_atom_related.related_atom_id
 ;
     _item.name                  '_pdbx_chem_comp_atom_related.related_atom_id'
     _item.category_id             pdbx_chem_comp_atom_related
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               atcode
      save_
 
