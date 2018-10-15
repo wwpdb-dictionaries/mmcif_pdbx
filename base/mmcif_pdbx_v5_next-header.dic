@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.306
+    _dictionary.version         5.307
 #
      loop_
     _dictionary_history.version
@@ -2080,6 +2080,12 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Add Diamond beamlines VMXi and VMXm to _diffrn_source.type
     + Add "Gorgon" and "Pathwalking" to _em_software.name and _emd_software.name
+;
+5.307  2018-10-15
+;
+    Changes (ep/jmb):
+    + Correct examples for _pdbx_related_exp_data_set
+    + _diffrn_detector.type correct type for 'BRUKER PHOTON 100'
 ;
 #
 ###########################################################################
