@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.307
+    _dictionary.version         5.308
 #
      loop_
     _dictionary_history.version
@@ -2089,6 +2089,13 @@ data_mmcif_pdbx.dic
     + Extend audit content types to support 'Chemical component'
     + Add cisTEM and Toaz to em_software.name and emd_software.name
     + Update _pdbx_audit_support.funding_organization enumeration
+;
+5.308  2018-11-08
+;
+    Changes (ep):
+    + Add Buccaneer to _em_software.name/_emd_software.name enumeration
+    + Add enumeration to _pdbx_prd_audit.processing_site
+    + Change _pdbx_audit_support.funding_organization to mandatory
 ;
 #
 ###########################################################################
