@@ -1153,7 +1153,11 @@ save__emd_supramolecule.parent_id
     _item.name                  '_emd_supramolecule.parent_id'
     _item.category_id           emd_supramolecule
     _item.mandatory_code        yes
-    _item_type.code             non_negative_int
+    _item_type.code             int
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   0
+                                  0   0
      save_
 
 save__emd_supramolecule.entity_id_list

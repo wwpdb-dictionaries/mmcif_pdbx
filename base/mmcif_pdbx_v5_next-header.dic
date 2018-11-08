@@ -2099,6 +2099,8 @@ data_mmcif_pdbx.dic
     + Add CHESS BEAMLINE G3, PAL-XFEL BEAMLINE NCI beamlines
     + Add Rigaku HyPic-6000HE detector
     + Add newer AVANCE spectrometers to _pdbx_nmr_spectrometer.model
+    + Adjust limits for _refine.ls_d_res_high to not include 0
+    + Remove use of non_negative_int as regular expression incorrect
 ;
 #
 ###########################################################################

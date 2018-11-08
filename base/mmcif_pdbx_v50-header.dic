@@ -2002,6 +2002,8 @@ data_mmcif_pdbx.dic
     + Add CHESS BEAMLINE G3, PAL-XFEL BEAMLINE NCI beamlines
     + Add Rigaku HyPic-6000HE detector
     + Add newer AVANCE spectrometers to _pdbx_nmr_spectrometer.model
+    + Adjust limits for _refine.ls_d_res_high to not include 0
+    + Remove use of non_negative_int as regular expression incorrect
 ;
 #
 ###########################################################################
@@ -2533,7 +2535,6 @@ data_mmcif_pdbx.dic
 ;              A set of 3x4 matrices separated by spaces and newlines on each line.
                Final newline optional. Optional spaces at start of lines. Blank lines accepted.
 ;
-   non_negative_int    numb '[0-9]|[1-9][0-9]*' 'Non negative integers (0,1,2,..)'
    positive_int        numb '[1-9][0-9]*'       'Positive integers (1,2,3,..)'
    emd_id              char 'EMD-[0-9]{4,}'     'EMDB code'
    pdb_id              char '[1-9][A-Z0-9][A-Z0-9][A-Z0-9]' 'PDB code (upper cases)'
