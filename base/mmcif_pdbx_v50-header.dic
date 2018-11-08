@@ -1999,6 +1999,9 @@ data_mmcif_pdbx.dic
     + Add Buccaneer to _em_software.name enumeration
     + Add enumeration to _pdbx_prd_audit.processing_site
     + Change _pdbx_audit_support.funding_organization to mandatory
+    + Add CHESS BEAMLINE G3, PAL-XFEL BEAMLINE NCI beamlines
+    + Add Rigaku HyPic-6000HE detector
+    + Add newer AVANCE spectrometers to _pdbx_nmr_spectrometer.model
 ;
 #
 ###########################################################################
