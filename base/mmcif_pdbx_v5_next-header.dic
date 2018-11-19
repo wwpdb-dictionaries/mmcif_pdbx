@@ -2105,6 +2105,9 @@ data_mmcif_pdbx.dic
 5.309  2018-11-09
 ;
     + Add various em_* categories to em_group
+    + Add 'Science and Technology Funding Council' and 'Global Challenges Research Fund' 
+      to _pdbx_audit_support.funding_organization
+    + _pdbx_audit_support.funding_organization mandatory for deposition
 ;
 #
 ###########################################################################
