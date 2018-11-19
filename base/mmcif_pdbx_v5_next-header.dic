@@ -2109,6 +2109,7 @@ data_mmcif_pdbx.dic
       to _pdbx_audit_support.funding_organization
     + _pdbx_audit_support.funding_organization mandatory for deposition
     + _em_imaging.c2_aperture_diameter units changed to microns and lower limit changed to 1
+    + _pdbx_nmr_chem_shift_ref.mol_common_name add glucose to enumeration
 ;
 #
 ###########################################################################
