@@ -2108,6 +2108,7 @@ data_mmcif_pdbx.dic
     + Add 'Science and Technology Funding Council' and 'Global Challenges Research Fund' 
       to _pdbx_audit_support.funding_organization
     + _pdbx_audit_support.funding_organization mandatory for deposition
+    + _em_imaging.c2_aperture_diameter units changed to microns and lower limit changed to 1
 ;
 #
 ###########################################################################

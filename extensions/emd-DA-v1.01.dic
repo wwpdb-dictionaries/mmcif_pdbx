@@ -4215,8 +4215,8 @@ save__emd_microscopy.c2_aperture_diameter
     loop_
      _item_range.minimum        
      _item_range.maximum
-                                10  10
-                                10 150
+                                 1   1
+                                 1 150
                                150 150 
     loop_
     _pdbx_item_range.name
