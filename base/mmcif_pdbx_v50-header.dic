@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.301
+    _dictionary.version         5.302
 #
      loop_
     _dictionary_history.version
@@ -2004,6 +2004,11 @@ data_mmcif_pdbx.dic
     + Adjust limits for _refine.ls_d_res_high to not include 0
     + Remove use of non_negative_int as regular expression incorrect
     + Add citation_doi and exp_data_doi for use in citation and pdbx_related_exp_data_set
+;
+5.302  2018-11-19
+;
+    Changes (ep):
+    + Add various em_* categories to em_group
 ;
 #
 ###########################################################################
