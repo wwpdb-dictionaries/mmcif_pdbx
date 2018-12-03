@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.302
+    _dictionary.version         5.303
 #
      loop_
     _dictionary_history.version
@@ -2015,6 +2015,12 @@ data_mmcif_pdbx.dic
     + _em_imaging.c2_aperture_diameter units changed to microns and lower limit changed to 1
     + _pdbx_nmr_chem_shift_ref.mol_common_name add glucose to enumeration
 ;
+5.303  2018-12-03
+;
+    Changes (ep):
+    + Change ec-type to support new enzyme classifications
+    + Add TRANSLOCASE to _struct_keywords.pdbx_keywords enumeration
+;
 #
 ###########################################################################
 #
@@ -2518,7 +2524,7 @@ data_mmcif_pdbx.dic
 ;
                ec-type   char
 #    '[1-6](.[1-9][0-9]?)?(.[1-9][0-9]?)?(.[1-9][0-9]?[0-9]?)?'
-    '([1-6]((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?[0-9]?)|(.-)))(([ ]*,[ ]*)([1-6]((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?[0-9]?)|(.-))))*'
+    '([1-7]((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?[0-9]?)|(.-)))(([ ]*,[ ]*)([1-7]((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?)|(.-))((.[1-9][0-9]?[0-9]?)|(.-))))*'
 ;
                Approximate format of Enzyme Commission EC number. 1.2.3.4 with
                optional parts.
