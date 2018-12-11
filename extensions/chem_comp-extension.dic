@@ -12,7 +12,9 @@
 #  PDBX_CHEM_COMP_RELATED - Describes relationship between monosaccaharide and
 #                           its core structure
 #
-# PDBX_CHEM_COMP_ATOM_RELATED - Describes the atom level nomenclature mapping between related components
+#  PDBX_CHEM_COMP_ATOM_RELATED - Describes the atom level nomenclature mapping between related components
+#
+#  CHEM_COMP_ATOM - extended to provide IUPAC/IUBMB nomeclature
 # ----------------------------------------------------------------------------------------------------------------------------
 
 #############################
@@ -102,6 +104,20 @@ save__pdbx_chem_comp_synonyms.provenance
                                   CHEMBL    .
                                   PDB       .
                                   PUBCHEM   .
+   #
+save_
+
+save__pdbx_chem_comp_synonyms.type
+   #
+   _item_description.description  'The type of this synonym.'
+   #
+   _item.name                    '_pdbx_chem_comp_synonyms.type'
+   _item.category_id             pdbx_chem_comp_synonyms
+   _item.mandatory_code          no
+   _item_type.code               line
+    loop_
+    _item_examples.case          Preferred
+                                 'Trade name'
    #
 save_
 
@@ -352,3 +368,19 @@ save__pdbx_chem_comp_atom_related.related_type
     _item_linked.child_name       '_pdbx_chem_comp_atom_related.related_type'
     _item_linked.parent_name      '_pdbx_chem_comp_related.relationship_type'
 save_
+
+####################
+## CHEM_COMP_ATOM ##
+####################
+save__chem_comp_atom.pdbx_stnd_atom_id
+    _item_description.description
+;              A standard identifier for the atom. This data item is used when
+               IUPAC/IUBMB nomenclature exists for labeling atoms.
+;
+    _item.name                    '_chem_comp_atom.pdbx_stnd_atom_id'
+    _item.category_id             chem_comp_atom
+    _item.mandatory_code          no
+    _item_type.code               line
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_chem_comp_atom.pdbx_stnd_atom_id'
+     save_
