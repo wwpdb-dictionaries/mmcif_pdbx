@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.303
+    _dictionary.version         5.304
 #
      loop_
     _dictionary_history.version
@@ -2020,6 +2020,12 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Change ec-type to support new enzyme classifications
     + Add TRANSLOCASE to _struct_keywords.pdbx_keywords enumeration
+;
+5.304  2018-01-29
+;
+    Changes (ep):
+    + Adjust contexts for _pdbx_chem_comp_audit.annotator and
+      _pdbx_chem_comp_audit.details
 ;
 #
 ###########################################################################
