@@ -2131,6 +2131,9 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Set maximum for _em_imaging.accelerating_voltage to 400
     + Require _reflns.pdbx_number_measured_all to be positive
+    + For deposition, make _refine.pdbx_method_to_determine_struct, 
+      _refine.pdbx_starting_model, _reflns_shell.number_unique_obs
+      mandatory
 ;
 #
 ###########################################################################
