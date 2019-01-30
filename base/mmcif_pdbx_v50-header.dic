@@ -2027,6 +2027,7 @@ data_mmcif_pdbx.dic
     + Adjust contexts for _pdbx_chem_comp_audit.annotator and
       _pdbx_chem_comp_audit.details
     + Extend _pdbx_audit_support.funding_organization enumeration
+    + Set maximum for _em_imaging.accelerating_voltage to 400
 ;
 #
 ###########################################################################
