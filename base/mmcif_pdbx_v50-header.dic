@@ -2033,6 +2033,7 @@ data_mmcif_pdbx.dic
       mandatory
     + Add 'Excillum MetalJet D2 70 kV' and 'ELETTRA BEAMLINE 11.2C
       to _diffrn_source.type enumeration
+    + Change _em_3d_fitting_list.pdb_chain_id type to asym_id
 ;
 #
 ###########################################################################
@@ -2554,6 +2555,10 @@ data_mmcif_pdbx.dic
                point_symmetry      char
                '[CD][1-9]|[CD][1-9][0-9]*|T|O|I'
 ;              Encodes point symmetry as Cn, Dn, T, O, or I  (case sensitive), where n is a positive integer.
+;
+               asym_id             char
+               '[A-Za-z0-9]+'
+;              A single chain or asym ids.
 ;
                id_list              char
                '[A-Za-z0-9]+(,[A-Za-z0-9]+)*'

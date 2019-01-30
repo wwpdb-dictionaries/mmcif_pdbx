@@ -7753,7 +7753,7 @@ structure have been used for fitting, this field can be left blank.
     _item.name                   '_emd_modelling_initial_model.pdb_chain_id'
     _item.category_id              emd_modelling_initial_model
     _item.mandatory_code           no
-    _item_type.code                code
+    _item_type.code                asym_id
     _item_examples.case          A
      save_
 
