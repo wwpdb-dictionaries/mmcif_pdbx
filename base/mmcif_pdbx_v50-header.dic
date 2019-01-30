@@ -2026,6 +2026,7 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Adjust contexts for _pdbx_chem_comp_audit.annotator and
       _pdbx_chem_comp_audit.details
+    + Extend _pdbx_audit_support.funding_organization enumeration
 ;
 #
 ###########################################################################
