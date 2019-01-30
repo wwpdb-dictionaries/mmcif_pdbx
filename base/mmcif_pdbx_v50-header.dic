@@ -2031,6 +2031,8 @@ data_mmcif_pdbx.dic
     + For deposition, make _refine.pdbx_method_to_determine_struct, 
       _refine.pdbx_starting_model, _reflns_shell.number_unique_obs
       mandatory
+    + Add 'Excillum MetalJet D2 70 kV' and 'ELETTRA BEAMLINE 11.2C
+      to _diffrn_source.type enumeration
 ;
 #
 ###########################################################################
