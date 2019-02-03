@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.312
+    _dictionary.version         5.313
 #
      loop_
     _dictionary_history.version
@@ -2137,6 +2137,12 @@ data_mmcif_pdbx.dic
     + Add 'Excillum MetalJet D2 70 kV' and 'ELETTRA BEAMLINE 11.2C
       to _diffrn_source.type enumeration
     + Change _em_3d_fitting_list.pdb_chain_id type to asym_id
+;
+5.313  2018-02-03
+;
+    Changes (ep):
+    + Revert change for _refine.pdbx_starting_model being mandatory in deposition
+    + Add enumeration for struct_conn.conn_type_id
 ;
 #
 ###########################################################################
