@@ -2143,6 +2143,9 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Revert change for _refine.pdbx_starting_model being mandatory in deposition
     + Add enumeration for struct_conn.conn_type_id
+    + Extend _pdbx_audit_support.funding_organization with KU Leuven 
+      and Lundbeckfonden
+
 ;
 #
 ###########################################################################
