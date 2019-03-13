@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.305
+    _dictionary.version         5.306
 #
      loop_
     _dictionary_history.version
@@ -2042,6 +2042,11 @@ data_mmcif_pdbx.dic
     + Add enumeration for struct_conn.conn_type_id
     + Extend _pdbx_audit_support.funding_organization with KU Leuven 
       and Lundbeckfonden
+;
+5.306  2018-03-16
+;
+    Changes (ep):
+    + Extend _pdbx_audit_support.funding_organization
 ;
 #
 ###########################################################################

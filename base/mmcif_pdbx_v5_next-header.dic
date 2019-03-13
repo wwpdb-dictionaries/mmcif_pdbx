@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.313
+    _dictionary.version         5.314
 #
      loop_
     _dictionary_history.version
@@ -2146,6 +2146,11 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization with KU Leuven 
       and Lundbeckfonden
 
+;
+5.314  2018-03-16
+;
+    Changes (ep):
+    + Extend _pdbx_audit_support.funding_organization
 ;
 #
 ###########################################################################
