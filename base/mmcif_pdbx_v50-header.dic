@@ -2047,6 +2047,7 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Extend _pdbx_audit_support.funding_organization
+    + Restrict _entity.pdbx_number_of_molecules to integers
 ;
 #
 ###########################################################################
