@@ -2043,11 +2043,12 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization with KU Leuven 
       and Lundbeckfonden
 ;
-5.306  2018-03-16
+5.306  2018-03-18
 ;
     Changes (ep):
     + Extend _pdbx_audit_support.funding_organization
     + Restrict _entity.pdbx_number_of_molecules to integers
+    + Remove polysaccharide(D) and polysaccharide(L)  type from entity_poly.type
 ;
 #
 ###########################################################################
