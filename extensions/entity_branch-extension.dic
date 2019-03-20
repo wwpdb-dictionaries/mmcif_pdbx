@@ -4,6 +4,7 @@
 #  Date: 8-May-2012 Jdw
 #  Update:  1-Aug-2018 Ep
 #          16-Aug-2018 Ep Removal of pdbx_struct_binding_mode, extension of pdbx_branch_scheme
+#          20-Mar-2019 Ep Removal of enumeration from struct_conn.pdbx_role
 #
 #  Draft dictionary extension for representing branched enities
 #
@@ -108,10 +109,6 @@ save__struct_conn.pdbx_role
                                  'positive'
                                  'metal coordination'
                                  'Glycosylation'
-    loop_
-    _item_enumeration.value
-    _item_enumeration.detail     Glycosylation                      .
-                                 'Post-translational modification'  . 
      save_
 
 #############################
