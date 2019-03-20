@@ -2156,6 +2156,7 @@ data_mmcif_pdbx.dic
     + Update example for _audit_author.identifier_ORCID and 
       _citation_author.identifier_ORCID with an invalid checksum
     + Add "LaB6 thermoionic" to _diffrn_source.type enumeration
+    + Add emClairity to em_software.name and emd_software.name enumeration
 ;
 #
 ###########################################################################
