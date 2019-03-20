@@ -2147,12 +2147,14 @@ data_mmcif_pdbx.dic
       and Lundbeckfonden
 
 ;
-5.314  2018-03-18
+5.314  2018-03-20
 ;
     Changes (ep):
     + Extend _pdbx_audit_support.funding_organization
     + Restrict _entity.pdbx_number_of_molecules to integers
     + Remove polysaccharide(D) and polysaccharide(L)  type from entity_poly.type
+    + Update example for _audit_author.identifier_ORCID and 
+      _citation_author.identifier_ORCID with an invalid checksum
 ;
 #
 ###########################################################################
