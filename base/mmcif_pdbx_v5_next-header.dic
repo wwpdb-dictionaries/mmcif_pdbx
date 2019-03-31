@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.314
+    _dictionary.version         5.315
 #
      loop_
     _dictionary_history.version
@@ -2161,6 +2161,11 @@ data_mmcif_pdbx.dic
       _refine_ls_shell.d_res_high to not include 0.0
     + Remove enumerations from _struct_conn.pdbx_role, _struct_conn.ptnr1_role,
       _struct_conn.ptnr2_role
+;
+5.315  2018-03-20
+;
+    Changes (ep):
+    + Add _pdbx_entry_details.has_ligand_of_interest flag
 ;
 #
 ###########################################################################
