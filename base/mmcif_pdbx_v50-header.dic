@@ -2060,6 +2060,7 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Add 'carbonyl carbon' to _pdbx_nmr_chem_shift_ref.atom_group enumeration
+    + Extend _pdbx_audit_support.funding_organization
 ;
 #
 ###########################################################################
