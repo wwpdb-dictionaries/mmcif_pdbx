@@ -1,0 +1,20 @@
+
+save__pdbx_entry_details.has_ligand_of_interest
+    _item_description.description
+;  A flag to indicate if author has indicated that there are any or no ligands
+   that are the focus of research.
+;
+    _item.name                 '_pdbx_entry_details.has_ligand_of_interest'
+    _item.category_id            pdbx_entry_details
+    _item.mandatory_code         no
+    _item_type.code              ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+          Y  'Ligand of interest present'
+          N  'No ligands of interest present'
+    _item_examples.case           Y
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_pdbx_entry_details.has_ligand_of_interest'
+    save_
+

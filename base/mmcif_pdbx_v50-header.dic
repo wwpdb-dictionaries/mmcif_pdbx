@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.306
+    _dictionary.version         5.307
 #
      loop_
     _dictionary_history.version
@@ -2055,6 +2055,11 @@ data_mmcif_pdbx.dic
     + Add emClairity to em_software.name enumeration
     + Change lower limit for _refine.ls_d_res_low, _refine_ls_shell.d_res_low,
       _refine_ls_shell.d_res_high to not include 0.0
+;
+5.307  2018-04-01
+;
+    Changes (ep):
+    + Add 'carbonyl carbon' to _pdbx_nmr_chem_shift_ref.atom_group enumeration
 ;
 #
 ###########################################################################

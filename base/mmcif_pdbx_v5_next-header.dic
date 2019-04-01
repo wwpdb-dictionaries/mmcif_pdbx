@@ -2162,10 +2162,11 @@ data_mmcif_pdbx.dic
     + Remove enumerations from _struct_conn.pdbx_role, _struct_conn.ptnr1_role,
       _struct_conn.ptnr2_role
 ;
-5.315  2018-03-20
+5.315  2018-04-01
 ;
     Changes (ep):
     + Add _pdbx_entry_details.has_ligand_of_interest flag
+    + Add 'carbonyl carbon' to _pdbx_nmr_chem_shift_ref.atom_group enumeration
 ;
 #
 ###########################################################################
