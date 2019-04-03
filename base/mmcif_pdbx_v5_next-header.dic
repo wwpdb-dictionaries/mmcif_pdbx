@@ -2168,6 +2168,7 @@ data_mmcif_pdbx.dic
     + Add _pdbx_entry_details.has_ligand_of_interest flag
     + Add 'carbonyl carbon' to _pdbx_nmr_chem_shift_ref.atom_group enumeration
     + Extend _pdbx_audit_support.funding_organization
+    + Create deposition enumeration for _pdbx_nmr_software.name
 ;
 #
 ###########################################################################
