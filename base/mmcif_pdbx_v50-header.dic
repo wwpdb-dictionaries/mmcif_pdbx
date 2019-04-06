@@ -2021,7 +2021,7 @@ data_mmcif_pdbx.dic
     + Change ec-type to support new enzyme classifications
     + Add TRANSLOCASE to _struct_keywords.pdbx_keywords enumeration
 ;
-5.304  2018-01-29
+5.304  2019-01-29
 ;
     Changes (ep):
     + Adjust contexts for _pdbx_chem_comp_audit.annotator and
@@ -2035,7 +2035,7 @@ data_mmcif_pdbx.dic
       to _diffrn_source.type enumeration
     + Change _em_3d_fitting_list.pdb_chain_id type to asym_id
 ;
-5.305  2018-02-03
+5.305  2019-02-03
 ;
     Changes (ep):
     + Revert change for _refine.pdbx_starting_model being mandatory in deposition
@@ -2043,7 +2043,7 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization with KU Leuven 
       and Lundbeckfonden
 ;
-5.306  2018-03-20
+5.306  2019-03-20
 ;
     Changes (ep):
     + Extend _pdbx_audit_support.funding_organization
@@ -2056,7 +2056,7 @@ data_mmcif_pdbx.dic
     + Change lower limit for _refine.ls_d_res_low, _refine_ls_shell.d_res_low,
       _refine_ls_shell.d_res_high to not include 0.0
 ;
-5.307  2018-04-01
+5.307  2019-04-01
 ;
     Changes (ep):
     + Add 'carbonyl carbon' to _pdbx_nmr_chem_shift_ref.atom_group enumeration

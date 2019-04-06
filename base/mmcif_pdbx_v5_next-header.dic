@@ -2123,7 +2123,7 @@ data_mmcif_pdbx.dic
     + Extend chem_comp-extension by adding _pdbx_chem_comp_synonyms.type and
       _chem_comp_atom.pdbx_stnd_atom_id 
 ;
-5.312  2018-01-29
+5.312  2019-01-29
 ;
     Changes (ep):
     + Adjust contexts for _pdbx_chem_comp_audit.annotator and
@@ -2138,7 +2138,7 @@ data_mmcif_pdbx.dic
       to _diffrn_source.type enumeration
     + Change _em_3d_fitting_list.pdb_chain_id type to asym_id
 ;
-5.313  2018-02-03
+5.313  2019-02-03
 ;
     Changes (ep):
     + Revert change for _refine.pdbx_starting_model being mandatory in deposition
@@ -2147,7 +2147,7 @@ data_mmcif_pdbx.dic
       and Lundbeckfonden
 
 ;
-5.314  2018-03-20
+5.314  2019-03-20
 ;
     Changes (ep):
     + Extend _pdbx_audit_support.funding_organization
@@ -2162,7 +2162,7 @@ data_mmcif_pdbx.dic
     + Remove enumerations from _struct_conn.pdbx_role, _struct_conn.ptnr1_role,
       _struct_conn.ptnr2_role
 ;
-5.315  2018-04-01
+5.315  2019-04-01
 ;
     Changes (ep):
     + Add _pdbx_entry_details.has_ligand_of_interest flag
