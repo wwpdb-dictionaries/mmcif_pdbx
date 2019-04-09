@@ -761,6 +761,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  3dmod                             .
         '_emd_software.name'  ADP_EM                            .
         '_emd_software.name'  AIMLESS                           .
+        '_emd_software.name'  Amber                             .
         '_emd_software.name'  AmiraFPM                          .
         '_emd_software.name'  Appion                            .
         '_emd_software.name'  Auto3DEM                          .

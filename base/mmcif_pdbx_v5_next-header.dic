@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.315
+    _dictionary.version         5.316
 #
      loop_
     _dictionary_history.version
@@ -2169,6 +2169,12 @@ data_mmcif_pdbx.dic
     + Add 'carbonyl carbon' to _pdbx_nmr_chem_shift_ref.atom_group enumeration
     + Extend _pdbx_audit_support.funding_organization
     + Create deposition enumeration for _pdbx_nmr_software.name
+;
+5.316  2019-04-09
+;
+    Changes (ep):
+    + Add Amber to _em_software.name and _emd_software.name enumeration
+    + Extend _pdbx_audit_support.funding_organization
 ;
 #
 ###########################################################################
