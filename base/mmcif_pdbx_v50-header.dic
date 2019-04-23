@@ -2080,6 +2080,8 @@ data_mmcif_pdbx.dic
       _pdbx_chem_comp_identifier.type, _pdbx_entity_descriptor.type.
     + Increase soft upper limit for _reflns_shell.Rmerge_I_obs
     + Add _pdbx_depui_status_flags.post_rel_replacement_reason
+    + Add _pdbx_database_status.post_rel_recvd_coord_date, _pdbx_database_status.post_rel_recvd_coord,
+      _pdbx_database_status.post_rel_status.
 ;
 #
 ###########################################################################
