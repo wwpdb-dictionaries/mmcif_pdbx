@@ -2184,6 +2184,7 @@ data_mmcif_pdbx.dic
       em_admin.replace_existing_entry_flag and _emd_admin.replace_existing_entry_flag
       non-mandatory.
     + Extend _pdbx_audit_support.funding_organization enumeration
+    + Increase soft upper limit for _reflns_shell.Rmerge_I_obs
 ;
 #
 ###########################################################################

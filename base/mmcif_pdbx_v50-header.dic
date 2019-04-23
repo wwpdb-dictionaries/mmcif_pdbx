@@ -2078,6 +2078,7 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Incorporate enumeration/examples for branch change carbohydrates including _entity.type,
       _pdbx_chem_comp_identifier.type, _pdbx_entity_descriptor.type.
+    + Increase soft upper limit for _reflns_shell.Rmerge_I_obs
 ;
 #
 ###########################################################################
