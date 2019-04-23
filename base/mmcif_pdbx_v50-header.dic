@@ -2075,6 +2075,7 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Make _em_depui.obsolete_instructions and em_admin.replace_existing_entry_flag
       non-mandatory.
+    + Extend _pdbx_audit_support.funding_organization enumeration
 ;
 #
 ###########################################################################

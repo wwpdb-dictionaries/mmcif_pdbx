@@ -2183,6 +2183,7 @@ data_mmcif_pdbx.dic
     + Make _emd_depui.obsolete_instructions, _em_depui.obsolete_instructions,
       em_admin.replace_existing_entry_flag and _emd_admin.replace_existing_entry_flag
       non-mandatory.
+    + Extend _pdbx_audit_support.funding_organization enumeration
 ;
 #
 ###########################################################################
