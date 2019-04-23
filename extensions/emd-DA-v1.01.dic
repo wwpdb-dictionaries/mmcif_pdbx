@@ -273,7 +273,7 @@ question.
 ;
     _item.name                  '_emd_admin.replace_existing_entry_flag'
     _item.category_id           emd_admin
-    _item.mandatory_code        yes
+    _item.mandatory_code        no
     _item_type.code             code
     loop_
      _item_enumeration.value
@@ -9482,7 +9482,7 @@ save__emd_depui.obsolete_instructions
 ;
     _item.name                  '_emd_depui.obsolete_instructions'
     _item.category_id           emd_depui
-    _item.mandatory_code        yes
+    _item.mandatory_code        no
     _item_type.code             text
      save_
 

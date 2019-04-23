@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.308
+    _dictionary.version         5.309
 #
      loop_
     _dictionary_history.version
@@ -2069,6 +2069,12 @@ data_mmcif_pdbx.dic
     + Add Amber to _em_software.name enumeration
     + Extend _pdbx_audit_support.funding_organization
     + Change type of _pdbx_struct_assembly_gen.asym_id_list to text
+;
+5.309  2019-04-23
+;
+    Changes (ep):
+    + Make _em_depui.obsolete_instructions and em_admin.replace_existing_entry_flag
+      non-mandatory.
 ;
 #
 ###########################################################################
