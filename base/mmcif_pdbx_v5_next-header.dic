@@ -2177,7 +2177,7 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization
     + Change type of _pdbx_struct_assembly_gen.asym_id_list to text
 ;
-5.317  2019-04-23
+5.317  2019-04-24
 ;
     Changes (ep):
     + Make _emd_depui.obsolete_instructions, _em_depui.obsolete_instructions,
@@ -2188,6 +2188,8 @@ data_mmcif_pdbx.dic
     + Add _pdbx_depui_status_flags.post_rel_replacement_reason
     + Add _pdbx_database_status.post_rel_recvd_coord_date, _pdbx_database_status.post_rel_recvd_coord,
       _pdbx_database_status.post_rel_status.
+    + Create type 'id_list_spc' for an id list with spaces. Use for 
+      pdbx_struct_assembly_gen_depositor_info.chain_id_list
 ;
 #
 ###########################################################################
@@ -2717,6 +2719,10 @@ data_mmcif_pdbx.dic
                id_list              char
                '[A-Za-z0-9]+(,[A-Za-z0-9]+)*'
 ;              A list of comma separated chain or asym ids.
+;
+               id_list_spc          char
+               '[ \t]*[A-Za-z0-9]+([ \t]*,[ \t]*[A-Za-z0-9]+)*[ \t]*'
+;              A list of comma separated chain or asym ids with optional spaces.
 ;
                3x4_matrices         char
                '((([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}?(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n([\t ]*\n)*)){3})*(([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}?(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n([\t ]*\n)*)){2}(([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n?([\t ]*\n)*))[ \t]*'
