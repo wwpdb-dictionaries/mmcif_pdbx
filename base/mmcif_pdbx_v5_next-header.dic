@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.317
+    _dictionary.version         5.318
 #
      loop_
     _dictionary_history.version
@@ -2190,6 +2190,15 @@ data_mmcif_pdbx.dic
       _pdbx_database_status.post_rel_status.
     + Create type 'id_list_spc' for an id list with spaces. Use for 
       pdbx_struct_assembly_gen_depositor_info.chain_id_list
+;
+5.318  2019-05-16
+;
+    Changes (ep/jb):
+    + Add PDB-REDO to software.name enumeration
+    + Set upper limit for _exptl_crystal_grow.pH to 14.0
+    + Update examples for exptl_crystal_grow.method to match enumeration
+    + Add newer AVANCE spectrometers to _pdbx_nmr_spectrometer.model and cleanup
+      old partial names
 ;
 #
 ###########################################################################
