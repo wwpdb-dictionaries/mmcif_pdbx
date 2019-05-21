@@ -2200,10 +2200,11 @@ data_mmcif_pdbx.dic
     + Add newer AVANCE spectrometers to _pdbx_nmr_spectrometer.model and cleanup
       old partial names
 ;
-5.319  2019-05-16
+5.319  2019-05-21
 ;
     Changes (ep/rp):
     + Add emd_map_upload extension
+    + Remove local context from _pdbx_entry_details.has_ligand_of_interest
 ;
 #
 ###########################################################################
