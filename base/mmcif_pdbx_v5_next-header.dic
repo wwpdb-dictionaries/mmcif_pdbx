@@ -2205,6 +2205,7 @@ data_mmcif_pdbx.dic
     Changes (ep/rp):
     + Add emd_map_upload extension
     + Remove local context from _pdbx_entry_details.has_ligand_of_interest
+    + Add Fragon to software.name enumeration
 ;
 #
 ###########################################################################

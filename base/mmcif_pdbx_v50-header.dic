@@ -2097,6 +2097,7 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Add _pdbx_entry_details.has_ligand_of_interest
+    + Add Fragon to software.name enumeration
 ;
 #
 ###########################################################################
