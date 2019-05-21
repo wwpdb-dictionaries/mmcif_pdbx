@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.318
+    _dictionary.version         5.319
 #
      loop_
     _dictionary_history.version
@@ -2199,6 +2199,11 @@ data_mmcif_pdbx.dic
     + Update examples for exptl_crystal_grow.method to match enumeration
     + Add newer AVANCE spectrometers to _pdbx_nmr_spectrometer.model and cleanup
       old partial names
+;
+5.319  2019-05-16
+;
+    Changes (ep/rp):
+    + Add emd_map_upload extension
 ;
 #
 ###########################################################################
