@@ -5218,14 +5218,14 @@ save__emd_image_recording.average_electron_dose_per_image
     _item.mandatory_code          yes
     _item_type.code               float
     _item_units.code               electrons_angstrom_squared
-    _item_examples.case           2
+    _item_examples.case           30.0
     _item_range.minimum           0.0
     _item_range.maximum           .
     loop_
     _pdbx_item_range.name
     _pdbx_item_range.minimum
     _pdbx_item_range.maximum
-     "_emd_image_recording.average_electron_dose_per_image"  1 50
+     "_emd_image_recording.average_electron_dose_per_image"  1 1000
      save_
 
 save__emd_image_recording.details
