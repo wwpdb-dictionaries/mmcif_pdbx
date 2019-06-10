@@ -5,6 +5,7 @@
 #  Update:  1-Aug-2018 Ep
 #          16-Aug-2018 Ep Removal of pdbx_struct_binding_mode, extension of pdbx_branch_scheme
 #          20-Mar-2019 Ep Removal of enumeration from struct_conn.pdbx_role
+#          09-May-2019 Ep Add enumeration back to struct_conn.pdbx_role
 #
 #  Draft dictionary extension for representing branched enities
 #
@@ -103,12 +104,14 @@ save__struct_conn.pdbx_role
     _item.mandatory_code          no
     _item_type.code               uline
     loop_
-    _item_examples.case          'donor'
-                                 'acceptor'
-                                 'negative'
-                                 'positive'
-                                 'metal coordination'
-                                 'Glycosylation'
+    _item_examples.case	         'N-Glycosylation'
+                                 'O-Glycosylation'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail     'N-Glycosylation'  .
+                                 'O-Glycosylation'  .
+				 'C-Mannosylation'  .
+
      save_
 
 #############################

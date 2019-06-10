@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.319
+    _dictionary.version         5.320
 #
      loop_
     _dictionary_history.version
@@ -2207,6 +2207,13 @@ data_mmcif_pdbx.dic
     + Remove local context from _pdbx_entry_details.has_ligand_of_interest
     + Add Fragon to software.name enumeration
     + Make pdbx_nmr_chem_shift_software.software_label non-mandatory
+;
+5.320  2019-06-11
+;
+    Changes (ep/jmb):
+    + Add enumeration for _struct_conn.pdbx_role
+    + Adjust descriptions involving country to include region.
+    + Rename pdbx_entity_descriptor to pdbx_entity_descriptor
 ;
 #
 ###########################################################################
