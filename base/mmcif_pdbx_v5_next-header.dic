@@ -2214,6 +2214,10 @@ data_mmcif_pdbx.dic
     + Add enumeration for _struct_conn.pdbx_role
     + Adjust descriptions involving country to include region.
     + Rename pdbx_entity_descriptor to pdbx_entity_descriptor
+    + Adjust limits of _emd_image_recording.average_electron_dose_per_image and
+      _em_image_recording.avg_electron_dose_per_image"
+    + Add DECTRIS EIGER2 detectors to _diffrn_detector.type
+    + Increase high soft limit for _reflns_shell.pdbx_Rsync_value
 ;
 #
 ###########################################################################
