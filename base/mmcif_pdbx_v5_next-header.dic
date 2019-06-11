@@ -2217,7 +2217,7 @@ data_mmcif_pdbx.dic
     + Adjust limits of _emd_image_recording.average_electron_dose_per_image and
       _em_image_recording.avg_electron_dose_per_image"
     + Add DECTRIS EIGER2 detectors to _diffrn_detector.type
-    + Increase high soft limit for _reflns_shell.pdbx_Rsync_value
+    + Increase high soft limit for _reflns_shell.pdbx_Rsym_value
 ;
 #
 ###########################################################################
