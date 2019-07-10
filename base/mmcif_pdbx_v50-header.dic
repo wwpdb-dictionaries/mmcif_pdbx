@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.312
+    _dictionary.version         5.313
 #
      loop_
     _dictionary_history.version
@@ -2108,6 +2108,12 @@ data_mmcif_pdbx.dic
     + Adjust limits of _em_image_recording.avg_electron_dose_per_image"
     + Add DECTRIS EIGER2 detectors to _diffrn_detector.type
     + Increase high soft limit for _reflns_shell.pdbx_Rsym_value
+;
+5.313  2019-07-10
+;
+    Changes (ep):
+    + Expand _diffrn_detector.type, _software.name, _pdbx_audit_support.funding_organiation enumerations
+    + Make _pdbx_refine_tls_group.pdbx_refine_id and _pdbx_refine_tls.pdbx_refine_id mandatory
 ;
 #
 ###########################################################################
