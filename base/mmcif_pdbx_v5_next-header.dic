@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.321
+    _dictionary.version         5.322
 #
      loop_
     _dictionary_history.version
@@ -2224,6 +2224,14 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Expand _diffrn_detector.type, _software.name, _pdbx_audit_support.funding_organiation enumerations
     + Make _pdbx_refine_tls_group.pdbx_refine_id and _pdbx_refine_tls.pdbx_refine_id mandatory
+;
+5.322  2019-08-15
+;
+    Changes (ep/jmb):
+    + Correct capitalization in _pdbx_nmr_spectrometer.model
+    + Expand _diffrn_detector.type, _pdbx_audit_support.funding_organiation enumerations
+    + Adjust advisory limits for _reflns.pdbx_Rrim_I_all, _reflns.pdbx_Rpim_I_all, _reflns.pdbx_R_split
+    + Add _atom_type.pdbx_scat_Z, _atom_type.pdbx_N_electrons
 ;
 #
 ###########################################################################
