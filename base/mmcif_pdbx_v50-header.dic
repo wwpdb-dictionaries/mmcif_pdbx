@@ -2115,7 +2115,7 @@ data_mmcif_pdbx.dic
     + Expand _diffrn_detector.type, _software.name, _pdbx_audit_support.funding_organiation enumerations
     + Make _pdbx_refine_tls_group.pdbx_refine_id and _pdbx_refine_tls.pdbx_refine_id mandatory
 ;
-5.314  2019-08-15
+5.314  2019-08-19
 ;
     Changes (ep/jmb):
     + Correct capitalization in _pdbx_nmr_spectrometer.model
