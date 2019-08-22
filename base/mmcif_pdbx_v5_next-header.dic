@@ -2232,6 +2232,7 @@ data_mmcif_pdbx.dic
     + Expand _diffrn_detector.type, _pdbx_audit_support.funding_organiation enumerations
     + Adjust advisory limits for _reflns.pdbx_Rrim_I_all, _reflns.pdbx_Rpim_I_all, _reflns.pdbx_R_split
     + Add _atom_type.pdbx_scat_Z, _atom_type.pdbx_N_electrons
+    + Define emd_id_ci and pdb_id_ci for case insensitive id codes
 ;
 #
 ###########################################################################
@@ -2776,6 +2777,8 @@ data_mmcif_pdbx.dic
    positive_int        numb '[1-9][0-9]*'       'Positive integers (1,2,3,..)'
    emd_id              char 'EMD-[0-9]{4,}'     'EMDB code'
    pdb_id              char '[1-9][A-Z0-9][A-Z0-9][A-Z0-9]' 'PDB code (upper cases)'
+   emd_id_ci           char '[Ee][Mm][Dd]-[0-9]{4,}'     'EMDB code (case insensitive)'
+   pdb_id_ci           char '[1-9][A-Za-z0-9][A-Za-z0-9][A-Za-z0-9]' 'PDB code (case insensitive)'
    point_group         char '(C[1-9][0-9]*|D[2-9]|D[1-9][0-9]+|O|T|I)' 'Point group symmetry in Schoenflies notation'
    point_group_helical char '[CD][1-9][0-9]*' 'Point group symmetry for helices in Schoenflies notation'
    boolean char 'YES|NO' 'Boolean type'
