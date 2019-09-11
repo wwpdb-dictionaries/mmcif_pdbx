@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.322
+    _dictionary.version         5.323
 #
      loop_
     _dictionary_history.version
@@ -2233,6 +2233,16 @@ data_mmcif_pdbx.dic
     + Adjust advisory limits for _reflns.pdbx_Rrim_I_all, _reflns.pdbx_Rpim_I_all, _reflns.pdbx_R_split
     + Add _atom_type.pdbx_scat_Z, _atom_type.pdbx_N_electrons
     + Define emd_id_ci and pdb_id_ci for case insensitive id codes
+;
+5.323  2019-09-11
+;
+    Changes (ep):
+    + Expand _pdbx_audit_support.funding_organiation enumerations
+    + Provide upper limit for _refine_ls_shell.R_factor_R_free
+    + Added _pdbx_depui_status_flags.post_rel_replacement_reason_details
+      and _pdbx_audit_revision_details.details
+    + Update description of _atom_site.label_alt_id
+    + Add _refine.pdbx_R_complete and _refine_ls_shell.pdbx_R_complete
 ;
 #
 ###########################################################################
