@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.315
+    _dictionary.version         5.316
 #
      loop_
     _dictionary_history.version
@@ -2104,7 +2104,7 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep/jmb):
     + Adjust descriptions involving country to include region.
-    + Rename pdbx_entity_descriptor to pdbx_entity_descriptor
+    + Rename pdbx_entity_descriptor to pdbx_entity_branch_descriptor
     + Adjust limits of _em_image_recording.avg_electron_dose_per_image"
     + Add DECTRIS EIGER2 detectors to _diffrn_detector.type
     + Increase high soft limit for _reflns_shell.pdbx_Rsym_value
@@ -2132,6 +2132,13 @@ data_mmcif_pdbx.dic
       and _pdbx_audit_revision_details.details
     + Update description of _atom_site.label_alt_id
     + Add _refine.pdbx_R_complete and _refine_ls_shell.pdbx_R_complete
+;
+5.316  2019-10-80
+;
+    Changes (ep):
+    + Adjust range limits for _reflns.pdbx_CC_star, _reflns_shell.pdbx_CC_star
+    + Adjust range limits for _reflns.pdbx_R_split, _reflns_shell.pdbx_R_split
+    + Create internal enumeration for struct_ref_seq_dif.details
 ;
 #
 ###########################################################################

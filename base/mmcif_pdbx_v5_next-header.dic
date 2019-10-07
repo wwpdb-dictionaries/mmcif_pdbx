@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.323
+    _dictionary.version         5.324
 #
      loop_
     _dictionary_history.version
@@ -2213,7 +2213,7 @@ data_mmcif_pdbx.dic
     Changes (ep/jmb):
     + Add enumeration for _struct_conn.pdbx_role
     + Adjust descriptions involving country to include region.
-    + Rename pdbx_entity_descriptor to pdbx_entity_descriptor
+    + Rename pdbx_entity_descriptor to pdbx_entity_branch_descriptor
     + Adjust limits of _emd_image_recording.average_electron_dose_per_image and
       _em_image_recording.avg_electron_dose_per_image"
     + Add DECTRIS EIGER2 detectors to _diffrn_detector.type
@@ -2243,6 +2243,18 @@ data_mmcif_pdbx.dic
       and _pdbx_audit_revision_details.details
     + Update description of _atom_site.label_alt_id
     + Add _refine.pdbx_R_complete and _refine_ls_shell.pdbx_R_complete
+;
+5.324  2019-10-80
+;
+    Changes (ep):
+    + Adjust range limits for _reflns.pdbx_CC_star, _reflns_shell.pdbx_CC_star
+    + Adjust range limits for _reflns.pdbx_R_split, _reflns_shell.pdbx_R_split
+    + For deposition, set limits for _exptl_crystal_grow.temp
+    + Not not allow 0 values during deposition for reflns_shell.Rmerge_I_all,
+      _reflns_shell.Rmerge_I_obs, _reflns.pdbx_Rmerge_I_obs,
+      _reflns.pdbx_Rmerge_I_all, reflns.pdbx_Rsym_value,
+      _reflns_shell.pdbx_Rsym_value
+    + Create internal enumeration for struct_ref_seq_dif.details
 ;
 #
 ###########################################################################
