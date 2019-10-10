@@ -2133,12 +2133,15 @@ data_mmcif_pdbx.dic
     + Update description of _atom_site.label_alt_id
     + Add _refine.pdbx_R_complete and _refine_ls_shell.pdbx_R_complete
 ;
-5.316  2019-10-80
+5.316  2019-10-10
 ;
     Changes (ep):
     + Adjust range limits for _reflns.pdbx_CC_star, _reflns_shell.pdbx_CC_star
     + Adjust range limits for _reflns.pdbx_R_split, _reflns_shell.pdbx_R_split
     + Create internal enumeration for struct_ref_seq_dif.details
+    + Expand _pdbx_audit_support.funding_organiation enumerations
+    + Use a new type deposition_email for pdbx_contact_author.email
+
 ;
 #
 ###########################################################################
@@ -2693,6 +2696,7 @@ data_mmcif_pdbx.dic
    # For citation, simpler case due to legacy data
    citation_doi        char '10\..*'  'Citation DOI specification.'
    exp_data_doi        char '10\.[0-9]{4,9}/[-._;()/:A-Za-z0-9]+'  'Experimental dataset DOI'
+   depostion_email     uchar '[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+' 'code item types/single words  (case insensitive) ...'
 
 #####################
 ## ITEM_UNITS_LIST ##
