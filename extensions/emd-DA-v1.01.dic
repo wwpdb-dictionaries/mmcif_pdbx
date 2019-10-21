@@ -3090,9 +3090,9 @@ save_emd_buffer
 ; Example 1
 ;
 ;   
-    emd_buffer.id                 1
-    emd_buffer.emd_speciment_id   1
-    emd_buffer.pH                 7.5
+    _emd_buffer.id                 1
+    _emd_buffer.emd_specimen_id    1
+    _emd_buffer.ph                 7.5
 ;
      save_
 
@@ -4130,6 +4130,8 @@ save__emd_microscopy.microscope
     "JEOL 4000EX"
     "JEOL CRYO ARM 200"
     "JEOL CRYO ARM 300"
+    "TFS GLACIOS"
+    "TFS KRIOS"
     "ZEISS LEO912"
     "ZEISS LIBRA120PLUS"
 #    "OTHER"
@@ -4361,20 +4363,22 @@ save__emd_microscopy.specimen_holder_model
      loop_
     #_item_examples.case
     _item_enumeration.value
+            'FEI TITAN KRIOS AUTOGRID HOLDER'
+            'FISCHIONE 2550'
             'GATAN 626 SINGLE TILT LIQUID NITROGEN CRYO TRANSFER HOLDER'
-            'GATAN CT3500 SINGLE TILT LIQUID NITROGEN CRYO TRANSFER HOLDER'
-            'GATAN CT3500TR SINGLE TILT ROTATION LIQUID NITROGEN CRYO TRANSFER HOLDER'
             'GATAN 910 MULTI-SPECIMEN SINGLE TILT CRYO TRANSFER HOLDER'
             'GATAN 914 HIGH TILT LIQUID NITROGEN CRYO TRANSFER TOMOGRAPHY HOLDER'
             'GATAN 915 DOUBLE TILT LIQUID NITROGEN CRYO TRANSFER HOLDER'
-            'GATAN UHRST 3500 SINGLE TILT ULTRA HIGH RESOLUTION NITROGEN COOLING HOLDER'
             'GATAN CHDT 3504 DOUBLE TILT HIGH RESOLUTION NITROGEN COOLING HOLDER'
+            'GATAN CT3500 SINGLE TILT LIQUID NITROGEN CRYO TRANSFER HOLDER'
+            'GATAN CT3500TR SINGLE TILT ROTATION LIQUID NITROGEN CRYO TRANSFER HOLDER'
+            'GATAN ELSA 698 SINGLE TILT LIQUID NITROGEN CRYO TRANSFER HOLDER'
             'GATAN HC 3500 SINGLE TILT HEATING/NITROGEN COOLING HOLDER'
             'GATAN HCHST 3008 SINGLE TILT HIGH RESOLUTION HELIUM COOLING HOLDER'
-            'GATAN ULTST ULTRA LOW TEMPERATURE SINGLE TILT HELIUM COOLING HOLDER'
             'GATAN HCHDT 3010 DOUBLE TILT HIGH RESOLUTION HELIUM COOLING HOLDER'
+            'GATAN UHRST 3500 SINGLE TILT ULTRA HIGH RESOLUTION NITROGEN COOLING HOLDER'
             'GATAN ULTDT ULTRA LOW TEMPERATURE DOUBLE TILT HELIUM COOLING HOLDER'
-            'FEI TITAN KRIOS AUTOGRID HOLDER'
+            'GATAN ULTST ULTRA LOW TEMPERATURE SINGLE TILT HELIUM COOLING HOLDER'
             'GATAN HELIUM'
             'GATAN LIQUID NITROGEN'
             'HOME BUILD'
@@ -7056,9 +7060,13 @@ save_emd_ctf_correction
      loop_
     _category_examples.detail
     _category_examples.case
-; Example 1
+;    
+     Example 1
 ;
-;   TODO -- category example
+;   
+    _emd_ctf_correction.id                                1 
+    _emd_ctf_correction.emd_image_processing_id           1 
+    _emd_ctf_correction.simple                            'PHASE FLIPPING ONLY' 
 ;
     save_
 

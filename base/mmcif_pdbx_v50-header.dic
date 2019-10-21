@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.316
+    _dictionary.version         5.317
 #
      loop_
     _dictionary_history.version
@@ -2142,6 +2142,18 @@ data_mmcif_pdbx.dic
     + Expand _pdbx_audit_support.funding_organiation enumerations
     + Use a new type deposition_email for pdbx_contact_author.email
 
+;
+5.317  2019-10-21
+;
+    Changes (ep):
+    + Add newer DECTRIS EIGER detectors to _differn_detector.type
+    + Extend _pdbx_audit_support.funding_organiation enumerations
+    + _em_imaging.specimen_holder_model add
+      'GATAN ELSA 698 SINGLE TILT LIQUID NITROGEN CRYO TRANSFER HOLDER' and
+      'FISCHIONE 2550' to enumeration
+    + _em_imaging.microscope_model add 'TFS GLACIOS' and '
+      TFS KRIOS' to enumeration.
+   
 ;
 #
 ###########################################################################
