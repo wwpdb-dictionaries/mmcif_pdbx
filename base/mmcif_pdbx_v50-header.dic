@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.317
+    _dictionary.version         5.318
 #
      loop_
     _dictionary_history.version
@@ -2146,7 +2146,7 @@ data_mmcif_pdbx.dic
 5.317  2019-10-21
 ;
     Changes (ep):
-    + Add newer DECTRIS EIGER detectors to _differn_detector.type
+    + Add newer DECTRIS EIGER detectors to _diffrn_detector.type
     + Extend _pdbx_audit_support.funding_organiation enumerations
     + _em_imaging.specimen_holder_model add
       'GATAN ELSA 698 SINGLE TILT LIQUID NITROGEN CRYO TRANSFER HOLDER' and
@@ -2155,6 +2155,13 @@ data_mmcif_pdbx.dic
       TFS KRIOS' to enumeration.
    
 ;
+5.318  2019-10-28
+;
+    Changes (ep):
+    + Remove duplicate enumerations from _diffrn_detector.type
+    + Correct deposition_email type name
+;
+
 #
 ###########################################################################
 #
@@ -2708,7 +2715,7 @@ data_mmcif_pdbx.dic
    # For citation, simpler case due to legacy data
    citation_doi        char '10\..*'  'Citation DOI specification.'
    exp_data_doi        char '10\.[0-9]{4,9}/[-._;()/:A-Za-z0-9]+'  'Experimental dataset DOI'
-   depostion_email     uchar '[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+' 'code item types/single words  (case insensitive) ...'
+   deposition_email    uchar '[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+' 'code item types/single words  (case insensitive) ...'
 
 #####################
 ## ITEM_UNITS_LIST ##
