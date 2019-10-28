@@ -2269,7 +2269,7 @@ data_mmcif_pdbx.dic
     + _em_imaging.microscope_model and _emd_microscopy.microscope add
       'TFS GLACIOS' and 'TFS KRIOS' to enumeration.
 ;
-5.325  2019-10-28
+5.326  2019-10-28
 ;
     Changes (ep):
     + Remove duplicate enumerations from _diffrn_detector.type
