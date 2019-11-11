@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.318
+    _dictionary.version         5.319
 #
      loop_
     _dictionary_history.version
@@ -2161,7 +2161,18 @@ data_mmcif_pdbx.dic
     + Remove duplicate enumerations from _diffrn_detector.type
     + Correct deposition_email type name
 ;
-
+5.319  2019-11-04
+;
+    Changes (ep):
+    + Extend pdbx_database_status to include nmr_data contents.
+    + Reorganize _pdbx_audit_support.funding_organiation such that details
+    will include the country.
+    + Extend em_software.name to include ERRASER
+    + Set upper limit for _diffrn.ambient_temp to 450
+    + Add TFA to _pdbx_nmr_chem_shift_ref.mol_common_name. Add fluorine
+      to _pdbx_nmr_chem_shift_ref.atom_group
+    + Add 'TFS TAOLS' to _em_imaging.microscope_model
+;
 #
 ###########################################################################
 #

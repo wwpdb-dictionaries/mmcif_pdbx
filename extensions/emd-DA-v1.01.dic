@@ -794,6 +794,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  EMAN2                             .
         '_emd_software.name'  EMPFT                             .
         '_emd_software.name'  EMfit                             .
+        '_emd_software.name'  ERRASER                           .
         '_emd_software.name'  EPU                               .
         '_emd_software.name'  ETHAN                             .
         '_emd_software.name'  eTomo                             .
@@ -4132,6 +4133,7 @@ save__emd_microscopy.microscope
     "JEOL CRYO ARM 300"
     "TFS GLACIOS"
     "TFS KRIOS"
+    "TFS TALOS"
     "ZEISS LEO912"
     "ZEISS LIBRA120PLUS"
 #    "OTHER"
