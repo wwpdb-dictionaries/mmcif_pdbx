@@ -2275,7 +2275,7 @@ data_mmcif_pdbx.dic
     + Remove duplicate enumerations from _diffrn_detector.type
     + Correct deposition_email type name
 ;
-5.327  2019-11-04
+5.327  2019-11-12
 ;
     Changes (ep):
     + Extend pdbx_database_status to include nmr_data contents.
@@ -2286,6 +2286,9 @@ data_mmcif_pdbx.dic
     + Add TFA to _pdbx_nmr_chem_shift_ref.mol_common_name. Add fluorine
       to _pdbx_nmr_chem_shift_ref.atom_group
     + Add 'TFS TAOLS' to _em_imaging.microscope_model
+    + Correct soft limits for _reflns.percent_possible_obs
+    + Make _struct_keywords.pdbx_keywords mandatory for deposition
+    + Add soft limits for _reflns.pdbx_CC_half
 ;
 #
 ###########################################################################
