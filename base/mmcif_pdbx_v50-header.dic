@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.319
+    _dictionary.version         5.320
 #
      loop_
     _dictionary_history.version
@@ -2165,7 +2165,7 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Extend pdbx_database_status to include nmr_data contents.
-    + Reorganize _pdbx_audit_support.funding_organiation such that details
+    + Reorganize _pdbx_audit_support.funding_organization such that details
     will include the country.
     + Extend em_software.name to include ERRASER
     + Set upper limit for _diffrn.ambient_temp to 450
@@ -2176,6 +2176,12 @@ data_mmcif_pdbx.dic
     + Make _struct_keywords.pdbx_keywords mandatory for deposition
     + Add soft limits for _reflns.pdbx_CC_half
 ;
+5.320  2019-11-26
+;
+    Changes (ep):
+    + Extend _pdbx_audit_support.funding_organization
+;
+
 #
 ###########################################################################
 #
