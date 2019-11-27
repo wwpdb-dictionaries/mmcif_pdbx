@@ -2180,6 +2180,11 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Extend _pdbx_audit_support.funding_organization
+    + Add alpha and beta linking D/L saccharide to _chem_comp.type
+    + Add 'CONDENSED IUPAC CARBOHYDRATE SYMBOL','IUPAC CARBOHYDRATE SYMBOL'
+        'SNFG CARBOHYDRATE SYMBOL' to _pdbx_chem_comp_identifier.type
+    + Add 'CARBOHYDRATE ANOMER', 'CARBOHYDRATE ISOMER', 'CARBOHYDRATE RING'
+      to examples for pdbx_chem_comp_feature.type
 ;
 
 #
