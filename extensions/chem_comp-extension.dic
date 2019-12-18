@@ -47,16 +47,29 @@ save_pdbx_chem_comp_synonyms
 ;
     loop_
     _pdbx_chem_comp_synonyms.comp_id
+    _pdbx_chem_comp_synonyms.ordinal
     _pdbx_chem_comp_synonyms.name 
     _pdbx_chem_comp_synonyms.provenance
-    ROC  Fortovase       DRUGBANK
-    ROC  SAQUINAVIR      DRUGBANK
-    ROC  "RO 31-8959"    ?
+    ROC  1  Fortovase       DRUGBANK
+    ROC  2  SAQUINAVIR      DRUGBANK
+    ROC  3  "RO 31-8959"    ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
    _pdbx_category_context.type         WWPDB_LOCAL
    _pdbx_category_context.category_id  pdbx_chem_comp_synonyms
    #
+save_
+#
+save__pdbx_chem_comp_synonyms.ordinal
+   #
+   _item_description.description  'An ordinal index for this category'
+   #
+   _item.name                     '_pdbx_chem_comp_synonyms.ordinal'
+   _item.category_id              pdbx_chem_comp_synonyms
+   # Will eventually be mandatory and key
+   _item.mandatory_code           no
+   #
+   _item_type.code                int
 save_
 #
 save__pdbx_chem_comp_synonyms.name

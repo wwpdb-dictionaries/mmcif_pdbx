@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.328
+    _dictionary.version         5.329
 #
      loop_
     _dictionary_history.version
@@ -2300,6 +2300,13 @@ data_mmcif_pdbx.dic
     + Corrected example for pdbx_entity_branch_link
     + Add 'CARBOHYDRATE ANOMER', 'CARBOHYDRATE ISOMER', 'CARBOHYDRATE RING'
       to examples for pdbx_chem_comp_feature.type
+;
+5.329  2019-12-18
+;
+    Changes (ep):
+    + Extend _diffrn_detector.type enumeration to include BIX-3, BIX-4
+      and iBIX
+    + Add _pdbx_chem_comp_synoyms.ordinal as future key
 ;
 #
 ###########################################################################
