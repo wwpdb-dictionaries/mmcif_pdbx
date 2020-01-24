@@ -3575,6 +3575,7 @@ save__emd_grid.material
         GOLD
         "GRAPHENE OXIDE"
         NICKEL
+        NICKEL/TITANIUM
         PLATINUM
         "SILICON NITRIDE"
         TUNGSTEN
@@ -4135,6 +4136,8 @@ save__emd_microscopy.microscope
     "TFS GLACIOS"
     "TFS KRIOS"
     "TFS TALOS"
+    "TFS TALOS F200C"
+    "TFS TALOS L120C"
     "ZEISS LEO912"
     "ZEISS LIBRA120PLUS"
 #    "OTHER"
@@ -4568,8 +4571,15 @@ save__emd_specialist_optics.phase_plate
     _item.mandatory_code        no
     _item_type.code             text
     _item_examples.case
-; Zernike phase plate
+; ZERNIKE PHASE PLATE
 ;
+    loop_
+    _pdbx_item_enumeration.name
+    _pdbx_item_enumeration.value
+    _pdbx_item_enumeration.detail
+         '_emd_specialist_optics.phase_plate'  'ZERNIKE PHASE PLATE'         .
+         '_emd_specialist_optics.phase_plate'  'VOLTA PHASE PLATE'           .
+         '_emd_specialist_optics.phase_plate'  'OTHER'                       .
      save_
 
 save__emd_specialist_optics.sph_aberration_corrector
