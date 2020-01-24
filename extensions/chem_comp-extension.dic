@@ -29,7 +29,7 @@ save_pdbx_chem_comp_synonyms
    loop_
    _category_key.name
      '_pdbx_chem_comp_synonyms.comp_id'
-     '_pdbx_chem_comp_synonyms.name'
+     '_pdbx_chem_comp_synonyms.ordinal'
    #
    loop_
    _category_group.id
@@ -67,7 +67,7 @@ save__pdbx_chem_comp_synonyms.ordinal
    _item.name                     '_pdbx_chem_comp_synonyms.ordinal'
    _item.category_id              pdbx_chem_comp_synonyms
    # Will eventually be mandatory and key
-   _item.mandatory_code           no
+   _item.mandatory_code           yes
    #
    _item_type.code                int
 save_

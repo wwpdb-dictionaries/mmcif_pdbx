@@ -780,7 +780,6 @@ encouraged to provide a value in this field.
         '_emd_software.name'  ctfit                             .
         '_emd_software.name'  CTFPHASEFLIP                      .
         '_emd_software.name'  CTFTILT                           .
-        '_emd_software.name'  CryoSPARC                         .
         '_emd_software.name'  DE-IM                             .
         '_emd_software.name'  DigitalMicrograph                 .
         '_emd_software.name'  DireX                             .
@@ -810,12 +809,14 @@ encouraged to provide a value in this field.
         '_emd_software.name'  HADDOCK                           .
         '_emd_software.name'  hsearch_lorentz                   .
         '_emd_software.name'  I-TASSER                          .
+        '_emd_software.name'  ICON                              .
         '_emd_software.name'  IHRSR                             .
         '_emd_software.name'  IMAGIC                            .
         '_emd_software.name'  IMIRS                             .
         '_emd_software.name'  IMOD                              .
         '_emd_software.name'  iMODFIT                           .
         '_emd_software.name'  IMP                               .
+        '_emd_software.name'  ISOLDE                            .
         '_emd_software.name'  J3DR                              .
         '_emd_software.name'  JALIGN                            .
         '_emd_software.name'  jspr                              .

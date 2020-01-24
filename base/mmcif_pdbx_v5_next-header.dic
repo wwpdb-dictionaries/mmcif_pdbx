@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.329
+    _dictionary.version         5.330
 #
      loop_
     _dictionary_history.version
@@ -2307,6 +2307,18 @@ data_mmcif_pdbx.dic
     + Extend _diffrn_detector.type enumeration to include BIX-3, BIX-4
       and iBIX
     + Add _pdbx_chem_comp_synoyms.ordinal as future key
+;
+5.330  2020-01-26
+;
+    Changes (ep):
+    + Add _pdbx_chem_comp_synoyms.ordinal as key for category (make mandatory)
+    + Extend deposition enumeration for pdbx_database_related to include 'split' and 'complete structure'
+    + Extend pdbx_nmr_software.name (I-PINE)
+    + Limit _reflns.pdc_Rrim_I_all to be less than 5
+    + Extend pdbx_audit_support enumeration
+    + Add 'ICON' and 'ISOLDE' to  _em_software.name and _emd_software.name enumeration. Remove
+      duplicate 'CryoSPARC'
+    + Improve description of _em_buffer.pH
 ;
 #
 ###########################################################################
