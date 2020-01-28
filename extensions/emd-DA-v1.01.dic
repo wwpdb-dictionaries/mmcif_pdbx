@@ -3682,9 +3682,11 @@ save__emd_support_film.material
          CARBON
          'FORMVAR'
          'CELLULOSE ACETATE'
-         'PARLODION'
+	 FORMVAR
+	 GOLD
          GRAPHENE
         "GRAPHENE OXIDE"
+         PARLODION
      save_
 
 save__emd_support_film.thickness

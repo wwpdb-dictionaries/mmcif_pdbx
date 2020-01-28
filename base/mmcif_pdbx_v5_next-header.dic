@@ -2321,7 +2321,7 @@ data_mmcif_pdbx.dic
     + Improve description of _em_buffer.pH
     + Add 'NICKEL/TITANIUM' to _em_sample_support.grid_material and _emd_grid.material
     + Create deposition enumeration for _emd_specialist_optics.phase_plate and _em_imaging_optics.phase_plate
-
+    + Add GOLD to emd_support_film.material
 ;
 #
 ###########################################################################

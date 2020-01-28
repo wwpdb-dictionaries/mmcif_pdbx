@@ -2205,6 +2205,8 @@ data_mmcif_pdbx.dic
     + Add 'NICKEL/TITANIUM' to _em_sample_support.grid_material
     + Create deposition enumeration for _em_imaging_optics.phase_plate
     + Add "TFS TALOS F200C" and "TFS TALOS L120C" to em_imaging.microscope_model
+    + Add pdbx_chem_comp_synonyms
+    + Add "Model orientation/position" add to _pdbx_depui_status_flags.post_rel_replacement_reason enumeration.
 ;
 #
 ###########################################################################
