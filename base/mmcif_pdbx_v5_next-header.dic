@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.330
+    _dictionary.version         5.331
 #
      loop_
     _dictionary_history.version
@@ -2322,6 +2322,13 @@ data_mmcif_pdbx.dic
     + Add 'NICKEL/TITANIUM' to _em_sample_support.grid_material and _emd_grid.material
     + Create deposition enumeration for _emd_specialist_optics.phase_plate and _em_imaging_optics.phase_plate
     + Add GOLD to emd_support_film.material
+;
+5.331  2020-02-04
+;
+    Changes (ep):
+    + Add "branched" to pdbx_reference_molecule.represent_as
+    + Add 'HITACHI H3000 UHVEM' to _em_imaging.microscope_model
+    + Extend pdbx_audit_support enumeration
 ;
 #
 ###########################################################################

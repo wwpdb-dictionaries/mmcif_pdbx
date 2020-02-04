@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.322
+    _dictionary.version         5.323
 #
      loop_
     _dictionary_history.version
@@ -2207,6 +2207,13 @@ data_mmcif_pdbx.dic
     + Add "TFS TALOS F200C" and "TFS TALOS L120C" to em_imaging.microscope_model
     + Add pdbx_chem_comp_synonyms
     + Add "Model orientation/position" add to _pdbx_depui_status_flags.post_rel_replacement_reason enumeration.
+;
+5.323  2020-02-04
+;
+    Changes (ep):
+    + Add "branched" to pdbx_reference_molecule.represent_as
+    + Add 'HITACHI H3000 UHVEM' to _em_imaging.microscope_model
+    + Extend pdbx_audit_support enumeration
 ;
 #
 ###########################################################################
