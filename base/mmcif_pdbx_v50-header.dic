@@ -2215,14 +2215,15 @@ data_mmcif_pdbx.dic
     + Add 'HITACHI H3000 UHVEM' to _em_imaging.microscope_model
     + Extend pdbx_audit_support enumeration
 ;
-5.324  2020-02-20
+5.324  2020-03-02
 ;
-    Changes (pkeller):
+    Changes (pkeller/ep):
     + Changes to pdbx_refine_tls_group to enforce consistency between TLS group definitions and structure:
         Make the following items children of the corresponding items in atom_site:
 	_pdbx_refine_tls_group.beg_auth_asym_id, _pdbx_refine_tls_group.beg_auth_seq_id,
 	_pdbx_refine_tls_group.end_label_asym_id, _pdbx_refine_tls_group.end_auth_seq_id
 	Add new items _pdbx_refine_tls_group.beg_PDB_ins_code, _pdbx_refine_tls_group.end_PDB_ins_code
+    + Add _atom_type.pdbx_scat_Cromer_Mann_a6 and _atom_type.pdbx_scat_Cromer_Mann_b6
 ;
 #
 ###########################################################################
