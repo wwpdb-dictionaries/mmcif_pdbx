@@ -212,6 +212,7 @@ save__emd_admin.deposition_site
       PDBE
       RCSB
       PDBJ
+      PDBC
      save_
 
 save__emd_admin.header_release_date

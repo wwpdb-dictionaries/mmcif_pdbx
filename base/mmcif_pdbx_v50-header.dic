@@ -2224,6 +2224,10 @@ data_mmcif_pdbx.dic
 	_pdbx_refine_tls_group.end_label_asym_id, _pdbx_refine_tls_group.end_auth_seq_id
 	Add new items _pdbx_refine_tls_group.beg_PDB_ins_code, _pdbx_refine_tls_group.end_PDB_ins_code
     + Add _atom_type.pdbx_scat_Cromer_Mann_a6 and _atom_type.pdbx_scat_Cromer_Mann_b6
+    + Add PDBC to examples/enumerations for _pdbx_database_status.deposit_site,
+      _pdbx_database_status.process_site, pdbx_chem_comp_audit.processing_site, _chem_comp.pdbx_processing_site,
+      _pdbx_prd_audit.processing_site, pdbx_family_prd_audit.processing_site, em_admin.deposition_site,
+      _pdbx_chem_comp_model_audit.processing_site
 ;
 #
 ###########################################################################
