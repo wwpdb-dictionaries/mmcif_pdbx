@@ -2231,6 +2231,8 @@ data_mmcif_pdbx.dic
     + Set upper limit for _refine.ls_R_factor_obs, refine.ls_R_factor_R_free, refine.ls_R_factor_R_work to 1.0
     + Change hard limits to soft for _em_imaging.accelerating_voltage
     + Extend pdbx_audit_support enumeration
+    + Add CoMAND to _pdbx_nmr_software.name enumeration
+    + Add 'mg' to _pdbx_nmr_exptl_sample.concentration_units
 ;
 #
 ###########################################################################
