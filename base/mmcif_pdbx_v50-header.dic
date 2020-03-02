@@ -2228,6 +2228,7 @@ data_mmcif_pdbx.dic
       _pdbx_database_status.process_site, pdbx_chem_comp_audit.processing_site, _chem_comp.pdbx_processing_site,
       _pdbx_prd_audit.processing_site, pdbx_family_prd_audit.processing_site, em_admin.deposition_site,
       _pdbx_chem_comp_model_audit.processing_site
+    + Set upper limit for _refine.ls_R_factor_obs, refine.ls_R_factor_R_free, refine.ls_R_factor_R_work to 1.0
 ;
 #
 ###########################################################################
