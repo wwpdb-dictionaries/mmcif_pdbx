@@ -2233,6 +2233,7 @@ data_mmcif_pdbx.dic
     + Extend pdbx_audit_support enumeration
     + Add CoMAND to _pdbx_nmr_software.name enumeration
     + Add 'mg' to _pdbx_nmr_exptl_sample.concentration_units
+    + Make _pdbx_reference_entity_sequence.type and _pdbx_reference_entity_list.type into enumerations.
 ;
 #
 ###########################################################################
