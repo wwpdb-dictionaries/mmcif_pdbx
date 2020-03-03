@@ -2330,7 +2330,7 @@ data_mmcif_pdbx.dic
     + Add 'HITACHI H3000 UHVEM' to _em_imaging.microscope_model
     + Extend pdbx_audit_support enumeration
 ;
-5.332  2020-02-20
+5.332  2020-03-03
 ;
     Changes (pkeller/ep):
     + Changes to pdbx_refine_tls_group to enforce consistency between TLS group definitions and structure:
