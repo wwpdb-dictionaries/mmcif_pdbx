@@ -2235,6 +2235,12 @@ data_mmcif_pdbx.dic
     + Add 'mg' to _pdbx_nmr_exptl_sample.concentration_units
     + Make _pdbx_reference_entity_sequence.type and _pdbx_reference_entity_list.type into enumerations.
 ;
+5.325  2020-04-06
+;
+    + (DAOTHER-5563) Add Elettra BEAMLINE XRD2 to diffrn_source and _diffrn_source.pdbx_synchrotron_beamline
+    + (DAOTHER-5555) Add new funding agency: Technology Agency of the Czech Republic
+    + (DAOTHER-5564) Add "GOLD" enumeration to em_support_film.material
+;
 #
 ###########################################################################
 #
