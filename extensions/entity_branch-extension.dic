@@ -703,6 +703,21 @@ save__pdbx_branch_scheme.pdb_seq_num
      save_
 
 
+save__pdbx_branch_scheme.pdb_ins_code
+    _item_description.description
+;              This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_branch_scheme.pdb_ins_code'
+    _item.category_id             pdbx_branch_scheme
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_branch_scheme.pdb_ins_code'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+
+     save_
+
+
 save__pdbx_branch_scheme.pdb_mon_id
     _item_description.description
 ;              This data item is a pointer to _atom_site.auth_comp_id in the

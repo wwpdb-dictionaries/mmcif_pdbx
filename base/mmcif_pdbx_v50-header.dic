@@ -2235,18 +2235,15 @@ data_mmcif_pdbx.dic
     + Add 'mg' to _pdbx_nmr_exptl_sample.concentration_units
     + Make _pdbx_reference_entity_sequence.type and _pdbx_reference_entity_list.type into enumerations.
 ;
-5.325  2020-04-06
+5.32X  2020-04-09
 ;
-    + (DAOTHER-5563) Add Elettra BEAMLINE XRD2 to diffrn_source and _diffrn_source.pdbx_synchrotron_beamline
-    + (DAOTHER-5555) Add new funding agency: Technology Agency of the Czech Republic
-    + (DAOTHER-5564) Add "GOLD" enumeration to em_support_film.material
-;
-5.326  2020-04-09
-;
-    + (DAOTHER-5567) Add new funding agency: German Federal Ministry for Economic Affairs and Energy
-                                             Alzheimer Forschung Initiative e.V.
-    + (DAOTHER-5560) Add new detector: FEI Falcon IV (4096 X 4096)    
-    + (DAOTHER-5551) Add new EM software: JADAS                                        
+    Changes (jt/ep):
+    + Add 'ELETTRA BEAMLINE XRD2' to _diffrn_source.type and _diffrn_source.pdbx_synchrotron_beamline
+    + Add _pdbx_audit_support.funding_organization enumeration
+    + Add "GOLD" enumeration to em_support_film.material
+    + Add "FEI Falcon IV (4k X 4k)" to _em_image_recording.film_or_detector_model
+    + Add "JADAS" and "crYOLO" to em_software.name
+    + Remove local contet from _pdbx_database_status.status_code_nmr_data
 ;
 #
 ###########################################################################

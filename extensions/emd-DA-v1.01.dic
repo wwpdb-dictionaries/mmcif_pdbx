@@ -775,7 +775,8 @@ encouraged to provide a value in this field.
         '_emd_software.name'  cisTEM                            .
         '_emd_software.name'  CNS                               .
         '_emd_software.name'  Coot                              .
-        '_emd_software.name'  Cow                               .
+        '_emd_software.name'  Cow                               .	
+        '_emd_software.name'  crYOLO                            .
         '_emd_software.name'  cryoSPARC                         .
         '_emd_software.name'  CTFFIND                           .
         '_emd_software.name'  ctfit                             .

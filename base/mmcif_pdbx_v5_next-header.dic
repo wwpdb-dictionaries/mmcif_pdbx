@@ -2349,6 +2349,19 @@ data_mmcif_pdbx.dic
     + Add CoMAND to _pdbx_nmr_software.name enumeration
     + Make _pdbx_reference_entity_sequence.type and _pdbx_reference_entity_list.type into enumerations.
 ;
+5.33X  2020-04-09
+;
+    Changes (jt/ep):
+    + Add 'ELETTRA BEAMLINE XRD2' to _diffrn_source.type and _diffrn_source.pdbx_synchrotron_beamline
+    + Add new funding agency: 'Technology Agency of the Czech Republic',
+    'German Federal Ministry for Economic Affairs and Energy',
+    'Alzheimer Forschung Initiative e.V.', 'Spar Nord Foundation'
+    + Add "GOLD" enumeration to em_support_film.material
+    + Add "FEI Falcon IV (4k X 4k)" to _em_image_recording.film_or_detector_model
+    + Add "JADAS" and "crYOLO" to em_software.name
+    + Add _pdbx_branch_scheme.pdb_ins_code
+    + Remove local contet from _pdbx_database_status.status_code_nmr_data
+;
 #
 ###########################################################################
 #
