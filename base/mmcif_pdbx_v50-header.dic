@@ -2241,6 +2241,13 @@ data_mmcif_pdbx.dic
     + (DAOTHER-5555) Add new funding agency: Technology Agency of the Czech Republic
     + (DAOTHER-5564) Add "GOLD" enumeration to em_support_film.material
 ;
+5.326  2020-04-09
+;
+    + (DAOTHER-5567) Add new funding agency: German Federal Ministry for Economic Affairs and Energy
+                                             Alzheimer Forschung Initiative e.V.
+    + (DAOTHER-5560) Add new detector: FEI Falcon IV (4096 X 4096)    
+    + (DAOTHER-5551) Add new EM software: JADAS                                        
+;
 #
 ###########################################################################
 #

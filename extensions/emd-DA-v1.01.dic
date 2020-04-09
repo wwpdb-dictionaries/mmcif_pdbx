@@ -819,6 +819,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  IMP                               .
         '_emd_software.name'  ISOLDE                            .
         '_emd_software.name'  J3DR                              .
+        '_emd_software.name'  JADAS                             .
         '_emd_software.name'  JALIGN                            .
         '_emd_software.name'  jspr                              .
         '_emd_software.name'  JSUBTOMO                          .
@@ -5115,6 +5116,7 @@ save__emd_image_recording.film_or_detector_model
     "FEI FALCON I (4k x 4k)"
     "FEI FALCON II (4k x 4k)"
     "FEI FALCON III (4k x 4k)"
+    "FEI FALCON IV (4k x 4k)"
     "GATAN MULTISCAN"
     "GATAN ORIUS SC200 (2k x 2k)"
     "GATAN ORIUS SC600 (2.7k x 2.7k)"
