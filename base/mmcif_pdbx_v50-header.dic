@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.324
+    _dictionary.version         5.325
 #
      loop_
     _dictionary_history.version
@@ -2235,7 +2235,7 @@ data_mmcif_pdbx.dic
     + Add 'mg' to _pdbx_nmr_exptl_sample.concentration_units
     + Make _pdbx_reference_entity_sequence.type and _pdbx_reference_entity_list.type into enumerations.
 ;
-5.32X  2020-04-09
+5.325  2020-04-13
 ;
     Changes (jt/ep):
     + Add 'ELETTRA BEAMLINE XRD2' to _diffrn_source.type and _diffrn_source.pdbx_synchrotron_beamline
