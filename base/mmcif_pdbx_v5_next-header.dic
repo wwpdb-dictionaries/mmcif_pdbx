@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.333
+    _dictionary.version         5.334
 #
      loop_
     _dictionary_history.version
@@ -2361,6 +2361,18 @@ data_mmcif_pdbx.dic
     + Add "JADAS" and "crYOLO" to em_software.name
     + Add _pdbx_branch_scheme.pdb_ins_code
     + Remove local contet from _pdbx_database_status.status_code_nmr_data
+;
+5.334  2020-05-26
+;
+    Changes (ep):
+    + Incorpoate branch chain dictionary extension
+    + Extend enumeration of pdbx_audit_support.funding_organization
+    + Correct diffrn_source.type for "ORNL Spallation Neutron Source BEAMLINE MANDI"
+      to indicate spallation source.
+    + Add "oligosaccharide" to _pdbx_reference_entity_poly.type
+    + Add 'cxi.merge' to _software.name enumeration. Remove 'BUSTER-TNT'
+    + Limit _reflns_shell.Rmerge_I_obs in deposition
+    + Extend enumeration of _pdbx_reference_molecule.class
 ;
 #
 ###########################################################################

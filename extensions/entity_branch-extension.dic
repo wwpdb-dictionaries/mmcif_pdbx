@@ -578,8 +578,8 @@ save_pdbx_branch_scheme
      _pdbx_branch_scheme.pdb_asym_id 
      _pdbx_branch_scheme.pdb_mon_id 
      _pdbx_branch_scheme.pdb_seq_num 
-     _pdbx_branch_scheme.auth_asym_id 
      _pdbx_branch_scheme.auth_mon_id 
+     _pdbx_branch_scheme.auth_asym_id 
      _pdbx_branch_scheme.auth_seq_num 
      _pdbx_branch_scheme.hetero 
      B  2 NAG 1 B NAG 1  NAG A 1592 n
