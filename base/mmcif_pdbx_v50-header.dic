@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.326
+    _dictionary.version         5.327
 #
      loop_
     _dictionary_history.version
@@ -2255,6 +2255,17 @@ data_mmcif_pdbx.dic
     + Add "oligosaccharide" to _pdbx_reference_entity_poly.type
     + Add 'cxi.merge' to _software.name enumeration
     + Extend enumeration of _pdbx_reference_molecule.class
+;
+5.327  2020-06-05
+;
+    Changes (ep):
+    + Remove local contexts from the following categories:
+      _pdbx_chem_comp_synonyms, _pdbx_chem_comp_related, _pdbx_chem_comp_atom_related,
+      _pdbx_entity_branch_list, _pdbx_entity_branch_link, _pdbx_entity_branch, _pdbx_branch_scheme
+    + Remove local contexts from the following attributs:
+      _struct_conn.pdbx_ptnr1_atom_stereo_config, _struct_conn.pdbx_ptnr1_leaving_atom_id,
+      _struct_conn.pdbx_ptnr2_atom_stereo_config, _struct_conn.pdbx_ptnr2_leaving_atom_id,
+      _entity_name_com.pdbx_provenance
 ;
 #
 ###########################################################################

@@ -44,8 +44,6 @@ save__struct_conn.pdbx_ptnr1_atom_stereo_config
     _item_enumeration.detail      R  'rectus - right handed configuration'
                                   S  'sinister - left handed configuration'
                                   N  'none'
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_struct_conn.pdbx_ptnr1_atom_stereo_config'
      save_
 
 save__struct_conn.pdbx_ptnr1_leaving_atom_id
@@ -58,8 +56,6 @@ save__struct_conn.pdbx_ptnr1_leaving_atom_id
     _item_type.code               atcode
     _item_linked.child_name       '_struct_conn.pdbx_ptnr1_leaving_atom_id'
     _item_linked.parent_name      '_chem_comp_atom.atom_id'
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_struct_conn.pdbx_ptnr1_leaving_atom_id'
      save_
 
 save__struct_conn.pdbx_ptnr2_atom_stereo_config
@@ -76,8 +72,6 @@ save__struct_conn.pdbx_ptnr2_atom_stereo_config
     _item_enumeration.detail      R  'rectus - right handed configuration'
                                   S  'sinister - left handed configuration'
                                   N  'none'
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_struct_conn.pdbx_ptnr2_atom_stereo_config'
      save_
 
 save__struct_conn.pdbx_ptnr2_leaving_atom_id
@@ -91,8 +85,6 @@ save__struct_conn.pdbx_ptnr2_leaving_atom_id
     _item_type.code               atcode
     _item_linked.child_name       '_struct_conn.pdbx_ptnr2_leaving_atom_id'
     _item_linked.parent_name      '_chem_comp_atom.atom_id'
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_struct_conn.pdbx_ptnr2_leaving_atom_id'
      save_
 
 save__struct_conn.pdbx_role
@@ -157,8 +149,6 @@ save_pdbx_entity_branch_list
     2 4  FUC   n
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    _pdbx_category_context.type         WWPDB_LOCAL
-    _pdbx_category_context.category_id  pdbx_entity_branch_list
      save_
 
 save__pdbx_entity_branch_list.entity_id
@@ -273,8 +263,6 @@ save_pdbx_entity_branch_link
     3 2 1 NAG O3 HO3 ? 4 FUC C1 O1 R sing ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    _pdbx_category_context.type         WWPDB_LOCAL
-    _pdbx_category_context.category_id  pdbx_entity_branch_link
      save_
 
 save__pdbx_entity_branch_link.link_id
@@ -510,8 +498,6 @@ save_pdbx_entity_branch
       2  oligosaccharide
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    _pdbx_category_context.type         WWPDB_LOCAL
-    _pdbx_category_context.category_id  pdbx_entity_branch
      save_
 
 save__pdbx_entity_branch.entity_id
@@ -588,8 +574,6 @@ save_pdbx_branch_scheme
      B  2 FUC 4 B FUC 4  FUC A 1593 n
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    _pdbx_category_context.type         WWPDB_LOCAL
-    _pdbx_category_context.category_id  pdbx_branch_scheme
      save_
 
 save__pdbx_branch_scheme.entity_id
@@ -776,7 +760,7 @@ save__pdbx_branch_scheme.auth_mon_id
 #####################
 save__entity_name_com.pdbx_provenance
     _item_description.description
-;              Provides the provenance of the name in the _entity_name_com.name field/
+;              Provides the provenance of the name in the _entity_name_com.name field
 ;
     _item.name                   '_entity_name_com.pdbx_provenance'
     _item.category_id             entity_name_com
@@ -786,6 +770,4 @@ save__entity_name_com.pdbx_provenance
     _item_enumeration.value
     _item_enumeration.detail      UNIPROT 'UniProt provided'
                                   AUTHOR  'Author provided'
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_entity_name_com.pdbx_provenance'
      save_

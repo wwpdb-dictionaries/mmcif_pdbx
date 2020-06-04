@@ -49,8 +49,6 @@ save_pdbx_chem_comp_related
     _pdbx_chem_comp_related.details             ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         WWPDB_LOCAL
-   _pdbx_category_context.category_id  pdbx_chem_comp_related
    #
 save_
 #
@@ -178,8 +176,6 @@ save_pdbx_chem_comp_atom_related
     #
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-   _pdbx_category_context.type         WWPDB_LOCAL
-   _pdbx_category_context.category_id  pdbx_chem_comp_atom_related
    #
 save_
 #
