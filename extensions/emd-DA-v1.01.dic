@@ -783,6 +783,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  CTFPHASEFLIP                      .
         '_emd_software.name'  CTFTILT                           .
         '_emd_software.name'  DE-IM                             .
+        '_emd_software.name'  DIALS                             .	
         '_emd_software.name'  DigitalMicrograph                 .
         '_emd_software.name'  DireX                             .
         '_emd_software.name'  'DoG Picker'                      .
