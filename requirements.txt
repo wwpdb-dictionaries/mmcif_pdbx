@@ -1,2 +1,4 @@
 # Needed to parse dictionary
 mmcif
+# Using pytest
+pytest
