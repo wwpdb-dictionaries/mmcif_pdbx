@@ -44,3 +44,6 @@ jobs:
           ${{ runner.os }}-
     - name: Install dependencies
       run: pip install -r requirements.txt
+    - name: Insure dist up to date
+      run: make
+   
