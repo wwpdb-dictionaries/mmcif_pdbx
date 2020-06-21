@@ -102,6 +102,7 @@ save__struct_conn.pdbx_role
     _item_enumeration.value
     _item_enumeration.detail     'N-Glycosylation'  .
                                  'O-Glycosylation'  .
+                                 'S-Glycosylation'  .
 				 'C-Mannosylation'  .
 
      save_

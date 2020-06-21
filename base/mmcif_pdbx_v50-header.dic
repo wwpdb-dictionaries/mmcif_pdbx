@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.328
+    _dictionary.version         5.329
 #
      loop_
     _dictionary_history.version
@@ -2275,6 +2275,14 @@ data_mmcif_pdbx.dic
     + Synchronize pdbx_molecule_features.class enumeration from _pdbx_reference_molecule.class
     + _em_software.name enumeration add DIALS
     + Add 'SSRL BEAMLINE BL12-1' to _diffrn_source.type enumeration
+;
+5.329  2020-06-22
+;
+    Changes (ep):
+    + Add 'Transport activator' to _pdbx_reference_molecule.class and _pdbx_molecule_features.class
+    + Remove 'ELETTRA BEAMLINE XRD2' to _diffrn_source.type and _diffrn_source.pdbx_synchrotron_beamline.
+    'ELETTRA BEAMLINE 11.2C' is the same one.
+    + Add 'S-Glycosylation' to enumeration for _struct_conn.pdbx_role
 ;
 #
 ###########################################################################
