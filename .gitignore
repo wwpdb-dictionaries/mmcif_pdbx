@@ -1,2 +1,8 @@
+# emacs autosave
 *~
-.*/
+
+# Python3
+__pycache__
+
+*.pyc
+
