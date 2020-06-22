@@ -798,6 +798,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  EMfit                             .
         '_emd_software.name'  ERRASER                           .
         '_emd_software.name'  EPU                               .
+	'_emd_software.name'  eTasED                            .
         '_emd_software.name'  ETHAN                             .
         '_emd_software.name'  eTomo                             .
         '_emd_software.name'  FindEM                            .
