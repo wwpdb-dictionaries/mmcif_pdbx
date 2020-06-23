@@ -2276,13 +2276,16 @@ data_mmcif_pdbx.dic
     + _em_software.name enumeration add DIALS
     + Add 'SSRL BEAMLINE BL12-1' to _diffrn_source.type enumeration
 ;
-5.329  2020-06-22
+5.329  2020-06-23
 ;
     Changes (ep):
     + Add 'Transport activator' to _pdbx_reference_molecule.class and _pdbx_molecule_features.class
     + Remove 'ELETTRA BEAMLINE XRD2' to _diffrn_source.type and _diffrn_source.pdbx_synchrotron_beamline.
     'ELETTRA BEAMLINE 11.2C' is the same one.
     + Add 'S-Glycosylation' to enumeration for _struct_conn.pdbx_role
+    + Add 'eTasED' to em_software.name enumeration
+    + Restrict type of em_single_particle_entity.id to integer
+    + Add 'Remediation' to pdbx_audit_revision_details.type enumeration
 ;
 #
 ###########################################################################
@@ -2821,6 +2824,10 @@ data_mmcif_pdbx.dic
                '((([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}?(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n([\t ]*\n)*)){3})*(([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}?(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n([\t ]*\n)*)){2}(([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n?([\t ]*\n)*))[ \t]*'
 ;              A set of 3x4 matrices separated by spaces and newlines on each line.
                Final newline optional. Optional spaces at start of lines. Blank lines accepted.
+;
+               pdbx_related_db_code   char
+               '[][_.:"&<>()/\{}'`~!@#$%A-Za-z0-9*|+-]*'
+;              code item types/single words without semi-colon or comma ...
 ;
    positive_int        numb '[1-9][0-9]*'       'Positive integers (1,2,3,..)'
    emd_id              char 'EMD-[0-9]{4,}'     'EMDB code'
