@@ -48,7 +48,7 @@ save__struct_conn.pdbx_ptnr1_atom_stereo_config
 
 save__struct_conn.pdbx_ptnr1_leaving_atom_id
     _item_description.description
-;              The leaving atom that is removed from first atom making the linkage. 
+;              The leaving atom that is removed from first atom making the linkage.
 ;
     _item.name                  '_struct_conn.pdbx_ptnr1_leaving_atom_id'
     _item.category_id             struct_conn
@@ -76,7 +76,7 @@ save__struct_conn.pdbx_ptnr2_atom_stereo_config
 
 save__struct_conn.pdbx_ptnr2_leaving_atom_id
     _item_description.description
-;              The leaving atom that is removed from second atom making the linkage. 
+;              The leaving atom that is removed from second atom making the linkage.
 
 ;
     _item.name                  '_struct_conn.pdbx_ptnr2_leaving_atom_id'
@@ -136,7 +136,7 @@ save_pdbx_entity_branch_list
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
      loop_
@@ -146,7 +146,7 @@ save_pdbx_entity_branch_list
     _pdbx_entity_branch_list.hetero
     2 1  NAG   n
     2 2  GAL   n
-    2 3  FUC   n 
+    2 3  FUC   n
     2 4  FUC   n
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -206,10 +206,9 @@ save__pdbx_entity_branch_list.num
                must uniquely identify a record in the PDBX_ENTITY_BRANCH_LIST list.
 
 ;
-    _item.name            '_pdbx_entity_branch_list.num'                         
-    _item.category_id      pdbx_entity_branch_list     
+    _item.name            '_pdbx_entity_branch_list.num'
+    _item.category_id      pdbx_entity_branch_list
     _item.mandatory_code   yes
- 
     loop_
     _item_range.maximum
     _item_range.minimum           .   1
@@ -245,7 +244,7 @@ save_pdbx_entity_branch_link
 ;
 ;
     loop_
-    _pdbx_entity_branch_link.link_id 
+    _pdbx_entity_branch_link.link_id
     _pdbx_entity_branch_link.entity_id
     _pdbx_entity_branch_link.entity_branch_list_num_1
     _pdbx_entity_branch_link.comp_id_1
@@ -290,9 +289,9 @@ save__pdbx_entity_branch_link.details
 
 save__pdbx_entity_branch_link.entity_id
     _item_description.description
-;              The entity id for this branched entity. 
+;              The entity id for this branched entity.
 
-               This data item is a pointer to _pdbx_entity_branch_list.entity_id  
+               This data item is a pointer to _pdbx_entity_branch_list.entity_id
                in the PDBX_ENTITY_BRANCH_LIST category.
 ;
     _item.name                  '_pdbx_entity_branch_link.entity_id'
@@ -305,32 +304,32 @@ save__pdbx_entity_branch_link.entity_id
 
 save__pdbx_entity_branch_link.entity_branch_list_num_1
     _item_description.description
-;              The component number for the first component making the linkage. 
+;              The component number for the first component making the linkage.
 
-               This data item is a pointer to _pdbx_entity_branch_list.num 
+               This data item is a pointer to _pdbx_entity_branch_list.num
                in the PDBX_ENTITY_BRANCH_LIST category.
 
 ;
     _item.name                  '_pdbx_entity_branch_link.entity_branch_list_num_1'
     _item.category_id             pdbx_entity_branch_link
     _item.mandatory_code          yes
-    _item_type.code               int    
+    _item_type.code               int
     _item_linked.child_name	'_pdbx_entity_branch_link.entity_branch_list_num_1'
     _item_linked.parent_name    '_pdbx_entity_branch_list.num'
      save_
 
 save__pdbx_entity_branch_link.entity_branch_list_num_2
     _item_description.description
-;              The component number for the second component making the linkage. 
+;              The component number for the second component making the linkage.
 
-               This data item is a pointer to _pdbx_entity_branch_list.num 
+               This data item is a pointer to _pdbx_entity_branch_list.num
                in the PDBX_ENTITY_BRANCH_LIST category.
 
 ;
     _item.name                  '_pdbx_entity_branch_link.entity_branch_list_num_2'
     _item.category_id             pdbx_entity_branch_link
     _item.mandatory_code          yes
-    _item_type.code               int    
+    _item_type.code               int
     _item_linked.child_name	'_pdbx_entity_branch_link.entity_branch_list_num_2'
     _item_linked.parent_name    '_pdbx_entity_branch_list.num'
      save_
@@ -338,9 +337,9 @@ save__pdbx_entity_branch_link.entity_branch_list_num_2
 
 save__pdbx_entity_branch_link.comp_id_1
     _item_description.description
-;              The component identifier for the first component making the linkage. 
+;              The component identifier for the first component making the linkage.
 
-               This data item is a pointer to _pdbx_entity_branch_list.comp_id 
+               This data item is a pointer to _pdbx_entity_branch_list.comp_id
                in the PDBX_ENTITY_BRANCH_LIST category.
 ;
     _item.name                  '_pdbx_entity_branch_link.comp_id_1'
@@ -351,9 +350,9 @@ save__pdbx_entity_branch_link.comp_id_1
 
 save__pdbx_entity_branch_link.comp_id_2
     _item_description.description
-;              The component identifier for the second component making the linkage. 
+;              The component identifier for the second component making the linkage.
 
-               This data item is a pointer to _pdbx_entity_branch_list.comp_id 
+               This data item is a pointer to _pdbx_entity_branch_list.comp_id
                in the PDBX_ENTITY_BRANCH_LIST category.
 ;
     _item.name                  '_pdbx_entity_branch_link.comp_id_2'
@@ -364,8 +363,7 @@ save__pdbx_entity_branch_link.comp_id_2
 
 save__pdbx_entity_branch_link.atom_id_1
     _item_description.description
-;              The atom identifier/name for the first atom making the linkage. 
-
+;              The atom identifier/name for the first atom making the linkage.
 ;
     _item.name                  '_pdbx_entity_branch_link.atom_id_1'
     _item.category_id             pdbx_entity_branch_link
@@ -377,7 +375,7 @@ save__pdbx_entity_branch_link.atom_id_1
 
 save__pdbx_entity_branch_link.leaving_atom_id_1
     _item_description.description
-;              The leaving atom identifier/name bonded to the first atom making the linkage. 
+;              The leaving atom identifier/name bonded to the first atom making the linkage.
 
 ;
     _item.name                  '_pdbx_entity_branch_link.leaving_atom_id_1'
@@ -406,8 +404,7 @@ save__pdbx_entity_branch_link.atom_stereo_config_1
 
 save__pdbx_entity_branch_link.atom_id_2
     _item_description.description
-;              The atom identifier/name for the second atom making the linkage. 
-
+;              The atom identifier/name for the second atom making the linkage.
 ;
     _item.name                  '_pdbx_entity_branch_link.atom_id_2'
     _item.category_id             pdbx_entity_branch_link
@@ -419,8 +416,7 @@ save__pdbx_entity_branch_link.atom_id_2
 
 save__pdbx_entity_branch_link.leaving_atom_id_2
     _item_description.description
-;              The leaving atom identifier/name bonded to the second atom making the linkage. 
-
+;              The leaving atom identifier/name bonded to the second atom making the linkage.
 ;
     _item.name                  '_pdbx_entity_branch_link.leaving_atom_id_2'
     _item.category_id             pdbx_entity_branch_link
@@ -474,7 +470,7 @@ save__pdbx_entity_branch_link.value_order
 save_pdbx_entity_branch
     _category.description
 ;              Data items in the PDBX_ENTITY_BRANCH category specify the list
-               of branched entities and the type. 
+               of branched entities and the type.
 ;
     _category.id                  pdbx_entity_branch
     _category.mandatory_code      no
@@ -490,7 +486,7 @@ save_pdbx_entity_branch
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
     loop_
@@ -503,9 +499,9 @@ save_pdbx_entity_branch
 
 save__pdbx_entity_branch.entity_id
     _item_description.description
-;              The entity id for this branched entity. 
+;              The entity id for this branched entity.
 
-               This data item is a pointer to _entity.id  
+               This data item is a pointer to _entity.id
 ;
     _item.name                  '_pdbx_entity_branch.entity_id'
     _item.category_id             pdbx_entity_branch
@@ -554,21 +550,21 @@ save_pdbx_branch_scheme
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
      loop_
-     _pdbx_branch_scheme.asym_id 
-     _pdbx_branch_scheme.entity_id 
-     _pdbx_branch_scheme.mon_id 
+     _pdbx_branch_scheme.asym_id
+     _pdbx_branch_scheme.entity_id
+     _pdbx_branch_scheme.mon_id
      _pdbx_branch_scheme.num
-     _pdbx_branch_scheme.pdb_asym_id 
-     _pdbx_branch_scheme.pdb_mon_id 
-     _pdbx_branch_scheme.pdb_seq_num 
-     _pdbx_branch_scheme.auth_mon_id 
-     _pdbx_branch_scheme.auth_asym_id 
-     _pdbx_branch_scheme.auth_seq_num 
-     _pdbx_branch_scheme.hetero 
+     _pdbx_branch_scheme.pdb_asym_id
+     _pdbx_branch_scheme.pdb_mon_id
+     _pdbx_branch_scheme.pdb_seq_num
+     _pdbx_branch_scheme.auth_mon_id
+     _pdbx_branch_scheme.auth_asym_id
+     _pdbx_branch_scheme.auth_seq_num
+     _pdbx_branch_scheme.hetero
      B  2 NAG 1 B NAG 1  NAG A 1592 n
      B  2 GAL 2 B GAL 2  GAL A 1591 n
      B  2 FUC 3 B FUC 3  FUC A 1590 n
@@ -592,7 +588,7 @@ save__pdbx_branch_scheme.entity_id
 save__pdbx_branch_scheme.hetero
     _item_description.description
 ;              A flag to indicate whether this monomer in the entity is
-               heterogeneous in sequence. 
+               heterogeneous in sequence.
 ;
     _item.name                  '_pdbx_branch_scheme.hetero'
     _item.category_id             pdbx_branch_scheme
@@ -647,10 +643,10 @@ save__pdbx_branch_scheme.num
 
 
 ;
-    _item.name            '_pdbx_branch_scheme.num'                         
-    _item.category_id      pdbx_branch_scheme     
+    _item.name            '_pdbx_branch_scheme.num'
+    _item.category_id      pdbx_branch_scheme
     _item.mandatory_code   yes
- 
+
     loop_
     _item_range.maximum
     _item_range.minimum           .   1
@@ -665,8 +661,8 @@ save__pdbx_branch_scheme.pdb_asym_id
 ;              This data item is a pointer to _atom_site.auth_asym_id in the
                ATOM_SITE category.
 ;
-    _item.name                    '_pdbx_branch_scheme.pdb_asym_id'                         
-    _item.category_id             pdbx_branch_scheme     
+    _item.name                    '_pdbx_branch_scheme.pdb_asym_id'
+    _item.category_id             pdbx_branch_scheme
     _item.mandatory_code          yes
     _item_type.code               code
     _item_linked.child_name       '_pdbx_branch_scheme.pdb_asym_id'
@@ -679,8 +675,8 @@ save__pdbx_branch_scheme.pdb_seq_num
 ;              This data item is a pointer to _atom_site.auth_seq_id in the
                ATOM_SITE category.
 ;
-    _item.name                    '_pdbx_branch_scheme.pdb_seq_num'                         
-    _item.category_id             pdbx_branch_scheme     
+    _item.name                    '_pdbx_branch_scheme.pdb_seq_num'
+    _item.category_id             pdbx_branch_scheme
     _item.mandatory_code          yes
     _item_type.code               code
     _item_linked.child_name       '_pdbx_branch_scheme.pdb_seq_num'
@@ -709,7 +705,7 @@ save__pdbx_branch_scheme.pdb_mon_id
                ATOM_SITE category.
 ;
     _item.name                    '_pdbx_branch_scheme.pdb_mon_id'
-    _item.category_id             pdbx_branch_scheme     
+    _item.category_id             pdbx_branch_scheme
     _item.mandatory_code          yes
     _item_type.code               code
     _item_linked.child_name       '_pdbx_branch_scheme.pdb_mon_id'
@@ -722,8 +718,8 @@ save__pdbx_branch_scheme.auth_asym_id
 ;              This data item is a pointer to _atom_site.pdbx_auth_asym_id in the
                ATOM_SITE category.
 ;
-    _item.name                    '_pdbx_branch_scheme.auth_asym_id'                         
-    _item.category_id             pdbx_branch_scheme     
+    _item.name                    '_pdbx_branch_scheme.auth_asym_id'
+    _item.category_id             pdbx_branch_scheme
     _item.mandatory_code          no
     _item_type.code               code
     # No links are parent not present in public model file
@@ -735,8 +731,8 @@ save__pdbx_branch_scheme.auth_seq_num
 ;              This data item is a pointer to _atom_site.pdbx_auth_seq_id in the
                ATOM_SITE category.
 ;
-    _item.name                    '_pdbx_branch_scheme.auth_seq_num'                         
-    _item.category_id             pdbx_branch_scheme     
+    _item.name                    '_pdbx_branch_scheme.auth_seq_num'
+    _item.category_id             pdbx_branch_scheme
     _item.mandatory_code          no
     _item_type.code               code
     # No links are parent not present in public model file
@@ -749,7 +745,7 @@ save__pdbx_branch_scheme.auth_mon_id
                ATOM_SITE category.
 ;
     _item.name                    '_pdbx_branch_scheme.auth_mon_id'
-    _item.category_id             pdbx_branch_scheme     
+    _item.category_id             pdbx_branch_scheme
     _item.mandatory_code          no
     _item_type.code               code
     # No links are parent not present in public model file

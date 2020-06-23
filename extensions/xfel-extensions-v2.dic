@@ -77,7 +77,7 @@ save__pdbx_xfel_source.site
 
 save__pdbx_xfel_source.site_beamline
     _item_description.description
-;             The Free Electron Laser (FEL) facility, beamline and 
+;             The Free Electron Laser (FEL) facility, beamline and
               sample chamber identification.
 ;
     _item.name                  '_pdbx_xfel_source.site_beamline'

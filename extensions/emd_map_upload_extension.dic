@@ -17,7 +17,7 @@ save_emd_map_upload
      loop_
     _category_examples.detail
     _category_examples.case
-;Example 1 
+;Example 1
 ;
 ;   _emd_map_upload.id                    1
     _emd_map_upload.annotation_details    'D7 structure of Groel at 4.2 Angstrom resolution'

@@ -40,7 +40,7 @@ save_pdbx_chem_comp_related
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
     _pdbx_chem_comp_related.comp_id             SGN
@@ -87,7 +87,7 @@ save__pdbx_chem_comp_related.relationship_type
    _item_type.code               line
    loop_
    _item_enumeration.value
-   _item_enumeration.detail      
+   _item_enumeration.detail
         'Carbohydrate core'      'References a common core carbohydrate structure'
         'Precursor'              'The related component is a precursor for this one'
    #
@@ -130,10 +130,10 @@ save_pdbx_chem_comp_atom_related
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 - 
+    Example 1 -
 ;
 ;
-    loop_      
+    loop_
     _pdbx_chem_comp_atom_related.ordinal
     _pdbx_chem_comp_atom_related.comp_id
     _pdbx_chem_comp_atom_related.atom_id
@@ -212,7 +212,7 @@ save__pdbx_chem_comp_atom_related.ordinal
     _item.name                  '_pdbx_chem_comp_atom_related.ordinal'
     _item.category_id             pdbx_chem_comp_atom_related
     _item.mandatory_code          yes
-    _item_type.code               int    
+    _item_type.code               int
      loop_
     _item_examples.case      1 2
      save_
@@ -250,7 +250,7 @@ save__pdbx_chem_comp_atom_related.related_type
    _item_type.code               line
    loop_
    _item_enumeration.value
-   _item_enumeration.detail      
+   _item_enumeration.detail
         'Carbohydrate core'      'References a core carbohydrate structure'
         'Precursor'              'The related component is a precursor for this one'
    #
