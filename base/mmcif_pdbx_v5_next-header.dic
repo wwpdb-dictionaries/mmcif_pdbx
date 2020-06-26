@@ -1863,22 +1863,22 @@ data_mmcif_pdbx.dic
     + Add 'PDB_ACC' to database_2.database_id  enumeration
     + Correct type for pdbx_nmr_exptl_sample.concentration_units to
       match enumeration
-    + Add MCMR (Midwest Center for Macromolecular Research) to 
+    + Add MCMR (Midwest Center for Macromolecular Research) to
       pdbx_SG_project.initial_of_center and pdbx_SG_project.full_name_of_center
 ;
 5.290  2017-08-30
 ;
     Changes (ep):
-    + Add 'FISCHIONE INSTRUMENTS DUAL AXIS TOMOGRAPHY HOLDER' to 
+    + Add 'FISCHIONE INSTRUMENTS DUAL AXIS TOMOGRAPHY HOLDER' to
       emd_microscopy.specimen_holder_model and em_imaging.specimen_holder_model
       enumerations
-    + Add soft and hard limits for reflns.pdbx_Rrim_I_all, 
+    + Add soft and hard limits for reflns.pdbx_Rrim_I_all,
       reflns_shell.pdbx_Rrim_I_all, reflns.pdbx_Rpim_I_all,
       reflns_shell.pdbx_Rpim_I_all, reflns_shell.pdbx_Rrim_I_all_anomalous,
       reflns_shell.pdbx_Rpim_I_all_anomalous, reflns.pdbx_Rrim_I_all_anomalous,
       reflns.pdbx_Rpim_I_all_anomalous
     + Add DepUI enumeration for em_software.name and emd_software.name
-    + Make pdbx_struct_assembly_auth_evidence.details and 
+    + Make pdbx_struct_assembly_auth_evidence.details and
       pdbx_struct_assembly_depositor_info.details mandatory at deposition
     + Update enumeration for _pdbx_audit_support.funding_organization
     + Add _pdbx_deposit_group.group_type
@@ -1889,10 +1889,10 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Add 'RMVD' to enumeration for pdbx_database_status.status_code,
-      pdbx_database_status.status_code_sf, pdbx_database_status.status_code_mr, 
+      pdbx_database_status.status_code_sf, pdbx_database_status.status_code_mr,
       pdbx_database_status.status_code_cs
     + Add enumeration for emd_grid.model and em_sample_support.grid_type
-    + Add enumeration for em_imaging_optics.energyfilter_name 
+    + Add enumeration for em_imaging_optics.energyfilter_name
       and emd_specialist_optics.energyfilter_name
     + Correct capitalization of BRUKER METALJET in diffrn_source.type
     + Add entity_branch_extension to dictionary (adds pdbx_entity_branch_link,
@@ -1901,21 +1901,21 @@ data_mmcif_pdbx.dic
 5.292  2017-10-18
 ;
     Changes (ep/jmb):
-    + Add _pdbx_depui_validation_status_flags.tls_no_aniso to flag TLS 
+    + Add _pdbx_depui_validation_status_flags.tls_no_aniso to flag TLS
       records without anisotropic ones during deposition
     + Add _pdbx_depui_validation_status_flags.adp_outliers_zero to flag
       zero B factors during deposition
     + Update _pdbx_audit_support.funding_organization enumeration
     + Add European XFEL site and beamlines to diffrn_source.type,
-      diffrn_source.pdbx_synchrotron_beamline and 
+      diffrn_source.pdbx_synchrotron_beamline and
       diffrn_source.pdbx_synchrotron_site
-    + pdbx_database_related.db_name deposition enumeration extended to 
+    + pdbx_database_related.db_name deposition enumeration extended to
       include matching content_type context.
     + Add upper range limit for reflns.percent_possible_obs and
       reflns_shell.percent_possible_obs
     + Require reflns.pdbx_R_split and reflns_shell.pdbx_R_split to be positive
       and create advisory limits for deposition.
-    + Add 'LIQUID ANODE' to Deposition enumeration for diffrn_source.source. 
+    + Add 'LIQUID ANODE' to Deposition enumeration for diffrn_source.source.
       Change METALJET generators in diffrn_source.type to match.
     + Extend enumeration for pdbx_struct_assembly_auth_evidence.experimental_support
 ;
@@ -1955,7 +1955,7 @@ data_mmcif_pdbx.dic
       _emd_microscopy.nominal_cs, _emd_microscopy.c2_aperature_diameter,
       _emd_microscopy.calibrated_defocus_max.
     + Add 'ISOLDE" to enumeration for _software.name
-    + Add "JEOL CRYO ARM 200" and "JEOL CRYO ARM 300" to 
+    + Add "JEOL CRYO ARM 200" and "JEOL CRYO ARM 300" to
       _emd_microscopy.microscope and _em_imaging.microscope_model
     + Improve date_dep regular expression to prevent zero dates
     + Extend _pdbx_audit_support.funding_organization enumeration
@@ -1968,12 +1968,12 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Add SIMBAD to _software.name enumeration
-    + Add 'Sculptor', 'SUPER' and 'FOCUS' to em_software.name and 
+    + Add 'Sculptor', 'SUPER' and 'FOCUS' to em_software.name and
       _emd_software.name enumerations
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Extend _pdbx_struct_assembly_auth_evidence_depositor_info.experimental_support
       enumeration
-    + Change data type for _emd_specialist_optics.energyfilter_upper and 
+    + Change data type for _emd_specialist_optics.energyfilter_upper and
       _emd_specialist_optics.energyfilter_lower to float from text
     + Remove 4x3_matrix and implement 3x4_matrices
     + Add enumeration for _pdbx_deposit_group.group_type
@@ -2035,7 +2035,7 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Update point_group regular expression type
-    + Add beamline 'SACLA BEAMLINE BL2' and 'APS BEAMLINE 34-ID' 
+    + Add beamline 'SACLA BEAMLINE BL2' and 'APS BEAMLINE 34-ID'
       to _diffrn_source.type enumeration
     + Change context of _citation_author.identifier_ORCID to make public
     + Extend enumerations with _pdbx_audit_support.funding_organization
@@ -2053,7 +2053,7 @@ data_mmcif_pdbx.dic
     + Extend _software.language enumeration
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Add COUNTER-DIFFUSION to deposition enumeration for _exptl_crystal_grow.method
-    + Add 'JEOL CRYOSPECPORTER' to _em_imaging.specimen_holder_model and 
+    + Add 'JEOL CRYOSPECPORTER' to _em_imaging.specimen_holder_model and
       _emd_microscopy.specimen_holder_model enumerations
     + Extend deposition enumerations for _software.name
     + Add range limits to xfel extension
@@ -2105,7 +2105,7 @@ data_mmcif_pdbx.dic
 5.309  2018-11-09
 ;
     + Add various em_* categories to em_group
-    + Add 'Science and Technology Funding Council' and 'Global Challenges Research Fund' 
+    + Add 'Science and Technology Funding Council' and 'Global Challenges Research Fund'
       to _pdbx_audit_support.funding_organization
     + _pdbx_audit_support.funding_organization mandatory for deposition
     + _em_imaging.c2_aperture_diameter units changed to microns and lower limit changed to 1
@@ -2121,7 +2121,7 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Extend chem_comp-extension by adding _pdbx_chem_comp_synonyms.type and
-      _chem_comp_atom.pdbx_stnd_atom_id 
+      _chem_comp_atom.pdbx_stnd_atom_id
 ;
 5.312  2019-01-29
 ;
@@ -2131,7 +2131,7 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Set maximum for _em_imaging.accelerating_voltage to 400
     + Require _reflns.pdbx_number_measured_all to be positive
-    + For deposition, make _refine.pdbx_method_to_determine_struct, 
+    + For deposition, make _refine.pdbx_method_to_determine_struct,
       _refine.pdbx_starting_model, _reflns_shell.number_unique_obs
       mandatory
     + Add 'Excillum MetalJet D2 70 kV' and 'ELETTRA BEAMLINE 11.2C
@@ -2143,7 +2143,7 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Revert change for _refine.pdbx_starting_model being mandatory in deposition
     + Add enumeration for struct_conn.conn_type_id
-    + Extend _pdbx_audit_support.funding_organization with KU Leuven 
+    + Extend _pdbx_audit_support.funding_organization with KU Leuven
       and Lundbeckfonden
 
 ;
@@ -2153,7 +2153,7 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization
     + Restrict _entity.pdbx_number_of_molecules to integers
     + Remove polysaccharide(D) and polysaccharide(L)  type from entity_poly.type
-    + Update example for _audit_author.identifier_ORCID and 
+    + Update example for _audit_author.identifier_ORCID and
       _citation_author.identifier_ORCID with an invalid checksum
     + Add "LaB6 thermoionic" to _diffrn_source.type enumeration
     + Add emClairity to em_software.name and emd_software.name enumeration
@@ -2188,7 +2188,7 @@ data_mmcif_pdbx.dic
     + Add _pdbx_depui_status_flags.post_rel_replacement_reason
     + Add _pdbx_database_status.post_rel_recvd_coord_date, _pdbx_database_status.post_rel_recvd_coord,
       _pdbx_database_status.post_rel_status.
-    + Create type 'id_list_spc' for an id list with spaces. Use for 
+    + Create type 'id_list_spc' for an id list with spaces. Use for
       pdbx_struct_assembly_gen_depositor_info.chain_id_list
 ;
 5.318  2019-05-16

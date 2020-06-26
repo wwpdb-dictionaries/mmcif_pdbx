@@ -1581,13 +1581,13 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep/M. Hekkelman):
     + Change _pdbx_struct_assembly_gen_depositor_info.chain_id_list non-mandatory
-    + Correct inconsistent mandatory setting for _atom_site.label_alt_id, 
-      _atom_site.label_comp_id, _atom_site.label_atom_id, 
-      _diffrn_refln.wavelength_id, _atom_site.label_entity_id, 
+    + Correct inconsistent mandatory setting for _atom_site.label_alt_id,
+      _atom_site.label_comp_id, _atom_site.label_atom_id,
+      _diffrn_refln.wavelength_id, _atom_site.label_entity_id,
       _atom_site.label_seq_id, _refln.wavelength_id, _atom_site.label_asym_id,
       _struct_conn.ptnr1_label_atom_id, _struct_conn.ptnr2_label_atom_id,
       _struct_mon_prot_cis.label_alt_id, _struct_site_gen.label_alt_id
-    + Split up pdbx_struct_assembly_auth_evidence into 
+    + Split up pdbx_struct_assembly_auth_evidence into
       pdbx_struct_assembly_auth_classification. Export categories to v5rc
     + Make _pdbx_struct_assembly_gen_depositor_info.chain_id_list,
       _pdbx_struct_assembly_gen_depositor_info.full_matrices,
@@ -1599,10 +1599,10 @@ data_mmcif_pdbx.dic
 5.265  2017-02-05
 ;
     Changes (ep):
-    + Add BRUKER TURBO X-RAY SOURCE and OXFORD DIFFRACTION NOVA to list of 
+    + Add BRUKER TURBO X-RAY SOURCE and OXFORD DIFFRACTION NOVA to list of
       X-ray sources for deposition system.
     + Define 4x3_matrix, id_list, symmetry_operation as regular expressions
-      for use in deposition system to validate 
+      for use in deposition system to validate
       pdbx_struct_assembly_gen_depositor_info
     + Add pdbx_struct_assembly_gen_depositor_info.symmetry_operation
 
@@ -1650,8 +1650,8 @@ data_mmcif_pdbx.dic
 5.271  2017-03-09
 ;
     Changes (ep):
-    + Add category group assignments for pdbx_unobs_or_zero_occ_residues, 
-      pdbx_unobs_or_zero_occ_atoms, pdbx_struct_mod_residue, 
+    + Add category group assignments for pdbx_unobs_or_zero_occ_residues,
+      pdbx_unobs_or_zero_occ_atoms, pdbx_struct_mod_residue,
       pdbx_distant_solvent_atoms, _pdbx_struct_special_symmetry, pdbx_pdb_compnd,
       pdbx_pdb_source
     + Update context values to WWPDB_LOCAL for pdbx_remediation_atom_site_mapping
@@ -1662,10 +1662,10 @@ data_mmcif_pdbx.dic
     + To support data from pdb_extract, added pdbx_crystal_alignment category
       and updates to exisitin pdbx_phasing_MR, reflns_shell, reflns categories
     + For 4x3 matrix - require space between columns
-    + Add new categories to support versioning: pdbx_audit_revision_history, 
+    + Add new categories to support versioning: pdbx_audit_revision_history,
       pdbx_audit_revision_category, pdbx_audit_revision_group, pdbx_audit_revision_item,
       pdbx_audit_revision_details
-    + For v5rc: Set item context on the following to WWPDB_LOCAL: 
+    + For v5rc: Set item context on the following to WWPDB_LOCAL:
       _atom_site.Cartn_x_esd, _atom_site.Cartn_y_esd, _atom_site.Cartn_z_esd,
       _atom_site.occupancy_esd, _atom_site.B_iso_or_equiv_esd,
       _atom_site_anisotrop.U[1][1]_esd, _atom_site_anisotrop.U[2][2]_esd,
@@ -1675,10 +1675,10 @@ data_mmcif_pdbx.dic
 5.272  2017-03-14
 ;
     Changes (ep):
-    + For v5rc: Set category context to WWPDB_LOCAL for pdbx_version, 
+    + For v5rc: Set category context to WWPDB_LOCAL for pdbx_version,
       database_PDB_rev and database_PDB_rev_record
     + Add ssbond to enumeration for pdbx_data_processing_status.status
-    + Set WWPDB_LOCAL context for em_2d_crystal_entity.c_sampling_length in 
+    + Set WWPDB_LOCAL context for em_2d_crystal_entity.c_sampling_length in
       v5_next but not v5rc.
 ;
 5.273  2017-03-20
@@ -1694,9 +1694,9 @@ data_mmcif_pdbx.dic
     + Add 'Bruker METALJET' to _diffrn_detector.type enumeration
     + Flag _pdbx_audit_revision_details.type as mandatory for deposition.
     + Add _pdbx_crystal_alignment.ybeam_esd
-    + Make _refine_B_iso.pdbx_residue_num, _refine_B_iso.pdbx_strand, 
+    + Make _refine_B_iso.pdbx_residue_num, _refine_B_iso.pdbx_strand,
       _refine_B_iso.pdbx_residue_name non-mandatory
-    + Correct examples for pdbx_audit_revision_history and 
+    + Correct examples for pdbx_audit_revision_history and
       pdbx_audit_revision_group
     + Update enumeration for _pdbx_audit_revision_group.group
     + Create/update examples for emd_molecular_mass, emd_vitrification,
@@ -1705,16 +1705,16 @@ data_mmcif_pdbx.dic
 5.274  2017-03-20
 ;
     Changes (ep):
-    + For v5rc: Remove category context for database_PDB_rev 
+    + For v5rc: Remove category context for database_PDB_rev
       and database_PDB_rev_record
     + Add 'Force Field X' to deposition enumeration for software.name
 ;
 5.275  2017-03-28
 ;
     Changes (ep/mg):
-    + Move 'Bruker METLJET' from diffrn_detector.type enumeration to 
+    + Move 'Bruker METLJET' from diffrn_detector.type enumeration to
       diffrn_source.type
-    + Change 'SSRF BEAMLINE BL17U' ine diffrn_source.type enumerate to 
+    + Change 'SSRF BEAMLINE BL17U' ine diffrn_source.type enumerate to
       'SSRF BEAMLINE BL17U1'
     + Add 'Agrovata', 'DIMPLE', 'SHELXL-97' to software.name deposition
       enumeration
@@ -1735,16 +1735,16 @@ data_mmcif_pdbx.dic
     + For v5rc: export _pdbx_database_status.recvd_initial_deposition_date
       and indicate replaces database_PDB_rev.date_original
     + For v5rc: remove pdbx_binding_assay category
-    + Extend enumeration for _pdbx_nmr_constraint_file.constraint_subtype 
+    + Extend enumeration for _pdbx_nmr_constraint_file.constraint_subtype
       ('PRE', 'PRE solvent', 'CSP')
-    + For v5rc: For deprecated pdbx_version category provide replacement 
+    + For v5rc: For deprecated pdbx_version category provide replacement
       items names
 ;
 5.277  2017-04-08
 ;
     Changes (ep):
-    + For v50: correct  WWPDB_LOCAL context for 
-      _pdbx_database_status.date_begin_release_preparation, and remove 
+    + For v50: correct  WWPDB_LOCAL context for
+      _pdbx_database_status.date_begin_release_preparation, and remove
       context for _pdbx_database_status.status_code_cs
 ;
 5.278  2017-04-18
@@ -1752,13 +1752,13 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Add WWPDB_LOCAL context for entry.pdbx_DOI
     + Add 'Direct Drive' to _pdbx_nmr_spectrometer.model deposition enumeration
-    + For v50: Mark as WWPDB_LOCAL context for database_PDB_rev 
+    + For v50: Mark as WWPDB_LOCAL context for database_PDB_rev
       and database_PDB_rev_record
 ;
 5.279  2017-04-20
 ;
     Changes (ep):
-    + Add 'Data processing' to _pdbx_audit_revision_group.group enumeration 
+    + Add 'Data processing' to _pdbx_audit_revision_group.group enumeration
     + Add 'Obsolete' to _pdbx_audit_revision_details.type
     + Change enumeration in _emd_map.endian_type and _em_map.endian_type
       from 'small' to 'little'
@@ -1775,7 +1775,7 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Add pdbx_contact_author.legacy_address to replace audit_contact_author.address.
-    + Change type for pdbx_database_status.recvd_initial_deposition_date to 
+    + Change type for pdbx_database_status.recvd_initial_deposition_date to
       yyyy-mm-dd from yyyy-mm-dd:hh:mm for xsd type checking
     + Add 'FEI FALCON III (4k x 4k)' to enumeration for
       emd_image_recording.film_or_detector_model
@@ -1788,7 +1788,7 @@ data_mmcif_pdbx.dic
 5.283  2017-07-08
 ;
     Changes (ep):
-    + Add 'carbohydrate dihedral angle' to 
+    + Add 'carbohydrate dihedral angle' to
       _pdbx_nmr_constraint_file.constraint_type
     + Extend soft limit range for em_image_recording.avg_electron_dose_per_image
     + Set pdbx_depui_status_flags.is_grant_funded mandatory for deposition
@@ -1796,26 +1796,26 @@ data_mmcif_pdbx.dic
 5.284  2017-08-03
 ;
     Changes (ep):
-    + Merge in all deposition interface enumerations, descriptions and 
+    + Merge in all deposition interface enumerations, descriptions and
       mandatory codes
     + Add 'PDB_ACC' to database_2.database_id  enumeration
     + Correct type for pdbx_nmr_exptl_sample.concentration_units to
       match enumeration
-    + Add MCMR (Midwest Center for Macromolecular Research) to 
+    + Add MCMR (Midwest Center for Macromolecular Research) to
       pdbx_SG_project.initial_of_center and pdbx_SG_project.full_name_of_center
 ;
 5.285  2017-08-30
 ;
     Changes (ep):
-    + Add 'FISCHIONE INSTRUMENTS DUAL AXIS TOMOGRAPHY HOLDER' to 
+    + Add 'FISCHIONE INSTRUMENTS DUAL AXIS TOMOGRAPHY HOLDER' to
       em_imaging.specimen_holder_model enumeration
-    + Add soft and hard limits for reflns.pdbx_Rrim_I_all, 
+    + Add soft and hard limits for reflns.pdbx_Rrim_I_all,
       reflns_shell.pdbx_Rrim_I_all, reflns.pdbx_Rpim_I_all,
       reflns_shell.pdbx_Rpim_I_all, reflns_shell.pdbx_Rrim_I_all_anomalous,
       reflns_shell.pdbx_Rpim_I_all_anomalous, reflns.pdbx_Rrim_I_all_anomalous,
       reflns.pdbx_Rpim_I_all_anomalous
     + Add DepUI enumeration for em_software.name
-    + Make pdbx_struct_assembly_auth_evidence.details and 
+    + Make pdbx_struct_assembly_auth_evidence.details and
       pdbx_struct_assembly_depositor_info.details mandatory at deposition
     + Update enumeration for _pdbx_audit_support.funding_organization
     + Add _pdbx_deposit_group.group_type
@@ -1826,33 +1826,33 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Add 'RMVD' to enumeration for pdbx_database_status.status_code,
-      pdbx_database_status.status_code_sf, pdbx_database_status.status_code_mr, 
+      pdbx_database_status.status_code_sf, pdbx_database_status.status_code_mr,
       pdbx_database_status.status_code_cs
     + Add enumeration for em_sample_support.grid_type
-    + Add enumeration for em_imaging_optics.energyfilter_name 
+    + Add enumeration for em_imaging_optics.energyfilter_name
     + Correct capitalization of BRUKER METALJET in diffrn_source.type
     + To support entity_branch_extension, extend deposition entity.type
 ;
 5.287  2017-10-18
 ;
     Changes (ep/jmb):
-    + Add _pdbx_depui_validation_status_flags.tls_no_aniso to flag TLS 
+    + Add _pdbx_depui_validation_status_flags.tls_no_aniso to flag TLS
       records without anisotropic ones during deposition
     + Add _pdbx_depui_validation_status_flags.adp_outliers_zero to flag
       zero B factors during deposition
     + Update _pdbx_audit_support.funding_organization enumeration
     + Add European XFEL site and beamlines to diffrn_source.type,
-      diffrn_source.pdbx_synchrotron_beamline and 
+      diffrn_source.pdbx_synchrotron_beamline and
       diffrn_source.pdbx_synchrotron_site
-    + pdbx_database_related.db_name deposition enumeration extended to 
+    + pdbx_database_related.db_name deposition enumeration extended to
       include matching content_type context.
     + Add upper range limit for reflns.percent_possible_obs and
       reflns_shell.percent_possible_obs
     + Require reflns.pdbx_R_split and reflns_shell.pdbx_R_split to be positive
       and create advisory limits for deposition.
-    + Make reflns_shell.d_res_low and reflns_shell.d_res_high mandatory 
-      for deposition system. 
-    + Add 'LIQUID ANODE' to Deposition enumeration for diffrn_source.source. 
+    + Make reflns_shell.d_res_low and reflns_shell.d_res_high mandatory
+      for deposition system.
+    + Add 'LIQUID ANODE' to Deposition enumeration for diffrn_source.source.
       Change METALJET generators in diffrn_source.type to match.
     + Extend enumeration for pdbx_struct_assembly_auth_evidence.experimental_support
 ;
@@ -1876,14 +1876,14 @@ data_mmcif_pdbx.dic
     + Add "SLAC LCLS BEAMLINE AMO" to _diffrn_source.type, add
       "AMO" to _diffrn_source.pdbx_synchrotron_breamline to deposition
       enumerations.
-    + Correct _diffrn_source.type for "BRUKER D8 QUEST" - is a SEALED TUBE. 
+    + Correct _diffrn_source.type for "BRUKER D8 QUEST" - is a SEALED TUBE.
     + Update/add range limits for _em_imaging.nominal_defocus_max,
       _em_imaging.nominal_defocus_min, _em_image_recording.average_exposure_time,
       _em_imaging.nominal_magnification, _em_focused_ion_beam.initial_thickness,
-      _em_focused_ion_beam.current, _em_imaging.nominal_cs, 
+      _em_focused_ion_beam.current, _em_imaging.nominal_cs,
       _em_imaging.c2_aperature_diameter, _em_imaging.calibrated_defocus_max
     + Add 'ISOLDE" to enumeration for _software.name
-    + Add "JEOL CRYO ARM 200" and "JEOL CRYO ARM 300" to 
+    + Add "JEOL CRYO ARM 200" and "JEOL CRYO ARM 300" to
       _em_imaging.microscope_model
     + Improve date_dep regular expression to prevent zero dates
     + Extend _pdbx_audit_support.funding_organization enumeration
@@ -1944,7 +1944,7 @@ data_mmcif_pdbx.dic
       _em_imaging.nominal_cs
     + Change units for emd_fiducial_markers.diameter, _em_fiducial_markers.diameter
     + Change units, range, and mandatory flag for
-      _em_focused_ion_beam.dose_rate and 
+      _em_focused_ion_beam.dose_rate and
       _emd_sectioning_focused_ion_beam.dose_rate
     + Add 'JEOL 3100FEF' to em_imaging.microscope_model
 ;
@@ -1952,7 +1952,7 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Update point_group regular expression type
-    + Add beamline 'SACLA BEAMLINE BL2' and 'APS BEAMLINE 34-ID' 
+    + Add beamline 'SACLA BEAMLINE BL2' and 'APS BEAMLINE 34-ID'
       to _diffrn_source.type enumeration
     + Change context of _citation_author.identifier_ORCID to make public
     + Extend enumerations with _pdbx_audit_support.funding_organization
@@ -2009,7 +2009,7 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Add various em_* categories to em_group
-    + Add 'Science and Technology Funding Council' and 'Global Challenges Research Fund' 
+    + Add 'Science and Technology Funding Council' and 'Global Challenges Research Fund'
       to _pdbx_audit_support.funding_organization
     + _pdbx_audit_support.funding_organization mandatory for deposition
     + _em_imaging.c2_aperture_diameter units changed to microns and lower limit changed to 1
@@ -2028,7 +2028,7 @@ data_mmcif_pdbx.dic
       _pdbx_chem_comp_audit.details
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Set maximum for _em_imaging.accelerating_voltage to 400
-    + For deposition, make _refine.pdbx_method_to_determine_struct, 
+    + For deposition, make _refine.pdbx_method_to_determine_struct,
       _refine.pdbx_starting_model, _reflns_shell.number_unique_obs
       mandatory
     + Add 'Excillum MetalJet D2 70 kV' and 'ELETTRA BEAMLINE 11.2C
@@ -2040,7 +2040,7 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Revert change for _refine.pdbx_starting_model being mandatory in deposition
     + Add enumeration for struct_conn.conn_type_id
-    + Extend _pdbx_audit_support.funding_organization with KU Leuven 
+    + Extend _pdbx_audit_support.funding_organization with KU Leuven
       and Lundbeckfonden
 ;
 5.306  2019-03-20
@@ -2049,7 +2049,7 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization
     + Restrict _entity.pdbx_number_of_molecules to integers
     + Remove polysaccharide(D) and polysaccharide(L)  type from entity_poly.type
-    + Update example for _audit_author.identifier_ORCID and 
+    + Update example for _audit_author.identifier_ORCID and
       _citation_author.identifier_ORCID with an invalid checksum
     + Add "LaB6 thermoionic" to _diffrn_source.type enumeration
     + Add emClairity to em_software.name enumeration
@@ -2082,7 +2082,7 @@ data_mmcif_pdbx.dic
     + Add _pdbx_depui_status_flags.post_rel_replacement_reason
     + Add _pdbx_database_status.post_rel_recvd_coord_date, _pdbx_database_status.post_rel_recvd_coord,
       _pdbx_database_status.post_rel_status.
-    + Create type 'id_list_spc' for an id list with spaces. Use for 
+    + Create type 'id_list_spc' for an id list with spaces. Use for
       pdbx_struct_assembly_gen_depositor_info.chain_id_list
 ;
 5.310  2019-05-16
@@ -2153,7 +2153,6 @@ data_mmcif_pdbx.dic
       'FISCHIONE 2550' to enumeration
     + _em_imaging.microscope_model add 'TFS GLACIOS' and '
       TFS KRIOS' to enumeration.
-   
 ;
 5.318  2019-10-28
 ;
