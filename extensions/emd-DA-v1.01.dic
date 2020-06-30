@@ -303,12 +303,12 @@ save_emd_author_list
     _category_examples.case
 ; Example 1
 ;
-;   
+;
     loop_
-    _emd_author_list.ordinal 
-    _emd_author_list.author 
-    1 'Miller, A.'     
-    2 'Smith, J.T.'  
+    _emd_author_list.ordinal
+    _emd_author_list.author
+    1 'Miller, A.'
+    2 'Smith, J.T.'
 ;
     save_
 
@@ -783,6 +783,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  CTFPHASEFLIP                      .
         '_emd_software.name'  CTFTILT                           .
         '_emd_software.name'  DE-IM                             .
+        '_emd_software.name'  DIALS                             .	
         '_emd_software.name'  DigitalMicrograph                 .
         '_emd_software.name'  DireX                             .
         '_emd_software.name'  'DoG Picker'                      .
@@ -797,6 +798,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  EMfit                             .
         '_emd_software.name'  ERRASER                           .
         '_emd_software.name'  EPU                               .
+	'_emd_software.name'  eTasED                            .
         '_emd_software.name'  ETHAN                             .
         '_emd_software.name'  eTomo                             .
         '_emd_software.name'  FindEM                            .
@@ -1254,7 +1256,7 @@ save_emd_molecular_mass
    _emd_molecular_mass.emd_supramolecule_id
    _emd_molecular_mass.value
    _emd_molecular_mass.units
-   1 1 1.5 MEGADALTONS 
+   1 1 1.5 MEGADALTONS
 ;
      save_
 
@@ -2750,7 +2752,7 @@ save__emd_sectioning_focused_ion_beam.current
 #    _item_units.code            nanoamperes
     _item_type.code             float
     loop_
-     _item_range.minimum         
+     _item_range.minimum
      _item_range.maximum
                                0.001 0.001
 			       0.001 20
@@ -2805,8 +2807,8 @@ save__emd_sectioning_focused_ion_beam.initial_thickness
     _item_range.minimum         0.0
     _item_range.maximum         .
     loop_
-    _pdbx_item_range.name     
-    _pdbx_item_range.minimum  
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
     _pdbx_item_range.maximum
       '_emd_sectioning_focused_ion_beam.initial_thickness' 10     10
       '_emd_sectioning_focused_ion_beam.initial_thickness' 10   1000
@@ -3094,7 +3096,7 @@ save_emd_buffer
     _category_examples.case
 ; Example 1
 ;
-;   
+;
     _emd_buffer.id                 1
     _emd_buffer.emd_specimen_id    1
     _emd_buffer.ph                 7.5
@@ -3256,7 +3258,7 @@ save_emd_staining
     _category_examples.case
 ; Example 1
 ;
-;   
+;
   _emd_staining.id                   1
   _emd_staining.emd_specimen_id      1
   _emd_staining.material             'Uranyl Acetate'
@@ -3541,6 +3543,7 @@ save__emd_grid.model
     _item_examples.case           'Quantifoil R2/2'
      loop_
     _item_enumeration.value
+        Quantifoil
         'Quantifoil R0.6/1'
         'Quantifoil R1.2/1.3'
         'Quantifoil R2/1'
@@ -3548,16 +3551,15 @@ save__emd_grid.model
         'Quantifoil R2/4'
         'Quantifoil R3/3'
         'Quantifoil R3.5/1'
-        'Quantifoil, UltrAuFoil, R1.2/1.3'
         UltrAuFoil
+        'UltrAuFoil R1.2/1.3'
+        'UltrAuFoil R2/2'
+        'UltrAuFoil R0.6/1'
         C-flat
         C-flat-1.2/1.3
-        C-flat-2/1
         C-flat-1/1
+        C-flat-2/1
         C-flat-2/2
-        'C-flat-2/0.5 4C'
-        'C-flat-2/2 4C'
-        'C-flat-1.2/1.3 4C'
         Homemade
 
      save_
@@ -3951,7 +3953,7 @@ save__emd_vitrification.instrument
        "LEICA EM CPC"
        "LEICA KF80"
        "REICHERT-JUNG PLUNGER"
-       "SPOTITON" 
+       "SPOTITON"
      save_
 
 save__emd_vitrification.details
@@ -4229,11 +4231,11 @@ save__emd_microscopy.c2_aperture_diameter
     _item_units.code            microns
     _item_examples.case           100
     loop_
-     _item_range.minimum        
+     _item_range.minimum
      _item_range.maximum
                                  1   1
                                  1 150
-                               150 150 
+                               150 150
     loop_
     _pdbx_item_range.name
     _pdbx_item_range.minimum
@@ -4253,7 +4255,7 @@ save__emd_microscopy.nominal_cs
     _item_units.code               millimetres
     _item_examples.case           2.7
     loop_
-    _item_range.minimum           
+    _item_range.minimum
     _item_range.maximum
                              0    0
 			     0   20
@@ -4326,9 +4328,9 @@ save__emd_microscopy.calibrated_defocus_max
     _item_units.code             nanometers
     _item_examples.case           5000
     loop_
-      _item_range.minimum         
-      _item_range.maximum      
-                                 -30000 -30000   
+      _item_range.minimum
+      _item_range.maximum
+                                 -30000 -30000
                                  -30000  30000
                                   30000  30000
      save_
@@ -4541,7 +4543,7 @@ save_emd_specialist_optics
    _emd_specialist_optics.emd_microscopy_id         1
    _emd_specialist_optics.chr_aberration_corrector 'CEOS manufactured Cc corrector'
    _emd_specialist_optics.phase_plate               ?
-   _emd_specialist_optics.sph_aberration_corrector  ?  
+   _emd_specialist_optics.sph_aberration_corrector  ?
    _emd_specialist_optics.energyfilter_lower        0
    _emd_specialist_optics.energyfilter_upper        15
    _emd_specialist_optics.energyfilter_name         'GIF Bioquantum'
@@ -4674,7 +4676,7 @@ save__emd_specialist_optics.energyfilter_slit_width
     _item_units.code              electron_volts
     _item_examples.case           35
     loop_
-      _item_range.minimum         
+      _item_range.minimum
       _item_range.maximum
            0.0        0.0
 	   0.0     1000.0
@@ -5392,7 +5394,7 @@ save__emd_image_digitization.sampling_interval
     _item_units.code               microns
     _item_examples.case           1.7
     loop_
-    _item_range.maximum           
+    _item_range.maximum
     _item_range.minimum           50.0  0.0
                                   0.0   0.0
                                   50.0  50.0
@@ -6244,7 +6246,7 @@ save__emd_startup_model.random_conical_tilt_angle
     _item_units.code            degrees
     _item_examples.case         60
     loop_
-      _item_range.minimum        
+      _item_range.minimum
       _item_range.maximum
                                 0.0   0.0
                                 0.0   180.0
@@ -7083,13 +7085,13 @@ save_emd_ctf_correction
      loop_
     _category_examples.detail
     _category_examples.case
-;    
+;
      Example 1
 ;
-;   
-    _emd_ctf_correction.id                                1 
-    _emd_ctf_correction.emd_image_processing_id           1 
-    _emd_ctf_correction.simple                            'PHASE FLIPPING ONLY' 
+;
+    _emd_ctf_correction.id                                1
+    _emd_ctf_correction.emd_image_processing_id           1
+    _emd_ctf_correction.simple                            'PHASE FLIPPING ONLY'
 ;
     save_
 

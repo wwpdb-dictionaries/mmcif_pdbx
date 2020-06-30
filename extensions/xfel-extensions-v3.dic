@@ -12,7 +12,7 @@
 # 16-Jul-2017  Added Nicholas Sauters comments, _pdbx_xfel_data_reduction.lattices_indexed,
 #              _pdbx_xfel_data_reduction.crystal_hits, _pdbx_xfel_data_reduction.droplet_hits.
 #              Changed _pdbx_xfel_data_reduction.frames_hits to _pdbx_xfel_data_reduction.frame_hits.
-# 19-Jun-2018  Reorganization of category names 
+# 19-Jun-2018  Reorganization of category names
 #
 
 ###################
@@ -36,13 +36,13 @@ save__diffrn.pdbx_serial_crystal_experiment
    _pdbx_item_enumeration.name
    _pdbx_item_enumeration.value
    _pdbx_item_enumeration.detail
-     "_diffrn.pdbx_serial_crystal_experiment"  N  .  
-     "_diffrn.pdbx_serial_crystal_experiment"  Y  .  
+     "_diffrn.pdbx_serial_crystal_experiment"  N  .
+     "_diffrn.pdbx_serial_crystal_experiment"  Y  .
    #
 save_
 
 #######################
-# PDBX_SERIAL_CRYSTALLOGRAPHY_MEASUREMENT   
+# PDBX_SERIAL_CRYSTALLOGRAPHY_MEASUREMENT
 #######################
 
 save_pdbx_serial_crystallography_measurement
@@ -267,7 +267,7 @@ save__pdbx_serial_crystallography_sample_delivery.diffrn_id
     _item_examples.case          1
      save_
 
-	 
+
 save__pdbx_serial_crystallography_sample_delivery.description
     _item_description.description
 ;              The description of the mechanism by which the specimen in placed in the path
@@ -391,7 +391,7 @@ save__pdbx_serial_crystallography_sample_delivery_injection.injector_temperature
     _item_type_conditions.code    esd
     _item_units.code              kelvins
     loop_
-    _item_range.maximum           
+    _item_range.maximum
     _item_range.minimum           100.0   100.0
                                   370.0   100.0
                                   370.0   370.0
@@ -765,7 +765,7 @@ save__pdbx_serial_crystallography_data_reduction.diffrn_id
     _item_examples.case          1
      save_
 
-	 
+
 save__pdbx_serial_crystallography_data_reduction.frames_total
     _item_description.description
 ;           The total number of data frames collected for this
@@ -856,7 +856,7 @@ save__pdbx_serial_crystallography_data_reduction.frames_failed_index
      loop_
     _item_examples.case           1200 5750
     loop_
-    _item_range.maximum           
+    _item_range.maximum
     _item_range.minimum           0 0
                                   . 0
      save_

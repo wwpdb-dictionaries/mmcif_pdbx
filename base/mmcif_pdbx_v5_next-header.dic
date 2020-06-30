@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.333
+    _dictionary.version         5.337
 #
      loop_
     _dictionary_history.version
@@ -2362,6 +2362,49 @@ data_mmcif_pdbx.dic
     + Add _pdbx_branch_scheme.pdb_ins_code
     + Remove local contet from _pdbx_database_status.status_code_nmr_data
 ;
+5.334  2020-05-26
+;
+    Changes (ep):
+    + Incorpoate branch chain dictionary extension
+    + Extend enumeration of pdbx_audit_support.funding_organization
+    + Correct diffrn_source.type for "ORNL Spallation Neutron Source BEAMLINE MANDI"
+      to indicate spallation source.
+    + Add "oligosaccharide" to _pdbx_reference_entity_poly.type
+    + Add 'cxi.merge' to _software.name enumeration. Remove 'BUSTER-TNT'
+    + Limit _reflns_shell.Rmerge_I_obs in deposition
+    + Extend enumeration of _pdbx_reference_molecule.class
+;
+5.335  2020-06-05
+;
+    Changes (ep):
+    + Remove local contexts from the following categories:
+      _pdbx_chem_comp_synonyms, _pdbx_chem_comp_related, _pdbx_chem_comp_atom_related,
+      _pdbx_entity_branch_list, _pdbx_entity_branch_link, _pdbx_entity_branch, _pdbx_branch_scheme
+    + Remove local contexts from the following attributs:
+      _struct_conn.pdbx_ptnr1_atom_stereo_config, _struct_conn.pdbx_ptnr1_leaving_atom_id,
+      _struct_conn.pdbx_ptnr2_atom_stereo_config, _struct_conn.pdbx_ptnr2_leaving_atom_id,
+      _entity_name_com.pdbx_provenance
+;
+5.336  2020-06-08
+;
+    Changes (ep):
+    + Add new funding agency: 'Consortia for HIV/AIDS Vaccine Development'
+    and 'Tower Cancer Research Foundation'
+    + Synchronize pdbx_molecule_features.class enumeration from _pdbx_reference_molecule.class
+    + _em_software.name enumeration add DIALS
+    + Add 'SSRL BEAMLINE BL12-1' to _diffrn_source.type enumeration
+;
+5.337  2020-06-23
+;
+    Changes (ep):
+    + Add 'Transport activator' to _pdbx_reference_molecule.class and _pdbx_molecule_features.class
+    + Remove 'ELETTRA BEAMLINE XRD2' to _diffrn_source.type and _diffrn_source.pdbx_synchrotron_beamline.
+    'ELETTRA BEAMLINE 11.2C' is the same one.
+    + Add 'S-Glycosylation' to enumeration for _struct_conn.pdbx_role
+    + Add 'eTasED' to em_software.name enumeration
+    + Restrict type of em_single_particle_entity.id to integer
+    + Add 'Remediation' to pdbx_audit_revision_details.type enumeration
+;
 #
 ###########################################################################
 #
@@ -2899,6 +2942,10 @@ data_mmcif_pdbx.dic
                '((([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}?(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n([\t ]*\n)*)){3})*(([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}?(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n([\t ]*\n)*)){2}(([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3}(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n?([\t ]*\n)*))[ \t]*'
 ;              A set of 3x4 matrices separated by spaces and newlines on each line.
                Final newline optional. Optional spaces at start of lines. Blank lines accepted.
+;
+               pdbx_related_db_code   char
+               '[][_.:"&<>()/\{}'`~!@#$%A-Za-z0-9*|+-]*'
+;              code item types/single words without semi-colon or comma ...
 ;
 
    non_negative_int    numb '[0-9]|[1-9][0-9]*' 'Non negative integers (0,1,2,..)'
