@@ -6011,6 +6011,8 @@ save__emd_helical_parameters.delta_z
     _item_type.code                float
     _item_units.code               'angstroms'
     _item_examples.case            '17.400000'
+    _item_range.minimum            0.0
+    _item_range.maximum             .
       save_
 
 #save__emd_helical_parameters.hand
