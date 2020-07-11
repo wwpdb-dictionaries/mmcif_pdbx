@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.337
+    _dictionary.version         5.338
 #
      loop_
     _dictionary_history.version
@@ -2405,6 +2405,19 @@ data_mmcif_pdbx.dic
     + Restrict type of em_single_particle_entity.id to integer
     + Add 'Remediation' to pdbx_audit_revision_details.type enumeration
 ;
+5.338  2020-07-11
+;
+    Changes (ep):
+    + Add "MANACA" to _diffrn_source.pdbx_synchrtron_beamline,
+      "LNLS SIRUS BEAMLINE MANACA" to _diffrn_source.type and
+      "LNLS SIRUS" to _diffrn_source.pdbx_synchrotron enumerations.
+    + Update descripion of _atom_site.id to reflect current PDB usage
+    + Document that attributes in _reflns_shell category apply to multiple
+      shells and not just highest resolution shell
+    + Require _emd_helical_parameters.delta_z to be greater that 0
+    + Add "The Mark Foundation" to _pdbx_audit_support.funding_organization"
+    + Correct "deposition_email" type to be POSIX compliant
+;
 #
 ###########################################################################
 #
@@ -2966,7 +2979,7 @@ data_mmcif_pdbx.dic
    # For citation, simpler case due to legacy data
    citation_doi        char '10\..*'  'Citation DOI specification.'
    exp_data_doi        char '10\.[0-9]{4,9}/[-._;()/:A-Za-z0-9]+'  'Experimental dataset DOI'
-   deposition_email    uchar '[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+' 'code item types/single words  (case insensitive) ...'
+   deposition_email    uchar '[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.-]+' 'code item types/single words  (case insensitive) ...'
 
 #####################
 ## ITEM_UNITS_LIST ##
