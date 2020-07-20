@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.338
+    _dictionary.version         5.339
 #
      loop_
     _dictionary_history.version
@@ -2417,6 +2417,16 @@ data_mmcif_pdbx.dic
     + Require _emd_helical_parameters.delta_z to be greater that 0
     + Add "The Mark Foundation" to _pdbx_audit_support.funding_organization"
     + Correct "deposition_email" type to be POSIX compliant
+;
+5.339  2020-07-20
+;
+    Changes (ep):
+    + Add "Synthetic opioid" and "Transition state mimetic' to
+      _pdbx_reference_molecule.class and _pdbx_molecule_features.class
+      enumerations.
+    + Add "The Mark Foundation", "Canada Research Chairs" and "The Swedish Foundation for Strategic Research"
+      to _pdbx_audit_support.funding_organization"
+    + Add 'PELCO Ultrathin Carbon with Lacey Carbon' to _em_sample_support.grid_type enumeration
 ;
 #
 ###########################################################################
