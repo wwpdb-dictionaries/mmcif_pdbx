@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.331
+    _dictionary.version         5.332
 #
      loop_
     _dictionary_history.version
@@ -2307,6 +2307,21 @@ data_mmcif_pdbx.dic
     + Add "The Mark Foundation", "Canada Research Chairs" and "The Swedish Foundation for Strategic Research"
       to _pdbx_audit_support.funding_organization"
     + Add 'PELCO Ultrathin Carbon with Lacey Carbon' to _em_sample_support.grid_type enumeration
+;
+5.332  2020-08-19
+;
+    Changes (ep):
+    + Create enumeration for pdbx_chem_comp_feture.type
+    + Remove ranges for _diffrn_source.pdbx_wavelength_list as not compatible with code type 'line'
+    + Update funding enumerations
+    + Add SHELXT to _software.name enumeration
+    + Remove obsolete enumberations from chem_comp.type 'D-saccharide 1,4 and 1,6 linking', 
+       'L-saccharide 1,4 and 1,4 linking', 'L-saccharide 1,4 and 1,6 linking',
+       'D-saccharide 1,4 and 1,4 linking'
+    + Close the enumerations for _pdbx_nmr_constraint_file.constraint_subtype and
+       _pdbx_nmr_systematic_chem_shift_offset.type
+    + Add 'NMR relaxation study' to _pdbx_struct_assembly_auth_evidence.experimental_support
+       eumeration 
 ;
 #
 ###########################################################################

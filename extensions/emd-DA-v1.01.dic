@@ -5997,8 +5997,11 @@ save__emd_helical_parameters.delta_phi
     _item.mandatory_code          yes
     _item_type.code               float
     _item_units.code              degrees
-    _item_range.minimum           -180.0
-    _item_range.maximum           180.0
+    loop_
+    _item_range.minimum
+    _item_range.maximum
+                                  -180.0  180.0
+				   180.0  180.0
     _item_examples.case          '-34.616000'
       save_
 
