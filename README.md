@@ -1,6 +1,6 @@
 # mmcif_pdbx
 
-This repository houses the dictionaries used by the wwPDB for the
+This repository houses the dictionaries used by the wwPDB for
 maintaining the archive.
 
 There are two dictionaries in use at this time:
