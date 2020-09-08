@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.332
+    _dictionary.version         5.333
 #
      loop_
     _dictionary_history.version
@@ -2323,6 +2323,18 @@ data_mmcif_pdbx.dic
     + Add 'NMR relaxation study' to _pdbx_struct_assembly_auth_evidence.experimental_support
        eumeration 
 ;
+5.333  2020-09-08
+;
+    Changes (ep):
+    + Update funding enumerations
+    + Add advisory limits for _em_focused_io_beam.final_thickness
+      and _emd_sectioning_focused_ion_beam.final_thickness
+    + Add  'methylene carbons' to _pdbx_nmr_chem_shift_ref.atom_group enumeraton
+    + Change type of struct_ncs_oper.id, struct_ncs_end_gen.oper_id, pdbx_struct_ncs_virus_gen.oper_id
+      to int to match current PDB practice
+    + Change _pdbx_struct_assembly.details mandatory based on current use.
+    + Change type of pdbx_database_released.db_id type from line to pdbx_related_db_id
+;
 #
 ###########################################################################
 #
@@ -2861,7 +2873,7 @@ data_mmcif_pdbx.dic
 ;              A set of 3x4 matrices separated by spaces and newlines on each line.
                Final newline optional. Optional spaces at start of lines. Blank lines accepted.
 ;
-               pdbx_related_db_code   char
+               pdbx_related_db_id   char
                '[][_.:"&<>()/\{}'`~!@#$%A-Za-z0-9*|+-]*'
 ;              code item types/single words without semi-colon or comma ...
 ;
