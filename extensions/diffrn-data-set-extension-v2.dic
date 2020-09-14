@@ -881,9 +881,9 @@ save__pdbx_diffrn_merge_stat.percent_possible_obs
 
 save__pdbx_diffrn_merge_stat.mean_I_over_sigI_all
     _item_description.description
-;              The mean of the ratio of the intensities of all reflections
-               in this shell to the mean of the standard uncertainties of the
-               intensities of all reflections.
+;              The mean of the ratio of the symmetry-unique, merged intensity
+               to its standard uncertainty for all reflections within the
+               given diffraction limits
 ;
     _item.name                  '_pdbx_diffrn_merge_stat.mean_I_over_sigI_all'
     _item.category_id             pdbx_diffrn_merge_stat
