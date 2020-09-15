@@ -1,15 +1,6 @@
 #!/usr/bin/env python
 
 import pytest
-from tests.common import DictionaryData
-
-@pytest.fixture
-def dictionary():
-    """Returns a loaded dictionary"""
-    dd = DictionaryData()
-    dd.readDictionary()
-    return dd
-
 
 def testFundingCountries(dictionary):
     """Tests the countries listed in funding source"""
