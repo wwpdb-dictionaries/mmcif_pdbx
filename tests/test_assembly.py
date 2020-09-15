@@ -22,16 +22,17 @@ nlM = '\n'
 # Allow blank lines
 blanklO = '([\t ]*\n)*'
 nlO = '\n?'
-rowNlM = '(%s%s%s){3}?(%s%s%s%s)' % (wsO, flt, wsM, flt, spO, nlM, blanklO)
-rowNlO = '(%s%s%s){3}(%s%s%s%s)' % (wsO, flt, wsM, flt, spO, nlO, blanklO)
+rowNlM = '((%s%s%s){3})?(%s%s%s%s)' % (wsO, flt, wsM, flt, spO, nlM, blanklO)
+rowNlO = '((%s%s%s){3})(%s%s%s%s)' % (wsO, flt, wsM, flt, spO, nlO, blanklO)
 #Last line with WS might not need nl - not handled by blanklO
 assembly_re = '((%s){3})*(%s){2}(%s)%s' % (rowNlM, rowNlM, rowNlO, wsO)
 
 
-@pytest.fixture
+@pytest.fixture(scope = "module")
 def getRe(dictionary):
     if os.getenv("RE_DEVEL"):
         reg = assembly_re
+        print("RE_DEVEL: %r" % assembly_re)
     else:
         reg = dictionary.getTypeRegexAlt('pdbx_struct_assembly_gen_depositor_info',
                                          'full_matrices')
@@ -81,7 +82,7 @@ def testSimpleAssemblies(getRe):
     assert check_assem(reg, '1 0 0 0\n0 1 0 0\n0 0 1 0')
     assert check_assem(reg, '1 0 0 0\n0 1 0 0\n0 0 1 0\n')
     assert not check_assem(reg, '1 0 0 0\n0 1 0 0\n0 0 1 0\n1 0 0 0')
-
+    
 def testExtraspaceAssemblies(getRe):
     reg = getRe
     assert check_assem(reg, ' 1   0   0  0\n0  1 0  0\n  0 0 1 0')
