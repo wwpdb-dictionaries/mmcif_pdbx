@@ -3,10 +3,49 @@
 #include <stdlib.h>
 #include <strings.h>
 
+
+char *ConvertSpecial(const char *line) {
+  /* Walk through line converting special characters */
+  /* Overallocate output */
+  char *out = malloc(strlen(line) + 1);
+
+  size_t outpos = 0;  
+  size_t pos = 0;
+
+  while(pos < strlen(line)) {
+    if (line[pos] == '\\') {
+      if (line[pos+1] == '\\') {
+	out[outpos] = '\\';
+	pos += 2;
+	outpos++;
+      } else if (line[pos+1] == '\t') {
+	out[outpos] = '\t';
+	pos += 2;
+	outpos++;
+      } else if (line[pos+1] == '\n') {
+	out[outpos] = '\n';
+	pos += 2;
+	outpos++;
+      } else {
+	out[outpos] = line[pos];
+	pos++;
+	outpos++;
+      }
+    } else {
+      out[outpos] = line[pos];
+      pos++;
+      outpos++;
+    }
+  }
+  /* fprintf(stderr, "CKP1: %s\n", out); */
+  out[outpos] = '\0';
+  return out;
+}
+
 int main(int argc, char *argv[])
 {
 
-  regex_t    re;
+  regex_t preg;
   char *fname = NULL;
   FILE *fin;
   char *line = NULL;
@@ -22,13 +61,20 @@ int main(int argc, char *argv[])
   fin = fopen(fname, "r");
 
   while(getline(&line, &len, fin) != -1) {
-    char * pattern = line;
-    if (rcsb_regcomp(&re, pattern, REG_EXTENDED|REG_NOSUB) != 0) {
+    /* remove newline */
+    size_t len = strlen(line);
+    if( line[len-1] == '\n' )
+      line[len-1] = 0;
+
+    char * pattern = ConvertSpecial(line);
+    /* printf("%s\n", line); */
+    if (rcsb_regcomp(&preg, pattern, REG_EXTENDED|REG_NOSUB) != 0) {
       fprintf(stderr, "Could not compile pattern %s\n", line);
       exitcode = 1;
     }
+    rcsb_regfree(&preg);
+    free(pattern);
   }
-  
 
   fclose(fin);
   free(line);
