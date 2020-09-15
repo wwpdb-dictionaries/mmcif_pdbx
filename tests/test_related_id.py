@@ -3,18 +3,6 @@
 import pytest
 import re
 
-from tests.common import DictionaryData
-
-
-
-@pytest.fixture
-def dictionary():
-    """Returns a loaded dictionary"""
-    dd = DictionaryData()
-    dd.readDictionary()
-    return dd
-
-
 def testReplacedItems(dictionary):
     """Tests that pdbx_database_related.db_id limits spaces, semicolon, or comma"""
 

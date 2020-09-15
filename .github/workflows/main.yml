@@ -21,6 +21,8 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+      with:
+        submodules: true
     - name: Install dependencies
       run: |
            sudo apt-get clean
@@ -46,5 +48,9 @@ jobs:
       run: pip install -r requirements.txt
     - name: Insure dist up to date
       run: make
+    - name: Configure regular expression testing
+      run: mkdir tests/regextest/build && cd tests/regextest/build && cmake ..
+    - name: build regextest support
+      run: cmake --build tests/regextest/build
     - name: Run pytest
       run: pytest
