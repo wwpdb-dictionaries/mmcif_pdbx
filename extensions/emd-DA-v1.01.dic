@@ -2824,6 +2824,13 @@ save__emd_sectioning_focused_ion_beam.final_thickness
     _item.mandatory_code        yes
     _item_units.code            nanometers
     _item_type.code             positive_int
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+                           '_emd_sectioning_focused_ion_beam.final_thickness'   10   10
+                           '_emd_sectioning_focused_ion_beam.final_thickness'   10   300
+                           '_emd_sectioning_focused_ion_beam.final_thickness'   300   300
      save_
 
 save__emd_sectioning_focused_ion_beam.details
@@ -3543,7 +3550,8 @@ save__emd_grid.model
     _item_examples.case           'Quantifoil R2/2'
      loop_
     _item_enumeration.value
-        Quantifoil
+        'PELCO Ultrathin Carbon with Lacey Carbon'
+         Quantifoil
         'Quantifoil R0.6/1'
         'Quantifoil R1.2/1.3'
         'Quantifoil R2/1'
@@ -5996,8 +6004,11 @@ save__emd_helical_parameters.delta_phi
     _item.mandatory_code          yes
     _item_type.code               float
     _item_units.code              degrees
-    _item_range.minimum           -180.0
-    _item_range.maximum           180.0
+    loop_
+    _item_range.minimum
+    _item_range.maximum
+                                  -180.0  180.0
+				   180.0  180.0
     _item_examples.case          '-34.616000'
       save_
 
@@ -6011,6 +6022,8 @@ save__emd_helical_parameters.delta_z
     _item_type.code                float
     _item_units.code               'angstroms'
     _item_examples.case            '17.400000'
+    _item_range.minimum            0.0
+    _item_range.maximum             .
       save_
 
 #save__emd_helical_parameters.hand
