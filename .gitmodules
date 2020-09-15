@@ -1,0 +1,4 @@
+[submodule "tests/regextest/modules/cc-regex"]
+	path = tests/regextest/modules/cc-regex
+	url = https://github.com/rcsb/cc-regex.git
+	branch = master

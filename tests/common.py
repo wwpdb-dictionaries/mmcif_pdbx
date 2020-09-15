@@ -30,6 +30,11 @@ class DictionaryData(object):
     def getTypeRegexAlt(self, cat, attrib):
         return self._dApi.getTypeRegexAlt(cat, attrib)
 
+    def getDataTypeList(self):
+        """ Return list of tuples containing ('code','primitive_code','construct','detail' )
+        """
+        return self._dApi.getDataTypeList()
+
     def getEnumList(self, category, attribute, sortFlag=True):
         return self._dApi.getEnumList(category, attribute, sortFlag)
 
