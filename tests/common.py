@@ -7,6 +7,17 @@ from mmcif.api.DictionaryApi import DictionaryApi
 from mmcif.api.PdbxContainers import CifName
 from mmcif.io.IoAdapterPy import IoAdapterPy
 
+class DictionaryNames(object):
+    def __init__(self):
+        basedir = os.path.join(os.path.dirname(__file__), "..", "dist")
+        self.__v5nextPath = os.path.join(basedir, "mmcif_pdbx_v5_next.dic")
+        self.__v50Path = os.path.join(basedir, "mmcif_pdbx_v50.dic")        
+
+    def getPaths(self):
+        rd = {"v5next" : self.__v5nextPath,
+              "v50" : self.__v50Path
+              }
+        return rd
 
 class DictionaryData(object):
     def __init__(self):
