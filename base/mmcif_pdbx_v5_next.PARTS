@@ -8,3 +8,4 @@ extensions/binding-assay-extension.dic
 extensions/entity_branch-extension.dic
 extensions/chem_comp-extension.dic
 extensions/emd_map_upload_extension.dic
+base/mmcif_pdbx_v5_next-def-ilg.dic
