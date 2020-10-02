@@ -2339,6 +2339,10 @@ data_mmcif_pdbx.dic
 ;
     Changes (ep):
     + Remove trailing newlines from dictionary
+    + Update funding enumerations
+    + Add 'TMSP' to _pdbx_nmr_chem_shift_ref.mol_common_name enumeration
+    + Add 'CRISpy' to _software.name enumeration
+    + Add pdbx_PDB_obsoleted_db_id for list of PDB ids that are obsoleted
 ;
 #
 ###########################################################################
@@ -2881,6 +2885,10 @@ data_mmcif_pdbx.dic
                pdbx_related_db_id   char
                '[][_.:"&<>()/\{}'`~!@#$%A-Za-z0-9*|+-]*'
 ;              code item types/single words without semi-colon or comma ...
+;
+               pdbx_PDB_obsoleted_db_id   char
+               '[0-9][0-9a-zA-Z]{3}( [0-9][0-9a-zA-Z]{3})*'
+;              List of PDB ids for obsoletion - space separated
 ;
    positive_int        numb '[1-9][0-9]*'       'Positive integers (1,2,3,..)'
    emd_id              char 'EMD-[0-9]{4,}'     'EMDB code'
