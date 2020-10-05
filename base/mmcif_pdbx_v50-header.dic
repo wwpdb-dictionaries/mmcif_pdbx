@@ -2343,6 +2343,8 @@ data_mmcif_pdbx.dic
     + Add 'TMSP' to _pdbx_nmr_chem_shift_ref.mol_common_name enumeration
     + Add 'CRISpy' to _software.name enumeration
     + Add pdbx_PDB_obsoleted_db_id for list of PDB ids that are obsoleted
+    + Add AUCO to enumeraion for _pdbx_database_status.status_code_cs and
+      _pdbx_database_status.status_code_mr
 ;
 #
 ###########################################################################
