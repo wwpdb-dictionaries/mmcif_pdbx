@@ -110,6 +110,7 @@ em_embedding                        1 em_embedding:em_specimen:1                
 em_entity_assembly_molwt            1 em_entity_assembly_molwt:em_entity_assembly:1         . .
 em_entity_assembly_naturalsource    1 em_entity_assembly_naturalsource:em_entity_assembly:1 . .
 em_entity_assembly_recombinant      1 em_entity_assembly_recombinant:em_entity_assembly:1   . .
+em_entity_assembly_synthetic        1 em_entity_assembly_synthetic:em_entity_assembly:1     . .
 em_euler_angle_assignment           1 em_euler_angle_assignment:em_image_processing:1       . .
 em_experiment                       1 em_experiment:entry:1                                 . .
 em_fiducial_markers                 1 em_fiducial_markers:em_tomography_specimen:1          . .
@@ -282,6 +283,7 @@ pdbx_construct                           3  pdbx_construct:pdbx_robot_system:3  
 pdbx_construct_feature                   1  pdbx_construct_feature:entry:1                                            . .
 pdbx_construct_feature                   2  pdbx_construct_feature:pdbx_construct:2                                   . .
 pdbx_coordinate_model                    1  pdbx_coordinate_model:struct_asym:1                                       . .
+pdbx_database_doi                        1  pdbx_database_doi:database_2:1                                             . .
 pdbx_database_message                    1  pdbx_database_message:entry:1                                             . .
 pdbx_database_proc                       1  pdbx_database_proc:entry:1                                                . .
 pdbx_database_status                     1  pdbx_database_status:entry:1                                              . .
@@ -935,6 +937,7 @@ em_embedding                        1 '_em_embedding.specimen_id'               
 em_entity_assembly_molwt            1 '_em_entity_assembly_molwt.entity_assembly_id'         '_em_entity_assembly.id'     em_entity_assembly
 em_entity_assembly_naturalsource    1 '_em_entity_assembly_naturalsource.entity_assembly_id' '_em_entity_assembly.id'     em_entity_assembly
 em_entity_assembly_recombinant      1 '_em_entity_assembly_recombinant.entity_assembly_id'   '_em_entity_assembly.id'     em_entity_assembly
+em_entity_assembly_synthetic        1 '_em_entity_assembly_synthetic.entity_assembly_id'     '_em_entity_assembly.id'     em_entity_assembly
 em_euler_angle_assignment           1 '_em_euler_angle_assignment.image_processing_id'       '_em_image_processing.id'    em_image_processing
 em_experiment                       1 '_em_experiment.entry_id'                              '_entry.id'                  entry
 em_fiducial_markers                 1 '_em_fiducial_markers.em_tomography_specimen_id'       '_em_tomography_specimen.id' em_tomography_specimen
@@ -1299,6 +1302,7 @@ pdbx_construct                           3  '_pdbx_construct.robot_id'          
 pdbx_construct_feature                   1  '_pdbx_construct_feature.entry_id'                    '_entry.id'                                 entry
 pdbx_construct_feature                   2  '_pdbx_construct_feature.construct_id'                '_pdbx_construct.id'                        pdbx_construct
 pdbx_coordinate_model                    1  '_pdbx_coordinate_model.asym_id'                      '_struct_asym.id'                           struct_asym
+pdbx_database_doi                        1  '_pdbx_database_doi.database_id'                      '_database_2.database_id'                   database_2
 pdbx_database_message                    1  '_pdbx_database_message.entry_id'                     '_entry.id'                                 entry
 pdbx_database_proc                       1  '_pdbx_database_proc.entry_id'                        '_entry.id'                                 entry
 pdbx_database_status                     1  '_pdbx_database_status.entry_id'                      '_entry.id'                                 entry

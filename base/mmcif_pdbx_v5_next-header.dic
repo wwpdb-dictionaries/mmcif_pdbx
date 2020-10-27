@@ -2477,7 +2477,11 @@ data_mmcif_pdbx.dic
     + Update funding enumerations
     + Set upper limits for _reflns_shell.Rmerge_I_obs and _reflns.pdbx_Rmerge_I_obs
     + Change code for _pdbx_depui_entry_details.replace_pdb_id to pdbx_PDB_obsoleted_db_id
-    + Extend enumeration for struct_conf_type.id to include "BEND" and "OTHER"
+    + Extend enumeration for _struct_conf_type.id to include "BEND" and "OTHER"
+    + Add SYNTHETIC to _emd_supramolecule.source and _em_entity_assembly.source
+    + Add categories _em_entity_assembly_synthetic and _emd_synthetic_source
+    + Add attribute _atom_site.pdbx_atom_ambiguity
+    + Add category pdbx_database_doi
 ;
 #
 ###########################################################################

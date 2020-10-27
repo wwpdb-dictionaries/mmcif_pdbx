@@ -1005,7 +1005,7 @@ subcomponent)
         NATURAL
         RECOMBINANT
         'MULTIPLE SOURCES'
-        # SYNTHETIC TODO
+	SYNTHETIC
       save_
 
 save__emd_supramolecule.name
@@ -1549,6 +1549,188 @@ save__emd_natural_source.cellular_location
 ;
     _item.name                  '_emd_natural_source.cellular_location'
     _item.category_id             emd_natural_source
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case
+           'cytoplasm'
+           'endoplasmic reticulum'
+           'plasma membrane'
+     save_
+
+##########################
+## EMD_SYNTHETIC_SOURCE ##
+##########################
+
+save_emd_synthetic_source
+    _category.description
+;   Data items in this category record taxonomic details about the synthetic source for EM
+    sample or sample subcomponent.
+;
+    _category.id                  emd_synthetic_source
+    _category.mandatory_code      no
+     loop_
+    _category_key.name           '_emd_synthetic_source.id'
+                                 '_emd_synthetic_source.emd_supramolecule_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'emd_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+; Example 1
+;
+;  loop_
+   _emd_synthetic_source.id
+   _emd_synthetic_source.emd_supramolecule_id
+   _emd_synthetic_source.ncbi_tax_id
+   _emd_synthetic_source.organism
+   _emd_synthetic_source.strain
+   _emd_synthetic_source.tissue
+   _emd_synthetic_source.organelle
+   _emd_synthetic_source.cellular_location
+   _emd_synthetic_source.organ
+   1 1  8333 'Escherichia coli' K12 . . . .
+;
+     save_
+
+save__emd_synthetic_source.id
+    _item_description.description
+;  Ordinal key for the emd_synthetic_source category.
+;
+    _item.name                  '_emd_synthetic_source.id'
+    _item.category_id             emd_synthetic_source
+    _item.mandatory_code          yes
+    _item_type.code               positive_int
+     save_
+
+save__emd_synthetic_source.emd_supramolecule_id
+    _item_description.description
+;  Pointer to the SUPRAMOLECULE category.
+;
+    _item.name                  '_emd_synthetic_source.emd_supramolecule_id'
+    _item.category_id             emd_synthetic_source
+    _item.mandatory_code          yes
+    _item_type.code               positive_int
+     save_
+
+save__emd_synthetic_source.ncbi_tax_id
+    _item_description.description
+;  The NCBI taxonomy id for the synthetic organism source of the component.
+;
+    _item.name                  '_emd_synthetic_source.ncbi_tax_id'
+    _item.category_id             emd_synthetic_source
+    _item.mandatory_code          yes
+    _item_type.code               positive_int
+     loop_
+    _item_examples.case
+              '10804'
+              '9606'
+     save_
+
+save__emd_synthetic_source.organism
+    _item_description.description
+; The scientific name of the source organism for the component
+;
+    _item.name                  '_emd_synthetic_source.organism'
+    _item.category_id             emd_synthetic_source
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_examples.case
+          'Homo sapiens'
+          'Gallus gallus'
+     save_
+
+#save__emd_synthetic_source.organism_common
+#    _item_description.description
+#;   The common name of the synthetic organism from which the component was obtained.
+#;
+#    _item.name                  '_emd_synthetic_source.organism_common'
+#    _item.category_id             emd_synthetic_source
+#    _item.mandatory_code          no
+#    _item_type.code               text
+#     save_
+
+save__emd_synthetic_source.strain
+    _item_description.description
+;  The strain of the source organism from which the component was obtained
+;
+    _item.name                  '_emd_synthetic_source.strain'
+    _item.category_id             emd_synthetic_source
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case
+               'DH5a'
+               'BMH 71-18'
+     save_
+
+save__emd_synthetic_source.organ
+    _item_description.description
+; The organ of the source organism from which the component was obtained
+;
+
+    _item.name                  '_emd_synthetic_source.organ'
+    _item.category_id             emd_synthetic_source
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_examples.case
+              'heart'
+     save_
+
+save__emd_synthetic_source.tissue
+    _item_description.description
+;  The tissue of the source organism from which the component was obtained.
+;
+    _item.name                  '_emd_synthetic_source.tissue'
+    _item.category_id             emd_synthetic_source
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case
+              'Cartilage'
+              'Liver'
+              'Eye lens'
+     save_
+
+save__emd_synthetic_source.cell
+    _item_description.description
+;              The cell type from which the component was obtained.
+;
+    _item.name                  '_emd_synthetic_source.cell'
+    _item.category_id             emd_synthetic_source
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case
+         'CHO'
+         'HELA'
+         '3T3'
+     save_
+
+save__emd_synthetic_source.organelle
+    _item_description.description
+;   The organelle from which the component was obtained.
+;
+    _item.name                  '_emd_synthetic_source.organelle'
+    _item.category_id             emd_synthetic_source
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case
+               'Golgi'
+               'Mitochondrion'
+               'Cytoskeleton'
+     save_
+
+save__emd_synthetic_source.cellular_location
+    _item_description.description
+;   The cellular location of the component.
+;
+    _item.name                  '_emd_synthetic_source.cellular_location'
+    _item.category_id             emd_synthetic_source
     _item.mandatory_code          no
     _item_type.code               text
      loop_
