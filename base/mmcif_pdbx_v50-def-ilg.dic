@@ -1205,7 +1205,7 @@ pdbx_construct                           3  '_pdbx_construct.robot_id'          
 pdbx_construct_feature                   1  '_pdbx_construct_feature.entry_id'                    '_entry.id'                                 entry
 pdbx_construct_feature                   2  '_pdbx_construct_feature.construct_id'                '_pdbx_construct.id'                        pdbx_construct
 pdbx_coordinate_model                    1  '_pdbx_coordinate_model.asym_id'                      '_struct_asym.id'                           struct_asym
-pdbx_database_doi                        1  '_pdbx_database_doi.db_id'                            '_database_2.database_id'                   database_2
+pdbx_database_doi                        1  '_pdbx_database_doi.db_name'                          '_database_2.database_id'                   database_2
 pdbx_database_message                    1  '_pdbx_database_message.entry_id'                     '_entry.id'                                 entry
 pdbx_database_proc                       1  '_pdbx_database_proc.entry_id'                        '_entry.id'                                 entry
 pdbx_database_status                     1  '_pdbx_database_status.entry_id'                      '_entry.id'                                 entry
