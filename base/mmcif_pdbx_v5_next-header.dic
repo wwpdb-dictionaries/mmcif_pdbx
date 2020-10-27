@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.342
+    _dictionary.version         5.343
 #
      loop_
     _dictionary_history.version
@@ -2467,6 +2467,17 @@ data_mmcif_pdbx.dic
     + Add upper limit for reflns_shell.percent_possible_all
     + Add AUCO to enumeraion for _pdbx_database_status.status_code_cs and
       _pdbx_database_status.status_code_mr
+;
+5.343  2020-10-27
+;
+    Changes (ep):
+    + Remove unused definition of non_negative_int type
+    + add STOPGAP and novaSTA to _emd_software.name and _em_software.name enumerations
+    + add PRIME and ULTIMA to _software.name enumeration
+    + Update funding enumerations
+    + Set upper limits for _reflns_shell.Rmerge_I_obs and _reflns.pdbx_Rmerge_I_obs
+    + Change code for _pdbx_depui_entry_details.replace_pdb_id to pdbx_PDB_obsoleted_db_id
+    + Extend enumeration for struct_conf_type.id to include "BEND" and "OTHER"
 ;
 #
 ###########################################################################

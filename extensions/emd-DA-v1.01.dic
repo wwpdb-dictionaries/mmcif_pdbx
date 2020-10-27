@@ -838,6 +838,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  MotionCorr2                       .
         '_emd_software.name'  NAMD                              .
         '_emd_software.name'  NOVACTF                           .
+        '_emd_software.name'  novaSTA                            .
         '_emd_software.name'  O                                 .
         '_emd_software.name'  Pathwalking                       .	
         '_emd_software.name'  PEET                              .
@@ -870,6 +871,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  SPHIRE                            .
         '_emd_software.name'  SPIDER                            .
         '_emd_software.name'  SPRING                            .
+        '_emd_software.name'  STOPGAP                            .
         '_emd_software.name'  SUPER                             .
         '_emd_software.name'  'Super-sampling SART'             .
         '_emd_software.name'  TEMPy                             .
