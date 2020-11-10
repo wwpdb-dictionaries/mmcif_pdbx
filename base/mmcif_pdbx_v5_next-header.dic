@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.343
+    _dictionary.version         5.344
 #
      loop_
     _dictionary_history.version
@@ -2482,6 +2482,13 @@ data_mmcif_pdbx.dic
     + Add categories _em_entity_assembly_synthetic and _emd_synthetic_source
     + Add attribute _atom_site.pdbx_atom_ambiguity
     + Add category pdbx_database_doi
+;
+5.344  2020-11-10
+;
+    Changes (ep):
+    + Create categories _em_virus_synthetic and _emd_virus_synthetic
+    + Add 'TFE' to _pdbx_nmr_chem_shift_ref.mol_common_name enumeration
+    + Update funding enumerations
 ;
 #
 ###########################################################################

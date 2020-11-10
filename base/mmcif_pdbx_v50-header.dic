@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.335
+    _dictionary.version         5.336
 #
      loop_
     _dictionary_history.version
@@ -2358,6 +2358,12 @@ data_mmcif_pdbx.dic
     + Add category _em_entity_assembly_synthetic
     + Add attribute _atom_site.pdbx_atom_ambiguity
     + Add category pdbx_database_doi
+;
+5.336  2020-11-10
+;
+    Changes (ep):
+    + Create category _em_virus_synthetic
+    + Add 'TFE' to _pdbx_nmr_chem_shift_ref.mol_common_name enumeration
 ;
 #
 ###########################################################################

@@ -153,6 +153,7 @@ em_tomography_specimen              1 em_tomography_specimen:em_specimen:1      
 em_ultramicrotomy                   1 em_ultramicrotomy:em_tomography_specimen:1            . .
 em_virus_entity                     1 em_virus_entity:em_entity_assembly:1                  . .
 em_virus_natural_host               1 em_virus_natural_host:em_entity_assembly:1            . .
+em_virus_synthetic                  1 em_virus_synthetic:em_entity_assembly:1               . .
 em_virus_shell                      1 em_virus_shell:em_entity_assembly:1                   . .
 em_vitrification                    1 em_vitrification:citation:1                           . .
 em_vitrification                    2 em_vitrification:entry:2                              . .
@@ -927,6 +928,7 @@ em_ultramicrotomy                   1 '_em_ultramicrotomy.em_tomography_specimen
 em_virus_entity                     1 '_em_virus_entity.entity_assembly_id'                  '_em_entity_assembly.id'     em_entity_assembly
 em_virus_natural_host               1 '_em_virus_natural_host.entity_assembly_id'            '_em_entity_assembly.id'     em_entity_assembly
 em_virus_shell                      1 '_em_virus_shell.entity_assembly_id'                   '_em_entity_assembly.id'     em_entity_assembly
+em_virus_synthetic                  1 '_em_virus_synthetic.entity_assembly_id'               '_em_entity_assembly.id'     em_entity_assembly
 em_vitrification                    1 '_em_vitrification.citation_id'                        '_citation.id'               citation
 em_vitrification                    2 '_em_vitrification.entry_id'                           '_entry.id'                  entry
 em_vitrification                    3 '_em_vitrification.specimen_id'                        '_em_specimen.id'            em_specimen
