@@ -2364,6 +2364,9 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Create category _em_virus_synthetic
     + Add 'TFE' to _pdbx_nmr_chem_shift_ref.mol_common_name enumeration
+    + Update funding enumerations
+    + Make _diffrn_refln.standard_code and _diffrn_refln.scale_group_code
+      non-mandatory
 ;
 #
 ###########################################################################
