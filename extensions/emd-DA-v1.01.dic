@@ -765,7 +765,8 @@ encouraged to provide a value in this field.
         '_emd_software.name'  Amber                             .
         '_emd_software.name'  AmiraFPM                          .
         '_emd_software.name'  Appion                            .
-        '_emd_software.name'  Auto3DEM                          .
+	'_emd_software.name'  ARP/wARP                          .
+	'_emd_software.name'  Auto3DEM                          .
         '_emd_software.name'  AV3                               .
         '_emd_software.name'  Buccaneer                         .
         '_emd_software.name'  BUSTER                            .
@@ -3055,7 +3056,9 @@ save__emd_sectioning_focused_ion_beam.duration
     _item.category_id           emd_sectioning_focused_ion_beam
     _item.mandatory_code        yes
     _item_units.code            seconds
-    _item_type.code             positive_int
+    _item_type.code             float
+    _item_range.maximum         .
+    _item_range.minimum         0.0
      save_
 
 save__emd_sectioning_focused_ion_beam.temperature
@@ -4964,6 +4967,19 @@ save__emd_specialist_optics.energyfilter_slit_width
            0.0        0.0
 	   0.0     1000.0
 	   1000.0  1000.0
+     save_
+
+save__emd_specialist_optics.details
+    _item_description.description
+;  Details on the use of the phase plate
+;
+    _item.name                  '_emd_specialist_optics.details'
+    _item.category_id           emd_specialist_optics
+    _item.mandatory_code        no
+    _item_type.code             line
+    _item_examples.case
+; Phase plate evolution varied between different microscopes used to collect data but positions were shifted once phase evolution progressed past 120 degrees.
+;
      save_
 
 #save__emd_microscopy.astigmatism
@@ -7633,7 +7649,7 @@ save__emd_crystallography_stats.r_sym
 ;
     _item.name                  '_emd_crystallography_stats.r_sym'
     _item.category_id           emd_crystallography_stats
-    _item.mandatory_code        yes
+    _item.mandatory_code        no
     _item_type.code             float
     _item_examples.case         0.244
      loop_
@@ -7666,7 +7682,7 @@ save__emd_crystallography_stats.overall_phase_error
 ;
     _item.name                  '_emd_crystallography_stats.overall_phase_error'
     _item.category_id           emd_crystallography_stats
-    _item.mandatory_code        yes
+    _item.mandatory_code        no
     _item_type.code             float
     _item_units.code            degrees
     _item_examples.case         17.5
@@ -7683,7 +7699,7 @@ save__emd_crystallography_stats.overall_phase_residual
 ;
     _item.name                  '_emd_crystallography_stats.overall_phase_residual'
     _item.category_id           emd_crystallography_stats
-    _item.mandatory_code        yes
+    _item.mandatory_code        no
     _item_type.code             float
     _item_units.code            degrees
     _item_examples.case         17.5

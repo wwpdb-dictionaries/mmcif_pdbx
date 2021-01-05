@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.344
+    _dictionary.version         5.345
 #
      loop_
     _dictionary_history.version
@@ -2491,6 +2491,24 @@ data_mmcif_pdbx.dic
     + Update funding enumerations
     + Make _diffrn_refln.standard_code and _diffrn_refln.scale_group_code
       non-mandatory
+;
+5.345  2021-01-05
+;
+    Changes (ep/mw/cv):
+    + Addition of _diffrn_refln.pdbx_image_id and _diffrn_refln.pdbx_scan_angle
+    + Duplicate words cleanup in descriptions
+    + Add enumerations for _pdbx_exptl_crystal_grow_sol.volume_units and
+      _pdbx_exptl_crystal_grow_comp.conc_units
+    + Add usage information to description of _atom_site
+    + Update funding enumerations _pdbx_audit_support.funding_organization
+    + Add 'ARP/wARP' to _em_software.name and _emd_software.name enumeration
+    + Add _database_2.pdbx_database_acceession and _database_2.pdbx_DOI
+    + Add _emd_specialist_optics.details and _em_imaging_optics.details
+    + Change attributes to non-mandatory: _em_diffraction_stats.overall_phase_error,
+      _em_diffraction_stats.overall_phase_residual, _em_diffraction_stats.r_sym,
+      _emd_crystallography_stats.r_sym, _emd_crystallography_stats.overall_phase_error,
+      and _emd_crystallography_stats.overall_phase_residual.
+    + Change type to float for _em_focused_ion_beam.duration and _emd_sectioning_focused_ion_beam.duration
 ;
 #
 ###########################################################################
