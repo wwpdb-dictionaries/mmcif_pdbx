@@ -2592,6 +2592,14 @@ data_mmcif_pdbx.dic
               'vector'
 ;              The collection of elements of a vector.
 ;
+              'unit_vector'
+;              The collection of elements of a vector whose norm equals 1.
+;
+              'eigendecomposition'
+;              The collection of items making up the Eigendecomposition of a
+               matrix. For an n x n matrix, instances of this subcategory will
+               consist of n Eigenvectors of dimension n, and n Eigenvalues.
+;
 
 #########################
 ## CATEGORY_GROUP_LIST ##

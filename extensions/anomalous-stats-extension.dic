@@ -1,0 +1,236 @@
+#
+# Statistics relating to isotropic, anomalous diffraction
+#
+
+#####################
+## Category REFLNS ##
+#####################
+
+save__reflns.pdbx_redundancy_anomalous
+    _item_description.description
+;              The overall redundancy of anomalous difference data
+               within the sphere defined by the diffraction limits
+               (_reflns.d_resolution_high and
+               _reflns.d_resolution_low), i.e. data for which
+               intensities for both instances of a Friedel pair are
+               available for an acentric reflection.
+;
+    _item.name                  '_reflns.pdbx_redundancy_anomalous'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum             .   1.0
+                                  1.0   1.0
+
+    _item_type.code               float
+
+    _item_aliases.alias_name    '_reflns.gphl_redundancy_anomalous'
+    _item_aliases.dictionary      gphl-proc-anomalous-stats-extension.dic
+    _item_aliases.version         0.0
+    save_
+
+save__reflns.pdbx_CC_half_anomalous
+    _item_description.description
+;              The overall correlation coefficient between two randomly
+               chosen half-sets of anomalous intensity differences,
+               I(+)-I(-) for anomalous data within the sphere defined
+               by the diffraction limits (_reflns.d_resolution_high and
+               _reflns.d_resolution_low), i.e. data for which
+               intensities for both instances of a Friedel pair are
+               available for an acentric reflection.
+;
+    _item.name                  '_reflns.pdbx_CC_half_anomalous'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    _item_type.code               float
+    loop_
+    _item_range.minimum
+    _item_range.maximum
+                                 -1.0  -1.0
+                                 -1.0   1.0
+                                  1.0   1.0
+
+    _item_aliases.alias_name     '_reflns.gphl_CC_half_anomalous'
+    _item_aliases.dictionary       gphl-proc-anomalous-stats-extension.dic
+    _item_aliases.version          0.0
+    save_
+
+save__reflns.pdbx_absDiff_over_sigma_anomalous
+    _item_description.description
+;              The overall mean ratio of absolute anomalous intensity
+               differences to their standard deviation within the
+               sphere defined by the diffraction limits
+               (_reflns.d_resolution_high and
+               _reflns.d_resolution_low) and using data for which
+               intensities for both instances of a Friedel pair are
+               available for an acentric reflection.
+
+                    |Dano|
+                 -------------
+                  sigma(Dano)
+
+               with
+
+                 Dano        = I(+) - I(-)
+                 sigma(Dano) = sqrt( sigma(I(+))^2 + sigma(I(-))^2 )
+;
+    _item.name                  '_reflns.pdbx_absDiff_over_sigma_anomalous'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    _item_type.code               float
+    loop_
+    _item_range.minimum
+    _item_range.maximum
+                                  0.0   0.0
+                                  0.0   .
+
+    _item_aliases.alias_name    '_reflns.gphl_absDiff_over_sigma_anomalous'
+    _item_aliases.dictionary      gphl-proc-anomalous-stats-extension.dic
+    _item_aliases.version         0.0
+    save_
+
+save__reflns.pdbx_percent_possible_anomalous
+    _item_description.description
+;              Completeness (as a percentage) of symmetry-unique
+               anomalous difference data within the sphere defined by
+               the diffraction limits (_reflns.d_resolution_high and
+               _reflns.d_resolution_low) relative to all possible
+               symmetry-unique anomalous difference data within that
+               sphere.
+;
+    _item.name                  '_reflns.pdbx_percent_possible_anomalous'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum           100.0 100.0
+                                  100.0   0.0
+                                    0.0   0.0
+
+    _item_type.code               float
+
+    loop_
+    _item_aliases.alias_name
+    _item_aliases.dictionary
+    _item_aliases.version
+                                '_reflns.gphl_percent_possible_obs_anomalous' gphl-proc-extension.dic                  0.0
+				'_reflns.gphl_percent_possible_anomalous'     gphl-proc-anomalous-stats-extension.dic  0.0
+     save_
+
+###########################
+## Category REFLNS_SHELL ##
+###########################
+
+save__reflns_shell.pdbx_redundancy_anomalous
+    _item_description.description
+;              The redundancy of anomalous difference data within the
+               spherical shell (defined by its diffraction limits
+               _reflns_shell.d_resolution_high and
+               _reflns_shell.d_resolution_low), i.e. data for which
+               intensities for both instances of a Friedel pair are
+               available for an acentric reflection.
+;
+    _item.name                  '_reflns_shell.pdbx_redundancy_anomalous'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum             .   1.0
+                                  1.0   1.0
+
+    _item_type.code               float
+
+    _item_aliases.alias_name    '_reflns_shell.gphl_redundancy_anomalous'
+    _item_aliases.dictionary      gphl-proc-anomalous-stats-extension.dic
+    _item_aliases.version         0.0
+    save_
+
+save__reflns_shell.pdbx_CC_half_anomalous
+    _item_description.description
+;              The correlation coefficient within the spherical shell
+               (defined by its diffraction limits
+               _reflns_shell.d_resolution_high and
+               _reflns_shell.d_resolution_low) between two randomly
+               chosen half-sets of anomalous intensity differences,
+               I(+)-I(-) for anomalous data, i.e. data for which
+               intensities for both instances of a Friedel pair are
+               available for an acentric reflection.
+;
+    _item.name                  '_reflns_shell.pdbx_CC_half_anomalous'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    loop_
+    _item_range.minimum
+    _item_range.maximum
+                                 -1.0  -1.0
+                                 -1.0   1.0
+                                  1.0   1.0
+
+    _item_aliases.alias_name    '_reflns_shell.gphl_CC_half_anomalous'
+    _item_aliases.dictionary      gphl-proc-anomalous-stats-extension.dic
+    _item_aliases.version         0.0
+    save_
+
+save__reflns_shell.pdbx_absDiff_over_sigma_anomalous
+    _item_description.description
+;              The mean ratio of absolute anomalous intensity
+               differences to their standard deviation within the
+               spherical shell (defined by its diffraction limits
+               _reflns_shell.d_resolution_high and
+               _reflns_shell.d_resolution_low).
+
+                    |Dano|
+                 -------------
+                  sigma(Dano)
+
+               with
+
+                 Dano        = I(+) - I(-)
+                 sigma(Dano) = sqrt( sigma(I(+))^2 + sigma(I(-))^2 )
+;
+    _item.name                  '_reflns_shell.pdbx_absDiff_over_sigma_anomalous'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    loop_
+    _item_range.minimum
+    _item_range.maximum
+                                  0.0   0.0
+                                  0.0   .
+
+    _item_aliases.alias_name    '_reflns_shell.gphl_absDiff_over_sigma_anomalous'
+    _item_aliases.dictionary      gphl-proc-anomalous-stats-extension.dic
+    _item_aliases.version         0.0
+   save_
+
+save__reflns_shell.pdbx_percent_possible_anomalous
+    _item_description.description
+;              Completeness (as a percentage) of symmetry-unique
+               anomalous difference data within the spherical shell
+               defined by its diffraction limits
+               (_reflns_shell.d_resolution_high and
+               _reflns_shell.d_resolution_low) relative to all
+               possible symmetry-unique anomalous difference data
+               within that shell.
+;
+    _item.name                  '_reflns_shell.pdbx_percent_possible_anomalous'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum           100.0 100.0
+                                  100.0   0.0
+                                    0.0   0.0
+
+    _item_type.code               float
+
+    loop_
+    _item_aliases.alias_name
+    _item_aliases.dictionary
+    _item_aliases.version
+                                '_reflns_shell.gphl_percent_possible_obs_anomalous'  gphl-proc-extension.dic 0.0
+				'_reflns_shell.gphl_percent_possible_anomalous'      gphl-proc-anomalous-stats-extension.dic  0.0
+     save_
+

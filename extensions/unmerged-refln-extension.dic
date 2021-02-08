@@ -1,0 +1,104 @@
+#
+# Information about individual unmerged reflections
+#
+
+###########################
+## Category DIFFRN_REFLN ##
+###########################
+
+# Located to the base files
+# save__diffrn_refln.pdbx_image_id
+#     _item_description.description
+# ;              The identifier of the diffraction image this reflection
+#                is associated with. This is often the image where the
+#                calculated reflection centroid is predicted to occur.
+# ;
+#     _item.name                  '_diffrn_refln.pdbx_image_id'
+#     _item.category_id             diffrn_refln
+#     _item.mandatory_code          no
+#     _item_type.code               int
+#     _item_range.maximum           .
+#     _item_range.minimum           0
+
+#     _item_aliases.alias_name    '_diffrn_refln.gphl_image_id'
+#     _item_aliases.dictionary      gphl-proc-unmerged-extension.dic
+#     _item_aliases.version         0.0
+#     save_
+
+save__diffrn_refln.pdbx_detector_x
+    _item_description.description
+;              Detector coordinate (in pixels) along the X-direction
+               for this reflection. This is often the position where
+               the calculated reflection centroid is predicted to occur.
+
+               The detector X-direction is most often along the fast
+               changing array index of the 2D diffraction array, while
+               the Y-coordinate is along the slow changing array
+               index.
+;
+    _item.name                  '_diffrn_refln.pdbx_detector_x'
+    _item.category_id             diffrn_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+
+    _item_aliases.alias_name    '_diffrn_refln.gphl_detector_x'
+    _item_aliases.dictionary      gphl-proc-unmerged-extension.dic
+    _item_aliases.version         0.0
+     save_
+
+save__diffrn_refln.pdbx_detector_y
+    _item_description.description
+;              Detector coordinate (in pixels) along the Y-direction
+               for this reflection. This is often the position where
+               the calculated reflection centroid is predicted to occur.
+
+               The detector X-direction is most often along the fast
+               changing array index of the 2D diffraction array, while
+               the Y-coordinate is along the slow changing array
+               index.
+;
+    _item.name                  '_diffrn_refln.pdbx_detector_y'
+    _item.category_id             diffrn_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+
+    _item_aliases.alias_name    '_diffrn_refln.gphl_detector_y'
+    _item_aliases.dictionary      gphl-proc-unmerged-extension.dic
+    _item_aliases.version         0.0
+     save_
+
+save__diffrn_refln.pdbx_rotation_angle
+    _item_description.description
+;              The value of the angle around the scan axis for this
+               reflection. This is often the scan angle at which the
+               calculated reflection centroid is predicted to occur.
+;
+    _item.name                  '_diffrn_refln.pdbx_rotation_angle'
+    _item.category_id             diffrn_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+
+    _item_aliases.alias_name    '_diffrn_refln.gphl_rotation_angle'
+    _item_aliases.dictionary      gphl-proc-unmerged-extension.dic
+    _item_aliases.version         0.0
+     save_
+
+save__diffrn_refln.pdbx_scale_value
+    _item_description.description
+;              The scale factor applied to an individual reflection
+               intensity at the last scaling step before merging
+               all measurements belonging to symmetry-unique
+               reflections into a merged intensity.
+;
+    _item.name                  '_diffrn_refln.pdbx_scale_value'
+    _item.category_id             diffrn_refln
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_range.maximum           .
+    _item_range.minimum           0.0
+
+    _item_aliases.alias_name    '_diffrn_refln.gphl_scale_value'
+    _item_aliases.dictionary      gphl-proc-unmerged-extension.dic
+    _item_aliases.version         0.0
+     save_
