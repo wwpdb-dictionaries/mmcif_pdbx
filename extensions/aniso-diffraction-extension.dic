@@ -8,7 +8,7 @@
 
 save__reflns.pdbx_aniso_diffraction_limit_axis_1_ortho[1]
     _item_description.description
-;             Principal axis 1 (X component) of ellipsoid fitted to
+;             Principal axis 1 (X component) of ellipsoid fitted to the
               diffraction cut-off surface. The applicable orthogonalization
               convention is that specified by
               _reflns.pdbx_orthogonalization_convention.
@@ -36,7 +36,7 @@ save__reflns.pdbx_aniso_diffraction_limit_axis_1_ortho[1]
 
 save__reflns.pdbx_aniso_diffraction_limit_axis_1_ortho[2]
     _item_description.description
-;             Principal axis 1 (Y component) of ellipsoid fitted to
+;             Principal axis 1 (Y component) of ellipsoid fitted to the
               diffraction cut-off surface. The applicable orthogonalization
               convention is that specified by
               _reflns.pdbx_orthogonalization_convention.
@@ -63,7 +63,7 @@ save__reflns.pdbx_aniso_diffraction_limit_axis_1_ortho[2]
 
 save__reflns.pdbx_aniso_diffraction_limit_axis_1_ortho[3]
     _item_description.description
-;             Principal axis 1 (Z component) of ellipsoid fitted
+;             Principal axis 1 (Z component) of ellipsoid fitted to the
               diffraction cut-off surface. The applicable orthogonalization
               convention is that specified by
               _reflns.pdbx_orthogonalization_convention.
@@ -90,7 +90,7 @@ save__reflns.pdbx_aniso_diffraction_limit_axis_1_ortho[3]
 
 save__reflns.pdbx_aniso_diffraction_limit_axis_2_ortho[1]
     _item_description.description
-;             Principal axis 2 (X component) of ellipsoid fitted
+;             Principal axis 2 (X component) of ellipsoid fitted to the
               diffraction cut-off surface. The applicable orthogonalization
               convention is that specified by
               _reflns.pdbx_orthogonalization_convention.
@@ -118,7 +118,7 @@ save__reflns.pdbx_aniso_diffraction_limit_axis_2_ortho[1]
 
 save__reflns.pdbx_aniso_diffraction_limit_axis_2_ortho[2]
     _item_description.description
-;             Principal axis 2 (Y component) of ellipsoid fitted
+;             Principal axis 2 (Y component) of ellipsoid fitted to the
               diffraction cut-off surface. The applicable orthogonalization
               convention is that specified by
               _reflns.pdbx_orthogonalization_convention.
@@ -146,7 +146,7 @@ save__reflns.pdbx_aniso_diffraction_limit_axis_2_ortho[2]
 
 save__reflns.pdbx_aniso_diffraction_limit_axis_2_ortho[3]
     _item_description.description
-;             Principal axis 2 (Z component) of ellipsoid fitted
+;             Principal axis 2 (Z component) of ellipsoid fitted to the
               diffraction cut-off surface. The applicable orthogonalization
               convention is that specified by
               _reflns.pdbx_orthogonalization_convention.
@@ -173,7 +173,7 @@ save__reflns.pdbx_aniso_diffraction_limit_axis_2_ortho[3]
 
 save__reflns.pdbx_aniso_diffraction_limit_axis_3_ortho[1]
     _item_description.description
-;             Principal axis 3 (X component) of ellipsoid fitted
+;             Principal axis 3 (X component) of ellipsoid fitted to the
               diffraction cut-off surface. The applicable orthogonalization
               convention is that specified by
               _reflns.pdbx_orthogonalization_convention.
@@ -201,7 +201,7 @@ save__reflns.pdbx_aniso_diffraction_limit_axis_3_ortho[1]
 
 save__reflns.pdbx_aniso_diffraction_limit_axis_3_ortho[2]
     _item_description.description
-;             Principal axis 3 (Y component) of ellipsoid fitted
+;             Principal axis 3 (Y component) of ellipsoid fitted to the
               diffraction cut-off surface. The applicable orthogonalization
               convention is that specified by
               _reflns.pdbx_orthogonalization_convention.
@@ -229,7 +229,7 @@ save__reflns.pdbx_aniso_diffraction_limit_axis_3_ortho[2]
 
 save__reflns.pdbx_aniso_diffraction_limit_axis_3_ortho[3]
     _item_description.description
-;             Principal axis 3 (Z component) of ellipsoid fitted
+;             Principal axis 3 (Z component) of ellipsoid fitted to the
               diffraction cut-off surface. The applicable orthogonalization
               convention is that specified by
               _reflns.pdbx_orthogonalization_convention.
@@ -258,7 +258,7 @@ save__reflns.pdbx_aniso_diffraction_limit_axis_3_ortho[3]
 save__reflns.pdbx_aniso_diffraction_limit_1
     _item_description.description
 ;             Anisotropic diffraction limit along principal axis 1 (of
-              ellipsoid fitted to diffraction cut-off surface).
+              ellipsoid fitted to the diffraction cut-off surface).
 ;
     _item.name                  '_reflns.pdbx_aniso_diffraction_limit_1'
     _item.category_id             reflns
@@ -279,7 +279,7 @@ save__reflns.pdbx_aniso_diffraction_limit_1
 save__reflns.pdbx_aniso_diffraction_limit_2
     _item_description.description
 ;             Anisotropic diffraction limit along principal axis 2 (of
-              ellipsoid fitted to diffraction cut-off surface)
+              ellipsoid fitted to the diffraction cut-off surface)
 ;
     _item.name                  '_reflns.pdbx_aniso_diffraction_limit_2'
     _item.category_id             reflns
@@ -301,7 +301,7 @@ save__reflns.pdbx_aniso_diffraction_limit_2
 save__reflns.pdbx_aniso_diffraction_limit_3
     _item_description.description
 ;             Anisotropic diffraction limit along principal axis 3 (of
-              ellipsoid fitted to diffraction cut-off surface)
+              ellipsoid fitted to the diffraction cut-off surface)
 ;
     _item.name                  '_reflns.pdbx_aniso_diffraction_limit_3'
     _item.category_id             reflns

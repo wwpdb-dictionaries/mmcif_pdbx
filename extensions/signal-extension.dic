@@ -10,7 +10,7 @@
 save__reflns.pdbx_observed_signal_threshold
     _item_description.description
 ;             The threshold value for _refln.pdbx_signal as used to
-              define the status of an individual reflection acoording
+              define the status of an individual reflection according
               to the description in _refln.pdbx_signal_status.
 ;
     _item.name                  '_reflns.pdbx_observed_signal_threshold'

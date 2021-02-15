@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.338
+    _dictionary.version         5.339
 #
      loop_
     _dictionary_history.version
@@ -2392,6 +2392,41 @@ data_mmcif_pdbx.dic
     + Add _citation.pdbx_database_id_patent to record patents
     + Update funding enumerations _pdbx_audit_support.funding_organization
 ;
+5.339  2021-02-16
+;
+    Changes (Global Phasing Ltd.):
+    + Add items for anomalous diffraction statistics
+       _reflns.pdbx_redundancy_anomalous, _reflns.pdbx_CC_half_anomalous,
+       _reflns.pdbx_absDiff_over_sigma_anomalous, _reflns.pdbx_percent_possible_anomalous,
+       _reflns_shell.pdbx_redundancy_anomalous, _reflns_shell.pdbx_CC_half_anomalous,
+       _reflns_shell.pdbx_absDiff_over_sigma_anomalous,
+       _reflns_shell.pdbx_percent_possible_anomalous
+    + Add items to cater for anistropic diffraction
+      Ellipsoid fit to the cut-off surface:
+         _reflns.pdbx_aniso_diffraction_limit_axis_?_ortho[?],
+         _reflns.pdbx_aniso_diffraction_limit_?
+      Anisotropic B tensor:
+         _reflns.pdbx_aniso_B_tensor_eigenvector_?_ortho[?],
+         _reflns.pdbx_aniso_B_tensor_eigenvalue_?
+      Statistics specific to anisotropic diffraction:
+         _reflns.pdbx_percent_possible_*,
+	 _reflns_shell.pdbx_percent_possible_*
+         for ellipsoidal/spherical and anomalous/non-anomalous diffraction.
+
+      Also add _reflns.pdbx_orthogonalization_convention and new subcategories
+      unit_vector and eigendecomposition
+    + Add items for a per-reflection signal and parameter-free definition of
+      the cut-off surface
+      _reflns.pdbx_observed_signal_threshold, _reflns.pdbx_signal_type,
+      _reflns.pdbx_signal_details, reflns.pdbx_signal_software_id,
+      _pdbx_refln_signal_binning.ordinal,
+      _pdbx_refln_signal_binning.upper_threshold,
+      _refln.pdbx_signal, _refln.pdbx_signal_status
+    + Add and modify items to cater better for umerged reflection data
+        Add _diffrn_refln.pdbx_detector_x, _diffrn_refln.pdbx_detector_y,
+           _diffrn_refln.pdbx_scale_value
+        Modify _diffrn_refln.pdbx_image_id, _diffrn_refln.pdbx_scan_angle
+;
 #
 ###########################################################################
 #
@@ -2465,6 +2500,14 @@ data_mmcif_pdbx.dic
 ;
               'vector'
 ;              The collection of elements of a vector.
+;
+              'unit_vector'
+;              The collection of elements of a vector whose norm equals 1.
+;
+              'eigendecomposition'
+;              The collection of items making up the Eigendecomposition of a
+               matrix. For an n x n matrix, instances of this subcategory will
+               consist of n Eigenvectors of dimension n, and n Eigenvalues.
 ;
 
 #########################

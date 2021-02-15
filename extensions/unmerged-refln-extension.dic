@@ -6,25 +6,6 @@
 ## Category DIFFRN_REFLN ##
 ###########################
 
-# Located to the base files
-# save__diffrn_refln.pdbx_image_id
-#     _item_description.description
-# ;              The identifier of the diffraction image this reflection
-#                is associated with. This is often the image where the
-#                calculated reflection centroid is predicted to occur.
-# ;
-#     _item.name                  '_diffrn_refln.pdbx_image_id'
-#     _item.category_id             diffrn_refln
-#     _item.mandatory_code          no
-#     _item_type.code               int
-#     _item_range.maximum           .
-#     _item_range.minimum           0
-
-#     _item_aliases.alias_name    '_diffrn_refln.gphl_image_id'
-#     _item_aliases.dictionary      gphl-proc-unmerged-extension.dic
-#     _item_aliases.version         0.0
-#     save_
-
 save__diffrn_refln.pdbx_detector_x
     _item_description.description
 ;              Detector coordinate (in pixels) along the X-direction

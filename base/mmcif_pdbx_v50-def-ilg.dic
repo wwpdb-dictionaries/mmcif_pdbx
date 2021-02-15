@@ -1661,6 +1661,7 @@ refln                                    3  '_refln.scale_group_code'           
 refln                                    4  '_refln.pdbx_diffrn_id'                               '_diffrn.id'                                diffrn
 #
 reflns                                   1  '_reflns.entry_id'                                    '_entry.id'                                 entry
+reflns                                   2  '_reflns.pdbx_signal_software_id'                     '_software.name'                            software
 software                                 1  '_software.citation_id'                               '_citation.id'                              citation
 struct                                   1  '_struct.entry_id'                                    '_entry.id'                                 entry
 struct_asym                              1  '_struct_asym.entity_id'                              '_entity.id'                                entity
