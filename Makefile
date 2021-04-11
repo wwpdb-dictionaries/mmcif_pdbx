@@ -5,7 +5,7 @@ INTERNAL_DATA_DIRS = mmcif_pdbx_v5_next mmcif_pdbx_v41 mmcif_pdbx_v42 mmcif_nmr-
 
 DATADIRS = $(INTERNAL_DATA_DIRS) $(EXTERNAL_DATA_DIRS)
 # Directories in which we perform a checkout function
-CHECKOUTDIRS = mmcif_pdbx_v5_next mmcif_pdbx_v50 mmcif_ihm mmcif_ma
+CHECKOUTDIRS = mmcif_ddl mmcif_pdbx_v5_next mmcif_pdbx_v50 mmcif_ihm mmcif_ma
 
 install: all
 
