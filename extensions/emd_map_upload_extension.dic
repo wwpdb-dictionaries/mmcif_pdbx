@@ -130,4 +130,81 @@ save__emd_map_upload.pixel_spacing
      "_emd_map_upload.pixel_spacing"  0.1 0.1
      "_emd_map_upload.pixel_spacing"  0.1 5.0
      "_emd_map_upload.pixel_spacing"  5.0 5.0
+
+    _pdbx_item_context.type       WWPDB_DEPRECATED
+    _pdbx_item_context.item_name '_emd_map_upload.pixel_spacing'
+    loop_
+    _item_related.related_name
+    _item_related.function_code  '_emd_map_upload.pixel_spacing_x'      replacedby
+                                 '_emd_map_upload.pixel_spacing_y'      replacedby
+                                 '_emd_map_upload.pixel_spacing_z'      replacedby
+
+save_
+
+save__emd_map_upload.pixel_spacing_x
+    _item_description.description
+;    The length in Angstroms of one voxel along x.
+;
+    _item.name                   '_emd_map_upload.pixel_spacing_x'
+    _item.category_id              emd_map_upload
+    _item.mandatory_code           yes
+    _item_type.code                float
+    loop_
+    _item_range.maximum
+    _item_range.minimum
+     .  0.0
+    0.0 0.0
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+     "_emd_map_upload.pixel_spacing_x"  0.1 0.1
+     "_emd_map_upload.pixel_spacing_x"  0.1 5.0
+     "_emd_map_upload.pixel_spacing_x"  5.0 5.0
       save_
+
+save__emd_map_upload.pixel_spacing_y
+    _item_description.description
+;    The length in Angstroms of one voxel along y.
+;
+    _item.name                   '_emd_map_upload.pixel_spacing_y'
+    _item.category_id              emd_map_upload
+    _item.mandatory_code           yes
+    _item_type.code                float
+    loop_
+    _item_range.maximum
+    _item_range.minimum
+     .  0.0
+    0.0 0.0
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+     "_emd_map_upload.pixel_spacing_y"  0.1 0.1
+     "_emd_map_upload.pixel_spacing_y"  0.1 5.0
+     "_emd_map_upload.pixel_spacing_y"  5.0 5.0
+      save_
+
+save__emd_map_upload.pixel_spacing_z
+    _item_description.description
+;    The length in Angstroms of one voxel along z.
+;
+    _item.name                   '_emd_map_upload.pixel_spacing_z'
+    _item.category_id              emd_map_upload
+    _item.mandatory_code           yes
+    _item_type.code                float
+    loop_
+    _item_range.maximum
+    _item_range.minimum
+     .  0.0
+    0.0 0.0
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+     "_emd_map_upload.pixel_spacing_z"  0.1 0.1
+     "_emd_map_upload.pixel_spacing_z"  0.1 5.0
+     "_emd_map_upload.pixel_spacing_z"  5.0 5.0
+      save_
+
+#############

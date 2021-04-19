@@ -872,7 +872,8 @@ encouraged to provide a value in this field.
         '_emd_software.name'  SPHIRE                            .
         '_emd_software.name'  SPIDER                            .
         '_emd_software.name'  SPRING                            .
-        '_emd_software.name'  STOPGAP                            .
+        '_emd_software.name'  STOPGAP                           .
+        '_emd_software.name'  subTOM                            .	
         '_emd_software.name'  SUPER                             .
         '_emd_software.name'  'Super-sampling SART'             .
         '_emd_software.name'  TEMPy                             .
@@ -3082,8 +3083,12 @@ save__emd_sectioning_focused_ion_beam.initial_thickness
     _item.mandatory_code        yes
     _item_units.code            nanometers
     _item_type.code             positive_int
-    _item_range.minimum         0.0
-    _item_range.maximum         .
+    loop_
+    _item_range.maximum
+    _item_range.minimum         100000   100000
+                                100000   10
+				10       10
+    #
     loop_
     _pdbx_item_range.name
     _pdbx_item_range.minimum
@@ -8658,7 +8663,7 @@ save__emd_map.symmetry_space_group
     _item.name                   '_emd_map.symmetry_space_group'
     _item.category_id              emd_map
     _item.mandatory_code           yes
-    _item_type.code                line
+    _item_type.code                int
       save_
 
 save__emd_map.spacing_x

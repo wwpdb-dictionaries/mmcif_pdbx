@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.341
+    _dictionary.version         5.342
 #
      loop_
     _dictionary_history.version
@@ -2440,6 +2440,18 @@ data_mmcif_pdbx.dic
     + Update descriptions for _entity_poly.pdbx_seq_one_letter_code_can and
       _entity_poly.pdbx_seq_one_letter_code
    +  Add "PSI JUNGFRAU 4M" to _diffrn_detector.type enumerations
+;
+5.342  2021-04-19
+;
+    Changes (ep):
+    + Add hard limits to _em_focused_ion_beam.initial_thickness
+    + Update description of _struct_ref_seq_dif.pdbx_auth_seq_num
+    + Add "ALS BREAMLINE 2.0.1" to _diffrn_source.type enumeration. "2.0.1" added to
+      enumeration for _diffrn_source.pdbx_synchrotron_beamline.
+    + Update _pdbx_audit_support.funding_organization enumeration
+    + Add 'subTOM' to _em_software.name enumeration and _emd_software.name
+    + Change _em_map.symmetry_space_group type from line to int
+    + Add acetonitrile to enumeration for _pdbx_nmr_chem_shift_ref.mol_common_name
 ;
 #
 ###########################################################################
