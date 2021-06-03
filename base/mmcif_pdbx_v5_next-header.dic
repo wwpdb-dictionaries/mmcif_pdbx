@@ -2581,7 +2581,7 @@ data_mmcif_pdbx.dic
     + Change _emd_map.symmetry_space_group and _em_map.symmetry_space_group type from line to int
     + Add acetonitrile to enumeration for _pdbx_nmr_chem_shift_ref.mol_common_name
 ;
-g5.351  2021-06-02
+5.351  2021-06-02
 ;
     Changes (ep):
     + Add 'NMR Distance Restraints' and 'electron microscopy' to enumerations for _pdbx_struct_assembly_auth_evidence.experimental_support
