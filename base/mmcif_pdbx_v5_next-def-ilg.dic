@@ -538,6 +538,19 @@ refln                                    4  refln:diffrn:4                      
 reflns                                   1  reflns:entry:1                                                            . .
 reflns                                   2  reflns:software:2                                                         . .
 software                                 1  software:citation:1                                                       . .
+
+pdbx_sifts_unp_segments                  1  pdbx_sifts_unp_segments:struct_asym:1                                     . .
+pdbx_sifts_unp_segments                  2  pdbx_sifts_unp_segments:entity_poly_seq:2                                 . .
+pdbx_sifts_unp_segments                  3  pdbx_sifts_unp_segments:entity_poly_seq:3                                 . .
+
+pdbx_sifts_xref_db                       1  pdbx_sifts_xref_db:entity_poly_seq:1                                      . .
+pdbx_sifts_xref_db                       2  pdbx_sifts_xref_db:struct_asym:2                                          . .
+
+pdbx_sifts_xref_db_segments              1  pdbx_sifts_xref_db_segments:entity_poly_seq:1                             . .
+pdbx_sifts_xref_db_segments              2  pdbx_sifts_xref_db_segments:entity_poly_seq:2                             . .
+pdbx_sifts_xref_db_segments              3  pdbx_sifts_xref_db_segments:entity_poly_seq:3                             . .
+pdbx_sifts_xref_db_segments              4  pdbx_sifts_xref_db_segments:struct_asym:4                                 . .
+
 struct                                   1  struct:entry:1                                                            . .
 struct_asym                              1  struct_asym:entity:1                                                      . .
 struct_biol                              1  struct_biol:struct_biol:1                                                 . .
@@ -1776,6 +1789,21 @@ refln                                    4  '_refln.pdbx_diffrn_id'             
 reflns                                   1  '_reflns.entry_id'                                    '_entry.id'                                 entry
 reflns                                   2  '_reflns.pdbx_signal_software_id'                     '_software.name'                            software
 software                                 1  '_software.citation_id'                               '_citation.id'                              citation
+
+pdbx_sifts_unp_segments                  1  '_pdbx_sifts_unp_segments.asym_id'                    '_struct_asym.id'                           struct_asym
+pdbx_sifts_unp_segments                  2  '_pdbx_sifts_unp_segments.seq_id_start'               '_entity_poly_seq.num'                      entity_poly_seq
+pdbx_sifts_unp_segments                  3  '_pdbx_sifts_unp_segments.seq_id_end'                 '_entity_poly_seq.num'                      entity_poly_seq
+
+pdbx_sifts_xref_db                       1  '_pdbx_sifts_xref_db.entity_id'                       '_entity_poly_seq.entity_id'                 entity_poly_seq
+pdbx_sifts_xref_db                       2  '_pdbx_sifts_xref_db.asym_id'                         '_struct_asym.id'                            struct_asym
+
+pdbx_sifts_xref_db_segments              1  '_pdbx_sifts_xref_db_segments.entity_id'              '_entity_poly_seq.entity_id'  entity_poly_seq
+pdbx_sifts_xref_db_segments              2  '_pdbx_sifts_xref_db_segments.seq_id_start'           '_entity_poly_seq.num'  entity_poly_seq
+pdbx_sifts_xref_db_segments              3  '_pdbx_sifts_xref_db_segments.seq_id_end'             '_entity_poly_seq.num'  entity_poly_seq
+pdbx_sifts_xref_db_segments              4  '_pdbx_sifts_xref_db_segments.asym_id'                '_struct_asym.id'             struct_asym
+
+
+
 struct                                   1  '_struct.entry_id'                                    '_entry.id'                                 entry
 struct_asym                              1  '_struct_asym.entity_id'                              '_entity.id'                                entity
 struct_biol                              1  '_struct_biol.pdbx_parent_biol_id'                    '_struct_biol.id'                           struct_biol

@@ -1,0 +1,783 @@
+## File: sifts-extension.dic
+## Date: 28-Apr-2021
+##
+# Items relating to the Structure Integration with Function, Taxonomy and Sequence (SIFTS) project.
+#
+#
+
+############################
+##  Category pdbx_sifts_xref_db ##
+############################
+
+save_pdbx_sifts_xref_db
+   #
+   _category.description     'pdbx_sifts_xref_db describes residue-level cross-references to external databases.'
+   _category.id              pdbx_sifts_xref_db
+   _category.mandatory_code  no
+   #
+    loop_
+    _category_key.name      '_pdbx_sifts_xref_db.entity_id'
+                            '_pdbx_sifts_xref_db.asym_id'
+                            '_pdbx_sifts_xref_db.seq_id_ordinal'
+                            '_pdbx_sifts_xref_db.seq_id'
+    loop_
+    _category_group.id      'inclusive_group'
+                            'pdbx_group'
+                            'reference_sequence_group'
+   #
+    loop_
+    _category_examples.detail
+    _category_examples.case
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 -
+;
+;
+    _pdbx_sifts_xref_db.entity_id                  1
+    _pdbx_sifts_xref_db.asym_id                    A
+    _pdbx_sifts_xref_db.seq_id_ordinal             1
+    _pdbx_sifts_xref_db.seq_id                     254
+    _pdbx_sifts_xref_db.mon_id                     ILE
+    _pdbx_sifts_xref_db.mon_id_one_letter_code     I
+    _pdbx_sifts_xref_db.unp_res                    I
+    _pdbx_sifts_xref_db.unp_num                    50
+    _pdbx_sifts_xref_db.unp_acc                    P00720
+    _pdbx_sifts_xref_db.unp_segment_id             1
+    _pdbx_sifts_xref_db.unp_instance_id            1
+    _pdbx_sifts_xref_db.res_type                   .
+    _pdbx_sifts_xref_db.observed                   1
+    _pdbx_sifts_xref_db.mh_id                      y
+    _pdbx_sifts_xref_db.xref_db_name               Pfam
+    _pdbx_sifts_xref_db.xref_db_acc                PF14843
+    _pdbx_sifts_xref_db.xref_domain_name           .
+    _pdbx_sifts_xref_db.xref_db_segment_id         1
+    _pdbx_sifts_xref_db.xref_db_instance_id        1
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   #
+save_
+#
+#
+save__pdbx_sifts_xref_db.entity_id
+    _item_description.description
+;   This data item is a pointer to _entity.id in the ENTITY category.
+;
+    _item.name                    '_pdbx_sifts_xref_db.entity_id'
+    _item.category_id             pdbx_sifts_xref_db
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	      '_pdbx_sifts_xref_db.entity_id'
+    _item_linked.parent_name      '_entity.id'
+     save_
+
+save__pdbx_sifts_xref_db.asym_id
+    _item_description.description
+;   This data item is a pointer to _struct_asym.id in the
+    STRUCT_ASYM category.
+;
+    _item.name                    '_pdbx_sifts_xref_db.asym_id'
+    _item.category_id             pdbx_sifts_xref_db
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	      '_pdbx_sifts_xref_db.asym_id'
+    _item_linked.parent_name      '_struct_asym.id'
+    loop_
+    _item_examples.case           '1'
+                                  'A'
+                                  '2B3'
+     save_
+
+save__pdbx_sifts_xref_db.seq_id_ordinal
+    _item_description.description
+;    The value of pdbx_sifts_xref_db.seq_id_ordinal identifies a distinct residue specific cross-reference record
+	 in the _pdbx_sifts_xref_db category.
+;
+    _item.name                 '_pdbx_sifts_xref_db.seq_id_ordinal'
+    _item.category_id          pdbx_sifts_xref_db
+    _item.mandatory_code       yes
+    _item_type.code            int
+     save_
+
+save__pdbx_sifts_xref_db.seq_id
+    _item_description.description
+;   This data item is an effective pointer to _entity_poly_seq.num in the
+    ENTITY_POLY_SEQ category.
+;
+    _item.name                  '_pdbx_sifts_xref_db.seq_id'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        yes
+    _item_type.code             int
+     save_
+
+save__pdbx_sifts_xref_db.mon_id
+    _item_description.description
+;    This data item is an effective pointer to _entity_poly_seq.mon_id.
+;
+    _item.name                  '_pdbx_sifts_xref_db.mon_id'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        yes
+    _item_type.code             ucode
+     save_
+
+save__pdbx_sifts_xref_db.mon_id_one_letter_code
+    _item_description.description
+;   Describes the standard polymer component of _pdbx_sifts_xref_db.mon_id as one-letter code
+;
+    _item.name                  '_pdbx_sifts_xref_db.mon_id_one_letter_code'
+    _item.category_id             pdbx_sifts_xref_db
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+
+    loop_
+    _item_examples.case
+    _item_examples.detail
+                                A  'alanine'
+                                R  'arginine'
+                                N  'asparagine'
+                                D  'aspartic acid'
+                                C  'cysteine'
+                                Q  'glutamine'
+                                E  'glutamic acid'
+                                G  'glycine'
+                                H  'histidine'
+                                I  'isoleucine'
+                                L  'leucine'
+                                K  'lysine'
+                                M  'methionine'
+                                F  'phenylalanine'
+                                P  'proline'
+                                O  'pyrrolysine'
+                                U  'selenocysteine'
+                                S  'serine'
+                                T  'threonine'
+                                W  'tryptophan'
+                                Y  'tyrosine'
+                                V  'valine'
+                                X  'other'
+    save_
+
+save__pdbx_sifts_xref_db.unp_res
+    _item_description.description
+;    Describes the residue type, in one-letter code, at the corresponding residue position
+     of the related UniProt match
+;
+    _item.name                  '_pdbx_sifts_xref_db.unp_res'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        no
+    _item_type.code             ucode
+
+    loop_
+    _item_examples.case
+    _item_examples.detail
+                                A  'alanine'
+                                R  'arginine'
+                                N  'asparagine'
+                                D  'aspartic acid'
+                                C  'cysteine'
+                                Q  'glutamine'
+                                E  'glutamic acid'
+                                G  'glycine'
+                                H  'histidine'
+                                I  'isoleucine'
+                                L  'leucine'
+                                K  'lysine'
+                                M  'methionine'
+                                F  'phenylalanine'
+                                P  'proline'
+                                U  'selenocysteine'
+                                S  'serine'
+                                T  'threonine'
+                                W  'tryptophan'
+                                Y  'tyrosine'
+                                V  'valine'
+                                X  'other'
+    save_
+
+
+save__pdbx_sifts_xref_db.unp_num
+    _item_description.description
+;   The sequence position of the UniProt entry that corresponds
+    to the residue mapping.
+;
+    _item.name                  '_pdbx_sifts_xref_db.unp_num'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        no
+    _item_type.code             int
+    save_
+
+save__pdbx_sifts_xref_db.unp_acc
+    _item_description.description
+;   The UniProt accession code for the mapped entry
+;
+    _item.name                  '_pdbx_sifts_xref_db.unp_acc'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        no
+    _item_type.code             line
+    save_
+
+
+save__pdbx_sifts_xref_db.unp_segment_id
+    _item_description.description
+;   The pdbx_sifts_xref_db UniProt segment ID refers to the distinct contiguous residue-range segments with a
+    UniProt residue mapping.
+;
+    _item.name                  '_pdbx_sifts_xref_db.unp_segment_id'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        no
+    _item_type.code             int
+    save_
+
+save__pdbx_sifts_xref_db.unp_instance_id
+    _item_description.description
+;   The pdbx_sifts_xref_db UniProt instance ID refers to distinct UniProt residue mappings for a given
+    position (i.e. the same segment, residue, asym, & entity).
+;
+    _item.name                  '_pdbx_sifts_xref_db.unp_instance_id'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        no
+    _item_type.code             int
+    save_
+
+save__pdbx_sifts_xref_db.res_type
+    _item_description.description
+;   A description of the difference between the entity sequence position
+    residue type and that in the mapped UniProt entry.
+;
+    _item.name                  '_pdbx_sifts_xref_db.res_type'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        no
+    _item_type.code             line
+
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+                                'engineered mutation'     .
+                                'cloning artifact'        .
+                                'variant'                 .
+                                'expression tag'          .
+                                'insertion'               .
+                                'deletion'                .
+                                'chromophore'             .
+                                'linker'                  .
+                                'conflict'                .
+                                'acetylation'             .
+                                'amidation'               .
+                                'initiating methionine'   .
+                                'modified residue'        .
+                                'microheterogeneity'      .
+                                'microheterogeneity/modified residue'  .
+     save_
+
+save__pdbx_sifts_xref_db.observed
+    _item_description.description
+;   Describes whether or not a reside has atomic coordinates in the corresponding model.
+;
+    _item.name                  '_pdbx_sifts_xref_db.observed'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        yes
+    _item_type.code             uchar1
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+     Y  'Yes'
+     N  'No'
+    save_
+
+save__pdbx_sifts_xref_db.mh_id
+    _item_description.description
+;   An index value corresponding to the instance of microheterogeneity per residue
+;
+    _item.name                  '_pdbx_sifts_xref_db.mh_id'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        no
+    _item_type.code             int
+     save_
+
+save__pdbx_sifts_xref_db.xref_db_name
+    _item_description.description
+;   The name of additional external databases with residue level mapping.
+;
+    _item.name                  '_pdbx_sifts_xref_db.xref_db_name'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        no
+    _item_type.code             code
+
+    save_
+
+save__pdbx_sifts_xref_db.xref_db_acc
+    _item_description.description
+;   The accession code related to the additional external database entry.
+;
+    _item.name                  '_pdbx_sifts_xref_db.xref_db_acc'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        no
+    _item_type.code             code
+    save_
+
+save__pdbx_sifts_xref_db.xref_domain_name
+    _item_description.description
+;   The domain name defined by the external database.
+;
+    _item.name                  '_pdbx_sifts_xref_db.xref_domain_name'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        no
+    _item_type.code             line
+    save_
+
+save__pdbx_sifts_xref_db.xref_db_segment_id
+    _item_description.description
+;   The pdbx_sifts_xref_db xref segment ID refers to a distinct contiguous residue-range segment for a
+    mapping to a specific external database.
+;
+    _item.name                  '_pdbx_sifts_xref_db.xref_db_segment_id'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        no
+    _item_type.code             int
+    save_
+
+save__pdbx_sifts_xref_db.xref_db_instance_id
+    _item_description.description
+;   The instance identifier defined by the external database.
+;
+    _item.name                  '_pdbx_sifts_xref_db.xref_db_instance_id'
+    _item.category_id           pdbx_sifts_xref_db
+    _item.mandatory_code        no
+    _item_type.code             int
+    save_
+
+######################################
+##  Category pdbx_sifts_xref_db_segments ##
+######################################
+
+save_pdbx_sifts_xref_db_segments
+   #
+   _category.description     'pdbx_sifts_xref_db_segments describes residue-range based cross-references to external databases.'
+   _category.id              pdbx_sifts_xref_db_segments
+   _category.mandatory_code  no
+   #
+    loop_
+    _category_key.name      '_pdbx_sifts_xref_db_segments.entity_id'
+                            '_pdbx_sifts_xref_db_segments.asym_id'
+                            '_pdbx_sifts_xref_db_segments.xref_db'
+                            '_pdbx_sifts_xref_db_segments.xref_db_acc'
+                            '_pdbx_sifts_xref_db_segments.segment_id'
+                            '_pdbx_sifts_xref_db_segments.instance_id'
+    #
+    loop_
+    _category_group.id      'inclusive_group'
+                            'pdbx_group'
+                            'reference_sequence_group'
+   #
+    loop_
+    _category_examples.detail
+    _category_examples.case
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 -
+;
+;
+    _pdbx_sifts_xref_db_segments.entity_id         1
+    _pdbx_sifts_xref_db_segments.asym_id           A
+    _pdbx_sifts_xref_db_segments.xref_db           SCOP2B
+    _pdbx_sifts_xref_db_segments.xref_db_acc       8102030
+    _pdbx_sifts_xref_db_segments.domain_name       SF
+    _pdbx_sifts_xref_db_segments.segment_id        1
+    _pdbx_sifts_xref_db_segments.instance_id       1
+    _pdbx_sifts_xref_db_segments.seq_id_start      26
+    _pdbx_sifts_xref_db_segments.seq_id_end        252
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   #
+save_
+#
+#
+save__pdbx_sifts_xref_db_segments.entity_id
+    _item_description.description
+;   This data item is a pointer to _entity.id in the ENTITY category.
+;
+    _item.name                    '_pdbx_sifts_xref_db_segments.entity_id'
+    _item.category_id             pdbx_sifts_xref_db_segments
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	      '_pdbx_sifts_xref_db_segments.entity_id'
+    _item_linked.parent_name      '_entity.id'
+     save_
+
+save__pdbx_sifts_xref_db_segments.asym_id
+    _item_description.description
+;   This data item is a pointer to _struct_asym.id in the
+    STRUCT_ASYM category.
+;
+    _item.name                    '_pdbx_sifts_xref_db_segments.asym_id'
+    _item.category_id             pdbx_sifts_xref_db_segments
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	      '_pdbx_sifts_xref_db_segments.asym_id'
+    _item_linked.parent_name      '_struct_asym.id'
+    loop_
+    _item_examples.case           '1'
+                                  'A'
+                                  '2B3'
+     save_
+
+save__pdbx_sifts_xref_db_segments.xref_db
+    _item_description.description
+;   The name of additional external databases with range level mapping.
+;
+    _item.name                  '_pdbx_sifts_xref_db_segments.xref_db'
+    _item.category_id           pdbx_sifts_xref_db_segments
+    _item.mandatory_code        yes
+    _item_type.code             line
+
+    save_
+
+save__pdbx_sifts_xref_db_segments.xref_db_acc
+    _item_description.description
+;   The accession code related to the external database entry.
+;
+    _item.name                  '_pdbx_sifts_xref_db_segments.xref_db_acc'
+    _item.category_id           pdbx_sifts_xref_db_segments
+    _item.mandatory_code        yes
+    _item_type.code             code
+    save_
+
+save__pdbx_sifts_xref_db_segments.domain_name
+    _item_description.description
+;   The domain name defined by the external database.
+;
+    _item.name                  '_pdbx_sifts_xref_db_segments.domain_name'
+    _item.category_id           pdbx_sifts_xref_db_segments
+    _item.mandatory_code        no
+    _item_type.code             line
+    save_
+
+
+save__pdbx_sifts_xref_db_segments.segment_id
+    _item_description.description
+;   The segment identifier defined by the external database.
+;
+    _item.name                  '_pdbx_sifts_xref_db_segments.segment_id'
+    _item.category_id           pdbx_sifts_xref_db_segments
+    _item.mandatory_code        yes
+    _item_type.code             int
+    save_
+
+save__pdbx_sifts_xref_db_segments.instance_id
+    _item_description.description
+;   The instance identifier defined by the external database.
+;
+    _item.name                  '_pdbx_sifts_xref_db_segments.instance_id'
+    _item.category_id           pdbx_sifts_xref_db_segments
+    _item.mandatory_code        yes
+    _item_type.code             int
+    save_
+
+save__pdbx_sifts_xref_db_segments.seq_id_start
+    _item_description.description
+;   The sequence position in the entity or biological unit described
+    in the data block at which the segment alignment begins.
+
+    This data item is a pointer to _entity_poly_seq.num in the
+    ENTITY_POLY_SEQ category.
+;
+    _item.name                  '_pdbx_sifts_xref_db_segments.seq_id_start'
+    _item.category_id           pdbx_sifts_xref_db_segments
+    _item.mandatory_code        yes
+    _item_type.code             int
+    _item_linked.child_name     '_pdbx_sifts_xref_db_segments.seq_id_start'
+    _item_linked.parent_name	'_entity_poly_seq.num'
+     save_
+
+save__pdbx_sifts_xref_db_segments.seq_id_end
+    _item_description.description
+;   The sequence position in the entity or biological unit described
+    in the data block at which the segment alignment ends.
+
+    This data item is a pointer to _entity_poly_seq.num in the
+    ENTITY_POLY_SEQ category.
+;
+    _item.name                  '_pdbx_sifts_xref_db_segments.seq_id_end'
+    _item.category_id           pdbx_sifts_xref_db_segments
+    _item.mandatory_code        yes
+    _item_type.code             int
+    _item_linked.child_name     '_pdbx_sifts_xref_db_segments.seq_id_end'
+    _item_linked.parent_name	'_entity_poly_seq.num'
+     save_
+
+######################################
+###  Category pdbx_sifts_unp_segments   ###
+######################################
+
+save_pdbx_sifts_unp_segments
+   #
+   _category.description     'pdbx_sifts_unp_segments describes residue-range based cross-references specific to UniProt.'
+   _category.id              pdbx_sifts_unp_segments
+   _category.mandatory_code  no
+   #
+    loop_
+    _category_key.name      '_pdbx_sifts_unp_segments.entity_id'
+                            '_pdbx_sifts_unp_segments.asym_id'
+                            '_pdbx_sifts_unp_segments.unp_acc'
+                            '_pdbx_sifts_unp_segments.segment_id'
+                            '_pdbx_sifts_unp_segments.instance_id'
+    #
+    loop_
+    _category_group.id      'inclusive_group'
+                            'pdbx_group'
+                            'reference_sequence_group'
+   #
+    loop_
+    _category_examples.detail
+    _category_examples.case
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 -
+;
+;
+    _pdbx_sifts_unp_segments.entity_id             1
+    _pdbx_sifts_unp_segments.asym_id               A
+    _pdbx_sifts_unp_segments.unp_acc               A0A5J6CYR6
+    _pdbx_sifts_unp_segments.segment_id            1
+    _pdbx_sifts_unp_segments.instance_id           1
+    _pdbx_sifts_unp_segments.unp_start             2
+    _pdbx_sifts_unp_segments.unp_end               238
+    _pdbx_sifts_unp_segments.seq_id_start          26
+    _pdbx_sifts_unp_segments.seq_id_end            260
+    _pdbx_sifts_unp_segments.best_mapping          y
+    _pdbx_sifts_unp_segments.identity              0.95
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   #
+save_
+#
+#
+save__pdbx_sifts_unp_segments.entity_id
+    _item_description.description
+;   This data item is a pointer to _entity_poly_seq.entity_id in the
+    ENTITY_POLY_SEQ category.
+;
+    _item.name                    '_pdbx_sifts_unp_segments.entity_id'
+    _item.category_id             pdbx_sifts_unp_segments
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	      '_pdbx_sifts_xref_db_segments.entity_id'
+    _item_linked.parent_name      '_entity_poly_seq.entity_id'
+     save_
+
+save__pdbx_sifts_unp_segments.asym_id
+    _item_description.description
+;   This data item is a pointer to _struct_asym.id in the
+    STRUCT_ASYM category.
+;
+    _item.name                    '_pdbx_sifts_unp_segments.asym_id'
+    _item.category_id             pdbx_sifts_unp_segments
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	      '_pdbx_sifts_unp_segments.asym_id'
+    _item_linked.parent_name      '_struct_asym.id'
+    loop_
+    _item_examples.case           '1'
+                                  'A'
+                                  '2B3'
+     save_
+
+save__pdbx_sifts_unp_segments.unp_acc
+    _item_description.description
+;   The UniProt accession code related to the SIFTS segment mapping.
+;
+    _item.name                  '_pdbx_sifts_unp_segments.unp_acc'
+    _item.category_id           pdbx_sifts_unp_segments
+    _item.mandatory_code        yes
+    _item_type.code             line
+    save_
+
+save__pdbx_sifts_unp_segments.segment_id
+    _item_description.description
+;   The UniProt segment defined by the external database.
+;
+    _item.name                  '_pdbx_sifts_unp_segments.segment_id'
+    _item.category_id           pdbx_sifts_unp_segments
+    _item.mandatory_code        yes
+    _item_type.code             int
+    save_
+
+save__pdbx_sifts_unp_segments.instance_id
+    _item_description.description
+;   The UniProt instance identifier.
+;
+    _item.name                  '_pdbx_sifts_unp_segments.instance_id'
+    _item.category_id           pdbx_sifts_unp_segments
+    _item.mandatory_code        yes
+    _item_type.code             int
+    save_
+
+save__pdbx_sifts_unp_segments.unp_start
+    _item_description.description
+;   The sequence position in the related UniProt entry
+    at which the mapping alignment begins.
+;
+    _item.name                  '_pdbx_sifts_unp_segments.unp_start'
+    _item.category_id           pdbx_sifts_unp_segments
+    _item.mandatory_code        yes
+    _item_type.code             int
+    save_
+
+save__pdbx_sifts_unp_segments.unp_end
+    _item_description.description
+;   The sequence position in the related UniProt entry
+    at which the mapping alignment ends.
+;
+    _item.name                  '_pdbx_sifts_unp_segments.unp_end'
+    _item.category_id           pdbx_sifts_unp_segments
+    _item.mandatory_code        yes
+    _item_type.code             int
+    save_
+
+save__pdbx_sifts_unp_segments.seq_id_start
+    _item_description.description
+;   The sequence position in the entity or biological unit described
+    in the data block at which the UniProt alignment begins.
+;
+    _item.name                  '_pdbx_sifts_unp_segments.seq_id_start'
+    _item.category_id           pdbx_sifts_unp_segments
+    _item.mandatory_code        yes
+    _item_type.code             int
+    _item_linked.child_name     '_pdbx_sifts_unp_segments.seq_id_start'
+    _item_linked.parent_name	'_entity_poly_seq.num'
+    save_
+
+save__pdbx_sifts_unp_segments.seq_id_end
+    _item_description.description
+;   The sequence position in the entity or biological unit described
+    in the data block at which the UniProt alignment ends.
+
+    This data item is a pointer to _entity_poly_seq.num in the
+    ENTITY_POLY_SEQ category.
+;
+    _item.name                  '_pdbx_sifts_unp_segments.seq_id_end'
+    _item.category_id           pdbx_sifts_unp_segments
+    _item.mandatory_code        yes
+    _item_type.code             int
+    _item_linked.child_name     '_pdbx_sifts_unp_segments.seq_id_end'
+    _item_linked.parent_name	'_entity_poly_seq.num'
+    save_
+
+save__pdbx_sifts_unp_segments.best_mapping
+    _item_description.description
+;   This code indicates whether the SIFTS UniProt accession and residue range was the best-scoring
+    sequence match.
+;
+    _item.name                  '_pdbx_sifts_unp_segments.best_mapping'
+    _item.category_id            pdbx_sifts_unp_segments
+    _item.mandatory_code         yes
+    _item_type.code              uchar1
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+     Y  'Yes'
+     N  'No'
+     save_
+
+save__pdbx_sifts_unp_segments.identity
+    _item_description.description
+;   The identity score reports on the sequence identity for the sequence defined by the entity start and end range
+    compared to the sequence defined by start and end range of the related UniProt accession.
+;
+    _item.name                  '_pdbx_sifts_unp_segments.identity'
+    _item.category_id            pdbx_sifts_unp_segments
+    _item.mandatory_code         yes
+    _item_type.code              float
+    loop_
+    _item_range.maximum
+    _item_range.minimum           1.0   1.0
+                                  1.0   0.0
+                                  0.0   0.0
+     save_
+
+#########################
+####### ATOM_SITE #######
+#########################
+
+save__atom_site.pdbx_label_index
+    _item_description.description
+;   This data item is an ordinal which identifies distinct chemical components in the atom_site category, both
+    polymeric and non-polymeric.
+;
+    _item.name                  '_atom_site.pdbx_label_index'
+    _item.category_id           atom_site
+    _item.mandatory_code        no
+    _item_type.code             int
+     save_
+
+save__atom_site.pdbx_sifts_xref_db_name
+    _item_description.description
+;   The name of additional external databases with residue level mapping.
+;
+    _item.name                  '_atom_site.pdbx_sifts_xref_db_name'
+    _item.category_id             atom_site
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__atom_site.pdbx_sifts_xref_db_acc
+    _item_description.description
+;   The accession code related to the additional external database entry.
+;
+    _item.name                  '_atom_site.pdbx_sifts_xref_db_acc'
+    _item.category_id           atom_site
+    _item.mandatory_code        no
+    _item_type.code             code
+    save_
+
+save__atom_site.pdbx_sifts_xref_db_num
+    _item_description.description
+;   The sequence position of the external database entry that corresponds
+    to the residue mapping defined by the SIFTS process.
+;
+    _item.name                  '_atom_site.pdbx_sifts_xref_db_num'
+    _item.category_id           atom_site
+    _item.mandatory_code        no
+    _item_type.code             code
+    save_
+
+save__atom_site.pdbx_sifts_xref_db_res
+    _item_description.description
+;    Describes the residue type of the given UniProt match
+;
+    _item.name                  '_atom_site.pdbx_sifts_xref_db_res'
+    _item.category_id           atom_site
+    _item.mandatory_code        no
+    _item_type.code             ucode
+
+    loop_
+    _item_examples.case
+    _item_examples.detail
+                                A  'alanine'
+                                R  'arginine'
+                                N  'asparagine'
+                                D  'aspartic acid'
+                                C  'cysteine'
+                                Q  'glutamine'
+                                E  'glutamic acid'
+                                G  'glycine'
+                                H  'histidine'
+                                I  'isoleucine'
+                                L  'leucine'
+                                K  'lysine'
+                                M  'methionine'
+                                F  'phenylalanine'
+                                P  'proline'
+                                U  'selenocysteine'
+                                S  'serine'
+                                T  'threonine'
+                                W  'tryptophan'
+                                Y  'tyrosine'
+                                V  'valine'
+                                O  'pyrrolysine'
+                                X  'other'
+    save_
+
+

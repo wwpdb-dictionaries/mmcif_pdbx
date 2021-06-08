@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.351
+    _dictionary.version         5.352
 #
      loop_
     _dictionary_history.version
@@ -2593,7 +2593,16 @@ data_mmcif_pdbx.dic
     + Add 'TFS TUNDRA' to _em_imaging.microscope_model and
       _emd_microscopy.microscope
 ;
-#
+5.352  2021-06-08
+;
+    Changes (ep):
+    + Add _item_enumeration.pdbx_value_display for _exptl.method
+    + Add SIFTS extension - creating categories _pdbx_sifts_xref_db,
+      _pdbx_sifts_xref_db_segments, _pdbx_sifts_unp_segments and attributes
+      _atom_site.pdbx_label_index, _atom_site.pdbx_sifts_xref_db_name,
+      _atom_site.pdbx_sifts_xref_db_acc, _atom_site.pdbx_sifts_xref_db_num,
+      _atom_site.pdbx_sifts_xref_db_res
+;
 ###########################################################################
 #
 # File:  mmcif_pdbx-data.dic
@@ -2940,6 +2949,10 @@ data_mmcif_pdbx.dic
               'branch_group'
               'inclusive_group'
 ;              Categories that describe branched chain carbohydrates.
+;
+              'reference_sequence_group'
+              'inclusive_group'
+;              Categories that describe SIFTS mapping of sequence data.
 ;
 
 ####################

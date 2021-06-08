@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.343
+    _dictionary.version         5.344
 #
      loop_
     _dictionary_history.version
@@ -2463,6 +2463,11 @@ data_mmcif_pdbx.dic
     + Update description of _reflns.pdbx_redundancy
     + Extend _pdbx_audit_support.funding_organization enumeration.
     + Add 'TFS TUNDRA' to _em_imaging.microscope_model.
+;
+5.344  2021-06-08
+;
+    Changes (ep):
+    + Add _item_enumeration.pdbx_value_display for _exptl.method
 ;
 #
 ###########################################################################
