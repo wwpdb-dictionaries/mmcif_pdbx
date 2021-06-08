@@ -47,7 +47,7 @@ save_pdbx_sifts_xref_db
     _pdbx_sifts_xref_db.unp_instance_id            1
     _pdbx_sifts_xref_db.res_type                   .
     _pdbx_sifts_xref_db.observed                   1
-    _pdbx_sifts_xref_db.mh_id                      y
+    _pdbx_sifts_xref_db.mh_id                      1
     _pdbx_sifts_xref_db.xref_db_name               Pfam
     _pdbx_sifts_xref_db.xref_db_acc                PF14843
     _pdbx_sifts_xref_db.xref_domain_name           .
