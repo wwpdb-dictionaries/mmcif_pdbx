@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.352
+    _dictionary.version         5.353
 #
      loop_
     _dictionary_history.version
@@ -2602,6 +2602,20 @@ data_mmcif_pdbx.dic
       _atom_site.pdbx_label_index, _atom_site.pdbx_sifts_xref_db_name,
       _atom_site.pdbx_sifts_xref_db_acc, _atom_site.pdbx_sifts_xref_db_num,
       _atom_site.pdbx_sifts_xref_db_res
+;
+5.353  2021-06-30
+;
+    Changes (ep):
+    + Add "GN" to _pdbx_nmr_spectrometer.model enumeration
+    + Update examples for _database_2.pdbx_database_accession
+      and _database_2.pdbx_DOI
+    + Update enumeration and details for _pdbx_nmr_spectrometer.field_strength
+    + Extend _pdbx_audit_support.funding_organization enumeration.
+    + Update description of _pdbx_molecule_features.prd_id
+    + Add 'UCSF ChimeraX' to _em_software.name
+    + Mark _struct.pdbx_descriptor as local context
+    + Add limits for _refine.ls_percent_reflns_obs
+    + Add _em_author_list.identifier_ORCID and _emd_author_list.identifier_ORCID
 ;
 ###########################################################################
 #

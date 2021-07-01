@@ -333,6 +333,17 @@ save__emd_author_list.author
     _item_examples.case         'Taylor, D.J.'
      save_
 
+save__emd_author_list.identifier_ORCID
+    _item_description.description
+;    The Open Researcher and Contributor ID (ORCID).
+;
+    _item.name                  '_emd_author_list.identifier_ORCID'
+    _item.category_id           emd_author_list
+    _item.mandatory_code        no
+    _item_type.code             orcid_id
+    _item_examples.case         '0000-0002-6681-547X'
+     save_
+
 ##################
 ## EMD_OBSOLETE ##
 ##################
@@ -883,6 +894,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  TOMOCTF                           .
         '_emd_software.name'  Topaz                             .
         '_emd_software.name'  'UCSF Chimera'                    .
+        '_emd_software.name'  'UCSF ChimeraX'                   .
         '_emd_software.name'  'UCSF Tomography'                 .
         '_emd_software.name'  'UCSFImage'                       .
         '_emd_software.name'  'UCSFImage4'                      .
