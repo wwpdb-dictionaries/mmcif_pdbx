@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.353
+    _dictionary.version         5.354
 #
      loop_
     _dictionary_history.version
@@ -2616,6 +2616,12 @@ data_mmcif_pdbx.dic
     + Mark _struct.pdbx_descriptor as local context
     + Add limits for _refine.ls_percent_reflns_obs
     + Add _em_author_list.identifier_ORCID and _emd_author_list.identifier_ORCID
+;
+5.354  2021-07-08
+;
+    Changes (ep):
+    + Extend _pdbx_audit_support.funding_organization enumeration.
+    + Make _pdbx_contact_author.name_salutation non-mandatory
 ;
 ###########################################################################
 #
