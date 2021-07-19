@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.346
+    _dictionary.version         5.347
 #
      loop_
     _dictionary_history.version
@@ -2488,6 +2488,13 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Extend _pdbx_audit_support.funding_organization enumeration.
     + Make _pdbx_contact_author.name_salutation non-mandatory
+;
+5.347  2021-07-18
+;
+    Changes (ep):
+    + Extend _pdbx_audit_support.funding_organization enumeration.
+    + Correct captilatization in description of _pdbx_nmr_spectrometer.field_strength
+    + Add "SSRF BEAMLINE BL10U2" and "SSRF BEAMLINE BL02U1" to _diffrn_source.type enumeration
 ;
 #
 ###########################################################################
