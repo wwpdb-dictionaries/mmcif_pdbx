@@ -563,7 +563,7 @@ save__pdbx_sifts_unp_segments.entity_id
     _item.category_id             pdbx_sifts_unp_segments
     _item.mandatory_code          yes
     _item_type.code               code
-    _item_linked.child_name	  '_pdbx_sifts_xref_unp_segments.entity_id'
+    _item_linked.child_name	  '_pdbx_sifts_unp_segments.entity_id'
     _item_linked.parent_name      '_entity_poly_seq.entity_id'
      save_
 

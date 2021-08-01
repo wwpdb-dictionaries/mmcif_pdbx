@@ -542,6 +542,7 @@ software                                 1  software:citation:1                 
 pdbx_sifts_unp_segments                  1  pdbx_sifts_unp_segments:struct_asym:1                                     . .
 pdbx_sifts_unp_segments                  2  pdbx_sifts_unp_segments:entity_poly_seq:2                                 . .
 pdbx_sifts_unp_segments                  3  pdbx_sifts_unp_segments:entity_poly_seq:3                                 . .
+pdbx_sifts_unp_segments                  4  pdbx_sifts_unp_segments:entity_poly_seq:4                                 . .
 
 pdbx_sifts_xref_db                       1  pdbx_sifts_xref_db:entity_poly_seq:1                                      . .
 pdbx_sifts_xref_db                       2  pdbx_sifts_xref_db:struct_asym:2                                          . .
@@ -1793,6 +1794,7 @@ software                                 1  '_software.citation_id'             
 pdbx_sifts_unp_segments                  1  '_pdbx_sifts_unp_segments.asym_id'                    '_struct_asym.id'                           struct_asym
 pdbx_sifts_unp_segments                  2  '_pdbx_sifts_unp_segments.seq_id_start'               '_entity_poly_seq.num'                      entity_poly_seq
 pdbx_sifts_unp_segments                  3  '_pdbx_sifts_unp_segments.seq_id_end'                 '_entity_poly_seq.num'                      entity_poly_seq
+pdbx_sifts_unp_segments                  4  '_pdbx_sifts_unp_segments.entity_id'                 '_entity_poly_seq.entity_id'                entity_poly_seq
 
 pdbx_sifts_xref_db                       1  '_pdbx_sifts_xref_db.entity_id'                       '_entity_poly_seq.entity_id'                 entity_poly_seq
 pdbx_sifts_xref_db                       2  '_pdbx_sifts_xref_db.asym_id'                         '_struct_asym.id'                            struct_asym
