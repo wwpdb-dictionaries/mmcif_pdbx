@@ -46,5 +46,5 @@ set n = `wc -l $dict`
 echo "$dict created - text lines  =  $n"
 echo ""
 
-cp $dict ../mmcif
+cp $dict ../dist
 #
