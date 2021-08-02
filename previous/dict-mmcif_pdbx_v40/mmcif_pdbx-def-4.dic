@@ -1,0 +1,1426 @@
+###########################################################################
+#
+# File:  mmcif_pdbx-def-4.dic                                             
+# 
+#                      PDB Exchange Data Dictionary
+#
+# This data dictionary contains definitions used by wwPDB for data exchange
+# and data processing.  
+#
+#                           Definition Section 4
+#                            
+#                                                                        
+###########################################################################
+
+##
+##  NDB Specific definitions
+## 
+
+##########################
+## NDB_STRUCT_CONF_NA   ##
+##########################
+
+save_ndb_struct_conf_na
+    _category.description
+;              Data items in the NDB_STRUCT_CONF_NA category 
+               describes secondary structure features in this entry.
+;
+    _category.id                  ndb_struct_conf_na
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_ndb_struct_conf_na.entry_id'
+                                '_ndb_struct_conf_na.feature'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'ndb_group'
+    _ndb_category_examples.case
+;
+ loop_
+ _ndb_struct_conf_na.entry_id    
+ _ndb_struct_conf_na.feature
+ _ndb_struct_conf_na.feature_count
+  rcsb000001  'double helix'           1
+  rcsb000001  'b-form double helix'    1
+  rcsb000001  'quadruple helix'        1
+;
+     save_
+
+
+save__ndb_struct_conf_na.entry_id
+    _item_description.description
+;              This data item is a pointer to _entry.id in the 
+               ENTRY category.
+;
+    _item.name                  '_ndb_struct_conf_na.entry_id'
+    _item.category_id             ndb_struct_conf_na
+    _item.mandatory_code          yes
+    _item_linked.child_name	'_ndb_struct_conf_na.entry_id'
+    _item_linked.parent_name    '_entry.id'
+     save_
+
+save__ndb_struct_conf_na.feature
+    _item_description.description
+;              This data item identifies a secondary structure
+               feature of this entry.  
+;
+    _item.name                  '_ndb_struct_conf_na.feature'
+    _item.category_id             ndb_struct_conf_na
+    _item.mandatory_code          yes
+    _item_type.code               line
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail      'double helix'                     .
+                                  'a-form double helix'              .
+                                  'b-form double helix'              .
+                                  'z-form double helix'              .
+                                  'other right-handed double helix'  .
+                                  'triple helix'                     .
+                                  'quadruple helix'                  .
+                                  'parallel strands'                 .
+                                  'internal loop'                    .
+                                  'bulge loop'                       .
+                                  'tetraloop'                        .
+                                  'hairpin loop'                     .
+                                  'two-way junction'                 .
+                                  'three-way junction'               .
+                                  'four-way junction'                .
+                                  'mismatched base pair'             .
+
+     save_
+
+save__ndb_struct_conf_na.feature_count
+    _item_description.description
+;              This data item counts the number of occurences of 
+               this feature in this entry.  
+;
+    _item.name                  '_ndb_struct_conf_na.feature_count'
+    _item.category_id             ndb_struct_conf_na
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+
+#############################
+## NDB_STRUCT_FEATURE_NA   ##
+#############################
+
+save_ndb_struct_feature_na
+    _category.description
+;              Data items in the NDB_STRUCT_FEATURE_NA category 
+               describes tertiary and other special structural 
+               features in this entry.
+;
+    _category.id                  ndb_struct_feature_na
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_ndb_struct_feature_na.entry_id'
+                                '_ndb_struct_feature_na.feature'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'ndb_group'
+    _ndb_category_examples.case
+;
+ loop_
+ _ndb_struct_feature_na.entry_id    
+ _ndb_struct_feature_na.feature
+ _ndb_struct_feature_na.feature_count
+  rcsb000001  'intercalated base'           1
+  rcsb000001  'bent/kinked double helix'    1
+;
+     save_
+
+
+save__ndb_struct_feature_na.entry_id
+    _item_description.description
+;              This data item is a pointer to _entry.id in the 
+               ENTRY category.
+;
+    _item.name                  '_ndb_struct_feature_na.entry_id'
+    _item.category_id             ndb_struct_feature_na
+    _item.mandatory_code          yes
+    _item_linked.child_name	'_ndb_struct_feature_na.entry_id'
+    _item_linked.parent_name    '_entry.id'
+     save_
+
+save__ndb_struct_feature_na.feature
+    _item_description.description
+;              This data item identifies a structural
+               feature of this entry.  
+;
+    _item.name                  '_ndb_struct_feature_na.feature'
+    _item.category_id             ndb_struct_feature_na
+    _item.mandatory_code          yes
+    _item_type.code               line
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail     'pseudoknot'                  .
+                                 'intercalated base'           .
+                                 'backbone turn'               .
+                                 'intramolecular base triplet' .
+                                 'ribose zipper'               . 
+                                 'purine platform'             . 
+                                 'bent/kinked double helix'    . 
+     save_
+
+save__ndb_struct_feature_na.feature_count
+    _item_description.description
+;              This data item counts the number of occurences of 
+               this feature in this entry.  
+;
+    _item.name                  '_ndb_struct_feature_na.feature_count'
+    _item.category_id             ndb_struct_feature_na
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+
+#############################
+## NDB_STRUCT_NA_BASE_PAIR ##
+#############################
+
+save_ndb_struct_na_base_pair
+    _category.description
+;              Data items in the NDB_STRUCT_NA_BASE_PAIR category record details 
+               of base pairing interactions.
+;
+    _category.id                  ndb_struct_na_base_pair
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_ndb_struct_na_base_pair.model_number'
+                                '_ndb_struct_na_base_pair.i_label_comp_id'
+                                '_ndb_struct_na_base_pair.i_label_asym_id'
+                                '_ndb_struct_na_base_pair.i_label_seq_id'
+                                '_ndb_struct_na_base_pair.i_symmetry'
+                                '_ndb_struct_na_base_pair.j_label_comp_id'
+                                '_ndb_struct_na_base_pair.j_label_asym_id'
+                                '_ndb_struct_na_base_pair.j_label_seq_id'
+                                '_ndb_struct_na_base_pair.j_symmetry'
+
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'ndb_group'
+     loop_
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+     loop_
+    _ndb_struct_na_base_pair.model_number
+    _ndb_struct_na_base_pair.i_label_comp_id
+    _ndb_struct_na_base_pair.i_label_asym_id
+    _ndb_struct_na_base_pair.i_label_seq_id
+    _ndb_struct_na_base_pair.i_symmetry
+    _ndb_struct_na_base_pair.j_label_comp_id
+    _ndb_struct_na_base_pair.j_label_asym_id
+    _ndb_struct_na_base_pair.j_label_seq_id
+    _ndb_struct_na_base_pair.j_symmetry
+    _ndb_struct_na_base_pair.shear
+    _ndb_struct_na_base_pair.stretch
+    _ndb_struct_na_base_pair.stagger
+    _ndb_struct_na_base_pair.buckle
+    _ndb_struct_na_base_pair.propeller
+    _ndb_struct_na_base_pair.opening
+     1 G A 1  1_555 C A 8  7_555   -0.396  -0.156 -0.018  -5.523  -6.752  -3.291
+     1 G A 2  1_555 C A 7  7_555   -0.094  -0.220 -0.334  -4.727  -9.765   2.311
+     1 G A 3  1_555 C A 6  7_555   -0.285  -0.239  0.008  -6.454 -12.575  -1.181
+  #    ...
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__ndb_struct_na_base_pair.model_number
+    _item_description.description
+;
+               Describes the model number of the the base pair.
+
+               This data item is a pointer to _atom_site.pdbx_PDB_model_num in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair.model_number'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_ndb_struct_na_base_pair.model_number'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_model_num'
+     save_
+
+save__ndb_struct_na_base_pair.pair_number
+    _item_description.description
+;
+               Sequential number of pair in the pair sequence.
+;
+    _item.name                  '_ndb_struct_na_base_pair.pair_number'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__ndb_struct_na_base_pair.pair_name
+    _item_description.description
+;
+               Text label for this base pair.
+;
+    _item.name                  '_ndb_struct_na_base_pair.pair_name'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+save__ndb_struct_na_base_pair.i_label_asym_id
+    _item_description.description
+;
+               Describes the asym id of the i-th base in the base pair.
+
+               This data item is a pointer to _atom_site.label_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair.i_label_asym_id'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair.i_label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__ndb_struct_na_base_pair.i_label_comp_id
+    _item_description.description
+;              
+               Describes the component id of the i-th base in the base pair.
+
+               This data item is a pointer to _atom_site.label_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair.i_label_comp_id'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name	'_ndb_struct_na_base_pair.i_label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__ndb_struct_na_base_pair.i_label_seq_id
+    _item_description.description
+;
+               Describes the sequence number of the i-th base in the base pair.
+
+               This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair.i_label_seq_id'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_ndb_struct_na_base_pair.i_label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+
+save__ndb_struct_na_base_pair.i_symmetry
+    _item_description.description
+;              Describes the symmetry operation that should be applied to the
+               coordinates of the i-th base to generate the first partner 
+               in the base pair.
+;
+    _item.name                  '_ndb_struct_na_base_pair.i_symmetry'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_default.value           1_555
+    _item_type.code               symop
+     loop_
+    _item_examples.case
+    _item_examples.detail       
+                                  4      '4th symmetry operation applied'
+                                  7_645  '7th symm. posn.; +a on x; -b on y'
+#  '.'    'no symmetry or translation to site'
+     save_
+
+save__ndb_struct_na_base_pair.j_label_asym_id
+    _item_description.description
+;
+               Describes the asym id of the j-th base in the base pair.
+
+               This data item is a pointer to _atom_site.label_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair.j_label_asym_id'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair.j_label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__ndb_struct_na_base_pair.j_label_comp_id
+    _item_description.description
+;              
+               Describes the component id of the j-th base in the base pair.
+
+               This data item is a pointer to _atom_site.label_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair.j_label_comp_id'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name	'_ndb_struct_na_base_pair.j_label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__ndb_struct_na_base_pair.j_label_seq_id
+    _item_description.description
+;
+               Describes the sequence number of the j-th base in the base pair.
+
+               This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair.j_label_seq_id'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_ndb_struct_na_base_pair.j_label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+
+save__ndb_struct_na_base_pair.j_symmetry
+    _item_description.description
+;              Describes the symmetry operation that should be applied to the
+               coordinates of the j-th base to generate the second partner 
+               in the base pair.
+;
+    _item.name                  '_ndb_struct_na_base_pair.j_symmetry'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_default.value           1_555
+    _item_type.code               symop
+     loop_
+    _item_examples.case
+    _item_examples.detail      
+                                  4      '4th symmetry operation applied'
+                                  7_645  '7th symm. posn.; +a on x; -b on y'
+#    '.'    'no symmetry or translation to site'
+     save_
+
+save__ndb_struct_na_base_pair.i_auth_asym_id
+    _item_description.description
+;
+               Describes the asym id of the i-th base in the base pair.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair.i_auth_asym_id'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair.i_auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__ndb_struct_na_base_pair.i_auth_seq_id
+    _item_description.description
+;
+               Describes the sequence number of the i-th base in the base pair.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair.i_auth_seq_id'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair.i_auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__ndb_struct_na_base_pair.i_PDB_ins_code
+    _item_description.description
+;
+               Describes the PDB insertion code of the i-th base in the base pair.
+
+               This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair.i_PDB_ins_code'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          no
+    _item_type.code               code
+#    _item_linked.child_name	'_ndb_struct_na_base_pair.i_PDB_ins_code'
+#    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+
+save__ndb_struct_na_base_pair.j_auth_asym_id
+    _item_description.description
+;
+               Describes the asym id of the j-th base in the base pair.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair.j_auth_asym_id'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair.j_auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__ndb_struct_na_base_pair.j_auth_seq_id
+    _item_description.description
+;
+               Describes the sequence number of the j-th base in the base pair.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair.j_auth_seq_id'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair.j_auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__ndb_struct_na_base_pair.j_PDB_ins_code
+    _item_description.description
+;
+               Describes the PDB insertion code of the j-th base in the base pair.
+
+               This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair.j_PDB_ins_code'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          no
+    _item_type.code               code
+#    _item_linked.child_name	'_ndb_struct_na_base_pair.j_PDB_ins_code'
+#    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+
+save__ndb_struct_na_base_pair.shear
+    _item_description.description
+;
+               The value of the base pair shear parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair.shear'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair.stretch
+    _item_description.description
+;
+               The value of the base pair stretch parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair.stretch'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair.stagger
+    _item_description.description
+;
+               The value of the base pair stagger parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair.stagger'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair.buckle
+    _item_description.description
+;
+               The value of the base pair buckle parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair.buckle'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair.propeller
+    _item_description.description
+;
+               The value of the base pair propeller parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair.propeller'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair.opening
+    _item_description.description
+;
+               The value of the base pair opening parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair.opening'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair.hbond_type_12
+    _item_description.description
+;
+               Base pair classification of Westhoff and Leontis.
+;
+    _item.name                  '_ndb_struct_na_base_pair.hbond_type_12'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+save__ndb_struct_na_base_pair.hbond_type_28
+    _item_description.description
+;
+               Base pair classification of Saenger
+;
+    _item.name                  '_ndb_struct_na_base_pair.hbond_type_28'
+    _item.category_id             ndb_struct_na_base_pair
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+
+
+##################################
+## NDB_STRUCT_NA_BASE_PAIR_STEP ##
+##################################
+
+save_ndb_struct_na_base_pair_step
+    _category.description
+;              Data items in the NDB_STRUCT_NA_BASE_PAIR_STEP category record details 
+               of base pair step interactions.
+;
+    _category.id                  ndb_struct_na_base_pair_step
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_ndb_struct_na_base_pair_step.model_number'
+                                '_ndb_struct_na_base_pair_step.i_label_comp_id_1'
+                                '_ndb_struct_na_base_pair_step.i_label_asym_id_1'
+                                '_ndb_struct_na_base_pair_step.i_label_seq_id_1'
+                                '_ndb_struct_na_base_pair_step.i_symmetry_1'
+                                '_ndb_struct_na_base_pair_step.j_label_comp_id_1'
+                                '_ndb_struct_na_base_pair_step.j_label_asym_id_1'
+                                '_ndb_struct_na_base_pair_step.j_label_seq_id_1'
+                                '_ndb_struct_na_base_pair_step.j_symmetry_1'
+                                '_ndb_struct_na_base_pair_step.i_label_comp_id_2'
+                                '_ndb_struct_na_base_pair_step.i_label_asym_id_2'
+                                '_ndb_struct_na_base_pair_step.i_label_seq_id_2'
+                                '_ndb_struct_na_base_pair_step.i_symmetry_2'
+                                '_ndb_struct_na_base_pair_step.j_label_comp_id_2'
+                                '_ndb_struct_na_base_pair_step.j_label_asym_id_2'
+                                '_ndb_struct_na_base_pair_step.j_label_seq_id_2'
+                                '_ndb_struct_na_base_pair_step.j_symmetry_2'
+
+
+
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'ndb_group'
+     loop_
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+     loop_
+    _ndb_struct_na_base_pair_step.model_number
+    _ndb_struct_na_base_pair_step.i_label_comp_id_1
+    _ndb_struct_na_base_pair_step.i_label_asym_id_1
+    _ndb_struct_na_base_pair_step.i_label_seq_id_1
+    _ndb_struct_na_base_pair_step.i_symmetry_1
+    _ndb_struct_na_base_pair_step.j_label_comp_id_1
+    _ndb_struct_na_base_pair_step.j_label_asym_id_1
+    _ndb_struct_na_base_pair_step.j_label_seq_id_1
+    _ndb_struct_na_base_pair_step.j_symmetry_1
+    _ndb_struct_na_base_pair_step.i_label_comp_id_2
+    _ndb_struct_na_base_pair_step.i_label_asym_id_2
+    _ndb_struct_na_base_pair_step.i_label_seq_id_2
+    _ndb_struct_na_base_pair_step.i_symmetry_2
+    _ndb_struct_na_base_pair_step.j_label_comp_id_2
+    _ndb_struct_na_base_pair_step.j_label_asym_id_2
+    _ndb_struct_na_base_pair_step.j_label_seq_id_2
+    _ndb_struct_na_base_pair_step.j_symmetry_2
+    _ndb_struct_na_base_pair_step.shift
+    _ndb_struct_na_base_pair_step.slide
+    _ndb_struct_na_base_pair_step.rise
+    _ndb_struct_na_base_pair_step.tilt
+    _ndb_struct_na_base_pair_step.roll
+    _ndb_struct_na_base_pair_step.twist
+     1 G A 1  1_555 C A 8  7_555 G A 2  1_555 C A 7  7_555  0.369 -1.414 3.339  3.056 9.755 33.530
+     1 G A 2  1_555 C A 7  7_555 G A 3  1_555 C A 6  7_555  0.176 -1.672 3.371 -1.176 6.725 30.004
+#    ...
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__ndb_struct_na_base_pair_step.model_number
+    _item_description.description
+;
+               Describes the model number of the the base pair step.
+
+               This data item is a pointer to _atom_site.pdbx_PDB_model_num in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.model_number'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.model_number'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_model_num'
+     save_
+
+save__ndb_struct_na_base_pair_step.step_number
+    _item_description.description
+;
+               The sequence number of this step in the step sequence.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.step_number'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__ndb_struct_na_base_pair_step.step_name
+    _item_description.description
+;
+               The text name of this step.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.step_name'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+save__ndb_struct_na_base_pair_step.i_label_asym_id_1
+    _item_description.description
+;
+               Describes the asym id of the i-th base in the first base pair 
+               of the step.
+
+               This data item is a pointer to _atom_site.label_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_label_asym_id_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.i_label_asym_id_1'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.i_label_comp_id_1
+    _item_description.description
+;              
+               Describes the component id of the i-th base in the first base pair
+               of the step.
+
+               This data item is a pointer to _atom_site.label_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_label_comp_id_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.i_label_comp_id_1'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.i_label_seq_id_1
+    _item_description.description
+;
+               Describes the sequence number of the i-th base in the first base pair
+               of the step.
+
+               This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_label_seq_id_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.i_label_seq_id_1'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.i_symmetry_1
+    _item_description.description
+;              Describes the symmetry operation that should be applied to the
+               coordinates of the i-th base to generate the first partner 
+               in the first base pair of the step.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_symmetry_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_default.value           1_555
+    _item_type.code               symop
+     loop_
+    _item_examples.case
+    _item_examples.detail      
+                                  4      '4th symmetry operation applied'
+                                  7_645  '7th symm. posn.; +a on x; -b on y'
+#    '.'   'no symmetry or translation to site'
+     save_
+
+save__ndb_struct_na_base_pair_step.j_label_asym_id_1
+    _item_description.description
+;
+               Describes the asym id of the j-th base in the first base pair
+               of the step.
+
+               This data item is a pointer to _atom_site.label_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_label_asym_id_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.j_label_asym_id_1'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.j_label_comp_id_1
+    _item_description.description
+;              
+               Describes the component id of the j-th base in the first base pair 
+               of the step.
+
+               This data item is a pointer to _atom_site.label_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_label_comp_id_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.j_label_comp_id_1'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.j_label_seq_id_1
+    _item_description.description
+;
+               Describes the sequence number of the j-th base in the first base pair
+               of the step.
+
+               This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_label_seq_id_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.j_label_seq_id_1'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.j_symmetry_1
+    _item_description.description
+;              Describes the symmetry operation that should be applied to the
+               coordinates of the j-th base to generate the second partner 
+               in the first base pair of the step.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_symmetry_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_default.value           1_555
+    _item_type.code               symop
+     loop_
+    _item_examples.case
+    _item_examples.detail      
+                                  4      '4th symmetry operation applied'
+                                  7_645  '7th symm. posn.; +a on x; -b on y'
+#    '.'    'no symmetry or translation to site'
+     save_
+
+
+
+save__ndb_struct_na_base_pair_step.i_label_asym_id_2
+    _item_description.description
+;
+               Describes the asym id of the i-th base in the second base pair 
+               of the step.
+
+               This data item is a pointer to _atom_site.label_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_label_asym_id_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.i_label_asym_id_2'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.i_label_comp_id_2
+    _item_description.description
+;              
+               Describes the component id of the i-th base in the second base pair
+               of the step.
+
+               This data item is a pointer to _atom_site.label_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_label_comp_id_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.i_label_comp_id_2'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.i_label_seq_id_2
+    _item_description.description
+;
+               Describes the sequence number of the i-th base in the second base pair
+               of the step.
+
+               This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_label_seq_id_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.i_label_seq_id_2'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.i_symmetry_2
+    _item_description.description
+;              Describes the symmetry operation that should be applied to the
+               coordinates of the i-th base to generate the first partner 
+               in the second base pair of the step.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_symmetry_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_default.value           1_555
+    _item_type.code               symop
+     loop_
+    _item_examples.case
+    _item_examples.detail       
+                                  4      '4th symmetry operation applied'
+                                  7_645  '7th symm. posn.; +a on x; -b on y'
+#     .      'no symmetry or translation to site'
+     save_
+
+save__ndb_struct_na_base_pair_step.j_label_asym_id_2
+    _item_description.description
+;
+               Describes the asym id of the j-th base in the second base pair
+               of the step.
+
+               This data item is a pointer to _atom_site.label_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_label_asym_id_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.j_label_asym_id_2'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.j_label_comp_id_2
+    _item_description.description
+;              
+               Describes the component id of the j-th base in the second base pair 
+               of the step.
+
+               This data item is a pointer to _atom_site.label_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_label_comp_id_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.j_label_comp_id_2'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.j_label_seq_id_2
+    _item_description.description
+;
+               Describes the sequence number of the j-th base in the second base pair
+               of the step.
+
+               This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_label_seq_id_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.j_label_seq_id_2'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.j_symmetry_2
+    _item_description.description
+;              Describes the symmetry operation that should be applied to the
+               coordinates of the j-th base to generate the second partner 
+               in the second base pair of the step.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_symmetry_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_default.value           1_555
+    _item_type.code               symop
+     loop_
+    _item_examples.case
+    _item_examples.detail      
+                                  4      '4th symmetry operation applied'
+                                  7_645  '7th symm. posn.; +a on x; -b on y'
+#      .      'no symmetry or translation to site'
+     save_
+
+save__ndb_struct_na_base_pair_step.i_auth_asym_id_1
+    _item_description.description
+;
+               Describes the author's asym id of the i-th base in the first 
+               base pair of the step.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_auth_asym_id_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.i_auth_asym_id_1'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+
+save__ndb_struct_na_base_pair_step.i_auth_seq_id_1
+    _item_description.description
+;
+               Describes the author's sequence number of the i-th base in the 
+               first base pair of the step.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_auth_seq_id_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.i_auth_seq_id_1'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.i_PDB_ins_code_1
+    _item_description.description
+;
+               Describes the PDB insertion code of the i-th base in the 
+               first base pair of the step.
+
+               This data item is a pointer to _atom_site.pdbx_PDB_ins_code in 
+               the ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_PDB_ins_code_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               code
+#    _item_linked.child_name	'_ndb_struct_na_base_pair_step.i_PDB_ins_code_1'
+#    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+
+save__ndb_struct_na_base_pair_step.j_auth_asym_id_1
+    _item_description.description
+;
+               Describes the author's asym id of the j-th base in the first 
+               base pair of the step.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_auth_asym_id_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.j_auth_asym_id_1'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.j_auth_seq_id_1
+    _item_description.description
+;
+               Describes the author's sequence number of the j-th base in the 
+               first base pair of the step.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_auth_seq_id_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.j_auth_seq_id_1'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+
+save__ndb_struct_na_base_pair_step.j_PDB_ins_code_1
+    _item_description.description
+;
+               Describes the PDB insertion code of the j-th base in the 
+               first base pair of the step.
+
+               This data item is a pointer to _atom_site.pdbx_PDB_ins_code in 
+               the ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_PDB_ins_code_1'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               code
+#    _item_linked.child_name	'_ndb_struct_na_base_pair_step.j_PDB_ins_code_1'
+#    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+save__ndb_struct_na_base_pair_step.i_auth_asym_id_2
+    _item_description.description
+;
+               Describes the author's asym id of the i-th base in the second 
+               base pair of the step.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_auth_asym_id_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.i_auth_asym_id_2'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.i_auth_seq_id_2
+    _item_description.description
+;
+               Describes the author's sequence number of the i-th base in the 
+               second base pair of the step.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_auth_seq_id_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.i_auth_seq_id_2'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.i_PDB_ins_code_2
+    _item_description.description
+;
+               Describes the PDB insertion code of the i-th base in the 
+               second base pair of the step.
+
+               This data item is a pointer to _atom_site.pdbx_PDB_ins_code in 
+               the ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.i_PDB_ins_code_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               code
+#    _item_linked.child_name	'_ndb_struct_na_base_pair_step.i_PDB_ins_code_2'
+#    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+save__ndb_struct_na_base_pair_step.j_auth_asym_id_2
+    _item_description.description
+;
+               Describes the author's asym id of the j-th base in the second 
+               base pair of the step.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_auth_asym_id_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.j_auth_asym_id_2'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.j_auth_seq_id_2
+    _item_description.description
+;
+               Describes the author's sequence number of the j-th base in the 
+               second base pair of the step.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_auth_seq_id_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name	'_ndb_struct_na_base_pair_step.j_auth_seq_id_2'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__ndb_struct_na_base_pair_step.j_PDB_ins_code_2
+    _item_description.description
+;
+               Describes the PDB insertion code of the j-th base in the 
+               second base pair of the step.
+
+               This data item is a pointer to _atom_site.pdbx_PDB_ins_code in 
+               the ATOM_SITE category.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.j_PDB_ins_code_2'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               code
+#    _item_linked.child_name	'_ndb_struct_na_base_pair_step.j_PDB_ins_code_2'
+#    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+save__ndb_struct_na_base_pair_step.shift
+    _item_description.description
+;
+               The value of the base pair step shift parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.shift'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair_step.slide
+    _item_description.description
+;
+               The value of the base pair step slide parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.slide'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair_step.rise
+    _item_description.description
+;
+               The value of the base pair step rise parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.rise'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair_step.tilt
+    _item_description.description
+;
+               The value of the base pair step tilt parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.tilt'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair_step.roll
+    _item_description.description
+;
+               The value of the base pair step roll parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.roll'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair_step.twist
+    _item_description.description
+;
+               The value of the base pair step twist parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.twist'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair_step.x_displacement
+    _item_description.description
+;
+               The value of the base pair step X displacement parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.x_displacement'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair_step.y_displacement
+    _item_description.description
+;
+               The value of the base pair step Y displacement parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.y_displacement'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair_step.helical_rise
+    _item_description.description
+;
+               The value of the base pair step helical rise parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.helical_rise'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair_step.inclination
+    _item_description.description
+;
+               The value of the base pair step inclination parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.inclination'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair_step.tip
+    _item_description.description
+;
+               The value of the base pair step twist parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.tip'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__ndb_struct_na_base_pair_step.helical_twist
+    _item_description.description
+;
+               The value of the base pair step helical twist parameter.
+;
+    _item.name                  '_ndb_struct_na_base_pair_step.helical_twist'
+    _item.category_id             ndb_struct_na_base_pair_step
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+##
+##
+
+save_ndb_original_ndb_coordinates
+    _category.description
+; Placeholder category for PDB coordinate data.
+;
+    _category.id                  ndb_original_ndb_coordinates
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_ndb_original_ndb_coordinates.coord_section'
+
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'ndb_group'
+    save_
+
+
+save__ndb_original_ndb_coordinates.coord_section
+    _item_description.description
+;  Placeholder item to hold unparsed coordinate data.
+;
+    _item.name                  '_ndb_original_ndb_coordinates.coord_section'
+    _item.category_id             ndb_original_ndb_coordinates
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+##
+##
+save_pdbx_entity_nonpoly
+    _category.description
+;             
+;
+    _category.id                  pdbx_entity_nonpoly
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_entity_nonpoly.entity_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'ndb_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_entity_nonpoly.entity_id 
+    _item_description.description
+;              This data item is a pointer to _entity.id in the ENTITY category.
+;
+    _item.name                  '_pdbx_entity_nonpoly.entity_id'
+    _item.category_id             pdbx_entity_nonpoly
+    _item.mandatory_code           yes
+    _item_type.code                code
+    _item_linked.child_name	'_pdbx_entity_nonpoly.entity_id'
+    _item_linked.parent_name    '_entity.id'
+    _item_aliases.alias_name     '_rcsb_entity_nonpoly.entity_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
+
+save__pdbx_entity_nonpoly.comp_id 
+    _item_description.description
+;              This data item is a pointer to _chem_comp.id in the CHEM_COMP category.
+;
+    _item.name                  '_pdbx_entity_nonpoly.comp_id'
+    _item.category_id             pdbx_entity_nonpoly
+    _item.mandatory_code           no
+    _item_type.code                ucode
+    _item_linked.child_name	'_pdbx_entity_nonpoly.comp_id'
+    _item_linked.parent_name    '_chem_comp.id'
+    _item_aliases.alias_name     '_rcsb_entity_nonpoly.comp_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_entity_nonpoly.name
+    _item_description.description
+;              A name for the non-polymer entity
+;
+    _item.name                  '_pdbx_entity_nonpoly.name'
+    _item.category_id             pdbx_entity_nonpoly
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_aliases.alias_name     '_rcsb_entity_nonpoly.name'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+#
+### EOF mmcif_pdbx-def-4.dic

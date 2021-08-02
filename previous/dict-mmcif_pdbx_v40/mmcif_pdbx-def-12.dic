@@ -1,0 +1,754 @@
+#######################
+## PDBX_SOLN_SCATTER ##
+#######################
+
+save_pdbx_soln_scatter
+    _category.description
+;   Data items in the PDBX_SOLN_SCATTER category record details about a 
+    solution scattering experiment
+;
+    _category.id                  pdbx_soln_scatter
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          
+                                '_pdbx_soln_scatter.entry_id'
+                                '_pdbx_soln_scatter.id'
+     loop_
+    _category_group.id           
+                             'inclusive_group'
+                             'solution_scattering_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+; Example 1 - based on PDB entry 1HAQ
+; 
+;  loop_
+   _pdbx_soln_scatter.entry_id
+   _pdbx_soln_scatter.id
+   _pdbx_soln_scatter.type
+   _pdbx_soln_scatter.source_type
+   _pdbx_soln_scatter.source_class
+   _pdbx_soln_scatter.source_beamline
+   _pdbx_soln_scatter.source_beamline_instrument
+   _pdbx_soln_scatter.detector_specific
+   _pdbx_soln_scatter.detector_type
+   _pdbx_soln_scatter.temperature   
+   _pdbx_soln_scatter.sample_pH
+   _pdbx_soln_scatter.num_time_frames
+   _pdbx_soln_scatter.concentration_range
+   _pdbx_soln_scatter.buffer_name
+   _pdbx_soln_scatter.mean_guiner_radius
+   _pdbx_soln_scatter.mean_guiner_radius_esd
+   _pdbx_soln_scatter.min_mean_cross_sectional_radii_gyration 
+   _pdbx_soln_scatter.min_mean_cross_sectional_radii_gyration_esd
+   _pdbx_soln_scatter.max_mean_cross_sectional_radii_gyration 
+   _pdbx_soln_scatter.max_mean_cross_sectional_radii_gyration_esd
+   _pdbx_soln_scatter.protein_length
+  1HAQ 1 x-ray     'SRS BEAMLINE 2.1' 'synchrotron' '2.1' . . '500-channel quadrant'
+         288 . 10 '0.7 - 14' tris 
+         11.1 0.4 4.4 0.2 1.7 0.1 40
+  1HAQ 2 neutron  'ILL'               'neutron source' . 'D11, D22' . 'area' 
+         .  .  .  '0.4 - 9.6'  'PBS in 99.9% D2O' 
+         11.3 0.4 3.9 0.2 1.51 0.06 '37.0 - 39.0'
+  1HAQ 3 neutron  'ISIS' 'neutron source' 'Pulsed Neutron' 'LOQ' . 'AREA (TIME-OF-FLIGHT)'
+         .  .  .  '3.7, 6.1'     'PBS in 99.9% D2O' 
+         11.7 0.5 . . . . 40.0
+;              
+
+     save_
+
+save__pdbx_soln_scatter.entry_id
+    _item_description.description
+;    This data item is a pointer to _entry.id in the ENTRY category.
+;
+    _item.name                   '_pdbx_soln_scatter.entry_id'
+    _item.category_id            pdbx_soln_scatter
+    _item.mandatory_code         yes
+    _item_type.code              code
+    _item_linked.child_name      '_pdbx_soln_scatter.entry_id'
+    _item_linked.parent_name     '_entry.id'
+      save_
+
+
+save__pdbx_soln_scatter.id
+    _item_description.description
+;   The value of _pdbx_soln_scatter.id must
+    uniquely identify the sample in the category PDBX_SOLN_SCATTER
+;
+    _item.name                  '_pdbx_soln_scatter.id'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          yes
+    _item_type.code               code
+    save_
+
+save__pdbx_soln_scatter.type
+    _item_description.description
+;   The type of solution scattering experiment carried out
+;
+    _item.name                  '_pdbx_soln_scatter.type'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          yes
+    _item_type.code               code
+     loop_
+    _item_enumeration.value
+              'x-ray'
+              'neutron'
+              'modelling'
+    save_
+
+save__pdbx_soln_scatter.source_beamline
+    _item_description.description
+;   The beamline name used for the experiment
+;
+    _item.name                  '_pdbx_soln_scatter.source_beamline'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_soln_scatter.source_beamline_instrument
+    _item_description.description
+;   The instrumentation used on the beamline
+;
+    _item.name                  '_pdbx_soln_scatter.source_beamline_instrument'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+
+save__pdbx_soln_scatter.detector_type
+    _item_description.description
+;    The general class of the radiation detector.
+;
+    _item.name                  '_pdbx_soln_scatter.detector_type'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               text
+    save_
+
+save__pdbx_soln_scatter.detector_specific
+    _item_description.description
+; The particular radiation detector. In general this will be a
+   manufacturer, description, model number or some combination of
+   these.
+;
+    _item.name                  '_pdbx_soln_scatter.detector_specific'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               text
+    save_
+
+save__pdbx_soln_scatter.source_type
+    _item_description.description
+; The make, model, name or beamline of the source of radiation.
+;
+    _item.name                  '_pdbx_soln_scatter.source_type'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_soln_scatter.source_class
+    _item_description.description
+;  The general class of the radiation source.
+;
+    _item.name                  '_pdbx_soln_scatter.source_class'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case          
+       'neutron source'
+       'synchrotron'
+     save_
+
+
+
+save__pdbx_soln_scatter.num_time_frames
+    _item_description.description
+;    The number of time frame solution scattering images used.
+;
+    _item.name                   '_pdbx_soln_scatter.num_time_frames'
+    _item.category_id              pdbx_soln_scatter
+    _item.mandatory_code           no
+    _item_type.code                int
+     save_
+
+
+
+save__pdbx_soln_scatter.sample_pH
+    _item_description.description
+;   The pH value of the buffered sample.
+;
+    _item.name                  '_pdbx_soln_scatter.sample_pH'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_soln_scatter.temperature
+    _item_description.description
+;    The temperature in kelvins at which the experiment
+     was conducted
+;
+    _item.name                  '_pdbx_soln_scatter.temperature'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+     loop_
+    _item_range.maximum           
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+    _item_units.code              kelvins
+     save_
+
+save__pdbx_soln_scatter.concentration_range
+    _item_description.description
+;   The concentration range (mg/mL) of the complex in the 
+    sample used in the solution scattering experiment to
+    determine the mean radius of structural elongation.
+;
+    _item.name                  '_pdbx_soln_scatter.concentration_range'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               line
+    _item_units.code              mg_per_ml
+    _item_examples.case           '0.7 - 14'
+    save_
+
+save__pdbx_soln_scatter.buffer_name
+    _item_description.description
+;  The name of the buffer used for the sample in the solution scattering
+   experiment. 
+;
+    _item.name                  '_pdbx_soln_scatter.buffer_name'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               line
+    _item_examples.case          'acetic acid'
+     save_
+
+
+save__pdbx_soln_scatter.mean_guiner_radius
+    _item_description.description
+;    The mean radius of structural elongation of the sample.
+     In a given solute-solvent contrast, the radius of gyration
+     R_G is a measure of structural elongation if the internal
+     inhomogeneity of scattering densities has no effect. Guiner 
+     analysis at low Q gives the R_G and the forward scattering at 
+     zero angle I(0).
+
+         lnl(Q) = lnl(0) - R_G^2Q^2/3
+
+     where 
+           Q = 4(pi)sin(theta/lamda)
+           2theta = scattering angle
+           lamda = wavelength
+
+     The above expression is valid in a QR_G range for extended 
+     rod-like particles. The relative I(0)/c values ( where
+      c = sample concentration) for sample measurements in a
+     constant buffer for a single sample data session, gives the
+     relative masses of the protein(s) studied when referenced
+     against a standard.
+
+     see: O.Glatter & O.Kratky, (1982). Editors of "Small angle
+          X-ray Scattering, Academic Press, New York.
+          O.Kratky. (1963). X-ray small angle scattering with
+          substances of biological interest in diluted solutions.
+          Prog. Biophys. Chem., 13, 105-173.
+
+          G.D.Wignall & F.S.Bates, (1987). The small-angle approximation
+          of X-ray and neutron scatter from rigid rods of non-uniform
+          cross section and finite length. J.Appl. Crystallog., 18, 452-460.
+
+     If the structure is elongated, the mean radius of gyration
+     of the cross-sectional structure R_XS  and the mean cross sectional
+     intensity at zero angle [I(Q).Q]_Q->0 is obtained from
+
+        ln[I(Q).Q] = ln[l(Q).(Q)]_Q->0 - ((R_XS)^2Q^2)/2
+;
+    _item.name                   '_pdbx_soln_scatter.mean_guiner_radius'
+    _item.category_id            pdbx_soln_scatter
+    _item.mandatory_code         no
+    _item_units.code             nanometres
+    _item_type.code              float
+    _item_related.related_name  '_pdbx_soln_scatter.mean_guiner_radius_esd'
+    _item_related.function_code   associated_esd
+     save_
+
+
+save__pdbx_soln_scatter.mean_guiner_radius_esd
+    _item_description.description
+;    The estimated standard deviation for the
+     mean radius of structural elongation of the sample.
+     In a given solute-solvent contrast, the radius of gyration
+     R_G is a measure of structural elongation if the internal
+     inhomogeneity of scattering densities has no effect. Guiner 
+     analysis at low Q give the R_G and the forward scattering at 
+     zero angle I(0).
+
+         lnl(Q) = lnl(0) - R_G^2Q^2/3
+
+     where 
+           Q = 4(pi)sin(theta/lamda)
+           2theta = scattering angle
+           lamda = wavelength
+
+     The above expression is valid in a QR_G range for extended 
+     rod-like particles. The relative I(0)/c values ( where
+      c = sample concentration) for sample measurements in a
+     constant buffer for a single sample data session, gives the
+     relative masses of the protein(s) studied when referenced
+     against a standard.
+
+     see: 
+         O.Glatter & O.Kratky, (1982). Editors of "Small angle
+          X-ray Scattering, Academic Press, New York.
+         O.Kratky. (1963). X-ray small angle scattering with
+          substances of biological interest in diluted solutions.
+          Prog. Biophys. Chem., 13, 105-173.
+         G.D.Wignall & F.S.Bates, (1987). The small-angle approximation
+          of X-ray and neutron scatter from rigid rods of non-uniform
+          cross section and finite length. J.Appl. Crystallog., 18, 452-460.
+
+     If the structure is elongated, the mean radius of gyration
+     of the cross-sectional structure R_XS  and the mean cross sectional
+     intensity at zero angle [I(Q).Q]_Q->0 is obtained from
+        ln[I(Q).Q] = ln[l(Q).(Q)]_Q->0 - ((R_XS)^2Q^2)/2
+;
+    _item.name                   '_pdbx_soln_scatter.mean_guiner_radius_esd'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              nanometres
+    _item_related.related_name  '_pdbx_soln_scatter.mean_guiner_radius'
+    _item_related.function_code   associated_value
+     save_
+
+
+
+
+save__pdbx_soln_scatter.min_mean_cross_sectional_radii_gyration
+    _item_description.description
+;    
+     The minimum mean radius of structural elongation of the sample.
+     In a given solute-solvent contrast, the radius of gyration
+     R_G is a measure of structural elongation if the internal
+     inhomogeneity of scattering densities has no effect. Guiner 
+     analysis at low Q give the R_G and the forward scattering at 
+     zero angle I(0).
+
+         lnl(Q) = lnl(0) - R_G^2Q^2/3
+
+     where 
+           Q = 4(pi)sin(theta/lamda)
+           2theta = scattering angle
+           lamda = wavelength
+
+     The above expression is valid in a QR_G range for extended 
+     rod-like particles. The relative I(0)/c values ( where
+      c = sample concentration) for sample measurements in a
+     constant buffer for a single sample data session, gives the
+     relative masses of the protein(s) studied when referenced
+     against a standard.
+
+     see: 
+         O.Glatter & O.Kratky, (1982). Editors of "Small angle
+          X-ray Scattering, Academic Press, New York.
+         O.Kratky. (1963). X-ray small angle scattering with
+          substances of biological interest in diluted solutions.
+          Prog. Biophys. Chem., 13, 105-173.
+         G.D.Wignall & F.S.Bates, (1987). The small-angle approximation
+          of X-ray and neutron scatter from rigid rods of non-uniform
+          cross section and finite length. J.Appl. Crystallog., 18, 452-460.
+
+     If the structure is elongated, the mean radius of gyration
+     of the cross-sectional structure R_XS  and the mean cross sectional
+     intensity at zero angle [I(Q).Q]_Q->0 is obtained from
+        ln[I(Q).Q] = ln[l(Q).(Q)]_Q->0 - ((R_XS)^2Q^2)/2
+;
+    _item.name    '_pdbx_soln_scatter.min_mean_cross_sectional_radii_gyration'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              nanometres
+    _item_related.related_name  '_pdbx_soln_scatter.min_mean_cross_sectional_radii_gyration_esd'
+    _item_related.function_code   associated_esd
+     save_
+
+
+save__pdbx_soln_scatter.min_mean_cross_sectional_radii_gyration_esd
+    _item_description.description
+;
+     The estimated standard deviation for the
+     minimum mean radius of structural elongation of the sample.
+     In a given solute-solvent contrast, the radius of gyration
+     R_G is a measure of structural elongation if the internal
+     inhomogeneity of scattering densities has no effect. Guiner 
+     analysis at low Q give the R_G and the forward scattering at 
+     zero angle I(0).
+ 
+        lnl(Q) = lnl(0) - R_G^2Q^2/3
+
+     where 
+           Q = 4(pi)sin(theta/lamda)
+           2theta = scattering angle
+           lamda = wavelength
+
+     The above expression is valid in a QR_G range for extended 
+     rod-like particles. The relative I(0)/c values ( where
+      c = sample concentration) for sample measurements in a
+     constant buffer for a single sample data session, gives the
+     relative masses of the protein(s) studied when referenced
+     against a standard.
+
+     see: 
+         O.Glatter & O.Kratky, (1982). Editors of "Small angle
+          X-ray Scattering, Academic Press, New York.
+         O.Kratky. (1963). X-ray small angle scattering with
+          substances of biological interest in diluted solutions.
+          Prog. Biophys. Chem., 13, 105-173.
+         G.D.Wignall & F.S.Bates, (1987). The small-angle approximation
+          of X-ray and neutron scatter from rigid rods of non-uniform
+          cross section and finite length. J.Appl. Crystallog., 18, 452-460.
+
+     If the structure is elongated, the mean radius of gyration
+     of the cross-sectional structure R_XS  and the mean cross sectional
+     intensity at zero angle [I(Q).Q]_Q->0 is obtained from
+
+        ln[I(Q).Q] = ln[l(Q).(Q)]_Q->0 - ((R_XS)^2Q^2)/2
+;
+    _item.name      '_pdbx_soln_scatter.min_mean_cross_sectional_radii_gyration_esd'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              nanometres
+    _item_related.related_name  '_pdbx_soln_scatter.min_mean_cross_sectional_radii_gyration'
+    _item_related.function_code   associated_value
+     save_
+
+
+save__pdbx_soln_scatter.max_mean_cross_sectional_radii_gyration
+    _item_description.description
+;    The maximum mean radius of structural elongation of the sample.
+     In a given solute-solvent contrast, the radius of gyration
+     R_G is a measure of structural elongation if the internal
+     inhomogeneity of scattering densities has no effect. Guiner 
+     analysis at low Q give the R_G and the forward scattering at 
+     zero angle I(0).
+ 
+        lnl(Q) = lnl(0) - R_G^2Q^2/3
+
+     where 
+           Q = 4(pi)sin(theta/lamda)
+           2theta = scattering angle
+           lamda = wavelength
+
+     The above expression is valid in a QR_G range for extended 
+     rod-like particles. The relative I(0)/c values ( where
+      c = sample concentration) for sample measurements in a
+     constant buffer for a single sample data session, gives the
+     relative masses of the protein(s) studied when referenced
+     against a standard.
+
+     see:
+         O.Glatter & O.Kratky, (1982). Editors of "Small angle
+          X-ray Scattering, Academic Press, New York.
+         O.Kratky. (1963). X-ray small angle scattering with
+          substances of biological interest in diluted solutions.
+          Prog. Biophys. Chem., 13, 105-173.
+         G.D.Wignall & F.S.Bates, (1987). The small-angle approximation
+          of X-ray and neutron scatter from rigid rods of non-uniform
+          cross section and finite length. J.Appl. Crystallog., 18, 452-460.
+
+     If the structure is elongated, the mean radius of gyration
+     of the cross-sectional structure R_XS  and the mean cross sectional
+     intensity at zero angle [I(Q).Q]_Q->0 is obtained from
+        ln[I(Q).Q] = ln[l(Q).(Q)]_Q->0 - ((R_XS)^2Q^2)/2
+;
+    _item.name      '_pdbx_soln_scatter.max_mean_cross_sectional_radii_gyration'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              nanometres
+    _item_related.related_name  '_pdbx_soln_scatter.max_mean_cross_sectional_radii_gyration_esd'
+    _item_related.function_code   associated_esd
+     save_
+
+
+save__pdbx_soln_scatter.max_mean_cross_sectional_radii_gyration_esd
+    _item_description.description
+;    
+     The estimated standard deviation for the
+     minimum mean radius of structural elongation of the sample.
+     In a given solute-solvent contrast, the radius of gyration
+     R_G is a measure of structural elongation if the internal
+     inhomogeneity of scattering densities has no effect. Guiner 
+     analysis at low Q give the R_G and the forward scattering at 
+     zero angle I(0).
+
+         lnl(Q) = lnl(0) - R_G^2Q^2/3
+
+     where 
+           Q = 4(pi)sin(theta/lamda)
+           2theta = scattering angle
+           lamda = wavelength
+
+     The above expression is valid in a QR_G range for extended 
+     rod-like particles. The relative I(0)/c values ( where
+      c = sample concentration) for sample measurements in a
+     constant buffer for a single sample data session, gives the
+     relative masses of the protein(s) studied when referenced
+     against a standard.
+
+     see:  
+         O.Glatter & O.Kratky, (1982). Editors of "Small angle
+          X-ray Scattering, Academic Press, New York.
+         O.Kratky. (1963). X-ray small angle scattering with
+          substances of biological interest in diluted solutions.
+          Prog. Biophys. Chem., 13, 105-173.
+         G.D.Wignall & F.S.Bates, (1987). The small-angle approximation
+          of X-ray and neutron scatter from rigid rods of non-uniform
+          cross section and finite length. J.Appl. Crystallog., 18, 452-460.
+
+     If the structure is elongated, the mean radius of gyration
+     of the cross-sectional structure R_XS  and the mean cross sectional
+     intensity at zero angle [I(Q).Q]_Q->0 is obtained from
+        ln[I(Q).Q] = ln[l(Q).(Q)]_Q->0 - ((R_XS)^2Q^2)/2
+;
+    _item.name      '_pdbx_soln_scatter.max_mean_cross_sectional_radii_gyration_esd'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              nanometres
+    _item_related.related_name  '_pdbx_soln_scatter.max_mean_cross_sectional_radii_gyration'
+    _item_related.function_code   associated_value
+     save_
+
+save__pdbx_soln_scatter.protein_length
+    _item_description.description
+;  
+   The length (or range) of the protein sample under study.
+   If the solution structure is approximated as an elongated elliptical
+   cyclinder the the length L is determined from,
+
+     L = sqrt [12( (R_G)^2  -  (R_XS)^2 ) ]   
+
+   The length should also be given by
+
+     L = pi I(0) / [ I(Q).Q]_Q->0
+;
+    _item.name                   '_pdbx_soln_scatter.protein_length'
+    _item.category_id             pdbx_soln_scatter
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+save__pdbx_soln_scatter.data_reduction_software_list
+    _item_description.description
+;   A list of the software used in the data reduction
+;
+    _item.name                  '_pdbx_soln_scatter.data_reduction_software_list'
+    _item.category_id            pdbx_soln_scatter
+    _item.mandatory_code         no
+    _item_type.code              text
+    _item_examples.case          'OTOKO'
+    save_
+
+save__pdbx_soln_scatter.data_analysis_software_list
+    _item_description.description
+;   A list of the software used in the data analysis
+;
+    _item.name                  '_pdbx_soln_scatter.data_analysis_software_list'
+    _item.category_id            pdbx_soln_scatter
+    _item.mandatory_code         no
+    _item_type.code              text
+    _item_examples.case          'SCTPL5 GNOM'
+    save_
+
+
+
+#############################
+## PDBX_SOLN_SCATTER_MODEL ##
+#############################
+
+save_pdbx_soln_scatter_model
+    _category.description
+;   Data items in the PDBX_SOLN_SCATTER_MODEL category record details about the
+    homology model fitting to the solution scatter data.
+;
+    _category.id                  pdbx_soln_scatter_model
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          
+                                '_pdbx_soln_scatter_model.id'
+                                '_pdbx_soln_scatter_model.scatter_id'
+     loop_
+    _category_group.id           
+                             'inclusive_group'
+                             'solution_scattering_group'
+     save_
+
+save__pdbx_soln_scatter_model.scatter_id
+    _item_description.description
+;    This data item is a pointer to  _pdbx_soln_scatter.id in the  PDBX_SOLN_SCATTER category.
+;
+    _item.name                   '_pdbx_soln_scatter_model.scatter_id'
+    _item.category_id            pdbx_soln_scatter_model
+    _item.mandatory_code         yes
+    _item_type.code              code
+    _item_linked.child_name      '_pdbx_soln_scatter_model.scatter_id'
+    _item_linked.parent_name     '_pdbx_soln_scatter.id'
+      save_
+
+
+save__pdbx_soln_scatter_model.id
+    _item_description.description
+;   The value of _pdbx_soln_scatter_model.id must
+    uniquely identify the sample in the category PDBX_SOLN_SCATTER_MODEL
+;
+    _item.name                  '_pdbx_soln_scatter_model.id'
+    _item.category_id             pdbx_soln_scatter_model
+    _item.mandatory_code          yes
+    _item_type.code               code
+    save_
+
+
+
+save__pdbx_soln_scatter_model.details
+    _item_description.description
+;   A description of any additional details concerning the experiment. 
+;
+    _item.name                  '_pdbx_soln_scatter_model.details'
+    _item.category_id            pdbx_soln_scatter_model
+    _item.mandatory_code         no
+    _item_type.code              text
+    _item_examples.case          
+;   Homology models were built for
+    the 17 SCR domains and energy minimisations were 
+    performed to improve the connectivity in the fh model.
+    triantennary complex-type carbohydrate structures
+    (MAN3GLCNAC6GAL3FUC3NEUNAC1) were added to each of the
+    N-linked glycosylation sites. a library of linker peptide
+    conformations was used in domain modelling constrained
+    by the solution scattering fits. modelling with the
+    scattering data was also carried out by rotational 
+    search methods. the x-ray and neutron scattering curve 
+    I(Q) was calculated assuming a uniform scattering density 
+    for the spheres using the debye equation as adapted to 
+    spheres. x-ray curves were calculated from the hydrated 
+    sphere models without corrections for wavelength spread or
+    beam divergence, while these corrections were applied for 
+    the neutron curves but now using unhydrated models.
+;
+     save_
+
+
+save__pdbx_soln_scatter_model.method
+    _item_description.description
+;   A description of the methods used in the modelling
+;
+    _item.name                  '_pdbx_soln_scatter_model.method'
+    _item.category_id            pdbx_soln_scatter_model
+    _item.mandatory_code         no
+    _item_type.code              text
+    _item_examples.case          
+;  Constrained scattering fitting of homology models
+;
+    save_
+
+save__pdbx_soln_scatter_model.software_list
+    _item_description.description
+;   A list of the software used in the modeeling
+;
+    _item.name                  '_pdbx_soln_scatter_model.software_list'
+    _item.category_id            pdbx_soln_scatter_model
+    _item.mandatory_code         no
+    _item_type.code              text
+    _item_examples.case          
+;     INSIGHT II, HOMOLOGY, DISCOVERY, BIOPOLYMER, DELPHI 
+;
+    save_
+
+
+
+save__pdbx_soln_scatter_model.software_author_list
+    _item_description.description
+;   A list of the software authors
+;
+    _item.name                  '_pdbx_soln_scatter_model.software_author_list'
+    _item.category_id            pdbx_soln_scatter_model
+    _item.mandatory_code         no
+    _item_type.code              text
+    _item_examples.case          
+; MSI
+;
+    save_
+
+save__pdbx_soln_scatter_model.entry_fitting_list
+    _item_description.description
+;   A list of the entries used to fit the model
+    to the scattering data
+;
+    _item.name                  '_pdbx_soln_scatter_model.entry_fitting_list'
+    _item.category_id            pdbx_soln_scatter_model
+    _item.mandatory_code         no
+    _item_type.code              text
+    _item_examples.case          
+; PDB CODE 1HFI, 1HCC, 1HFH, 1VCC
+;
+    save_
+
+save__pdbx_soln_scatter_model.num_conformers_calculated
+    _item_description.description
+;   The number of model conformers calculated.
+;
+    _item.name                  '_pdbx_soln_scatter_model.num_conformers_calculated'
+    _item.category_id            pdbx_soln_scatter_model
+    _item.mandatory_code         no
+    _item_type.code              int
+    save_
+
+save__pdbx_soln_scatter_model.num_conformers_submitted
+    _item_description.description
+;   The number of model conformers submitted in the entry
+;
+    _item.name                  '_pdbx_soln_scatter_model.num_conformers_submitted'
+    _item.category_id            pdbx_soln_scatter_model
+    _item.mandatory_code         no
+    _item_type.code              int
+    save_
+
+save__pdbx_soln_scatter_model.representative_conformer
+    _item_description.description
+;   The index of the representative conformer among the submitted conformers for the entry
+;
+    _item.name                  '_pdbx_soln_scatter_model.representative_conformer'
+    _item.category_id            pdbx_soln_scatter_model
+    _item.mandatory_code         no
+    _item_type.code              int
+    save_
+
+save__pdbx_soln_scatter_model.conformer_selection_criteria
+    _item_description.description
+;   A description of the conformer selection criteria
+    used.
+;
+    _item.name       '_pdbx_soln_scatter_model.conformer_selection_criteria'
+    _item.category_id            pdbx_soln_scatter_model
+    _item.mandatory_code         no
+    _item_type.code              text
+    _item_examples.case          
+;  The modelled scattering curves were assessed by calculation of the 
+   RG, RSX-1 and RXS-2 values in the same Q ranges 
+   used in the experimental Guinier fits. models were 
+   then ranked using a goodness-of-fit R-factor 
+   defined by analogy with protein crystallography 
+   and based on the experimental curves in the Q range 
+   extending to 1.4 nm-1.
+;
+    save_
+##
+##

@@ -1,0 +1,1279 @@
+data_FAM_000411_REV
+#
+#  Version 4 -  April 5, 2011  jdw
+#
+##  Change the item name of the representative flag, added non-standard polymer linkage details,
+#   and added nonpolymer residue number assignement pdbx_reference_entity_list.
+#
+#   Some additional information is needed to properly complete the example as noted.
+#
+# 
+#
+_pdbx_reference_entity_family.family_prd_id FAM_000411
+_pdbx_reference_entity_family.name          quinoxaline
+
+
+#
+loop_
+_pdbx_reference_entity.family_prd_id
+_pdbx_reference_entity.prd_id
+_pdbx_reference_entity.name
+_pdbx_reference_entity.type
+_pdbx_reference_entity.class 
+_pdbx_reference_entity.formula
+_pdbx_reference_entity.formula_weight
+FAM_000411 PRD_000001 "TRIOSTIN A" "cyclic octadepsipeptide antibiotic" "antitumor antibiotic"   "C50 H62 N12 O12 S2"  1087.23
+FAM_000411 PRD_000002 "[N-MeCys3,N-MeCys7]TANDEM" "quinoxaline-like" "cytotoxic polypeptide antibiotic" ? ?
+FAM_000411 PRD_000003 "QUINOMYCIN BISINTERCALATOR" quinoxaline "cytotoxic polypeptide antibiotic" ? ?
+FAM_000411 PRD_000004 "Echinomycin" "cytotoxic polypeptide" "quinoxaline antibiotic" "C51 H64 N12 O12 S2" 1101.26
+FAM_000411 PRD_000005 "uk63052"     quinomycin "bifunctional intercalating antibiotic" "C56 H68 N10 O14 S2" 1169.32 
+#
+#
+loop_
+_pdbx_reference_entity_instances.family_prd_id
+_pdbx_reference_entity_instances.prd_id
+_pdbx_reference_entity_instances.ordinal
+_pdbx_reference_entity_instances.database_name
+_pdbx_reference_entity_instances.database_id
+_pdbx_reference_entity_instances.details
+_pdbx_reference_entity_instances.prd_representative_flag
+FAM_000411 PRD_000001  1 PDB 185d ?   Y
+FAM_000411 PRD_000001  2 PDB 1vs2 ?   N
+FAM_000411 PRD_000001  3 PDB 2da8 ?   N
+FAM_000411 PRD_000003  4 PDB 193d "synthetic like Quinomycin HQU SER ALA CYS CPC ???"   N
+FAM_000411 PRD_000004  5 PDB 1xvr ?   N
+FAM_000411 PRD_000004  6 PDB 1xvk ?   N
+FAM_000411 PRD_000004  7 PDB 2adw ?   N
+FAM_000411 PRD_000004  8 PDB 1pfe ?   N
+FAM_000411 PRD_000004  9 PDB 1xvn ?   N
+FAM_000411 PRD_000004 10 PDB 3go3 ?   N
+FAM_000411 PRD_000005 11 PDB 193d "QUINOMYCIN PeptideLike HQU S A C CPC"   N
+
+
+#
+loop_
+_pdbx_reference_entity_grouping.family_prd_id
+_pdbx_reference_entity_grouping.prd_id
+_pdbx_reference_entity_grouping.compound_details
+FAM_000411 PRD_000001
+; TRIOSTIN IS A BICYCLIC OCTADEPSIPEPTIDE, A MEMBER
+  OF THE QUINOXALINE CLASS OF ANTIBIOTICS.
+  HERE, TRIOSTIN IS REPRESENTED BY GROUPING TOUGHER THE
+  SEQUENCE (SEQRES) AND THE TWO LIGANDS (HET) QUI
+;
+FAM_000411 PRD_000003
+; QUINOMYCIN IS A BICYCLIC OCTADEPSIPEPTIDE. RESIDUE 1
+  IS LINKED TO RESIDUE 8 AND A THIOACETAL BOND BETWEEN
+  RESIDUES 3 AND 7.
+  THE QUINOXALINE CHROMOPHORE AND THE D-SERINE WERE
+  MERGED TO ONE RESIDUE, UDS, SO TO FIT PDB CONVENTION
+  OF LINEAR N-TERM TO C-TERM SEQUENCE.
+;
+FAM_000411 PRD_000004
+; THE ECHINOMYCIN IS A BICYCLIC OCTADEPSIPEPTIDE, A MEMBER
+  OF THE QUINOXALINE CLASS OF ANTIBIOTICS.
+  HERE, ECHINOMYCIN IS REPRESENTED BY GROUPING TOUGHER THE
+  SEQUENCE (SEQRES) AND THE TWO LIGANDS (HET) QUI.
+;
+FAM_000411 PRD_000005
+; QUINOMYCIN IS A BICYCLIC OCTADEPSIPEPTIDE, A MEMBER                  
+ OF THE QUINOXALINE CLASS OF ANTIBIOTICS.                             
+ HERE, QUINOMYCIN IS REPRESENTED BY GROUPING TOUGHER THE              
+ SEQUENCE (SEQRES) AND THE TWO LIGANDS (HET) HQU                      
+;
+
+
+#
+loop_
+_pdbx_reference_entity_group.family_prd_id
+_pdbx_reference_entity_group.prd_id
+_pdbx_reference_entity_group.id
+_pdbx_reference_entity_group.name
+_pdbx_reference_entity_group.description
+FAM_000411 PRD_000001 1 "TRIOSTIN"
+; TRIOSTIN IS A IS A BICYCLIC OCTADEPSIPEPTIDE.
+  BICYCLIZATION IS ACHIEVED BY LINKING THE N- AND
+  THE C- TERMINI, AND A DISULPHIDE BOND BETWEEN
+  RESIDUES 3 AND 7.
+  THE TWO QUINOXALINE CHROMOPHORES ARE LINKED
+  TO THE D-SERINE RESIDUES, RESIDUES 1 AND 5.
+;
+FAM_000411 PRD_000004 1 "ECHINOMYCIN"
+; ECHINOMYCIN IS A IS A BICYCLIC OCTADEPSIPEPTIDE.
+  BICYCLIZATION IS ACHIEVED BY LINKING THE N- AND
+  THE C- TERMINI, AND A THE THIOACETAL BOND BETWEEN
+  RESIDUES 3 AND 7.
+  THE TWO QUINOXALINE CHROMOPHORES ARE LINKED
+  TO THE D-SERINE RESIDUES, RESIDUES 1 AND 5.
+;
+FAM_000411 PRD_000005 1 "QUINOMYCIN"
+; QUINOMYCIN IS A BICYCLIC OCTADEPSIPEPTIDE.            
+ BICYCLIZATION IS ACHIEVED BY LINKING THE N- AND       
+ THE C- TERMINI, AND A THE THIOACETAL BOND BETWEEN     
+ RESIDUES 3 AND 7.                                     
+ THE TWO HYDROXYQUINOXALINE CHROMOPHORES ARE LINKED    
+ TO THE D-SERINE RESIDUES, RESIDUES 1 AND 5.           
+;
+
+#
+#  NOTE:  I left this descriptive information here but this could be consolidated
+#         elsewhere.  It does not really map precisely to the entity relationships.
+#
+loop_
+_pdbx_reference_entity_group_components.family_prd_id
+_pdbx_reference_entity_group_components.prd_id
+_pdbx_reference_entity_group_components.group_id
+_pdbx_reference_entity_group_components.id
+_pdbx_reference_entity_group_components.name
+FAM_000411 PRD_000001 1 1 "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"
+FAM_000411 PRD_000001 1 2 "QUINALDIC ACID CHROMOPHORE RESIDUES 0 AND 9"
+FAM_000411 PRD_000004 1 1 "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"
+FAM_000411 PRD_000004 1 2 "QUINOXALINE CHROMOPHORE RESIDUES 0, 9"
+FAM_000411 PRD_000005 1 1 "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"
+FAM_000411 PRD_000005 1 2 "3-HYDROXYQUINALDIC ACID CHROMOPHORE RESIDUES 0 AND 9"
+
+#
+loop_
+_pdbx_reference_entity_list.family_prd_id
+_pdbx_reference_entity_list.prd_id
+_pdbx_reference_entity_list.ref_entity_id
+_pdbx_reference_entity_list.type
+_pdbx_reference_entity_list.details
+_pdbx_reference_entity_list.nonpoly_residue_number
+FAM_000411 PRD_000001 1  'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"   .
+FAM_000411 PRD_000001 2  'non-polymer' "QUINALDIC ACID CHROMOPHORE"              0
+FAM_000411 PRD_000001 3  'non-polymer' "QUINALDIC ACID CHROMOPHORE"              9
+
+FAM_000411 PRD_000004 1  'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"   .
+FAM_000411 PRD_000004 2  'non-polymer' "QUINOXALINE CHROMOPHORE"                 0
+FAM_000411 PRD_000004 3  'non-polymer' "QUINOXALINE CHROMOPHORE"                 9
+
+FAM_000411 PRD_000005 1  'polymer'     "PEPTIDE LIKE SEQUENCE RESIDUES 1 TO 8"   .
+FAM_000411 PRD_000005 2  'non-polymer' "3-HYDROXYQUINALDIC ACID CHROMOPHORE"     0
+FAM_000411 PRD_000005 3  'non-polymer' "3-HYDROXYQUINALDIC ACID CHROMOPHORE"     9
+
+##
+##  NOTE --  I do not have the remediated PDB files handy so I do not know 
+##           the correct residue names PRD_000004 and PRD_0000005 -  I have called 
+##           all QUI as in PRD_0000001
+
+loop_
+_pdbx_reference_entity_nonpoly.family_prd_id
+_pdbx_reference_entity_nonpoly.prd_id
+_pdbx_reference_entity_nonpoly.ref_entity_id
+_pdbx_reference_entity_nonpoly.name
+_pdbx_reference_entity_nonpoly.three_letter_code
+FAM_000411 PRD_000001 2 "QUINALDIC ACID CHROMOPHORE" QUI
+FAM_000411 PRD_000001 3 "QUINALDIC ACID CHROMOPHORE" QUI
+
+FAM_000411 PRD_000004 2 "QUINOXALINE CHROMOPHORE"    QUI
+FAM_000411 PRD_000004 3 "QUINOXALINE CHROMOPHORE"    QUI
+
+FAM_000411 PRD_000005 2 "3-HYDROXYQUINALDIC ACID CHROMOPHORE"  QUI
+FAM_000411 PRD_000005 3 "3-HYDROXYQUINALDIC ACID CHROMOPHORE"  QUI
+
+
+loop_
+_pdbx_reference_entity_link.family_prd_id
+_pdbx_reference_entity_link.prd_id
+_pdbx_reference_entity_link.link_id
+_pdbx_reference_entity_link.ref_entity_id_1
+_pdbx_reference_entity_link.entity_seq_num_1
+_pdbx_reference_entity_link.comp_id_1
+_pdbx_reference_entity_link.atom_id_1
+_pdbx_reference_entity_link.ref_entity_id_2
+_pdbx_reference_entity_link.entity_seq_num_2
+_pdbx_reference_entity_link.comp_id_2
+_pdbx_reference_entity_link.atom_id_2
+_pdbx_reference_entity_link.value_order
+
+FAM_000411 PRD_000001 1 1 1 DSN N  2 . QUI C  'single'
+FAM_000411 PRD_000001 2 1 5 DSN N  3 . QUI C  'single'
+FAM_000411 PRD_000001 3 1 3 NCY SG 1 7 NCY SG 'single'
+
+FAM_000411 PRD_000004 1 1 1 DSN N  2 . QUI C  'single'
+FAM_000411 PRD_000004 2 1 5 DSN N  3 . QUI C  'single'
+FAM_000411 PRD_000004 3 1 3 NCY SG 1 7 NCY SG 'single'
+
+FAM_000411 PRD_000005 1 1 1 DSN N  2 . QUI C  'single'
+FAM_000411 PRD_000005 2 1 5 DSN N  3 . QUI C  'single'
+FAM_000411 PRD_000005 3 1 3 NCY SG 1 7 NCY SG 'single'
+
+
+#
+loop_
+_pdbx_reference_entity_poly_nstd_link.family_prd_id
+_pdbx_reference_entity_poly_nstd_link.prd_id
+_pdbx_reference_entity_poly_nstd_link.ref_entity_id
+_pdbx_reference_entity_poly_nstd_link.link_id
+_pdbx_reference_entity_poly_nstd_link.entity_seq_num_1
+_pdbx_reference_entity_poly_nstd_link.comp_id_1
+_pdbx_reference_entity_poly_nstd_link.atom_id_1
+_pdbx_reference_entity_poly_nstd_link.entity_seq_num_2
+_pdbx_reference_entity_poly_nstd_link.comp_id_2
+_pdbx_reference_entity_poly_nstd_link.atom_id_2
+_pdbx_reference_entity_poly_nstd_link.value_order
+FAM_000411 PRD_000001 1 1 1 DSN C 2 ALA N  'single'
+FAM_000411 PRD_000001 1 2 2 ALA C 3 N2C N  'single'
+FAM_000411 PRD_000001 1 3 2 ALA C 3 N2C N  'single'
+FAM_000411 PRD_000001 1 4 2 ALA C 3 NCY N  'single'
+FAM_000411 PRD_000001 1 5 3 N2C C 4 MVA N  'single'
+FAM_000411 PRD_000001 1 6 3 NCY C 4 MVA N  'single'
+FAM_000411 PRD_000001 1 7 4 MVA C 5 DSN OG 'single'
+FAM_000411 PRD_000001 1 8 5 DSN C 6 ALA N  'single'
+FAM_000411 PRD_000001 1 8 6 ALA C 7 NCY N  'single'
+FAM_000411 PRD_000001 1 9 6 ALA C 7 N2C N  'single'
+FAM_000411 PRD_000001 1 8 7 NCY C 8 MVA N  'single'
+FAM_000411 PRD_000001 1 9 7 N2C C 8 MVZ N  'single'
+## .... abbreviated ---- 
+
+
+#
+loop_
+_pdbx_reference_entity_poly.family_prd_id
+_pdbx_reference_entity_poly.prd_id
+_pdbx_reference_entity_poly.ref_entity_id
+_pdbx_reference_entity_poly.type
+_pdbx_reference_entity_poly.nstd_chirality
+_pdbx_reference_entity_poly.nstd_linkage
+_pdbx_reference_entity_poly.nstd_monomer
+_pdbx_reference_entity_poly.number_of_monomers
+_pdbx_reference_entity_poly.db_code 
+_pdbx_reference_entity_poly.db_name 
+FAM_000411 PRD_000001 1 "peptide-like" Y Y Y 8 NOR01129 Norine
+FAM_000411 PRD_000003 1 "peptide-like" Y Y Y 8 NORXXXXX Norine
+FAM_000411 PRD_000004 1 "peptide-like" Y Y Y 8 NOR01126 Norine
+FAM_000411 PRD_000005 1 "peptide-like" Y Y Y 8 NORXXXXX Norine
+
+#
+loop_
+_pdbx_reference_entity_sequence.family_prd_id
+_pdbx_reference_entity_sequence.prd_id
+_pdbx_reference_entity_sequence.ref_entity_id
+_pdbx_reference_entity_sequence.type
+_pdbx_reference_entity_sequence.NRP_flag
+_pdbx_reference_entity_sequence.one_letter_codes
+FAM_000411 PRD_000001  1 "amino acid" Y SACVSACV
+FAM_000411 PRD_000003  1 "amino acid" Y SACXSAXX
+FAM_000411 PRD_000004  1 "amino acid" Y SACVSACV
+FAM_000411 PRD_000005  1 "amino acid" Y SACXSAXX
+
+#
+loop_
+_pdbx_reference_entity_poly_seq.family_prd_id
+_pdbx_reference_entity_poly_seq.prd_id
+_pdbx_reference_entity_poly_seq.ref_entity_id
+_pdbx_reference_entity_poly_seq.num
+_pdbx_reference_entity_poly_seq.modified_mon_id
+_pdbx_reference_entity_poly_seq.mon_id   
+FAM_000411 PRD_000001 1 1 DSN SER
+FAM_000411 PRD_000001 1 2 ALA ALA
+FAM_000411 PRD_000001 1 3 NCY CYS
+FAM_000411 PRD_000001 1 4 VAL VAL
+FAM_000411 PRD_000001 1 5 DSN SER
+FAM_000411 PRD_000001 1 6 ALA ALA
+FAM_000411 PRD_000001 1 7 NCY CYS
+FAM_000411 PRD_000001 1 8 VAL VAL                             
+#
+FAM_000411 PRD_000003 1 1 UDS SER
+FAM_000411 PRD_000003 1 2 ALA ALA
+FAM_000411 PRD_000003 1 3 NYB CYS
+FAM_000411 PRD_000003 1 4 CPC .
+FAM_000411 PRD_000003 1 5 UDS SER
+FAM_000411 PRD_000003 1 6 ALA ALA
+FAM_000411 PRD_000003 1 7 NCY .
+FAM_000411 PRD_000003 1 8 CPC .
+#
+FAM_000411 PRD_000004 1 1 DSN SER
+FAM_000411 PRD_000004 1 2 ALA ALA
+FAM_000411 PRD_000004 1 3 N2C CYS
+FAM_000411 PRD_000004 1 4 MVA VAL
+FAM_000411 PRD_000004 1 5 DSN SER
+FAM_000411 PRD_000004 1 6 ALA ALA
+FAM_000411 PRD_000004 1 7 NCY CYS
+FAM_000411 PRD_000004 1 8 MVA VAL                             
+#
+FAM_000411 PRD_000005 1 1 DSN SER
+FAM_000411 PRD_000005 1 2 ALA ALA
+FAM_000411 PRD_000005 1 3 NYB CYS
+FAM_000411 PRD_000005 1 4 CPC .
+FAM_000411 PRD_000005 1 5 DSN SER
+FAM_000411 PRD_000005 1 6 ALA ALA
+FAM_000411 PRD_000005 1 7 NCY .
+FAM_000411 PRD_000005 1 8 CPC .
+
+
+#
+loop_
+_pdbx_reference_entity_related_structures.family_prd_id
+_pdbx_reference_entity_related_structures.ordinal
+_pdbx_reference_entity_related_structures.citation_id
+_pdbx_reference_entity_related_structures.db_name
+_pdbx_reference_entity_related_structures.db_accession
+_pdbx_reference_entity_related_structures.db_code
+_pdbx_reference_entity_related_structures.name
+_pdbx_reference_entity_related_structures.formula
+FAM_000411 1 2 CCDC 52261 CULVUA 
+"Triostin A seqres C5 ALA-CYS-,CYS--VAL,SER- C5 CYS--VAL,SER-ALA-CYS-," "C50 H62 N12 O12 S2"
+FAM_000411 2 3 CCDC 148643 CULVUA10
+"Triostin A seqres C5 ALA-CYS-,CYS--VAL,SER- C5 CYS--VAL,SER-ALA-CYS-," "C50 H62 N12 O12 S2"
+FAM_000411 3 3 CCDC 154901 ZILGOQ
+"Triostin C seqres C5 ALA-CYS-,CYS--LEU,SER- C5 CYS--LEU,SER-ALA-CYS-," "C54 H70 N12 O12 S2"
+FAM_000411 4 3 CCDC 154902 ZILHAD
+"Triostin A seqres C5 ALA-CYS-,CYS--VAL,SER- C5 CYS--VAL,SER-ALA-CYS-," "C50 H63 N12 O12 S2"
+FAM_000411 5 4 CCDC  39241 TANDEM30 "Des-N-tetramethyltriostin A" "C46 H54 N12 O12 S2"
+FAM_000411 6 4 CCDC   38063 BICKON  "Des-N-tetramethyltriostin A" "C46 H54 N12 O12 S2"
+FAM_000411 7 5 CCDC   31779 TANDEM20  "des-N-Tetramethyl-triostin A" "C46 H54 N12 O12 S2"
+FAM_000411 8 40 CCDC 154900 ZILGIK 
+; Echinomycin bis(quinoline) acetone solvate hydrate
+ Echinomycin 2QN, pepseq C5 ALA-CYS-,CYS--VAL,SER- C5 CYS--VAL,SER-ALA-CYS-,
+;
+ "C53 H66 N10 O12 S2"
+
+#
+loop_
+_pdbx_reference_entity_src_nat.family_prd_id
+_pdbx_reference_entity_src_nat.prd_id
+_pdbx_reference_entity_src_nat.ref_entity_id
+_pdbx_reference_entity_src_nat.ordinal 
+_pdbx_reference_entity_src_nat.taxid
+_pdbx_reference_entity_src_nat.organism_scientific 
+_pdbx_reference_entity_src_nat.source
+_pdbx_reference_entity_src_nat.atcc 
+_pdbx_reference_entity_src_nat.db_code 
+_pdbx_reference_entity_src_nat.db_name 
+FAM_000411 PRD_000001 1 1 45399 "Streptomyces triostinicus" Norine ? NOR01129 Norine
+FAM_000411 PRD_000004 1 2 67293 "Streptomyces echinatus."   Norine ? NOR01126 Norine
+FAM_000411 PRD_000001 1 3 1931  "Streptomycineae"           "PMID:3271447" ? ? ?
+FAM_000411 PRD_000003 1 4 ?     "Streptomyces braegensis, N617-29" "PMID:7853395" ? ? ?
+FAM_000411 PRD_000005 1 5 ?     "Streptomyces braegensis japonicus N617-29" NADB ? ? ?
+
+#
+loop_
+_pdbx_reference_entity_synonyms.family_prd_id
+_pdbx_reference_entity_synonyms.prd_id
+_pdbx_reference_entity_synonyms.ordinal
+_pdbx_reference_entity_synonyms.source
+_pdbx_reference_entity_synonyms.name
+FAM_000411  PRD_000001   1 PDB "TRIOSTIN"
+FAM_000411  PRD_000001   2 SciFinder "Triostin A"
+FAM_000411  PRD_000001   3 SciFinder "NSC 244425"
+FAM_000411  PRD_000001   4 Merck "Triostins"
+FAM_000411  PRD_000001   5 Beilstein "dilactone"
+FAM_000411  PRD_000001   6 PubChem "Triostin A"
+FAM_000411  PRD_000001   7 PubChem "NSC2444425"
+FAM_000411  PRD_000001   8 PubChem "NCI60_001953"
+FAM_000411  PRD_000001   9 PubChem "B100928K382"
+FAM_000411  PRD_000001   10 ChemSpider "Triostin A"
+FAM_000411  PRD_000002   1 PubChem "(N-MeCys(3)-N-MeCys(7))TANDEM"
+FAM_000411  PRD_000002   2 PubChem "Cysmetandem (N-MeCys(3)-N-MeCys(7))TANDEM"
+FAM_000411  PRD_000002   3 PubChem "N,N-Dimec-tandem (N-MeCys(3)-N-MeCys(7))TANDEM"
+FAM_000411  PRD_000002   4 PubChem "(N-Mecys(3),N-mecys(7))tandem"
+FAM_000411  PRD_000002   5 PubChem "4-L-Valine-8-L-valine triostin A"
+FAM_000411  PRD_000002   6 PubChem "Tandem, N-mecys(3), N-mecys(7)-"
+FAM_000411  PRD_000002   7 PubChem "Triostin A, 4-L-valine-8-L-valine-"
+FAM_000411  PRD_000002   8 PubChem "(N-Methylcysteinyl(3)-N-methylcysteinyl(7))tandem"
+FAM_000411  PRD_000002   9 SciFinder "CysMeTandem"
+FAM_000411  PRD_000002   10 PDB "Quinoxaline; (N-MeCys(3)-N-MeCys(7))TANDEM"
+FAM_000411  PRD_000002   11 SciFinder "Triostin A, 4-L-valine-8-L-valine"
+FAM_000411  PRD_000004   12 PDB "ECHINOMYCIN"
+FAM_000411  PRD_000004   13 SciFinder "Antibiotic A 654I"
+FAM_000411  PRD_000004   14 Merck "Quinomycin A"
+FAM_000411  PRD_000004   15 Beilstein "Quinomycin A"
+FAM_000411  PRD_000004   16 Beilstein "Levomycin"
+FAM_000411  PRD_000004   17 KEGG "Quinomycin A"
+FAM_000411  PRD_000004   18 PubChem "Quinomycin A"
+FAM_000411  PRD_000004   19 ChemSpider "Antibiotic C638-8"
+FAM_000411  PRD_000004   20 ChemSpider "Crystalline Antibiotic C 638-8"
+FAM_000411  PRD_000004   21 ChemSpider "Echinomycin A"
+FAM_000411  PRD_000004   22 ChemSpider "Levomycin"
+FAM_000411  PRD_000004   23 ChemSpider "Quinomycin A (9CI)"
+FAM_000411  PRD_000004   24 ChemSpider "SK 302B"
+FAM_000411  PRD_000004   25 ChemBank "echinomycin A"
+FAM_000411  PRD_000004   26 ChemBank "levomycin"
+FAM_000411  PRD_000004   27 ChemBank "quinomycin A"
+FAM_000411  PRD_000004   28 ChemBank "SK 302B"
+FAM_000411  PRD_000004   29 ChemBank "S-426-S (lepetit)"
+FAM_000411  PRD_000004   30 BioAustralis "Quinomycin A"
+FAM_000411  PRD_000004   31 BioAustralis "Actinoleukin"
+FAM_000411  PRD_000004   32 BioAustralis "Antibiotic 1491"
+FAM_000411  PRD_000004   33 BioAustralis "Antibiotic 59266"
+FAM_000411  PRD_000004   34 BioAustralis "Antibiotic X 948"
+FAM_000411  PRD_000004   35 BioAustralis "Antibiotic X 53III"
+FAM_000411  PRD_000004   36 ChemBank
+; 2-Quinoxalinecarboxmide, N,N'-[2,4,12,15,17,25-hexamethyl-11, 
+ 24-bis(1-methylethyl) -27-(methylthio)-3,6,10,13,16,19,23, 
+ 26-octaoxo-9,22-dioxa -28-thia-2,5,12,15,18, 
+ 25-hexaazabicyclo[12.12.3]nonacosan e-7,20-diyl]bis-
+;
+FAM_000411  PRD_000004   37 ChemBank
+; N-[3,11,13,16,24,26-hexamethyl-27-methylsulfanyl-2,5,9,12,15,18,22,
+ 25-octaoxo-4,17-di(propan-2-yl)-8-(quinoxaline-2-carbonylamino)-6,
+ 19-dioxa-28-thia-3,10,13,16,23,
+ 26-hexazabicyclo[12.12.3]nonacosan-21-yl]quinoxaline-2-carboxamide
+;
+FAM_000411  PRD_000004   38 ChemBank
+; N,N'-(2,4,12,15,17,25-hexamethyl-11,24-bis(1-methylethyl)-27-(methylthio)-
+ 3,6,10,13,16,19,23,26-octaoxo-9,22-dioxa-28-thia-2,5,12,15,18,25-
+ hexaazabicyclo(12.12.3)nonacosane-7,20-diyl)bis(2-quinoxalinecarboxamide)
+;
+FAM_000411  PRD_000005   39 PDB "QUINOMYCIN"
+FAM_000411  PRD_000005   40 SciFinder "SW 163G"
+FAM_000411  PRD_000005   41 SciFinder "Antibiotic UK 63052 (9CI)"
+FAM_000411  PRD_000005   42 SciFinder "UK 63052"
+FAM_000411  PRD_000005   43 Beilstein "SW-163G"
+FAM_000411  PRD_000005   44 PubChem "UK 63052"
+FAM_000411  PRD_000005   45 PubChem "Antibiotics UK 63052"
+FAM_000411  PRD_000005   46 PubChem "Neuro_000276"
+FAM_000411  PRD_000005   47 PubChem "Streptomyces antibiotic"
+FAM_000411  PRD_000005   48 PubChem "Streptomyces antibiotic UK-63052"
+FAM_000411  PRD_000005   49 PubChem "NSC 630678"
+FAM_000411  PRD_000005   50 PubChem "AIDS 073381"
+FAM_000411  PRD_000005   51 PubChem "NCI60_009979"
+FAM_000411  PRD_000005   52 ChemSpider "Antibiotic UK 63052"
+FAM_000411  PRD_000005   53 ChemSpider "Streptomyces antibiotic UK-63052"
+FAM_000411  PRD_000005   54 ChembankID Echinomycin
+FAM_000411  PRD_000005   55 ChembankID 
+; 2-Quinoxalinecarboxmide, N,N'-[2,4,12,15,17,25-hexamethyl-11, 
+ 24-bis(1-methylethyl) -27-(methylthio)-3,6,10,13,16,19,23, 
+ 26-octaoxo-9,22-dioxa -28-thia-2,5,12,15,18, 
+ 25-hexaazabicyclo[12.12.3]nonacosan e-7,20-diyl]bis-
+;
+FAM_000411  PRD_000005   56 ChembankID "Echinomycin A"
+FAM_000411  PRD_000005   57 ChembankID "Levomycin"
+FAM_000411  PRD_000005   58 ChembankID "Quinomycin A"
+FAM_000411  PRD_000005   59 ChembankID "S-426-S (Lepetit)"
+ 
+#
+loop_
+_pdbx_reference_entity_annotation.family_prd_id
+_pdbx_reference_entity_annotation.prd_id
+_pdbx_reference_entity_annotation.ordinal
+_pdbx_reference_entity_annotation.source
+_pdbx_reference_entity_annotation.type
+_pdbx_reference_entity_annotation.text
+FAM_000411  PRD_000001   1 NovelAntibiotics Function "Antitumor"
+FAM_000411  PRD_000001   2 PubChem Function "antibacterial activity"
+FAM_000411  PRD_000004   3 NovelAntibiotics Function "Antitumor"
+FAM_000411  PRD_000004   4 PubChem Function "Binds to DNA"
+FAM_000411  PRD_000004   5 PubChem Function "inhibitor of RNA synthesis"
+ 
+#
+loop_
+_pdbx_reference_entity_feature.family_prd_id
+_pdbx_reference_entity_feature.prd_id
+_pdbx_reference_entity_feature.ordinal
+_pdbx_reference_entity_feature.source_ordinal 
+_pdbx_reference_entity_feature.source
+_pdbx_reference_entity_feature.type
+_pdbx_reference_entity_feature.value
+FAM_000411  PRD_000001   1 1 CAS External_Reference_ID "13758-27-5"
+FAM_000411  PRD_000001   2 1 Merck External_Reference_ID "14:9733"
+FAM_000411  PRD_000001   3 1 Beilstein External_Reference_ID "604469"
+FAM_000411  PRD_000001   4 1 NovelAntibiotics External_Reference_ID "140098"
+FAM_000411  PRD_000001   5 1 PubChem External_Reference_ID "316447"
+FAM_000411  PRD_000001   6 1 ChemSpider External_Reference_ID "65433"
+FAM_000411  PRD_000001   7 1 KEGG KEGG_CompoundID "C15721"
+FAM_000411  PRD_000001   8 1 MESH MESH_Unique_ID "C031945"
+FAM_000411  PRD_000001   9 1 ChemSpider SMILE
+;
+O=C3N(C)[C@H](C(=O)OC[C@@H](NC(=O)c1nc2c(nc1)cccc2)C(=O)N[C@H](C(=O)N(C)[C@H]4C(=O)N(C)[C@H](C(=O)OC[C@H](C(=O)N[C@H](C(=O)N([C@@H]3CSSC4)C)C)NC(=O)c5nc6c(nc5)cccc6)C(C)C)C)C(C)C
+;
+FAM_000411  PRD_000001   10 1 WikiPedia Image 
+ http://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Triostin_A.png/800px-Triostin_A.png
+FAM_000411  PRD_000001   11 1 Nature Image_biosynthesis 
+ http://www.nature.com/nchembio/journal/v2/n8/images/nchembio803-sc1.jpg
+FAM_000411 PRD_000002 12 1 PubChem External_Reference_ID 3806514 
+FAM_000411 PRD_000002 13 1 CAS External_Reference_ID "102390-05-6"
+FAM_000411 PRD_000002 14 1 MESH MESH_Unique_ID "C075619"
+FAM_000411 PRD_000003 15 1 ACS Image
+  http://pubs.acs.org/appl/literatum/publisher/achs/journals/production/bichaw/2008/bichaw.2008.47.issue-30/bi800573p/images/medium/bi-2008-00573p_0001.gif
+FAM_000411  PRD_000004   16 1 CAS External_Reference_ID "512-64-1"
+FAM_000411  PRD_000004   17 1 Merck External_Reference_ID "14:3497"
+FAM_000411  PRD_000004   18 1 Beilstein External_Reference_ID "1071158"
+FAM_000411  PRD_000004   19 2 Beilstein External_Reference_ID "78671"
+FAM_000411  PRD_000004   20 1 NovelAntibiotics External_Reference_ID "140094"
+FAM_000411  PRD_000004   21 1 PubChem External_Reference_ID "23724556"
+FAM_000411  PRD_000004   22 2 PubChem External_Reference_ID "24868284"
+FAM_000411  PRD_000004   23 1 ChemSpider External_Reference_ID "3085"
+FAM_000411  PRD_000004   24 1 ChemDB External_Reference_ID "3966488"
+FAM_000411  PRD_000004   25 1 ChemBank External_Reference_ID "907311"
+FAM_000411  PRD_000004   26 1 KEGG KEGG_CompoundID "C15722"
+FAM_000411  PRD_000004   27 1 MESH MESH_Unique_ID "D004448"
+FAM_000411  PRD_000004   28 1 ChemBank SMILE
+;
+CSC1SCC2N(C)C(=O)C(C)NC(=O)C(COC(=O)C(C(C)C)N(C)C(=O)C1N(C)C(=O)C(C)NC(=O)C(COC(=O)C(C(C)C)N(C)C2=O)NC(=O)c3cnc4ccccc4n3)NC(=O)c5cnc6ccccc6n5
+;
+FAM_000411  PRD_000004   29 1 Sigma-Aldrich Vender_ID E-4392
+FAM_000411  PRD_000004   30 1 "BioAustralis Fine Chemicals" URL http://www.bioaustralis.com/pdfs/quinomycina.pdf
+FAM_000411  PRD_000004   31 1 Axxora Image http://www.axxora.com/files/formula/380-201_new.gif
+FAM_000411  PRD_000004   32 1 Cancer.gov URL http://www.cancer.gov/Templates/drugdictionary.aspx?CdrID=39587
+FAM_000411  PRD_000004   33 1 Sigma-Aldrich URL http://www.sigmaaldrich.com/catalog/search/ProductDetail/FLUKA/44659
+FAM_000411  PRD_000004   34 1 Alexis-Biochemicals URL http://www.alexis-biochemicals.com/Echinomycin.5+M58cde746e0d.0.html
+FAM_000411  PRD_000004   35 1 PubChem InChI
+;
+InChI=1/C51H64N12O12S2/c1-25(2)38-49(72)74-22-36(59-42(65)34-21-53-30-
+17-13-15-19-32(30)57-34)44(67)55-28(6)46(69)63(10)40-48(71)62(9)39(26(3)
+4)50(73)75-23-35(58-41(64)33-20-52-29-16-12-14-18-31(29)56-33)43(66)54-
+27(5)45(68)60(7)37(47(70)61(38)8)24-77-51(40)76-11/h12-21,25-28,35-40,
+51H,22-24H2,1-11H3,(H,54,66)(H,55,67)(H,58,64)(H,59,65)/f/h54-55,58-59H 
+;
+FAM_000411  PRD_000005   36 1 CAS External_Reference_ID "120763-23-7"
+FAM_000411  PRD_000005   37 2 CAS External_Reference_ID "120832-02-2"
+FAM_000411  PRD_000005   38 1 Beilstein External_Reference_ID "11250492"
+FAM_000411  PRD_000005   39 1 PubChem External_Reference_ID "149070"
+FAM_000411  PRD_000005   40 1 ChemSpider External_Reference_ID "131388"
+FAM_000411  PRD_000005   41 1 MESH MESH_Unique_ID "C059030"
+FAM_000411  PRD_000005   42 1 ChemSpider SMILE
+;
+O=C3N(C)C8(C(=O)OCC(NC(=O)c1nc2c(cc1O)cccc2)C(=O)NC(C(=O)N(C)C4C(=O)N(C)C7(C(=O)OCC(C(=O)NC(C(=O)N(C)C3C(SC(C)CC)SC4)C)NC(=O)c5nc6c(cc5O)cccc6)CC7C)C)CC8C
+;
+FAM_000411  PRD_000005   43 1 ChembankID External_Reference_ID 907311
+
+
+#
+loop_
+_pdbx_reference_entity_details.family_prd_id
+_pdbx_reference_entity_details.ordinal
+_pdbx_reference_entity_details.source
+_pdbx_reference_entity_details.text
+FAM_000411 1 "PMID:7918461"
+; Triostin A, a naturally occurring quinoxaline antibiotic that contains
+ N-methyl groups on the valine and cysteine residues, binds sequence
+ specifically to DNA at NCGN sites. [N-MeCys3,N-MeCys7]-TANDEM
+ (CysMeTANDEM), a synthetic quinoxaline antibiotic, differs in its
+ chemical structure from triostin A only at the valine residues, which
+ contain no N-methyl substituents. CysMeTANDEM has a sequence
+ specificity different from triostin A, binding specifically to DNA at
+ NTAN sites. Triostin A binds to [d(GACGTC)]2 as a bis-intercalator
+ around the CpG step, and the peptide ring of the drug binds in the
+ minor groove of the DNA. The central C.G base pairs of the complex are
+ underwound with an average helical twist angle of approximately -9.0
+ degrees and buckle inward by about 25 degrees. There are
+ intermolecular hydrogen bonds between each of the Ala NH and the GN3
+ protons of the CpG binding site. Similar structural features are
+ observed in the solution structure of the CysMeTANDEM-[d(GATATC)]2
+ complex. However, in the structure of the triostin A-[d(GACGTC)]2
+ complex, two intermolecular hydrogen bonds between each of the Ala CO
+ oxygens of the drug and the 2-amino protons of guanine are
+ observed. These hydrogen bonds do not form in the CysMeTANDEM-DNA
+ complex. Instead, CysMeTANDEM contains two intramolecular hydrogen
+ bonds between the Ala CO atoms and the Val amide protons, making the
+ Ala CO atoms unavailable to form two intermolecular hydrogen
+ bonds. 
+;
+FAM_000411 2 "PMID:7918462"
+; CysMeTANDEM binds sequence specifically to CpI steps as
+ well as TpA steps as a bis-intercalator with the peptide backbone in
+ the minor groove of the DNA. Only nonspecific, nonintercalative
+ binding is observed between triostin A and DNA containing a CpI
+ step. Comparison of the CysMeTANDEM-[d(GGACITCC)]2 complex to the
+ CysMeTANDEM-[d(GGA-TATCC)]2 complex indicates that the structures of
+ both complexes are very similar. However, CysMeTANDEM binds less
+ tightly to [d(GGACITCC)]2 than to [d(GGATATCC)]2. The NMR evidence
+ presented provides molecular insight into the role of stacking
+ interactions and hydrogen bonding between the drug and the DNA in the
+ sequence-specific binding of CysMeTANDEM to TpA sites and of triostin
+ A to CpG sites.
+;
+FAM_000411 3 "DOI:10.1093/nar/gki916 1283521"
+; The major structural determinant of the preference to bind to CpG
+ binding sites on DNA exhibited by the natural quinoxaline
+ bis-intercalators echinomycin and triostin A, or the quinoline
+ echinomycin derivative, 2QN, is the 2-amino group of guanine
+ (G). However, relocation of this group by means of introduction into
+ the DNA molecule of the 2-aminoadenine (=2,6-diaminopurine, D) base in
+ place of adenine (A) has been shown to lead to a drastic
+ redistribution of binding sites, together with ultratight binding of
+ 2QN to the sequence DTDT. Also, the demethylated triostin analogs,
+ TANDEM and CysMeTANDEM, which bind with high affinity to TpA steps in
+ natural DNA, bind much less tightly to CpI steps, despite the fact
+ that both adenosine and the hypoxanthine-containing nucleoside,
+ inosine (I), provide the same hydrogen bonding possibilities in the
+ minor groove. To study both the increased binding affinity of 2QN for
+ DTDT relative to GCGC sites and the remarkable loss of binding energy
+ between CysMeTANDEM and ICIC compared with ATAT, a series of
+ thermodynamic integration free energy simulations involving
+ conversions between DNA base pairs have been performed. Our results
+ demonstrate that the electrostatic component of the stacking
+ interactions between the heteroaromatic rings of these compounds and
+ the bases that make up the intercalation sites plays a very important
+ role in the modulation of their binding affinities.
+;
+FAM_000411 4 "PMID:7853395"
+; The quinomycin antibiotic UK-63052 (designated QN) exhibits a chemical
+ structure related to the antibiotic echinomycin which is known to
+ bisintercalate into DNA. Common features among these antibiotics
+ include two heterocyclic aromatic ring systems propagating from a
+ cross-bridged cyclic octadepsipeptide scaffold. We report on the
+ solution structure of the QN-d(A1-C2-A3-C4-G5-T6-G7-T8) complex (one
+ QN molecule per duplex) based on a combined NMR-molecular dynamics
+ study including intensity-based refinement. The 3-hydroxy quinaldic
+ acid rings bisintercalate into the duplex at (A3-C4).(G5-T6) steps and
+ stack with flanking Watson-Crick A3.T6 and C4.G5 base-pairs. The
+ intercalation sites at (A3-C4).(G5-T6) steps are wedge-shaped and
+ unwound, with significant unwinding also observed at the
+ (C4-C5).(C4-G5) step bracketed between the intercalation sites. The
+ cross-bridged cyclic octadepsipeptide is positioned in the minor
+ groove with the methyl groups on its Ala and NMe-MCp residues directed
+ towards and making van der Waals contacts with the minor groove edge
+ of the duplex. A pair of adjacent intermolecular hydrogen bonds
+ between the Ala backbone atoms and the G5 minor groove edge (Ala-NH to
+ G5-N(3) and G5-NH2e to Ala-CO) account for the sequence specificity
+ associated with complex formation. 
+;
+FAM_000411 5 "PMID:1310611"
+; Imino proton exchange studies have been reported on the complexes
+ formed by bisintercalation of luzopeptin around the two central A.T
+ pairs of the d(CCCATGGG) and d(AGCATGCT) duplexes and of echinomycin
+ around the two central C.G pairs of the d(AAACGTTT) and
+ d(CCAAACGTTTGG) duplexes. The depsipeptide backbone of the drugs
+ occupies the minor groove of the complexes at the bisintercalation
+ site. For the two base pairs sandwiched between the aromatic rings of
+ the drug, the base-pair lifetime is strongly increased, and the
+ dissociation constant is correspondingly reduced. Hence, the lifetime
+ of the open state is unchanged. This suggests similar open states in
+ the free duplex and in the complex. In contrast to the sandwiched base
+ pairs, the base pairs flanking the intercalation site are not
+ stabilized in the complex. Thus, the action of the bisintercalating
+ drug may be compared to a vise clamping the inner base pairs. Analysis
+ suggests that base-pair opening may require prior unwinding or bending
+ of the DNA duplex.
+;
+FAM_000411 6 "PMID:8448108"
+; The three-dimensional structure of a complex of CysMeTANDEM and the
+ DNA hexamer [d(GATATC)]2 using two-dimensional 1H NMR derived NOE and
+ dihedral bond angle constraints was determined. This is the first
+ structure of a TpA-specific quinoxaline antibiotic in complex with
+ DNA. CysMeTANDEM binds to and affects the structure of the DNA in a
+ manner similar to that observed in complexes of the CpG-specific
+ quinoxaline antibiotics triostin A and echinomycin with DNA The two
+ quinoxaline rings bisintercalate on either side of the two central T.A
+ base pairs and the peptide ring lies in the minor groove. The central
+ A.T base pairs of the complex are underwound (average helical twist
+ angle of approximately -10 degrees) and buckle inward by approximately
+ 20 degrees. There are intermolecular hydrogen bonds between each of
+ the Ala NH and the AN3 protons of the TpA binding site, analogous to
+ those observed between Ala NH and GN3 in the crystal structures of the
+ CpG-specific complexes of echinomycin and triostin A with
+ DNA. However, the structure of the peptide ring of CysMeTANDEM in the
+ complex differs from that of echinomycin and triostin A.
+;
+FAM_000411 7 "PMID:31902"
+; An ethidium homodimer and an acridine ethidium heterodimer have been
+ synthesized. The ethidium and the acridine chromophore were introduced
+ in such bifunctional intercalators in order to allow the fluorometric
+ study of the interaction of such molecules with DNA. Conformational
+ studies of these molecules by visible absorption and NMR spectroscopy
+ indicate that these dimers exist in equilibrium between folded and
+ unfolded conformations and that this equilibrium is pH and temperature
+ dependent.
+;
+FAM_000411 8 "PMID:7708489"
+; One and two dimensional 1H NMR spectroscopy has been used to
+ characterize the binding of a homodimeric thiazole orange dye,
+ 1,1'-(4,4,8,8-tetramethyl-4,8-diaza-undecamethylene)-bis-4-
+ (3-methyl-2,3-dihydro-(benzo-1,3-thiazole)-2-methylidene)-quinolin ium
+ tetraiodide (TOTO), to various double stranded DNA
+ oligonucleotides. TOTO binds strongly to all the oligonucleotides
+ used, but usually more than one complex is observed and exchange
+ between different binding sites broadens the lines in the NMR
+ spectra. Complete precipitation occurs when TOTO is bound to small
+ oligonucleotides. Binding to larger oligonucleotides occurs by
+ bis-intercalation. The 1:1 complex of TOTO with the oligonucleotide
+ d(CCGACTGATGC):d (GCATCAGTCGG) gave only one complex that was shown to
+ be a bis-intercalation in the CTGA:TCAG binding site. The binding to
+ this site was also characterized by studying the TOTO complex with the
+ d(CCGCTGAGC):d(GCTCAGCGG) oligonucleotide. NOE connectivities and
+ molecular modelling were used to characterize the complex. The 1:1
+ complex of TOTO with the oligonucleotide d(CCGCTAGCG):d(CGCTAGCGG)
+ containing a CTAG:CTAG binding site was similarly characterized by
+ NMR. It was concluded that the binding of TOTO to larger
+ oligonucleotides is site selective with CTAG:CTAG as the preferred
+ binding site.
+;
+FAM_000411 9 "PMID:8797854"
+; LU 79553, a bis-naphthalimide drug highly active against human solid
+ tumour xenografts, has been shown to bis-intercalate into DNA with a
+ helix-unwinding angle of 37 degrees. Footprinting experiments with
+ DNase I reveal that the drug is selective for mixed nucleotide
+ sequences characterised by an alternating purine-pyrimidine motif,
+ particularly those containing GpT (ApC) and TpG (CpA) steps. Derivatives 
+ bearing nitro or amino substituents on the naphthalimide chromophores 
+ bind at essentially identical sites. The footprinting profiles on tyrT DNA 
+ and on two fragments from pBS bear a remarkable resemblance to those 
+ determined for nogalamycin, an antibiotic which binds intercalatively 
+ leaving bulky carbohydrate substituents blocking both the major and 
+ minor grooves of the helix. Several lines of evidence indicate that the 
+ bis-naphthalimides recognise their preferred binding sites via the unusual 
+ expedient of intercalating from the major groove. Footprints on the complementary
+ DNA strands sometimes appear staggered in the 5'direction. 
+ Repositioning the 2-amino group of G.C base pairs, which
+ serves as a critical minor-groove marker, by substitution with inosine
+ and/or 2,6-diaminopurine has little effect on the distribution of
+ binding sites for LU 79553. The bis-naphthalimides affect the
+ guanine-specific reaction with dimethyl sulfate (which reacts with the
+ N7 position of the base located in the major groove) but not reactions
+ with tetrachloropalladinate or methylene blue. Photoactivation of LU
+ 79553-DNA complexes leads to a small amount of strand scission mainly
+ at guanine residues. These observations make a strong case for binding
+ via the major groove of the double helix, in contrast to nearly all
+ common intercalating drugs, which could be important in explaining the
+ unique biological selectivity of bis-naphthalimides.
+;
+FAM_000411 10 "DOI:10.1016/j.phrs.2004.01.005"
+; Echinomycin, in typical DNA minor groove binder, had comparable
+ efficacy compared to 5-FU in the phase II trail of colon cancer
+ treatment. To improve echinomycin's drawback (hydrophobicity,
+ toxicity), the YK-2000 series were synthesized (echinomycin
+ analogues). Among these, YK-2000 had the best in vitro cytotoxicity on
+ six different human solid cancer cell lines. Echinomycin and YK-2000
+ were enabled to induce the apoptosis on the HT-29 colorectal cancer
+ cell line. The hypothesis that apoptosis in the HT-29 cell was
+ triggered by echinomycin and YK-2000 were supported through DNA
+ laddering, poly-(ADP-ribose) polymerase (PARP) cleavage, and flow
+ cytometric analysis. In order to explore the signaling pathway of
+ echinomycin and YK-2000, we examined the phosphorylation of
+ extracellular signal-regulated kinase1/2 (ERK1/2), stress-activated
+ protein kinase/c-Jun N-terminal kinase (SAPK/JNK), and p38 MAP
+ kinase. However, what the mechanism of cancer cell death would be
+ induced by echinomycin and YK-2000 is unknown.
+;
+FAM_000411 11 "PMID:18071270"
+; The relative and absolute configuration of antitumor cyclic
+ depsipeptide SW-163s have been determined. The SW-163 homologs D, F
+ and G were isolated and identified as known compounds UK-63598,
+ UK-65662 and UK-63052, respectively. Both enantiomers of the unusual
+ constitutive amino acid, N-methylnorcoromic acid, were synthesized in
+ chiral forms starting from (R)- and (S)-1,2-propanediol. The
+ hydrolyzate of SW-163D, a major constituent of this family, was
+ converted with Marfey's reagent,
+ 1-fluoro-2,4-dinitrophenyl-5-L-alanine-amide (L-FDAA), and the
+ resulting mixture of amino acid derivatives was subjected to an LC/MS
+ analysis. Compared with authentic samples, the analytical data
+ unambiguously show that SW-163D consisted of L-Ala, D-Ser and (1S,
+ 2S)-N-methylnorcoronamic acid. The remaining stereochemistry of the
+ N-methylcysteine moieties was determined from NOE data.
+;
+FAM_000411 12 "PMID:7818504"
+; The quinoxaline antibiotics (triostins and quinomycins) are cyclic
+ octadepsipeptides, produced by various strains of Streptomycetes,
+ which owe their antitumour and antibiotic activities to their ability
+ to act as potent inhibitors of DNA transcription. Quinoxaline
+ chromophores, attached at opposite ends of the peptide structure,
+ allow the antibiotic to adopt a staple-like conformation suitable for
+ bifunctional intercalation. Footprinting studies have shown that all
+ natural derivatives bind best to the CpG dinucleotide. Several novel
+ structural features have been reported for a new family of quinomycin
+ antibiotics (UK- 65,662) that contain 3-hydroxyquinoline chromophores
+ (in place of the quinoxaline rings of echinomycin) and unusual
+ methylcyclopropyl residues instead of the valine residues. In the
+ past, a number of synthetic quinomycins bearing modified chromophores
+ have been shown to exhibit subtly different DNAbinding affinities,
+ including increased affinity for poly(dA *dT), although similar
+ selectivities for CpG sites. The antibiotic UK- 63,052 (differing from
+ UK-65,662 only in the nature of the alkyl group on the thioacetal
+ cross-bridge) has recently been studied using footprinting methods
+ that indicate strong reversible binding to DNA. UK-63,052 increases
+ the mobility of kinetoplast DNA, whereas echinomycin does not, an
+ observation interpreted as tight binding of the former under
+ conditions in which the echinomycin-DNA complex dissociates. Not all
+ CpG sites appear to represent good binding sites; UK-63,052 appears to
+ be more sensitive to the nature of the flanking base pairs than
+ echinomycin. CpG sites surrounded by A-T base pairs were found to be
+ the most favoured, although binding to other CpG sites was not
+ excluded. Discrimination against sites to which echinomycin bound less
+ well [such as 5'-GCG (5'-CGC)] appeared to be more exaggerated for
+ UK-63,052, while different sensitivities to modification of adenine
+ bases by diethylpyrocarbonate have been reported. Several proposals
+ for the modified sequence selectivity of UK-63,052 have been
+ presented; the most likely origin of these differences is concluded to
+ lie in the hydroxy substituent in the 3-position on the quinoline ring
+ which, through altering the charge distribution on the chromophores,
+ seems likely to affect (enhance) stacking interactions with the
+ adjacent base pairs. Several crystal structures have illustrated
+ molecular details of the interaction of echinomycin and triostin with
+ DNA duplexes. The most notable feature of these complexes is a
+ radical druginduced change in DNA conformation in which the A-T base
+ pairs flanking the drug-binding site adopt the Hoogsteen pairing
+ scheme in which the purine base flips into a syn glycosidic
+ conformation. Subsequently, much interest in the quinoxaline
+ antibiotics has focused on the role of Hoogsteen base pairing in
+ stabilizing the drug-DNA complex in solution.
+;
+FAM_000411 13 "PMID:17268609"
+; Echinomycin is the prototypical bisintercalator, a molecule that binds
+ to DNA by inserting two planar chromophores between the base-pairs of
+ duplex DNA, placing its cyclic depsipeptide backbone in the minor
+ groove. As such, it has been the focus of an extensive number of
+ investigations into its biological activity, nucleic acid binding and,
+ to some extent, its structure-activity relationships. However,
+ echinomycin is also the parent member of an extended family of natural
+ products that interact with DNA by a similar mechanism of
+ bisintercalation. The structural variety in these compounds leads to
+ changes in sequence selectivity and and biological activity,
+ particularly as anti-tumour and anti-viral agents. One of the more
+ recently identified marine natural products that is moving close to
+ clinical development is thiocoraline, and it therefore seems timely to
+ review the various bisintercalator natural products.
+;
+FAM_000411 14 "PMID:11097063"
+; The luzopeptin antibiotics contain a cyclic decadepsipeptide to which
+ are attached two quinoline chromophores that bisintercalate into
+ DNA. Although they bind DNA less tightly than the structurally related
+ quinoxaline antibiotics echinomycin and triostin A, the molecular
+ basis of their interaction remains unclear. We have used the PCR in
+ conjunction with novel nucleotides to create specifically modified DNA
+ for footprinting experiments. In order to study the influence that
+ removal, addition or relocation of the guanine 2-amino group, which
+ normally identifies G.C base pairs from the minor groove, has on the
+ interaction of luzopeptin antibiotics with DNA. The presence of a
+ purine 2-amino group is not strictly required for binding of
+ luzopeptin to DNA, but the exact location of this group can alter the
+ position of preferred drug binding sites. It is, however, not the sole
+ determinant of nucleotide sequence recognition in luzopeptin-DNA
+ interaction. Nor can the selectivity of luzopeptin be attributed to
+ the quinoline chromophores, suggesting that an analogue mode of DNA
+ recognition may be operative. This is in contrast to the digital
+ readout that seems to predominate with the quinoxaline antibiotics.
+;
+FAM_000411 15 "PMID:4000957"
+; Two members of the quinoxaline antibiotic family, echinomycin and
+ triostin A, form crystals complexed to a DNA fragment with the
+ sequence d(CpGpTpApCpG). The crystal structure of both complexes was
+ solved by X-ray diffraction to near-atomic resolution. The two
+ structures are similar to each other with differences in some details
+ due to the shorter cross bridge of echinomycin. Both molecules act as
+ bis intercalators surrounding the d(CpG) sequence at either end of the
+ double helix. Alanine forms sequence-specific hydrogen bonds to
+ guanines in the minor groove. The two central AT base pairs are held
+ together by Hoogsteen base pairing with adenine in the syn
+ conformation in both complexes. An octahedrally hydrated magnesium ion
+ is found in the crystal lattice that plays an important role in
+ organizing the lattice as well as stabilizing the complex by hydrogen
+ bonding both to base pairs of DNA and to the quinoxaline ring nitrogen
+ atoms in the major groove side of the DNA double helix. A functional
+ description of the various amino acids in quinoxaline antibiotics is
+ given, together with possible modifications that might affect
+ biological activity.
+;
+FAM_000411 16 "PMCID:PMC1185755"
+; Quinomycin C, triostin A and triostin C are peptide antibiotics of
+ the quinoxaline family, of which echinomycin (quinomycin A) is also a
+ member. They all remove and reverse the supercoiling of closed
+ circular duplex DNA from bacteriophage PM2 in the fashion
+ characteristic of intercalating drugs
+;
+FAM_000411 17 "PMID:PMC1163915"
+; Echinomycin (NSC-13502, Quiniomycin A), a small-molecule known to bind
+ DNA in a sequence-specific fashion. The molecule is a cyclic
+ depsipeptide metabolite. It has broad activity against bacteria, fungi
+ and viruses and has found application as an antitumor agent and acts
+ by bifunctional intercalation of nucleic acids. Recent research has
+ shown quinomycin A to be an extremely potent inhibitor of
+ Hypoxia-inducible factor-1 (HIF-1). This transcription factor plays an
+ essential role in tumor progression and metastasis.
+ Echinomycin intercalates into DNA at two locations simultaneously in a
+ sequence-specific fashion, thereby inhibiting DNA replication and RNA
+ synthesis Has antitumour and antibacterial activity. Antitumor
+ antibiotic. Powerful, selective inhibitor of nucleic acid synthesis in
+ vitro.
+;
+FAM_000411 18 "PMID:2175303"
+; UK63052, a novel derivative of the quinomycin group of bifunctional
+ intercalating antibiotics containing uinaldic acid substituted
+ quinomycins with unusual bridgehead sulfur substitution Binds strongly
+ but reversibly to DNA and decreases the gel mobility of most DNA
+ fragments. The drug binds selectively to the dinucleotide CpG though
+ not all such sequences present good binding sites. Binding is best
+ when CG is surrounded by AT base pairs. UK63052 and echinomycin have
+ different effects on DNA structure as assessed by changes in the
+ sensitivity to modification by diethylpyrocarbonate.
+ Displays both antimicrobial and antitumor properties.
+;
+
+
+#
+loop_
+_citation.id
+_citation.year
+_citation.journal_volume
+_citation.page_first
+_citation.page_last
+_citation.pdbx_database_id_DOI
+_citation.pdbx_database_id_PubMed
+_citation.title
+_citation.journal_abbrev
+  1 2005 33 6214 6224 10.1093/nar/gki916 1283521
+; Role of stacking interactions in the binding sequence preferences of
+ DNA bis-intercalators: insight from thermodynamic integration free
+ energy simulations
+;
+"Nucleic Acids Res."
+  2 1994 22 5484 5491 ? 7816641
+; NMR investigation of Hoogsteen base pairing in quinoxaline 
+ antibiotic-DNA complexes: comparison of 2:1 echinomycin, 
+ triostin A and [N-MeCys3,N-MeCys7] TANDEM complexes with 
+ DNA oligonucleotides
+;
+"Nucleic Acids Research"
+  3 1993 32 2498 2508 10.1021/bi00061a006 ?
+; Solution structure of a complex between 
+ [N-MeCys3,N-MeCys7]TANDEM and [d(GATATC)]2
+;
+Biochemistry
+  4 1994 18 12397 12404 ? 7918462
+; Sequence specificity of quinoxaline antibiotics. 2. NMR studies of the
+ binding of [N-MeCys3,N-MeCys7]TANDEM and triostin A to DNA containing
+ a CpI step
+;
+Biochemistry
+  5 1994 18 12386 12396 ? 7918461
+; Sequence specificity of quinoxaline antibiotics. 1. Solution structure
+ of a 1:1 complex between triostin A and [d(GACGTC)]2 and comparison
+ with the solution structure of the
+ [N-MeCys3,N-MeCys7]TANDEM-[d(GATATC)]2 complex.
+;
+Biochemistry
+  6 1995 236 164 179 ? 7853395
+"Solution structure of a quinomycin bisintercalator-DNA complex"
+"J Mol Biol."
+  7 2005 33 5622 5632 10.1093/nar/gki869 ?
+; Characterization of the bisintercalative DNA binding mode of a
+ bifunctional platinum/acridine agent
+;
+"Nucleic Acids Research"
+  8 1993 32 2498 2508 ? 8448108
+; Solution structure of a complex between [N-MeCys3,N-MeCys7]TANDEM and
+ [d(GATATC)]2.
+;
+"Biochemistry"
+  9 1992 31 1407 1415 ? 1310611
+; Proton exchange in DNA-luzopeptin and DNA-echinomycin bisintercalation
+ complexes: rates and processes of base-pair opening
+;
+Biochemistry
+  10 1978 17 5071 5078 ? 31902
+; DNA bifunctional intercalators. I. Synthesis and conformational
+ properties of an ethidium homodimer and of an acridine ethidium
+ heterodimer
+;
+Biochemistry
+  11 1995 23 753 760 ? 7708489
+; Site selective bis-intercalation of a homodimeric thiazole orange dye
+ in DNA oligonucleotides
+;
+"Nucleic Acids Research"
+  12 1996 240 195 208 ? 8797854
+; Sequence-selective intercalation of antitumour bis-naphthalimides into
+ DNA. Evidence for an approach via the major groove.
+;
+"Eur J Biochem."
+  13 2004 50 201 207 10.1016/j.phrs.2004.01.005 ?
+; Echinomycin and a novel analogue induce apoptosis of HT-29 cells via
+ the activation of MAP kinases pathway
+;
+"Pharmacological Research"
+  14 2007 71 2969 2976 ? 18071270 
+"Relative and Absolute Configuration of Antitumor Agent SW-163D"
+"Biosci Biotechnol Biochem."
+  15 1994 304 967 979 ? 7818504
+; Binding of quinomycin antibiotic UK-65,662 to DNA: 'H-n.m.r. studies of
+ drug-induced changes in DNA conformation in complexes with d(ACGT)2
+ and d(GACGTC)2
+;
+"Biochem. J."
+  16 2008 47 7900 7906 10.1021/bi800573p ? 
+"DNA Binding by Analogues of the Bifunctional Intercalator TANDEM"
+Biochemistry
+  17 2007 24 109 126 ? 17268609
+; Bisintercalator natural products with potential therapeutic
+ applications: isolation, structure determination, synthetic and
+ biological studies
+;
+"Nat Prod Rep."
+  18 2005 33 6214 6224 ? 16282585
+; Role of stacking interactions in the binding sequence preferences of
+ DNA bis-intercalators: insight from thermodynamic integration free
+ energy simulations.
+;
+"Nucleic Acids Res."
+  19 2000 19 1337 1353 ? 11097063 
+; DNA recognition by quinoline antibiotics: use of base-modified DNA
+ molecules to investigate determinants of sequence-specific binding of
+ luzopeptin
+;
+"Nucleosides Nucleotides Nucleic Acids"
+  20 1986 6 275 340 ? 3526052 
+"Polyfunctional DNA intercalating agents"
+"Med Res Rev."
+  21 1982 14 805 809 ? 6182040
+"Nilemycin, an intercalating agent for deoxyribonucleic acid"
+"Int J Biochem."
+  22 1994 7 109 122 ? 7826671
+"DNA recognition by intercalators and hybrid molecules"
+"J Mol Recognit."
+  23 1999 6 1 27 ? 9873113 
+"Pyrroloquinoline and pyridoacridine alkaloids from marine sources"
+"Curr Med Chem."
+  24 1985 13 2305 2323 ? 4000957
+; A comparison of the structure of echinomycin 
+ and triostin A complexed to a DNA fragment
+;
+"Nucleic Acids Res."
+  25 1984 225 1115 1121 ? 6474168 
+"The molecular structure of a DNA-triostin A complex"
+Science
+  26 1986 4 319 342 ? 3271447
+; Interactions of quinoxaline antibiotic and DNA: 
+ the molecular structure of a triostin A-d(GCGTACGC) complex
+;
+"J Biomol Struct Dyn."
+  27 1986 232 1255 1258 ? 3704650 
+"Non-Watson-Crick G.C and A.T base pairs in a DNA-antibiotic complex."
+Science
+  28 2006 2 423 428 doi:10.1038/nchembio803 ?
+"Total biosynthesis of antitumor nonribosomal peptides in Escherichia coli"
+"Nature Chemical Biology"
+  29 1984 ? 1601 1605 10.1039/P29840001601 ?
+"Crystal and molecular structure of the DNA-binding antitumour antibiotic triostin A"
+"J. Chem. Soc., Perkin Trans. 2"
+  30 1995 51 987 999 10.1107/S010876819401503X ? 
+"Structures of quinoxaline antibiotics"
+"Acta Crystallogr.,Sect.B:Struct.Sci."
+ 31 1982 104 3401 3408 10.1021/ja00376a027 ?
+; Crystal and molecular structure of the quinoxaline antibiotic 
+  analog TANDEM (des-N-tetramethyltriostin A)
+;
+"J. Am. Chem. Soc."
+  32  1981 289 817 819 10.1038/289817a0 ?
+"Structure of TANDEM and its implication for bifunctional intercalation into DNA"
+Nature
+  33 2005 65 9047 9055 ? 16204079
+"Echinomycin, a Small-Molecule Inhibitor of Hypoxia-Inducible Factor-1 DNA-Binding Activity"
+"Cancer Research"
+  34 2007 104 9445 9450 10.1073/pnas.0611662104  ?
+"Metabolic targeting of hypoxia and HIF1 in solid tumors can enhance cytotoxic chemotherapy"
+"Proc. Nat. Acad. Sci."
+  35 2005 D61 442 448 10.1107/S090744490500137X  ?
+"Structures of complexes between echinomycin and duplex DNA"
+"Acta Crystallogr.,Sect.D:Biological Crystallography"
+  36 1995 246 164 179 ? 7853395 
+"Solution Structure of a Quinomycin Bisintercalator-DNA Complex"
+"Journal of Molecular Biology"
+  37 1981 ? 46 47 10.1039/C39810000046 ? 
+"Characterisation of eight antibiotics of the quinomycin group by field desorption mass spectrometry"
+"J. Chem. Soc., Chem. Commun."
+  38 1990 43 796 808 ? 2387774
+"Quinaldopeptin, a novel antibiotic of the quinomycin family"
+"J Antibiot (Tokyo)"
+  39 2004 50 201 207 ? 15177310
+"Echinomycin and a novel analogue induce apoptosis of HT-29 cells via the activation of MAP kinases pathway"
+"Pharmacol. Res."
+  40 1995 51 987 999 10.1107/S010876819401503X  ? 
+"Structures of quinoxaline antibiotics"
+"Acta Crystallogr.,Sect.B:Struct.Sci."
+  41 1989 42 206 217 ? 2925512
+; UK-63,052 complex, new quinomycin antibiotics from Streptomyces
+ braegensis subsp. japonicus; taxonomy, fermentation, isolation,
+ characterisation and antimicrobial activity.
+;
+"J Antibiot (Tokyo)."
+
+
+#
+loop_
+_citation_author.citation_id
+_citation_author.ordinal
+_citation_author.name
+  1 1 "Marco, E."
+  1 2 "Negri, A."
+  1 3 "Luque, F.J."
+  1 4 "Gago, F."
+  3 1 "Addess, K.J."
+  3 2 "Feigon, J."
+  4 1 "Addess, K.J."
+  4 2 "Feigon, J."
+  5 1 "Addess, K.J."
+  5 2 "Feigon, J."
+  6 1 "Chen, H."
+  6 2 "Patel, D.J."
+  7 1 "Choudhury, J.R."
+  7 2 "Bierbach, U."
+  8 1 "Addess, K.J."
+  8 2 "Sinsheimer, J.S."
+  8 3 "Feigon, J."
+  9 1 "Leroy, J.L."
+  9 2 "Gao, X.L."
+  9 3 "Misra, V."
+  9 4 "Gueron, M."
+  9 5 "Patel, D.J."
+  10 1 "Gaugain, B."
+  10 2 "Barbet, J."
+  10 3 "Oberlin, R."
+  10 4 "Roques, B.P."
+  10 5 "Le Pecq, J.B."
+  11 1 "Jacobsen, J.P."
+  11 2 "Pedersen, J.B."
+  11 3 "Hansen, L.F."
+  11 4 "Wemmer, D.E."
+  12 1 "Bailly, C."
+  12 2 "Brana, M."
+  12 3 "Waring. M.J."
+  13 1 "Park, J.Y." 
+  13 2 "Park, S.J."
+  13 3 "Shim, K.Y."
+  13 4 "Lee, K.J."
+  13 5 "Kim, Y.-B."
+  13 6 "Kim, Y.H."
+  13 7 "Kim, S.K."
+  14 1 "Nakaya, M." 
+  14 2 "Oguri, H." 
+  14 3 "Takahashi, K." 
+  14 4 "Fukushi, E." 
+  14 5 "Watanabe, K." 
+  14 6 "Oikawa, H."
+  15 1 "Searle, M.S."
+  16 1 "Hampshire, A.J."
+  16 2 "Rusling, D.A."
+  16 3 "Bryan, S."
+  16 4 "Paumier, D."
+  16 5 "Dawson, S.J."
+  16 6 "Malkinson, J.P."
+  16 7 "Searcey , M."
+  16 8 "Fox, K.R."
+  17 1 "Dawson, S." 
+  17 2 "Malkinson, J.P." 
+  17 3 "Paumier, D." 
+  17 4 "Searcey, M."
+  18 1 "Marco, E."
+  18 2 "Negri, A." 
+  18 3 "Luque, F.J." 
+  18 4 "Gago, F."
+  19 1 "Bailly, C." 
+  19 2 "Crow, S." 
+  19 3 "Minnock, A." 
+  19 4 "Waring, M.J."
+  20 1 "Wakelin, L.P."
+  21 1 "Shimi, I.R."
+  21 2 "Abdallah, N.M."
+  21 3 "Ali, F.T."
+  21 4 "Khater, H.D."
+  22 1 "Waring, M.J." 
+  22 2 "Bailly, C."
+  23 1 "Ding, Q."
+  23 2 "Chichak, K." 
+  23 3 "Lown, J.W."
+  24 1 "Ughetto, G." 
+  24 2 "Wang, A.H." 
+  24 3 "Quigley, G.J." 
+  24 4 "van der Marel, G.A." 
+  24 5 "van Boom, J.H." 
+  24 6 "Rich, A."
+  25 1 "Wang, A.H." 
+  25 2 "Ughetto, G."
+  25 3 "Quigley, G.J."
+  25 4 "Hakoshima, T." 
+  25 5 "van der Marel, G.A."
+  25 6 "van Boom, J.H."
+  25 7 "Rich, A."
+  26 1 "Wang, A.H."
+  26 2 "Ughetto, G."
+  26 3 "Quigley, G.J."
+  26 4 "Rich, A."
+  27 1 "Quigley, G.J."
+  27 2 "Ughetto, G."
+  27 3 "van der Marel, G.A."
+  27 4 "van Boom J.H."
+  27 5 "Wang, A.H."
+  27 6 "Rich, A."
+  28 1 "Watanabe, K."
+  28 2 "Hotta, K."
+  28 3 "Praseuth, A.P."
+  28 4 "Koketsu, K."
+  28 5 "Migita, A."
+  28 6 "Boddy, C.N."
+  28 7 "Wang, C.C.C."
+  28 8 "Oguri, H."
+  28 9 "Oikawa, H."
+  29 1 "Sheldrick, G.M."
+  29 2 "Guy, J.J."
+  29 3 "Kennard, O."
+  29 4 "Rivera, V."
+  29 5 "Waring, M.J."
+  30 1 "Sheldrick, G.M."
+  30 2 "Heine, A."
+  30 3 "Schmidt-Base, K."
+  30 4 "Pohl, E."
+  30 5 "Jones, P.G."
+  30 6 "Paulus, E."
+  30 7 "Waring, M.J."
+  31 1 "Hossain, M.B."
+  31 2 "van der Helm, D."
+  31 3 "Olsen, R.K."
+  31 4 "Jones, P.G."
+  31 5 "Sheldrick, G.M." 
+  31 6 "Egert, E."
+  31 7 "Kennard, O."
+  31 8 "Waring, M.J."
+  31 9 "Viswamitra, M.A."
+  32 1 "Viswamitra, M.A."
+  32 2 "Kennard, O."
+  32 3 "Cruse, W.B.T." 
+  32 4 "Egert, E."
+  32 5 "Sheldrick, G.M." 
+  32 6 "Jones, P.G."
+  32 7 "Waring, M.J."
+  32 8 "Wakelin, L.P.G."
+  32 9 "Olsen, R.K."
+  33 1 "Kong, D."
+  33 2 "Park, E.J."
+  33 3 "Stephen, A.G."
+  33 4 "Calvani, M."
+  33 5 "Cardellina, J.H."
+  33 6 "Monks, A."
+  33 7 "Fisher, R.J."
+  33 8 "Shoemaker, R.H."
+  33 9 "Melillo, G."
+  34 1 "Cairns, R.A."
+  35 1 "Cuesta-Seijo, J.A."
+  35 2 "Sheldrick, G.M." 
+  36 1 "Chen, H."
+  36 2 "Patel, D.J." 
+  37 1 "Bojesen, G."
+  37 2 "Gauvreau, D."
+  37 3 "Williams, D.H."
+  37 4 "Waring, M.J." 
+  38 1 "Toda, S."
+  38 2 "Sugawara, K."
+  38 3 "Nishiyama, Y."
+  38 4 "Ohbayashi, M."
+  38 5 "Ohkusa, N."
+  38 6 "Yamamoto, H."
+  38 7 "Konishi, M."
+  38 8 "Oki, T."
+  39 1 "Park, J.Y."
+  39 2 "Park, S.J."
+  39 3 "Shim, K.Y."
+  39 4 "Lee, K.J."
+  39 5 "Kim, Y.B."
+  39 6 "Kim, Y.H."
+  39 7 "Kim, S.K."
+  40 1 "Sheldrick, G.M."
+  40 2 "Heine, A."
+  40 3 "Schmidt-Base, K."
+  40 4 "Pohl, E."
+  40 5 "Jones, P.G."
+  40 6 "Paulus, E."
+  40 7 "Waring, M.J."
+  41 1 "Rance, M.J."
+  41 2 "Ruddock, J.C."
+  41 3 "Pacey, M.S."
+  41 4 "Cullen, W.P."
+  41 5 "Huang, L.H."
+  41 6 "Jefferson, M.T."
+  41 7 "Whipple, E.B."
+  41 8 "Maeda, H."
+  41 9 "Tone, J."
+
+#--------------------------------------

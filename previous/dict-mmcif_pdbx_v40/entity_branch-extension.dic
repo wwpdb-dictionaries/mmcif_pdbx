@@ -1,0 +1,509 @@
+# ----------------------------------------------------------------------------------------------------------------------------
+#
+#  File: entity_branch_extension.dic
+#  Date: 8-May-2012 Jdw
+#
+#  Draft dictionary extension for representing branched enities
+#
+#  In category ENTITY - adds new _entity.type = branched 
+#
+#  PDBX_ENTITY_BRANCH_LIST - provides for a list of components within the branched entity. This is used to establish
+#  unique numbering among the components within the branched entity.  Provides for possible component level heterogeneity.
+#
+#  PDBX_ENTITY_BRANCH_LINK - describes linkages among components within the branched entity.
+#
+# ----------------------------------------------------------------------------------------------------------------------------
+save__entity.type
+    _item_description.description
+;              Defines the type of the entity.
+
+               Polymer entities are expected to have corresponding
+               ENTITY_POLY and associated entries.
+
+               Non-polymer entities are expected to have corresponding
+               CHEM_COMP and associated entries.
+
+               Water entities are not expected to have corresponding
+               entries in the ENTITY category.
+;
+    _item.name                  '_entity.type'
+    _item.category_id             entity
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      polymer      'entity is a linear polymer'
+                                  non-polymer  'entity is not a polymer'
+                                  macrolide    'entity is a macrolide'
+                                  branched     'entity is branched'
+                                  water        'water in the solvent model'
+     save_
+
+
+#############################
+## PDBX_ENTITY_BRANCH_LIST ##
+#############################
+
+save_pdbx_entity_branch_list
+    _category.description
+;              Data items in the PDBX_ENTITY_BRANCH_LIST category specify the list
+               of monomers in a branched entity.  Allowance is made for the possibility
+               of microheterogeneity in a sample by allowing a given sequence
+               number to be correlated with more than one monomer ID. The
+               corresponding ATOM_SITE entries should reflect this
+               heterogeneity.
+;
+    _category.id                  pdbx_entity_branch_list
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_entity_branch_list.entity_id'
+                                '_pdbx_entity_branch_list.num'
+                                '_pdbx_entity_branch_list.comp_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_entity_branch_list.entity_id
+    _pdbx_entity_branch_list.num
+    _pdbx_entity_branch_list.comp_id
+      1  1  MAN   1  2  MAN   1  3  MAN
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_entity_branch_list.entity_id
+    _item_description.description
+;              This data item is a pointer to _entity.id in the ENTITY category.
+;
+    _item.name                  '_pdbx_entity_branch_list.entity_id'
+    _item.category_id             pdbx_entity_branch_list
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_pdbx_entity_branch_list.entity_id'
+    _item_linked.parent_name      '_entity.id'
+     save_
+
+save__pdbx_entity_branch_list.hetero
+    _item_description.description
+;              A flag to indicate whether this monomer in the entity is
+               heterogeneous in sequence. 
+;
+    _item.name                  '_pdbx_entity_branch_list.hetero'
+    _item.category_id             pdbx_entity_branch_list
+    _item.mandatory_code          no
+    _item_default.value           no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      no
+                                 'sequence is not heterogeneous at this monomer'
+                                  n
+                                 'abbreviation for "no"'
+                                  yes
+                                 'sequence is heterogeneous at this monomer'
+                                  y
+                                 'abbreviation for "yes"'
+     save_
+
+save__pdbx_entity_branch_list.comp_id
+    _item_description.description
+;              This data item is a pointer to _chem_comp.id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_entity_branch_list.mon_id'
+    _item.category_id             pdbx_entity_branch_list
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name       '_pdbx_entity_branch_list.comp_id'
+    _item_linked.parent_name      '_chem_comp.id'
+     save_
+
+save__pdbx_entity_branch_list.num
+    _item_description.description
+;              The value pair  _pdbx_entity_branch_list.num and _pdbx_entity_branch_list.comp_id
+               must uniquely identify a record in the PDBX_ENTITY_BRANCH_LIST list.
+
+;
+    _item.name            '_pdbx_entity_branch_list.num'                         
+    _item.category_id      pdbx_entity_branch_list     
+    _item.mandatory_code   yes
+ 
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+    _item_type.code               int
+     save_
+
+
+#############################
+## PDBX_ENTITY_BRANCH_LINK ##
+#############################
+
+save_pdbx_entity_branch_link
+    _category.description
+;              Data items in the PDBX_ENTITY_BRANCH_LINK category give details about
+               the linkages between components within branched entities.
+;
+    _category.id                  pdbx_entity_branch_link
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_entity_branch_link.link_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+loop_
+_pdbx_entity_branch_link.link_id 
+_pdbx_entity_branch_link.entity_id
+_pdbx_entity_branch_link.entity_branch_num_1
+_pdbx_entity_branch_link.comp_id_1
+_pdbx_entity_branch_link.atom_id_1
+_pdbx_entity_branch_link.leaving_atom_id_1
+_pdbx_entity_branch_link.atom_stereo_config_1
+_pdbx_entity_branch_link.entity_branch_num_2
+_pdbx_entity_branch_link.comp_id_2
+_pdbx_entity_branch_link.atom_id_2
+_pdbx_entity_branch_link.leaving_atom_id_2
+_pdbx_entity_branch_link.atom_stereo_config_2
+_pdbx_entity_branch_link.value_order
+1 1  1 .  .  . .  2 .  .  . . 'sing'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_entity_branch_link.link_id
+    _item_description.description
+;              The value of _pdbx_entity_branch_link.link_id uniquely identifies
+               linkages within the branched entity.
+
+;
+    _item.name                  '_pdbx_entity_branch_link.link_id'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_entity_branch_link.details
+    _item_description.description
+;              A description of special aspects of this linkage.
+;
+    _item.name                  '_pdbx_entity_branch_link.details'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_entity_branch_link.entity_id
+    _item_description.description
+;              The entity id for this branched entity. 
+
+               This data item is a pointer to _pdbx_entity_branch_list.entity_id  
+               in the PDBX_ENTITY_BRANCH_LIST category.
+;
+    _item.name                  '_pdbx_entity_branch_link.ref_entity_id_2'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name	'_pdbx_entity_branch_link.entity_id'
+    _item_linked.parent_name    '_pdbx_entity_branch_list.entity_id'
+     save_
+
+save__pdbx_entity_branch_link.entity_branch_list_num_1
+    _item_description.description
+;              The component number for the first component making the linkage. 
+
+               This data item is a pointer to _pdbx_entity_branch_list.num 
+               in the PDBX_ENTITY_BRANCH_LIST category.
+
+;
+    _item.name                  '_pdbx_entity_branch_link.entity_branch_list_num_1'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          yes
+    _item_type.code               int    
+    _item_linked.child_name	'_pdbx_entity_branch_link.entity_branch_list_num_1'
+    _item_linked.parent_name    '_pdbx_entity_branch_list.num'
+     save_
+
+save__pdbx_entity_branch_link.entity_branch_list_num_2
+    _item_description.description
+;              The component number for the second component making the linkage. 
+
+               This data item is a pointer to _pdbx_entity_branch_list.num 
+               in the PDBX_ENTITY_BRANCH_LIST category.
+
+;
+    _item.name                  '_pdbx_entity_branch_link.entity_branch_list_num_2'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          yes
+    _item_type.code               int    
+    _item_linked.child_name	'_pdbx_entity_branch_link.entity_branch_list_num_2'
+    _item_linked.parent_name    '_pdbx_entity_branch_list.num'
+     save_
+
+
+save__pdbx_entity_branch_link.comp_id_1
+    _item_description.description
+;              The component identifier for the first component making the linkage. 
+
+               This data item is a pointer to _pdbx_entity_branch_list.comp_id 
+               in the PDBX_ENTITY_BRANCH_LIST category.
+;
+    _item.name                  '_pdbx_entity_branch_link.comp_id_1'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_entity_branch_link.comp_id_2
+    _item_description.description
+;              The component identifier for the second component making the linkage. 
+
+               This data item is a pointer to _pdbx_entity_branch_list.comp_id 
+               in the PDBX_ENTITY_BRANCH_LIST category.
+;
+    _item.name                  '_pdbx_entity_branch_link.comp_id_2'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_entity_branch_link.atom_id_1
+    _item_description.description
+;              The atom identifier/name for the first atom making the linkage. 
+
+;
+    _item.name                  '_pdbx_entity_branch_link.atom_id_1'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name       '_pdbx_entity_branch_link.atom_id_1'
+    _item_linked.parent_name      '_chem_comp_atom.atom_id'
+     save_
+
+save__pdbx_entity_branch_link.leaving_atom_id_1
+    _item_description.description
+;              The leaving atom identifier/name bonded to the first atom making the linkage. 
+
+;
+    _item.name                  '_pdbx_entity_branch_link.leaving_atom_id_1'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name       '_pdbx_entity_branch_link.leaving_atom_id_1'
+    _item_linked.parent_name      '_chem_comp_atom.atom_id'
+     save_
+
+save__pdbx_entity_branch_link.atom_stereo_config_1
+    _item_description.description
+;              The chiral configuration of the first atom making the linkage.
+;
+    _item.name                   '_pdbx_entity_branch_link.atom_stereo_config_1'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_default.value           'N'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      R  'rectus - right handed configuration'
+                                  S  'sinister - left handed configuration'
+                                  N  'none'
+     save_
+
+save__pdbx_entity_branch_link.atom_id_2
+    _item_description.description
+;              The atom identifier/name for the second atom making the linkage. 
+
+;
+    _item.name                  '_pdbx_entity_branch_link.atom_id_2'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name       '_pdbx_entity_branch_link.atom_id_2'
+    _item_linked.parent_name      '_chem_comp_atom.atom_id'
+     save_
+
+save__pdbx_entity_branch_link.leaving_atom_id_2
+    _item_description.description
+;              The leaving atom identifier/name bonded to the second atom making the linkage. 
+
+;
+    _item.name                  '_pdbx_entity_branch_link.leaving_atom_id_2'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name       '_pdbx_entity_branch_link.leaving_atom_id_2'
+    _item_linked.parent_name      '_chem_comp_atom.atom_id'
+     save_
+
+save__pdbx_entity_branch_link.atom_stereo_config_2
+    _item_description.description
+;              The chiral configuration of the second atom making the linkage.
+;
+    _item.name                   '_pdbx_entity_branch_link.atom_stereo_config_2'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_default.value           'N'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      R  'rectus - right handed configuration'
+                                  S  'sinister - left handed configuration'
+                                  N  'none'
+     save_
+
+save__pdbx_entity_branch_link.value_order
+    _item_description.description
+;              The bond order target for the chemical linkage.
+;
+    _item.name                  '_pdbx_entity_branch_link.value_order'
+    _item.category_id             pdbx_entity_branch_link
+    _item.mandatory_code          no
+    _item_default.value           sing
+    _item_type.code               ucode
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail      sing  'single bond'
+                                  doub  'double bond'
+                                  trip  'triple bond'
+                                  quad  'quadruple bond'
+                                  arom  'aromatic bond'
+                                  poly  'polymeric bond'
+                                  delo  'delocalised double bond'
+                                  pi    'pi bond'
+     save_
+
+
+
+############################
+## PDBX_ENTITY_DESCRIPTOR ##
+############################
+
+save_pdbx_entity_descriptor
+    _category.description
+;              Data items in the PDBX_ENTITY_DESCRIPTOR category provide
+               string descriptors of entity chemical structure.
+;
+    _category.id                  pdbx_entity_descriptor
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_entity_descriptor.ordinal'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_entity_descriptor.ordinal
+    _pdbx_entity_descriptor.entity_id
+    _pdbx_entity_descriptor.descriptor
+    _pdbx_entity_descriptor.type
+    _pdbx_entity_descriptor.program
+    _pdbx_entity_descriptor.program_version
+	1     1       
+     '[][Asn]{[(4+1)][b-D-GlcpNAc]{[(4+1)][b-D-GlcpNAc]{[(4+1)][b-D-Manp]{[(3+1)][a-D-Manp]{[(2+1)][a-D-Manp]{[(2+1)][a-D-Manp]{}}}[(6+1)][a-D-Manp]{[(3+1)][a-D-Manp]{[(2+1)][a-D-Manp]{}}[(6+1)][a-D-Manp]{[(2+1)][a-D-Manp]{}}}}}}}'
+           LINUCS           PDB-CARE Beta
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_entity_descriptor.entity_id
+    _item_description.description
+;              This data item is a pointer to _entity_poly.entity_id in the ENTITY
+               category.
+;
+    _item.name                  '_pdbx_entity_descriptor.entity_id'
+    _item.category_id             pdbx_entity_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_entity_descriptor.entity_id'
+    _item_linked.parent_name    '_entity.id'
+     save_
+
+save__pdbx_entity_descriptor.descriptor
+    _item_description.description
+;              This data item contains the descriptor value for this 
+               entity.
+;
+    _item.name                  '_pdbx_entity_descriptor.descriptor'
+    _item.category_id             pdbx_entity_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               text
+     save_
+
+save__pdbx_entity_descriptor.type
+    _item_description.description
+;              This data item contains the descriptor type. 
+;
+    _item.name                  '_pdbx_entity_descriptor.type'
+    _item.category_id             pdbx_entity_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               uline
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+        LINUCS               'LInear Notation for Unique description of Carbohydrate Sequences'
+	IUPAC                .
+        'IUPAC Abbreviated'  .
+     save_
+
+save__pdbx_entity_descriptor.program
+    _item_description.description
+;              This data item contains the name of the program
+               or library used to compute the descriptor. 
+;
+    _item.name                  '_pdbx_entity_descriptor.program'
+    _item.category_id             pdbx_entity_descriptor
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_examples.case
+    _item_examples.detail
+           PDB-CARE    . 
+           OTHER       'Other program or library'
+     save_
+
+save__pdbx_entity_descriptor.program_version
+    _item_description.description
+;              This data item contains the version of the program
+               or library used to compute the descriptor. 
+;
+    _item.name                  '_pdbx_entity_descriptor.program_version'
+    _item.category_id             pdbx_entity_descriptor
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+save__pdbx_entity_descriptor.ordinal
+    _item_description.description
+;              Ordinal index for this category.
+;
+    _item.name                  '_pdbx_entity_descriptor.ordinal'
+    _item.category_id             pdbx_entity_descriptor
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_

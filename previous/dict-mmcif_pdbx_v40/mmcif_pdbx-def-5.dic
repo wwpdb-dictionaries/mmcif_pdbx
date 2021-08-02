@@ -1,0 +1,4124 @@
+
+###########################################################################
+#
+# File:  mmcif_pdbx-def-5.dic                                             
+# 
+#                      PDB Exchange Data Dictionary
+#
+# This data dictionary contains definitions used by wwPDB for data exchange
+# and data processing.  
+#
+#                           Definition Section 5
+#                 This section primarily contains extensions for
+#                      data extraction by PDB_EXTRACT.        
+#                                                                        
+###########################################################################
+
+
+
+save_pdbx_phasing_dm
+    _category.description
+;              Data items in the PDBX_PHASING_DM category record details about 
+               density modification 
+;
+    _category.id                  pdbx_phasing_dm
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_phasing_dm.entry_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'phasing_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - density modification from resolve
+;
+;
+    _pdbx_phasing_dm.entry_id          ABC001 
+    _pdbx_phasing_dm.fom_acentric      0.85 
+    _pdbx_phasing_dm.fom_centric       0.79 
+    _pdbx_phasing_dm.fom               0.85 
+    _pdbx_phasing_dm.reflns_acentric   11351 
+    _pdbx_phasing_dm.reflns_centric    1135 
+    _pdbx_phasing_dm.reflns            12486 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    save_
+
+save__pdbx_phasing_dm.entry_id
+    _item_description.description
+;      The value of _pdbx_phasing_dm.entry_id identifies the data block.
+;
+    _item.name                 '_pdbx_phasing_dm.entry_id'
+    _item.category_id            pdbx_phasing_dm
+    _item.mandatory_code         yes
+    _item_type.code              code
+    _item_aliases.alias_name     '_pdbx_phasing_dm.entry_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm.method
+    _item_description.description
+;      The value of _pdbx_phasing_dm.method identifies the method used for 
+       density modification
+;
+    _item.name                 '_pdbx_phasing_dm.method'
+    _item.category_id            pdbx_phasing_dm
+    _item.mandatory_code         no
+    _item_type.code              line
+    _item_aliases.alias_name     '_pdbx_phasing_dm.method'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm.mask_type
+    _item_description.description
+;      The value of _pdbx_phasing_dm.mask_type  identifies the type of mask used for 
+       density modification
+;
+    _item.name                 '_pdbx_phasing_dm.mask_type'
+    _item.category_id            pdbx_phasing_dm
+    _item.mandatory_code         no
+    _item_type.code              line
+    _item_aliases.alias_name     '_pdbx_phasing_dm.mask_type'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm.fom_acentric
+    _item_description.description
+;      The value of _pdbx_phasing_dm.fom_acentric  identifies the figure of merit 
+       for acentric data
+;
+    _item.name                 '_pdbx_phasing_dm.fom_acentric'
+    _item.category_id            pdbx_phasing_dm
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_dm.fom_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm.fom_centric
+    _item_description.description
+;      The value of _pdbx_phasing_dm.fom_centric  identifies the figure of merit 
+       for acentric data
+;
+    _item.name                 '_pdbx_phasing_dm.fom_centric'
+    _item.category_id            pdbx_phasing_dm
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_dm.fom_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm.fom
+    _item_description.description
+;      The value of _pdbx_phasing_dm.fom identifies the figure of merit 
+       for all the data
+;
+    _item.name                 '_pdbx_phasing_dm.fom'
+    _item.category_id            pdbx_phasing_dm
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_dm.fom'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm.reflns_acentric
+    _item_description.description
+;      The value of _pdbx_phasing_dm.reflns_acentric  identifies the number
+       of acentric reflections.
+;
+    _item.name                 '_pdbx_phasing_dm.reflns_acentric'
+    _item.category_id            pdbx_phasing_dm
+    _item.mandatory_code         no
+    _item_type.code              int
+    _item_aliases.alias_name     '_pdbx_phasing_dm.reflns_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm.reflns_centric
+    _item_description.description
+;      The value of _pdbx_phasing_dm.reflns_centric  identifies the number
+       of centric reflections.
+;
+    _item.name                 '_pdbx_phasing_dm.reflns_centric'
+    _item.category_id            pdbx_phasing_dm
+    _item.mandatory_code         no
+    _item_type.code              int
+    _item_aliases.alias_name     '_pdbx_phasing_dm.reflns_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm.reflns
+    _item_description.description
+;      The value of _pdbx_phasing_dm.reflns  identifies the number
+       of centric and acentric reflections.
+;
+    _item.name                 '_pdbx_phasing_dm.reflns'
+    _item.category_id            pdbx_phasing_dm
+    _item.mandatory_code         no
+    _item_type.code              int
+    _item_aliases.alias_name     '_pdbx_phasing_dm.reflns'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm.delta_phi_initial
+    _item_description.description
+;      The value of _pdbx_phasing_dm.delta_phi_initial  identifies phase difference 
+       before density modification
+;
+    _item.name                 '_pdbx_phasing_dm.delta_phi_initial'
+    _item.category_id            pdbx_phasing_dm
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_dm.delta_phi_initial'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm.delta_phi_final
+    _item_description.description
+;      The value of _pdbx_phasing_dm.delta_phi_final  identifies phase difference 
+       after density modification
+;
+    _item.name                 '_pdbx_phasing_dm.delta_phi_final'
+    _item.category_id            pdbx_phasing_dm
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_dm.delta_phi_final'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+### next category,  _pdbx_phasing_dm_shell ###
+
+save_pdbx_phasing_dm_shell
+    _category.description
+;              Data items in the PDBX_PHASING_DM_SHELL category record details about 
+               density modification in resolution shell.
+;
+    _category.id                  pdbx_phasing_dm_shell
+    _category.mandatory_code      no
+     loop_
+    _category_key.name           '_pdbx_phasing_dm_shell.d_res_low'
+                                 '_pdbx_phasing_dm_shell.d_res_high' 
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'phasing_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - density modification with shells
+;
+;
+   loop_
+   _pdbx_phasing_dm_shell.d_res_low 
+   _pdbx_phasing_dm_shell.d_res_high 
+   _pdbx_phasing_dm_shell.reflns 
+   _pdbx_phasing_dm_shell.fom 
+   _pdbx_phasing_dm_shell.delta_phi_final 
+   100.00 7.73 502 0.879 24.7 
+   7.73   6.24 506 0.857 29.2 
+   6.24   5.50 504 0.838 29.2 
+   5.50   5.02 502 0.851 25.3 
+   5.02   4.67 503 0.831 22.7 
+#   ....... 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    save_
+
+save__pdbx_phasing_dm_shell.d_res_high
+    _item_description.description
+;      The value of _pdbx_phasing_dm_shell.d_res_high  identifies high resolution 
+       
+;
+    _item.name                 '_pdbx_phasing_dm_shell.d_res_high'
+    _item.category_id            pdbx_phasing_dm_shell
+    _item.mandatory_code         yes
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_dm_shell.d_res_high'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm_shell.d_res_low
+    _item_description.description
+;      The value of _pdbx_phasing_dm_shell.d_res_low  identifies low resolution 
+       
+;
+    _item.name                 '_pdbx_phasing_dm_shell.d_res_low'
+    _item.category_id            pdbx_phasing_dm_shell
+    _item.mandatory_code         yes
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_dm_shell.d_res_low'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm_shell.fom_acentric
+    _item_description.description
+;      The value of _pdbx_phasing_dm_shell.fom_acentric  identifies the figure of merit 
+       for acentric data with resolution shells
+;
+    _item.name                 '_pdbx_phasing_dm_shell.fom_acentric'
+    _item.category_id            pdbx_phasing_dm_shell
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_dm_shell.fom_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm_shell.fom_centric
+    _item_description.description
+;      The value of _pdbx_phasing_dm_shell.fom_centric  identifies the figure of merit 
+       for centric data with resolution shells.
+;
+    _item.name                 '_pdbx_phasing_dm_shell.fom_centric'
+    _item.category_id            pdbx_phasing_dm_shell
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_dm_shell.fom_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm_shell.fom
+    _item_description.description
+;      The value of _pdbx_phasing_dm_shell.fom identifies the figure of merit 
+       for all the data with resolution shells.
+;
+    _item.name                 '_pdbx_phasing_dm_shell.fom'
+    _item.category_id            pdbx_phasing_dm_shell
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_dm_shell.fom'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm_shell.reflns_acentric
+    _item_description.description
+;      The value of _pdbx_phasing_dm_shell.reflns_acentric  identifies the number
+       of acentric reflections with resolution shells.
+;
+    _item.name                 '_pdbx_phasing_dm_shell.reflns_acentric'
+    _item.category_id            pdbx_phasing_dm_shell
+    _item.mandatory_code         no
+    _item_type.code              int
+    _item_aliases.alias_name     '_pdbx_phasing_dm_shell.reflns_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm_shell.reflns_centric
+    _item_description.description
+;      The value of _pdbx_phasing_dm_shell.reflns_centric  identifies the number
+       of centric reflections with resolution shells.
+;
+    _item.name                 '_pdbx_phasing_dm_shell.reflns_centric'
+    _item.category_id            pdbx_phasing_dm_shell
+    _item.mandatory_code         no
+    _item_type.code              int
+    _item_aliases.alias_name     '_pdbx_phasing_dm_shell.reflns_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm_shell.reflns
+    _item_description.description
+;      The value of _pdbx_phasing_dm_shell.reflns  identifies the number
+       of centric and acentric reflections with resolution shells.
+;
+    _item.name                 '_pdbx_phasing_dm_shell.reflns'
+    _item.category_id            pdbx_phasing_dm_shell
+    _item.mandatory_code         no
+    _item_type.code              int
+    _item_aliases.alias_name     '_pdbx_phasing_dm_shell.reflns'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm_shell.delta_phi_initial
+    _item_description.description
+;      The value of _pdbx_phasing_dm_shell.delta_phi_initial  identifies phase difference 
+       before density modification with resolution shells.
+;
+    _item.name                 '_pdbx_phasing_dm_shell.delta_phi_initial'
+    _item.category_id            pdbx_phasing_dm_shell
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_dm_shell.delta_phi_initial'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_dm_shell.delta_phi_final
+    _item_description.description
+;      The value of _pdbx_phasing_dm_shell.delta_phi_final  identifies phase difference 
+       after density modification with resolution shells.
+;
+    _item.name                 '_pdbx_phasing_dm_shell.delta_phi_final'
+    _item.category_id            pdbx_phasing_dm_shell
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_dm_shell.delta_phi_final'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__phasing_MAD.pdbx_d_res_low
+    _item_description.description
+;              _phasing_MAD.pdbx_d_res_low records the lowest resolution
+               for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_d_res_low'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_d_res_low'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_d_res_high
+    _item_description.description
+;              _phasing_MAD.pdbx_d_res_high records the highest resolution
+               for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_d_res_high'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_d_res_high'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_reflns_acentric
+    _item_description.description
+;              _phasing_MAD.pdbx_reflns_acentric records the number of 
+               acentric reflections for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_reflns_acentric'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_reflns_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_reflns_centric
+    _item_description.description
+;              _phasing_MAD.pdbx_reflns_centric records the number of 
+               centric reflections for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_reflns_centric'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_reflns_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_reflns
+    _item_description.description
+;              _phasing_MAD.pdbx_reflns records the number of 
+               reflections used for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_reflns'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_reflns'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__phasing_MAD.pdbx_fom_acentric
+    _item_description.description
+;              _phasing_MAD.pdbx_fom_acentric  records the figure of merit
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_fom_acentric'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_fom_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_fom_centric
+    _item_description.description
+;              _phasing_MAD.pdbx_fom_centric  records the figure of merit
+               using centric data for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_fom_centric'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_fom_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_fom
+    _item_description.description
+;              _phasing_MAD.pdbx_fom records the figure of merit
+               for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_fom'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_fom'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__phasing_MAD.pdbx_R_cullis_centric
+    _item_description.description
+;              _phasing_MAD.pdbx_R_cullis_centric records R_cullis
+               using centric data for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_R_cullis_centric'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_R_cullis_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_R_cullis_acentric
+    _item_description.description
+;              _phasing_MAD.pdbx_R_cullis_acentric records R_cullis
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_R_cullis_acentric'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_R_cullis_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_R_cullis
+    _item_description.description
+;              _phasing_MAD.pdbx_R_cullis records R_cullis
+               for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_R_cullis'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_R_cullis'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__phasing_MAD.pdbx_R_kraut_centric
+    _item_description.description
+;             _phasing_MAD.pdbx_R_kraut_centric records R_kraut
+               using centric data for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_R_kraut_centric'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_R_kraut_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_R_kraut_acentric
+    _item_description.description
+;             _phasing_MAD.pdbx_R_kraut_acentric records R_kraut
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_R_kraut_acentric'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_R_kraut_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_R_kraut
+    _item_description.description
+;             _phasing_MAD.pdbx_R_kraut records R_kraut
+               for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_R_kraut'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_R_kraut'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__phasing_MAD.pdbx_loc_centric
+    _item_description.description
+;              _phasing_MAD.pdbx_loc_centric records lack of closure
+               using centric data for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_loc_centric'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_loc_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_loc_acentric
+    _item_description.description
+;              _phasing_MAD.pdbx_loc_acentric records lack of closure
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_loc_acentric'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_loc_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_loc
+    _item_description.description
+;              _phasing_MAD.pdbx_loc records lack of closure
+               for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_loc'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_loc'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__phasing_MAD.pdbx_power_centric
+    _item_description.description
+;              _phasing_MAD.pdbx_power_centric records phasing power
+               using centric data for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_power_centric'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_power_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_power_acentric
+    _item_description.description
+;              _phasing_MAD.pdbx_power_acentric records phasing power
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_power_acentric'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_power_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__phasing_MAD.pdbx_power
+    _item_description.description
+;              _phasing_MAD.pdbx_power records phasing power
+               for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_power'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_power'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_number_data_sets
+    _item_description.description
+;             _phasing_MAD.pdbx_loc records the number 
+               of data sets used for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_number_data_sets'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_number_data_sets'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD.pdbx_anom_scat_method
+    _item_description.description
+;             _phasing_MAD.pdbx_anom_scat_method records the method
+               used to locate anomalous scatterers for MAD phasing.
+;
+    _item.name                  '_phasing_MAD.pdbx_anom_scat_method'
+    _item.category_id             phasing_MAD
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_aliases.alias_name     '_phasing_MAD.pdbx_anom_scat_method'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+##
+save_pdbx_phasing_MAD_shell
+    _category.description
+;              Data items in the PDBX_PHASING_MAD_SHELL category record details about
+               the phasing of the structure, when methods involving multiple
+               anomalous dispersion techniques are involved (note: the
+               values are overall, but broken down into shells of resolution) 
+
+;
+    _category.id                 pdbx_phasing_MAD_shell 
+    _category.mandatory_code      no
+     loop_
+    _category_key.name           '_pdbx_phasing_MAD_shell.d_res_low'
+                                 '_pdbx_phasing_MAD_shell.d_res_high'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'phasing_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_phasing_MAD_shell.d_res_low 
+    _pdbx_phasing_MAD_shell.d_res_high 
+    _pdbx_phasing_MAD_shell.reflns_acentric 
+    _pdbx_phasing_MAD_shell.fom_acentric 
+    _pdbx_phasing_MAD_shell.reflns_centric 
+    _pdbx_phasing_MAD_shell.fom_centric 
+    22.60 7.77 64  0.886 23 0.641 
+    7.77  5.67 132 0.863 32 0.642 
+    5.67  4.68 182 0.842 27 0.737 
+    4.68  4.07 209 0.789 24 0.682 
+    4.07  3.65 246 0.772 27 0.633 
+    3.65  3.34 260 0.752 31 0.700 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    save_
+
+
+save__pdbx_phasing_MAD_shell.d_res_low
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.d_res_low records the lower resolution
+               for the shell.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.d_res_low'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.d_res_low'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.d_res_high
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.d_res_high records the higher resolution
+               for the shell.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.d_res_high'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.d_res_high'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.reflns_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.reflns_acentric records the number of 
+               acentric reflections for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.reflns_acentric'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.reflns_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.reflns_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.reflns_centric records the number of 
+               centric reflections for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.reflns_centric'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.reflns_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.reflns
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.reflns records the number of 
+               reflections used for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.reflns'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.reflns'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_shell.fom_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.fom_acentric  records the figure of merit
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.fom_acentric'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.fom_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.fom_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.fom_centric  records the figure of merit
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.fom_centric'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.fom_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.fom
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.fom records the figure of merit
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.fom'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.fom'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MAD_shell.R_cullis_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.R_cullis_centric records R_cullis
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.R_cullis_centric'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.R_cullis_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.R_cullis_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.R_cullis_acentric records R_cullis
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.R_cullis_acentric'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.R_cullis_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.R_cullis
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.R_cullis records R_cullis
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.R_cullis'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.R_cullis'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_shell.R_kraut_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.R_kraut_centric records R_kraut
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.R_kraut_centric'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.R_kraut_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.R_kraut_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.r_kraut_acentric records R_kraut
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.R_kraut_acentric'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.R_kraut_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.R_kraut
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.R_kraut records R_kraut
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.R_kraut'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.R_kraut'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_shell.loc_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.loc_centric records lack of closure
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.loc_centric'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.loc_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.loc_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.loc_acentric records lack of closure
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.loc_acentric'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.loc_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.loc
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.loc records lack of closure
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.loc'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.loc'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_shell.power_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.power_centric records phasing powe
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.power_centric'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.power_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.power_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.power_acentric records phasing powe
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.power_acentric'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.power_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_shell.power
+    _item_description.description
+;              _pdbx_phasing_MAD_shell.loc records phasing power
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_shell.power'
+    _item.category_id             pdbx_phasing_MAD_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_shell.power'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+### next category,  _pdbx_phasing_MAD_set ###
+
+save_pdbx_phasing_MAD_set
+    _category.description
+;              Record details about each phasing set: (Note: the phasing 
+               set is different from data set. for example: if there are 
+               three data sets, the inflection point (IP), the peak (PK) 
+               and the high remote (HR), the combination of the phasing 
+               set will be IP_iso, PK_iso (the isomorphous repleacement 
+               with HR as 'native'), IP_ano, PK_ano and HR_ano (the 
+               anomalous difference with itself). Therefore, there are 
+               five set used for phasing.
+
+;
+    _category.id                 pdbx_phasing_MAD_set 
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_phasing_MAD_set.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'phasing_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 -  three wavelengths 
+;
+;
+       
+    loop_
+    _pdbx_phasing_MAD_set.id 
+    _pdbx_phasing_MAD_set.d_res_low 
+    _pdbx_phasing_MAD_set.d_res_high 
+    _pdbx_phasing_MAD_set.reflns_acentric 
+    _pdbx_phasing_MAD_set.reflns_centric 
+    _pdbx_phasing_MAD_set.R_cullis_acentric 
+    _pdbx_phasing_MAD_set.R_cullis_centric 
+    ISO_1 22.60 2.00 5387 471 0.000 0.000 
+    ISO_2 22.60 2.00 5365 469 0.803 0.718 
+    ISO_3 22.60 2.00 5317 460 0.658 0.500 
+    ANO_1 22.60 2.00 5278 0   0.841 0.000 
+    ANO_2 22.60 2.00 5083 0   0.649 0.000 
+    ANO_3 22.60 2.00 5329 0   0.829 0.000 
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    save_
+
+
+save__pdbx_phasing_MAD_set.id 
+    _item_description.description
+;              _pdbx_phasing_MAD_set.id records phase set name
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.id'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MAD_set.d_res_low
+    _item_description.description
+;              _pdbx_phasing_MAD_set.d_res_low records the lowerest 
+               resolution for phasing set.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.d_res_low'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.d_res_low'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set.d_res_high
+    _item_description.description
+;              _pdbx_phasing_MAD_set.d_res_high records the highest resolution
+               for the phasing set.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.d_res_high'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.d_res_high'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MAD_set.number_of_sites
+    _item_description.description
+;              _pdbx_phasing_MAD_set.number_of_sites records the number of site
+               refined for the phasing set.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.number_of_sites'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.number_of_sites'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_set.reflns_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_set.reflns_acentric records the number of 
+               acentric reflections for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.reflns_acentric'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.reflns_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set.reflns_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_set.reflns_centric records the number of 
+               centric reflections for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.reflns_centric'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.reflns_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set.reflns
+    _item_description.description
+;              _pdbx_phasing_MAD_set.reflns records the number of 
+               reflections used for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.reflns'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.reflns'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_set.fom_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_set.fom_acentric  records the figure of merit
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.fom_acentric'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.fom_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set.fom_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_set.fom_centric  records the figure of merit
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.fom_centric'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.fom_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set.fom
+    _item_description.description
+;              _pdbx_phasing_MAD_set.fom records the figure of merit
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.fom'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.fom'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MAD_set.R_cullis_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_set.R_cullis_centric records R_cullis
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.R_cullis_centric'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.R_cullis_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set.R_cullis_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_set.R_cullis_acentric records R_cullis
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.R_cullis_acentric'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.R_cullis_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set.R_cullis
+    _item_description.description
+;              _pdbx_phasing_MAD_set.R_cullis records R_cullis
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.R_cullis'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.R_cullis'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_set.R_kraut_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_set.R_kraut_centric records r_kraut
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.R_kraut_centric'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.R_kraut_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set.R_kraut_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_set.r_kraut_acentric records r_kraut
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.R_kraut_acentric'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.R_kraut_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set.R_kraut
+    _item_description.description
+;              _pdbx_phasing_MAD_set.R_kraut records R_kraut
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.R_kraut'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.R_kraut'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_set.loc_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_set.loc_centric records lack of closure
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.loc_centric'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.loc_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set.loc_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_set.loc_acentric records lack of closure
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.loc_acentric'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.loc_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set.loc
+    _item_description.description
+;              _pdbx_phasing_MAD_set.loc records lack of closure
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.loc'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.loc'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_set.power_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_set.power_centric records phasing powe
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.power_centric'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.power_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set.power_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_set.power_acentric records phasing powe
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.power_acentric'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.power_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set.power
+    _item_description.description
+;              _pdbx_phasing_MAD_set.power records phasing power
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set.power'
+    _item.category_id             pdbx_phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set.power'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+### next category,  _pdbx_phasing_MAD_set_shell ###
+
+save_pdbx_phasing_MAD_set_shell
+    _category.description
+;              The same as category pdbx_phasing_MAD_set, but
+               broken into shells.
+
+;
+    _category.id                 pdbx_phasing_MAD_set_shell 
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_phasing_MAD_set_shell.id'
+                                '_pdbx_phasing_MAD_set_shell.d_res_low' 
+                                '_pdbx_phasing_MAD_set_shell.d_res_high' 
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'phasing_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 -  three wavelengths (SHARP example)
+;
+;
+       
+    loop_
+    _pdbx_phasing_MAD_set_shell.id 
+    _pdbx_phasing_MAD_set_shell.d_res_low 
+    _pdbx_phasing_MAD_set_shell.d_res_high 
+    _pdbx_phasing_MAD_set_shell.reflns_acentric 
+    _pdbx_phasing_MAD_set_shell.reflns_centric 
+    _pdbx_phasing_MAD_set_shell.R_cullis_acentric 
+    _pdbx_phasing_MAD_set_shell.R_cullis_centric 
+    _pdbx_phasing_MAD_set_shell.power_acentric 
+    _pdbx_phasing_MAD_set_shell.power_centric 
+    ISO_1 22.60 7.77 64  23 0.000 0.000 0.000 0.000 
+    ISO_1 7.77  5.67 130 32 0.000 0.000 0.000 0.000 
+    ISO_1 5.67  4.68 182 27 0.000 0.000 0.000 0.000 
+    ISO_1 4.68  4.07 207 24 0.000 0.000 0.000 0.000 
+    ANO_1 22.60 7.77 62  0  0.610 0.000 1.804 0.000 
+    ANO_1 7.77  5.67 129 0  0.532 0.000 2.382 0.000 
+    ANO_1 5.67  4.68 178 0  0.673 0.000 1.858 0.000 
+    ANO_1 4.68  4.07 204 0  0.755 0.000 1.605 0.000 
+#    .........
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    save_
+
+
+save__pdbx_phasing_MAD_set_shell.id 
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.id records phase set name
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.id'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.d_res_low
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.d_res_low records the lowerest 
+               resolution for phasing set.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.d_res_low'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.d_res_low'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.d_res_high
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.d_res_high records the highest resolution
+               for the phasing set.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.d_res_high'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.d_res_high'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MAD_set_shell.reflns_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.reflns_acentric records the number of 
+               acentric reflections for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.reflns_acentric'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.reflns_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.reflns_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.reflns_centric records the number of 
+               centric reflections for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.reflns_centric'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.reflns_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.reflns
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.reflns records the number of 
+               reflections used for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.reflns'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.reflns'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_set_shell.fom_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.fom_acentric  records the figure of merit
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.fom_acentric'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.fom_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.fom_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.fom_centric  records the figure of merit
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.fom_centric'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.fom_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.fom
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.fom records the figure of merit
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.fom'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.fom'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MAD_set_shell.R_cullis_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.R_cullis_centric records R_cullis
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.R_cullis_centric'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.R_cullis_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.R_cullis_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.R_cullis_acentric records R_cullis
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.R_cullis_acentric'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.R_cullis_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.R_cullis
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.R_cullis records R_cullis
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.R_cullis'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.R_cullis'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_set_shell.R_kraut_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.R_kraut_centric records R_kraut
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.R_kraut_centric'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.R_kraut_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.R_kraut_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.R_kraut_acentric records R_kraut
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.R_kraut_acentric'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.R_kraut_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.R_kraut
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.R_kraut records R_kraut
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.R_kraut'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.R_kraut'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_set_shell.loc_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.loc_centric records lack of closure
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.loc_centric'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.loc_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.loc_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.loc_acentric records lack of closure
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.loc_acentric'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.loc_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.loc
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.loc records lack of closure
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.loc'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.loc'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_set_shell.power_centric
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.power_centric records phasing power
+               using centric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.power_centric'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.power_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.power_acentric
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.power_acentric records phasing power
+               using acentric data for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.power_acentric'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.power_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_shell.power
+    _item_description.description
+;              _pdbx_phasing_MAD_set_shell.power records phasing power
+               for MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_shell.power'
+    _item.category_id             pdbx_phasing_MAD_set_shell
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_shell.power'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+### next category,  _pdbx_phasing_MAD_set_site ###
+
+save_pdbx_phasing_MAD_set_site
+    _category.description
+;              record the details (coordinates etc.) of anomalous scatters.
+               
+
+;
+    _category.id                 pdbx_phasing_MAD_set_site 
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_phasing_MAD_set_site.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'phasing_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 -  anomalous scatters is Se
+;
+;
+       
+    loop_
+    _pdbx_phasing_MAD_set_site.id 
+    _pdbx_phasing_MAD_set_site.atom_type_symbol 
+    _pdbx_phasing_MAD_set_site.Cartn_x 
+    _pdbx_phasing_MAD_set_site.Cartn_y 
+    _pdbx_phasing_MAD_set_site.Cartn_z 
+    _pdbx_phasing_MAD_set_site.b_iso 
+    _pdbx_phasing_MAD_set_site.occupancy 
+    1  SE 25.9407  -0.103471 17.4094 15.2561 1 
+    2  SE 30.6534  6.62359   9.93063 12.9102 1 
+    3  SE -3.26506 15.5546   53.9529 30.5239 1 
+#    .......
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    save_
+
+
+save__pdbx_phasing_MAD_set_site.id
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.id records the number of site
+               obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.id'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_site.atom_type_symbol
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.atom_type_symbol records the name of site
+               obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.atom_type_symbol'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.atom_type_symbol'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MAD_set_site.Cartn_x
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.Cartn_x  records the X  Cartesian
+                coordinate of site obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.Cartn_x'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.Cartn_x'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_site.Cartn_y
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.Cartn_y  records the Y  Cartesian
+                coordinate of site obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.Cartn_y'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.Cartn_y'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_site.Cartn_z
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.Cartn_z  records the Z  Cartesian
+                coordinate of site obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.Cartn_z'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.Cartn_z'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MAD_set_site.Cartn_x_esd
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.Cartn_x_esd  records the estimated
+               standard deviation X  Cartesian
+                coordinate of site obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.Cartn_x_esd'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.Cartn_x_esd'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_site.Cartn_y_esd
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.Cartn_y_esd  records the estimated
+               standard deviation Y  Cartesian
+                coordinate of site obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.Cartn_y_esd'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.Cartn_y_esd'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_site.Cartn_z_esd
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.Cartn_z_esd  records the estimated 
+               standard deviation Z  Cartesian
+                coordinate of site obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.Cartn_z_esd'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.Cartn_z_esd'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_site.fract_x
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.fract_x  records the X  fractional
+                coordinate of site obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.fract_x'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.fract_x'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_site.fract_y
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.fract_y  records the Y  fractional
+                coordinate of site obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.fract_y'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.fract_y'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_site.fract_z
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.fract_z  records the Z  fractional
+                coordinate of site obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.fract_z'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.fract_z'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MAD_set_site.fract_x_esd
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.fract_x_esd  records the estimated
+               standard deviation X  fractional
+                coordinate of site obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.fract_x_esd'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.fract_x_esd'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_site.fract_y_esd
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.fract_y_esd  records the estimated
+               standard deviation Y  fractional
+                coordinate of site obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.fract_y_esd'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.fract_y_esd'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_site.fract_z_esd
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.fract_z_esd  records the estimated 
+               standard deviation Z  fractional
+                coordinate of site obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.fract_z_esd'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.fract_z_esd'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__pdbx_phasing_MAD_set_site.b_iso
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.b_iso  records isotropic 
+               temperature factor parameterthe for the site
+               obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.b_iso'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.b_iso'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_site.b_iso_esd
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.b_iso_esd  records estimated 
+               standard deviation of isotropic 
+               temperature factor parameterthe for the site
+               obtained from MAD phasing.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.b_iso_esd'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.b_iso_esd'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MAD_set_site.occupancy
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.occupancy  records the fraction 
+               of the atom type presented at this site.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.occupancy'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.occupancy'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MAD_set_site.occupancy_esd
+    _item_description.description
+;              _pdbx_phasing_MAD_set_site.occupancy_esd  records estimated 
+               standard deviation of the fraction 
+               of the atom type presented at this site.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.occupancy_esd'
+    _item.category_id             pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.occupancy_esd'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+##
+### new items for _phasing_MAD_set  ###
+
+
+save__phasing_MAD_set.pdbx_atom_type
+    _item_description.description
+;              record the type of heavy atoms which produce anomolous singal.
+;
+    _item.name                  '_phasing_MAD_set.pdbx_atom_type'
+    _item.category_id             phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_aliases.alias_name     '_phasing_MAD_set.pdbx_atom_type'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD_set.pdbx_f_prime_refined
+    _item_description.description
+;              record the refined f_prime (not from experiment).
+;
+    _item.name                  '_phasing_MAD_set.pdbx_f_prime_refined'
+    _item.category_id             phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD_set.pdbx_f_prime_refined'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MAD_set.pdbx_f_double_prime_refined
+    _item_description.description
+;              record the refined f_double_prime (not from experiment).
+;
+    _item.name                  '_phasing_MAD_set.pdbx_f_double_prime_refined'
+    _item.category_id             phasing_MAD_set
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_phasing_MAD_set.pdbx_f_double_prime_refined'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+### new items for _pdbx_phasing_MAD_set_site  ###
+
+
+save__pdbx_phasing_MAD_set_site.set_id 
+    _item_description.description
+;              record the phasing set.
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.set_id'
+    _item.category_id            pdbx_phasing_MAD_set_site 
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.set_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MAD_set_site.occupancy_iso
+    _item_description.description
+;              The relative real isotropic occupancy of the atom type
+               present at this heavy-atom site in a given atom site.              
+;
+    _item.name                  '_pdbx_phasing_MAD_set_site.occupancy_iso'
+    _item.category_id            pdbx_phasing_MAD_set_site
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_pdbx_phasing_MAD_set_site.occupancy_iso'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+### new items for _refine_ls_restr_ncs  ###
+
+save__refine_ls_restr_ncs.pdbx_ordinal
+    _item_description.description
+;              An ordinal index for the list of NCS restraints.
+;
+    _item.name                  '_refine_ls_restr_ncs.pdbx_ordinal'
+    _item.category_id            refine_ls_restr_ncs
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_aliases.alias_name     '_refine_ls_restr_ncs.pdbx_ordinal'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__refine_ls_restr_ncs.pdbx_type
+    _item_description.description
+;              The type of NCS restraint. (for example: tight positional)
+;
+    _item.name                  '_refine_ls_restr_ncs.pdbx_type'
+    _item.category_id            refine_ls_restr_ncs
+    _item.mandatory_code          yes
+    _item_type.code               text
+    _item_aliases.alias_name     '_refine_ls_restr_ncs.pdbx_type'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__refine_ls_restr_ncs.pdbx_asym_id
+    _item_description.description
+;              A reference to  _struct_asym.id.
+;
+    _item.name                  '_refine_ls_restr_ncs.pdbx_asym_id'
+    _item.category_id            refine_ls_restr_ncs
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_aliases.alias_name     '_refine_ls_restr_ncs.pdbx_asym_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+    _item_linked.child_name	 '_refine_ls_restr_ncs.pdbx_asym_id'
+    _item_linked.parent_name     '_struct_asym.id'
+     save_
+
+save__refine_ls_restr_ncs.pdbx_auth_asym_id
+    _item_description.description
+;              A reference to the PDB Chain ID
+;
+    _item.name                  '_refine_ls_restr_ncs.pdbx_auth_asym_id'
+    _item.category_id            refine_ls_restr_ncs
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_aliases.alias_name     '_refine_ls_restr_ncs.pdbx_auth_asym_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+    _item_linked.child_name	 '_refine_ls_restr_ncs.pdbx_auth_asym_id'
+    _item_linked.parent_name     '_atom_site.auth_asym_id'
+     save_
+
+
+save__refine_ls_restr_ncs.pdbx_number
+    _item_description.description
+;              Records the number restraints in the contributing to the RMS statistic. 
+;
+    _item.name                  '_refine_ls_restr_ncs.pdbx_number'
+    _item.category_id            refine_ls_restr_ncs
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_aliases.alias_name     '_refine_ls_restr_ncs.pdbx_number'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__refine_ls_restr_ncs.pdbx_rms
+    _item_description.description
+;              Records the standard deviation in the restraint between NCS related domains.
+;
+    _item.name                  '_refine_ls_restr_ncs.pdbx_rms'
+    _item.category_id            refine_ls_restr_ncs
+    _item.mandatory_code          no
+    _item_type.code              float 
+    _item_aliases.alias_name     '_refine_ls_restr_ncs.pdbx_rms'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__refine_ls_restr_ncs.pdbx_weight
+    _item_description.description
+;              Records the weight used for NCS restraint.
+;
+    _item.name                  '_refine_ls_restr_ncs.pdbx_weight'
+    _item.category_id            refine_ls_restr_ncs
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_refine_ls_restr_ncs.pdbx_weight'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+### new items for _struct_ncs_dom_lim  ###
+
+
+save__struct_ncs_dom_lim.pdbx_component_id
+    _item_description.description
+;             Record number of the NCS domain limit assignment.
+;
+    _item.name                  '_struct_ncs_dom_lim.pdbx_component_id'
+    _item.category_id            struct_ncs_dom_lim
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_aliases.alias_name     '_struct_ncs_dom_lim.pdbx_component_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__struct_ncs_dom_lim.pdbx_refine_code
+    _item_description.description
+;              record the refinement code number (from CCP4.)
+;
+    _item.name                  '_struct_ncs_dom_lim.pdbx_refine_code'
+    _item.category_id            struct_ncs_dom_lim
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_struct_ncs_dom_lim.pdbx_refine_code'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+### new items for _refine_analyze  ###
+
+
+save__refine_analyze.pdbx_Luzzati_d_res_high_obs
+    _item_description.description
+;              record the high resolution for calculating Luzzati statistics.
+;
+    _item.name                  '_refine_analyze.pdbx_Luzzati_d_res_high_obs'
+    _item.category_id            refine_analyze
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_aliases.alias_name     '_refine_analyze.pdbx_Luzzati_d_res_high_obs'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+#-------------------------------
+### new items for _phasing_MIR_shell  ###
+
+save__phasing_MIR.pdbx_number_derivatives
+    _item_description.description
+;              The number of derivatives used in this phasing experiment.
+;
+    _item.name                  '_phasing_MIR.pdbx_number_derivatives'
+    _item.category_id            phasing_MIR
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+save__phasing_MIR_shell.pdbx_loc_centric
+    _item_description.description
+;              record lack of closure from centric reflection for each shell.
+;
+    _item.name                  '_phasing_MIR_shell.pdbx_loc_centric'
+    _item.category_id            phasing_MIR_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_shell.pdbx_loc_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_shell.pdbx_loc_acentric
+    _item_description.description
+;              record lack of closure from acentric reflection for each shell.
+;
+    _item.name                  '_phasing_MIR_shell.pdbx_loc_acentric'
+    _item.category_id            phasing_MIR_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_shell.pdbx_loc_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_shell.pdbx_power_centric
+    _item_description.description
+;              record phasing power from centric reflection for each shell.
+;
+    _item.name                  '_phasing_MIR_shell.pdbx_power_centric'
+    _item.category_id            phasing_MIR_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_shell.pdbx_power_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_shell.pdbx_power_acentric
+    _item_description.description
+;              record phasing power from acentric reflection for each shell.
+;
+    _item.name                  '_phasing_MIR_shell.pdbx_power_acentric'
+    _item.category_id            phasing_MIR_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_shell.pdbx_power_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__phasing_MIR_shell.pdbx_R_kraut_centric
+    _item_description.description
+;              record R_Kraut from from centric reflection for each shell.
+;
+    _item.name                  '_phasing_MIR_shell.pdbx_R_kraut_centric'
+    _item.category_id            phasing_MIR_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_shell.pdbx_R_kraut_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_shell.pdbx_R_kraut_acentric
+    _item_description.description
+;              record R_kraut from from acentric reflection for each shell.
+;
+    _item.name                  '_phasing_MIR_shell.pdbx_R_kraut_acentric'
+    _item.category_id            phasing_MIR_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_shell.pdbx_R_kraut_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__phasing_MIR_shell.pdbx_R_cullis_centric
+    _item_description.description
+;              record R_Cullis from from centric reflection for each shell.
+;
+    _item.name                  '_phasing_MIR_shell.pdbx_R_cullis_centric'
+    _item.category_id            phasing_MIR_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_shell.pdbx_R_cullis_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_shell.pdbx_R_cullis_acentric
+    _item_description.description
+;              record R_Cullis from from acentric reflection for each shell.
+;
+    _item.name                  '_phasing_MIR_shell.pdbx_R_cullis_acentric'
+    _item.category_id            phasing_MIR_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_shell.pdbx_R_cullis_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+### new items for _phasing_MIR_der  ###
+
+save__phasing_MIR_der.pdbx_R_kraut_centric
+    _item_description.description
+;              record R_kraut obtained from centric data for each derivative.
+;
+    _item.name                  '_phasing_MIR_der.pdbx_R_kraut_centric'
+    _item.category_id            phasing_MIR_der
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der.pdbx_R_kraut_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_der.pdbx_R_kraut_acentric
+    _item_description.description
+;              record R_kraut obtained from acentric data for each derivative.
+;
+    _item.name                  '_phasing_MIR_der.pdbx_R_kraut_acentric'
+    _item.category_id            phasing_MIR_der
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der.pdbx_R_kraut_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_der.pdbx_R_kraut
+    _item_description.description
+;              record R_kraut obtained from all data data for each derivative.
+;
+    _item.name                  '_phasing_MIR_der.pdbx_R_kraut'
+    _item.category_id            phasing_MIR_der
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der.pdbx_R_kraut'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__phasing_MIR_der.pdbx_loc_centric
+    _item_description.description
+;              record lack of closure obtained from centric data for 
+               each derivative.
+;
+    _item.name                  '_phasing_MIR_der.pdbx_loc_centric'
+    _item.category_id            phasing_MIR_der
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der.pdbx_loc_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_der.pdbx_loc_acentric
+    _item_description.description
+;              record lack of closure obtained from acentric data for 
+               each derivative.
+;
+    _item.name                  '_phasing_MIR_der.pdbx_loc_acentric'
+    _item.category_id            phasing_MIR_der
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der.pdbx_loc_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_der.pdbx_loc
+    _item_description.description
+;              record lack of closure obtained from all data for 
+               each derivative.
+;
+    _item.name                  '_phasing_MIR_der.pdbx_loc'
+    _item.category_id            phasing_MIR_der
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der.pdbx_loc'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__phasing_MIR_der.pdbx_fom_centric
+    _item_description.description
+;              record figure of merit obtained from centric data for 
+               each derivative.
+;
+    _item.name                  '_phasing_MIR_der.pdbx_fom_centric'
+    _item.category_id            phasing_MIR_der
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der.pdbx_fom_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_der.pdbx_fom_acentric
+    _item_description.description
+;              record figure of merit obtained from acentric data for 
+               each derivative.
+;
+    _item.name                  '_phasing_MIR_der.pdbx_fom_acentric'
+    _item.category_id            phasing_MIR_der
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der.pdbx_fom_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_der.pdbx_fom
+    _item_description.description
+;              record figure of merit obtained from all data for 
+               each derivative.
+;
+    _item.name                  '_phasing_MIR_der.pdbx_fom'
+    _item.category_id            phasing_MIR_der
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der.pdbx_fom'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__phasing_MIR_der.pdbx_power
+    _item_description.description
+;              record phasing power for each derivative.
+;
+    _item.name                  '_phasing_MIR_der.pdbx_power'
+    _item.category_id            phasing_MIR_der
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der.pdbx_power'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_der.pdbx_R_cullis
+    _item_description.description
+;              record R_cullis for each derivative.
+;
+    _item.name                  '_phasing_MIR_der.pdbx_R_cullis'
+    _item.category_id            phasing_MIR_der
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der.pdbx_R_cullis'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_der.pdbx_reflns
+    _item_description.description
+;              record number of reflections used for each derivative.
+;
+    _item.name                  '_phasing_MIR_der.pdbx_reflns'
+    _item.category_id            phasing_MIR_der
+    _item.mandatory_code          no
+    _item_type.code              int
+    _item_aliases.alias_name     '_phasing_MIR_der.pdbx_reflns'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+### new items for _phasing_MIR_der_shell  ###
+
+
+save__phasing_MIR_der_shell.pdbx_R_cullis_centric
+    _item_description.description
+;              record R Cullis obtained from centric data for each
+               derivative, but broken into resolution shells
+;
+    _item.name                  '_phasing_MIR_der_shell.pdbx_R_cullis_centric'
+    _item.category_id            phasing_MIR_der_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der_shell.pdbx_R_cullis_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_der_shell.pdbx_R_cullis_acentric
+    _item_description.description
+;              record R Cullis obtained from acentric data for each
+               derivative, but broken into resolution shells
+;
+    _item.name                  '_phasing_MIR_der_shell.pdbx_R_cullis_acentric'
+    _item.category_id            phasing_MIR_der_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der_shell.pdbx_R_cullis_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__phasing_MIR_der_shell.pdbx_R_kraut_centric
+    _item_description.description
+;              record R Kraut obtained from centric data for each
+               derivative, but broken into resolution shells
+;
+    _item.name                  '_phasing_MIR_der_shell.pdbx_R_kraut_centric'
+    _item.category_id            phasing_MIR_der_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der_shell.pdbx_R_kraut_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_der_shell.pdbx_R_kraut_acentric
+    _item_description.description
+;              record R Kraut obtained from acentric data for each
+               derivative, but broken into resolution shells
+;
+    _item.name                  '_phasing_MIR_der_shell.pdbx_R_kraut_acentric'
+    _item.category_id            phasing_MIR_der_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der_shell.pdbx_R_kraut_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__phasing_MIR_der_shell.pdbx_loc_centric
+    _item_description.description
+;              record lack of closure obtained from centric data for each
+               derivative, but broken into resolution shells
+;
+    _item.name                  '_phasing_MIR_der_shell.pdbx_loc_centric'
+    _item.category_id            phasing_MIR_der_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der_shell.pdbx_loc_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__phasing_MIR_der_shell.pdbx_loc_acentric
+    _item_description.description
+;              record lack of closure obtained from acentric data for each
+               derivative, but broken into resolution shells
+;
+    _item.name                  '_phasing_MIR_der_shell.pdbx_loc_acentric'
+    _item.category_id            phasing_MIR_der_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der_shell.pdbx_loc_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__phasing_MIR_der_shell.pdbx_power_centric
+    _item_description.description
+;              record phasing power obtained from centric data for each
+               derivative, but broken into resolution shells
+;
+    _item.name                  '_phasing_MIR_der_shell.pdbx_power_centric'
+    _item.category_id            phasing_MIR_der_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der_shell.pdbx_power_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__phasing_MIR_der_shell.pdbx_power_acentric
+    _item_description.description
+;              record phasing power obtained from acentric data for each
+               derivative, but broken into resolution shells
+;
+    _item.name                  '_phasing_MIR_der_shell.pdbx_power_acentric'
+    _item.category_id            phasing_MIR_der_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der_shell.pdbx_power_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__phasing_MIR_der_shell.pdbx_fom_centric
+    _item_description.description
+;              record figure of merit obtained from centric data for each
+               derivative, but broken into resolution shells
+;
+    _item.name                  '_phasing_MIR_der_shell.pdbx_fom_centric'
+    _item.category_id            phasing_MIR_der_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der_shell.pdbx_fom_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__phasing_MIR_der_shell.pdbx_fom_acentric
+    _item_description.description
+;              record figure of merit obtained from acentric data for each
+               derivative, but broken into resolution shells
+;
+    _item.name                  '_phasing_MIR_der_shell.pdbx_fom_acentric'
+    _item.category_id            phasing_MIR_der_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der_shell.pdbx_fom_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+save__phasing_MIR_der_shell.pdbx_reflns_centric
+    _item_description.description
+;              record  number of centric reflections used for phasing for each
+               derivative, but broken into resolution shells
+;
+    _item.name                  '_phasing_MIR_der_shell.pdbx_reflns_centric'
+    _item.category_id            phasing_MIR_der_shell
+    _item.mandatory_code          no
+    _item_type.code              float
+    _item_aliases.alias_name     '_phasing_MIR_der_shell.pdbx_reflns_centric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__phasing_MIR_der_shell.pdbx_reflns_acentric
+    _item_description.description
+;              record  number of acentric reflections used for phasing for each
+               derivative, but broken into resolution shells
+;
+    _item.name                  '_phasing_MIR_der_shell.pdbx_reflns_acentric'
+    _item.category_id            phasing_MIR_der_shell
+    _item.mandatory_code          no
+    _item_type.code              int
+    _item_aliases.alias_name     '_phasing_MIR_der_shell.pdbx_reflns_acentric'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+##
+
+### category,  _pdbx_phasing_MR
+
+
+save_pdbx_phasing_MR
+    _category.description
+;              Data items in the PDBX_PHASING_MR category record details about 
+               molecular replacement. 
+;
+    _category.id                  pdbx_phasing_MR
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_phasing_MR.entry_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'phasing_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - molecular replacement example from program CNS.
+;
+;
+    _pdbx_phasing_MR.entry_id           ABC001 
+    _pdbx_phasing_MR.method_rotation   'real-space rotation search'
+    _pdbx_phasing_MR.d_res_high_rotation 3.8
+    _pdbx_phasing_MR.d_res_low_rotation  13.0 
+    _pdbx_phasing_MR.sigma_F_rotation    1.0
+    _pdbx_phasing_MR.reflns_percent_rotation 97.8
+    _pdbx_phasing_MR.method_translation  'gerneral using PC-refinement= e2e2'
+    _pdbx_phasing_MR.d_res_high_translation 4.0
+    _pdbx_phasing_MR.d_res_low_translation  15.0
+    _pdbx_phasing_MR.sigma_F_translation  0
+    _pdbx_phasing_MR.reflns_percent_translation 97.7
+    _pdbx_phasing_MR.correlation_coeff_Fo_to_Fc 0.586
+    _pdbx_phasing_MR.packing  0.3086
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    save_
+
+save__pdbx_phasing_MR.entry_id
+    _item_description.description
+;      The value of _pdbx_phasing_MR.entry_id identifies the data block.
+;
+    _item.name                 '_pdbx_phasing_MR.entry_id'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         yes
+    _item_type.code              code
+    _item_aliases.alias_name     '_pdbx_phasing_MR.entry_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.method_rotation
+    _item_description.description
+;      The value of _pdbx_phasing_MR.method_rotation identifies the method
+       used for rotation search. For example, the rotation method may be
+       realspace,  fastdirect, or direct.
+.
+;
+    _item.name                 '_pdbx_phasing_MR.method_rotation'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              line
+    _item_aliases.alias_name     '_pdbx_phasing_MR.method_rotation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.d_res_high_rotation
+    _item_description.description
+;      The value of _pdbx_phasing_MR.d_res_high_rotation identifies 
+       the highest resolution used for rotation search.
+;
+    _item.name                 '_pdbx_phasing_MR.d_res_high_rotation'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.d_res_high_rotation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.d_res_low_rotation
+    _item_description.description
+;      The value of _pdbx_phasing_MR.d_res_low_rotation identifies 
+       the lowest resolution used for rotation search.
+;
+    _item.name                 '_pdbx_phasing_MR.d_res_low_rotation'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.d_res_low_rotation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MR.sigma_F_rotation
+    _item_description.description
+;      The value of _pdbx_phasing_MR.sigma_F_rotation identifies the 
+       sigma cut off of structure factor used for rotation search. 
+;
+    _item.name                 '_pdbx_phasing_MR.sigma_F_rotation'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.sigma_F_rotation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.sigma_I_rotation
+    _item_description.description
+;      The value of _pdbx_phasing_MR.sigma_I_rotation identifies the 
+       sigma cut off of intensity used for rotation search. 
+;
+    _item.name                 '_pdbx_phasing_MR.sigma_I_rotation'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.sigma_I_rotation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.reflns_percent_rotation
+    _item_description.description
+;      The value of _pdbx_phasing_MR.reflns_percent_rotation identifies the 
+       completness of data used for rotation search.
+;
+    _item.name                 '_pdbx_phasing_MR.reflns_percent_rotation'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.reflns_percent_rotation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MR.method_translation
+    _item_description.description
+;      The value of _pdbx_phasing_MR.method_translation identifies the method
+       used for translation search. For example in CNS, the translation method
+       may be "general" or "phased" with PC refinement target using
+       "fastf2f2" "e2e2" "e1e1" "f2f2" "f1f1" "residual" "vector".
+         
+.
+;
+    _item.name                 '_pdbx_phasing_MR.method_translation'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              line
+    _item_aliases.alias_name     '_pdbx_phasing_MR.method_translation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.d_res_high_translation
+    _item_description.description
+;      The value of _pdbx_phasing_MR.d_res_high_translation identifies 
+       the highest resolution used for translation search.
+;
+    _item.name                 '_pdbx_phasing_MR.d_res_high_translation'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.d_res_high_translation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.d_res_low_translation
+    _item_description.description
+;      The value of _pdbx_phasing_MR.d_res_low_translation identifies 
+       the lowest resolution used for translation search.
+;
+    _item.name                 '_pdbx_phasing_MR.d_res_low_translation'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.d_res_low_translation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MR.sigma_F_translation
+    _item_description.description
+;      The value of _pdbx_phasing_MR.sigma_F_translation identifies the 
+       sigma cut off of structure factor used for translation search. 
+;
+    _item.name                 '_pdbx_phasing_MR.sigma_F_translation'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.sigma_F_translation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.sigma_I_translation
+    _item_description.description
+;      The value of _pdbx_phasing_MR.sigma_I_translation identifies the 
+       sigma cut off of intensity used for translation search. 
+;
+    _item.name                 '_pdbx_phasing_MR.sigma_I_translation'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.sigma_I_translation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.reflns_percent_translation
+    _item_description.description
+;      The value of _pdbx_phasing_MR.reflns_percent_translation identifies the 
+       completness of data used for translation search.
+;
+    _item.name                 '_pdbx_phasing_MR.reflns_percent_translation'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.reflns_percent_translation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.correlation_coeff_Io_to_Ic
+    _item_description.description
+;      The value of _pdbx_phasing_MR.correlation_coeff_Io_to_Ic identifies
+       the correlation between the observed and the calculated intensity
+       (~|F|^2) after rotation and translation. 
+;
+    _item.name                 '_pdbx_phasing_MR.correlation_coeff_Io_to_Ic'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.correlation_coeff_Io_to_Ic'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.correlation_coeff_Fo_to_Fc
+    _item_description.description
+;      The value of _pdbx_phasing_MR.correlation_coeff_Fo_to_Fc identifies
+       the correlation between the observed and the calculated structure
+       factor after rotation and translation. 
+;
+    _item.name                 '_pdbx_phasing_MR.correlation_coeff_Fo_to_Fc'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.correlation_coeff_Fo_to_Fc'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_phasing_MR.R_factor
+    _item_description.description
+;      The value of _pdbx_phasing_MR.R_factor identifies the R factor
+       (defined as uasual) after rotation and translation.
+
+;
+    _item.name                 '_pdbx_phasing_MR.R_factor'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.R_factor'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.R_rigid_body
+    _item_description.description
+;      The value of _pdbx_phasing_MR.R_rigid_body identifies the R factor
+       for rigid body refinement after rotation and translation.(In general,
+       rigid body refinement has to be carried out after molecular
+       replacement.
+
+;
+    _item.name                 '_pdbx_phasing_MR.R_rigid_body'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.R_rigid_body'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.packing
+    _item_description.description
+;      The value of _pdbx_phasing_MR.packing identifies the packing of
+       search model in the unit cell. Too many crystallographic contacts
+       may indicate a bad search.
+;
+    _item.name                 '_pdbx_phasing_MR.packing'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              float
+    _item_aliases.alias_name     '_pdbx_phasing_MR.packing'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.model_details
+    _item_description.description
+;      The value of _pdbx_phasing_MR.model_details records the details of
+       model used. For example, the original model can be truncated by
+       deleting side chains,  doubtful parts, using the monomer if the
+       original model was an oligomer. The search model may be one 
+       domain of a large molecule. What is the pdb IDs.
+;
+    _item.name                 '_pdbx_phasing_MR.model_details'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              text
+    _item_aliases.alias_name     '_pdbx_phasing_MR.model_details'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_phasing_MR.native_set_id
+    _item_description.description
+;              The data set that was treated as the native in this
+               experiment.
+
+               This data item is a pointer to _phasing_set.id in the
+               PHASING_SET category.
+;
+    _item.name                  '_pdbx_phasing_MR.native_set_id'
+    _item.category_id            pdbx_phasing_MR
+    _item.mandatory_code         no
+    _item_type.code              line
+    _item_linked.child_name	 '_pdbx_phasing_MR.native_set_id'
+    _item_linked.parent_name     '_phasing_set.id'
+     save_
+
+
+save__phasing_set.pdbx_temp_details
+    _item_description.description
+;      The value of _phasing_set.pdbx_temp_details describes any
+       special details about the data collection temperature  
+       for this phasing data set. 
+;
+    _item.name                 '_phasing_set.pdbx_temp_details'
+    _item.category_id            phasing_set
+    _item.mandatory_code         no
+    _item_type.code              text
+     save_
+
+
+save__phasing_set.pdbx_d_res_high
+    _item_description.description
+;              The smallest value in angstroms for the interplanar spacings
+               for the reflections in this shell. This is called the highest
+               resolution.
+;
+    _item.name                  '_phasing_set.pdbx_d_res_high'
+    _item.category_id             phasing_set
+    _item.mandatory_code          yes
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__phasing_set.pdbx_d_res_low
+    _item_description.description
+;              The highest value in angstroms for the interplanar spacings
+               for the reflections in this shell. This is called the lowest
+               resolution.
+;
+    _item.name                  '_phasing_set.pdbx_d_res_low'
+    _item.category_id             phasing_set
+    _item.mandatory_code          yes
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+
+save__refln.pdbx_anom_difference
+    _item_description.description
+;              The amplitude difference of the Friedel pair,
+               D(hkl) = F(hkl) - F(-h-k-l).
+;
+    _item.name                  '_refln.pdbx_anom_difference'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refln.pdbx_anom_difference_sigma
+    _item_description.description
+;              The the standard deviation of the amplitude difference 
+               of the Friedel pair,  D(hkl) = F(hkl) - F(-h-k-l).
+;
+    _item.name                  '_refln.pdbx_anom_difference_sigma'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refln.pdbx_I_plus
+    _item_description.description
+;              The intensity of the I(h,k,l) partner of 
+               the Friedel pair.  
+;
+    _item.name                  '_refln.pdbx_I_plus'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__refln.pdbx_I_minus
+    _item_description.description
+;              The intensity of the I(-h,-k,-l) partner 
+               of the Friedel pair.  
+;
+    _item.name                  '_refln.pdbx_I_minus'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+
+save__refln.pdbx_F_plus
+    _item_description.description
+;              The structure factor F(h,k,l) of the Friedel pair.  
+;
+    _item.name                  '_refln.pdbx_F_plus'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__refln.pdbx_F_minus
+    _item_description.description
+;              The structure factor F(-h,-k,-l) of the Friedel pair.  
+;
+    _item.name                  '_refln.pdbx_F_minus'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refln.pdbx_I_plus_sigma
+    _item_description.description
+;              The standard uncertainty (derived from measurement) of the
+               intensity I(h,k,l) partner of the Friedel pair.  
+;
+    _item.name                  '_refln.pdbx_I_plus_sigma'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refln.pdbx_I_minus_sigma
+    _item_description.description
+;              The standard uncertainty (derived from measurement) of the
+               intensity I(-h,-k,-l) partner of the Friedel pair.  
+;
+    _item.name                  '_refln.pdbx_I_minus_sigma'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__refln.pdbx_F_minus_sigma
+    _item_description.description
+;              The standard uncertainty (derived from measurement) of the
+               structure factor F(-h,-k,-l) of the Friedel pair.  
+;
+    _item.name                  '_refln.pdbx_F_minus_sigma'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__refln.pdbx_F_plus_sigma
+    _item_description.description
+;              The standard uncertainty (derived from measurement) of the
+               structure factor F(h,k,l) of the Friedel pair.  
+;
+    _item.name                  '_refln.pdbx_F_plus_sigma'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__refln.pdbx_HL_A_iso
+    _item_description.description
+;              The isomorphous Hendrickson-Lattman coefficient A~iso~ for this
+               reflection.
+
+               Ref: Hendrickson, W. A. & Lattman, E. E. (1970). Acta
+                    Cryst. B26, 136-143.
+;
+    _item.name                  '_refln.pdbx_HL_A_iso'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refln.pdbx_HL_B_iso
+    _item_description.description
+;              The isomorphous Hendrickson-Lattman coefficient B~iso~ for this
+               reflection.
+
+               Ref: Hendrickson, W. A. & Lattman, E. E. (1970). Acta
+                    Cryst. B26, 136-143.
+;
+    _item.name                  '_refln.pdbx_HL_B_iso'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refln.pdbx_HL_C_iso
+    _item_description.description
+;              The isomorphous Hendrickson-Lattman coefficient C~iso~ for this
+               reflection.
+
+               Ref: Hendrickson, W. A. & Lattman, E. E. (1970). Acta
+                    Cryst. B26, 136-143.
+;
+    _item.name                  '_refln.pdbx_HL_C_iso'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refln.pdbx_HL_D_iso
+    _item_description.description
+;              The isomorphous Hendrickson-Lattman coefficient D~iso~ for this
+               reflection.
+
+               Ref: Hendrickson, W. A. & Lattman, E. E. (1970). Acta
+                    Cryst. B26, 136-143.
+;
+    _item.name                  '_refln.pdbx_HL_D_iso'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+##
+
+# 
+save_pdbx_refine_component
+    _category.description
+;             Data items in the PDBX_REFINE_COMPONENT category record 
+              statistics of the final model relative to the density map.
+;
+    _category.id                  pdbx_refine_component
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          
+     '_pdbx_refine_component.label_alt_id'
+     '_pdbx_refine_component.label_asym_id'
+     '_pdbx_refine_component.label_comp_id'
+     '_pdbx_refine_component.label_seq_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+                                 'refine_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+#--
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    save_
+
+
+save__pdbx_refine_component.label_alt_id
+    _item_description.description
+;              A component of the identifier for the component.
+
+               This data item is a pointer to _atom_sites_alt.id in the
+               ATOM_SITES_ALT category.
+;
+    _item.name                  '_pdbx_refine_component.label_alt_id'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_refine_component.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_refine_component.label_asym_id
+    _item_description.description
+;              A component of the identifier for the component.
+
+               This data item is a pointer to _atom_site.label_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_refine_component.label_asym_id'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_refine_component.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+
+     save_
+
+save__pdbx_refine_component.label_comp_id
+    _item_description.description
+;              A component of the identifier for the component.
+
+               This data item is a pointer to _atom_site.label_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_refine_component.label_comp_id'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_refine_component.label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+
+     save_
+
+save__pdbx_refine_component.label_seq_id
+    _item_description.description
+;              A component of the identifier for the component.
+
+               This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_refine_component.label_seq_id'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_refine_component.label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+
+     save_
+
+save__pdbx_refine_component.auth_asym_id
+    _item_description.description
+;              A component of the identifier for the component.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_refine_component.auth_asym_id'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_refine_component.auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_refine_component.auth_comp_id
+    _item_description.description
+;              A component of the identifier for the component.
+
+               This data item is a pointer to _atom_site.auth_comp_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_refine_component.auth_comp_id'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_refine_component.auth_comp_id'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_refine_component.auth_seq_id
+    _item_description.description
+;              A component of the identifier for the component.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_refine_component.auth_seq_id'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_refine_component.auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+
+     save_
+
+save__pdbx_refine_component.PDB_ins_code
+    _item_description.description
+;              A component of the identifier for the component.
+
+               This data item is a pointer to _atom_site.pdbx_PDB_ins_code
+               ATOM_SITE category.
+;
+    _item.name                  '_pdbx_refine_component.PDB_ins_code'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               code
+#    _item_linked.child_name     '_pdbx_refine_component.PDB_ins_code'
+#    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+
+     save_
+
+save__pdbx_refine_component.B_iso
+    _item_description.description
+;
+      The average isotropic B factors for the group of atoms 
+      (e.g. residue or ligand, side chain, main chain). 
+      The B factors for each atom is given by _atom_site.B_iso_or_equiv
+;
+    _item.name                    '_pdbx_refine_component.B_iso'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_refine_component.B_iso_main_chain 
+    _item_description.description
+;
+      The average isotropic B factors for the group of atoms 
+      (e.g. residue or ligand, side chain, main chain). 
+      The B factors for each atom is given by _atom_site.B_iso_or_equiv
+;
+    _item.name                    '_pdbx_refine_component.B_iso_main_chain'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_refine_component.B_iso_side_chain
+    _item_description.description
+;
+      The average isotropic B factors for the group of atoms 
+      (e.g. residue or ligand, side chain, main chain). 
+      The B factors for each atom is given by _atom_site.B_iso_or_equiv
+;
+    _item.name                    '_pdbx_refine_component.B_iso_side_chain'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_refine_component.shift
+    _item_description.description
+;
+      The tendency of the group of atoms (e.g. residue
+      or ligand, side chain, main chain)  to move away from its current position.
+
+      Displacement of atoms from electron density is estimated from the
+      difference (Fobs - Fcal) map. The displacement vector is the ratio of
+      the gradient of difference density to the curvature. The amplitude of
+      the displacement vector is an indicator of the positional error.
+
+      Ref: Vaguine, A.A., Richelle, J. & Wodak, S.J. (1999). Acta Cryst. D55,199-205
+;
+    _item.name                    '_pdbx_refine_component.shift'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_refine_component.shift_side_chain
+    _item_description.description
+;
+      The tendency of the group of atoms (e.g. residue
+      or ligand, side chain, main chain)  to move away from its current position.
+
+      Displacement of atoms from electron density is estimated from the
+      difference (Fobs - Fcal) map. The displacement vector is the ratio of
+      the gradient of difference density to the curvature. The amplitude of
+      the displacement vector is an indicator of the positional error.
+
+      Ref: Vaguine, A.A., Richelle, J. & Wodak, S.J. (1999). Acta Cryst. D55,199-205
+;
+    _item.name                    '_pdbx_refine_component.shift_side_chain'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_refine_component.shift_main_chain
+    _item_description.description
+;
+      The tendency of the group of atoms (e.g. residue
+      or ligand, side chain, main chain)  to move away from its current position.
+
+      Displacement of atoms from electron density is estimated from the
+      difference (Fobs - Fcal) map. The displacement vector is the ratio of
+      the gradient of difference density to the curvature. The amplitude of
+      the displacement vector is an indicator of the positional error.
+
+      Ref: Vaguine, A.A., Richelle, J. & Wodak, S.J. (1999). Acta Cryst. D55,199-205
+;
+    _item.name                    '_pdbx_refine_component.shift_main_chain'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_refine_component.correlation
+    _item_description.description
+;
+      Correlation coefficient of electron density for each residue or ligand, 
+      side chain, main chain
+ 
+      The density correlation coefficient is calculated for each component
+      from atomic densities of (2Fobs-Fcalc) map - "Robs" and the model
+      map (Fcalc) - "Rcalc" :
+ 
+      D_corr =  <Robs><Rcalc>/sqrt(<Robs**2><Rcalc**2>)
+ 
+          where <Robs> is the mean of "observed" densities of atoms of the
+           component (backbone or side chain).
+  
+                <Rcalc> is the mean of "calculated" densities of 
+                 component atoms.
+ 
+          The value of density for some atom from map R(x) is:
+ 
+                   sum_i ( R(xi) * Ratom(xi - xa) )
+          Dens =  ---------------------------------- 
+                       sum_i ( Ratom(xi - xa) ) 
+ 
+            where  Ratom(x) is atomic electron density for the x-th grid point.
+                   xa - vector of the centre of atom.
+                   xi - vector of the i-th point of grid.
+                   Sum is taken over all grid points which have distance
+                   from the center of the atom less than the Radius_limit.
+                   For all atoms Radius_limit = 2.5 A.
+
+      Ref: Vaguine, A.A., Richelle, J. & Wodak, S.J. (1999). Acta Cryst. D55,199-205
+;
+    _item.name                    '_pdbx_refine_component.correlation'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_refine_component.correlation_side_chain
+    _item_description.description
+;
+      Correlation coefficient of electron density for each residue or ligand, 
+      side chain, main chain
+ 
+      The density correlation coefficient is calculated for each component
+      from atomic densities of (2Fobs-Fcalc) map - "Robs" and the model
+      map (Fcalc) - "Rcalc" :
+ 
+      D_corr =  <Robs><Rcalc>/sqrt(<Robs**2><Rcalc**2>)
+ 
+          where <Robs> is the mean of "observed" densities of atoms of the
+           component (backbone or side chain).
+  
+                <Rcalc> is the mean of "calculated" densities of 
+                 component atoms.
+ 
+          The value of density for some atom from map R(x) is:
+ 
+                   sum_i ( R(xi) * Ratom(xi - xa) )
+          Dens =  ---------------------------------- 
+                       sum_i ( Ratom(xi - xa) ) 
+ 
+            where  Ratom(x) is atomic electron density for the x-th grid point.
+                   xa - vector of the centre of atom.
+                   xi - vector of the i-th point of grid.
+                   Sum is taken over all grid points which have distance
+                   from the center of the atom less than the Radius_limit.
+                   For all atoms Radius_limit = 2.5 A.
+
+      Ref: Vaguine, A.A., Richelle, J. & Wodak, S.J. (1999). Acta Cryst. D55,199-205
+;
+    _item.name                    '_pdbx_refine_component.correlation_side_chain'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_refine_component.correlation_main_chain
+    _item_description.description
+;
+      Correlation coefficient of electron density for each residue or ligand, 
+      side chain, main chain
+ 
+      The density correlation coefficient is calculated for each component
+      from atomic densities of (2Fobs-Fcalc) map - "Robs" and the model
+      map (Fcalc) - "Rcalc" :
+ 
+      D_corr =  <Robs><Rcalc>/sqrt(<Robs**2><Rcalc**2>)
+ 
+          where <Robs> is the mean of "observed" densities of atoms of the
+           component (backbone or side chain).
+  
+                <Rcalc> is the mean of "calculated" densities of 
+                 component atoms.
+ 
+          The value of density for some atom from map R(x) is:
+ 
+                   sum_i ( R(xi) * Ratom(xi - xa) )
+          Dens =  ---------------------------------- 
+                       sum_i ( Ratom(xi - xa) ) 
+ 
+            where  Ratom(x) is atomic electron density for the x-th grid point.
+                   xa - vector of the centre of atom.
+                   xi - vector of the i-th point of grid.
+                   Sum is taken over all grid points which have distance
+                   from the center of the atom less than the Radius_limit.
+                   For all atoms Radius_limit = 2.5 A.
+
+      Ref: Vaguine, A.A., Richelle, J. & Wodak, S.J. (1999). Acta Cryst. D55,199-205
+;
+    _item.name                    '_pdbx_refine_component.correlation_main_chain'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_refine_component.real_space_R
+    _item_description.description
+;
+      Real space R factor of electron density for each component,
+      residue side chain, or main chain.
+
+      The real space R factor is calculated by the equation
+
+      R_real = [Sum~i (|Dobs - Dcal|)]/[Sum~i (|Dobs + Dcal|)]
+
+      Where:
+         Dobs is the observed  electron density,
+         Dcal is the calculated  electron density,
+              summation is for all the grid points
+
+      Ref: Branden, C.I. & Jones, T.A. (1990).  Nature, 343, 687-689
+;
+    _item.name                    '_pdbx_refine_component.real_space_R'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_refine_component.real_space_R_side_chain
+    _item_description.description
+;
+      Real space R factor of electron density for each component,
+      residue side chain, or main chain.
+
+      The real space R factor is calculated by the equation
+
+      R_real = [Sum~i (|Dobs - Dcal|)]/[Sum~i (|Dobs + Dcal|)]
+
+      Where:
+         Dobs is the observed  electron density,
+         Dcal is the calculated  electron density,
+              summation is for all the grid points
+
+      Ref: Branden, C.I. & Jones, T.A. (1990).  Nature, 343, 687-689
+;
+    _item.name                    '_pdbx_refine_component.real_space_R_side_chain'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_refine_component.real_space_R_main_chain
+    _item_description.description
+;
+      Real space R factor of electron density for each component,
+      residue side chain, or main chain.
+
+      The real space R factor is calculated by the equation
+
+      R_real = [Sum~i (|Dobs - Dcal|)]/[Sum~i (|Dobs + Dcal|)]
+
+      Where:
+         Dobs is the observed  electron density,
+         Dcal is the calculated  electron density,
+              summation is for all the grid points
+
+      Ref: Branden, C.I. & Jones, T.A. (1990).  Nature, 343, 687-689
+;
+    _item.name                    '_pdbx_refine_component.real_space_R_main_chain'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_refine_component.connect
+    _item_description.description
+;
+      The index of connectivity is the product of the (2Fobs-Fcal) electron 
+      density values for the backbone atoms (N, CA and C) divided by the 
+      average value for the structure. Low values (less than 1.0) of this 
+      index indicate breaks in the backbone electron density which may be 
+      due to flexibility of the chain or incorrect tracing.
+
+      connect = [(D(xi)...D(xi))^(1/N)] /<D>_all
+
+      Where:
+      D(xi) = (2*Fobs - Fcal)
+      <D>_all is the averaged value of density for the structure.
+      The product is for N atoms of group.
+
+      Ref: Vaguine, A.A., Richelle, J. & Wodak, S.J. (1999). Acta Cryst. D55,199-205
+;
+    _item.name                    '_pdbx_refine_component.connect'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+
+save__pdbx_refine_component.density_index
+    _item_description.description
+;
+      The index of density is the product of the (2Fobs-Fcal) electron 
+      density values for the group of atoms divided by the average value
+      for the structure. Low values (less than 1.0) may be problematic for 
+      model fitting.
+
+      index = [(D(xi)...D(xi))^(1/N)] /<D>_all
+
+      Where :
+      D(xi) = (2*Fobs - Fcal)
+      <D>_all is the averaged value of density for the structure.
+      The product is for N atoms of group.
+
+      Ref: Vaguine, A.A., Richelle, J. & Wodak, S.J. (1999). Acta Cryst. D55,199-205
+;
+    _item.name                    '_pdbx_refine_component.density_index'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_refine_component.density_index_main_chain
+    _item_description.description
+;
+      The index of density is the product of the (2Fobs-Fcal) electron 
+      density values for the group of atoms divided by the average value
+      for the structure. Low values (less than 1.0) may be problematic for 
+      model fitting.
+
+      index = [(D(xi)...D(xi))^(1/N)] /<D>_all
+
+      Where :
+      D(xi) = (2*Fobs - Fcal)
+      <D>_all is the averaged value of density for the structure.
+      The product is for N atoms of group.
+
+      Ref: Vaguine, A.A., Richelle, J. & Wodak, S.J. (1999). Acta Cryst. D55,199-205
+;
+    _item.name                    '_pdbx_refine_component.density_index_main_chain'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_refine_component.density_index_side_chain
+    _item_description.description
+;
+      The index of density is the product of the (2Fobs-Fcal) electron 
+      density values for the group of atoms divided by the average value
+      for the structure. Low values (less than 1.0) may be problematic for 
+      model fitting.
+
+      index = [(D(xi)...D(xi))^(1/N)] /<D>_all
+
+      Where :
+      D(xi) = (2*Fobs - Fcal)
+      <D>_all is the averaged value of density for the structure.
+      The product is for N atoms of group.
+
+      Ref: Vaguine, A.A., Richelle, J. & Wodak, S.J. (1999). Acta Cryst. D55,199-205
+;
+    _item.name                    '_pdbx_refine_component.density_index_side_chain'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+
+save__pdbx_refine_component.density_ratio
+    _item_description.description
+;
+      The density ratio is similar to the density index, but summation of the
+      density for the group is used for calculation.
+
+      The ratio of density is the summation of the (2Fobs-Fcal) electron 
+      density values for the group of atoms divided by the average value
+      for the structure. Low values (less than 0.4) of this ratio may be 
+      problematic for the group.
+
+
+      index = [Sum~i D(xi)]/<D>_all
+
+      Where:
+ 
+      D(xi) = (2*Fobs - Fcal)
+      <D>_all is the average value of density for the structure.
+             The summation is for all the atoms of group.
+;
+    _item.name                    '_pdbx_refine_component.density_ratio'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_refine_component.density_ratio_main_chain
+    _item_description.description
+;
+      The density ratio is similar to the density index, but summation of the
+      density for the group is used for calculation.
+
+      The ratio of density is the summation of the (2Fobs-Fcal) electron 
+      density values for the group of atoms divided by the average value
+      for the structure. Low values (less than 0.4) of this ratio may be 
+      problematic for the group.
+
+
+      index = [Sum~i D(xi)]/<D>_all
+
+      Where:
+ 
+      D(xi) = (2*Fobs - Fcal)
+      <D>_all is the average value of density for the structure.
+             The summation is for all the atoms of group.
+;
+    _item.name                    '_pdbx_refine_component.density_ratio_main_chain'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__pdbx_refine_component.density_ratio_side_chain
+    _item_description.description
+;
+      The density ratio is similar to the density index, but summation of the
+      density for the group is used for calculation.
+
+      The ratio of density is the summation of the (2Fobs-Fcal) electron 
+      density values for the group of atoms divided by the average value
+      for the structure. Low values (less than 0.4) of this ratio may be 
+      problematic for the group.
+
+
+      index = [Sum~i D(xi)]/<D>_all
+
+      Where:
+ 
+      D(xi) = (2*Fobs - Fcal)
+      <D>_all is the average value of density for the structure.
+             The summation is for all the atoms of group.
+;
+    _item.name                    '_pdbx_refine_component.density_ratio_side_chain'
+    _item.category_id             pdbx_refine_component
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+#
+save__refine.pdbx_real_space_R         
+    _item_description.description
+;
+      Real space R factor of electron density for all atoms.
+
+      The real space R factor is calculated by the equation
+
+      R_real = [Sum~i (|Dobs - Dcal|)]/[Sum~i (|Dobs + Dcal|)]
+
+      Where:
+         Dobs is the observed  electron density,
+         Dcal is the calculated  electron density,
+              summation is for all the grid points
+
+      Ref: Branden, C.I. & Jones, T.A. (1990).  Nature, 343, 687-689
+;
+    _item.name                    '_refine.pdbx_real_space_R'
+    _item.category_id             refine
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refine.pdbx_density_correlation          
+    _item_description.description
+;
+      The density correlation coefficient is calculated from atomic 
+      densities of (2Fobs-Fcalc) map - "Robs" and the model
+      map (Fcalc) - "Rcalc" :
+ 
+      D_corr =  <Robs><Rcalc>/sqrt(<Robs**2><Rcalc**2>)
+ 
+          where <Robs> is the mean of "observed" densities of all atoms 
+  
+                <Rcalc> is the mean of "calculated" densities of 
+                 all atoms.
+ 
+          The value of density for some atom from map R(x) is:
+ 
+                   sum_i ( R(xi) * Ratom(xi - xa) )
+          Dens =  ---------------------------------- 
+                       sum_i ( Ratom(xi - xa) ) 
+ 
+            where  Ratom(x) is atomic electron density for the x-th grid point.
+                   xa - vector of the centre of atom.
+                   xi - vector of the i-th point of grid.
+                   Sum is taken over all grid points which have distance
+                   from the center of the atom less than the Radius_limit.
+                   For all atoms Radius_limit = 2.5 A.
+
+      Ref: Vaguine, A.A., Richelle, J. & Wodak, S.J. (1999). Acta Cryst. D55,199-205
+;
+    _item.name                    '_refine.pdbx_density_correlation'
+    _item.category_id             refine
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+#
+save__refln.pdbx_fiber_layer
+    _item_description.description
+;  The fiber layer line for this reflection.
+;
+    _item.name                   '_refln.pdbx_fiber_layer'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+save__refln.pdbx_fiber_coordinate
+    _item_description.description
+;  The coordinate position in reciprocal space along the fiber layer line
+   for this reflection.
+;
+    _item.name                   '_refln.pdbx_fiber_coordinate'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__refln.pdbx_fiber_F_meas_au
+    _item_description.description
+;  The measured diffraction amplitude for this fiber reflection in arbitrary units.
+;
+    _item.name                   '_refln.pdbx_fiber_F_meas_au'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__reflns.phase_calculation_details
+    _item_description.description
+;      The value of _reflns.phase_calculation_details describes a
+       special details about calculation of phases in _refln.phase_calc.
+;
+    _item.name                 '_reflns.phase_calculation_details'
+    _item.category_id            reflns
+    _item.mandatory_code         no
+    _item_type.code              text
+     loop_
+    _item_examples.case          
+     'From model'
+     'NCS averaging'
+     'Solvent flipping'
+     'Solvent flattening' 
+     'Multiple crystal averaging'
+     'Multiple phase modification' 
+     'Other phase modification'
+     save_
+
+##  REFMAC 5.x 
+##
+save__refln.pdbx_FWT
+    _item_description.description
+;  The weighted structure factor amplitude for the 2mFo-DFc map.
+;
+    _item.name                   '_refln.pdbx_FWT'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refln.pdbx_PHWT
+    _item_description.description
+;  The weighted phase for the 2mFo-DFc map.
+;
+    _item.name                   '_refln.pdbx_PHWT'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refln.pdbx_DELFWT
+    _item_description.description
+;  The weighted structure factor amplitude for the mFo-DFc map.
+;
+    _item.name                   '_refln.pdbx_DELFWT'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__refln.pdbx_DELPHWT
+    _item_description.description
+;  The weighted phase for the mFo-DFc map.
+;
+    _item.name                   '_refln.pdbx_DELPHWT'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+##
+##
+
+### EOF mmcif_pdbx-def-5.dic
+

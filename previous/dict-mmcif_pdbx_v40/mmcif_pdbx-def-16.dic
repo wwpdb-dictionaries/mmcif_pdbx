@@ -1,0 +1,1214 @@
+###########################
+## PDBX_HELICAL_SYMMETRY ##
+###########################
+save_pdbx_helical_symmetry
+    _category.description
+;              Data items in the PDBX_HELICAL_SYMMETRY category record details about the
+               helical symmetry group associated with this entry.
+;
+    _category.id                  pdbx_helical_symmetry
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_helical_symmetry.entry_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'symmetry_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_helical_symmetry.entry_id                    '1ABC'
+    _pdbx_helical_symmetry.number_of_operations        35
+    _pdbx_helical_symmetry.rotation_per_n_subunits     131.84
+    _pdbx_helical_symmetry.rise_per_n_subunits         6.10
+    _pdbx_helical_symmetry.n_subunits_divisor          1
+    _pdbx_helical_symmetry.dyad_axis                   no             
+    _pdbx_helical_symmetry.circular_symmetry           1
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    save_
+
+save__pdbx_helical_symmetry.entry_id
+    _item_description.description
+;              This data item is a pointer to _entry.id in the ENTRY category.
+;
+    _item.name                  '_pdbx_helical_symmetry.entry_id'
+    _item.mandatory_code          yes
+    _item_type.code             code
+    _item_linked.child_name     '_pdbx_helical_symmetry.entry_id'
+    _item_linked.parent_name    '_entry.id'
+     save_
+
+save__pdbx_helical_symmetry.number_of_operations
+    _item_description.description
+;              Number of operations.
+;
+    _item.name                  '_pdbx_helical_symmetry.number_of_operations'
+    _item.category_id             pdbx_helical_symmetry
+    _item.mandatory_code          yes
+    _item_type.code               int
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+
+    save_
+
+save__pdbx_helical_symmetry.rotation_per_n_subunits
+    _item_description.description
+;              Angular rotation (degrees) in N subunits 
+;
+    _item.name                  '_pdbx_helical_symmetry.rotation_per_n_subunits'
+    _item.category_id             pdbx_helical_symmetry
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_units.code              degrees
+    save_
+
+save__pdbx_helical_symmetry.rise_per_n_subunits
+    _item_description.description
+;              Angular rotation (degrees) in N subunits 
+;
+    _item.name                  '_pdbx_helical_symmetry.rise_per_n_subunits'
+    _item.category_id             pdbx_helical_symmetry
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_units.code              angstroms
+    save_
+
+save__pdbx_helical_symmetry.n_subunits_divisor
+    _item_description.description
+;              Number of subunits used in the calculation of rise and 
+               rotation.
+;
+    _item.name                  '_pdbx_helical_symmetry.n_subunits_divisor'
+    _item.category_id             pdbx_helical_symmetry
+    _item.mandatory_code          yes
+    _item_type.code               int
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+    save_
+
+save__pdbx_helical_symmetry.dyad_axis
+    _item_description.description
+;              Two-fold symmetry perpendicular to the helical axis.
+;
+    _item.name                  '_pdbx_helical_symmetry.dyad_axis'
+    _item.category_id             pdbx_helical_symmetry
+    _item.mandatory_code          yes
+    _item_type.code               code
+     loop_
+    _item_enumeration.value       
+      'no'
+      'yes'
+    save_
+
+save__pdbx_helical_symmetry.circular_symmetry
+    _item_description.description
+;              Rotational n-fold symmetry about the helical axis. 
+;
+    _item.name                  '_pdbx_helical_symmetry.circular_symmetry'
+    _item.category_id             pdbx_helical_symmetry
+    _item.mandatory_code          yes
+    _item_type.code               int
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+    save_
+
+
+
+#########################
+## PDBX_POINT_SYMMETRY ##
+#########################
+save_pdbx_point_symmetry
+    _category.description
+;              Data items in the PDBX_POINT_SYMMETRY category record details about the
+               point symmetry group associated with this entry.
+;
+    _category.id                  pdbx_point_symmetry
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_point_symmetry.entry_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'symmetry_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_point_symmetry.entry_id              1ABC
+    _pdbx_point_symmetry.Schoenflies_symbol    I
+    _pdbx_point_symmetry.H-M_notation          532
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_point_symmetry.entry_id
+    _item_description.description
+;              This data item is a pointer to _entry.id in the ENTRY category.
+;
+    _item.name                  '_pdbx_point_symmetry.entry_id'
+    _item.mandatory_code          yes
+    _item_type.code             code
+    _item_linked.child_name     '_pdbx_point_symmetry.entry_id'
+    _item_linked.parent_name    '_entry.id'
+     save_
+
+save__pdbx_point_symmetry.Schoenflies_symbol
+    _item_description.description
+;              The Schoenflies point symmetry symbol.
+;
+    _item.name                  '_pdbx_point_symmetry.Schoenflies_symbol'
+    _item.category_id             pdbx_point_symmetry
+    _item.mandatory_code          yes
+    _item_type.code               code
+    loop_
+    _item_enumeration.value 
+     'I'
+     'O'
+     'T'
+     'C'
+     'D'
+    save_
+
+save__pdbx_point_symmetry.circular_symmetry
+    _item_description.description
+;              Rotational n-fold C and D point symmetry.
+;
+    _item.name                  '_pdbx_point_symmetry.circular_symmetry'
+    _item.category_id             pdbx_point_symmetry
+    _item.mandatory_code          no
+    _item_type.code               int
+    loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+     save_
+
+save__pdbx_point_symmetry.H-M_notation
+    _item_description.description
+;              The Hermann-Mauguin notation for this point symmetry group.
+;
+    _item.name                  '_pdbx_point_symmetry.H-M_notation'
+    _item.category_id             pdbx_point_symmetry
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_examples.case
+    'I -> 532'
+    'O -> 432'
+    'T -> 23'
+    'Cn -> n (e.g. C5 -> 5)'
+    'Dn -> n22 (n even)'
+    'Dn -> n2  (n odd)'
+    save_
+
+
+
+#############################
+## PDBX_STRUCT_ENTITY_INST ##
+#############################
+
+save_pdbx_struct_entity_inst
+    _category.description
+;              Data items in the PDBX_STRUCT_ENTITY_INST category record details about the
+               structural elements in the deposited entry.  The entity instance is a method
+               neutral identifier for the observed molecular entities in the deposited coordinate
+               set.  
+;
+    _category.id                  pdbx_struct_entity_inst
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_struct_entity_inst.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_struct_entity_inst.id
+    _pdbx_struct_entity_inst.entity_id
+    _pdbx_struct_entity_inst.details
+      A  1  'one monomer of the dimeric enzyme'
+      B  1  'one monomer of the dimeric enzyme'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_entity_inst.details
+    _item_description.description
+;              A description of special aspects of this portion of the contents
+               of the deposited unit.
+;
+    _item.name                  '_pdbx_struct_entity_inst.details'
+    _item.category_id             pdbx_struct_entity_inst
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_examples.case
+;                                 The drug binds to this enzyme in two roughly
+                                  twofold symmetric modes. Hence this
+                                  biological unit (3) is roughly twofold
+                                  symmetric to biological unit (2). Disorder in
+                                  the protein chain indicated with alternative
+                                  ID 2 should be used with this biological unit.
+;
+     save_
+
+save__pdbx_struct_entity_inst.entity_id
+    _item_description.description
+;              This data item is a pointer to _entity.id in the ENTITY category.
+;
+    _item.name                  '_pdbx_struct_entity_inst.entity_id'
+    _item.mandatory_code          no
+    _item_linked.child_name     '_pdbx_struct_entity_inst.entity_id'
+    _item_linked.parent_name    '_entity.id'
+     save_
+
+save__pdbx_struct_entity_inst.id
+    _item_description.description
+;              The value of _pdbx_struct_entity_inst.id must uniquely identify a record in
+               the PDBX_STRUCT_ENTITY_INST list.
+
+               The entity instance is a method neutral identifier for the observed 
+               molecular entities in the deposited coordinate set.  
+;
+    loop_
+    _item.name
+    _item.category_id
+    _item.mandatory_code
+               '_pdbx_struct_entity_inst.id'                    pdbx_struct_entity_inst     yes
+#
+#               '_atom_site.pdbx_entity_inst_id'                 atom_site           no
+#               '_geom_angle.pdbx_entity_inst_id_1'              geom_angle          no
+#               '_geom_angle.pdbx_entity_inst_id_2'              geom_angle          no
+#               '_geom_angle.pdbx_entity_inst_id_3'              geom_angle          no
+#               '_geom_bond.pdbx_entity_inst_id_1'               geom_bond           no
+#               '_geom_bond.pdbx_entity_inst_id_2'               geom_bond           no
+#               '_geom_contact.pdbx_entity_inst_id_1'            geom_contact        no
+#               '_geom_contact.pdbx_entity_inst_id_2'            geom_contact        no
+#               '_geom_hbond.pdbx_entity_inst_id_A'              geom_hbond          no
+#               '_geom_hbond.pdbx_entity_inst_id_D'              geom_hbond          no
+#               '_geom_hbond.pdbx_entity_inst_id_H'              geom_hbond          no
+#               '_geom_torsion.pdbx_entity_inst_id_1'            geom_torsion        no
+#               '_geom_torsion.pdbx_entity_inst_id_2'            geom_torsion        no
+#               '_geom_torsion.pdbx_entity_inst_id_3'            geom_torsion        no
+#               '_geom_torsion.pdbx_entity_inst_id_4'            geom_torsion        no
+#               '_struct_biol_gen.pdbx_entity_inst_id'           struct_biol_gen     no
+#               '_struct_conf.beg_pdbx_entity_inst_id'           struct_conf         no
+#               '_struct_conf.end_pdbx_entity_inst_id'           struct_conf         no
+#               '_struct_conn.ptnr1_pdbx_entity_inst_id'         struct_conn         no
+#               '_struct_conn.ptnr2_pdbx_entity_inst_id'         struct_conn         no
+#               '_struct_mon_nucl.pdbx_entity_inst_id'           struct_mon_nucl     no
+#               '_struct_mon_prot.pdbx_entity_inst_id'           struct_mon_prot     no
+#               '_struct_mon_prot_cis.pdbx_entity_inst_id'       struct_mon_prot_cis no
+#               '_struct_ncs_dom_lim.beg_pdbx_entity_inst_id'    struct_ncs_dom_lim  no
+#               '_struct_ncs_dom_lim.end_pdbx_entity_inst_id'    struct_ncs_dom_lim  no
+#               '_struct_sheet_range.beg_pdbx_entity_inst_id'    struct_sheet_range  no
+#               '_struct_sheet_range.end_pdbx_entity_inst_id'    struct_sheet_range  no
+#               '_struct_site_gen.pdbx_entity_inst_id'           struct_site_gen     no
+#    loop_
+#    _item_linked.child_name
+#    _item_linked.parent_name
+#            '_atom_site.pdbx_entity_inst_id'                '_pdbx_struct_entity_inst.id'
+#            '_struct_biol_gen.pdbx_entity_inst_id'          '_pdbx_struct_entity_inst.id'
+#            '_geom_angle.pdbx_entity_inst_id_1'             '_atom_site.pdbx_entity_inst_id'
+#            '_geom_angle.pdbx_entity_inst_id_2'             '_atom_site.pdbx_entity_inst_id'
+#            '_geom_angle.pdbx_entity_inst_id_3'             '_atom_site.pdbx_entity_inst_id'
+#            '_geom_bond.pdbx_entity_inst_id_1'              '_atom_site.pdbx_entity_inst_id'
+#            '_geom_bond.pdbx_entity_inst_id_2'              '_atom_site.pdbx_entity_inst_id'
+#            '_geom_contact.pdbx_entity_inst_id_1'           '_atom_site.pdbx_entity_inst_id'
+#            '_geom_contact.pdbx_entity_inst_id_2'           '_atom_site.pdbx_entity_inst_id'
+#            '_geom_hbond.pdbx_entity_inst_id_A'             '_atom_site.pdbx_entity_inst_id'
+#            '_geom_hbond.pdbx_entity_inst_id_D'             '_atom_site.pdbx_entity_inst_id'
+#            '_geom_hbond.pdbx_entity_inst_id_H'             '_atom_site.pdbx_entity_inst_id'
+#            '_geom_torsion.pdbx_entity_inst_id_1'           '_atom_site.pdbx_entity_inst_id'
+#            '_geom_torsion.pdbx_entity_inst_id_2'           '_atom_site.pdbx_entity_inst_id'
+#            '_geom_torsion.pdbx_entity_inst_id_3'           '_atom_site.pdbx_entity_inst_id'
+#            '_geom_torsion.pdbx_entity_inst_id_4'           '_atom_site.pdbx_entity_inst_id'
+#            '_struct_conf.beg_pdbx_entity_inst_id'          '_atom_site.pdbx_entity_inst_id'
+#            '_struct_conf.end_pdbx_entity_inst_id'          '_atom_site.pdbx_entity_inst_id'
+#            '_struct_conn.ptnr1_pdbx_entity_inst_id'        '_atom_site.pdbx_entity_inst_id'
+#            '_struct_conn.ptnr2_pdbx_entity_inst_id'        '_atom_site.pdbx_entity_inst_id'
+#            '_struct_mon_nucl.pdbx_entity_inst_id'          '_atom_site.pdbx_entity_inst_id'
+#            '_struct_mon_prot.pdbx_entity_inst_id'          '_atom_site.pdbx_entity_inst_id'
+#            '_struct_mon_prot_cis.pdbx_entity_inst_id'      '_atom_site.pdbx_entity_inst_id'
+#            '_struct_ncs_dom_lim.beg_pdbx_entity_inst_id'   '_atom_site.pdbx_entity_inst_id'
+#            '_struct_ncs_dom_lim.end_pdbx_entity_inst_id'   '_atom_site.pdbx_entity_inst_id'
+#            '_struct_sheet_range.beg_pdbx_entity_inst_id'   '_atom_site.pdbx_entity_inst_id'
+#            '_struct_sheet_range.end_pdbx_entity_inst_id'   '_atom_site.pdbx_entity_inst_id'
+#            '_struct_site_gen.pdbx_entity_inst_id'          '_atom_site.pdbx_entity_inst_id'
+    _item_type.code               code
+    loop_
+    _item_examples.case          '1'
+                                 'A'
+                                 '2B3'
+     save_
+
+
+##
+
+###########################
+## PDBX_STRUCT_OPER_LIST ##
+###########################
+
+save_pdbx_struct_oper_list
+    _category.description
+;              Data items in the PDBX_STRUCT_OPER_LIST category describe 
+               Cartesian rotation and translation operations required to 
+               generate or transform the coordinates deposited with this entry.
+;
+    _category.id                  pdbx_struct_oper_list
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_struct_oper_list.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_struct_oper_list.id              2
+    _pdbx_struct_oper_list.matrix[1][1]    0.247
+    _pdbx_struct_oper_list.matrix[1][2]    0.935
+    _pdbx_struct_oper_list.matrix[1][3]    0.256
+    _pdbx_struct_oper_list.matrix[2][1]    0.929
+    _pdbx_struct_oper_list.matrix[2][2]    0.153
+    _pdbx_struct_oper_list.matrix[2][3]    0.337
+    _pdbx_struct_oper_list.matrix[3][1]    0.276
+    _pdbx_struct_oper_list.matrix[3][2]    0.321
+    _pdbx_struct_oper_list.matrix[3][3]   -0.906
+    _pdbx_struct_oper_list.vector[1]      -8.253
+    _pdbx_struct_oper_list.vector[2]     -11.743
+    _pdbx_struct_oper_list.vector[3]      -1.782
+    _pdbx_struct_oper_list.type    'point symmetry operation'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_oper_list.id
+    _item_description.description
+;              This identifier code must uniquely identify a
+               record in the PDBX_STRUCT_OPER_LIST list.
+;
+    _item.name                    '_pdbx_struct_oper_list.id'
+    _item.category_id             pdbx_struct_oper_list      
+    _item.mandatory_code          yes
+#    loop_
+#    _item_linked.child_name
+#    _item_linked.parent_name
+#               '_pdbx_struct_asym_gen.oper_expression'            '_pdbx_struct_oper_list.id'
+#               '_pdbx_struct_assembly_gen.oper_expression'        '_pdbx_struct_oper_list.id'
+#               '_pdbx_struct_msym_gen.oper_expression'            '_pdbx_struct_oper_list.id'
+#               '_pdbx_struct_xstal_orient_gen.oper_expression'    '_pdbx_struct_oper_list.id'
+#               '_pdbx_struct_point_orient_gen.oper_expression'    '_pdbx_struct_oper_list.id'
+    _item_type.code               code
+     save_
+
+save__pdbx_struct_oper_list.type
+    _item_description.description
+;              A code to indicate the type of operator.
+;
+    _item.name                  '_pdbx_struct_oper_list.type'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+        'identity operation'
+        'point symmetry operation'
+	'helical symmetry operation'
+        'crystal symmetry operation'
+        '3D crystal symmetry operation'
+        '2D crystal symmetry operation'
+        'transform to point frame'
+        'transform to helical frame'
+        'transform to crystal frame'
+        'transform to 2D crystal frame'
+        'transform to 3D crystal frame'
+        'build point asymmetric unit'
+        'build helical asymmetric unit'
+        'build 2D crystal asymmetric unit'
+        'build 3D crystal asymmetric unit'
+     save_
+
+save__pdbx_struct_oper_list.name
+    _item_description.description
+;              A descriptive name for the transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.name'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_examples.case          '1_555'
+                                 'two-fold rotation'
+     save_
+
+save__pdbx_struct_oper_list.symmetry_operation
+    _item_description.description
+;              The symmetry operation corresponding to the transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.symmetry_operation'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_examples.case          'x,y,z'
+                                 'x+1/2,y,-z'
+     save_
+
+
+
+save__pdbx_struct_oper_list.matrix[1][1]
+    _item_description.description
+;              The [1][1] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.matrix[1][1]'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list.matrix[1][2]
+    _item_description.description
+;              The [1][2] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.matrix[1][2]'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list.matrix[1][3]
+    _item_description.description
+;              The [1][3] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.matrix[1][3]'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list.matrix[2][1]
+    _item_description.description
+;              The [2][1] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.matrix[2][1]'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list.matrix[2][2]
+    _item_description.description
+;              The [2][2] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.matrix[2][2]'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list.matrix[2][3]
+    _item_description.description
+;              The [2][3] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.matrix[2][3]'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list.matrix[3][1]
+    _item_description.description
+;              The [3][1] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.matrix[3][1]'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list.matrix[3][2]
+    _item_description.description
+;              The [3][2] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.matrix[3][2]'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list.matrix[3][3]
+    _item_description.description
+;              The [3][3] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.matrix[3][3]'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list.vector[1]
+    _item_description.description
+;              The [1] element of the three-element vector component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.vector[1]'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         vector
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list.vector[2]
+    _item_description.description
+;              The [2] element of the three-element vector component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.vector[2]'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         vector
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_oper_list.vector[3]
+    _item_description.description
+;              The [3] element of the three-element vector component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_oper_list.vector[3]'
+    _item.category_id             pdbx_struct_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         vector
+    _item_type.code               float
+     save_
+
+##
+##
+##########################
+## PDBX_STRUCT_ASSEMBLY ##
+##########################
+
+save_pdbx_struct_assembly
+    _category.description
+;              Data items in the PDBX_STRUCT_ASSEMBLY category record details about
+               the structural elements that form macromolecular assemblies.
+;
+    _category.id                  pdbx_struct_assembly
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_struct_assembly.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_struct_assembly.id
+    _pdbx_struct_assembly.details
+      1
+    ; The icosahedral virus particle.
+    ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_assembly.details
+    _item_description.description
+;              A description of special aspects of the macromolecular assembly.
+;
+    _item.name                  '_pdbx_struct_assembly.details'
+    _item.category_id             pdbx_struct_assembly
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_examples.case
+;                                The icosahedral virus particle.
+;
+     save_
+
+save__pdbx_struct_assembly.id
+    _item_description.description
+;              The value of _pdbx_struct_assembly.id must uniquely identify a record in
+               the PDBX_STRUCT_ASSEMBLY list.
+;
+    loop_
+    _item.name
+    _item.category_id
+    _item.mandatory_code
+               '_pdbx_struct_assembly.id'                pdbx_struct_assembly           yes
+               '_pdbx_struct_assembly_gen.assembly_id'   pdbx_struct_assembly_gen       yes
+
+    loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+               '_pdbx_struct_assembly_gen.assembly_id'       '_pdbx_struct_assembly.id'
+    _item_type.code               line
+     save_
+
+##
+##############################
+## PDBX_STRUCT_ASSEMBLY_GEN ##
+##############################
+
+save_pdbx_struct_assembly_gen
+    _category.description
+;              Data items in the PDBX_STRUCT_ASSEMBLY_GEN category record details about
+               the generation of each macromolecular assemblies. The PDBX_STRUCT_ASSEMBLY_GEN
+               data items provide the specifications of the components that
+               constitute that assembly in terms of cartesian transformations.
+;
+    _category.id                  pdbx_struct_assembly_gen
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_struct_assembly_gen.assembly_id'
+                                '_pdbx_struct_assembly_gen.asym_id_list'
+                                '_pdbx_struct_assembly_gen.oper_expression'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_struct_assembly_gen.assembly_id
+    _pdbx_struct_assembly_gen.asym_id_list
+    _pdbx_struct_assembly_gen.oper_expression
+      1  A  1
+      1  B  1
+      2  A  2
+      2  B  2
+      2  C  2
+      3  A  3
+      3  B  3
+      3  D  3 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 2 - 
+;
+;
+    loop_
+    _pdbx_struct_assembly_gen.assembly_id
+    _pdbx_struct_assembly_gen.asym_id_list
+    _pdbx_struct_assembly_gen.oper_expression
+      1  'A,B'    1
+      2  'A,B,C'  2
+      3  'A,B,D'  3
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_assembly_gen.entity_inst_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_struct_entity_inst.id in 
+               the PDBX_STRUCT_ENTITY_INST category.
+
+               This item may be expressed as a comma separated list of instance identifiers.
+;
+    _item.name                  '_pdbx_struct_assembly_gen.entity_inst_id'
+    _item.category_id             pdbx_struct_assembly_gen
+    _item.mandatory_code          no
+    _item_type.code               code
+#    _item_linked.child_name     '_pdbx_struct_assembly_gen.entity_inst_id'
+#    _item_linked.parent_name    '_pdbx_struct_entity_inst.id'
+     save_
+
+save__pdbx_struct_assembly_gen.asym_id_list
+    _item_description.description
+;              This data item is a pointer to _struct_asym.id in 
+               the STRUCT_ASYM category.
+
+               This item may be expressed as a comma separated list of identifiers.
+;
+    _item.name                  '_pdbx_struct_assembly_gen.asym_id_list'
+    _item.category_id             pdbx_struct_assembly_gen
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+save__pdbx_struct_assembly_gen.auth_asym_id_list
+    _item_description.description
+;              This data item is a pointer to _atom_site.auth_asym_id in 
+               the ATOM_SITE category.
+
+               This item may be expressed as a comma separated list of identifiers.
+;
+    _item.name                  '_pdbx_struct_assembly_gen.auth_asym_id_list'
+    _item.category_id             pdbx_struct_assembly_gen
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+save__pdbx_struct_assembly_gen.assembly_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_struct_assembly.id in the 
+               PDBX_STRUCT_ASSEMBLY category.
+;
+    _item.name                  '_pdbx_struct_assembly_gen.assembly_id'
+    _item.category_id             pdbx_struct_assembly_gen
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+save__pdbx_struct_assembly_gen.oper_expression
+    _item_description.description
+;              Identifies the operation of collection of operations 
+               from category PDBX_STRUCT_OPER_LIST.  
+
+               Operation expressions may have the forms:
+
+                (1)        the single operation 1
+                (1,2,5)    the operations 1, 2, 5
+                (1-4)      the operations 1,2,3 and 4
+                (1,2)(3,4) the combinations of operations
+                           3 and 4 followed by 1 and 2 (i.e.
+                           the cartesian product of parenthetical
+                           groups applied from right to left)
+               
+;
+    _item.name                  '_pdbx_struct_assembly_gen.oper_expression'
+    _item.category_id             pdbx_struct_assembly_gen
+    _item.mandatory_code          yes
+    _item_type.code               operation_expression
+     loop_
+    _item_examples.case          '(1)'
+                                 '(1,2,5)'
+                                 '(1-60)'
+                                 '(1-60)(61)'
+
+     save_
+
+
+##########################
+## PDBX_STRUCT_ASYM_GEN ##
+##########################
+
+save_pdbx_struct_asym_gen
+    _category.description
+;              Data items in the PDBX_STRUCT_ASYM_GEN category record details about
+               the generation of the crystallographic asymmetric unit. The 
+               PDBX_STRUCT_ASYM_GEN data items provide the specifications of the 
+               components that constitute the asymmetric unit in terms of cartesian 
+               transformations of deposited coordinates.
+;
+    _category.id                  pdbx_struct_asym_gen
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_struct_asym_gen.entity_inst_id'
+                                '_pdbx_struct_asym_gen.oper_expression'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_struct_asym_gen.asym_id
+    _pdbx_struct_asym_gen.entity_inst_id
+    _pdbx_struct_asym_gen.oper_expression
+      A  A  1
+      B  B  1
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_asym_gen.entity_inst_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_struct_entity_inst.id in 
+               the PDBX_STRUCT_ENTITY_INST category.
+;
+    _item.name                  '_pdbx_struct_asym_gen.entity_inst_id'
+    _item.category_id             pdbx_struct_asym_gen
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_asym_gen.entity_inst_id'
+    _item_linked.parent_name    '_pdbx_struct_entity_inst.id'
+     save_
+
+save__pdbx_struct_asym_gen.asym_id
+    _item_description.description
+;              This data item is a pointer to _struct_asym.id in the 
+               STRUCT_ASYM category.
+;
+    _item.name                  '_pdbx_struct_asym_gen.asym_id'
+    _item.category_id             pdbx_struct_asym_gen
+    _item.mandatory_code          no
+    _item_linked.child_name     '_pdbx_struct_asym_gen.asym_id'
+    _item_linked.parent_name    '_struct_asym.id'
+     save_
+
+save__pdbx_struct_asym_gen.oper_expression
+    _item_description.description
+;              Identifies the operation from category PDBX_STRUCT_OPER_LIST.  
+
+;
+    _item.name                  '_pdbx_struct_asym_gen.oper_expression'
+    _item.category_id             pdbx_struct_asym_gen
+    _item.mandatory_code          yes
+    _item_type.code               operation_expression
+     loop_
+    _item_examples.case          '(1)'
+                                 '(1-2)'
+
+     save_
+
+##
+##########################
+## PDBX_STRUCT_MSYM_GEN ##
+##########################
+
+save_pdbx_struct_msym_gen
+    _category.description
+;              Data items in the PDBX_STRUCT_MSYM_GEN category record details about
+               the generation of the minimal asymmetric unit. For instance, this 
+               category can be used to provide this information for helical and point
+               symmetry systems.   The PDBX_STRUCT_MSYM_GEN data items provide the 
+               specifications of the components that constitute the asymmetric unit 
+               in terms of cartesian transformations of deposited coordinates.
+;
+    _category.id                  pdbx_struct_msym_gen
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_struct_msym_gen.msym_id'
+                                '_pdbx_struct_msym_gen.entity_inst_id'
+                                '_pdbx_struct_msym_gen.oper_expression'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_struct_msym_gen.msym_id
+    _pdbx_struct_msym_gen.entity_inst_id
+    _pdbx_struct_msym_gen.oper_expression
+      A  A   3
+      B  B   4
+      C  B   5
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_msym_gen.entity_inst_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_struct_entity_inst.id in 
+               the PDBX_STRUCT_ENTITY_INST category.
+;
+    _item.name                  '_pdbx_struct_msym_gen.entity_inst_id'
+    _item.category_id             pdbx_struct_msym_gen
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_msym_gen.entity_inst_id'
+    _item_linked.parent_name    '_pdbx_struct_entity_inst.id'
+     save_
+
+save__pdbx_struct_msym_gen.msym_id
+    _item_description.description
+;              Uniquely identifies the this structure instance in 
+               point symmetry unit.
+               
+;
+    _item.name                  '_pdbx_struct_msym_gen.msym_id'
+    _item.category_id             pdbx_struct_msym_gen
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_struct_msym_gen.oper_expression
+    _item_description.description
+;              Identifies the operation from category PDBX_STRUCT_OPER_LIST.  
+
+;
+    _item.name                  '_pdbx_struct_msym_gen.oper_expression'
+    _item.category_id             pdbx_struct_msym_gen
+    _item.mandatory_code          yes
+    _item_type.code               operation_expression
+     loop_
+    _item_examples.case          '(1)'
+                                 '(1-3)'
+     save_
+##
+##
+
+##################################
+## PDBX_STRUCT_LEGACY_OPER_LIST ##
+##################################
+
+save_pdbx_struct_legacy_oper_list
+    _category.description
+;              Data items in the PDBX_STRUCT_LEGACY_OPER_LIST category describe 
+               Cartesian rotation and translation operations required to 
+               generate or transform the coordinates deposited with this entry.
+
+               This category provides a container for matrices used to construct
+               icosahedral assemblies in legacy entries.  
+;
+    _category.id                  pdbx_struct_legacy_oper_list
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_struct_legacy_oper_list.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    _pdbx_struct_legacy_oper_list.id              2
+    _pdbx_struct_legacy_oper_list.matrix[1][1]    0.247
+    _pdbx_struct_legacy_oper_list.matrix[1][2]    0.935
+    _pdbx_struct_legacy_oper_list.matrix[1][3]    0.256
+    _pdbx_struct_legacy_oper_list.matrix[2][1]    0.929
+    _pdbx_struct_legacy_oper_list.matrix[2][2]    0.153
+    _pdbx_struct_legacy_oper_list.matrix[2][3]    0.337
+    _pdbx_struct_legacy_oper_list.matrix[3][1]    0.276
+    _pdbx_struct_legacy_oper_list.matrix[3][2]    0.321
+    _pdbx_struct_legacy_oper_list.matrix[3][3]   -0.906
+    _pdbx_struct_legacy_oper_list.vector[1]      -8.253
+    _pdbx_struct_legacy_oper_list.vector[2]     -11.743
+    _pdbx_struct_legacy_oper_list.vector[3]      -1.782
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_legacy_oper_list.id
+    _item_description.description
+;              This integer value must uniquely identify a
+               record in the PDBX_STRUCT_LEGACY_OPER_LIST list.
+;
+    _item.name                    '_pdbx_struct_legacy_oper_list.id'
+    _item.category_id             pdbx_struct_legacy_oper_list      
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+
+save__pdbx_struct_legacy_oper_list.name
+    _item_description.description
+;              A descriptive name for the transformation operation.
+;
+    _item.name                  '_pdbx_struct_legacy_oper_list.name'
+    _item.category_id             pdbx_struct_legacy_oper_list
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_examples.case          'identity matrix'
+                                 'two-fold rotation'
+     save_
+
+
+save__pdbx_struct_legacy_oper_list.matrix[1][1]
+    _item_description.description
+;              The [1][1] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_legacy_oper_list.matrix[1][1]'
+    _item.category_id             pdbx_struct_legacy_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_legacy_oper_list.matrix[1][2]
+    _item_description.description
+;              The [1][2] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_legacy_oper_list.matrix[1][2]'
+    _item.category_id             pdbx_struct_legacy_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_legacy_oper_list.matrix[1][3]
+    _item_description.description
+;              The [1][3] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_legacy_oper_list.matrix[1][3]'
+    _item.category_id             pdbx_struct_legacy_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_legacy_oper_list.matrix[2][1]
+    _item_description.description
+;              The [2][1] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_legacy_oper_list.matrix[2][1]'
+    _item.category_id             pdbx_struct_legacy_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_legacy_oper_list.matrix[2][2]
+    _item_description.description
+;              The [2][2] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_legacy_oper_list.matrix[2][2]'
+    _item.category_id             pdbx_struct_legacy_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_legacy_oper_list.matrix[2][3]
+    _item_description.description
+;              The [2][3] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_legacy_oper_list.matrix[2][3]'
+    _item.category_id             pdbx_struct_legacy_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_legacy_oper_list.matrix[3][1]
+    _item_description.description
+;              The [3][1] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_legacy_oper_list.matrix[3][1]'
+    _item.category_id             pdbx_struct_legacy_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_legacy_oper_list.matrix[3][2]
+    _item_description.description
+;              The [3][2] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_legacy_oper_list.matrix[3][2]'
+    _item.category_id             pdbx_struct_legacy_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_legacy_oper_list.matrix[3][3]
+    _item_description.description
+;              The [3][3] element of the 3x3 matrix component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_legacy_oper_list.matrix[3][3]'
+    _item.category_id             pdbx_struct_legacy_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_legacy_oper_list.vector[1]
+    _item_description.description
+;              The [1] element of the three-element vector component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_legacy_oper_list.vector[1]'
+    _item.category_id             pdbx_struct_legacy_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         vector
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_legacy_oper_list.vector[2]
+    _item_description.description
+;              The [2] element of the three-element vector component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_legacy_oper_list.vector[2]'
+    _item.category_id             pdbx_struct_legacy_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         vector
+    _item_type.code               float
+     save_
+
+save__pdbx_struct_legacy_oper_list.vector[3]
+    _item_description.description
+;              The [3] element of the three-element vector component of the
+               transformation operation.
+;
+    _item.name                  '_pdbx_struct_legacy_oper_list.vector[3]'
+    _item.category_id             pdbx_struct_legacy_oper_list
+    _item.mandatory_code          no
+    _item_sub_category.id         vector
+    _item_type.code               float
+     save_

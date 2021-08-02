@@ -1,0 +1,2724 @@
+## 
+# Proposed additional pdbx dictionary NMR tags to support the Common D&A system
+# Date: 2012-08-10 Eldon Urlich
+#
+######################### new category
+
+save_pdbx_nmr_assigned_chem_shift_list
+   _category.description
+;
+Items in the assigned_chem_shift_list category provide information about a list of reported assigned chemical shift values.
+;
+   _category.id                   'pdbx_nmr_assigned_chem_shift_list'
+   _category.mandatory_code        no
+
+   loop_
+     _category_key.name
+
+     '_pdbx_nmr_assigned_chem_shift_list.entry_id'
+     '_pdbx_nmr_assigned_chem_shift_list.id'
+  
+
+   loop_
+     _category_group.id
+     'inclusive_group'
+     'nmr_group'            
+     'pdbx_group'
+
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_assigned_chem_shift_list
+
+save_
+
+
+##### new category items
+
+save__pdbx_nmr_assigned_chem_shift_list.chem_shift_13C_err
+
+   _item_description.description
+;
+The value assigned as the error for all 13C chemical shifts reported in 
+the chemical shift list.  The value reported for this tag will be inserted during annotation 
+into the assigned chemical shift error column in the table of assigned chemical 
+shifts.
+;
+
+## A tag used primarily for the ADIT-NMR user interface.
+
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.chem_shift_13C_err'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '0.1'
+
+save_
+
+
+save__pdbx_nmr_assigned_chem_shift_list.chem_shift_15N_err
+
+   _item_description.description
+;
+The value assigned as the error for all 15N chemical shifts reported in 
+the chemical shift list.  The value reported for this tag will be inserted during annotation 
+into the assigned chemical shift error column in the table of assigned chemical 
+shifts.
+;
+
+## A tag used primarily for the ADIT-NMR user interface.
+
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.chem_shift_15N_err'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '0.2'
+
+save_
+
+save__pdbx_nmr_assigned_chem_shift_list.chem_shift_19F_err
+
+   _item_description.description
+;
+The value assigned as the error for all 19F chemical shifts reported in 
+the chemical shift list.  The value reported for this tag will be inserted during annotation 
+into the assigned chemical shift error column in the table of assigned chemical 
+shifts.
+;
+
+## A tag used primarily for the ADIT-NMR user interface.
+
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.chem_shift_19F_err'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '0.01'   
+
+save_
+
+
+save__pdbx_nmr_assigned_chem_shift_list.chem_shift_1H_err
+
+   _item_description.description
+;
+The value assigned as the error for all 1H chemical shifts reported in 
+the chemical shift list.  The value reported for this tag will be inserted during annotation 
+into the assigned chemical shift error column in the table of assigned chemical 
+shifts.
+;
+
+## A tag used primarily for the ADIT-NMR user interface.
+
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.chem_shift_1H_err'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '0.01'   
+
+save_
+
+
+save__pdbx_nmr_assigned_chem_shift_list.chem_shift_2H_err
+
+   _item_description.description
+;
+The value assigned as the error for all 2H chemical shifts reported in 
+the chemical shift list.  The value reported for this tag will be inserted during annotation 
+into the assigned chemical shift error column in the table of assigned chemical 
+shifts.
+;
+
+## A tag used primarily for the ADIT-NMR user interface.
+
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.chem_shift_2H_err'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '0.01'
+
+save_
+
+save__pdbx_nmr_assigned_chem_shift_list.chem_shift_31P_err
+
+   _item_description.description
+;
+The value assigned as the error for all 31P chemical shifts reported in 
+the chemical shift list.  The value reported for this tag will be inserted during annotation 
+into the assigned chemical shift error column in the table of assigned chemical 
+shifts.
+;
+
+## A tag used primarily for the ADIT-NMR user interface.
+
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.chem_shift_31P_err'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '0.1'
+
+save_
+
+
+save__pdbx_nmr_assigned_chem_shift_list.chem_shift_reference_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_chem_shift_reference.id'
+;
+
+## An internal reference value. The tag is not exposed in the ADIT-NMR user interface.
+## A 'label' item is used to capture the user friendly value. 
+
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.chem_shift_reference_id'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+
+save_
+
+
+save__pdbx_nmr_assigned_chem_shift_list.conditions_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_exptl_sample_conditions.conditions_id'
+;
+
+## An internal reference value. The tag is not exposed in the ADIT-NMR user interface.
+## A 'label' item is used to capture the user friendly value. 
+
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.conditions_id'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+
+save_
+
+
+save__pdbx_nmr_assigned_chem_shift_list.data_file_name
+
+   _item_description.description
+;
+The name of the file submitted with a deposition that contains the quantitative 
+chemical shift data.
+;
+
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.data_file_name'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            yes
+   _item_type.code                'line'
+
+save_
+
+
+save__pdbx_nmr_assigned_chem_shift_list.details
+
+   _item_description.description
+;
+Text describing the reported assigned chemical shifts.
+;
+
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.details'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            no
+   _item_type.code                'text'
+
+save_
+
+save__pdbx_nmr_assigned_chem_shift_list.entry_id
+
+   _item_description.description
+;
+Pointer to '_entry.ID'
+;
+
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.entry_id'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case            '2DSX'
+   
+
+save_
+
+
+save__pdbx_nmr_assigned_chem_shift_list.error_derivation_method
+
+   _item_description.description
+;
+Method used to derive the estimated error in the reported chemical shifts.
+;
+  
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.error_derivation_method'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            no
+   _item_type.code                'text'
+
+save_
+
+save__pdbx_nmr_assigned_chem_shift_list.id
+
+   _item_description.description
+;
+An integer value that uniquely identifies a list of assigned chemical 
+shifts from other sets of assigned chemical shifts in the entry.
+;
+
+## An internal reference value. The tag is not exposed in the ADIT-NMR user interface.
+## A 'label' item is used to capture the user friendly value. 
+
+  loop_
+      _item.name
+      _item.category_id
+      _item.mandatory_code
+
+  '_pdbx_nmr_assigned_chem_shift_list.id'                                            'pdbx_nmr_assigned_chem_shift_list'           yes
+  '_pdbx_nmr_chem_shift_experiment.assigned_chem_shift_list_id'                      'pdbx_nmr_chem_shift_experiment'              yes
+  '_pdbx_nmr_systematic_chem_shift_offset.assigned_chem_shift_list_id'               'pdbx_nmr_systematic_chem_shift_offset'       yes
+  '_pdbx_nmr_chem_shift_software.assigned_chem_shift_list_id'                        'pdbx_nmr_chem_shift_software'                yes
+
+
+  loop_
+      _item_linked.child_name
+      _item_linked.parent_name
+
+  '_pdbx_nmr_chem_shift_experiment.assigned_chem_shift_list_id'                      '_pdbx_nmr_assigned_chem_shift_list.id'
+  '_pdbx_nmr_systematic_chem_shift_offset.assigned_chem_shift_list_id'               '_pdbx_nmr_assigned_chem_shift_list.id'
+  '_pdbx_nmr_chem_shift_software.assigned_chem_shift_list_id'                        '_pdbx_nmr_assigned_chem_shift_list.id'
+#  '_pdbx_nmr_atom_chem_shift.assigned_chem_shift_list_id'                            '_pdbx_nmr_assigned_chem_shift_list.id'
+
+
+   _item_type.code                'int'
+
+save_
+
+
+####################  new category
+
+save_pdbx_nmr_chem_shift_experiment
+   _category.description
+;
+Items in the chem_shift_experiment category provide pointers to the NMR experiments and samples used to collect the data for a set of reported assigned chemical shifts.
+;
+   _category.id                   'pdbx_nmr_chem_shift_experiment'
+   _category.mandatory_code        no
+
+   loop_
+     _category_key.name
+
+     '_pdbx_nmr_chem_shift_experiment.experiment_id'
+     '_pdbx_nmr_chem_shift_experiment.entry_id'
+     '_pdbx_nmr_chem_shift_experiment.assigned_chem_shift_list_id'
+   
+
+   loop_
+     _category_group.id
+     'inclusive_group'
+     'nmr_group'            
+     'pdbx_group'
+
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_chem_shift_experiment
+
+save_
+
+#### new category items
+
+save__pdbx_nmr_chem_shift_experiment.assigned_chem_shift_list_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_assigned_chem_shift_list.ID'
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_experiment.assigned_chem_shift_list_id'
+   _item.category_id              'pdbx_nmr_chem_shift_experiment'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+
+
+save_
+
+
+save__pdbx_nmr_chem_shift_experiment.entry_id
+
+   _item_description.description
+;
+Pointer to '_entry.id'
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_experiment.entry_id'
+   _item.category_id              'pdbx_nmr_chem_shift_experiment'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case            '2DSX'   
+
+save_
+
+save__pdbx_nmr_chem_shift_experiment.experiment_id 
+
+   _item_description.description
+
+;
+Pointer to '_pdbx_nmr_exptl.experiment.id'  
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_experiment.experiment_id'
+   _item.category_id              'pdbx_nmr_chem_shift_experiment'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+
+save_
+
+save__pdbx_nmr_chem_shift_experiment.experiment_name
+
+   _item_description.description
+;
+The name of an experiment used to determine the data reported.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_experiment.experiment_name'
+   _item.category_id              'pdbx_nmr_chem_shift_experiment'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+save_
+
+save__pdbx_nmr_chem_shift_experiment.sample_state
+
+   _item_description.description
+;
+Physical state of the sample either anisotropic or isotropic.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_experiment.sample_state'
+   _item.category_id              'pdbx_nmr_chem_shift_experiment'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   'isotropic'      ?
+   'anisotropic'    ?
+
+save_
+
+save__pdbx_nmr_chem_shift_experiment.solution_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_exptl_sample.solution_id'
+;
+
+## This item is probably redundant and not needed as the solution_id is linked
+## to the experiment_id pdbx_nmr_exptl category
+
+   _item.name                     '_pdbx_nmr_chem_shift_experiment.solution_id'
+   _item.category_id              'pdbx_nmr_chem_shift_experiment'
+   _item.mandatory_code            no
+   _item_type.code                'int'
+
+save_
+
+###################### new category
+
+## Could not find this or an equivalent category and associated items in the internal v5 pdbx dictionary
+## from early May, 2012.
+
+save_pdbx_nmr_chem_shift_ref
+   _category.description
+;
+Items in the pdbx_nmr_chem_shift_ref category provide the chemical shift referencing values used in assigning the chemical shift positions for peaks in spectral peak lists and assigned atom chemical shifts.
+;
+   _category.id                   'pdbx_nmr_chem_shift_ref'
+   _category.mandatory_code      no
+   loop_
+     _category_key.name
+
+     '_pdbx_nmr_chem_shift_ref.atom_type'
+     '_pdbx_nmr_chem_shift_ref.atom_isotope_number'
+     '_pdbx_nmr_chem_shift_ref.mol_common_name'
+     '_pdbx_nmr_chem_shift_ref.entry_id'
+     '_pdbx_nmr_chem_shift_ref.chem_shift_reference_id'
+
+
+   loop_
+     _category_group.id
+
+     'inclusive_group'
+     'nmr_group'
+     'pdbx_group'
+
+   loop_
+     _category_examples.detail
+     _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+    loop_
+    _pdbx_nmr_chem_shift_ref.atom_group 
+    _pdbx_nmr_chem_shift_ref.atom_isotope_number 
+    _pdbx_nmr_chem_shift_ref.atom_type 
+    _pdbx_nmr_chem_shift_ref.chem_shift_reference_id 
+    _pdbx_nmr_chem_shift_ref.chem_shift_units 
+    _pdbx_nmr_chem_shift_ref.chem_shift_val 
+    _pdbx_nmr_chem_shift_ref.correction_val 
+    _pdbx_nmr_chem_shift_ref.entry_id 
+    _pdbx_nmr_chem_shift_ref.external_ref_axis 
+    _pdbx_nmr_chem_shift_ref.external_ref_loc 
+    _pdbx_nmr_chem_shift_ref.external_ref_sample_geometry 
+    _pdbx_nmr_chem_shift_ref.indirect_shift_ratio 
+    _pdbx_nmr_chem_shift_ref.mol_common_name 
+    _pdbx_nmr_chem_shift_ref.rank 
+    _pdbx_nmr_chem_shift_ref.ref_correction_type 
+    _pdbx_nmr_chem_shift_ref.ref_method 
+    _pdbx_nmr_chem_shift_ref.ref_type 
+    _pdbx_nmr_chem_shift_ref.solvent 
+    "methyl protons" 1  H 1 ppm 0.000 ? 1ABC ? ? ? 1.00000000  DSS ? ? external direct   ? 
+    "methyl protons" 13 C 1 ppm 0.000 ? 1ABC ? ? ? 0.251449530 DSS ? ? external indirect ? 
+    "methyl protons" 15 N 1 ppm 0.000 ? 1ABC ? ? ? 0.101329118 DSS ? ? external indirect ? 
+;
+
+ _pdbx_category_context.type         WWPDB_LOCAL
+ _pdbx_category_context.category_id  pdbx_nmr_chem_shift_ref
+
+save_
+
+#### new category items
+
+save__pdbx_nmr_chem_shift_ref.atom_group
+   _item_description.description
+;
+Group of atoms within a molecule whose chemical shift was used as the standard 
+chemical shift reference for the defined observed nuclei.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.atom_group'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            yes
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   'methyl carbon'        ?
+   'methyl carbons'       ?
+   'methyl protons'       ?
+   'methylene protons'    ?
+   'nitrogen'             ?
+   'protons'              ?
+   'phosphorus'           ?
+
+   _item_examples.case             'methyl protons'
+
+save_
+
+save__pdbx_nmr_chem_shift_ref.atom_isotope_number
+   _item_description.description
+;
+The mass number for the chemical element defined by the tag '_pdbx_nmr_chem_shift_ref.atom_type' 
+or any of its related tags.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.atom_isotope_number'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+   _item_examples.case            '2'
+
+save_
+
+
+save__pdbx_nmr_chem_shift_ref.atom_type
+   _item_description.description
+;
+The value for this tag is a standard IUPAC abbreviation for an element 
+(i.e., H, C, P, etc).
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.atom_type'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case            'H'
+
+save_
+
+
+save__pdbx_nmr_chem_shift_ref.chem_shift_reference_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_chem_shift_reference.id'
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.chem_shift_reference_id'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+
+save_
+
+save__pdbx_nmr_chem_shift_ref.chem_shift_units
+
+   _item_description.description
+;
+Units for the chemical shift value assigned to the atoms of the chemical 
+shift reference.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.chem_shift_units'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            yes
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   ppm    'parts per million'
+   Hz      Hertz
+
+   _item_examples.case            ppm
+
+save_
+
+
+save__pdbx_nmr_chem_shift_ref.chem_shift_val
+
+   _item_description.description
+;
+Value assigned to the chemical shift of the reference compound.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.chem_shift_val'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            yes
+   _item_type.code                'float'
+   _item_examples.case            '4.78'
+
+save_
+
+
+save__pdbx_nmr_chem_shift_ref.correction_val
+   _item_description.description
+;
+An uniform correction value that was applied because of an extenuating 
+circumstance such as data collection at an unusual temperature.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.correction_val'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '0.1'
+
+save_
+
+save__pdbx_nmr_chem_shift_ref.entry_id
+
+   _item_description.description
+;
+Pointer to '_entry.id'
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.entry_id'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case            '2DSX'
+
+save_
+
+save__pdbx_nmr_chem_shift_ref.external_ref_axis
+
+   _item_description.description
+;
+The axis of the external chemical shift reference sample relative to the 
+static field (Bo) of the spectrometer.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.external_ref_axis'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   parallel         ?
+   perpendicular    ?
+
+   _item_examples.case             parallel
+
+save_
+
+save__pdbx_nmr_chem_shift_ref.external_ref_loc
+
+   _item_description.description
+;
+External chemical shift references are defined as either located within 
+the sample (e.g., as a capillary) or external to the sample and are inserted into 
+the spectrometer before, after, or both before and after the sample containing 
+the molecular system studied in the entry.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.external_ref_loc'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   'insert at center of experimental sample tube'                                   ?
+   'insert at outer edge of experimental sample tube'                               ?
+   'insert at center of a separate sample tube'                                     ?
+   'insert at outer edge of a separate sample tube'                                 ?
+   'separate tube (no insert) similar to the experimental sample tube'              ?
+   'separate tube (no insert) not similar to the experimental sample tube'          ?
+   'other'                                                                          ?
+
+    _item_examples.case           'insert at center of experimental sample tube'
+
+save_
+
+save__pdbx_nmr_chem_shift_ref.external_ref_sample_geometry
+
+   _item_description.description
+;
+The geometrical shape of the external reference sample.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.external_ref_sample_geometry'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   cylindrical    ?
+   spherical      ?
+   other          ?
+
+   _item_examples.case             'spherical'
+
+save_
+
+save__pdbx_nmr_chem_shift_ref.indirect_shift_ratio
+
+   _item_description.description
+;
+The Chi value used in calculating the chemical shift referencing values 
+for nuclei that are referenced indirectly.  The values used should be those recommended 
+by the IUPAC Taskforce on the deposition of data to the public databases 
+(Markley, et al.  Pure and Appl. Chem. 70, 117-142 (1998).
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.indirect_shift_ratio'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            no
+   _item_default.value            '1'
+   _item_type.code                'float'
+   _item_examples.case            '0.25144953'
+
+save_
+
+save__pdbx_nmr_chem_shift_ref.mol_common_name
+
+   _item_description.description
+;
+Common name or abbreviation used in the literature for the molecule used 
+as a chemical shift reference.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.mol_common_name'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            yes
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   'DSS'                               'H; C; and N methyl protons'
+   'TSP'                               'H; C; and N methyl protons'
+   'water'                             'H protons'
+   'DMSO'                              'H methyl protons'
+   'DMSO-d5'                           'H methyl proton'
+   'DMSO-d6'                           'H methyl deuterons'
+   'methanol'                          'H methyl protons'
+   'TMS'                               'H methyl protons'
+   'methionine'                        'H methyl protons'
+   'acetate'                           'C methyl carbons'
+   'dioxane'                           'C methylene carbons'
+   'adamantane'                        'C methylene carbons'
+   'ammonium chloride'                 'N ammonium nitrogen'
+   '[15N] ammonium chloride'           'N ammonium nitrogen'
+   'ammonium hydroxide'                'N ammonium nitrogen'
+   'ammonium nitrate'                  'N ammonium nitrogen'
+   '[15N] ammonium nitrate'            'N ammonium nitrogen'
+   '[15N, 15N] ammonium nitrate'       'N ammonium nitrogen'
+   'ammonium nitrite'                  'N ammonium nitrogen'
+   'ammonium sulfate'                  'N ammonium nitrogen'
+   '[15N] ammonium sulfate'            'N ammonium nitrogen'
+   'liquid anhydrous ammonia'          'N ammonium nitrogen'
+   'formamide'                         'N ammonium nitrogen'
+   '[15N] nitric acid'                 'N nitrogen'
+   'Nitromethane'                      'N nitro group'
+   '[15N] nitromethane'                'N nitro group'
+   'urea'                              'N nitrogen'
+   'phosphoric acid'                   'P phosphate'
+   'phosphoric acid (85%)'             'P phosphate'
+   'TMP'                               'P phosphate'
+   'cadmium perchlorate'               'Cd cadmium'
+   'Deuterium Oxide'                   'D deuterium'
+
+   _item_examples.case                  'DSS'
+
+save_
+
+
+save__pdbx_nmr_chem_shift_ref.rank
+
+   _item_description.description
+;
+The rank of the chemical shift reference. A primary reference is the one 
+used in reporting the data. A secondary reference would be the compound in the 
+sample or used as an external reference.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.rank'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            no
+   _item_type.code                'code'
+   _item_examples.case            '1'
+
+save_
+
+
+save__pdbx_nmr_chem_shift_ref.ref_correction_type
+
+   _item_description.description
+;
+If a correction value is applied to calculate the reported chemical shifts 
+the source of the correction (pH; temperature; etc.).
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.ref_correction_type'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+   _item_examples.case            'temperature'
+
+save_
+
+save__pdbx_nmr_chem_shift_ref.ref_method
+
+   _item_description.description
+;
+The chemical shift reference may be either internal (the compound is located 
+in the sample) or external (the compound is in a container external to the sample).
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.ref_method'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   internal    ?
+   external    ?
+   na          'not applicable'
+
+
+   _item_examples.case           'internal'
+
+save_
+
+save__pdbx_nmr_chem_shift_ref.ref_type
+   _item_description.description
+;
+The reference type may be either direct (against a value measured with 
+a chemical compound) or indirect (calculated from chemical shift ratios).
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.ref_type'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   direct      ?
+   indirect    ?
+
+   _item_examples.case            'direct'
+
+save_
+
+
+save__pdbx_nmr_chem_shift_ref.solvent
+
+   _item_description.description
+;
+Solvent used for the external reference sample.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_ref.solvent'
+   _item.category_id              'pdbx_nmr_chem_shift_ref'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+   _item_examples.case          'CHCL3'
+
+save_
+
+###################### new category
+
+save_pdbx_nmr_chem_shift_reference
+   _category.description
+;
+Items in the chem_shift_reference category define a set of chemical shift referencing parameters.
+;
+   _category.id                   'pdbx_nmr_chem_shift_reference'
+   _category.mandatory_code      no
+   loop_
+     _category_key.name
+
+     '_pdbx_nmr_chem_shift_reference.entry_id'
+     '_pdbx_nmr_chem_shift_reference.id'
+
+   loop_
+     _category_group.id
+
+     'inclusive_group'
+     'nmr_group'
+     'pdbx_group'
+
+   loop_
+     _category_examples.detail
+     _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+    _pdbx_nmr_chem_shift_reference.carbon_shifts_flag       ? 
+    _pdbx_nmr_chem_shift_reference.details                  "External DSS sample" 
+    _pdbx_nmr_chem_shift_reference.entry_id                 1ABC
+    _pdbx_nmr_chem_shift_reference.id                       1 
+    _pdbx_nmr_chem_shift_reference.label                    chemical_shift_reference_
+;
+
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_chem_shift_reference
+
+save_
+
+#### new category items
+
+save__pdbx_nmr_chem_shift_reference.carbon_shifts_flag
+
+   _item_description.description
+;
+A value indicating if 13C chemical shifts are being deposited and if IUPAC chemical shift referencing was used. This item 
+is a user interface item that is used to trigger the automated population of chemical shift referencing tags if IUPAC 
+chemical shift referencing parameters have been used.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_reference.carbon_shifts_flag'
+   _item.category_id              'pdbx_nmr_chem_shift_reference'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+    no                             '13C chemical shifts are not being deposited'
+    yes                            '13C chemical shifts are being deposited'
+   'yes with IUPAC referencing'    '13C chemical shifts are being deposited and the shifts are referenced using the IUPAC recommendations'
+
+   _item_examples.case             'yes with IUPAC referencing'
+
+save_
+
+
+save__pdbx_nmr_chem_shift_reference.details
+
+   _item_description.description
+;
+Text providing additional information regarding the reported chemical shift 
+referencing values or methods.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_reference.details'
+   _item.category_id              'pdbx_nmr_chem_shift_reference'
+   _item.mandatory_code            no
+   _item_type.code                'text'
+
+save_
+
+save__pdbx_nmr_chem_shift_reference.entry_id
+
+   _item_description.description
+;
+Pointer to '_entry.id'
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_reference.entry_id'
+   _item.category_id              'pdbx_nmr_chem_shift_reference'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case            '2SNS'
+
+save_
+
+save__pdbx_nmr_chem_shift_reference.id
+
+   _item_description.description
+;
+An integer value that uniquely identifies a set of chemical shift 
+reference values from other sets of chemical shift referencing values.
+;
+
+    _item.name            '_pdbx_nmr_chem_shift_reference.id'
+    _item.category_id      'pdbx_nmr_chem_shift_reference'         
+    _item.mandatory_code   yes
+    _item_type.code                'int'
+
+save_
+
+save__pdbx_nmr_chem_shift_reference.label
+   _item_description.description
+;
+A descriptive label that uniquely identifies this list of chemical shift 
+referencing parameters used in reporting assigned chemical shifts and other chemical 
+shift data.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_reference.label'
+   _item.category_id              'pdbx_nmr_chem_shift_reference'
+   _item.mandatory_code            yes
+   _item_default.value            'chemical_shift_reference_1'
+   _item_type.code                'line'
+   _item_examples.case            'chemical_shift_reference_1'
+
+save_
+
+save__pdbx_nmr_chem_shift_reference.nitrogen_shifts_flag
+
+   _item_description.description
+;
+A value indicating if 15N chemical shifts are being deposited and if IUPAC chemical shift referencing was used. This item 
+is a user interface item that is used to trigger the automated population of chemical shift referencing tags if IUPAC 
+chemical shift referencing parameters have been used.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_reference.nitrogen_shifts_flag'
+   _item.category_id              'pdbx_nmr_chem_shift_reference'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+    no                             ?
+    yes                            ?
+   'yes with IUPAC referencing'    ?
+
+
+   _item_examples.case             'yes'
+
+save_
+
+
+save__pdbx_nmr_chem_shift_reference.other_shifts_flag
+
+   _item_description.description
+;
+A value indicating if chemical shifts other than 1H, 13C, 15N, or 31P are being deposited.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_reference.other_shifts_flag'
+   _item.category_id              'pdbx_nmr_chem_shift_reference'
+   _item.mandatory_code            no
+   _item_default.value            'no'
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   no                             ?
+   yes                            ?
+
+save_
+
+save__pdbx_nmr_chem_shift_reference.phosphorus_shifts_flag
+
+   _item_description.description
+;
+A value indicating if 31P chemical shifts are being deposited and if IUPAC chemical shift referencing was used. This item 
+is a user interface item that is used to trigger the automated population of chemical shift referencing tags if IUPAC 
+chemical shift referencing parameters have been used.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_reference.phosphorus_shifts_flag'
+   _item.category_id              'pdbx_nmr_chem_shift_reference'
+   _item.mandatory_code            no
+   _item_default.value            'no'
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+    no                             ?
+    yes                            ?
+   'yes with IUPAC referencing'    ?
+
+save_
+
+save__pdbx_nmr_chem_shift_reference.proton_shifts_flag
+   _item_description.description
+;
+A value indicating if 1H chemical shifts are being deposited and if IUPAC chemical shift referencing was used. This item 
+is a user interface item that is used to trigger the automated population of chemical shift referencing tags if IUPAC 
+chemical shift referencing parameters have been used.
+Please indicate yes or no$ if you are depositing 1H chemical shifts.
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_reference.proton_shifts_flag'
+   _item.category_id              'pdbx_nmr_chem_shift_reference'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+    no                             ?
+    yes                            ?
+   'yes with IUPAC referencing'    ?
+
+save_
+
+###################### new category
+
+save_pdbx_nmr_chem_shift_software
+   _category.description
+;
+Items in the chem_shift_software category provide pointers to the software category and methods category.
+;
+   _category.id                   'pdbx_nmr_chem_shift_software'
+   _category.mandatory_code        no
+
+   loop_
+     _category_key.name
+
+     '_pdbx_nmr_chem_shift_software.software_id'
+     '_pdbx_nmr_chem_shift_software.entry_id'
+     '_pdbx_nmr_chem_shift_software.assigned_chem_shift_list_id'
+
+   loop_
+     _category_group.id
+
+     'inclusive_group'
+     'nmr_group'
+     'pdbx_group'
+
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_chem_shift_software
+
+save_
+
+#### new category items
+
+save__pdbx_nmr_chem_shift_software.assigned_chem_shift_list_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_assigned_chem_shift_list.id'
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_software.assigned_chem_shift_list_id'
+   _item.category_id              'pdbx_nmr_chem_shift_software'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+   _item_examples.case            '1'
+   
+save_
+
+save__pdbx_nmr_chem_shift_software.entry_id
+
+   _item_description.description
+;
+Pointer to '_entry.id'
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_software.entry_id'
+   _item.category_id              'pdbx_nmr_chem_shift_software'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case            '2DSX'
+
+save_
+
+save__pdbx_nmr_chem_shift_software.software_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_software.ordinal'
+;
+
+   _item.name                     '_pdbx_nmr_chem_shift_software.software_id'
+   _item.category_id              'pdbx_nmr_chem_shift_software'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+   _item_examples.case            '1'
+
+save_
+
+#####################  new category
+
+save_pdbx_nmr_constraint_file
+   _category.description
+;
+Items in the pdbx_nmr_constraint_file category record the name of the constraint file, the software used 
+to calculate conformers with the constraint file, and the characteristics of the constraints in the constraint file.
+;
+   _category.id                   'pdbx_nmr_constraint_file'
+   _category.mandatory_code      no
+   loop_
+     _category_key.name
+
+     '_pdbx_nmr_constraint_file.constraint_filename'
+     '_pdbx_nmr_constraint_file.constraint_type'
+     '_pdbx_nmr_constraint_file.constraint_subtype'
+     '_pdbx_nmr_constraint_file.entry_id'
+
+
+   loop_
+     _category_group.id
+
+     'inclusive_group'
+     'nmr_group'
+     'pdbx_group'
+
+
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_constraint_file
+
+save_
+
+
+#### new category items
+
+save__pdbx_nmr_constraint_file.constraint_filename
+   _item_description.description
+;
+Name of the uploaded file that contains the constraint data.
+;
+
+   _item.name                     '_pdbx_nmr_constraint_file.constraint_filename'
+   _item.category_id              'pdbx_nmr_constraint_file'
+   _item.mandatory_code            yes
+   _item_type.code                'line'
+   _item_examples.case            'sns_constraints.txt'
+
+save_
+
+
+save__pdbx_nmr_constraint_file.constraint_number 
+
+   _item_description.description
+;
+Number of constraints of this type and subtype in the file.
+;
+
+   _item.name                     '_pdbx_nmr_constraint_file.constraint_number'
+   _item.category_id              'pdbx_nmr_constraint_file'
+   _item.mandatory_code            no
+   _item_type.code                'int'
+   _item_examples.case            '2045'
+
+save_
+
+
+save__pdbx_nmr_constraint_file.constraint_subtype 
+   _item_description.description
+;
+Specific type of constraint.
+;
+
+   _item.name                     '_pdbx_nmr_constraint_file.constraint_subtype'
+   _item.category_id              'pdbx_nmr_constraint_file'
+   _item.mandatory_code            yes
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   'Not applicable'      ?
+   'NOE'                 ?
+   'NOE buildup'         ?
+   'NOE not seen'        ?
+   'PRE'                 ?
+   'PRE solvent'         ?
+   'CSP'                 ?
+   'general distance'    ?
+   'alignment tensor'    ?
+   'chirality'           ?
+   'dipolar recoupling'  ?
+   'prochirality'        ?
+   'disulfide bond'      ?
+   'hydrogen bond'       ?
+   'spin diffusion'      ?
+   'symmetry'            ?
+   'RDC'                 ?
+   'ROE'                 ?
+   'peptide'             ?
+   'ring'                ?
+
+   _item_examples.case             'NOE'
+
+save_
+
+
+save__pdbx_nmr_constraint_file.constraint_type 
+
+   _item_description.description
+;
+The general type of constraint (distance, torsion angle, RDC, etc.)
+;
+
+   _item.name                     '_pdbx_nmr_constraint_file.constraint_type'
+   _item.category_id              'pdbx_nmr_constraint_file'
+   _item.mandatory_code            yes
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   'distance'                                   ?
+   'dipolar coupling'                           ?
+   'protein dihedral angle'                     ?
+   'nucleic acid dihedral angle'                ?
+   'coupling constant'                          ?
+   'chemical shift'                             ?
+   'other angle'                                ?
+   'chemical shift anisotropy'                  ?
+   'hydrogen exchange'                          ?
+   'line broadening'                            ?
+   'pseudocontact shift'                        ?
+   'intervector projection angle'               ?
+   'protein peptide planarity'                  ?
+   'protein other kinds of constraints'         ?
+   'nucleic acid base planarity'                ?
+   'nucleic acid other kinds of constraints'    ?
+
+   _item_examples.case                          'distance'
+
+save_
+
+
+save__pdbx_nmr_constraint_file.entry_id 
+   _item_description.description
+;
+Pointer to '_entry.id'
+;
+
+   _item.name                     '_pdbx_nmr_constraint_file.entry_id'
+   _item.category_id              'pdbx_nmr_constraint_file'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case            '2SNS'
+
+save_
+
+
+save__pdbx_nmr_constraint_file.id 
+
+   _item_description.description
+;
+Local unique identifier for the listed constraint file.
+;
+
+   _item.name                    '_pdbx_nmr_constraint_file.id'
+   _item.category_id             'pdbx_nmr_constraint_file'
+   _item.mandatory_code           no
+   _item_type.code               'int'
+
+save_
+
+
+save__pdbx_nmr_constraint_file.software_name 
+
+   _item_description.description
+;
+Name of the software application that the listed constraint file is used 
+as input.
+;
+
+   _item.name                     '_pdbx_nmr_constraint_file.software_name'
+   _item.category_id              'pdbx_nmr_constraint_file'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+   _item_examples.case            'XPLOR-NIH'
+
+save_
+
+
+save__pdbx_nmr_constraint_file.software_ordinal 
+
+   _item_description.description
+;
+Pointer to _software.ordinal
+;
+
+   _item.name                     '_pdbx_nmr_constraint_file.software_ordinal'
+   _item.category_id              'pdbx_nmr_constraint_file'
+   _item.mandatory_code            no
+   _item_type.code                'int'
+
+save_
+
+
+############# new tags for the pdbx_nmr_exptl_sample_conditions category
+
+save__pdbx_nmr_exptl_sample_conditions.details
+
+   _item_description.description
+;
+General details describing conditions of both the sample and the environment 
+during measurements.
+;
+
+   _item.name                     '_pdbx_nmr_exptl_sample_conditions.details'
+   _item.category_id              'pdbx_nmr_exptl_sample_conditions'
+   _item.mandatory_code            no
+   _item_type.code                'text'
+   _item_examples.case
+
+;
+The high salinity of the sample may have contributed to overheating of the sample during experiments with long saturation periods like the TOCSY experiments.
+;
+
+save_
+
+
+save__pdbx_nmr_exptl_sample_conditions.ionic_strength_err
+
+   _item_description.description
+;
+Estimate of the standard error for the value for the sample ionic strength.
+;
+
+   _item.name                     '_pdbx_nmr_exptl_sample_conditions.ionic_strength_err'
+   _item.category_id              'pdbx_nmr_exptl_sample_conditions'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '0.2'
+
+save_
+
+save__pdbx_nmr_exptl_sample_conditions.ionic_strength_units
+
+   _item_description.description
+;
+Units for the value of the sample condition ionic strength..
+;
+
+   _item.name                     '_pdbx_nmr_exptl_sample_conditions.ionic_strength_units'
+   _item.category_id              'pdbx_nmr_exptl_sample_conditions'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+    M               ?
+    mM              ?
+   'Not defined'    ?
+
+
+   _item_examples.case             'M'
+
+save_
+
+save__pdbx_nmr_exptl_sample_conditions.label
+
+   _item_description.description
+;
+A descriptive label that uniquely identifies this set of sample conditions.
+;
+
+   _item.name                     '_pdbx_nmr_exptl_sample_conditions.label'
+   _item.category_id              'pdbx_nmr_exptl_sample_conditions'
+   _item.mandatory_code            no
+   _item_default.value            'sample_conditions_1'
+   _item_type.code                 line
+   _item_examples.case            'conditions_1'
+
+save_
+
+
+save__pdbx_nmr_exptl_sample_conditions.pH_err
+
+   _item_description.description
+;
+Estimate of the standard error for the value for the sample pH.
+;
+
+   _item.name                     '_pdbx_nmr_exptl_sample_conditions.pH_err'
+   _item.category_id              'pdbx_nmr_exptl_sample_conditions'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '0.05'
+
+save_
+
+
+save__pdbx_nmr_exptl_sample_conditions.pH_units
+
+   _item_description.description
+;
+Units for the value of the sample condition pH.
+;
+
+   _item.name                     '_pdbx_nmr_exptl_sample_conditions.pH_units'
+   _item.category_id              'pdbx_nmr_exptl_sample_conditions'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+    pH              ?
+    pD              ?
+    pH*             ?
+   'Not defined'    ?
+
+    _item_examples.case            'pH'
+
+save_
+
+
+save__pdbx_nmr_exptl_sample_conditions.pressure_err
+
+   _item_description.description
+;
+Estimate of the standard error for the value for the sample pressure.
+;
+
+   _item.name                     '_pdbx_nmr_exptl_sample_conditions.pressure_err'
+   _item.category_id              'pdbx_nmr_exptl_sample_conditions'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '0.01'
+
+save_
+
+
+#save__pdbx_nmr_exptl_sample_conditions.pressure_units
+#
+#   _item_description.description
+#;
+#Units for the value of the sample condition pressure.
+#;
+#
+#   _item.name                     '_pdbx_nmr_exptl_sample_conditions.pressure_units'
+#   _item.category_id              'pdbx_nmr_exptl_sample_conditions'
+#   _item.mandatory_code            no
+#   _item_type.code                'line'
+#
+#   loop_
+#     _item_enumeration.value
+#     _item_enumeration.detail
+#
+#   Pa             "Pascal$ 1 Pa = 1 N m^-2"
+#   bar            "bar$ 1 bar = 10^5 Pa"
+#   atm             atmospheres
+#   mmHg            ?
+#   Torr            ?
+#   mbar            millibar
+#  'Not defined'    ?
+#
+#    _item_examples.case             'atm'
+#
+#save_
+
+
+save__pdbx_nmr_exptl_sample_conditions.temperature_err
+
+   _item_description.description
+;
+Estimate of the standard error for the value for the sample temperature.
+;
+
+   _item.name                     '_pdbx_nmr_exptl_sample_conditions.temperature_err'
+   _item.category_id              'pdbx_nmr_exptl_sample_conditions'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '0.2'
+
+save_
+
+
+save__pdbx_nmr_exptl_sample_conditions.temperature_units
+
+   _item_description.description
+;
+Units for the value of the sample condition temperature.
+;
+
+   _item.name                     '_pdbx_nmr_exptl_sample_conditions.temperature_units'
+   _item.category_id              'pdbx_nmr_exptl_sample_conditions'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+    K                 Kelvin
+    C                 Centigrade
+   'Not defined'      ?
+
+   _item_examples.case             'K'
+
+save_
+
+
+############# new tag for the pdbx_nmr_exptl category
+
+## Recommended additional tag for this category to allow a link between the experiment and the NMR
+## instrument used to carry out the experiment. Often more than one instrument is used in an NMR study
+## and it is important to know which instrument was used for each experiment.
+
+save__pdbx_nmr_exptl.spectrometer_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_spectrometer.spectrometer_id'
+;
+
+   _item.name                     '_pdbx_nmr_exptl.spectrometer_id'
+   _item.category_id              'pdbx_nmr_exptl'
+   _item.mandatory_code            no
+   _item_type.code                'int'
+
+save_
+
+
+
+save__pdbx_nmr_exptl.sample_state
+   _item_description.description
+;
+Physical state of the sample either anisotropic or isotropic.
+;
+   _item.name                     '_pdbx_nmr_exptl.sample_state'
+   _item.category_id              'pdbx_nmr_exptl'
+   _item.mandatory_code            no
+   _item_default.value            'isotropic'
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+   isotropic      ?
+   anisotropic    ?
+
+   _item_examples.case    'isotropic'
+save_ 
+
+
+############## new tags for the pdbx_nmr_sample_details category
+
+save__pdbx_nmr_sample_details.label
+
+   _item_description.description
+;
+A value that uniquely identifies this sample from the other samples listed 
+in the entry.
+;
+
+## This item is a possible item to use in the user interface to allow the depositor to label their samples with
+## names that make sense to them instead of integer IDs that are difficult to remember.
+
+   _item.name                     '_pdbx_nmr_sample_details.label'
+   _item.category_id              'pdbx_nmr_sample_details'
+   _item.mandatory_code            no
+   _item_default.value            'sample_1'
+   _item_type.code                'line'
+   _item_examples.case            '15N_sample'
+
+save_
+
+
+save__pdbx_nmr_sample_details.type
+
+   _item_description.description
+;
+A descriptive term for the sample that defines the general physical properties 
+of the sample.
+;
+
+## Recommended item. It is very important to know the type of sample used.
+
+   _item.name                     '_pdbx_nmr_sample_details.type'
+   _item.category_id              'pdbx_nmr_sample_details'
+   _item.mandatory_code            no
+   _item_default.value            'solution'
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+    solution                   ?
+    solid                      ?
+    bicelle                    ?
+    emulsion                   ?
+    fiber                     'solid-state fiber sample'
+   'filamentous virus'         ?
+   'gel solution'             'gel samples used for solution NMR'
+   'gel solid'                'gel samples used for solid-state NMR'
+    liposome                   ?
+    membrane                   ?
+    micelle                    ?
+   'lyophilized powder'        ?
+   'oriented membrane film'    ?
+   'fibrous protein'           ?
+   'polycrystalline powder'    ?
+   'reverse micelle'           ?
+   'single crystal'            ?
+
+   _item_examples.case       'bicelle'
+
+save_
+
+
+save__pdbx_nmr_sample_details.details
+
+   _item_description.description
+;
+Brief description of the sample providing additional information not captured by other items in the category.
+;
+
+   _item.name                     '_pdbx_nmr_sample_details.details'
+   _item.category_id              'pdbx_nmr_sample_details'
+   _item.mandatory_code            no
+   _item_type.code                'text'
+   _item_examples.case
+;
+The added glycerol was used to raise the viscosity of the solution to 1.05 poisson.
+;
+
+save_
+
+####################### new category 
+
+## Suggested new category. Many NMR software applications carry out multiple tasks. It might be useful to capture this in a linked table.
+
+save_pdbx_nmr_software_task
+   _category.description
+;
+Items in the pdbx_nmr_software_task category provide information about software workflow in the NMR experiment.
+;
+   _category.id                   'pdbx_nmr_software_task'
+   _category.mandatory_code        no
+
+   loop_
+     _category_key.name
+
+     '_pdbx_nmr_software_task.entry_id'
+     '_pdbx_nmr_software_task.software_ordinal'
+     '_pdbx_nmr_software_task.task'
+
+   loop_
+     _category_group.id
+
+     'inclusive_group'
+     'nmr_group'
+     'pdbx_group'
+
+
+save_
+
+####  new category tags 
+
+save__pdbx_nmr_software_task.entry_id
+
+   _item_description.description
+;
+Pointer to '_entry.id'
+;
+
+   _item.name                     '_pdbx_nmr_software_task.entry_id'
+   _item.category_id              'pdbx_nmr_software_task'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case             2SNS
+
+save_
+
+
+save__pdbx_nmr_software_task.software_ordinal
+
+   _item_description.description
+;
+Pointer to _software.ordinal
+;
+
+   _item.name                     '_pdbx_nmr_software_task.software_ordinal'
+   _item.category_id              'pdbx_nmr_software_task'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+   _item_examples.case            '1'
+
+save_
+
+save__pdbx_nmr_software_task.task
+
+   _item_description.description
+;
+A word or brief phrase that describes the task that a software application 
+was used to carry out.
+;
+
+   _item.name                     '_pdbx_nmr_software_task.task'
+   _item.category_id              'pdbx_nmr_software_task'
+   _item.mandatory_code            yes
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+    collection                    ?
+   'chemical shift assignment'    ?
+   'chemical shift calculation'   ?
+   'data analysis'                ?
+   'geometry optimization'        ?
+   'peak picking'                 ?
+    processing                    ?
+    refinement                    ?
+   'structure solution'           ?
+
+   _item_examples.case            'chemical shift assignment'
+
+save_
+
+############################ new category
+
+save_pdbx_nmr_spectral_dim
+   _category.description
+;
+Items in the spectral_dim category describe the parameters of each dimension in the NMR experiment used to generate the spectral peak list.
+;
+   _category.id                   'pdbx_nmr_spectral_dim'
+   _category.mandatory_code        no
+
+   loop_
+     _category_key.name
+
+     '_pdbx_nmr_spectral_dim.id'
+     '_pdbx_nmr_spectral_dim.atom_type'
+     '_pdbx_nmr_spectral_dim.spectral_region'
+     '_pdbx_nmr_spectral_dim.entry_id'
+     '_pdbx_nmr_spectral_dim.spectral_peak_list_id'
+
+   
+   loop_
+     _category_group.id
+
+     'inclusive_group'
+     'nmr_group'
+     'pdbx_group'
+
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_spectral_dim
+
+save_
+
+#### new category tags
+
+save__pdbx_nmr_spectral_dim.id
+
+   _item_description.description
+;
+An integer value that specifies the dimension of a multidimensional NMR 
+spectrum.
+;
+
+   _item.name                     '_pdbx_nmr_spectral_dim.id'
+   _item.category_id              'pdbx_nmr_spectral_dim'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+   _item_examples.case            '2'
+
+save_
+
+save__pdbx_nmr_spectral_dim.atom_type
+
+   _item_description.description
+;
+The value for this tag is a standard IUPAC abbreviation for an element 
+(i.e., H, C, N, P, etc).
+;
+
+   _item.name                     '_pdbx_nmr_spectral_dim.atom_type'
+   _item.category_id              'pdbx_nmr_spectral_dim'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case            'C'
+
+save_
+
+save__pdbx_nmr_spectral_dim.atom_isotope_number
+
+   _item_description.description
+;
+The mass number for the specified atom.
+;
+
+   _item.name                     '_pdbx_nmr_spectral_dim.atom_isotope_number'
+   _item.category_id              'pdbx_nmr_spectral_dim'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+   _item_examples.case            '13'
+
+save_
+
+save__pdbx_nmr_spectral_dim.spectral_region
+
+   _item_description.description
+;
+A code defining the type of nuclei that would be expected to be observed 
+in the spectral region observed in the dimension of the spectrum.
+;
+
+   _item.name                     '_pdbx_nmr_spectral_dim.spectral_region'
+   _item.category_id              'pdbx_nmr_spectral_dim'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case            'CA'
+
+save_
+
+save__pdbx_nmr_spectral_dim.magnetization_linkage_id
+
+   _item_description.description
+;
+The magnetization linkage ID is used to designate dimensions of a multidimensional 
+NMR experiment where the nuclei observed in the dimensions are directly 
+linked by a one bond scalar coupling. For example, the amide proton and amide 
+nitrogen in an 1H-15N HSQC experiment.
+;
+
+   _item.name                     '_pdbx_nmr_spectral_dim.magnetization_linkage_id'
+   _item.category_id              'pdbx_nmr_spectral_dim'
+   _item.mandatory_code            no
+   _item_type.code                'int'
+   _item_examples.case            '1'
+
+save_
+
+save__pdbx_nmr_spectral_dim.sweep_width
+
+   _item_description.description
+;
+The width of the spectral window observed in Hz.
+;
+
+   _item.name                     '_pdbx_nmr_spectral_dim.sweep_width'
+   _item.category_id              'pdbx_nmr_spectral_dim'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '6132.234'
+
+save_
+
+save__pdbx_nmr_spectral_dim.encoding_code
+
+   _item_description.description
+;
+Code describing how information from one spectral dimension has been encoded 
+in another dimension in for example a reduced dimensionality experiment.
+;
+
+   _item.name                     '_pdbx_nmr_spectral_dim.encoding_code'
+   _item.category_id              'pdbx_nmr_spectral_dim'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+   _item_examples.case            'CO in CA'
+
+save_
+
+save__pdbx_nmr_spectral_dim.encoded_source_dimension_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_spectral_dim.id'. The spectral dimension in a reduced dimensionality experiment that is the 
+source of the magnetization that has been encoded.
+;
+
+   _item.name                     '_pdbx_nmr_spectral_dim.encoded_source_dimension_id'
+   _item.category_id              'pdbx_nmr_spectral_dim'
+   _item.mandatory_code            no
+   _item_type.code                'int'
+   _item_examples.case            '3'
+
+save_
+
+save__pdbx_nmr_spectral_dim.entry_id
+
+   _item_description.description
+;
+Pointer to '_entry.id'
+;
+
+   _item.name                     '_pdbx_nmr_spectral_dim.entry_id'
+   _item.category_id              'pdbx_nmr_spectral_dim'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case            '2DSX'
+
+save_
+
+save__pdbx_nmr_spectral_dim.spectral_peak_list_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_spectral_peak_list.id'
+;
+
+   _item.name                     '_pdbx_nmr_spectral_dim.spectral_peak_list_id'
+   _item.category_id              'pdbx_nmr_spectral_dim'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+
+save_
+
+
+############################### new category
+
+save_pdbx_nmr_spectral_peak_list
+   _category.description
+;
+Items in the pdbx_nmr_spectral_peak_list category provide information about a list of reported spectral peak characteristic values.
+;
+   _category.id                   'pdbx_nmr_spectral_peak_list'
+   _category.mandatory_code        no
+
+   loop_
+     _category_key.name
+
+     '_pdbx_nmr_spectral_peak_list.entry_id'
+     '_pdbx_nmr_spectral_peak_list.id'
+  
+
+   loop_
+     _category_group.id
+
+     'inclusive_group'
+     'nmr_group'
+     'pdbx_group'   
+
+  _pdbx_category_context.type         WWPDB_LOCAL
+  _pdbx_category_context.category_id  pdbx_nmr_spectral_peak_list 
+
+save_
+
+#### new category tags
+
+save__pdbx_nmr_spectral_peak_list.entry_id
+
+   _item_description.description
+;
+Pointer to '_entry.id'
+;
+
+   _item.name                     '_pdbx_nmr_spectral_peak_list.entry_id'
+   _item.category_id              'pdbx_nmr_spectral_peak_list'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case            '2dsx'
+
+save_
+
+save__pdbx_nmr_spectral_peak_list.id
+
+   _item_description.description
+;
+Unique identifier for a spectral peak list in an entry.
+;
+
+  loop_
+      _item.name
+      _item.category_id
+      _item.mandatory_code
+
+  '_pdbx_nmr_spectral_peak_list.id'                                                  'pdbx_nmr_spectral_peak_list'                yes
+  '_pdbx_nmr_spectral_dim.spectral_peak_list_id'                                     'pdbx_nmr_spectral_dim'                      yes
+  '_pdbx_nmr_spectral_peak_software.spectral_peak_list_id'                           'pdbx_nmr_spectral_peak_software'            yes
+  
+
+  loop_
+      _item_linked.child_name
+      _item_linked.parent_name
+
+  '_pdbx_nmr_spectral_dim.spectral_peak_list_id'                                     '_pdbx_nmr_spectral_peak_list.id'
+  '_pdbx_nmr_spectral_peak_software.spectral_peak_list_id'                           '_pdbx_nmr_spectral_peak_list.id'
+
+  
+   _item_type.code                'int'
+
+
+save_
+
+save__pdbx_nmr_spectral_peak_list.data_file_name
+
+   _item_description.description
+;
+The name of the file submitted with a deposition that contains the quantitative 
+data for a spectral peak list.
+;
+
+   _item.name                     '_pdbx_nmr_spectral_peak_list.data_file_name'
+   _item.category_id              'pdbx_nmr_spectral_peak_list'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+save_
+
+save__pdbx_nmr_spectral_peak_list.solution_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_exptl_sample.solution_id'
+;
+
+## This item may be redundant, if the link to the sample is captured in the pdbx_nmr_exptl category.
+
+   _item.name                     '_pdbx_nmr_spectral_peak_list.solution_id'
+   _item.category_id              'pdbx_nmr_spectral_peak_list'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+
+save_
+
+
+save__pdbx_nmr_spectral_peak_list.conditions_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_exptl_sample_conditions.conditions_id' 
+;
+
+## This item may be redundant, if the link to the sample conditions is captured in the pdbx_nmr_exptl category.
+
+   _item.name                     '_pdbx_nmr_spectral_peak_list.conditions_id'
+   _item.category_id              'pdbx_nmr_spectral_peak_list'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+
+save_
+
+
+save__pdbx_nmr_spectral_peak_list.experiment_id
+
+   _item_description.description
+;
+ Pointer to '_pdbx_nmr_exptl.experiment_id'
+;
+
+
+   _item.name                     '_pdbx_nmr_spectral_peak_list.experiment_id'
+   _item.category_id              'pdbx_nmr_spectral_peak_list'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+
+save_
+
+
+save__pdbx_nmr_spectral_peak_list.number_of_spectral_dimensions
+
+   _item_description.description
+;
+Number of dimension in the spectrum from which the peak list was extracted.
+;
+
+   _item.name                     '_pdbx_nmr_spectral_peak_list.number_of_spectral_dimensions'
+   _item.category_id              'pdbx_nmr_spectral_peak_list'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+   _item_examples.case            '3'
+
+save_
+
+save__pdbx_nmr_spectral_peak_list.details
+
+   _item_description.description
+;
+Text describing the reported list of spectral peaks.
+;
+
+   _item.name                     '_pdbx_nmr_spectral_peak_list.details'
+   _item.category_id              'pdbx_nmr_spectral_peak_list'
+   _item.mandatory_code            no
+   _item_type.code                'text'
+
+save_
+
+save__pdbx_nmr_spectral_peak_list.text_data_format
+
+   _item_description.description
+;
+The data format used to represent the spectral peak data as ASCII text 
+in the text block that is the value to the '_Spectral_peak_list.Text_data' tag.
+;
+
+   _item.name                     '_pdbx_nmr_spectral_peak_list.text_data_format'
+   _item.category_id              'pdbx_nmr_spectral_peak_list'
+   _item.mandatory_code            no
+   _item_type.code                'line'   
+
+save_
+
+
+################################ new category
+
+save_pdbx_nmr_spectral_peak_software
+   _category.description
+;
+Items in the pdbx_nmr_spectral_peak_software category provide pointers to the software category 
+and methods category where descriptions of software applications and methods can be found.
+;
+   _category.id                   'pdbx_nmr_spectral_peak_software'
+   _category.mandatory_code        no
+
+   loop_
+     _category_key.name
+
+     '_pdbx_nmr_spectral_peak_software.software_id'
+     '_pdbx_nmr_spectral_peak_software.entry_id'
+     '_pdbx_nmr_spectral_peak_software.spectral_peak_list_id'
+
+   loop_
+     _category_group.id
+
+     'inclusive_group'
+     'nmr_group'
+     'pdbx_group'
+
+   _pdbx_category_context.type         WWPDB_LOCAL
+   _pdbx_category_context.category_id pdbx_nmr_spectral_peak_software 
+
+save_
+
+#### new category tags
+
+save__pdbx_nmr_spectral_peak_software.software_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_software.ordinal'
+;
+
+   _item.name                     '_pdbx_nmr_spectral_peak_software.software_id'
+   _item.category_id              'pdbx_nmr_spectral_peak_software'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+
+save_
+
+
+save__pdbx_nmr_spectral_peak_software.entry_id
+
+   _item_description.description
+;
+Pointer to '_entry.id'
+;
+
+   _item.name                     '_pdbx_nmr_spectral_peak_software.entry_id'
+   _item.category_id              'pdbx_nmr_spectral_peak_software'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case            '2DSX'
+   
+save_
+
+save__pdbx_nmr_spectral_peak_software.spectral_peak_list_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_spectral_peak_list.id'
+;
+
+   _item.name                     '_pdbx_nmr_spectral_peak_software.spectral_peak_list_id'
+   _item.category_id              'pdbx_nmr_spectral_peak_software'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+
+save_
+
+########################### new tags for the pdbx_nmr_spectrometer category
+
+save__pdbx_nmr_spectrometer.details
+
+   _item_description.description
+;
+A text description of the NMR spectrometer.
+;
+
+   _item.name                     '_pdbx_nmr_spectrometer.details'
+   _item.category_id              'pdbx_nmr_spectrometer'
+   _item.mandatory_code            no
+   _item_type.code                'text'
+
+save_
+
+
+###################################### new category
+
+save_pdbx_nmr_systematic_chem_shift_offset
+   _category.description
+;
+Items in the pdbx_nmr_systematic_chem_shift_offset category define chemical shift offsets that systematically affect all chemical shifts in a set of assigned chemical shifts for a specific nuclei.
+;
+   _category.id                   'pdbx_nmr_systematic_chem_shift_offset'
+   _category.mandatory_code        no
+
+   loop_
+     _category_key.name
+     '_pdbx_nmr_systematic_chem_shift_offset.ordinal'
+#     '_pdbx_nmr_systematic_chem_shift_offset.type'
+#     '_pdbx_nmr_systematic_chem_shift_offset.entry_id'
+#     '_pdbx_nmr_systematic_chem_shift_offset.assigned_chem_shift_list_id'
+
+   loop_
+     _category_group.id
+
+     'inclusive_group'
+     'nmr_group'
+     'pdbx_group'
+
+   _pdbx_category_context.type         WWPDB_LOCAL
+   _pdbx_category_context.category_id  pdbx_nmr_systematic_chem_shift_offset
+
+save_
+
+#### new category tags
+
+save__pdbx_nmr_systematic_chem_shift_offset.type
+
+   _item_description.description
+;
+The kind of chemical shift offset that should be applied to all chemical 
+shifts observed for a specific type of atom.
+;
+
+   _item.name                     '_pdbx_nmr_systematic_chem_shift_offset.type'
+   _item.category_id              'pdbx_nmr_systematic_chem_shift_offset'
+   _item.mandatory_code            no
+   _item_type.code                'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   'TROSY offset'             ?
+   '2H isotope effect'        ?
+   '13C isotope effect'       ?
+   '15N isotope effect'       ?
+   'SAIL isotope labeling'    ?
+   
+   _item_examples.case             'TROSY effect'
+
+save_
+
+save__pdbx_nmr_systematic_chem_shift_offset.atom_type
+
+   _item_description.description
+;
+The kind of atom to which the chemical shift offset value applies.
+;
+
+   _item.name                     '_pdbx_nmr_systematic_chem_shift_offset.atom_type'
+   _item.category_id              'pdbx_nmr_systematic_chem_shift_offset'
+   _item.mandatory_code            no
+   _item_type.code                line
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+  
+   'amide protons'                  ?
+   'amide nitrogens'                ?
+   'all nitrogen bonded protons'    ?
+   'all nitrogens'                  ?
+   'all 1H'                         ?
+   'all 13C'                        ?
+   'all 15N'                        ?
+   'all 19F'                        ?
+   'all 31P'                        ?
+
+   _item_examples.case             'amide nitrogens'
+
+save_
+
+save__pdbx_nmr_systematic_chem_shift_offset.atom_isotope_number
+
+   _item_description.description
+;
+Mass number for the atom defined by the '.Atom_type' tag with a systematic 
+chemical shift offset.
+;
+
+   _item.name                     '_pdbx_nmr_systematic_chem_shift_offset.atom_isotope_number'
+   _item.category_id              'pdbx_nmr_systematic_chem_shift_offset'
+   _item.mandatory_code            no
+   _item_type.code                'int'
+   _item_examples.case            '1'
+
+save_
+
+save__pdbx_nmr_systematic_chem_shift_offset.val
+
+   _item_description.description
+;
+Chemical shift value that has been applied to all of the reported chemical 
+shifts to bring their values in line with values expected to be observed for 
+the chemical shift referencing that was used.
+;
+
+   _item.name                     '_pdbx_nmr_systematic_chem_shift_offset.val'
+   _item.category_id              'pdbx_nmr_systematic_chem_shift_offset'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '0.75'
+   
+save_
+
+save__pdbx_nmr_systematic_chem_shift_offset.val_err
+
+   _item_description.description
+;
+Error in the reported chemical shift offset value used.
+;
+
+   _item.name                     '_pdbx_nmr_systematic_chem_shift_offset.val_err'
+   _item.category_id              'pdbx_nmr_systematic_chem_shift_offset'
+   _item.mandatory_code            no
+   _item_type.code                'float'
+   _item_examples.case            '0.0067'
+
+save_
+
+save__pdbx_nmr_systematic_chem_shift_offset.entry_id
+
+   _item_description.description
+;
+Pointer to '_entry.id'
+;
+
+   _item.name                     '_pdbx_nmr_systematic_chem_shift_offset.entry_id'
+   _item.category_id              'pdbx_nmr_systematic_chem_shift_offset'
+   _item.mandatory_code            yes
+   _item_type.code                'code'
+   _item_examples.case            '2DSX'
+   
+
+save_
+
+save__pdbx_nmr_systematic_chem_shift_offset.assigned_chem_shift_list_id
+
+   _item_description.description
+;
+Pointer to '_pdbx_nmr_assigned_chem_shift_list.id'
+;
+
+   _item.name                     '_pdbx_nmr_systematic_chem_shift_offset.assigned_chem_shift_list_id'
+   _item.category_id              'pdbx_nmr_systematic_chem_shift_offset'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+   _item_examples.case            '1'
+   
+save_
+
+save__pdbx_nmr_systematic_chem_shift_offset.ordinal
+
+   _item_description.description
+;
+An ordinal identifier uniquely identifying records in the pdbx_nmr_systematic_chem_shift_offset category.
+;
+
+   _item.name                     '_pdbx_nmr_systematic_chem_shift_offset.ordinal'
+   _item.category_id              'pdbx_nmr_systematic_chem_shift_offset'
+   _item.mandatory_code            yes
+   _item_type.code                'int'
+   _item_examples.case            '1'
+   
+save_
+
+
+######################### new category
+
+## The category is recommended to capture information required for processing of data at BMRB.
+
+save_pdbx_nmr_upload
+   _category.description
+;
+Items in the pdbx_nmr_upload category provide information about the data files uploaded by a depositor using the deposition system.
+;
+   _category.id                   'pdbx_nmr_upload'
+   _category.mandatory_code        no
+
+   loop_
+     _category_key.name
+
+     '_pdbx_nmr_upload.entry_id'
+     '_pdbx_nmr_upload.data_file_id'
+  
+
+   loop_
+     _category_group.id
+
+     'inclusive_group'
+     'nmr_group'
+     'pdbx_group'
+
+save_
+
+#### new category tags
+## tags for capturing the uploaded data file information and transferring the information to the NMR-STAR file
+
+
+save__pdbx_nmr_upload.data_file_id
+
+   _item_description.description
+;
+Unique code assigned to the file being uploaded by the depositor and that 
+contains data that will be incorporated into this entry.
+;
+
+   _item.name                         '_pdbx_nmr_upload.data_file_id'
+   _item.category_id                  'pdbx_nmr_upload'
+   _item.mandatory_code                yes
+   _item_type.code                    'int'
+
+save_
+
+
+save__pdbx_nmr_upload.data_file_name
+
+   _item_description.description
+;
+The directory path and file name for the data file that is to be uploaded.
+;
+
+   _item.name                         '_pdbx_nmr_upload.data_file_name'
+   _item.category_id                  'pdbx_nmr_upload'
+   _item.mandatory_code                yes
+   _item_type.code                    'line'
+   _item_examples.case                't1_relaxation_1.txt'
+
+save_
+
+
+save__pdbx_nmr_upload.data_file_category
+
+   _item_description.description
+;
+This item defines the kind of data in the file uploaded for deposition.
+;
+
+   _item.name                         '_pdbx_nmr_upload.data_file_category'
+   _item.category_id                  'pdbx_nmr_upload'
+   _item.mandatory_code               yes
+   _item_type.code                    'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+    assigned_chemical_shifts                    .
+    coupling_constants                          .
+    spectral_peak_list                          .
+    resonance_linker                            .
+    chem_shift_isotope_effect                   .
+    chem_shift_interaction_diff                 .
+    chem_shift_anisotropy                       .
+    theoretical_chem_shifts                     .
+    chem_shifts_calc_type                       .
+    RDCs                                        .
+    dipolar_couplings                           .
+    spectral_density_values                     .
+    other_data_types                            .
+    chemical_rates                              .
+    H_exch_rates                                .
+    H_exch_protection_factors                   .
+    homonucl_NOEs                               .
+    heteronucl_NOEs                             .
+    heteronucl_T1_relaxation                    .
+    heteronucl_T1rho_relaxation                 .
+    heteronucl_T2_relaxation                    .
+    auto_relaxation                             .
+    dipole_dipole_relaxation                    .
+    dipole_dipole_cross_correlations            .
+    dipole_CSA_cross_correlations               .
+    order_parameters                            .
+    pH_titration                                .
+    pH_param_list                               .
+    D_H_fractionation_factors                   .
+    binding_data                                .
+    binding_param_list                          .
+    deduced_secd_struct_features                .
+    deduced_hydrogen_bonds                      .
+    conformer_statistics                        .
+    constraint_statistics                       .
+    representative_conformer                    .
+    conformer_family_coord_set                  .
+    force_constants                             .
+    angular_order_parameters                    .
+    tertiary_struct_elements                    .
+    secondary_structs                           .
+    bond_annotation                             .
+    structure_interactions                      .
+    other_struct_features                       .
+    tensor                                      .
+    interatomic_distance                        .
+    general_distance_constraints                .
+    distance_constraints                        .
+    floating_chiral_stereo_assign               .
+    torsion_angle_constraints                   .
+    RDC_constraints                             .
+    J_three_bond_constraints                    .
+    CA_CB_chem_shift_constraints                .
+    H_chem_shift_constraints                    .
+    other_constraints                           .
+
+
+save_
+
+save__pdbx_nmr_upload.data_file_syntax
+
+   _item_description.description
+;
+The syntax or format of the file that is uploaded.
+;
+
+   _item.name                         '_pdbx_nmr_upload.data_file_syntax'
+   _item.category_id                  'pdbx_nmr_upload'
+   _item.mandatory_code                no
+   _item_type.code                    'line'
+
+   loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+
+   'NMR-STAR 3.1'                               ?
+   'NMR-STAR 2.1'                               ?
+   'AMBER'                                      ?
+   'XPLOR'                                      ?
+   'TALOS'                                      ?
+   'CYANA'                                      ?
+
+   _item_examples.case                  'NMR-STAR v3'
+
+save_
+
+save__pdbx_nmr_upload.entry_id
+
+   _item_description.description
+;
+Pointer to '_entry.id'
+;
+
+   _item.name                         '_pdbx_nmr_upload.entry_id'
+   _item.category_id                  'pdbx_nmr_upload'
+   _item.mandatory_code                yes
+   _item_type.code                    'code'
+   _item_examples.case                '2DSX'
+
+save_
+
+
+# extension add from chemical_shift_pdbx_update_20121211.dic
+
+save__pdbx_nmr_assigned_chem_shift_list.label
+   _item_description.description
+;
+A descriptive label that uniquely identifies a list of reported assigned chemical shifts.
+;
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.label'
+   _item.category_id              'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            no
+#  _item_default.value            '?'
+   _item_type.code                'line'
+   _item_examples.case            'assigned chem shift set 1'
+save_
+
+
+
+save__pdbx_nmr_assigned_chem_shift_list.conditions_label
+   _item_description.description
+;
+Pointer to 'pdbx_nmr_exptl_sample_conditions.label'.
+;
+   _item.name                     '_pdbx_nmr_assigned_chem_shift_list.conditions_label'
+   _item.category_id               'pdbx_nmr_assigned_chem_shift_list'
+   _item.mandatory_code            no
+#   _item_default.value            '?'
+   _item_type.code                'line'
+   _item_examples.case            'sample conditions one'
+save_
+
+save__pdbx_nmr_spectral_peak_list.label
+   _item_description.description
+;
+A descriptive label that uniquely identifies a list of reported spectral peaks.
+;
+   _item.name                     '_pdbx_nmr_spectral_peak_list.label'
+   _item.category_id               'pdbx_nmr_spectral_peak_list'
+   _item.mandatory_code            no
+#   _item_default.value            '?'
+   _item_type.code                'line'
+   _item_examples.case            'peak list 1'
+save_
+
+
+
+save__pdbx_nmr_spectral_peak_list.conditions_label
+   _item_description.description
+;
+Pointer to 'pdbx_nmr_exptl_sample_conditions.label'.
+;
+   _item.name                     '_pdbx_nmr_spectral_peak_list.conditions_label'
+   _item.category_id               'pdbx_nmr_spectral_peak_list'
+   _item.mandatory_code            no
+#   _item_default.value            '?'
+   _item_type.code                'line'
+   _item_examples.case            'sample conditions one'
+save_
+

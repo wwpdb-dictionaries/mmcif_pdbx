@@ -1,0 +1,120 @@
+###########################################################################
+#
+# File:  database_status_history_extension.dic
+# Date   6-Jun-2014  J. Westbrook
+#                            
+# Draft extension dictionary for describing processing status history
+#                    
+#
+save_pdbx_database_status_history
+    _category.description
+;             The pdbx_database_status_history category records the time evolution of entry 
+              processing status.
+;            
+    _category.id                 'pdbx_database_status_history'
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_database_status_history.ordinal'
+                                '_pdbx_database_status_history.entry_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'database_group'
+                                 'pdbx_group'
+    _category_examples.case
+;
+     _pdbx_database_status_history.entry_id           'D_0000000000'
+     _pdbx_database_status_history.ordinal            1
+     _pdbx_database_status_history.date_begin         2014-01-01
+     _pdbx_database_status_history.date_end           2014-01-01
+     _pdbx_database_status_history.status_code        PROC
+
+;
+   _pdbx_category_context.type         WWPDB_LOCAL
+   _pdbx_category_context.category_id  pdbx_database_status_history
+     save_
+
+save__pdbx_database_status_history.entry_id
+    _item_description.description
+;     The value of _pdbx_database_status_history.entry_id identifies the entry data block.
+;
+    _item.name                  '_pdbx_database_status_history.entry_id'
+    _item.category_id            pdbx_database_status_history
+    _item.mandatory_code         yes
+    _item_type.code              code
+    _item_linked.child_name	'_pdbx_database_status_history.entry_id'
+    _item_linked.parent_name    '_entry.id'
+    _item_examples.case          'D_0000000000'
+     save_
+
+save__pdbx_database_status_history.ordinal
+    _item_description.description
+;              Ordinal index for the status history list.
+
+;
+    _item.name                  '_pdbx_database_status_history.ordinal'
+    _item.category_id            pdbx_database_status_history
+    _item.mandatory_code         yes
+    _item_type.code              code
+    _item_examples.case          '1'
+     save_
+
+save__pdbx_database_status_history.date_begin
+    _item_description.description
+;              This is the date of the start of the current processing status state.
+
+;
+    _item.name                   '_pdbx_database_status_history.date_begin'
+    _item.category_id            pdbx_database_status_history
+    _item.mandatory_code         yes
+    _item_type.code              yyyy-mm-dd:hh:mm
+    _item_examples.case          2014-01-29
+     save_
+
+save__pdbx_database_status_history.date_end
+    _item_description.description
+;              This is the date of the end of the current processing status state.
+
+;
+    _item.name                   '_pdbx_database_status_history.date_end'
+    _item.category_id            pdbx_database_status_history
+    _item.mandatory_code         no
+    _item_type.code              yyyy-mm-dd:hh:mm
+    _item_examples.case          2014-01-30
+     save_
+
+
+save__pdbx_database_status_history.status_code
+    _item_description.description
+;              Current entry processing status.
+;
+    _item.name                  '_pdbx_database_status_history.status_code'
+    _item.category_id             pdbx_database_status_history
+    _item.mandatory_code          yes
+    _item_type.code               code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+   PROC  'To be processed'
+   WAIT  'Processing started, waiting for author input to continue processing'
+   REL   'Released'
+   HOLD  'On hold until yyyy-mm-dd'
+   HPUB  'On hold until publication'
+   AUTH  'Processed, waiting for author review and approval'
+   POLC  'Processing, waiting for a policy decision'
+   REPL  'Author sent new coordinates to be incorporated'    
+   AUCO  'Author corrections pending review'    
+     loop_
+    _item_examples.case         PROC
+                                WAIT
+     save_
+
+save__pdbx_database_status_history.details
+    _item_description.description
+;              Special details about the current process status state.
+
+;
+    _item.name                   '_pdbx_database_status_history.details'
+    _item.category_id            pdbx_database_status_history
+    _item.mandatory_code         no
+    _item_type.code              text
+     save_

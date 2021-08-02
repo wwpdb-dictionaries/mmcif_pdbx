@@ -1,0 +1,4334 @@
+###########################################################################
+#
+# File:  mmcif_std-def-2.dic
+#
+#                      mmCIF Data Dictionary
+#
+# This data dictionary contains the standard mmCIF data definitions.
+#
+#                           Defintion Section 2
+#
+# Section 2 contains definitions added to maintain correspondence
+# with the Core CIF dictionary  V2.3
+#
+#
+#
+###########################################################################
+
+save__atom_site.adp_type
+     _item_description.description
+;              A standard code used to describe the type of atomic displacement
+               parameters used for the site.
+;
+
+     _item.name                      '_atom_site.adp_type'
+     _item.category_id               atom_site
+     _item.mandatory_code             no
+     _item_type.code                  code
+     _item_related.related_name      '_atom_site.thermal_displace_type'
+     _item_related.function_code      alternate
+    loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+                                 Uani   'anisotropic Uij'
+                                 Uiso   'isotropic U'
+                                 Uovl   'overall U'
+                                 Umpe   'multipole expansion U'
+                                 Bani   'anisotropic Bij'
+                                 Biso   'isotropic B'
+                                 Bovl   'overall B'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_atom_site_adp_type'         cif_core.dic 2.3
+      save_
+
+save__atom_site.refinement_flags
+     _item_description.description
+;           A concatenated series of single-letter codes which indicate the
+            refinement restraints or constraints applied to this site.  This
+            item should not be used.  It has been replaced by
+            _atom_site.refinement_flags_posn, *_adp and *_occupancy. It is
+            retained in this dictionary only to provide compatibility with
+            old CIFs.
+;
+     _item.name                      '_atom_site.refinement_flags'
+     _item.category_id                atom_site
+     _item.mandatory_code             no
+     _item_type.code                  code
+    loop_
+     _item_related.related_name
+     _item_related.function_code
+                               '_atom_site.refinement_flags_posn'      replaces
+                               '_atom_site.refinement_flags_adp'       replaces
+                               '_atom_site.refinement_flags_occupancy' replaces
+    loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+                               S 'special-position constraint on site'
+                               G 'rigid-group refinement of site'
+                               R 'riding-atom site attached to non-riding atom'
+                               D 'distance or angle restraint on site'
+                               T 'thermal displacement constraints'
+                               U 'Uiso or Uij restraint (rigid bond)'
+                               P 'partial occupancy constraint'
+#                                '.' 'no refinement constraints'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_atom_site_refinement_flags'          cif_core.dic 2.3
+
+      save_
+
+save__atom_site.refinement_flags_adp
+     _item_description.description
+;              A code which indicates the refinement restraints or constraints
+               applied to the atomic displacement parameters of this site.
+;
+
+     _item.name                      '_atom_site.refinement_flags_adp'
+     _item.category_id                atom_site
+     _item.mandatory_code             no
+     _item_type.code                  code
+     _item_related.related_name      '_atom_site.refinement_flags'
+     _item_related.function_code     replacedby
+    loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+             T  'special-position constraints on atomic displacement parameters'
+             U  'Uiso or Uij restraint (rigid bond)'
+             TU 'both constraints applied'
+#                  '.'  'no constraints on atomic displacement parameters'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_atom_site_refinement_flags_adp'          cif_core.dic 2.3
+
+      save_
+
+save__atom_site.refinement_flags_occupancy
+     _item_description.description
+;              A code which indicates that refinement restraints or
+               constraints were applied to the occupancy of this site.
+;
+     _item.name                      '_atom_site.refinement_flags_occupancy'
+     _item.category_id                atom_site
+     _item.mandatory_code             no
+     _item_type.code                  code
+     _item_related.related_name      '_atom_site.refinement_flags'
+     _item_related.function_code      replacedby
+    loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+                                P 'site-occupancy constraint'
+#                                      '.' 'no constraints on site-occupancy parameters'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_atom_site_refinement_flags_occupancy'         cif_core.dic 2.3
+
+      save_
+
+save__atom_site.refinement_flags_posn
+     _item_description.description
+;              A code which indicates the refinement restraints or constraints
+               applied to the positional coordinates of this site.
+;
+     _item.name                      '_atom_site.refinement_flags_posn'
+     _item.category_id                atom_site
+     _item.mandatory_code             no
+     _item_type.code                  code
+     _item_related.related_name      '_atom_site.refinement_flags'
+     _item_related.function_code      replacedby
+    loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+                     D 'distance or angle restraint on positional coordinates'
+                     G 'rigid-group refinement of positional coordinates'
+                     R 'riding-atom site attached to non-riding atom'
+                     S 'special-position constraint on positional coordinates'
+                     DG   'combination of the above constraints'
+                     DR   'combination of the above constraints'
+                     DS   'combination of the above constraints'
+                     GR   'combination of the above constraints'
+                     GS   'combination of the above constraints'
+                     RS    'combination of the above constraints'
+                     DGR  'combination of the above constraints'
+                     DGS  'combination of the above constraints'
+                     DRS  'combination of the above constraints'
+                     GRS  'combination of the above constraints'
+                     DGRS 'combination of the above constraints'
+#                       '.' 'no constraints on  positional coordinates'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_atom_site_refinement_flags_posn'          cif_core.dic 2.3
+
+      save_
+
+save__atom_sites.special_details
+     _item_description.description
+;              Additional information about the atomic coordinates not coded
+               elsewhere in the CIF.
+;
+     _item.name                      '_atom_sites.special_details'
+     _item.category_id                atom_sites
+     _item.mandatory_code             no
+     _item_type.code                  text
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_atom_sites_special_details'          cif_core.dic 2.3
+
+      save_
+
+save__atom_type.scat_dispersion_source
+     _item_description.description
+;              Reference to the source of the real and imaginary dispersion
+               corrections for scattering factors used for this atom type.
+;
+     _item.name                      '_atom_type.scat_dispersion_source'
+     _item.category_id                    atom_type
+     _item.mandatory_code             no
+     _item_type.code                  text
+     _item_examples.case             'International Tables Vol. IV Table 2.3.1'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_atom_type_scat_dispersion_source'         cif_core.dic 2.3
+
+      save_
+
+################
+## AUDIT_LINK ##
+################
+
+save_audit_link
+    _category.description
+;              Data items in the AUDIT_LINK category record details about the
+               relationships between data blocks in the current CIF.
+;
+
+    _category.id                      'audit_link'
+    _category.mandatory_code          no
+    loop_
+    _category_key.name
+          '_audit_link.block_code'
+          '_audit_link.block_description'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'audit_group'
+
+    loop_
+    _category_examples.case
+    _category_examples.detail
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    loop_
+    _audit_link.block_code
+    _audit_link.block_description
+       morA_pub      'discursive text of paper with two structures'
+       morA_(1)      'structure 1 of 2'
+       morA_(2)      'structure 2 of 2'
+;
+;
+    Example 1 - multiple structure paper, as illustrated
+                in A Guide to CIF for Authors (1995). IUCr: Chester.
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    loop_
+    _audit_link.block_code
+    _audit_link.block_description
+       KSE_PUB  'publication details'
+       KSE_COM  'experimental data common to ref./mod. structures'
+       KSE_REF  'reference structure'
+       KSE_MOD  'modulated structure'
+;
+;
+    Example 2 - example file for the one-dimensional incommensurately
+                modulated structure of K~2~SeO~4~.
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      save_
+
+save__audit_link.block_code
+     _item_description.description
+;              The value of _audit_block.code associated with a data block
+               in the current file related to the current data block. The
+               special value '.' may be used to refer to the current data
+               block for completeness.
+;
+     _item.name                      '_audit_link.block_code'
+     _item.category_id                audit_link
+     _item.mandatory_code             yes
+     _item_type.code                  code
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_audit_link_block_code'         cif_core.dic 2.3
+      save_
+
+save__audit_link.block_description
+     _item_description.description
+;              A textual description of the relationship of the referenced
+               data block to the current one.
+;
+     _item.name                      '_audit_link.block_description'
+     _item.category_id                audit_link
+     _item.mandatory_code             yes
+     _item_type.code                  text
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_audit_link_block_description'          cif_core.dic 2.3
+
+      save_
+
+##
+
+save__cell.reciprocal_angle_alpha
+     _item_description.description
+;              The angle (recip-alpha) defining the reciprocal cell in degrees.
+               (recip-alpha), (recip-alpha) and (recip-alpha) related to the
+               angles in the real cell by:
+
+               cos(recip-alpha)
+                   = [cos(beta)*cos(gamma) - cos(alpha)]/[sin(beta)*sin(gamma)]
+
+               cos(recip-beta)
+                   = [cos(gamma)*cos(alpha) - cos(beta)]/[sin(gamma)*sin(alpha)]
+
+               cos(recip-gamma)
+                   = [cos(alpha)*cos(beta) - cos(gamma)]/[sin(alpha)*sin(beta)]
+
+               Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
+                       New York: John Wiley & Sons Inc.
+;
+     _item.name               '_cell.reciprocal_angle_alpha'
+     _item.category_id         cell
+     _item.mandatory_code      no
+     _item_type.code           float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0 180.0
+                         180.0 180.0
+     _item_default.value       90.0
+     _item_type_conditions.code esd
+     _item_units.code          'degrees'
+     _item_related.related_name      '_cell.reciprocal_angle_alpha_esd'
+     _item_related.function_code      associated_esd
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_cell_reciprocal_angle_alpha'    cif_core.dic 2.3
+      save_
+
+save__cell.reciprocal_angle_beta
+     _item_description.description
+;              The angle (recip-beta) defining the reciprocal cell in degrees.
+               (recip-alpha), (recip-alpha) and (recip-alpha) related to the
+               angles in the real cell by:
+
+               cos(recip-alpha)
+                   = [cos(beta)*cos(gamma) - cos(alpha)]/[sin(beta)*sin(gamma)]
+
+               cos(recip-beta)
+                   = [cos(gamma)*cos(alpha) - cos(beta)]/[sin(gamma)*sin(alpha)]
+
+               cos(recip-gamma)
+                   = [cos(alpha)*cos(beta) - cos(gamma)]/[sin(alpha)*sin(beta)]
+
+               Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
+                       New York: John Wiley & Sons Inc.
+;
+     _item.name               '_cell.reciprocal_angle_beta'
+     _item.category_id         cell
+     _item.mandatory_code      no
+     _item_type.code            float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0 180.0
+                         180.0 180.0
+     _item_default.value       90.0
+     _item_type_conditions.code esd
+     _item_units.code          'degrees'
+     _item_related.related_name      '_cell.reciprocal_angle_beta_esd'
+     _item_related.function_code      associated_esd
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_cell_reciprocal_angle_beta'         cif_core.dic 2.3
+      save_
+#
+save__cell.reciprocal_angle_gamma
+     _item_description.description
+;              The angle (recip-gamma) defining the reciprocal cell in degrees.
+               (recip-alpha), (recip-alpha) and (recip-alpha) related to the
+               angles in the real cell by:
+
+               cos(recip-alpha)
+                   = [cos(beta)*cos(gamma) - cos(alpha)]/[sin(beta)*sin(gamma)]
+
+               cos(recip-beta)
+                   = [cos(gamma)*cos(alpha) - cos(beta)]/[sin(gamma)*sin(alpha)]
+
+               cos(recip-gamma)
+                   = [cos(alpha)*cos(beta) - cos(gamma)]/[sin(alpha)*sin(beta)]
+
+               Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
+                       New York: John Wiley & Sons Inc.
+;
+     _item.name               '_cell.reciprocal_angle_gamma'
+     _item.category_id         cell
+     _item.mandatory_code      no
+     _item_type.code           float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0 180.0
+                         180.0 180.0
+     _item_default.value       90.0
+     _item_type_conditions.code esd
+     _item_units.code          'degrees'
+     _item_related.related_name      '_cell.reciprocal_angle_gamma_esd'
+     _item_related.function_code      associated_esd
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_cell_reciprocal_angle_gamma'         cif_core.dic 2.3
+
+      save_
+#
+
+save__cell.reciprocal_angle_alpha_esd
+     _item_description.description
+;             The estimated standard deviation of _cell.reciprocal_angle_alpha.
+;
+     _item.name               '_cell.reciprocal_angle_alpha_esd'
+     _item.category_id         cell
+     _item.mandatory_code      no
+     _item_type.code           float
+     _item_units.code          'degrees'
+     _item_related.related_name      '_cell.reciprocal_angle_alpha'
+     _item_related.function_code      associated_value
+#    loop_
+#    _item_aliases.alias_name
+#    _item_aliases.dictionary
+#    _item_aliases.version
+#    '_cell_reciprocal_angle_alpha_esd'          cif_core.dic 2.3
+
+      save_
+#
+
+
+save__cell.reciprocal_angle_beta_esd
+     _item_description.description
+;             The estimated standard deviation of _cell.reciprocal_angle_beta.
+;
+     _item.name               '_cell.reciprocal_angle_beta_esd'
+     _item.category_id         cell
+     _item.mandatory_code      no
+     _item_type.code           float
+     _item_units.code          'degrees'
+     _item_related.related_name      '_cell.reciprocal_angle_beta'
+     _item_related.function_code      associated_value
+#    loop_
+#    _item_aliases.alias_name
+#    _item_aliases.dictionary
+#    _item_aliases.version
+#     '_cell_reciprocal_angle_beta_esd'    cif_core.dic 2.3
+
+      save_
+#
+
+save__cell.reciprocal_angle_gamma_esd
+     _item_description.description
+;             The estimated standard deviation of _cell.reciprocal_angle_gamma.
+;
+     _item.name               '_cell.reciprocal_angle_gamma_esd'
+     _item.category_id         cell
+     _item.mandatory_code      no
+     _item_type.code           float
+     _item_units.code          'degrees'
+     _item_related.related_name      '_cell.reciprocal_angle_gamma'
+     _item_related.function_code      associated_value
+#    loop_
+#    _item_aliases.alias_name
+#    _item_aliases.dictionary
+#    _item_aliases.version
+#     '_cell_reciprocal_angle_gamma_esd'         cif_core.dic 2.3
+
+      save_
+#
+
+save__cell.reciprocal_length_a
+     _item_description.description
+;              The reciprocal cell length (recip-a) in inverse Angstroms.
+              (recip-a), (recip-b) and (recip-c) are related to the real cell
+              by the following equation:
+
+               recip-a = b*c*sin(alpha)/V
+
+               recip-b = c*a*sin(beta)/V
+
+               recip-c = a*b*sin(gamma)/V
+
+               where V is the cell volume.
+
+               Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
+                       New York: John Wiley & Sons Inc.
+;
+
+     _item.name                '_cell.reciprocal_length_a'
+     _item.category_id          cell
+     _item.mandatory_code       no
+     _item_type.code            float
+
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code            'reciprocal_angstroms'
+     _item_type_conditions.code  esd
+     _item_related.related_name  '_cell.reciprocal_length_a_esd'
+     _item_related.function_code  associated_esd
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_cell_reciprocal_length_a'          cif_core.dic 2.3
+      save_
+
+save__cell.reciprocal_length_b
+     _item_description.description
+;              The reciprocal cell length (recip-b) in inverse Angstroms.
+              (recip-a), (recip-b) and (recip-c) are related to the real cell
+              by the following equation:
+
+               recip-a = b*c*sin(alpha)/V
+
+               recip-b = c*a*sin(beta)/V
+
+               recip-c = a*b*sin(gamma)/V
+
+               where V is the cell volume.
+
+               Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
+                       New York: John Wiley & Sons Inc.
+;
+
+     _item.name                '_cell.reciprocal_length_b'
+     _item.category_id          cell
+     _item.mandatory_code       no
+     _item_type.code            float
+
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code            'reciprocal_angstroms'
+     _item_type_conditions.code  esd
+     _item_related.related_name  '_cell.reciprocal_length_b_esd'
+     _item_related.function_code  associated_esd
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_cell_reciprocal_length_b'          cif_core.dic 2.3
+
+      save_
+
+save__cell.reciprocal_length_c
+     _item_description.description
+;              The reciprocal cell length (recip-c) in inverse Angstroms.
+              (recip-a), (recip-b) and (recip-c) are related to the real cell
+              by the following equation:
+
+               recip-a = b*c*sin(alpha)/V
+
+               recip-b = c*a*sin(beta)/V
+
+               recip-c = a*b*sin(gamma)/V
+
+               where V is the cell volume.
+
+               Ref: Buerger, M. J. (1942). X-ray Crystallography, p. 360.
+                       New York: John Wiley & Sons Inc.
+;
+
+     _item.name                '_cell.reciprocal_length_c'
+     _item.category_id          cell
+     _item.mandatory_code       no
+     _item_type.code            float
+
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code            'reciprocal_angstroms'
+     _item_type_conditions.code  esd
+     _item_related.related_name  '_cell.reciprocal_length_c_esd'
+     _item_related.function_code  associated_esd
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_cell_reciprocal_length_c'         cif_core.dic 2.3
+      save_
+
+save__cell.reciprocal_length_a_esd
+     _item_description.description
+;             The estimated standard deviation of _cell.reciprocal_length_a.
+;
+     _item.name               '_cell.reciprocal_length_a_esd'
+     _item.category_id         cell
+     _item.mandatory_code       no
+     _item_type.code            float
+     _item_units.code          'reciprocal_angstroms'
+     _item_related.related_name      '_cell.reciprocal_length_a'
+     _item_related.function_code      associated_value
+#    loop_
+#    _item_aliases.alias_name
+#    _item_aliases.dictionary
+#    _item_aliases.version
+#     '_cell_reciprocal_length_a_esd'         cif_core.dic 2.3
+
+      save_
+
+save__cell.reciprocal_length_b_esd
+     _item_description.description
+;             The estimated standard deviation of _cell.reciprocal_length_b.
+;
+     _item.name               '_cell.reciprocal_length_b_esd'
+     _item.category_id         cell
+     _item.mandatory_code       no
+     _item_type.code            float
+     _item_units.code          'reciprocal_angstroms'
+     _item_related.related_name      '_cell.reciprocal_length_b'
+     _item_related.function_code      associated_value
+#    loop_
+#    _item_aliases.alias_name
+#    _item_aliases.dictionary
+#    _item_aliases.version
+#    '_cell_reciprocal_length_b_esd'          cif_core.dic 2.3
+      save_
+
+save__cell.reciprocal_length_c_esd
+     _item_description.description
+;             The estimated standard deviation of _cell.reciprocal_length_c.
+;
+     _item.name               '_cell.reciprocal_length_c_esd'
+     _item.category_id         cell
+     _item.mandatory_code       no
+     _item_type.code            float
+     _item_units.code          'reciprocal_angstroms'
+     _item_related.related_name      '_cell.reciprocal_length_c'
+     _item_related.function_code      associated_value
+#    loop_
+#    _item_aliases.alias_name
+#    _item_aliases.dictionary
+#    _item_aliases.version
+#     '_cell_reciprocal_length_c_esd'         cif_core.dic 2.3
+      save_
+
+# save__cell.special_details
+#      _item_description.description
+# ;              A description of special aspects of the cell choice, noting
+#                possible alternative settings.
+# ;
+#      _item.name                '_cell.special_details'
+#      _item.category_id          cell
+#      _item.mandatory_code       no
+#      _item_type.code            text
+#     loop_
+#      _item_examples.case
+#                              'pseudo-orthorhombic'
+#                              'standard setting from 45 deg rotation around c'
+#     loop_
+#      _item_aliases.alias_name
+#      _item_aliases.dictionary
+#      _item_aliases.version
+#      '_cell_special_details'          cif_core.dic 2.3
+#       save_
+# #
+
+
+save__chemical.absolute_configuration
+     _item_description.description
+;              Necessary conditions for the assignment of
+               _chemical.absolute_configuration are given by H. D. Flack and
+               G. Bernardinelli (1999, 2000).
+
+               Ref: Flack, H. D. & Bernardinelli, G. (1999). Acta Cryst. A55,
+                       908-915. (http://www.iucr.org/paper?sh0129)
+                    Flack, H. D. & Bernardinelli, G. (2000). J. Appl. Cryst.
+                       33, 1143-1148. (http://www.iucr.org/paper?ks0021)
+;
+     _item.name                      '_chemical.absolute_configuration'
+     _item.category_id                chemical
+     _item.mandatory_code             no
+     _item_type.code                  code
+
+    loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+                                rm
+;                                        absolute configuration established by
+                                         the structure determination of a
+                                         compound containing a chiral reference
+                                         molecule of known absolute
+                                         configuration
+;
+                                 ad
+;                                        absolute configuration established by
+                                         anomalous-dispersion effects in
+                                         diffraction measurements on the
+                                         crystal
+;
+                                 rmad
+;                                        absolute configuration established by
+                                         the structure determination of a
+                                         compound containing a chiral reference
+                                         molecule of known absolute
+                                         configuration and confirmed by
+                                         anomalous-dispersion effects in
+                                         diffraction measurements on the
+                                         crystal
+;
+                                 syn
+;                                        absolute configuration has not been
+                                         established by anomalous-dispersion
+                                         effects in diffraction measurements on
+                                         the crystal. The enantiomer has been
+                                         assigned by reference to an unchanging
+                                         chiral centre in the synthetic
+                                         procedure
+;
+                                 unk
+;                                        absolute configuration is unknown,
+                                         there being no firm chemical evidence
+                                         for its assignment to hand and it
+                                         having not been established by
+                                         anomalous-dispersion effects in
+                                         diffraction measurements on the
+                                         crystal. An arbitrary choice of
+                                         enantiomer has been made
+;
+#                                 '.'      'inapplicable'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_chemical_absolute_configuration'          cif_core.dic 2.3
+      save_
+
+save__chemical.melting_point_gt
+     _item_description.description
+;              A temperature in kelvins above
+               which the melting point (the temperature at which the
+               crystalline solid changes to a liquid) lies.
+               _chemical.melting_point_gt and _chemical.melting_point_lt
+               allow a range of temperatures to be given.
+
+               _chemical.melting_point should always be used in preference
+               to these two items whenever possible.
+;
+     _item.name                 '_chemical.melting_point_gt'
+     _item.category_id           chemical
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name  '_chemical.melting_point'
+     _item_related.function_code  alternate
+
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+
+     _item_units.code               kelvins
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_chemical_melting_point_gt'         cif_core.dic 2.3
+      save_
+
+save__chemical.melting_point_lt
+     _item_description.description
+;              A temperature in kelvins below which the melting point (the
+               temperature at which the crystalline solid changes to a liquid)
+               lies. _chemical.melting_point_gt and _chemical.melting_point_lt
+               allow a range of temperatures to be given.
+
+               _chemical.melting_point should always be used in preference
+               to these two items whenever possible.
+;
+     _item.name                 '_chemical.melting_point_lt'
+     _item.category_id           chemical
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name  '_chemical.melting_point'
+     _item_related.function_code  alternate
+
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+
+     _item_units.code               kelvins
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_chemical_melting_point_lt'         cif_core.dic 2.3
+      save_
+
+save__chemical.optical_rotation
+     _item_description.description
+;              The optical rotation in solution of the compound is
+               specified in the following format:
+                    '[\a]^TEMP^~WAVE~ = SORT (c = CONC, SOLV)'
+               where:
+                 TEMP is the temperature of the measurement in degrees
+                      Celsius,
+                 WAVE is an indication of the wavelength of the light
+                      used for the measurement,
+                 CONC is the concentration of the solution given as the
+                      mass of the substance in g in 100 ml of solution,
+                 SORT is the signed value (preceded by a + or a - sign)
+                      of 100.\a/(l.c), where \a is the signed optical
+                      rotation in degrees measured in a cell of length l in
+                      dm and c is the value of CONC as defined above, and
+                 SOLV is the chemical formula of the solvent.
+;
+     _item.name                 '_chemical.optical_rotation'
+     _item.category_id           chemical
+     _item.mandatory_code        no
+     _item_type.code             line
+     _item_examples.case        '[\a]^25^~D~ = +108 (c = 3.42, CHCl~3~)'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_chemical_optical_rotation'          cif_core.dic 2.3
+      save_
+
+save__chemical.properties_biological
+     _item_description.description
+;              A free-text description of the biological properties of the
+               material.
+;
+     _item.name                 '_chemical.properties_biological'
+     _item.category_id           chemical
+     _item.mandatory_code        no
+     _item_type.code             text
+    loop_
+     _item_examples.case
+;              diverse biological activities including use as a
+               laxative and strong antibacterial activity against
+               S. aureus and weak activity against
+               cyclooxygenase-1 (COX-1)
+;
+
+;              antibiotic activity against Bacillus subtilis
+               (ATCC 6051) but no significant activity against
+               Candida albicans (ATCC 14053), Aspergillus flavus
+               (NRRL 6541) and Fusarium verticillioides (NRRL
+               25457)
+;
+
+;              weakly potent lipoxygenase nonredox inhibitor
+;
+
+;              no influenza A virus sialidase inhibitory and
+               plaque reduction activities
+;
+
+;              low toxicity against Drosophila melanogaster
+;
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_chemical_properties_biological'         cif_core.dic 2.3
+      save_
+
+save__chemical.properties_physical
+     _item_description.description
+;    A free-text description of the physical properties of the material.
+;
+
+     _item.name                 '_chemical.properties_physical'
+     _item.category_id           chemical
+     _item.mandatory_code        no
+     _item_type.code             text
+    loop_
+     _item_examples.case
+                                 air-sensitive
+                                 moisture-sensitive
+                                 hygroscopic
+                                 deliquescent
+                                 oxygen-sensitive
+                                 photo-sensitive
+                                 pyrophoric
+                                 semiconductor
+                                 'ferromagnetic at low temperature'
+                                 'paramagnetic and thermochromic'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_chemical_properties_physical'          cif_core.dic 2.3
+      save_
+
+save__chemical.temperature_decomposition
+     _item_description.description
+;              The temperature in kelvins at which the solid decomposes.
+;
+     _item.name                 '_chemical.temperature_decomposition'
+     _item.category_id           chemical
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_type_conditions.code  esd
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code            kelvins
+     _item_examples.case         350
+     _item_related.related_name      '_chemical.temperature_decomposition_esd'
+     _item_related.function_code      associated_esd
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_chemical_temperature_decomposition'         cif_core.dic 2.3
+      save_
+
+save__chemical.temperature_decomposition_esd
+     _item_description.description
+;              The estimated standard deviation of
+               _chemical.temperature_decomposition.
+;
+     _item.name                 '_chemical.temperature_decomposition_esd'
+     _item.category_id           chemical
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_units.code            kelvins
+     _item_related.related_name      '_chemical.temperature_decomposition'
+     _item_related.function_code      associated_value
+#    loop_
+#    _item_aliases.alias_name
+#    _item_aliases.dictionary
+#    _item_aliases.version
+#     '_chemical_temperature_decomposition_esd'         cif_core.dic 2.3
+      save_
+
+save__chemical.temperature_decomposition_gt
+     _item_description.description
+;              A temperature in kelvins above which the solid is known to
+               decompose. _chemical.temperature_decomposition_gt and
+               _chemical.temperature_decomposition_lt allow
+               a range of temperatures to be given.
+
+               _chemical.temperature_decomposition should always be used in
+               preference to these two items whenever possible.
+;
+     _item.name                 '_chemical.temperature_decomposition_gt'
+     _item.category_id           chemical
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+
+     _item_units.code             kelvins
+     _item_related.related_name  '_chemical.temperature_decomposition'
+     _item_related.function_code  alternate
+     _item_examples.case          350
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_chemical_temperature_decomposition_gt'         cif_core.dic 2.3
+      save_
+
+save__chemical.temperature_decomposition_lt
+     _item_description.description
+;              A temperature in kelvins below which the solid is known to
+              decompose. _chemical.temperature_decomposition_gt and
+               _chemical.temperature_decomposition_lt allow
+               a range of temperatures to be given.
+
+               _chemical.temperature_decomposition should always be used in
+               preference to these two items whenever possible.
+;
+     _item.name                 '_chemical.temperature_decomposition_lt'
+     _item.category_id           chemical
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code             kelvins
+     _item_related.related_name  '_chemical.temperature_decomposition'
+     _item_related.function_code  alternate
+     _item_examples.case          350
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_chemical_temperature_decomposition_lt'         cif_core.dic 2.3
+      save_
+
+save__chemical.temperature_sublimation
+     _item_description.description
+;              The temperature in kelvins at which the solid sublimes.
+;
+     _item.name                 '_chemical.temperature_sublimation'
+     _item.category_id           chemical
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_type_conditions.code  esd
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code            kelvins
+     _item_examples.case         350
+     _item_related.related_name  '_chemical.temperature_sublimation_esd'
+     _item_related.function_code  associated_esd
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_chemical_temperature_sublimation'         cif_core.dic 2.3
+      save_
+
+save__chemical.temperature_sublimation_esd
+     _item_description.description
+;              The estimated standard deviation of
+               _chemical.temperature_sublimation.
+;
+     _item.name                 '_chemical.temperature_sublimation_esd'
+     _item.category_id           chemical
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_units.code            kelvins
+     _item_related.related_name  '_chemical.temperature_sublimation'
+     _item_related.function_code  associated_value
+#    loop_
+#    _item_aliases.alias_name
+#    _item_aliases.dictionary
+#    _item_aliases.version
+#     '_chemical_temperature_sublimation_esd'         cif_core.dic 2.3
+      save_
+
+save__chemical.temperature_sublimation_gt
+     _item_description.description
+;             A temperature in kelvins above which the solid is known to
+              sublime. _chemical.temperature_sublimation_gt and
+              _chemical.temperature_sublimation_lt allow a
+              range of temperatures to be given.
+
+              _chemical.temperature_sublimation should always be used in
+              preference to these two items whenever possible.
+;
+     _item.name                 '_chemical.temperature_sublimation_gt'
+     _item.category_id           chemical
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code             kelvins
+     _item_related.related_name   '_chemical.temperature_sublimation'
+     _item_related.function_code   alternate
+     _item_examples.case          350
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_chemical_temperature_sublimation_gt'         cif_core.dic 2.3
+      save_
+
+
+save__chemical.temperature_sublimation_lt
+     _item_description.description
+;             A temperature in kelvins below which the solid is known to
+              sublime. _chemical.temperature_sublimation_gt and
+              _chemical.temperature_sublimation_lt allow a
+              range of temperatures to be given.
+
+              _chemical.temperature_sublimation should always be used in
+              preference to these two items whenever possible.
+;
+     _item.name                 '_chemical.temperature_sublimation_lt'
+     _item.category_id           chemical
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code             kelvins
+     _item_related.related_name   '_chemical.temperature_sublimation'
+     _item_related.function_code   alternate
+     _item_examples.case          350
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_chemical_temperature_sublimation_lt'         cif_core.dic 2.3
+      save_
+#
+
+save__citation.database_id_CSD
+     _item_description.description
+;           Identifier ('refcode') of the database record in the Cambridge
+            Structural Database that contains details of the cited structure.
+;
+     _item.name                 '_citation.database_id_CSD'
+     _item.category_id           citation
+     _item.mandatory_code        no
+     _item_type.code             code
+     _item_examples.case         LEKKUH
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_citation_database_id_CSD'         cif_core.dic 2.3
+      save_
+
+save__database.CSD_history
+     _item_description.description
+;              A history of changes made by the Cambridge Crystallographic Data
+               Centre and incorporated into the Cambridge Structural Database
+               (CSD).
+;
+     _item.name                 '_database.CSD_history'
+     _item.category_id           database
+     _item.mandatory_code        no
+     _item_type.code             text
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_database_CSD_history'          cif_core.dic 2.3
+      save_
+
+save__database.code_CAS
+     _item_description.description
+;              The code assigned by Chemical Abstracts.
+;
+     _item.name                 '_database.code_CAS'
+     _item.category_id           database
+     _item.mandatory_code        no
+     _item_type.code             line
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_database_code_CAS'         cif_core.dic 2.3
+      loop_
+     _item_related.related_name   
+     _item_related.function_code  
+       '_database_2.database_id'     replacedby
+       '_database_2.database_code'   replacedby
+      save_
+
+save__database.code_CSD
+     _item_description.description
+;              The code assigned by the Cambridge Structural Database.
+;
+     _item.name                 '_database.code_CSD'
+     _item.category_id           database
+     _item.mandatory_code        no
+     _item_type.code             line
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_database_code_CSD'         cif_core.dic 2.3
+      loop_
+     _item_related.related_name   
+     _item_related.function_code  
+       '_database_2.database_id'     replacedby
+       '_database_2.database_code'   replacedby
+
+      save_
+
+save__database.code_ICSD
+     _item_description.description
+;              The code assigned by the Inorganic Crystal Structure
+               Database.
+;
+     _item.name                 '_database.code_ICSD'
+     _item.category_id           database
+     _item.mandatory_code        no
+     _item_type.code             line
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_database_code_ICSD'          cif_core.dic 2.3
+      loop_
+     _item_related.related_name   
+     _item_related.function_code  
+       '_database_2.database_id'     replacedby
+       '_database_2.database_code'   replacedby
+
+      save_
+
+save__database.code_MDF
+     _item_description.description
+;              The code assigned by the Metals Data File.
+;
+     _item.name                 '_database.code_MDF'
+     _item.category_id           database
+     _item.mandatory_code        no
+     _item_type.code             line
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_database_code_MDF'         cif_core.dic 2.3
+      loop_
+     _item_related.related_name   
+     _item_related.function_code  
+       '_database_2.database_id'     replacedby
+       '_database_2.database_code'   replacedby
+
+      save_
+
+save__database.code_NBS
+     _item_description.description
+;              The code assigned by the NBS (NIST) Crystal Data Database.
+;
+     _item.name                 '_database.code_NBS'
+     _item.category_id           database
+     _item.mandatory_code        no
+     _item_type.code             line
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_database_code_NBS'         cif_core.dic 2.3
+      loop_
+     _item_related.related_name   
+     _item_related.function_code  
+       '_database_2.database_id'     replacedby
+       '_database_2.database_code'   replacedby
+
+      save_
+
+save__database.code_PDB
+     _item_description.description
+;              The code assigned by the Protein Data Bank.
+;
+     _item.name                 '_database.code_PDB'
+     _item.category_id           database
+     _item.mandatory_code        no
+     _item_type.code             line
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_database_code_PDB'         cif_core.dic 2.3
+      loop_
+     _item_related.related_name   
+     _item_related.function_code  
+       '_database_2.database_id'     replacedby
+       '_database_2.database_code'   replacedby
+
+      save_
+
+save__database.code_PDF
+     _item_description.description
+;              The code assigned by the Powder Diffraction File (JCPDS/ICDD).
+;
+     _item.name                 '_database.code_PDF'
+     _item.category_id           database
+     _item.mandatory_code        no
+     _item_type.code             line
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+       '_database_code_PDF'         cif_core.dic 2.3
+      loop_
+     _item_related.related_name   
+     _item_related.function_code  
+       '_database_2.database_id'     replacedby
+       '_database_2.database_code'   replacedby
+
+      save_
+
+save__database.code_depnum_ccdc_fiz
+     _item_description.description
+;              Deposition numbers assigned by the Fachinformationszentrum
+               Karlsruhe (FIZ) to files containing structural information
+               archived by the Cambridge Crystallographic Data Centre (CCDC).
+;
+     _item.name                 '_database.code_depnum_ccdc_fiz'
+     _item.category_id           database
+     _item.mandatory_code        no
+     _item_type.code             line
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_database_code_depnum_ccdc_fiz'         cif_core.dic 2.3
+      loop_
+     _item_related.related_name   
+     _item_related.function_code  
+       '_database_2.database_id'     replacedby
+       '_database_2.database_code'   replacedby
+
+      save_
+
+save__database.code_depnum_ccdc_journal
+     _item_description.description
+;              Deposition numbers assigned by various journals to files
+               containing structural information archived by the Cambridge
+               Crystallographic Data Centre (CCDC).
+;
+
+     _item.name                 '_database.code_depnum_ccdc_journal'
+     _item.category_id           database
+     _item.mandatory_code        no
+     _item_type.code             line
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_database_code_depnum_ccdc_journal'         cif_core.dic 2.3
+      loop_
+     _item_related.related_name   
+     _item_related.function_code  
+       '_database_2.database_id'     replacedby
+       '_database_2.database_code'   replacedby
+
+      save_
+
+save__database.code_depnum_ccdc_archive
+     _item_description.description
+;              Deposition numbers assigned by the Cambridge Crystallographic
+               Data Centre (CCDC) to files containing structural information
+               archived by the CCDC.
+;
+     _item.name                 '_database.code_depnum_ccdc_archive'
+     _item.category_id           database
+     _item.mandatory_code        no
+     _item_type.code             line
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_database_code_depnum_ccdc_archive'         cif_core.dic 2.3
+      loop_
+     _item_related.related_name   
+     _item_related.function_code  
+       '_database_2.database_id'     replacedby
+       '_database_2.database_code'   replacedby
+
+      save_
+
+
+save__diffrn.ambient_pressure
+     _item_description.description
+;              The mean hydrostatic pressure in kilopascals at which the
+               intensities were measured.
+;
+     _item.name                 '_diffrn.ambient_pressure'
+     _item.category_id           diffrn
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_type_conditions.code  esd
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+
+     _item_units.code            'kilopascals'
+     _item_related.related_name  '_diffrn.ambient_pressure_esd'
+     _item_related.function_code  associated_esd
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_ambient_pressure'         cif_core.dic 2.3
+      save_
+
+save__diffrn.ambient_pressure_esd
+     _item_description.description
+;              The estimated standard deviation of _diffrn.ambient_pressure.
+;
+     _item.name                 '_diffrn.ambient_pressure_esd'
+     _item.category_id           diffrn
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_units.code            'kilopascals'
+     _item_related.related_name  '_diffrn.ambient_pressure'
+     _item_related.function_code  associated_value
+#    loop_
+#    _item_aliases.alias_name
+#    _item_aliases.dictionary
+#    _item_aliases.version
+#     '_diffrn_ambient_pressure'         cif_core.dic 2.3
+      save_
+
+
+save__diffrn.ambient_pressure_gt
+     _item_description.description
+;              The mean hydrostatic pressure in kilopascals above which
+               the intensities were measured. _diffrn.ambient_pressure_gt and
+               _diffrn.ambient_pressure_lt allow a pressure range to be given.
+
+               _diffrn.ambient_pressure should always be used in
+               preference to these two items whenever possible.
+;
+     _item.name                 '_diffrn.ambient_pressure_gt'
+     _item.category_id           diffrn
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name  '_diffrn.ambient_pressure'
+     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code            'kilopascals'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_ambient_pressure_gt'         cif_core.dic 2.3
+      save_
+
+save__diffrn.ambient_pressure_lt
+     _item_description.description
+;              The mean hydrostatic pressure in kilopascals below which
+               the intensities were measured. _diffrn.ambient_pressure_gt and
+               _diffrn.ambient_pressure_lt allow a pressure range to be given.
+
+               _diffrn.ambient_pressure should always be used in
+               preference to these two items whenever possible.
+;
+     _item.name                 '_diffrn.ambient_pressure_lt'
+     _item.category_id           diffrn
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name  '_diffrn.ambient_pressure'
+     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code            'kilopascals'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_ambient_pressure_lt'         cif_core.dic 2.3
+      save_
+
+# save__diffrn.ambient_temperature
+#      _item_description.description
+# ;             The mean temperature in kelvins at which the intensities
+#               were measured.
+# ;
+#      _item.name                 '_diffrn.ambient_temperature'
+#      _item.category_id           diffrn
+#      _item.mandatory_code        no
+#      _item_type.code             float
+#      _item_type_conditions.code  esd
+#     loop_
+#      _item_range.minimum
+#      _item_range.maximum
+#                            0.0   0.0
+#                            0.0    .
+#      _item_units.code            kelvins
+#      _item_related.related_name  '_diffrn.ambient_temperature_esd'
+#      _item_related.function_code  associated_esd
+#     loop_
+#      _item_aliases.alias_name
+#      _item_aliases.dictionary
+#      _item_aliases.version
+#       '_diffrn_ambient_temperature'         cif_core.dic 2.3
+#       save_
+
+#save__diffrn.ambient_temperature_esd
+#     _item_description.description
+#;             The estimated standard deviation of _diffrn.ambient_temp.
+#;
+#     _item.name                 '_diffrn.ambient_temperature_esd'
+#     _item.category_id           diffrn
+#     _item.mandatory_code        no
+#     _item_type.code             float
+#     _item_units.code            kelvins
+#     _item_related.related_name  '_diffrn.ambient_temp'
+#     _item_related.function_code  associated_value
+#    loop_
+#    _item_aliases.alias_name
+#    _item_aliases.dictionary
+#    _item_aliases.version
+#    '_diffrn_ambient_temperature_esd'          cif_core.dic 2.3
+#      save_
+
+save__diffrn.ambient_temp_gt
+     _item_description.description
+;             The mean temperature in kelvins above which the intensities were
+              measured.  _diffrn.ambient_temp_gt and _diffrn.ambient_temp_lt
+              allow a range of temperatures to be given.
+
+              _diffrn.ambient_temp should always be used in preference
+              to these two items whenever possible.
+;
+     _item.name                 '_diffrn.ambient_temp_gt'
+     _item.category_id           diffrn
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name  '_diffrn.ambient_temp'
+     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code                kelvins
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_ambient_temperature_gt'         cif_core.dic 2.3
+      save_
+
+save__diffrn.ambient_temp_lt
+     _item_description.description
+;             The mean temperature in kelvins below which the intensities were
+              measured. _diffrn.ambient_temp_gt and _diffrn.ambient_temp_lt
+              allow a range of temperatures to be given.
+
+              _diffrn.ambient_temp should always be used in preference
+              to these two items whenever possible.
+;
+     _item.name                 '_diffrn.ambient_temp_lt'
+     _item.category_id           diffrn
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name  '_diffrn.ambient_temp'
+     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code                kelvins
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_ambient_temperature_lt'         cif_core.dic 2.3
+      save_
+
+save__diffrn_attenuator.material
+     _item_description.description
+;              Material from which the attenuator is made.
+;
+     _item.name                 '_diffrn_attenuator.material'
+     _item.category_id           diffrn_attenuator
+     _item.mandatory_code        no
+     _item_type.code             text
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_attenuator_material'         cif_core.dic 2.3
+      save_
+
+save__diffrn_detector.area_resol_mean
+     _item_description.description
+;              The resolution of an area detector, in pixels/mm.
+;
+     _item.name                 '_diffrn_detector.area_resol_mean'
+     _item.category_id           diffrn_detector
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code              'pixels_per_millimetre'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_diffrn_detector_area_resol_mean'          cif_core.dic 2.3
+      save_
+
+save__diffrn_detector.dtime
+     _item_description.description
+;              The deadtime in microseconds of the detector used to measure
+               the diffraction intensities.
+;
+     _item.name                 '_diffrn_detector.dtime'
+     _item.category_id           diffrn_detector
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+#     _item_related.related_name '_diffrn_radiation_detector.dtime'
+#     _item_related.function_code alternate
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_detector_dtime'         cif_core.dic 2.3
+      save_
+
+save__diffrn_refln.class_code
+     _item_description.description
+;              The code identifying the class to which this reflection has
+               been assigned. This code must match a value of
+               _diffrn_reflns_class.code. Reflections may be grouped into
+               classes for a variety of purposes. For example, for modulated
+               structures each reflection class may be defined by the
+               number m=sum|m~i~|, where the m~i~ are the integer coefficients
+               that, in addition to h,k,l, index the corresponding diffraction
+               vector in the basis defined for the reciprocal lattice.
+;
+     _item.name                 '_diffrn_refln.class_code'
+     _item.category_id           diffrn_refln
+     _item.mandatory_code        no
+     _item_type.code             code
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_refln_class_code'         cif_core.dic 2.3
+      save_
+
+save__diffrn_refln.intensity_u
+     _item_description.description
+;              Standard uncertainty of the net intensity calculated from
+               the diffraction counts after the attenuator and standard
+               scales have been applied.
+;
+     _item.name                 '_diffrn_refln.intensity_u'
+     _item.category_id           diffrn_refln
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name  '_diffrn_refln.intensity_sigma'
+     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_refln_intensity_u'         cif_core.dic 2.3
+      save_
+
+save__diffrn_reflns.av_unetI/netI
+     _item_description.description
+;              Measure [sum u(net I)|/sum|net I|] for all measured reflections.
+;
+
+     _item.name                 '_diffrn_reflns.av_unetI/netI'
+     _item.category_id           diffrn_reflns
+     _item.mandatory_code        no
+     _item_type.code             float
+#     _item_related.related_name  '_diffrn_reflns.av_sigmaI/netI'
+#     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_reflns_av_unetI/netI'         cif_core.dic 2.3
+      save_
+
+#########################
+## DIFFRN_REFLNS_CLASS ##
+#########################
+
+save_diffrn_reflns_class
+    _category.description
+;              Data items in the DIFFRN_REFLNS_CLASS category record details
+               about the classes of reflections measured in the diffraction
+               experiment.
+;
+
+    _category.id               'diffrn_reflns_class'
+    _category.mandatory_code    no
+    _category_key.name         '_diffrn_reflns_class.code'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'diffrn_group'
+    loop_
+    _category_examples.case
+    _category_examples.detail
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    loop_
+        _diffrn_reflns_class.number
+        _diffrn_reflns_class.d_res_high
+        _diffrn_reflns_class.d_res_low
+        _diffrn_reflns_class.av_R_eq
+        _diffrn_reflns_class.code
+        _diffrn_reflns_class.description
+               1580 0.551 6.136 0.015 'Main' 'm=0; main reflections'
+               1045 0.551 6.136 0.010 'Sat1' 'm=1; first-order satellites'
+;
+;
+    Example 1 - example corresponding to the one-dimensional incommensurately
+                modulated structure of K~2~SeO~4~. Each reflection class is
+                defined by the number m=sum|m~i~|, where the m~i~ are the
+                integer coefficients that, in addition to h,k,l, index the
+                corresponding diffraction vector in the basis defined for
+                the reciprocal lattice.
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      save_
+
+save__diffrn_reflns_class.av_R_eq
+     _item_description.description
+;              For each reflection class, the residual
+               [sum av|del(I)|/sum|av(I)|] for symmetry-equivalent reflections
+               used to calculate the average intensity av(I). The av|del(I)|
+               term is the average absolute difference between av(I) and the
+               individual intensities.
+;
+     _item.name                 '_diffrn_reflns_class.av_R_eq'
+     _item.category_id           diffrn_reflns_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_reflns_class_av_R_eq'         cif_core.dic 2.3
+      save_
+
+save__diffrn_reflns_class.av_sgI/I
+    _item_description.description
+;         Measure [sum|sigma(net I)|/sum|net I|] for all measured intensities
+          in a reflection class.
+;
+     _item.name                 '_diffrn_reflns_class.av_sgI/I'
+     _item.category_id           diffrn_reflns_class
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name   '_diffrn_reflns_class.av_uI/I'
+     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_diffrn_reflns_class_av_sgI/I'          cif_core.dic 2.3
+      save_
+
+save__diffrn_reflns_class.av_uI/I
+     _item_description.description
+;              Measure [sum|u(net I)|/sum|net I|] for all measured intensities
+               in a reflection class.
+;
+     _item.name                 '_diffrn_reflns_class.av_uI/I'
+     _item.category_id           diffrn_reflns_class
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name  '_diffrn_reflns_class.av_sgI/I'
+     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_diffrn_reflns_class_av_uI/I'          cif_core.dic 2.3
+      save_
+
+save__diffrn_reflns_class.code
+     _item_description.description
+;              The code identifying a certain reflection class.
+;
+     _item.name                  '_diffrn_reflns_class.code'
+     _item.category_id           diffrn_reflns_class
+     _item.mandatory_code        yes
+     _item_type.code             code
+    loop_
+     _item_examples.case         '1'
+                                 'm1'
+                                 's2'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_reflns_class_code'          cif_core.dic 2.3
+      save_
+
+save__diffrn_reflns_class.description
+     _item_description.description
+;              Description of each reflection class.
+;
+     _item.name                  '_diffrn_reflns_class.description'
+     _item.category_id           diffrn_reflns_class
+     _item.mandatory_code        no
+     _item_type.code             text
+    loop_
+     _item_examples.case
+                'm=1 first order satellites'
+                'H0L0 common projection reflections'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_reflns_class_description'         cif_core.dic 2.3
+      save_
+
+save__diffrn_reflns_class.d_res_high
+     _item_description.description
+;              The smallest value in angstroms for the interplanar
+               spacings for the reflections in each measured reflection class.
+               This is called the highest resolution for this reflection class.
+;
+     _item.name                 '_diffrn_reflns_class.d_res_high'
+     _item.category_id           diffrn_reflns_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code                'angstroms'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_reflns_class_d_res_high'         cif_core.dic 2.3
+      save_
+
+save__diffrn_reflns_class.d_res_low
+     _item_description.description
+;              The largest value in angstroms of the interplanar
+               spacings for the reflections for each measured reflection class.
+               This is called the lowest resolution for this reflection class.
+;
+     _item.name                 '_diffrn_reflns_class.d_res_low'
+     _item.category_id           diffrn_reflns_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code            'angstroms'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_reflns_class_d_res_low'         cif_core.dic 2.3
+      save_
+
+save__diffrn_reflns_class.number
+     _item_description.description
+;              The total number of measured intensities for each reflection
+               class, excluding the systematic absences arising from
+               centring translations.
+;
+     _item.name                 '_diffrn_reflns_class.number'
+     _item.category_id           diffrn_reflns_class
+     _item.mandatory_code        no
+     _item_type.code             int
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0   0
+                           0   .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_reflns_class_number'         cif_core.dic 2.3
+      save_
+
+save__diffrn_source.take-off_angle
+     _item_description.description
+;              The complement of the angle in degrees between the normal
+               to the surface of the X-ray tube target and the primary
+               X-ray beam for beams generated by traditional X-ray tubes.
+;
+
+     _item.name                 '_diffrn_source.take-off_angle'
+     _item.category_id           diffrn_source
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.00   0.00
+                           0.00   90.0
+                           90.0   90.0
+     _item_examples.case       1.5
+     _item_units.code          'degrees'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_source_take-off_angle'         cif_core.dic 2.3
+      save_
+
+save__diffrn_standards.scale_u
+     _item_description.description
+;              The standard uncertainty of the individual mean
+               standard scales applied to the intensity data.
+;
+     _item.name                 '_diffrn_standards.scale_u'
+     _item.category_id           diffrn_standards
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name  '_diffrn_standards.scale_sigma'
+     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_diffrn_standards_scale_u'         cif_core.dic 2.3
+      save_
+
+save__exptl_crystal.colour_lustre
+     _item_description.description
+;             The enumeration list of standardized names developed for the
+              International Centre for Diffraction Data.
+              The colour of a crystal is given by the combination of
+              _exptl_crystal.colour_modifier with
+              _exptl_crystal.colour_primary, as in 'dark-green' or
+              'bluish-violet', if necessary combined with
+              _exptl_crystal.colour_lustre, as in 'metallic-green'.
+;
+
+     _item.name                 '_exptl_crystal.colour_lustre'
+     _item.category_id           exptl_crystal
+     _item.mandatory_code        no
+     _item_type.code             line
+    loop_
+     _item_enumeration.value
+                                 metallic
+                                 dull
+                                 clear
+     _item_related.related_name  '_exptl_crystal.colour'
+     _item_related.function_code  alternate
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_exptl_crystal_colour_lustre'         cif_core.dic 2.3
+      save_
+
+save__exptl_crystal.colour_modifier
+     _item_description.description
+;             The enumeration list of standardized names developed for the
+              International Centre for Diffraction Data.
+              The colour of a crystal is given by the combination of
+              _exptl_crystal.colour_modifier with
+              _exptl_crystal.colour_primary, as in 'dark-green' or
+              'bluish-violet', if necessary combined with
+              _exptl_crystal.colour_lustre, as in 'metallic-green'.
+;
+
+     _item.name                 '_exptl_crystal.colour_modifier'
+     _item.category_id           exptl_crystal
+     _item.mandatory_code        no
+     _item_type.code             line
+    loop_
+     _item_enumeration.value
+                                 light
+                                 dark
+                                 whitish
+                                 blackish
+                                 grayish
+                                 brownish
+                                 reddish
+                                 pinkish
+                                 orangish
+                                 yellowish
+                                 greenish
+                                 bluish
+     _item_related.related_name  '_exptl_crystal.colour'
+     _item_related.function_code  alternate
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_exptl_crystal_colour_modifier'          cif_core.dic 2.3
+      save_
+
+save__exptl_crystal.colour_primary
+     _item_description.description
+;             The enumeration list of standardized names developed for the
+              International Centre for Diffraction Data.
+              The colour of a crystal is given by the combination of
+              _exptl_crystal.colour_modifier with
+              _exptl_crystal.colour_primary, as in 'dark-green' or
+              'bluish-violet', if necessary combined with
+              _exptl_crystal.colour_lustre, as in 'metallic-green'.
+;
+     _item.name                 '_exptl_crystal.colour_primary'
+     _item.category_id           exptl_crystal
+     _item.mandatory_code        no
+     _item_type.code             line
+    loop_
+     _item_enumeration.value
+                                 colourless
+                                 white
+                                 black
+                                 gray
+                                 brown
+                                 red
+                                 pink
+                                 orange
+                                 yellow
+                                 green
+                                 blue
+                                 violet
+      _item_related.related_name '_exptl_crystal.colour'
+      _item_related.function_code            alternate
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_exptl_crystal_colour_primary'          cif_core.dic 2.3
+      save_
+
+save__exptl_crystal.density_meas
+     _item_description.description
+;              Density values measured using standard chemical and physical
+               methods. The units are megagrams per cubic metre (grams per
+               cubic centimetre).
+;
+
+     _item.name                 '_exptl_crystal.density_meas'
+     _item.category_id           exptl_crystal
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_type_conditions.code  esd
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code            'megagrams_per_cubic_metre'
+     _item_related.related_name  '_exptl_crystal.density_meas_esd'
+     _item_related.function_code  associated_esd
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_exptl_crystal_density_meas'         cif_core.dic 2.3
+      save_
+
+save__exptl_crystal.density_meas_esd
+     _item_description.description
+;              The estimated standard deviation of _exptl_crystal.density_meas.
+;
+
+     _item.name                 '_exptl_crystal.density_meas_esd'
+     _item.category_id           exptl_crystal
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_units.code            'megagrams_per_cubic_metre'
+     _item_related.related_name  '_exptl_crystal.density_meas'
+     _item_related.function_code  associated_value
+#    loop_
+#    _item_aliases.alias_name
+#    _item_aliases.dictionary
+#    _item_aliases.version
+#    '_exptl_crystal_density_meas_esd'          cif_core.dic 2.3
+      save_
+
+save__exptl_crystal.density_meas_gt
+     _item_description.description
+;              The value above which the density measured using standard
+               chemical and physical methods lies. The units are megagrams
+               per cubic metre (grams per cubic centimetre).
+               _exptl_crystal.density_meas_gt and _exptl_crystal.density_meas_lt
+               should not be used to report new experimental work, for which
+               _exptl_crystal.density_meas should be used.  These items are
+               intended for use in reporting information in existing databases
+               and archives which would be misleading if reported under
+               _exptl_crystal.density_meas.
+;
+
+     _item.name                 '_exptl_crystal.density_meas_gt'
+     _item.category_id           exptl_crystal
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code            'megagrams_per_cubic_metre'
+     _item_related.related_name  '_exptl_crystal.density_meas'
+     _item_related.function_code  alternate
+    loop_
+     _item_examples.case
+     _item_examples.detail
+                                2.5
+;                              lower limit for the density (only the range
+                               within which the density lies was given in the
+                               original paper)
+;
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_exptl_crystal_density_meas_gt'         cif_core.dic 2.3
+      save_
+
+save__exptl_crystal.density_meas_lt
+     _item_description.description
+;              The value below which the density measured using standard
+               chemical and physical methods lies. The units are megagrams
+               per cubic metre (grams per cubic centimetre).
+               _exptl_crystal.density_meas_gt and _exptl_crystal.density_meas_lt
+               should not be used to report new experimental work, for which
+               _exptl_crystal.density_meas should be used.  These items are
+               intended for use in reporting information in existing databases
+               and archives which would be misleading if reported under
+               _exptl_crystal.density_meas.
+;
+
+     _item.name                 '_exptl_crystal.density_meas_lt'
+     _item.category_id           exptl_crystal
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code            'megagrams_per_cubic_metre'
+     _item_related.related_name  '_exptl_crystal.density_meas'
+     _item_related.function_code  alternate
+    loop_
+     _item_examples.case
+     _item_examples.detail
+                               1.0
+                               'specimen floats in water'
+                               5.0
+
+;                              upper limit for the density (only the range
+                               within which the density lies was given in the
+                               original paper)
+;
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_exptl_crystal_density_meas_lt'         cif_core.dic 2.3
+      save_
+
+save__exptl_crystal.density_meas_temp
+     _item_description.description
+;              Temperature in kelvins at which _exptl_crystal.density_meas
+               was determined.
+;
+     _item.name                 '_exptl_crystal.density_meas_temp'
+     _item.category_id           exptl_crystal
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_type_conditions.code  esd
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+
+     _item_units.code            kelvins
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_exptl_crystal_density_meas_temp'         cif_core.dic 2.3
+      save_
+
+save__exptl_crystal.density_meas_temp_esd
+     _item_description.description
+;              The estimated standard deviation of
+               _exptl_crystal.density_meas_temp.
+;
+     _item.name                 '_exptl_crystal.density_meas_temp_esd'
+     _item.category_id           exptl_crystal
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_units.code            kelvins
+#    loop_
+#    _item_aliases.alias_name
+#    _item_aliases.dictionary
+#    _item_aliases.version
+#     '_exptl_crystal_density_meas_temp_esd'         cif_core.dic 2.3
+      save_
+
+save__exptl_crystal.density_meas_temp_gt
+     _item_description.description
+;              Temperature in kelvins above which _exptl_crystal.density_meas
+               was determined. _exptl_crystal.density_meas_temp_gt and
+               _exptl_crystal.density_meas_temp_lt should not be used for
+               reporting new work,  for which the correct temperature of
+               measurement should be given. These items are intended for
+               use in reporting information stored in databases or archives
+               which would be misleading if reported under
+               _exptl_crystal.density_meas_temp.
+;
+
+     _item.name                 '_exptl_crystal.density_meas_temp_gt'
+     _item.category_id           exptl_crystal
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+
+     _item_units.code            kelvins
+     _item_related.related_name  '_exptl_crystal.density_meas_temp'
+     _item_related.function_code  alternate
+
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_exptl_crystal_density_meas_temp_gt'         cif_core.dic 2.3
+      save_
+
+save__exptl_crystal.density_meas_temp_lt
+     _item_description.description
+;              Temperature in kelvins below which _exptl_crystal.density_meas
+               was determined. _exptl_crystal.density_meas_temp_gt and
+               _exptl_crystal.density_meas_temp_lt should not be used for
+               reporting new work,  for which the correct temperature of
+               measurement should be given. These items are intended for
+               use in reporting information stored in databases or archives
+               which would be misleading if reported under
+               _exptl_crystal.density_meas_temp.
+;
+
+     _item.name                 '_exptl_crystal.density_meas_temp_lt'
+     _item.category_id           exptl_crystal
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+
+     _item_units.code            kelvins
+     _item_related.related_name  '_exptl_crystal.density_meas_temp'
+     _item_related.function_code  alternate
+    loop_
+     _item_examples.case
+     _item_examples.detail
+                               300
+;                               The density was measured at some unspecified
+                                temperature below room temperature.
+;
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_exptl_crystal_density_meas_temp_lt'         cif_core.dic 2.3
+      save_
+
+save__geom_bond.valence
+     _item_description.description
+;              The bond valence calculated from _geom_bond.dist.
+;
+    _item.name                  '_geom_bond.valence'
+    _item.category_id            geom_bond
+     _item.mandatory_code        no
+    _item_type.code              int
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_geom_bond_valence'         cif_core.dic 2.3
+      save_
+
+save__publ_author.id_iucr
+     _item_description.description
+;              Identifier in the IUCr contact database of a publication
+               author.  This identifier may be available from the World
+               Directory of Crystallographers (http://wdc.iucr.org).
+;
+     _item.name                 '_publ_author.id_iucr'
+     _item.category_id           publ_author
+     _item.mandatory_code        no
+     _item_type.code             code
+     _item_examples.case         2985
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_publ_author_id_iucr'         cif_core.dic 2.3
+      save_
+
+save__refine.ls_R_factor_gt
+     _item_description.description
+;              Residual factor for the reflections (with number given by
+               _reflns.number_gt) judged significantly intense (i.e. satisfying
+               the threshold specified by _reflns.threshold_expression)
+               and included in the refinement. The reflections also satisfy
+               the resolution limits established by _refine.ls_d_res_high and
+               _refine.ls_d_res_low. This is the conventional R
+               factor. See also _refine.ls_wR_factor_ definitions.
+
+                   sum | F(obs) - F(calc) |
+               R = ------------------------
+                         sum | F(obs) |
+
+               F(obs)  = the observed structure-factor amplitudes
+               F(calc) = the calculated structure-factor amplitudes
+
+               and the sum is taken over the specified reflections
+;
+     _item.name                 '_refine.ls_R_factor_gt'
+     _item.category_id           refine
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name '_refine.ls_R_factor_obs'
+     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_refine_ls_R_factor_gt'          cif_core.dic 2.3
+      save_
+
+save__refine.ls_goodness_of_fit_gt
+     _item_description.description
+;              The least-squares goodness-of-fit parameter S for
+               significantly intense reflections (see
+               _reflns.threshold_expression) after the final cycle of
+               refinement. Ideally, account should be taken of parameters
+               restrained in the least-squares refinement. See also
+               _refine.ls_restrained_S_ definitions.
+
+                   {  sum { w [ Y(obs) - Y(calc) ]^2^ }  }^1/2^
+               S = { ----------------------------------- }
+                   {            Nref - Nparam            }
+
+               Y(obs)  = the observed coefficients
+                         (see _refine_ls_structure_factor_coef)
+               Y(calc) = the calculated coefficients
+                         (see _refine_ls_structure_factor_coef)
+               w       = the least-squares reflection weight
+                         [1/(u^2^)]
+               u       = standard uncertainty
+
+               Nref   = the number of reflections used in the refinement
+               Nparam = the number of refined parameters
+
+               and the sum is taken over the specified reflections
+;
+
+     _item.name                 '_refine.ls_goodness_of_fit_gt'
+     _item.category_id           refine
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name  '_refine.ls_goodness_of_fit_obs'
+     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_refine_ls_goodness_of_fit_gt'          cif_core.dic 2.3
+      save_
+
+save__refine.ls_goodness_of_fit_ref
+     _item_description.description
+;              The least-squares goodness-of-fit parameter S for all
+               reflections included in the refinement after the final cycle
+               of refinement. Ideally, account should be taken of parameters
+               restrained in the least-squares refinement. See also
+               _refine_ls_restrained_S_ definitions.
+
+                   {  sum | w | Y(obs) - Y(calc) |^2^ |  }^1/2^
+               S = { ----------------------------------- }
+                   {            Nref - Nparam            }
+
+               Y(obs)  = the observed coefficients
+                         (see _refine_ls_structure_factor_coef)
+               Y(calc) = the calculated coefficients
+                         (see _refine_ls_structure_factor_coef)
+               w       = the least-squares reflection weight
+                         [1/(u^2^)]
+               u       = standard uncertainty
+
+               Nref   = the number of reflections used in the refinement
+               Nparam = the number of refined parameters
+
+               and the sum is taken over the specified reflections
+;
+     _item.name                 '_refine.ls_goodness_of_fit_ref'
+     _item.category_id           refine
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_refine_ls_goodness_of_fit_ref'          cif_core.dic 2.3
+      save_
+
+# save__refine.ls_shift/esd_max
+#      _item_description.description
+# ;              The largest ratio of the final least-squares parameter
+#                shift to the final standard uncertainty (s.u.,
+#                formerly described as estimated standard deviation, e.s.d.).
+# ;
+#      _item.name                 '_refine.ls_shift/esd_max'
+#      _item.category_id           refine
+#      _item.mandatory_code        no
+#      _item_type.code             float
+#      _item_related.related_name '_refine.ls_shift/su_max'
+#      _item_related.function_code  replaces
+#     loop_
+#      _item_range.minimum
+#      _item_range.maximum
+#                            0.0   0.0
+#                            0.0    .
+#     loop_
+#      _item_aliases.alias_name
+#      _item_aliases.dictionary
+#      _item_aliases.version
+#       '_refine_ls_shift/esd_max'         cif_core.dic 2.3
+#       save_
+#
+# save__refine.ls_shift/esd_mean
+#      _item_description.description
+# ;              The average ratio of the final least-squares parameter
+#                shift to the final standard uncertainty (s.u.,
+#                formerly described as estimated standard deviation, e.s.d.).
+# ;
+#
+#      _item.name                 '_refine.ls_shift/esd_mean'
+#      _item.category_id           refine
+#      _item.mandatory_code        no
+#      _item_type.code             float
+#      _item_related.related_name  '_refine.ls_shift/su_mean'
+#      _item_related.function_code  replaces
+#     loop_
+#      _item_range.minimum
+#      _item_range.maximum
+#                            0.0   0.0
+#                            0.0    .
+#     loop_
+#      _item_aliases.alias_name
+#      _item_aliases.dictionary
+#      _item_aliases.version
+#        '_refine_ls_shift/esd_mean'         cif_core.dic 2.3
+#       save_
+
+save__refine.ls_shift_over_su_max
+     _item_description.description
+;              The largest ratio of the final least-squares parameter
+               shift to the final standard uncertainty.
+;
+     _item.name                 '_refine.ls_shift_over_su_max'
+     _item.category_id           refine
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name '_refine.ls_shift_over_esd_max'
+     _item_related.function_code alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_refine_ls_shift/su_max'         cif_core.dic 2.3
+      save_
+
+save__refine.ls_shift_over_su_max_lt
+     _item_description.description
+;              An upper limit for the largest ratio of the final
+               least-squares parameter shift to the final
+               standard uncertainty.  This item is used when the largest
+               value of the shift divided by the final standard uncertainty
+               is too small to measure.
+;
+     _item.name                 '_refine.ls_shift_over_su_max_lt'
+     _item.category_id           refine
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name '_refine.ls_shift_over_su_max'
+     _item_related.function_code alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_refine_ls_shift/su_max_lt'         cif_core.dic 2.3
+      save_
+
+save__refine.ls_shift_over_su_mean
+     _item_description.description
+;              The average ratio of the final least-squares parameter
+               shift to the final standard uncertainty.
+;
+     _item.name                '_refine.ls_shift_over_su_mean'
+     _item.category_id           refine
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name '_refine.ls_shift_over_esd_mean'
+     _item_related.function_code alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_refine_ls_shift/su_mean'    cif_core.dic 2.3
+      save_
+
+save__refine.ls_shift_over_su_mean_lt
+     _item_description.description
+;              An upper limit for the average ratio of the final
+               least-squares parameter shift to the
+               final standard uncertainty.  This
+               item is used when the average value of the shift divided by
+               the final standard uncertainty is too small to measure.
+;
+     _item.name                 '_refine.ls_shift_over_su_mean_lt'
+     _item.category_id           refine
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name '_refine.ls_shift_over_su_mean'
+     _item_related.function_code alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_refine_ls_shift/su_mean_lt'         cif_core.dic 2.3
+      save_
+
+#####################
+## REFINE_LS_CLASS ##
+#####################
+
+save_refine_ls_class
+    _category.description
+;              Data items in the REFINE_LS_CLASS category record details
+               about the reflections used for the structure refinement
+               for each reflection class separately.
+;
+
+    _category.id                   'refine_ls_class'
+    _category.mandatory_code        no
+    _category_key.name             '_refine_ls_class.code'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'refine_group'
+    loop_
+    _category_examples.case
+    _category_examples.detail
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    loop_
+        _refine_ls_class.R_factor_gt
+        _refine_ls_class.code
+                0.057    'Main'
+                0.074    'Com'
+                0.064    'NbRefls'
+                0.046    'LaRefls'
+                0.112    'Sat1'
+                0.177    'Sat2'
+;
+;
+    Example 1 - data for a modulated structure from van Smaalen
+    [J. Phys. Condens. Matter (1991),  3, 1247-1263].
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      save_
+
+save__refine_ls_class.code
+     _item_description.description
+;              The code identifying a certain reflection class. This code must
+               match a _reflns_class.code.
+;
+
+     _item.name                 '_refine_ls_class.code'
+     _item.category_id           refine_ls_class
+     _item.mandatory_code        yes
+     _item_type.code             code
+    loop_
+     _item_examples.case
+                                 '1'
+                                 'm1'
+                                 's2'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_refine_ls_class_code'         cif_core.dic 2.3
+      save_
+
+save__refine_ls_class.d_res_high
+     _item_description.description
+;              For each reflection class, the lowest value in angstroms
+               for the interplanar spacings for the reflections used in the
+               refinement. This is called the highest resolution.
+;
+     _item.name                 '_refine_ls_class.d_res_high'
+     _item.category_id           refine_ls_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code           'angstroms'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_refine_ls_class_d_res_high'          cif_core.dic 2.3
+      save_
+
+save__refine_ls_class.d_res_low
+     _item_description.description
+;              For each reflection class, the highest value in angstroms
+               for the interplanar spacings for the reflections used in the
+               refinement. This is called the lowest resolution.
+;
+     _item.name                 '_refine_ls_class.d_res_low'
+     _item.category_id           refine_ls_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code           'angstroms'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_refine_ls_class_d_res_low'         cif_core.dic 2.3
+      save_
+
+save__refine_ls_class.R_factor_gt
+     _item_description.description
+;              For each reflection class, the residual factor for significantly
+               intense reflections (see _reflns.threshold_expression) included
+               in the refinement.
+               The reflections also satisfy the resolution limits established by
+               _refine_ls_class.d_res_high and _refine_ls_class.d_res_low.
+               This is the conventional R factor. See also the definition of
+               _refine_ls_class.wR_factor_all.
+
+                   sum | F(obs) - F(calc) |
+               R = ------------------------
+                         sum | F(obs) |
+
+               F(obs)  = the observed structure-factor amplitudes
+               F(calc) = the calculated structure-factor amplitudes
+
+               and the sum is taken over the reflections of this class.
+;
+
+     _item.name                 '_refine_ls_class.R_factor_gt'
+     _item.category_id           refine_ls_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_refine_ls_class_R_factor_gt'         cif_core.dic 2.3
+      save_
+
+save__refine_ls_class.R_factor_all
+     _item_description.description
+;              For each reflection class, the residual factor for all
+               reflections satisfying the resolution limits established by
+               _refine_ls_class.d_res_high and _refine_ls_class.d_res_low.
+               This is the conventional R factor. See also the
+               definition of _refine_ls_class.wR_factor_all.
+
+                   sum | F(obs) - F(calc) |
+               R = ------------------------
+                         sum | F(obs) |
+
+               F(obs)  = the observed structure-factor amplitudes
+               F(calc) = the calculated structure-factor amplitudes
+
+               and the sum is taken over the reflections of this class.
+;
+
+     _item.name                 '_refine_ls_class.R_factor_all'
+     _item.category_id           refine_ls_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_refine_ls_class_R_factor_all'         cif_core.dic 2.3
+      save_
+
+save__refine_ls_class.R_Fsqd_factor
+     _item_description.description
+;              For each reflection class, the residual factor R(F^2^) calculated
+               on the squared amplitudes of the observed and calculated
+               structure factors, for the reflections judged significantly
+               intense (i.e. satisfying the threshold specified by
+               _reflns.threshold_expression) and included in the refinement.
+
+               The reflections also satisfy the resolution limits established
+               by _refine_ls_class.d_res_high and _refine_ls_class.d_res_low.
+
+                          sum | F(obs)^2^ - F(calc)^2^ |
+               R(Fsqd) = -------------------------------
+                                  sum F(obs)^2^
+
+               F(obs)^2^  = squares of the observed structure-factor amplitudes
+               F(calc)^2^ = squares of the calculated structure-factor
+                            amplitudes
+
+               and the sum is taken over the reflections of this class.
+;
+
+     _item.name                 '_refine_ls_class.R_Fsqd_factor'
+     _item.category_id           refine_ls_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_refine_ls_class_R_Fsqd_factor'         cif_core.dic 2.3
+      save_
+
+save__refine_ls_class.R_I_factor
+     _item_description.description
+;              For each reflection class, the residual factor R(I) for the
+               reflections judged significantly intense (i.e. satisfying the
+               threshold specified by _reflns.threshold_expression) and
+               included in the refinement.
+
+               This is most often calculated in Rietveld refinements
+               against powder data, where it is referred to as R~B~ or R~Bragg~
+
+                       sum | I(obs) - I(calc) |
+               R(I) =  ------------------------
+                              sum | I(obs) |
+
+               I(obs)  = the net observed intensities
+               I(calc) = the net calculated intensities
+
+               and the sum is taken over the reflections of this class.
+;
+     _item.name                 '_refine_ls_class.R_I_factor'
+     _item.category_id           refine_ls_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_refine_ls_class_R_I_factor'         cif_core.dic 2.3
+      save_
+
+save__refine_ls_class.wR_factor_all
+     _item_description.description
+;              For each reflection class, the weighted residual factor for all
+               reflections included in the refinement. The reflections also
+               satisfy the resolution limits established by
+               _refine_ls_class.d_res_high and _refine_ls_class.d_res_low.
+               See also the _refine_ls_class.R_factor_ definitions.
+
+                    ( sum w [ Y(obs) - Y(calc) ]^2^  )^1/2^
+               wR = ( ------------------------------ )
+                    (         sum w Y(obs)^2^       )
+
+               Y(obs)  = the observed amplitude specified by
+                         _refine.ls_structure_factor_coef
+               Y(calc) = the calculated amplitude specified by
+                         _refine.ls_structure_factor_coef
+               w       = the least-squares weight
+
+               and the sum is taken over the reflections of this class.
+;
+
+     _item.name                 '_refine_ls_class.wR_factor_all'
+     _item.category_id           refine_ls_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_refine_ls_class_wR_factor_all'         cif_core.dic 2.3
+      save_
+
+save__refln.class_code
+     _item_description.description
+;              The code identifying the class to which this reflection has been
+               assigned. This code must match a value of _reflns_class.code.
+               Reflections may be grouped into classes for a variety of
+               purposes. For example, for modulated structures each reflection
+               class may be defined by the number m=sum|m~i~|, where the m~i~
+               are the integer coefficients that, in addition to h,k,l, index
+               the corresponding diffraction vector in the basis defined
+               for the reciprocal lattice.
+;
+     _item.name                 '_refln.class_code'
+     _item.category_id           refln
+     _item.mandatory_code        no
+     _item_type.code             code
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_refln_class_code'         cif_core.dic 2.3
+      save_
+
+save__refln.d_spacing
+     _item_description.description
+;              The d spacing in angstroms for this reflection. This is related
+               to the (sin theta)/lambda value by the expression
+                    _refln.d_spacing = 2/(_refln.sint/lambda).
+;
+
+     _item.name                 '_refln.d_spacing'
+     _item.category_id           refln
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code           'angstroms'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_refln_d_spacing'         cif_core.dic 2.3
+      save_
+
+save__refln.include_status
+     _item_description.description
+;              Classification of a reflection so as to indicate its status with
+               respect to inclusion in the refinement and the calculation of
+               R factors.
+;
+
+     _item.name                 '_refln.include_status'
+     _item.category_id           refln
+     _item.mandatory_code        no
+     _item_type.code             code
+     _item_related.related_name '_refln.status'
+     _item_related.function_code alternate
+    loop_
+     _item_enumeration.value
+     _item_enumeration.detail
+                                      o
+;                                     (lower-case letter o for 'observed')
+                                      satisfies _refine.ls_d_res_high
+                                      satisfies _refine.ls_d_res_low
+                                      exceeds _reflns.threshold_expression
+;
+                                 <
+;                                     satisfies _refine.ls_d_res_high
+                                      satisfies _refine.ls_d_res_low
+                                      does not exceed
+                                        _reflns.threshold_expression
+;
+                                 -  'systematically absent reflection'
+                                 x  'unreliable measurement -- not used'
+                                 h  'does not satisfy _refine.ls_d_res_high'
+                                 l  'does not satisfy _refine.ls_d_res_low'
+#    _item_default.value         o
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+       '_refln_include_status'         cif_core.dic 2.3
+      save_
+
+save__refln.mean_path_length_tbar
+    _item_description.description
+;              Mean path length in millimetres through the crystal for this
+               reflection.
+;
+
+     _item.name                 '_refln.mean_path_length_tbar'
+     _item.category_id           refln
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code           'millimetres'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+       '_refln_mean_path_length_tbar'        cif_core.dic 2.3
+      save_
+
+# save__refln.observed_status
+#      _item_description.description
+# ;              Classification of a reflection so as to indicate its status
+#                with respect to inclusion in refinement and calculation of
+#                R factors.
+# ;
+#
+#      _item.name                 '_refln.observed_status'
+#      _item.category_id           refln
+#      _item.mandatory_code        no
+#      _item_type.code             code
+#      _item_related.related_name '_refln.include_status'
+#      _item_related.function_code replaces
+#     loop_
+#      _item_enumeration.value
+#      _item_enumeration.detail
+#                                       o
+# ;                                     satisfies _refine.ls_d_res_high
+#                                       satisfies _refine.ls_d_res_low
+#                                       observed by _reflns_observed_criterion
+# ;
+#                                  <
+# ;                                     satisfies _refine.ls_d_res_high
+#                                       satisfies _refine.ls_d_res_low
+#                                       unobserved by _reflns.observed_criterion
+# ;
+#                                  -  'systematically absent reflection'
+#                                  x  'unreliable measurement -- not used'
+#                                  h  'does not satisfy _refine.ls_d_res_high'
+#                                  l  'does not satisfy _refine.ls_d_res_low'
+#
+# #    _item_default.value         o
+#     loop_
+#      _item_aliases.alias_name
+#      _item_aliases.dictionary
+#      _item_aliases.version
+#       '_refln_observed_status'         cif_core.dic 2.3
+#       save_
+
+# save__refln.sint/lambda
+#      _item_description.description
+# ;              The (sin theta)/lambda value in reciprocal angstroms for this
+#                reflection.
+# ;
+#      _item.name                 '_refln.sint/lambda'
+#      _item.category_id           refln
+#      _item.mandatory_code        no
+#      _item_type.code             float
+#     loop_
+#      _item_range.minimum
+#      _item_range.maximum
+#                            0.0   0.0
+#                            0.0    .
+#      _item_units.code           'reciprocal_angstroms'
+#     loop_
+#      _item_aliases.alias_name
+#      _item_aliases.dictionary
+#      _item_aliases.version
+#       '_refln_sint/lambda'         cif_core.dic 2.3
+#       save_
+
+save__reflns.Friedel_coverage
+     _item_description.description
+;              The proportion of Friedel-related reflections present in
+               the number of  'independent' reflections specified by
+               the item _reflns.number_all.
+
+               This proportion is calculated as the ratio:
+
+                 [N(Crystal class) - N(Laue symmetry)] / N(Laue symmetry)
+
+               where, working from the DIFFRN_REFLN list,
+
+               N(Crystal class) is the number of reflections obtained on
+                  averaging under the symmetry of the crystal class
+               N(Laue symmetry) is the number of reflections obtained on
+                  averaging under the Laue symmetry.
+
+               Examples:
+                 (a) For centrosymmetric structures, the value of
+                     _reflns.Friedel_coverage is
+                     necessarily equal to 0.0, as the crystal class
+                     is identical to the Laue symmetry.
+                 (b) For whole-sphere data for a crystal in the space
+                     group P1, _reflns.Friedel_coverage is equal to 1.0,
+                     as no reflection h k l is equivalent to -h -k -l
+                     in the crystal class and all Friedel pairs
+                     {h k l; -h -k -l} have been measured.
+                 (c) For whole-sphere data in space group Pmm2,
+                    _reflns.Friedel_coverage
+                     will be < 1.0 because although reflections h k l and
+                     -h -k -l are not equivalent when h k l indices are
+                     nonzero, they are when l=0.
+                 (d) For a crystal in space group Pmm2, measurements of the
+                     two inequivalent octants h >= 0, k >=0, l lead to the
+                     same value as in (c), whereas measurements of the
+                     two equivalent octants h >= 0, k, l >= 0 will lead to
+                     a zero value for _reflns.Friedel_coverage.
+;
+     _item.name                 '_reflns.Friedel_coverage'
+     _item.category_id           reflns
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0   1.0
+                           1.0   1.0
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_reflns_Friedel_coverage'         cif_core.dic 2.3
+      save_
+
+save__reflns.number_gt
+    _item_description.description
+;              The number of reflections in the REFLN list (not the
+               DIFFRN_REFLN list) that are significantly intense, satisfying
+               the criterion specified by _reflns.threshold_expression. This may
+               include Friedel-equivalent reflections (i.e. those which are
+               symmetry-equivalent under the Laue symmetry but inequivalent
+               under the crystal class) according to the nature of the
+               structure and the procedures used. Any special characteristics
+               of the reflections included in the REFLN list should be
+               described using the item _reflns.details.
+;
+     _item.name                 '_reflns.number_gt'
+     _item.category_id           reflns
+     _item.mandatory_code        no
+     _item_type.code             int
+#     _item_related.related_name '_reflns.number_observed'
+#     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0   0
+                           0   .
+     loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+       '_reflns_number_gt'         cif_core.dic 2.3
+     save_
+
+save__reflns.threshold_expression
+    _item_description.description
+;              The threshold, usually based on multiples of u(I), u(F^2^)
+               or u(F), that serves to identify significantly intense
+               reflections, the number of which is given by _reflns.number_gt.
+               These reflections are used in the calculation of
+               _refine.ls_R_factor_gt.
+;
+    _item.name                  '_reflns.threshold_expression'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    _item_aliases.alias_name    '_reflns_threshold_expression'
+    _item_aliases.dictionary      cif_core.dic
+    _item_aliases.version         2.3
+    loop_
+    _item_related.related_name
+    _item_related.function_code '_reflns.observed_criterion'
+                                  alternate
+
+    _item_type.code               text
+    _item_examples.case          'I>2u(I)'
+     save_
+
+##################
+## REFLNS_CLASS ##
+##################
+
+save_reflns_class
+    _category.description
+;              Data items in the REFLNS_CLASS category record details
+               of the reflections used to determine the structural
+               parameters for each reflection class.
+;
+    _category.id                     'reflns_class'
+    _category.mandatory_code         no
+    _category_key.name               '_reflns_class.code'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'refln_group'
+    loop_
+    _category_examples.case
+    _category_examples.detail
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    loop_
+        _reflns_class.number_gt
+        _reflns_class.code
+               584     'Main'
+               226     'Sat1'
+               50      'Sat2'
+;
+;
+    Example 1 - example corresponding to the one-dimensional incommensurately
+                modulated structure of K~2~SeO~4~.
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      save_
+
+save__reflns_class.code
+     _item_description.description
+;              The code identifying a certain reflection class.
+;
+     _item.name                 '_reflns_class.code'
+     _item.category_id           reflns_class
+     _item.mandatory_code        yes
+     _item_type.code             code
+    loop_
+     _item_examples.case
+                                 '1'
+                                 'm1'
+                                 's2'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_reflns_class_code'          cif_core.dic 2.3
+      save_
+
+save__reflns_class.description
+    _item_description.description
+;              Description of each reflection class.
+;
+     _item.name                 '_reflns_class.description'
+     _item.category_id           reflns_class
+     _item.mandatory_code        no
+     _item_type.code             text
+    loop_
+     _item_examples.case
+                                 'm=1 first order satellites'
+                                 'H0L0 common projection reflections'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+       '_reflns_class_description'         cif_core.dic 2.3
+      save_
+
+save__reflns_class.d_res_high
+     _item_description.description
+;              For each reflection class, the smallest value in angstroms
+               for the interplanar spacings for the reflections used in the
+               refinement. This is called the highest resolution.
+;
+     _item.name                 '_reflns_class.d_res_high'
+     _item.category_id           reflns_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code           'angstroms'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_reflns_class_d_res_high'         cif_core.dic 2.3
+      save_
+
+save__reflns_class.d_res_low
+     _item_description.description
+;              For each reflection class, the largest value in angstroms
+               for the interplanar spacings for the reflections used in the
+               refinement. This is called the lowest resolution.
+;
+     _item.name                 '_reflns_class.d_res_low'
+     _item.category_id           reflns_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+     _item_units.code           'angstroms'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_reflns_class_d_res_low'         cif_core.dic 2.3
+      save_
+
+save__reflns_class.number_gt
+     _item_description.description
+;              For each reflection class, the number of significantly intense
+               reflections (see _reflns.threshold_expression) in the REFLN
+               list (not the DIFFRN_REFLN list). This may include Friedel-
+               equivalent reflections (i.e. those which are symmetry-equivalent
+               under the Laue symmetry but inequivalent under the crystal
+               class)  according to the nature of the structure and the
+               procedures used. Any special characteristics of the reflections
+               included in the REFLN list should be described using the item
+               _reflns.details.
+;
+
+     _item.name                 '_reflns_class.number_gt'
+     _item.category_id           reflns_class
+     _item.mandatory_code        no
+     _item_type.code             int
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0   0
+                           0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_reflns_class_number_gt'          cif_core.dic 2.3
+      save_
+
+save__reflns_class.number_total
+     _item_description.description
+;              For each reflection class, the total number of reflections
+               in the REFLN list (not the DIFFRN_REFLN list). This may
+               include Friedel-equivalent reflections (i.e. those which are
+               symmetry-equivalent under the Laue symmetry but inequivalent
+               under the crystal class) according to the nature of the
+               structure and the procedures used.  Any special characteristics
+               of the reflections included in the REFLN list should be
+               described using the item _reflns.details.
+;
+
+     _item.name                 '_reflns_class.number_total'
+     _item.category_id           reflns_class
+     _item.mandatory_code        no
+     _item_type.code             int
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0   0
+                           0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_reflns_class_number_total'         cif_core.dic 2.3
+      save_
+
+save__reflns_class.R_factor_all
+     _item_description.description
+;              For each reflection class, the residual factor for all
+               reflections included in the refinement.
+               The reflections also satisfy the resolution limits established by
+               _reflns_class.d_res_high and _reflns_class.d_res_low.
+               This is the conventional R factor. See also the
+               definition of _reflns_class.wR_factor_all.
+
+                   sum | F(obs) - F(calc) |
+               R = ------------------------
+                         sum | F(obs) |
+
+               F(obs)  = the observed structure-factor amplitudes
+               F(calc) = the calculated structure-factor amplitudes
+
+               and the sum is taken over the reflections of this class.
+;
+     _item.name                 '_reflns_class.R_factor_all'
+     _item.category_id           reflns_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_reflns_class_R_factor_all'          cif_core.dic 2.3
+      save_
+
+save__reflns_class.R_factor_gt
+     _item_description.description
+;              For each reflection class, the residual factor for significantly
+               intense reflections (see _reflns.threshold_expression) included
+               in the refinement.
+               The reflections also satisfy the resolution limits established by
+               _reflns_class.d_res_high and _reflns_class.d_res_low.
+               This is the conventional R factor. See also the
+               definition of _reflns_class.wR_factor_all.
+
+                   sum | F(obs) - F(calc) |
+               R = ------------------------
+                         sum | F(obs) |
+
+               F(obs)  = the observed structure-factor amplitudes
+               F(calc) = the calculated structure-factor amplitudes
+
+               and the sum is taken over the reflections of this class.
+;
+     _item.name                 '_reflns_class.R_factor_gt'
+     _item.category_id           reflns_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_reflns_class_R_factor_gt'         cif_core.dic 2.3
+      save_
+
+save__reflns_class.R_Fsqd_factor
+     _item_description.description
+;              For each reflection class, the residual factor R(F^2^) calculated
+               on the squared amplitudes of the observed and calculated
+               structure factors for the reflections judged significantly
+               intense (i.e. satisfying the threshold specified by
+               _reflns.threshold_expression) and included in the refinement.
+
+               The reflections also satisfy the resolution limits established
+               by _reflns_class.d_res_high and _reflns_class.d_res_low.
+
+                          sum | F(obs)^2^ - F(calc)^2^ |
+               R(Fsqd) = -------------------------------
+                                  sum F(obs)^2^
+
+               F(obs)^2^  = squares of the observed structure-factor amplitudes
+               F(calc)^2^ = squares of the calculated structure-factor
+                            amplitudes
+
+               and the sum is taken over the reflections of this class.
+;
+
+     _item.name                 '_reflns_class.R_Fsqd_factor'
+     _item.category_id           reflns_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+       '_reflns_class_R_Fsqd_factor'        cif_core.dic 2.3
+      save_
+
+save__reflns_class.R_I_factor
+     _item_description.description
+;              For each reflection class, the residual factor R(I) for the
+               reflections judged significantly intense (i.e. satisfying the
+               threshold specified by _reflns.threshold_expression) and
+               included in the refinement.
+
+               This is most often calculated in Rietveld refinements
+               against powder data, where it is referred to as R~B~ or R~Bragg~.
+
+                       sum | I(obs) - I(calc) |
+               R(I) =  ------------------------
+                              sum | I(obs) |
+
+               I(obs)  = the net observed intensities
+               I(calc) = the net calculated intensities
+
+               and the sum is taken over the reflections of this class.
+;
+     _item.name                 '_reflns_class.R_I_factor'
+     _item.category_id           reflns_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_reflns_class_R_I_factor'         cif_core.dic 2.3
+      save_
+
+save__reflns_class.wR_factor_all
+     _item_description.description
+;              For each reflection class, the weighted residual factors for all
+               reflections included in the refinement. The reflections also
+               satisfy the resolution limits established by
+               _reflns_class.d_res_high and _reflns_class.d_res_low.
+               See also _reflns_class.R_factor_ definitions.
+
+                    ( sum w [ Y(obs) - Y(calc) ]^2^  )^1/2^
+               wR = ( ------------------------------ )
+                    (         sum w Y(obs)^2^       )
+
+               Y(obs)  = the observed amplitude specified by
+                         _refine.ls_structure_factor_coef
+               Y(calc) = the calculated amplitude specified by
+                         _refine.ls_structure_factor_coef
+               w       = the least-squares weight
+
+               and the sum is taken over the reflections of this class.
+;
+     _item.name                 '_reflns_class.wR_factor_all'
+     _item.category_id           reflns_class
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0   0.0
+                           0.0    .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_reflns_class_wR_factor_all'           cif_core.dic 2.3
+      save_
+
+save__reflns_shell.meanI_over_sigI_gt
+     _item_description.description
+;              The ratio of the mean of the intensities of the significantly
+               intense reflections (see _reflns.threshold_expression) in
+               this shell to the mean of the standard uncertainties of the
+               intensities of the significantly intense reflections in this
+               shell.
+;
+     _item.name                 '_reflns_shell.meanI_over_sigI_gt'
+     _item.category_id           reflns_shell
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name '_reflns_shell.meanI_over_uI_gt'
+     _item_related.function_code replaces
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+       '_reflns_shell_meanI_over_sigI_gt'         cif_core.dic 2.3
+      save_
+
+save__reflns_shell.meanI_over_uI_all
+     _item_description.description
+;              The ratio of the mean of the intensities of all reflections
+               in this shell to the mean of the standard uncertainties of the
+               intensities of all reflections in this shell.
+;
+     _item.name                 '_reflns_shell.meanI_over_uI_all'
+     _item.category_id           reflns_shell
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name '_reflns_shell.meanI_over_sigI_all'
+     _item_related.function_code replacedby
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_reflns_shell_meanI_over_uI_all'         cif_core.dic 2.3
+
+      save_
+
+save__reflns_shell.meanI_over_uI_gt
+     _item_description.description
+;              The ratio of the mean of the intensities of the significantly
+               intense reflections (see _reflns.threshold_expression) in
+               this shell to the mean of the standard uncertainties of the
+               intensities of the significantly intense reflections in this
+               shell.
+;
+     _item.name                 '_reflns_shell.meanI_over_uI_gt'
+     _item.category_id           reflns_shell
+     _item.mandatory_code        no
+     _item_type.code             float
+    loop_
+     _item_related.related_name
+     _item_related.function_code
+              '_reflns_shell.meanI_over_sigI_gt'   alternate
+              '_reflns_shell.meanI_over_sigI_obs'  alternate
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_reflns_shell_meanI_over_uI_gt'         cif_core.dic 2.3
+      save_
+
+save__reflns_shell.number_measured_gt
+     _item_description.description
+;              The number of significantly intense reflections
+               (see _reflns.threshold_expression) measured for this
+               shell.
+;
+     _item.name                 '_reflns_shell.number_measured_gt'
+     _item.category_id           reflns_shell
+     _item.mandatory_code        no
+     _item_type.code             int
+     _item_related.related_name  '_reflns_shell.number_measured_obs'
+     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0   0
+                           0   .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_reflns_shell_number_measured_gt'          cif_core.dic 2.3
+      save_
+
+save__reflns_shell.number_unique_gt
+     _item_description.description
+;              The total number of significantly intense reflections
+               (see _reflns.threshold_expression) resulting from merging
+               measured symmetry-equivalent reflections for this resolution
+               shell.
+;
+     _item.name                 '_reflns_shell.number_unique_gt'
+     _item.category_id           reflns_shell
+     _item.mandatory_code        no
+     _item_type.code             int
+     _item_related.related_name '_reflns_shell.number_unique_obs'
+     _item_related.function_code alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0   0
+                           0   .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_reflns_shell_number_unique_gt'          cif_core.dic 2.3
+      save_
+
+save__reflns_shell.percent_possible_gt
+     _item_description.description
+;              The percentage of geometrically possible reflections
+               represented by significantly intense reflections
+               (see _reflns.threshold_expression) measured for this
+               shell.
+;
+     _item.name                 '_reflns_shell.percent_possible_gt'
+     _item.category_id           reflns_shell
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name '_reflns_shell.percent_possible_obs'
+     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0    0.0
+                           0.0  100.0
+                         100.0  100.0
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_reflns_shell_percent_possible_gt'          cif_core.dic 2.3
+      save_
+
+save__reflns_shell.Rmerge_F_gt
+     _item_description.description
+;              The value of Rmerge(F) for significantly intense reflections
+               (see _reflns.threshold_expression) in a given shell.
+
+                           sum~i~ ( sum~j~ | F~j~ - <F> | )
+               Rmerge(F) = --------------------------------
+                               sum~i~ ( sum~j~ <F> )
+
+               F~j~  = the amplitude of the jth observation of reflection i
+               <F> = the mean of the amplitudes of all observations of
+                      reflection i
+
+               sum~i~ is taken over all reflections
+               sum~j~ is taken over all observations of each reflection.
+;
+     _item.name                 '_reflns_shell.Rmerge_F_gt'
+     _item.category_id           reflns_shell
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name '_reflns_shell.Rmerge_F_obs'
+     _item_related.function_code  alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0    0.0
+                           0.0     .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_reflns_shell_Rmerge_F_gt'         cif_core.dic 2.3
+      save_
+
+save__reflns_shell.Rmerge_I_gt
+     _item_description.description
+;              The value of Rmerge(I) for significantly intense reflections
+               (see _reflns.threshold_expression) in a given shell.
+
+                           sum~i~ ( sum~j~ | I~j~ - <I> | )
+               Rmerge(I) = --------------------------------
+                               sum~i~ ( sum~j~ <I> )
+
+               I~j~  = the intensity of the jth observation of reflection i
+               <I> = the mean of the intensities of all observations of
+                      reflection i
+
+               sum~i~ is taken over all reflections
+               sum~j~ is taken over all observations of each reflection.
+;
+     _item.name                 '_reflns_shell.Rmerge_I_gt'
+     _item.category_id           reflns_shell
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_related.related_name '_reflns_shell.Rmerge_I_obs'
+     _item_related.function_code alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           0.0    0.0
+                           0.0     .
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+     '_reflns_shell_Rmerge_I_gt'          cif_core.dic 2.3
+      save_
+
+#################
+## SPACE_GROUP ##
+#################
+
+save_space_group
+    _category.description
+;              Contains all the data items that refer to the space group as a
+               whole, such as its name or crystal system. They may be looped,
+               for example, in a list of space groups and their properties.
+
+               Only a subset of the SPACE_GROUP category items appear in
+               this dictionary.  The remainder are found in the symmetry CIF
+               dictionary.
+
+               Space-group types are identified by their number as given in
+               International Tables for Crystallography Vol. A. Specific
+               settings of the space groups can be identified either by their
+               Hall symbol or by specifying their symmetry operations.
+
+               The commonly used Hermann-Mauguin symbol determines the
+               space-group type uniquely but several different Hermann-Mauguin
+               symbols may refer to the same space-group type. A Hermann-Mauguin
+               symbol contains information on the choice of the basis, but not
+               on the choice of origin.  Different formats for the
+               Hermann-Mauguin symbol are found in the symmetry CIF dictionary.
+;
+    _category.id                     'space_group'
+    _category.mandatory_code         no
+    _category_key.name               '_space_group.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'symmetry_group'
+    loop_
+    _category_examples.case
+    _category_examples.detail
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    _space_group.id                 1
+    _space_group.name_H-M_alt       'C 2/c'
+    _space_group.IT_number          15
+    _space_group.name_Hall          '-C 2yc'
+    _space_group.crystal_system     monoclinic
+;
+;
+    Example 1 - the monoclinic space group No. 15 with unique axis b.
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      save_
+
+save__space_group.crystal_system
+     _item_description.description
+;              The name of the system of geometric crystal classes of space
+               groups (crystal system) to which the space group belongs.
+               Note that rhombohedral space groups belong to the
+               trigonal system.
+;
+     _item.name                 '_space_group.crystal_system'
+     _item.category_id           space_group
+     _item.mandatory_code        no
+     _item_type.code             code
+     _item_related.related_name '_symmetry.cell_setting'
+     _item_related.function_code alternate
+    loop_
+     _item_enumeration.value     triclinic
+                                 monoclinic
+                                 orthorhombic
+                                 tetragonal
+                                 trigonal
+                                 hexagonal
+                                 cubic
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_space_group_crystal_system'         cif_core.dic 2.3
+      save_
+
+save__space_group.id
+     _item_description.description
+;              This is the unique identifier for the SPACE_GROUP category.
+;
+     _item.name                 '_space_group.id'
+     _item.category_id           space_group
+     _item.mandatory_code        yes
+     _item_type.code             code
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_space_group_id'         cif_core.dic 2.3
+      save_
+
+save__space_group.IT_number
+     _item_description.description
+;              The number as assigned in International Tables for
+               Crystallography Vol. A, specifying the proper affine class (i.e.
+               the orientation-preserving affine class) of space groups
+               (crystallographic space-group type) to which the space group
+               belongs.  This number defines the space-group type but not
+               the coordinate system in which it is expressed.
+;
+     _item.name                 '_space_group.IT_number'
+     _item.category_id           space_group
+     _item.mandatory_code        no
+     _item_type.code             int
+     _item_related.related_name '_symmetry.Int_Tables_number'
+     _item_related.function_code alternate
+    loop_
+     _item_range.minimum
+     _item_range.maximum
+                           1     1
+                           1   230
+                         230   230
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_space_group_IT_number'         cif_core.dic 2.3
+      save_
+
+save__space_group.name_Hall
+     _item_description.description
+;              Space-group symbol defined by Hall.
+
+               Each component of the space-group name is separated by a
+               space or an underscore.  The use of a space is strongly
+               recommended.  The underscore is only retained because it
+               was used in old CIFs.  It should not be
+               used in new CIFs.
+
+               _space_group.name_Hall uniquely defines the space group and
+               its reference to a particular coordinate system.
+
+               Ref: Hall, S. R. (1981). Acta Cryst. A37, 517-525; erratum
+                    (1981), A37, 921.
+                    [See also International Tables for Crystallography
+                    Vol. B (2001), Chapter 1.4, Appendix 1.4.2.]
+;
+     _item.name                 '_space_group.name_Hall'
+     _item.category_id           space_group
+     _item.mandatory_code        no
+     _item_type.code             line
+     _item_related.related_name '_symmetry.space_group_name_Hall'
+     _item_related.function_code alternate
+    loop_
+     _item_examples.case
+     _item_examples.detail
+            'P 2c -2ac'            'equivalent to Pca21'
+            '-I 4bd 2ab 3'         'equivalent to Ia3d'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_space_group_name_Hall'         cif_core.dic 2.3
+      save_
+
+save__space_group.name_H-M_alt
+     _item_description.description
+;              _space_group.name_H-M_alt allows any Hermann-Mauguin symbol
+               to be given. The way in which this item is used is determined
+               by the user and in general is not intended to be interpreted by
+               computer. It may, for example, be used to give one of the
+               extended Hermann-Mauguin symbols given in Table 4.3.2.1 of
+               International Tables for Crystallography Vol. A (2002) or
+               a Hermann-Mauguin symbol for a conventional or unconventional
+               setting.
+
+               Each component of the space-group name is separated by a
+               space or an underscore. The use of a space is strongly
+               recommended.  The underscore is only retained because it
+               was used in old CIFs. It should not be
+               used in new CIFs. Subscripts should appear without special
+               symbols. Bars should be given as negative signs before the
+               numbers to which they apply.
+
+               The commonly used Hermann-Mauguin symbol determines the space-
+               group type uniquely but a given space-group type may be
+               described by more than one Hermann-Mauguin symbol. The space-
+               group type is best described using _space_group.IT_number.
+
+               The Hermann-Mauguin symbol may contain information on the
+               choice of basis, but not on the choice of origin. To
+               define the setting uniquely, use _space_group.name_Hall or
+               list the symmetry operations.
+;
+     _item.name                 '_space_group.name_H-M_alt'
+     _item.category_id           space_group
+     _item.mandatory_code        no
+     _item_type.code             line
+     _item_related.related_name '_symmetry.space_group_name_H-M'
+     _item_related.function_code alternate
+    loop_
+     _item_examples.case
+     _item_examples.detail
+;                               loop_
+                                   _space_group.name_H-M_alt
+                                    'C m c m'
+                                    'C 2/c 2/m 21/m'
+                                    'A m a m'
+;
+                               'three examples for space group No. 63'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+       '_space_group_name_H-M_alt'         cif_core.dic 2.3
+      save_
+
+#######################
+## SPACE_GROUP_SYMOP ##
+#######################
+
+save_space_group_symop
+    _category.description
+;              Contains information about the symmetry operations of the
+               space group.
+;
+
+    _category.id                   'space_group_symop'
+    _category.mandatory_code        no
+    _category_key.name             '_space_group_symop.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'symmetry_group'
+    loop_
+    _category_examples.case
+    _category_examples.detail
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;   loop_
+    _space_group_symop.id
+    _space_group_symop.operation_xyz
+      1    x,y,z
+      2   -x,-y,-z
+      3   -x,1/2+y,1/2-z
+      4    x,1/2-y,1/2+z
+;
+;
+    Example 1 - The symmetry operations for the space group P21/c.
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      save_
+
+save__space_group_symop.id
+     _item_description.description
+;              An arbitrary identifier that uniquely labels each symmetry
+               operation in the list.
+;
+     _item.name                 '_space_group_symop.id'
+     _item.category_id           space_group_symop
+     _item.mandatory_code        yes
+     _item_type.code             code
+     _item_related.related_name '_symmetry_equiv.id'
+     _item_related.function_code alternate
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+       '_space_group_symop_id'         cif_core.dic 2.3
+      save_
+
+save__space_group_symop.operation_xyz
+     _item_description.description
+;               A parsable string giving one of the symmetry operations of the
+                space group in algebraic form.  If W is a matrix representation
+                of the rotational part of the symmetry operation defined by the
+                positions and signs of x, y and z, and w is a column of
+                translations defined by the fractions, an equivalent position
+                X' is generated from a given position X by the equation
+
+                          X' = WX + w
+
+                (Note: X is used to represent bold_italics_x in International
+                Tables for Crystallography Vol. A, Part 5)
+
+                When a list of symmetry operations is given, it must contain
+                a complete set of coordinate representatives which generates
+                all the operations of the space group by the addition of
+                all primitive translations of the space group. Such
+                representatives are to be found as the coordinates of
+                the general-equivalent position in International Tables for
+                Crystallography Vol. A (2002), to which it is necessary to
+                add any centring translations shown above the
+                general-equivalent position.
+
+                That is to say, it is necessary to list explicity all the
+                symmetry operations required to generate all the atoms in
+                the unit cell defined by the setting used.
+;
+
+     _item.name                 '_space_group_symop.operation_xyz'
+     _item.category_id           space_group_symop
+     _item.mandatory_code        no
+     _item_type.code             line
+#     _item_default.value        'x,y,z'
+     _item_related.related_name  '_symmetry_equiv.pos_as_xyz'
+     _item_related.function_code  alternate
+    loop_
+    _item_examples.case
+    _item_examples.detail
+                                 'x,1/2-y,1/2+z'
+;                                glide reflection through the plane (x,1/4,z),
+                                 with glide vector 1/2 c
+;
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+       '_space_group_symop_operation_xyz'         cif_core.dic 2.3
+      save_
+
+save__space_group_symop.sg_id
+     _item_description.description
+;              This must match a particular value of _space_group.id, allowing
+               the symmetry operation to be identified with a particular space
+               group.
+;
+     _item.name                 '_space_group_symop.sg_id'
+     _item.category_id           space_group_symop
+     _item.mandatory_code        no
+     _item_type.code             code
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_space_group_symop_sg_id'         cif_core.dic 2.3
+      save_
+
+###################
+## VALENCE_PARAM ##
+###################
+
+save_valence_param
+    _category.description
+;              Data items in the VALENCE_PARAM category define the
+               parameters used for calculating bond valences from bond
+               lengths.  In addition to the parameters, a pointer
+               is given to the reference (in VALENCE_REF) from which
+               the bond-valence parameters were taken.
+;
+
+    _category.id                      'valence_param'
+    _category.mandatory_code          no
+    loop_
+    _category_key.name
+           '_valence_param.atom_1'
+           '_valence_param.atom_1_valence'
+           '_valence_param.atom_2'
+           '_valence_param.atom_2_valence'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chemical_group'
+    loop_
+    _category_examples.case
+    _category_examples.detail
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    loop_
+    _valence_param.atom_1
+    _valence_param.atom_1_valence
+    _valence_param.atom_2
+    _valence_param.atom_2_valence
+    _valence_param.Ro
+    _valence_param.B
+    _valence_param.ref_id
+    _valence_param.details
+      Cu 2 O -2 1.679 0.37 a .
+      Cu 2 O -2 1.649 0.37 j .
+      Cu 2 N -3 1.64  0.37 m '2-coordinate N'
+      Cu 2 N -3 1.76  0.37 m '3-coordinate N'
+    loop_
+    _valence_ref.id
+    _valence_ref.reference
+      a  'Brown & Altermatt (1985), Acta Cryst. B41, 244-247'
+      j  'Liu & Thorp (1993), Inorg. Chem. 32, 4102-4205'
+      m  'See, Krause & Strub (1998), Inorg. Chem. 37, 5369-5375'
+;
+;
+    Example 1 - a bond-valence parameter list with accompanying references.
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+      save_
+
+save__valence_param.atom_1
+     _item_description.description
+;              The element symbol of the first atom forming the bond whose
+               bond-valence parameters are given in this category.
+;
+     _item.name                '_valence_param.atom_1'
+     _item.category_id           valence_param
+     _item.mandatory_code        yes
+     _item_type.code             code
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+       '_valence_param_atom_1'         cif_core.dic 2.3
+      save_
+
+save__valence_param.atom_1_valence
+     _item_description.description
+;              The valence (formal charge) of the first atom whose
+               bond-valence parameters are given in this category.
+;
+
+     _item.name                 '_valence_param.atom_1_valence'
+     _item.category_id           valence_param
+     _item.mandatory_code        yes
+     _item_type.code             int
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_valence_param_atom_1_valence'         cif_core.dic 2.3
+      save_
+
+save__valence_param.atom_2
+     _item_description.description
+;              The element symbol of the second atom forming the bond whose
+               bond-valence parameters are given in this category.
+;
+     _item.name                 '_valence_param.atom_2'
+     _item.category_id           valence_param
+     _item.mandatory_code        yes
+     _item_type.code             code
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_valence_param_atom_2'         cif_core.dic 2.3
+      save_
+
+save__valence_param.atom_2_valence
+     _item_description.description
+;              The valence (formal charge) of the second atom whose
+               bond-valence parameters are given in this category.
+;
+     _item.name                '_valence_param.atom_2_valence'
+     _item.category_id           valence_param
+     _item.mandatory_code        yes
+     _item_type.code             int
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_valence_param_atom_2_valence'         cif_core.dic 2.3
+      save_
+
+save__valence_param.B
+     _item_description.description
+;              The bond-valence parameter B used in the expression
+
+                     s = exp[(Ro - R)/B]
+
+               where s is the valence of a bond of length R.
+;
+     _item.name                '_valence_param.B'
+     _item.category_id           valence_param
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_units.code            'angstroms'
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+        '_valence_param_B'        cif_core.dic 2.3
+      save_
+
+save__valence_param.details
+     _item_description.description
+;              Details of or comments on the bond-valence parameters.
+;
+     _item.name                '_valence_param.details'
+     _item.category_id           valence_param
+     _item.mandatory_code        no
+     _item_type.code             text
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_valence_param_details'         cif_core.dic 2.3
+      save_
+
+save__valence_param.id
+     _item_description.description
+;              An identifier for the valence parameters of a bond between
+               the given atoms.
+;
+     _item.name                 '_valence_param.id'
+     _item.category_id           valence_param
+     _item.mandatory_code        no
+     _item_type.code             code
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+       '_valence_param_id'        cif_core.dic 2.3
+      save_
+
+save__valence_param.ref_id
+     _item_description.description
+;              An identifier which links to the reference to the source
+               from which the bond-valence parameters are taken. A child
+               of _valence_ref.id which it must match.
+;
+     _item.name                 '_valence_param.ref_id'
+     _item.category_id           valence_param
+     _item.mandatory_code        no
+     _item_type.code             code
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+       '_valence_param_ref_id'        cif_core.dic 2.3
+      save_
+
+save__valence_param.Ro
+     _item_description.description
+;              The bond-valence parameter Ro used in the expression
+
+                     s = exp[(Ro - R)/B]
+
+               where s is the valence of a bond of length R.
+;
+     _item.name                 '_valence_param.Ro'
+     _item.category_id           valence_param
+     _item.mandatory_code        no
+     _item_type.code             float
+     _item_units.code            angstroms
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_valence_param_Ro'         cif_core.dic 2.3
+      save_
+
+#################
+## VALENCE_REF ##
+#################
+
+save_valence_ref
+    _category.description
+;              Data items in the VALENCE_REF category list the references
+               from which the bond-valence parameters have been taken.
+;
+    _category.id                     'valence_ref'
+    _category.mandatory_code         no
+    _category_key.name               '_valence_ref.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chemical_group'
+      save_
+
+save__valence_ref.id
+     _item_description.description
+;              An identifier for items in this category. Parent of
+               _valence_param.ref_id, which must have the same value.
+;
+     _item.name                '_valence_ref.id'
+     _item.category_id           valence_ref
+     _item.mandatory_code        yes
+     _item_type.code             code
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_valence_ref_id'         cif_core.dic 2.3
+      save_
+
+save__valence_ref.reference
+     _item_description.description
+;              Literature reference from which the valence parameters
+               identified by _valence_param.id were taken.
+;
+     _item.name                 '_valence_ref.reference'
+     _item.category_id           valence_ref
+     _item.mandatory_code        no
+     _item_type.code             text
+    loop_
+     _item_aliases.alias_name
+     _item_aliases.dictionary
+     _item_aliases.version
+      '_valence_ref_reference'         cif_core.dic 2.3
+      save_
+
+
+#-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof-eof

@@ -1,0 +1,4318 @@
+
+###########################################################################
+#
+# File:  mmcif_pdbx-def-6.dic                                             
+# 
+#                      PDB Exchange Data Dictionary
+#
+# This data dictionary contains definitions used by wwPDB for data exchange
+# and data processing.  
+#
+#                           Definition Section 6
+#                            
+#                                                                        
+###########################################################################
+
+save__entity.pdbx_target_id
+    _item_description.description
+;              The value of _entity.target_id points to a TARGETDB target idenitifier
+               from which this entity was generated.
+;
+    _item.name              '_entity.pdbx_target_id'
+    _item.category_id        entity
+    _item.mandatory_code     no
+    _item_type.code          code
+save_
+
+
+
+save_pdbx_entity_prod_protocol
+   _category.description
+;  This category contains descriptive protocols for the production
+   of this entity.
+;
+   _category.id                  pdbx_entity_prod_protocol
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+
+   loop_
+   _category_key.name
+         '_pdbx_entity_prod_protocol.entry_id'
+         '_pdbx_entity_prod_protocol.entity_id'
+         '_pdbx_entity_prod_protocol.protocol_type'
+
+save_
+
+save__pdbx_entity_prod_protocol.entry_id
+    _item_description.description
+; The value of _pdbx_entity_prod_protocol.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. 
+;
+   _item.name                  '_pdbx_entity_prod_protocol.entry_id'
+   _item.category_id             pdbx_entity_prod_protocol
+   _item.mandatory_code          yes
+   _item_type.code               code
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_entity_prod_protocol.entry_id'
+save_
+
+save__pdbx_entity_prod_protocol.entity_id
+    _item_description.description
+; The value of _pdbx_entity_prod_protocol.entity_id uniquely identifies
+  each protein contained in the project target protein complex whose
+  structure is to be determined. This data item is a pointer to _entity.id
+  in the ENTITY category. 
+;
+   _item.name                 '_pdbx_entity_prod_protocol.entity_id'
+   _item.category_id          pdbx_entity_prod_protocol
+   _item.mandatory_code       yes
+   _item_type.code            code
+   _item_linked.parent_name   '_entity.id'
+   _item_linked.child_name    '_pdbx_entity_prod_protocol.entity_id'
+save_
+
+save__pdbx_entity_prod_protocol.protocol
+    _item_description.description
+; The protocol description associated with the protocol_type employed 
+  in the production of this entity. 
+;
+   _item.name                 '_pdbx_entity_prod_protocol.protocol'
+   _item.category_id          pdbx_entity_prod_protocol
+   _item.mandatory_code       yes
+   _item_type.code            text
+save_
+
+save__pdbx_entity_prod_protocol.protocol_type
+    _item_description.description
+; The one of a set of protocol types associated with the production 
+  of this entity. 
+;
+   _item.name                 '_pdbx_entity_prod_protocol.protocol_type'
+   _item.category_id          pdbx_entity_prod_protocol
+   _item.mandatory_code       yes
+   _item_type.code            code
+    loop_
+   _item_enumeration.value
+      "selection"
+      "PCR" 
+      "cloning"
+      "expression"
+      "growth"
+      "purification"
+      "NMR"
+      "other"
+save_
+
+
+
+
+####################
+## ENTITY_SRC_GEN ##
+####################
+
+
+#save__entity_src_gen.entity_id
+#    _item_description.description
+#;              This data item is a pointer to _entity.id in the ENTITY category.
+#;
+#    _item.name                  '_entity_src_gen.entity_id'
+#    _item.mandatory_code          yes
+#save_
+
+save__entity_src_gen.host_org_common_name
+    _item_description.description
+;       The common name of the organism that served as host for the
+        production of the entity.  Where full details of the protein
+        production are available it would be expected that this item
+        be derived from _entity_src_gen_express.host_org_common_name
+        or via _entity_src_gen_express.host_org_tax_id
+;
+    _item.name                  '_entity_src_gen.host_org_common_name'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case          'yeast'
+                                 'bacteria'
+save_
+
+save__entity_src_gen.host_org_details
+    _item_description.description
+;       A description of special aspects of the organism that served as
+        host for the production of the entity. Where full details of
+        the protein production are available it would be expected that
+        this item would derived from _entity_src_gen_express.host_org_details
+;
+
+    _item.name                  '_entity_src_gen.host_org_details'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               text
+save_
+
+
+save__entity_src_gen.host_org_strain
+    _item_description.description
+;       The strain of the organism in which the entity was expressed.
+        Where full details of the protein production are available
+        it would be expected that this item be derived from
+        _entity_src_gen_express.host_org_strain or via
+        _entity_src_gen_express.host_org_tax_id
+;
+
+    _item.name                  '_entity_src_gen.host_org_strain'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case          'DH5a'
+                                 'BMH 71-18'
+save_
+
+save__entity_src_gen.plasmid_details
+    _item_description.description
+;       A description of special aspects of the plasmid that produced the
+        entity in the host organism. Where full details of the protein
+        production are available it would be expected that this item
+        would be derived from _pdbx_construct.details of the construct
+        pointed to from _entity_src_gen_express.plasmid_id.
+;
+    _item.name                  '_entity_src_gen.plasmid_details'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               text
+save_
+
+save__entity_src_gen.plasmid_name
+    _item_description.description
+;       The name of the plasmid that produced the entity in the host
+        organism. Where full details of the protein production are available
+        it would be expected that this item would be derived from
+        _pdbx_construct.name of the construct pointed to from
+        _entity_src_gen_express.plasmid_id.
+;
+    _item.name                  '_entity_src_gen.plasmid_name'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case          'pET3C'
+                                 'pT123sab'
+save_
+
+save__entity_src_gen.pdbx_host_org_variant
+    _item_description.description
+;       Variant of the organism used as the expression system. Where
+        full details of the protein production are available it would
+        be expected that this item be derived from
+        entity_src_gen_express.host_org_variant or via
+        _entity_src_gen_express.host_org_tax_id
+;
+    _item.name                  '_entity_src_gen.pdbx_host_org_variant'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case          'TRP-LAC'  'LAMBDA DE3'
+    _item_aliases.alias_name     '_entity_src_gen.ndb_host_org_variant'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+save_
+
+save__entity_src_gen.pdbx_host_org_cell_line
+    _item_description.description
+;       A specific line of cells used as the expression system. Where
+        full details of the protein production are available it would
+        be expected that this item would be derived from
+        entity_src_gen_express.host_org_cell_line
+;
+    _item.name                   '_entity_src_gen.pdbx_host_org_cell_line'
+    _item.category_id            entity_src_gen
+    _item.mandatory_code         no
+    _item_type.code              text
+    _item_examples.case          'HELA'
+    _item_aliases.alias_name     '_entity_src_gen.ndb_host_org_cell_line'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+save_
+
+save__entity_src_gen.pdbx_host_org_atcc
+    _item_description.description
+;       Americal Tissue Culture Collection of the expression system. Where
+        full details of the protein production are available it would
+        be expected that this item  would be derived from
+        _entity_src_gen_express.host_org_culture_collection
+;
+    _item.name                  '_entity_src_gen.pdbx_host_org_atcc'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_aliases.alias_name     '_entity_src_gen.ndb_host_org_atcc'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+save_
+
+save__entity_src_gen.pdbx_host_org_culture_collection
+    _item_description.description
+;       Culture collection of the expression system. Where
+        full details of the protein production are available it would
+        be expected that this item  would be derived somehwere, but
+        exactly where is not clear.
+;
+    _item.name                    '_entity_src_gen.pdbx_host_org_culture_collection'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_aliases.alias_name  '_entity_src_gen.ndb_host_org_culture_collection'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+save_
+
+save__entity_src_gen.pdbx_host_org_cell
+    _item_description.description
+;       Cell type from which the gene is derived. Where
+        entity.target_id is provided this should be derived from
+        details of the target.
+;
+    _item.name                   '_entity_src_gen.pdbx_host_org_cell'
+    _item.category_id            entity_src_gen
+    _item.mandatory_code         no
+    _item_type.code              text
+    _item_examples.case          ENDOTHELIAL
+    _item_aliases.alias_name     '_entity_src_gen.ndb_host_org_cell'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+save_
+
+save__entity_src_gen.pdbx_host_org_scientific_name
+    _item_description.description
+;       The scientific name of the organism that served as host for the
+        production of the entity. Where full details of the protein
+        production are available it would be expected that this item
+        would be derived from _entity_src_gen_express.host_org_scientific_name
+        or via _entity_src_gen_express.host_org_tax_id
+;
+    _item.name                  '_entity_src_gen.pdbx_host_org_scientific_name'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               text
+    loop_
+    _item_examples.case
+       'ESCHERICHIA COLI'
+       'SACCHAROMYCES CEREVISIAE'
+    _item_aliases.alias_name     '_entity_src_gen.ndb_host_org_scientific_name'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+save_
+
+save__entity_src_gen.pdbx_host_org_tissue
+    _item_description.description
+;       The specific tissue which expressed the molecule. Where full details
+        of the protein production are available it would be expected that this
+        item would be derived from _entity_src_gen_express.host_org_tissue
+;
+    _item.name                  '_entity_src_gen.pdbx_host_org_tissue'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case          'heart'
+                                 'liver'
+                                 'eye lens'
+    _item_aliases.alias_name     '_entity_src_gen.ndb_host_org_tissue'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+save_
+
+save__entity_src_gen.pdbx_host_org_vector
+    _item_description.description
+;       Identifies the vector used. Where full details of the protein
+        production are available it would be expected that this item
+        would be derived from _entity_src_gen_clone.vector_name.
+;
+    _item.name                    '_entity_src_gen.pdbx_host_org_vector'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case           'PBIT36' 'PET15B' 'PUC18'
+    _item_aliases.alias_name     '_entity_src_gen.ndb_host_org_vector'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+save_
+
+save__entity_src_gen.pdbx_host_org_vector_type
+    _item_description.description
+; Identifies the type of vector used (plasmid, virus, or cosmid).
+  Where full details of the protein production are available it
+  would be expected that this item would be derived from
+  _entity_src_gen_express.vector_type.
+;
+    _item.name                  '_entity_src_gen.pdbx_host_org_vector_type'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop_
+    _item_examples.case           'COSMID' 'PLASMID'
+    _item_aliases.alias_name     '_entity_src_gen.ndb_host_org_vector_type'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+save_
+
+save__entity_src_gen.expression_system_id
+    _item_description.description
+;       A unique identifier for the expression system. This
+        should be extracted from a local list of expression
+        systems.
+;
+   _item.name                 '_entity_src_gen.expression_system_id'
+   _item.category_id          entity_src_gen
+   _item.mandatory_code       no
+   _item_type.code            uline
+save_
+
+save__entity_src_gen.gene_src_dev_stage
+    _item_description.description
+;       A string to indicate the life-cycle or cell development
+        cycle in which the gene is expressed and the mature
+        protein is active.
+;
+    _item.name                  '_entity_src_gen.gene_src_dev_stage'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+    _item_type.code               text
+save_
+
+save__entity_src_gen.start_construct_id
+    _item_description.description
+;       A pointer to _pdbx_construct.id in the PDBX_CONSTRUCT category.
+        The indentified sequence is the initial construct.
+;
+    _item.name                  '_entity_src_gen.start_construct_id'
+    _item.category_id             entity_src_gen
+    _item.mandatory_code          no
+   _item_type.code            code
+    _item_linked.parent_name   '_pdbx_construct.id'
+    _item_linked.child_name    '_entity_src_gen.start_construct_id'
+save_
+
+
+#############################
+# ENTITY_SRC_GEN_PROD_OTHER #
+#############################
+#
+#  _pdbx_entity_src_gen_prod_other.entry_id
+#  _pdbx_entity_src_gen_prod_other.entity_id
+#  _pdbx_entity_src_gen_prod_other.step_id
+#  _pdbx_entity_src_gen_prod_other.next_step_id
+#  _pdbx_entity_src_gen_prod_other.end_construct_id
+#  _pdbx_entity_src_gen_prod_other.process_name
+#  _pdbx_entity_src_gen_prod_other.date
+#  _pdbx_entity_src_gen_prod_other.robot_id
+#  _pdbx_entity_src_gen_prod_other.details
+#
+
+save_pdbx_entity_src_gen_prod_other
+   _category.description
+;  This category contains details for process steps that are
+   not explicitly catered for elsewhere. It provides some basic
+   details as well as placeholders for a list of parameters and
+   values (the category PDBX_ENTITY_SRC_GEN_PROD_OTHER_PARAMETER).
+   Note that processes that have been modelled explicitly should
+   not be represented using this category.
+;
+   _category.id                  pdbx_entity_src_gen_prod_other
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_prod_other.entry_id'
+         '_pdbx_entity_src_gen_prod_other.entity_id'
+         '_pdbx_entity_src_gen_prod_other.step_id'
+save_
+
+save__pdbx_entity_src_gen_prod_other.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_prod_other.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+   _item.name                  '_pdbx_entity_src_gen_prod_other.entry_id'
+   _item.category_id             pdbx_entity_src_gen_prod_other
+   _item.mandatory_code          yes
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_prod_other.entry_id'
+save_
+
+save__pdbx_entity_src_gen_prod_other.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_prod_other.entity_id uniquely identifies
+  each protein contained in the project target protein complex whose
+  structure is to be determined. This data item is a pointer to _entity.id
+  in the ENTITY category. This item may be a site dependent bar code.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_other.entity_id'
+   _item.category_id          pdbx_entity_src_gen_prod_other
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_entity.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_prod_other.entity_id'
+save_
+
+save__pdbx_entity_src_gen_prod_other.step_id
+    _item_description.description
+; This item is the unique identifier for this process step.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_other.step_id'
+   _item.category_id          pdbx_entity_src_gen_prod_other
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_prod_other.next_step_id
+    _item_description.description
+;       This item unique identifier for the next production step.
+        This allows a workflow to have multiple entry points leading
+        to a single product.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_other.next_step_id'
+   _item.category_id          pdbx_entity_src_gen_prod_other
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_prod_other.end_construct_id
+    _item_description.description
+;       This item is a pointer to pdbx_construct.id in the PDBX_CONSTRUCT
+        category. The referenced nucleic acid sequence is that of the
+        product of the process step.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_other.end_construct_id'
+   _item.category_id          pdbx_entity_src_gen_prod_other
+   _item.mandatory_code       no
+   _item_type.code            code
+   _item_linked.parent_name   '_pdbx_construct.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_prod_other.end_construct_id'
+save_
+
+save__pdbx_entity_src_gen_prod_other.robot_id
+    _item_description.description
+;       This data item is a pointer to pdbx_robot_system.id in the
+        PDBX_ROBOT_SYSTEM category. The referenced robot is the
+        robot responsible for the process step
+;
+   _item.name                  '_pdbx_entity_src_gen_prod_other.robot_id'
+   _item.category_id           pdbx_entity_src_gen_prod_other
+   _item.mandatory_code        no
+   _item_linked.parent_name    '_pdbx_robot_system.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_prod_other.robot_id'
+save_
+
+save__pdbx_entity_src_gen_prod_other.date
+    _item_description.description
+;       The date of this process step.
+;
+    _item.name                  '_pdbx_entity_src_gen_prod_other.date'
+    _item.category_id             pdbx_entity_src_gen_prod_other
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd:hh:mm
+    loop_
+    _item_examples.case          '2003-12-25'
+                                 '2003-12-25:09:00'
+save_
+
+save__pdbx_entity_src_gen_prod_other.process_name
+    _item_description.description
+;       Name of this process step.
+;
+    _item.name                  '_pdbx_entity_src_gen_prod_other.process_name'
+    _item.category_id             pdbx_entity_src_gen_prod_other
+    _item.mandatory_code          no
+    _item_type.code               text
+save_
+
+save__pdbx_entity_src_gen_prod_other.details
+    _item_description.description
+;       Additional details of this process step.
+;
+    _item.name                  '_pdbx_entity_src_gen_prod_other.details'
+    _item.category_id             pdbx_entity_src_gen_prod_other
+    _item.mandatory_code          no
+    _item_type.code               text
+save_
+
+
+############################################
+# PDBX_ENTITY_SRC_GEN_PROD_OTHER_PARAMETER #
+############################################
+#
+#  _pdbx_entity_src_gen_prod_other_parameter.entry_id
+#  _pdbx_entity_src_gen_prod_other_parameter.entity_id
+#  _pdbx_entity_src_gen_prod_other_parameter.step_id
+#  _pdbx_entity_src_gen_prod_other_parameter.name
+#  _pdbx_entity_src_gen_prod_other_parameter.value
+#
+
+save_pdbx_entity_src_gen_prod_other_parameter
+   _category.description
+;  This category contains parameters and values required to capture
+   information about a particular process step
+;
+
+   _category.id                  pdbx_entity_src_gen_prod_other_parameter
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_prod_other_parameter.entry_id'
+         '_pdbx_entity_src_gen_prod_other_parameter.entity_id'
+         '_pdbx_entity_src_gen_prod_other_parameter.step_id'
+         '_pdbx_entity_src_gen_prod_other_parameter.parameter'
+save_
+
+save__pdbx_entity_src_gen_prod_other_parameter.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_prod_other_parameter.entry_id is a pointer
+  to _pdbx_entity_src_gen_prod_other.entry.id
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_other_parameter.entry_id'
+   _item.category_id          pdbx_entity_src_gen_prod_other_parameter
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_pdbx_entity_src_gen_prod_other.entry_id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_prod_other_parameter.entry_id'
+save_
+
+save__pdbx_entity_src_gen_prod_other_parameter.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_prod_other_parameter.entity_id is a pointer
+  to _pdbx_entity_src_gen_prod_other.entity_id
+;
+
+   _item.name                   '_pdbx_entity_src_gen_prod_other_parameter.entity_id'
+   _item.category_id            pdbx_entity_src_gen_prod_other_parameter
+   _item.mandatory_code         yes
+   _item_linked.parent_name     '_pdbx_entity_src_gen_prod_other.entity_id'
+   _item_linked.child_name      '_pdbx_entity_src_gen_prod_other_parameter.entity_id'
+save_
+
+save__pdbx_entity_src_gen_prod_other_parameter.step_id
+    _item_description.description
+;       This item is a pointer to _pdbx_entity_src_gen_prod_other.step_id
+;
+   _item.name                   '_pdbx_entity_src_gen_prod_other_parameter.step_id'
+   _item.category_id            pdbx_entity_src_gen_prod_other_parameter
+   _item.mandatory_code         yes
+   _item_linked.parent_name     '_pdbx_entity_src_gen_prod_other.step_id'
+   _item_linked.child_name      '_pdbx_entity_src_gen_prod_other_parameter.step_id'
+save_
+
+save__pdbx_entity_src_gen_prod_other_parameter.parameter
+    _item_description.description
+;       The name of the parameter associated with the process step
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_other_parameter.parameter'
+   _item.category_id          pdbx_entity_src_gen_prod_other_parameter
+   _item.mandatory_code       yes
+   _item_type.code            line
+save_
+
+save__pdbx_entity_src_gen_prod_other_parameter.value
+    _item_description.description
+;       The value of the parameter
+;
+
+   _item.name                 '_pdbx_entity_src_gen_prod_other_parameter.value'
+   _item.category_id          pdbx_entity_src_gen_prod_other_parameter
+   _item.mandatory_code       yes
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_prod_other_parameter.details
+    _item_description.description
+;       Additional details about the parameter
+;
+
+   _item.name                 '_pdbx_entity_src_gen_prod_other_parameter.details'
+   _item.category_id          pdbx_entity_src_gen_prod_other_parameter
+   _item.mandatory_code       yes
+   _item_type.code            text
+save_
+
+
+################################
+# PDBX_ENTITY_SRC_GEN_PROD_PCR #
+################################
+#
+#  _pdbx_entity_src_gen_prod_pcr.entry_id
+#  _pdbx_entity_src_gen_prod_pcr.entity_id
+#  _pdbx_entity_src_gen_prod_pcr.step_id
+#  _pdbx_entity_src_gen_prod_pcr.next_step_id
+#  _pdbx_entity_src_gen_prod_pcr.end_construct_id
+#  _pdbx_entity_src_gen_prod_pcr.forward_primer_id
+#  _pdbx_entity_src_gen_prod_pcr.reverse_primer_id
+#  _pdbx_entity_src_gen_prod_pcr.reaction_details
+#  _pdbx_entity_src_gen_prod_pcr.purification_details
+#  _pdbx_entity_src_gen_prod_pcr.date
+#  _pdbx_entity_src_gen_prod_pcr.robot_id
+#
+#  _pdbx_entity_src_gen_prod_pcr.summary
+#
+
+save_pdbx_entity_src_gen_prod_pcr
+   _category.description
+;  This category contains details for the PCR steps used in
+   the overall protein production process. The PCR is assumed
+   to be applied to the result of the previous production step, or the
+   gene source if this is the first production step.
+;
+   _category.id                  pdbx_entity_src_gen_prod_pcr
+   _category.mandatory_code      no
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_prod_pcr.entry_id'
+         '_pdbx_entity_src_gen_prod_pcr.entity_id'
+         '_pdbx_entity_src_gen_prod_pcr.step_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_examples.detail
+   _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - hypothetical example
+;
+;
+    _pdbx_entity_src_gen_prod_pcr.entry_id           111000111
+    _pdbx_entity_src_gen_prod_pcr.entity_id          222000111
+    _pdbx_entity_src_gen_prod_pcr.step_id            1
+    _pdbx_entity_src_gen_prod_pcr.next_step_id       2
+    _pdbx_entity_src_gen_prod_pcr.end_construct_id   440050000111
+    _pdbx_entity_src_gen_prod_pcr.robot_id           5
+    _pdbx_entity_src_gen_prod_pcr.date               '2002-07-12:15:13'
+    _pdbx_entity_src_gen_prod_pcr.forward_primer_id  2
+    _pdbx_entity_src_gen_prod_pcr.reverse_primer_id  3
+    _pdbx_entity_src_gen_prod_pcr.reaction_details
+  ;  Annealing temperature = 70 C
+     Annealing time = 60 s
+     Extending temperature = 74 C
+     Extending time = 120 s
+     Melting temperature = 95 C
+     Melting time = 120 s
+     Number of cycles = 40
+     Polymerase = KOD
+     Template = 10 pmol
+     Primer = 25 pmol
+     Total volume = 25 ul
+  ;
+    _pdbx_entity_src_gen_prod_pcr.purification_details
+  ;  No purification
+  ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+save_
+
+save__pdbx_entity_src_gen_prod_pcr.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_prod_pcr.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_pcr.entry_id'
+   _item.category_id          pdbx_entity_src_gen_prod_pcr
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_prod_pcr.entry_id'
+save_
+
+save__pdbx_entity_src_gen_prod_pcr.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_prod_pcr.entity_id uniquely identifies
+  each protein contained in the project target protein complex whose
+  structure is to be determined. This data item is a pointer to _entity.id
+  in the ENTITY category. This item may be a site dependent bar code.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_pcr.entity_id'
+   _item.category_id          pdbx_entity_src_gen_prod_pcr
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_entity.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_prod_pcr.entity_id'
+save_
+
+save__pdbx_entity_src_gen_prod_pcr.step_id
+    _item_description.description
+; This item is the unique identifier for this PCR step.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_pcr.step_id'
+   _item.category_id          pdbx_entity_src_gen_prod_pcr
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_prod_pcr.next_step_id
+    _item_description.description
+;       This item unique identifier for the next production step.
+        This allows a workflow to have multiple entry points leading
+        to a single product.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_pcr.next_step_id'
+   _item.category_id          pdbx_entity_src_gen_prod_pcr
+   _item.mandatory_code       yes
+   _item_type.code            int
+   save_
+
+save__pdbx_entity_src_gen_prod_pcr.end_construct_id
+    _item_description.description
+;       This item is a pointer to pdbx_construct.id in the PDBX_CONSTRUCT
+        category. The referenced nucleic acid sequence is that of the
+        PCR product.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_pcr.end_construct_id'
+   _item.category_id          pdbx_entity_src_gen_prod_pcr
+   _item.mandatory_code       no
+   _item_type.code            code
+   _item_linked.parent_name   '_pdbx_construct.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_prod_pcr.end_construct_id'
+save_
+
+save__pdbx_entity_src_gen_prod_pcr.robot_id
+    _item_description.description
+;       This data item is a pointer to pdbx_robot_system.id in the
+        PDBX_ROBOT_SYSTEM category. The referenced robot is the
+        robot responsible for the PCR reaction (normally the heat
+        cycler).
+;
+   _item.name                  '_pdbx_entity_src_gen_prod_pcr.robot_id'
+   _item.category_id           pdbx_entity_src_gen_prod_pcr
+   _item.mandatory_code        no
+   _item_linked.parent_name    '_pdbx_robot_system.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_prod_pcr.robot_id'
+save_
+
+save__pdbx_entity_src_gen_prod_pcr.date
+    _item_description.description
+; The date of this production step.
+;
+    _item.name                  '_pdbx_entity_src_gen_prod_pcr.date'
+    _item.category_id             pdbx_entity_src_gen_prod_pcr
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd:hh:mm
+    loop_
+    _item_examples.case          '2003-12-25'
+                                 '2003-12-25:09:00'
+save_
+
+save__pdbx_entity_src_gen_prod_pcr.forward_primer_id
+    _item_description.description
+; This item is a pointer to pdbx_construct.id in the PDBX_CONSTRUCT category.
+  The referenced nucleic acid sequence is that of the forward primer.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_pcr.forward_primer_id'
+   _item.category_id          pdbx_entity_src_gen_prod_pcr
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_construct.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_prod_pcr.forward_primer_id'
+save_
+
+save__pdbx_entity_src_gen_prod_pcr.reverse_primer_id
+    _item_description.description
+; This item is a pointer to pdbx_construct.id in the PDBX_CONSTRUCT category.
+  The referenced nucleic acid sequence is that of the reverse primer.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_pcr.reverse_primer_id'
+   _item.category_id          pdbx_entity_src_gen_prod_pcr
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_construct.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_prod_pcr.reverse_primer_id'
+save_
+
+save__pdbx_entity_src_gen_prod_pcr.reaction_details
+  _item_description.description
+; String value containing details of the PCR reaction.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_pcr.reaction_details'
+   _item.category_id          pdbx_entity_src_gen_prod_pcr
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_prod_pcr.purification_details
+    _item_description.description
+; String value containing details of any purification of the
+  product of the PCR reaction.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_pcr.purification_details'
+   _item.category_id          pdbx_entity_src_gen_prod_pcr
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_prod_pcr.summary
+    _item_description.description
+; Summary of the details of the PCR reaction any purification of the
+  product of the PCR reaction.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_pcr.summary'
+   _item.category_id          pdbx_entity_src_gen_prod_pcr
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+
+###################################
+# PDBX_ENTITY_SRC_GEN_PROD_DIGEST #
+###################################
+#
+#   _pdbx_entity_src_gen_prod_digest.entry_id
+#   _pdbx_entity_src_gen_prod_digest.entity_id
+#   _pdbx_entity_src_gen_prod_digest.step_id
+#   _pdbx_entity_src_gen_prod_digest.next_step_id
+#   _pdbx_entity_src_gen_prod_digest.restriction_enzyme_1
+#   _pdbx_entity_src_gen_prod_digest.restriction_enzyme_2
+#   _pdbx_entity_src_gen_prod_digest.purification_details
+#   _pdbx_entity_src_gen_prod_digest.date
+#   _pdbx_entity_src_gen_prod_digest.robot_id
+#
+#   _pdbx_entity_src_gen_prod_digest.summary
+#
+save_pdbx_entity_src_gen_prod_digest
+   _category.description
+;  This category contains details for the DIGEST steps used in
+   the overall protein production process. The digestion is assumed
+   to be applied to the result of the previous production step, or the
+   gene source if this is the first production step.
+;
+
+   _category.id                  pdbx_entity_src_gen_prod_digest
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_prod_digest.entry_id'
+         '_pdbx_entity_src_gen_prod_digest.entity_id'
+         '_pdbx_entity_src_gen_prod_digest.step_id'
+   loop_
+   _category_examples.detail
+   _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - hypothetical example
+;
+;
+    _pdbx_entity_src_gen_prod_digest.entry_id              111000111
+    _pdbx_entity_src_gen_prod_digest.entity_id             222000111
+    _pdbx_entity_src_gen_prod_digest.step_id               2
+    _pdbx_entity_src_gen_prod_digest.next_step_id          3
+    _pdbx_entity_src_gen_prod_digest.end_construct_id      440050000123
+    _pdbx_entity_src_gen_prod_digest.robot_id              5
+    _pdbx_entity_src_gen_prod_digest.date                  '2002-07-12:15:13'
+    _pdbx_entity_src_gen_prod_digest.restriction_enzyme_1  'NcoI'
+    _pdbx_entity_src_gen_prod_digest.restriction_enzyme_2  'BamII'
+    _pdbx_entity_src_gen_prod_digest.purification_details
+  ;  No purification
+  ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+save_
+
+
+
+save__pdbx_entity_src_gen_prod_digest.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_prod_digest.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+
+   _item.name                  '_pdbx_entity_src_gen_prod_digest.entry_id'
+   _item.category_id           pdbx_entity_src_gen_prod_digest
+   _item.mandatory_code        yes
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_prod_digest.entry_id'
+save_
+
+save__pdbx_entity_src_gen_prod_digest.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_prod_digest.entity_id uniquely identifies
+  each protein contained in the project target protein complex whose
+  structure is to be determined. This data item is a pointer to _entity.id
+  in the ENTITY category. This item may be a site dependent bar code.
+;
+
+   _item.name                 '_pdbx_entity_src_gen_prod_digest.entity_id'
+   _item.category_id          pdbx_entity_src_gen_prod_digest
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_entity.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_prod_digest.entity_id'
+save_
+
+save__pdbx_entity_src_gen_prod_digest.step_id
+    _item_description.description
+; This item is the unique identifier for this digestion step.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_digest.step_id'
+   _item.category_id          pdbx_entity_src_gen_prod_digest
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+
+save__pdbx_entity_src_gen_prod_digest.next_step_id
+    _item_description.description
+; This item unique identifier for the next production step. This allows
+  a workflow to have multiple entry points leading to a single product.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_digest.next_step_id'
+   _item.category_id          pdbx_entity_src_gen_prod_digest
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_prod_digest.end_construct_id
+    _item_description.description
+; This item is a pointer to pdbx_construct.id in the
+  PDBX_CONSTRUCT category. The referenced nucleic acid sequence
+  is that of the digest product
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_digest.end_construct_id'
+   _item.category_id          pdbx_entity_src_gen_prod_digest
+   _item.mandatory_code       no
+   _item_type.code            code
+   _item_linked.parent_name   '_pdbx_construct.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_prod_digest.end_construct_id'
+save_
+
+save__pdbx_entity_src_gen_prod_digest.robot_id
+    _item_description.description
+; This data item is a pointer to pdbx_robot_system.id
+  in the PDBX_ROBOT_SYSTEM category.
+;
+   _item.name                  '_pdbx_entity_src_gen_prod_digest.robot_id'
+   _item.category_id           pdbx_entity_src_gen_prod_digest
+   _item.mandatory_code        no
+   _item_type.code             code
+   _item_linked.parent_name    '_pdbx_robot_system.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_prod_digest.robot_id'
+save_
+
+save__pdbx_entity_src_gen_prod_digest.date
+    _item_description.description
+; The date of this production step.
+;
+    _item.name                  '_pdbx_entity_src_gen_prod_digest.date'
+    _item.category_id             pdbx_entity_src_gen_prod_digest
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd:hh:mm
+    _item_examples.case          '2003-12-25'
+save_
+
+save__pdbx_entity_src_gen_prod_digest.restriction_enzyme_1
+    _item_description.description
+; The first enzyme used in the restriction digestion. The sites at
+  which this cuts can be derived from the sequence.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_digest.restriction_enzyme_1'
+   _item.category_id          pdbx_entity_src_gen_prod_digest
+   _item.mandatory_code       yes
+   _item_type.code            text
+   _item_examples.case        'BamIII'
+save_
+
+save__pdbx_entity_src_gen_prod_digest.restriction_enzyme_2
+    _item_description.description
+; The second enzyme used in the restriction digestion. The sites at
+  which this cuts can be derived from the sequence.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_digest.restriction_enzyme_2'
+   _item.category_id          pdbx_entity_src_gen_prod_digest
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_prod_digest.purification_details
+    _item_description.description
+; String value containing details of any purification of the
+  product of the digestion.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_digest.purification_details'
+   _item.category_id          pdbx_entity_src_gen_prod_digest
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_prod_digest.summary
+    _item_description.description
+; Summary of the details of restriction digestion any purification of the
+  product of the digestion.
+;
+   _item.name                 '_pdbx_entity_src_gen_prod_digest.summary'
+   _item.category_id          pdbx_entity_src_gen_prod_digest
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+
+########################
+# ENTITY_SRC_GEN_CLONE #
+########################
+#
+# _pdbx_entity_src_gen_clone.entry_id
+# _pdbx_entity_src_gen_clone.entity_id
+# _pdbx_entity_src_gen_clone.step_id
+# _pdbx_entity_src_gen_clone.next_step_id
+# _pdbx_entity_src_gen_clone.end_construct_id
+# _pdbx_entity_src_gen_clone.robot_id
+# _pdbx_entity_src_gen_clone.date
+# _pdbx_entity_src_gen_clone.gene_insert_method
+# _pdbx_entity_src_gen_clone.vector_name
+# _pdbx_entity_src_gen_clone.vector_details
+# _pdbx_entity_src_gen_clone.transformation_method
+# _pdbx_entity_src_gen_clone.marker
+# _pdbx_entity_src_gen_clone.verification_method
+# _pdbx_entity_src_gen_clone.purification_details
+#
+#
+# _pdbx_entity_src_gen_clone.summary
+# 
+
+save_pdbx_entity_src_gen_clone
+   _category.description
+;  This category contains details for the cloning steps used in
+   the overall protein production process. Each row in PDBX_ENTITY_SRC_GEN_CLONE
+   should have an equivalent row in either PDBX_ENTITY_SRC_GEN_CLONE_LIGATION or
+   PDBX_ENTITY_SRC_GEN_CLONE_RECOMBINATION.  If only summary information is 
+   provided data in the later two categories may be omitted.
+;
+
+   _category.id                  pdbx_entity_src_gen_clone
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_clone.entry_id'
+         '_pdbx_entity_src_gen_clone.entity_id'
+         '_pdbx_entity_src_gen_clone.step_id'
+save_
+
+save__pdbx_entity_src_gen_clone.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_clone.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+
+   _item.name                  '_pdbx_entity_src_gen_clone.entry_id'
+   _item.category_id           pdbx_entity_src_gen_clone
+   _item.mandatory_code        yes
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_clone.entry_id'
+save_
+
+save__pdbx_entity_src_gen_clone.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_clone.entity_id uniquely identifies
+  each protein contained in the project target protein complex whose
+  structure is to be determined. This data item is a pointer to _entity.id
+  in the ENTITY category. This item may be a site dependent bar code.
+;
+
+   _item.name                  '_pdbx_entity_src_gen_clone.entity_id'
+   _item.category_id           pdbx_entity_src_gen_clone
+   _item.mandatory_code        yes
+   _item_linked.parent_name    '_entity.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_clone.entity_id'
+save_
+
+save__pdbx_entity_src_gen_clone.step_id
+    _item_description.description
+; This item is the unique identifier for this cloning step.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone.step_id'
+   _item.category_id          pdbx_entity_src_gen_clone
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_clone.next_step_id
+    _item_description.description
+;       This item unique identifier for the next production step.
+        This allows a workflow to have multiple entry points leading
+        to a single product.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone.next_step_id'
+   _item.category_id          pdbx_entity_src_gen_clone
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_clone.end_construct_id
+    _item_description.description
+;       This item is a pointer to pdbx_construct.id in the PDBX_CONSTRUCT
+        category. The referenced nucleic acid sequence is that of the
+        cloned product.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone.end_construct_id'
+   _item.category_id          pdbx_entity_src_gen_clone
+   _item.mandatory_code       no
+   _item_type.code            code
+   _item_linked.parent_name   '_pdbx_construct.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_clone.end_construct_id'
+save_
+
+save__pdbx_entity_src_gen_clone.robot_id
+    _item_description.description
+;       This data item is a pointer to pdbx_robot_system.id in the
+        PDBX_ROBOT_SYSTEM category.
+;
+   _item.name                  '_pdbx_entity_src_gen_clone.robot_id'
+   _item.category_id           pdbx_entity_src_gen_clone
+   _item.mandatory_code        no
+   _item_linked.parent_name    '_pdbx_robot_system.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_clone.robot_id'
+save_
+
+save__pdbx_entity_src_gen_clone.date
+    _item_description.description
+; The date of this production step.
+;
+    _item.name                  '_pdbx_entity_src_gen_clone.date'
+    _item.category_id             pdbx_entity_src_gen_clone
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd:hh:mm
+    loop_
+    _item_examples.case          '2003-12-25'
+                                 '2003-12-25:09:00'
+save_
+
+save__pdbx_entity_src_gen_clone.gene_insert_method
+    _item_description.description
+;  The method used to insert the gene into the vector. For 'Ligation', an
+   PDBX_ENTITY_SRC_GEN_CLONE_LIGATION entry with matching .step_id is expected. For
+   'Recombination', an PDBX_ENTITY_SRC_GEN_CLONE_RECOMBINATION entry with matching
+   .step_id is expected.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone.gene_insert_method'
+   _item.category_id          pdbx_entity_src_gen_clone
+   _item.mandatory_code       yes
+   _item_type.code            code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+           L   'Ligation'
+           R   'Recombination'
+
+    save_
+
+save__pdbx_entity_src_gen_clone.vector_name
+    _item_description.description
+;  The name of the vector used in this cloning step.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone.vector_name'
+   _item.category_id          pdbx_entity_src_gen_clone
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_clone.vector_details
+    _item_description.description
+;  Details of any modifications made to the named vector.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone.vector_details'
+   _item.category_id          pdbx_entity_src_gen_clone
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_clone.transformation_method
+    _item_description.description
+;  The method used to transform the expression cell line with the vector
+;
+   _item.name                 '_pdbx_entity_src_gen_clone.transformation_method'
+   _item.category_id          pdbx_entity_src_gen_clone
+   _item.mandatory_code       no
+   _item_type.code            code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+           H   'Heat shock'
+           E   'Electroporation'
+           C   'Calcium shock'
+     save_
+
+save__pdbx_entity_src_gen_clone.marker
+    _item_description.description
+; The type of marker included to allow selection of transformed cells
+;
+   _item.name                 '_pdbx_entity_src_gen_clone.marker'
+   _item.category_id          pdbx_entity_src_gen_clone
+   _item.mandatory_code       no
+   _item_type.code            code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+           A   'Antibiotic resistance'
+           F   'Fluorescence'
+    save_
+
+save__pdbx_entity_src_gen_clone.verification_method
+    _item_description.description
+; The method used to verify that the incorporated gene is correct
+;
+   _item.name                 '_pdbx_entity_src_gen_clone.verification_method'
+   _item.category_id          pdbx_entity_src_gen_clone
+   _item.mandatory_code       no
+   _item_type.code            code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+           P   'PCR on plasmid'
+           R   'Restriction enzyme digestion'
+           D   'DNA sequencing'
+    save_
+
+save__pdbx_entity_src_gen_clone.purification_details
+    _item_description.description
+;  Details of any purification of the product.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone.purification_details'
+   _item.category_id          pdbx_entity_src_gen_clone
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_clone.summary
+    _item_description.description
+;  Summary of ligation or recombionation cloning used, the associated 
+   verification method and any purification of the product.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone.summary'
+   _item.category_id          pdbx_entity_src_gen_clone
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+
+######################################
+# PDBX_ENTITY_SRC_GEN_CLONE_LIGATION #
+######################################
+#
+#  _pdbx_entity_src_gen_clone_ligation.entry_id
+#  _pdbx_entity_src_gen_clone_ligation.entity_id
+#  _pdbx_entity_src_gen_clone_ligation.step_id
+#  _pdbx_entity_src_gen_clone_ligation.cleavage_enzymes
+#  _pdbx_entity_src_gen_clone_ligation.ligation_enzymes
+#  _pdbx_entity_src_gen_clone_ligation.temperature
+#  _pdbx_entity_src_gen_clone_ligation.time
+#  _pdbx_entity_src_gen_clone_ligation.details
+#
+
+save_pdbx_entity_src_gen_clone_ligation
+   _category.description
+;  This category contains details for the ligation-based cloning steps used in
+   the overall protein production process.
+   _pdbx_entity_src_gen_clone_ligation.clone_step_id in this category
+   must point at a defined _pdbx_entity_src_gen_clone.step_id. The details in
+   PDBX_ENTITY_SRC_GEN_CLONE_LIGATION extend the details in PDBX_ENTITY_SRC_GEN_CLONE
+   to cover ligation dependent cloning steps.
+;
+
+   _category.id                  pdbx_entity_src_gen_clone_ligation
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_clone_ligation.entry_id'
+         '_pdbx_entity_src_gen_clone_ligation.entity_id'
+         '_pdbx_entity_src_gen_clone_ligation.step_id'
+save_
+
+
+save__pdbx_entity_src_gen_clone_ligation.entry_id
+    _item_description.description
+; This item is a pointer to _pdbx_entity_src_gen_clone.entry_id in the
+  PDBX_ENTITY_SRC_GEN_CLONE category.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_ligation.entry_id'
+   _item.category_id          pdbx_entity_src_gen_clone_ligation
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_entity_src_gen_clone.entry_id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_clone_ligation.entry_id'
+save_
+
+save__pdbx_entity_src_gen_clone_ligation.entity_id
+    _item_description.description
+; This item is a pointer to _pdbx_entity_src_gen_clone.entity_id in the
+  PDBX_ENTITY_SRC_GEN_CLONE category.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_ligation.entity_id'
+   _item.category_id          pdbx_entity_src_gen_clone_ligation
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_entity_src_gen_clone.entity_id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_clone_ligation.entity_id'
+save_
+
+save__pdbx_entity_src_gen_clone_ligation.step_id
+    _item_description.description
+; This item is a pointer to _pdbx_entity_src_gen_clone.step_id in the
+  PDBX_ENTITY_SRC_GEN_CLONE category.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_ligation.step_id'
+   _item.category_id          pdbx_entity_src_gen_clone_ligation
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_entity_src_gen_clone.step_id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_clone_ligation.step_id'
+save_
+
+save__pdbx_entity_src_gen_clone_ligation.cleavage_enzymes
+    _item_description.description
+; The names of the enzymes used to cleave the vector. In addition an enzyme
+  used to blunt the cut ends, etc., should be named here.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_ligation.cleavage_enzymes'
+   _item.category_id          pdbx_entity_src_gen_clone_ligation
+   _item.mandatory_code       yes
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_clone_ligation.ligation_enzymes
+    _item_description.description
+; The names of the enzymes used to ligate the gene into the cleaved vector.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_ligation.ligation_enzymes'
+   _item.category_id          pdbx_entity_src_gen_clone_ligation
+   _item.mandatory_code       yes
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_clone_ligation.temperature
+    _item_description.description
+; The temperature at which the ligation experiment was performed, in degrees
+  celsius.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_ligation.temperature'
+   _item.category_id          pdbx_entity_src_gen_clone_ligation
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           celsius
+save_
+
+save__pdbx_entity_src_gen_clone_ligation.time
+    _item_description.description
+; The duration of the ligation reaction in minutes.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_ligation.time'
+   _item.category_id          pdbx_entity_src_gen_clone_ligation
+   _item.mandatory_code       yes
+   _item_type.code            int
+   _item_units.code           minutes
+save_
+
+save__pdbx_entity_src_gen_clone_ligation.details
+    _item_description.description
+; Any details to be associated with this ligation step, e.g. the protocol.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_ligation.details'
+   _item.category_id          pdbx_entity_src_gen_clone_ligation
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+
+###########################################
+# PDBX_ENTITY_SRC_GEN_CLONE_RECOMBINATION #
+###########################################
+#
+#  _pdbx_entity_src_gen_clone_recombination.entry__id
+#  _pdbx_entity_src_gen_clone_recombination.entity_id
+#  _pdbx_entity_src_gen_clone_recombination.step_id
+#  _pdbx_entity_src_gen_clone_recombination.system
+#  _pdbx_entity_src_gen_clone_recombination.recombination_enzymes
+#  _pdbx_entity_src_gen_clone_recombination.details
+#
+
+save_pdbx_entity_src_gen_clone_recombination
+   _category.description
+;  This category contains details for the recombination-based cloning steps
+   used in the overall protein production process. It is assumed that these
+   reactions will use commercially available kits.
+   _pdbx_entity_src_gen_clone_recombination.clone_step_id in this category
+   must point at a defined _pdbx_entity_src_gen_clone.step_id. The details in
+   PDBX_ENTITY_SRC_GEN_CLONE_RECOMBINATION extend the details in PDBX_ENTITY_SRC_GEN_CLONE
+   to cover recombination dependent cloning steps.
+;
+
+   _category.id                  pdbx_entity_src_gen_clone_recombination
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_clone_recombination.entry_id'
+         '_pdbx_entity_src_gen_clone_recombination.entity_id'
+         '_pdbx_entity_src_gen_clone_recombination.step_id'
+save_
+
+save__pdbx_entity_src_gen_clone_recombination.entry_id
+    _item_description.description
+; This item is a pointer to _pdbx_entity_src_gen_clone.entry_id in the
+  PDBX_ENTITY_SRC_GEN_CLONE category.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_recombination.entry_id'
+   _item.category_id          pdbx_entity_src_gen_clone_recombination
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_entity_src_gen_clone.entry_id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_clone_recombination.entry_id'
+save_
+
+save__pdbx_entity_src_gen_clone_recombination.entity_id
+    _item_description.description
+; This item is a pointer to _pdbx_entity_src_gen_clone.entity_id in the
+  PDBX_ENTITY_SRC_GEN_CLONE category.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_recombination.entity_id'
+   _item.category_id          pdbx_entity_src_gen_clone_recombination
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_entity_src_gen_clone.entity_id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_clone_recombination.entity_id'
+save_
+
+save__pdbx_entity_src_gen_clone_recombination.step_id
+    _item_description.description
+; This item is a pointer to _pdbx_entity_src_gen_clone.step_id in the
+  PDBX_ENTITY_SRC_GEN_CLONE category.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_recombination.step_id'
+   _item.category_id          pdbx_entity_src_gen_clone_recombination
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_entity_src_gen_clone.step_id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_clone_recombination.step_id'
+save_
+
+save__pdbx_entity_src_gen_clone_recombination.system
+    _item_description.description
+; The name of the recombination system.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_recombination.system'
+   _item.category_id          pdbx_entity_src_gen_clone_recombination
+   _item.mandatory_code       yes
+   _item_type.code            code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+           G   'Gateway Tm'
+           I   'Infusion/Creator Tm'
+           N   'Novagen's system - name?'
+    save_
+
+save__pdbx_entity_src_gen_clone_recombination.recombination_enzymes
+    _item_description.description
+; The names of the enzymes used for this recombination step.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_recombination.recombination_enzymes'
+   _item.category_id          pdbx_entity_src_gen_clone_recombination
+   _item.mandatory_code       yes
+   _item_type.code            code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+           B   'Gateway BP clonase'
+           L   'Gateway LR clonase'
+           T   'Topoisomerase'
+           C   'Cre recombinase'
+           I   'Infusion enzyme - name?'
+     save_
+
+save__pdbx_entity_src_gen_clone_recombination.details
+    _item_description.description
+; Any details to be associated with this recombination step, e.g. the protocol
+  or differences from the manufacturer's specified protocol.
+;
+   _item.name                 '_pdbx_entity_src_gen_clone_recombination.details'
+   _item.category_id          pdbx_entity_src_gen_clone_recombination
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+
+###############################
+# PDBX_ENTITY_SRC_GEN_EXPRESS #
+###############################
+#
+#   _pdbx_entity_src_gen_express.entry_id
+#   _pdbx_entity_src_gen_express.entity_id
+#   _pdbx_entity_src_gen_express.step_id
+#   _pdbx_entity_src_gen_express.next_step_id
+#   _pdbx_entity_src_gen_express.end_construct_id
+#   _pdbx_entity_src_gen_express.robot_id
+#   _pdbx_entity_src_gen_express.date
+#   _pdbx_entity_src_gen_express.promoter_type
+#   _pdbx_entity_src_gen_express.plasmid_id
+#   _pdbx_entity_src_gen_express.vector_type
+#   _pdbx_entity_src_gen_express.N_terminal_seq_tag
+#   _pdbx_entity_src_gen_express.C_terminal_seq_tag
+#   _pdbx_entity_src_gen_express.host_org_scientific_name
+#   _pdbx_entity_src_gen_express.host_org_common_name
+#   _pdbx_entity_src_gen_express.host_org_variant
+#   _pdbx_entity_src_gen_express.host_org_strain
+#   _pdbx_entity_src_gen_express.host_org_tissue
+#   _pdbx_entity_src_gen_express.host_org_tax_id
+#   _pdbx_entity_src_gen_express.host_org_culture_collection
+#   _pdbx_entity_src_gen_express.host_org_cell_line
+#   _pdbx_entity_src_gen_express.host_org_details
+#   _pdbx_entity_src_gen_express.culture_base_media
+#   _pdbx_entity_src_gen_express.culture_additives
+#   _pdbx_entity_src_gen_express.culture_volume
+#   _pdbx_entity_src_gen_express.culture_time
+#   _pdbx_entity_src_gen_express.culture_temperature
+#   _pdbx_entity_src_gen_express.inducer
+#   _pdbx_entity_src_gen_express.inducer_concentration
+#   _pdbx_entity_src_gen_express.induction_details
+#   _pdbx_entity_src_gen_express.multiplicity_of_infection
+#   _pdbx_entity_src_gen_express.induction_growth_time
+#   _pdbx_entity_src_gen_express.induction_temperature
+#   _pdbx_entity_src_gen_express.harvesting_details
+#   _pdbx_entity_src_gen_express.storage_details
+#
+#   _pdbx_entity_src_gen_express.summary
+#
+
+save_pdbx_entity_src_gen_express
+   _category.description
+;  This category contains details for the EXPRESSION steps used in
+   the overall protein production process. It is hoped that this category
+   will cover all forms of cell-based expression by reading induction as
+   induction/transformation/transfection.
+;
+
+   _category.id                  pdbx_entity_src_gen_express
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_express.entry_id'
+         '_pdbx_entity_src_gen_express.entity_id'
+         '_pdbx_entity_src_gen_express.step_id'
+save_
+
+save__pdbx_entity_src_gen_express.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_express.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+
+   _item.name                  '_pdbx_entity_src_gen_express.entry_id'
+   _item.category_id           pdbx_entity_src_gen_express
+   _item.mandatory_code        yes
+   _item_type.code             code
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_express.entry_id'
+save_
+
+save__pdbx_entity_src_gen_express.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_express.entity_id uniquely identifies
+  each protein contained in the project target complex proteins whose
+  structure is to be determined. This data item is a pointer to _entity.id
+  in the ENTITY category.
+  This item may be a site dependent bar code.
+;
+
+   _item.name                 '_pdbx_entity_src_gen_express.entity_id'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       yes
+   _item_type.code            code
+   _item_linked.parent_name    '_entity.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_express.entity_id'
+save_
+
+save__pdbx_entity_src_gen_express.step_id
+    _item_description.description
+; This item is the unique identifier for this expression step.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.step_id'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_express.next_step_id
+    _item_description.description
+; This item unique identifier for the next production step. This allows
+a workflow to have multiple entry points leading to a single product.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.next_step_id'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_express.end_construct_id
+    _item_description.description
+;       This item is a pointer to pdbx_construct.id in the PDBX_CONSTRUCT
+        category. The referenced sequence is expected to be the amino
+        acid sequence of the expressed product.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.end_construct_id'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            code
+   _item_linked.parent_name   '_pdbx_construct.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_express.end_construct_id'
+save_
+
+save__pdbx_entity_src_gen_express.robot_id
+    _item_description.description
+; This data item is a pointer to pdbx_robot_system.id
+  in the PDBX_ROBOT_SYSTEM category.
+;
+   _item.name                  '_pdbx_entity_src_gen_express.robot_id'
+   _item.category_id           pdbx_entity_src_gen_express
+   _item.mandatory_code        no
+   _item_linked.parent_name    '_pdbx_robot_system.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_express.robot_id'
+save_
+
+save__pdbx_entity_src_gen_express.date
+    _item_description.description
+; The date of production step.
+;
+    _item.name                  '_pdbx_entity_src_gen_express.date'
+    _item.category_id            pdbx_entity_src_gen_express
+    _item.mandatory_code         no
+    _item_type.code              yyyy-mm-dd:hh:mm
+     loop_
+   _item_examples.case          '2003-12-25'
+                                '2003-12-25:09:00'
+save_
+
+save__pdbx_entity_src_gen_express.promoter_type
+    _item_description.description
+;  The nature of the promoter controlling expression of the gene.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.promoter_type'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       yes
+   _item_type.code            text
+   _item_examples.case        'T7 LacZ'
+save_
+
+save__pdbx_entity_src_gen_express.plasmid_id
+    _item_description.description
+; This item is a pointer to _pdbx_construct.id in the
+  PDBX_CONSTRUCT category. The referenced entry will contain
+  the nucleotide sequence that is to be expressed, including tags.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.plasmid_id'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       yes
+   _item_type.code            code
+   _item_linked.parent_name   '_pdbx_construct.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_express.plasmid_id'
+save_
+
+save__pdbx_entity_src_gen_express.vector_type
+    _item_description.description
+; Identifies the type of vector used (plasmid, virus, or cosmid)
+  in the expression system.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.vector_type'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       yes
+   _item_type.code            code
+save_
+
+save__pdbx_entity_src_gen_express.N_terminal_seq_tag
+    _item_description.description
+; Any N-terminal sequence tag as a string of one letter amino acid codes.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.N_terminal_seq_tag'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       yes
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_express.C_terminal_seq_tag
+    _item_description.description
+; Any C-terminal sequence tag as a string of one letter amino acid codes
+;
+   _item.name                 '_pdbx_entity_src_gen_express.C_terminal_seq_tag'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       yes
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_express.host_org_scientific_name
+    _item_description.description
+; The scientific name of the organism that served as host for the
+  expression system. It is expected that either this item or
+  _pdbx_entity_src_gen_express.host_org_tax_id should be populated.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.host_org_scientific_name'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            line
+save_
+
+save__pdbx_entity_src_gen_express.host_org_common_name
+    _item_description.description
+; The common name of the organism that served as host for the
+  expression system. Where _pdbx_entity_src_gen_express.host_org_tax_id
+  is populated it is expected that this item may be derived by
+  look up against the taxonomy database.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.host_org_common_name'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            line
+save_
+
+save__pdbx_entity_src_gen_express.host_org_variant
+    _item_description.description
+; The vairant of the organism that served as host for the expression
+  system. Where _pdbx_entity_src_gen_express.host_org_tax_id is
+  populated it is expected that this item may be derived by a
+  look up against the taxonomy database.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.host_org_variant'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            line
+save_
+
+save__pdbx_entity_src_gen_express.host_org_strain
+    _item_description.description
+; The strain of the organism that served as host for the expression
+  system. Where _pdbx_entity_src_gen_express.host_org_tax_id is
+  populated it is expected that this item may be derived by a
+  look up against the taxonomy database.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.host_org_strain'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            line
+save_
+
+save__pdbx_entity_src_gen_express.host_org_tissue
+    _item_description.description
+;       The specific tissue which expressed the molecule.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.host_org_tissue'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            line
+save_
+
+save__pdbx_entity_src_gen_express.host_org_culture_collection
+    _item_description.description
+;       Culture collection of the expression system
+;
+   _item.name                 '_pdbx_entity_src_gen_express.host_org_culture_collection'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            line
+save_
+
+save__pdbx_entity_src_gen_express.host_org_cell_line
+    _item_description.description
+; A specific line of cells used as the expression system
+;
+   _item.name                 '_pdbx_entity_src_gen_express.host_org_cell_line'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            line
+save_
+
+save__pdbx_entity_src_gen_express.host_org_tax_id
+    _item_description.description
+; The id for the NCBI taxonomy node corresponding to the organism that
+  served as host for the expression system.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.host_org_tax_id'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            line
+save_
+
+save__pdbx_entity_src_gen_express.host_org_details
+    _item_description.description
+; A description of special aspects of the organism that served as
+  host for the  expression system.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.host_org_details'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_express.culture_base_media
+    _item_description.description
+; The name of the base media in which the expression host was grown.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.culture_base_media'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_express.culture_additives
+    _item_description.description
+; Any additives to the base media in which the expression host was grown.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.culture_additives'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_express.culture_volume
+    _item_description.description
+; The volume of media in milliliters in which the expression host was grown.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.culture_volume'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           milliliters
+save_
+
+save__pdbx_entity_src_gen_express.culture_time
+    _item_description.description
+; The time in hours for which the expression host was allowed to grow
+  prior to induction/transformation/transfection.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.culture_time'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           hours
+save_
+
+save__pdbx_entity_src_gen_express.culture_temperature
+    _item_description.description
+; The temperature in degrees celsius at which the expression host was allowed
+  to grow prior to induction/transformation/transfection.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.culture_temperature'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           celsius
+save_
+
+
+save__pdbx_entity_src_gen_express.inducer
+    _item_description.description
+; The chemical name of the inducing agent.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.inducer'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            line
+save_
+
+
+save__pdbx_entity_src_gen_express.inducer_concentration
+    _item_description.description
+; Concentration of the inducing agent.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.inducer_concentration'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            float
+   _item_units.code           mg_per_ml
+save_
+
+
+save__pdbx_entity_src_gen_express.induction_details
+    _item_description.description
+; Details of induction/transformation/transfection.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.induction_details'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+
+save__pdbx_entity_src_gen_express.multiplicity_of_infection
+    _item_description.description
+; The multiplicity of infection for genes introduced by transfection, eg.
+for baculovirus-based expression.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.multiplicity_of_infection'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            float
+   _item_units.code           arbitrary
+save_
+
+
+save__pdbx_entity_src_gen_express.induction_timepoint
+    _item_description.description
+; The time in hours after induction/transformation/transfection at which
+  the optical density of the culture was measured.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.induction_timepoint'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            float
+   _item_units.code           hours
+save_
+
+save__pdbx_entity_src_gen_express.induction_temperature
+    _item_description.description
+; The temperature in celsius at which the induced/transformed/transfected
+  cells were grown.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.induction_temperature'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           celsius
+save_
+
+save__pdbx_entity_src_gen_express.harvesting_details
+    _item_description.description
+; Details of the harvesting protocol.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.harvesting_details'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+
+save__pdbx_entity_src_gen_express.storage_details
+    _item_description.description
+; Details of how the harvested culture was stored.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.storage_details'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_express.summary
+    _item_description.description
+; Summary of the details of the expression steps used in protein production.
+;
+   _item.name                 '_pdbx_entity_src_gen_express.summary'
+   _item.category_id          pdbx_entity_src_gen_express
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+
+#########################################
+# PDBX_ENTITY_SRC_GEN_EXPRESS_TIMEPOINT #
+#########################################
+#
+#   _pdbx_entity_src_gen_express_timepoint.entry_id
+#   _pdbx_entity_src_gen_express_timepoint.entity_id
+#   _pdbx_entity_src_gen_express_timepoint.step_id
+#   _pdbx_entity_src_gen_express_timepoint.serial
+#   _pdbx_entity_src_gen_express_timepoint.time
+#   _pdbx_entity_src_gen_express_timepoint.OD
+#
+
+save_pdbx_entity_src_gen_express_timepoint
+   _category.description
+;  This category contains details for OD time series used to monitor a
+   given EXPRESSION step used in the overall protein production process.
+;
+
+   _category.id                  pdbx_entity_src_gen_express_timepoint
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_express_timepoint.entry_id'
+         '_pdbx_entity_src_gen_express_timepoint.entity_id'
+         '_pdbx_entity_src_gen_express_timepoint.step_id'
+         '_pdbx_entity_src_gen_express_timepoint.serial'
+save_
+
+
+save__pdbx_entity_src_gen_express_timepoint.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_express_timepoint.entry_id is a pointer
+  to _pdbx_entity_src_gen_express.entry_id
+;
+   _item.name                 '_pdbx_entity_src_gen_express_timepoint.entry_id'
+   _item.category_id          pdbx_entity_src_gen_express_timepoint
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_pdbx_entity_src_gen_express.entry_id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_express_timepoint.entry_id'
+save_
+
+save__pdbx_entity_src_gen_express_timepoint.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_express_timepoint.entity_id is a pointer
+  to _pdbx_entity_src_gen_express.entity_id
+;
+
+   _item.name                   '_pdbx_entity_src_gen_express_timepoint.entity_id'
+   _item.category_id            pdbx_entity_src_gen_express_timepoint
+   _item.mandatory_code         yes
+   _item_linked.parent_name     '_pdbx_entity_src_gen_express.entity_id'
+   _item_linked.child_name      '_pdbx_entity_src_gen_express_timepoint.entity_id'
+save_
+
+save__pdbx_entity_src_gen_express_timepoint.step_id
+    _item_description.description
+; This item is a pointer to _pdbx_entity_src_gen_express.step_id
+;
+   _item.name                   '_pdbx_entity_src_gen_express_timepoint.step_id'
+   _item.category_id            pdbx_entity_src_gen_express_timepoint
+   _item.mandatory_code         yes
+   _item_linked.parent_name     '_pdbx_entity_src_gen_express.step_id'
+   _item_linked.child_name      '_pdbx_entity_src_gen_express_timepoint.step_id'
+save_
+
+save__pdbx_entity_src_gen_express_timepoint.serial
+    _item_description.description
+; This items uniquely defines a timepoint within a series.
+;
+   _item.name                 '_pdbx_entity_src_gen_express_timepoint.serial'
+   _item.category_id          pdbx_entity_src_gen_express_timepoint
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_express_timepoint.OD
+    _item_description.description
+; The optical density of the expression culture in arbitrary units at the
+  timepoint specified.
+;
+
+   _item.name                 '_pdbx_entity_src_gen_express_timepoint.OD'
+   _item.category_id          pdbx_entity_src_gen_express_timepoint
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_express_timepoint.time
+    _item_description.description
+; The time in hours after induction/transformation/transfection at which
+  the optical density of the culture was measured.
+;
+
+   _item.name                 '_pdbx_entity_src_gen_express_timepoint.time'
+   _item.category_id          pdbx_entity_src_gen_express_timepoint
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+
+
+#############################
+# PDBX_ENTITY_SRC_GEN_LYSIS #
+#############################
+#
+#  _pdbx_entity_src_gen_lysis.entry_id
+#  _pdbx_entity_src_gen_lysis.entity_id
+#  _pdbx_entity_src_gen_lysis.step_id
+#  _pdbx_entity_src_gen_lysis.next_step_id
+#  _pdbx_entity_src_gen_lysis.end_construct_id
+#  _pdbx_entity_src_gen_lysis.date
+#  _pdbx_entity_src_gen_lysis.robot_id
+#  _pdbx_entity_src_gen_lysis.method
+#  _pdbx_entity_src_gen_lysis.buffer_id
+#  _pdbx_entity_src_gen_lysis.buffer_volume
+#  _pdbx_entity_src_gen_lysis.temperature
+#  _pdbx_entity_src_gen_lysis.time
+#  _pdbx_entity_src_gen_lysis.details
+#
+
+save_pdbx_entity_src_gen_lysis
+   _category.description
+;  This category contains details for the cell lysis steps used in
+   the overall protein production process.
+;
+   _category.id                  pdbx_entity_src_gen_lysis
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_lysis.entry_id'
+         '_pdbx_entity_src_gen_lysis.entity_id'
+         '_pdbx_entity_src_gen_lysis.step_id'
+save_
+
+save__pdbx_entity_src_gen_lysis.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_lysis.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+   _item.name                 '_pdbx_entity_src_gen_lysis.entry_id'
+   _item.category_id          pdbx_entity_src_gen_lysis
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_lysis.entry_id'
+save_
+
+save__pdbx_entity_src_gen_lysis.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_lysis.entity_id uniquely identifies
+  each protein contained in the project target protein complex whose
+  structure is to be determined. This data item is a pointer to _entity.id
+  in the ENTITY category.  This item may be a site dependent bar code.
+;
+   _item.name                 '_pdbx_entity_src_gen_lysis.entity_id'
+   _item.category_id          pdbx_entity_src_gen_lysis
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_entity.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_lysis.entity_id'
+save_
+
+save__pdbx_entity_src_gen_lysis.step_id
+    _item_description.description
+; This item is the unique identifier for this lysis step.
+;
+   _item.name                 '_pdbx_entity_src_gen_lysis.step_id'
+   _item.category_id          pdbx_entity_src_gen_lysis
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_lysis.next_step_id
+    _item_description.description
+; This item unique identifier for the next production step. This allows
+a workflow to have multiple entry points leading to a single product.
+;
+   _item.name                 '_pdbx_entity_src_gen_lysis.next_step_id'
+   _item.category_id          pdbx_entity_src_gen_lysis
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_lysis.end_construct_id
+    _item_description.description
+;       This item is a pointer to pdbx_construct.id in the PDBX_CONSTRUCT
+        category. The referenced sequence is expected to be the amino
+        acid sequence of the expressed product after lysis.
+;
+   _item.name                 '_pdbx_entity_src_gen_lysis.end_construct_id'
+   _item.category_id          pdbx_entity_src_gen_lysis
+   _item.mandatory_code       no
+   _item_type.code            code
+   _item_linked.parent_name   '_pdbx_construct.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_lysis.end_construct_id'
+save_
+
+save__pdbx_entity_src_gen_lysis.robot_id
+    _item_description.description
+; This data item is a pointer to pdbx_robot_system.id
+  in the PDBX_ROBOT_SYSTEM category.
+;
+   _item.name                  '_pdbx_entity_src_gen_lysis.robot_id'
+   _item.category_id           pdbx_entity_src_gen_lysis
+   _item.mandatory_code        no
+   _item_linked.parent_name    '_pdbx_robot_system.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_lysis.robot_id'
+save_
+
+save__pdbx_entity_src_gen_lysis.date
+    _item_description.description
+; The date of this production step.
+;
+    _item.name                  '_pdbx_entity_src_gen_lysis.date'
+    _item.category_id             pdbx_entity_src_gen_lysis
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd:hh:mm
+    loop_
+    _item_examples.case         '2003-12-25'
+                                '2003-12-25:09:00'
+save_
+
+save__pdbx_entity_src_gen_lysis.method
+    _item_description.description
+; The lysis method.
+;
+   _item.name                 '_pdbx_entity_src_gen_lysis.method'
+   _item.category_id          pdbx_entity_src_gen_lysis
+   _item.mandatory_code       yes
+   _item_type.code            code
+    loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+           S   'Sonication'
+           D   'Detergent'
+           B   'Sonication and detergent'
+
+    save_
+
+save__pdbx_entity_src_gen_lysis.buffer_id
+    _item_description.description
+; This item is a pointer to pdbx_buffer.id in the PDBX_BUFFER category.
+  The referenced buffer is that in which the lysis was performed.
+;
+   _item.name                 '_pdbx_entity_src_gen_lysis.buffer_id'
+   _item.category_id          pdbx_entity_src_gen_lysis
+   _item.mandatory_code       yes
+   _item_type.code            code
+   _item_linked.parent_name   '_pdbx_buffer.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_lysis.buffer_id'
+save_
+
+save__pdbx_entity_src_gen_lysis.buffer_volume
+    _item_description.description
+; The volume in milliliters of buffer in which the lysis was performed.
+;
+   _item.name                 '_pdbx_entity_src_gen_lysis.buffer_volume'
+   _item.category_id          pdbx_entity_src_gen_lysis
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           milliliters
+save_
+
+save__pdbx_entity_src_gen_lysis.temperature
+    _item_description.description
+; The temperature in degrees celsius at which the lysis was performed.
+;
+   _item.name                 '_pdbx_entity_src_gen_lysis.temperature'
+   _item.category_id          pdbx_entity_src_gen_lysis
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           celsius
+save_
+
+save__pdbx_entity_src_gen_lysis.time
+    _item_description.description
+; The time in seconds of the lysis experiment.
+;
+   _item.name                 '_pdbx_entity_src_gen_lysis.time'
+   _item.category_id          pdbx_entity_src_gen_lysis
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           minutes
+save_
+
+save__pdbx_entity_src_gen_lysis.details
+  _item_description.description
+; String value containing details of the lysis protocol.
+;
+   _item.name                 '_pdbx_entity_src_gen_lysis.details'
+   _item.category_id          pdbx_entity_src_gen_lysis
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+
+##############################
+# PDBX_ENTITY_SRC_GEN_REFOLD #
+##############################
+#
+#  _pdbx_entity_src_gen_refold.entry_id
+#  _pdbx_entity_src_gen_refold.entity_id
+#  _pdbx_entity_src_gen_refold.step_id
+#  _pdbx_entity_src_gen_refold.next_step_id
+#  _pdbx_entity_src_gen_refold.end_construct_id
+#  _pdbx_entity_src_gen_refold.robot_id
+#  _pdbx_entity_src_gen_refold.date
+#  _pdbx_entity_src_gen_refold.denature_buffer_id
+#  _pdbx_entity_src_gen_refold.refold_buffer_id
+#  _pdbx_entity_src_gen_refold.temperature
+#  _pdbx_entity_src_gen_refold.time
+#  _pdbx_entity_src_gen_refold.storage_buffer_id
+#  _pdbx_entity_src_gen_refold.details
+#
+
+save_pdbx_entity_src_gen_refold
+   _category.description
+;  This category contains details for the refolding steps used in
+   the overall protein production process.
+;
+   _category.id                  pdbx_entity_src_gen_refold
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_refold.entry_id'
+         '_pdbx_entity_src_gen_refold.entity_id'
+         '_pdbx_entity_src_gen_refold.step_id'
+save_
+
+save__pdbx_entity_src_gen_refold.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_refold.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+   _item.name                 '_pdbx_entity_src_gen_refold.entry_id'
+   _item.category_id          pdbx_entity_src_gen_refold
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_refold.entry_id'
+save_
+
+save__pdbx_entity_src_gen_refold.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_refold.entity_id uniquely identifies
+  each protein contained in the project target protein complex whose
+  structure is to be determined. This data item is a pointer to _entity.id
+  in the ENTITY category. This item may be a site dependent bar code.
+;
+   _item.name                 '_pdbx_entity_src_gen_refold.entity_id'
+   _item.category_id          pdbx_entity_src_gen_refold
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_entity.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_refold.entity_id'
+save_
+
+save__pdbx_entity_src_gen_refold.step_id
+    _item_description.description
+; This item is the unique identifier for this refolding step.
+;
+   _item.name                 '_pdbx_entity_src_gen_refold.step_id'
+   _item.category_id          pdbx_entity_src_gen_refold
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_refold.next_step_id
+    _item_description.description
+; This item unique identifier for the next production step. This allows
+a workflow to have multiple entry points leading to a single product.
+;
+   _item.name                 '_pdbx_entity_src_gen_refold.next_step_id'
+   _item.category_id          pdbx_entity_src_gen_refold
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_refold.end_construct_id
+    _item_description.description
+;       This item is a pointer to pdbx_construct.id in the PDBX_CONSTRUCT
+        category. The referenced sequence is expected to be the amino
+        acid sequence of the expressed product after the refolding
+        step.
+;
+   _item.name                 '_pdbx_entity_src_gen_refold.end_construct_id'
+   _item.category_id          pdbx_entity_src_gen_refold
+   _item.mandatory_code       no
+   _item_type.code            code
+   _item_linked.parent_name   '_pdbx_construct.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_refold.end_construct_id'
+save_
+
+save__pdbx_entity_src_gen_refold.robot_id
+    _item_description.description
+; This data item is a pointer to pdbx_robot_system.id
+  in the PDBX_ROBOT_SYSTEM category.
+;
+   _item.name                  '_pdbx_entity_src_gen_refold.robot_id'
+   _item.category_id           pdbx_entity_src_gen_refold
+   _item.mandatory_code        no
+   _item_linked.parent_name    '_pdbx_robot_system.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_refold.robot_id'
+save_
+
+save__pdbx_entity_src_gen_refold.date
+    _item_description.description
+; The date of this production step.
+;
+    _item.name                  '_pdbx_entity_src_gen_refold.date'
+    _item.category_id            pdbx_entity_src_gen_refold
+    _item.mandatory_code         no
+    _item_type.code              yyyy-mm-dd:hh:mm
+    loop_
+    _item_examples.case         '2003-12-25'
+                                '2003-12-25:09:00'
+save_
+
+save__pdbx_entity_src_gen_refold.denature_buffer_id
+    _item_description.description
+; This item is a pointer to pdbx_buffer.id in the PDBX_BUFFER category.
+  The referenced buffer is that in which the protein was denatured.
+;
+   _item.name                 '_pdbx_entity_src_gen_refold.denature_buffer_id'
+   _item.category_id          pdbx_entity_src_gen_refold
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_buffer.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_refold.denature_buffer_id'
+save_
+
+save__pdbx_entity_src_gen_refold.refold_buffer_id
+    _item_description.description
+; This item is a pointer to pdbx_buffer.id in the PDBX_BUFFER category.
+  The referenced buffer is that in which the protein was refolded.
+;
+   _item.name                 '_pdbx_entity_src_gen_refold.refold_buffer_id'
+   _item.category_id          pdbx_entity_src_gen_refold
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_buffer.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_refold.refold_buffer_id'
+   save_
+
+save__pdbx_entity_src_gen_refold.temperature
+    _item_description.description
+; The temperature in degrees celsius at which the protein was refolded.
+;
+   _item.name                 '_pdbx_entity_src_gen_refold.temperature'
+   _item.category_id          pdbx_entity_src_gen_refold
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           celsius
+save_
+
+save__pdbx_entity_src_gen_refold.time
+    _item_description.description
+; The time in hours over which the protein was refolded.
+;
+   _item.name                 '_pdbx_entity_src_gen_refold.time'
+   _item.category_id          pdbx_entity_src_gen_refold
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           hours
+save_
+
+save__pdbx_entity_src_gen_refold.storage_buffer_id
+    _item_description.description
+; This item is a pointer to pdbx_buffer.id in the PDBX_BUFFER category.
+  The referenced buffer is that in which the refolded protein was stored.
+;
+   _item.name                 '_pdbx_entity_src_gen_refold.storage_buffer_id'
+   _item.category_id          pdbx_entity_src_gen_refold
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_buffer.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_refold.storage_buffer_id'
+save_
+
+save__pdbx_entity_src_gen_refold.details
+  _item_description.description
+; String value containing details of the refolding.
+;
+   _item.name                 '_pdbx_entity_src_gen_refold.details'
+   _item.category_id          pdbx_entity_src_gen_refold
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+
+###################################
+# PDBX_ENTITY_SRC_GEN_PROTEOLYSIS #
+###################################
+#
+#  _pdbx_entity_src_gen_proteolysis.entry_id
+#  _pdbx_entity_src_gen_proteolysis.entity_id
+#  _pdbx_entity_src_gen_proteolysis.step_id
+#  _pdbx_entity_src_gen_proteolysis.next_step_id
+#  _pdbx_entity_src_gen_proteolysis.end_construct_id
+#  _pdbx_entity_src_gen_proteolysis.date
+#  _pdbx_entity_src_gen_proteolysis.robot_id
+#  _pdbx_entity_src_gen_proteolysis.details
+#  _pdbx_entity_src_gen_proteolysis.protease
+#  _pdbx_entity_src_gen_proteolysis.protein_protease_ratio
+#  _pdbx_entity_src_gen_proteolysis.cleavage_buffer
+#  _pdbx_entity_src_gen_proteolysis.cleavage_temperature
+#  _pdbx_entity_src_gen_proteolysis.cleavage_time
+#
+
+save_pdbx_entity_src_gen_proteolysis
+   _category.description
+;  This category contains details for the protein purification
+   tag removal steps used in the overall protein production process
+;
+
+   _category.id                  pdbx_entity_src_gen_proteolysis
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_proteolysis.entry_id'
+         '_pdbx_entity_src_gen_proteolysis.entity_id'
+         '_pdbx_entity_src_gen_proteolysis.step_id'
+save_
+
+save__pdbx_entity_src_gen_proteolysis.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_proteolysis.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+
+   _item.name                  '_pdbx_entity_src_gen_proteolysis.entry_id'
+   _item.category_id           pdbx_entity_src_gen_proteolysis
+   _item.mandatory_code        yes
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_proteolysis.entry_id'
+save_
+
+save__pdbx_entity_src_gen_proteolysis.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_proteolysis.entity_id uniquely identifies
+  each protein contained in the project target complex proteins whose
+  structure is to be determined. This data item is a pointer to _entity.id
+  in the ENTITY category.  This item may be a site dependent bar code.
+;
+
+   _item.name                  '_pdbx_entity_src_gen_proteolysis.entity_id'
+   _item.category_id           pdbx_entity_src_gen_proteolysis
+   _item.mandatory_code        yes
+   _item_linked.parent_name    '_entity.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_proteolysis.entity_id'
+save_
+
+save__pdbx_entity_src_gen_proteolysis.step_id
+    _item_description.description
+; This item is the unique identifier for this tag removal step.
+;
+   _item.name                 '_pdbx_entity_src_gen_proteolysis.step_id'
+   _item.category_id          pdbx_entity_src_gen_proteolysis
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_proteolysis.next_step_id
+    _item_description.description
+; This item unique identifier for the next production step. This allows
+a workflow to have multiple entry points leading to a single product.
+;
+   _item.name                 '_pdbx_entity_src_gen_proteolysis.next_step_id'
+   _item.category_id          pdbx_entity_src_gen_proteolysis
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_proteolysis.end_construct_id
+    _item_description.description
+;       This item is a pointer to pdbx_construct.id in the PDBX_CONSTRUCT
+        category. The referenced sequence is expected to be the amino
+        acid sequence of the expressed product after the proteolysis
+        step.
+;
+   _item.name                 '_pdbx_entity_src_gen_proteolysis.end_construct_id'
+   _item.category_id          pdbx_entity_src_gen_proteolysis
+   _item.mandatory_code       no
+   _item_type.code            code
+   _item_linked.parent_name   '_pdbx_construct.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_proteolysis.end_construct_id'
+save_
+
+save__pdbx_entity_src_gen_proteolysis.robot_id
+    _item_description.description
+; This data item is a pointer to pdbx_robot_system.id
+  in the PDBX_ROBOT_SYSTEM category.
+;
+   _item.name                  '_pdbx_entity_src_gen_proteolysis.robot_id'
+   _item.category_id           pdbx_entity_src_gen_proteolysis
+   _item.mandatory_code        no
+   _item_linked.parent_name    '_pdbx_robot_system.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_proteolysis.robot_id'
+save_
+
+save__pdbx_entity_src_gen_proteolysis.date
+    _item_description.description
+; The date of production step.
+;
+    _item.name                  '_pdbx_entity_src_gen_proteolysis.date'
+    _item.category_id            pdbx_entity_src_gen_proteolysis
+    _item.mandatory_code         no
+    _item_type.code              yyyy-mm-dd:hh:mm
+    loop_
+    _item_examples.case          '2003-12-25'
+                                 '2003-12-25:09:00'
+     save_
+
+save__pdbx_entity_src_gen_proteolysis.details
+    _item_description.description
+; Details of this tag removal step.
+;
+   _item.name                 '_pdbx_entity_src_gen_proteolysis.details'
+   _item.category_id          pdbx_entity_src_gen_proteolysis
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_proteolysis.protease
+    _item_description.description
+; The name of the protease used for cleavage.
+;
+   _item.name                 '_pdbx_entity_src_gen_proteolysis.protease'
+   _item.category_id          pdbx_entity_src_gen_proteolysis
+   _item.mandatory_code       yes
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_proteolysis.protein_protease_ratio
+    _item_description.description
+; The ratio of protein to protease used for the cleavage.
+    = mol protein / mol protease
+;
+   _item.name                 '_pdbx_entity_src_gen_proteolysis.protein_protease_ratio'
+   _item.category_id          pdbx_entity_src_gen_proteolysis
+   _item.mandatory_code       no
+   _item_type.code            float
+save_
+
+save__pdbx_entity_src_gen_proteolysis.cleavage_buffer_id
+    _item_description.description
+; This item is a pointer to pdbx_buffer.id in the PDBX_BUFFER category.
+  The referenced buffer is that in which the cleavage was performed.
+;
+   _item.name                 '_pdbx_entity_src_gen_proteolysis.cleavage_buffer_id'
+   _item.category_id          pdbx_entity_src_gen_proteolysis
+   _item.mandatory_code       no
+   _item_linked.parent_name   '_pdbx_buffer.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_proteolysis.cleavage_buffer_id'
+save_
+
+save__pdbx_entity_src_gen_proteolysis.cleavage_temperature
+    _item_description.description
+; The temperature in degrees celsius at which the cleavage was performed.
+;
+   _item.name                 '_pdbx_entity_src_gen_proteolysis.cleavage_temperature'
+   _item.category_id          pdbx_entity_src_gen_proteolysis
+   _item.mandatory_code       no
+   _item_type.code            float
+   _item_units.code           celsius
+save_
+
+save__pdbx_entity_src_gen_proteolysis.cleavage_time
+    _item_description.description
+; The time in minutes for the cleavage reaction
+;
+   _item.name                 '_pdbx_entity_src_gen_proteolysis.cleavage_time'
+   _item.category_id          pdbx_entity_src_gen_proteolysis
+   _item.mandatory_code       no
+   _item_type.code            float
+   _item_units.code           minutes
+save_
+
+
+#############################
+# PDBX_ENTITY_SRC_GEN_CHROM #
+#############################
+#
+#  _pdbx_entity_src_gen_chrom.entry_id
+#  _pdbx_entity_src_gen_chrom.entity_id
+#  _pdbx_entity_src_gen_chrom.step_id
+#  _pdbx_entity_src_gen_chrom.next_step_id
+#  _pdbx_entity_src_gen_chrom.end_construct_id
+#  _pdbx_entity_src_gen_chrom.robot_id
+#  _pdbx_entity_src_gen_chrom.date
+#  _pdbx_entity_src_gen_chrom.column_type
+#  _pdbx_entity_src_gen_chrom.column_volume
+#  _pdbx_entity_src_gen_chrom.column_temperature
+#  _pdbx_entity_src_gen_chrom.equilibration_buffer
+#  _pdbx_entity_src_gen_chrom.flow_rate
+#  _pdbx_entity_src_gen_chrom.elution_protocol
+#  _pdbx_entity_src_gen_chrom.sample_prep_details
+#  _pdbx_entity_src_gen_chrom.sample_volume
+#  _pdbx_entity_src_gen_chrom.protein_concentration
+#  _pdbx_entity_src_gen_chrom.volume_fraction
+#  _pdbx_entity_src_gen_chrom.volume_pooled_fractions
+#  _pdbx_entity_src_gen_chrom.yield_pooled_fractions
+#  _pdbx_entity_src_gen_chrom.yield_method
+#  _pdbx_entity_src_gen_chrom.post_treatment
+
+save_pdbx_entity_src_gen_chrom
+   _category.description
+;  This category contains details for the chromatographic steps used in the
+   purification of the protein.
+;
+
+   _category.id                  pdbx_entity_src_gen_chrom
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_chrom.entry_id'
+         '_pdbx_entity_src_gen_chrom.entity_id'
+         '_pdbx_entity_src_gen_chrom.step_id'
+save_
+
+save__pdbx_entity_src_gen_chrom.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_chrom.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.entry_id'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_chrom.entry_id'
+   save_
+
+save__pdbx_entity_src_gen_chrom.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_chrom.entity_id uniquely identifies
+  each protein contained in the project target complex proteins whose
+  structure is to be determined. This data item is a pointer to _entity.id
+  in the ENTITY category. This item may be a site dependent bar code.
+;
+
+   _item.name                 '_pdbx_entity_src_gen_chrom.entity_id'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_entity.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_chrom.entity_id'
+save_
+
+save__pdbx_entity_src_gen_chrom.step_id
+    _item_description.description
+;  This item is the unique identifier for this chromatography step.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.step_id'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_chrom.next_step_id
+    _item_description.description
+; This item unique identifier for the next production step. This allows
+a workflow to have multiple entry points leading to a single product.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.next_step_id'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_chrom.end_construct_id
+    _item_description.description
+;       This item is a pointer to pdbx_construct.id in the PDBX_CONSTRUCT
+        category. The referenced sequence is expected to be the amino
+        acid sequence of the expressed product after the
+        chromatography step.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.end_construct_id'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       no
+   _item_type.code            code
+   _item_linked.parent_name   '_pdbx_construct.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_chrom.end_construct_id'
+save_
+
+save__pdbx_entity_src_gen_chrom.robot_id
+    _item_description.description
+; This data item is a pointer to pdbx_robot_system.id
+  in the PDBX_ROBOT_SYSTEM category.
+;
+   _item.name                  '_pdbx_entity_src_gen_chrom.robot_id'
+   _item.category_id           pdbx_entity_src_gen_chrom
+   _item.mandatory_code        no
+   _item_linked.parent_name    '_pdbx_robot_system.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_chrom.robot_id'
+save_
+
+save__pdbx_entity_src_gen_chrom.date
+    _item_description.description
+; The date of production step.
+;
+    _item.name                  '_pdbx_entity_src_gen_chrom.date'
+    _item.category_id            pdbx_entity_src_gen_chrom
+    _item.mandatory_code         no
+    _item_type.code              yyyy-mm-dd:hh:mm
+    loop_
+    _item_examples.case         '2003-12-25'
+                                '2003-12-25:09:00'
+save_
+
+save__pdbx_entity_src_gen_chrom.column_type
+    _item_description.description
+; The type of column used in this step.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.column_type'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       yes
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_chrom.column_volume
+    _item_description.description
+; The volume of the column used in this step.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.column_volume'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           milliliters
+save_
+
+save__pdbx_entity_src_gen_chrom.column_temperature
+    _item_description.description
+; The temperature in degrees celsius at which this column was run.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.column_temperature'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           celsius
+save_
+
+save__pdbx_entity_src_gen_chrom.equilibration_buffer_id
+    _item_description.description
+; This item is a pointer to pdbx_buffer.id in the PDBX_BUFFER category.
+  The referenced buffer is that in which the column was equilibrated.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.equilibration_buffer_id'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_buffer.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_chrom.equilibration_buffer_id'
+  save_
+
+save__pdbx_entity_src_gen_chrom.flow_rate
+    _item_description.description
+; The rate at which the equilibration buffer flowed through the column.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.flow_rate'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       no
+   _item_type.code            float
+   _item_units.code           ml_per_min
+save_
+
+save__pdbx_entity_src_gen_chrom.elution_buffer_id
+    _item_description.description
+; This item is a pointer to pdbx_buffer.id in the PDBX_BUFFER category.
+  The referenced buffer is that with which the protein was eluted.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.elution_buffer_id'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_buffer.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_chrom.elution_buffer_id'
+save_
+
+save__pdbx_entity_src_gen_chrom.elution_protocol
+    _item_description.description
+; Details of the elution protocol.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.elution_protocol'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_chrom.sample_prep_details
+    _item_description.description
+; Details of the sample preparation prior to running the column.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.sample_prep_details'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_chrom.sample_volume
+    _item_description.description
+; The volume of protein solution run on the column.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.sample_volume'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           milliliters
+save_
+
+save__pdbx_entity_src_gen_chrom.sample_concentration
+    _item_description.description
+; The concentration of the protein solution put onto the column.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.sample_concentration'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       no
+   _item_type.code            float
+   _item_units.code           mg_per_ml
+save_
+
+save__pdbx_entity_src_gen_chrom.sample_conc_method
+    _item_description.description
+; The method used to determine the concentration of the protein solution put
+  onto the column.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.sample_conc_method'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_chrom.volume_pooled_fractions
+    _item_description.description
+; The total volume of all the fractions pooled to give the purified protein
+  solution.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.volume_pooled_fractions'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           milliliters
+save_
+
+save__pdbx_entity_src_gen_chrom.yield_pooled_fractions
+    _item_description.description
+; The yield in milligrams of protein recovered in the pooled fractions.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.yield_pooled_fractions'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           milligrams
+save_
+
+save__pdbx_entity_src_gen_chrom.yield_method
+    _item_description.description
+; The method used to determine the yield
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.yield_method'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       yes
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_chrom.post_treatment
+    _item_description.description
+; Details of any post-chromatographic treatment of the protein sample.
+;
+   _item.name                 '_pdbx_entity_src_gen_chrom.post_treatment'
+   _item.category_id          pdbx_entity_src_gen_chrom
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+
+#############################
+# PDBX_ENTITY_SRC_GEN_FRACT #
+#############################
+#
+#  _pdbx_entity_src_gen_fract.entry_id
+#  _pdbx_entity_src_gen_fract.entity_id
+#  _pdbx_entity_src_gen_fract.step_id
+#  _pdbx_entity_src_gen_fract.next_step_id
+#  _pdbx_entity_src_gen_fract.end_construct_id
+#  _pdbx_entity_src_gen_fract.robot_id
+#  _pdbx_entity_src_gen_fract.date
+#  _pdbx_entity_src_gen_fract.method
+#  _pdbx_entity_src_gen_fract.temperature
+#  _pdbx_entity_src_gen_fract.details
+#  _pdbx_entity_src_gen_fract.protein_location
+#  _pdbx_entity_src_gen_fract.protein_yield
+#  _pdbx_entity_src_gen_fract.protein_yield_method
+#
+
+save_pdbx_entity_src_gen_fract
+   _category.description
+;  This category contains details for the fraction steps used in
+   the overall protein production process. Examples of fractionation
+   steps are centrifugation and magnetic bead pull-down purification.
+;
+   _category.id                  pdbx_entity_src_gen_fract
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_fract.entry_id'
+         '_pdbx_entity_src_gen_fract.entity_id'
+         '_pdbx_entity_src_gen_fract.step_id'
+save_
+
+save__pdbx_entity_src_gen_fract.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_fract.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+   _item.name                 '_pdbx_entity_src_gen_fract.entry_id'
+   _item.category_id          pdbx_entity_src_gen_fract
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_fract.entry_id'
+save_
+
+save__pdbx_entity_src_gen_fract.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_fract.entity_id uniquely identifies
+  each protein contained in the project target protein complex whose
+  structure is to be determined. This data item is a pointer to _entity.id
+  in the ENTITY category.  This item may be a site dependent bar code.
+;
+   _item.name                 '_pdbx_entity_src_gen_fract.entity_id'
+   _item.category_id          pdbx_entity_src_gen_fract
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_entity.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_fract.entity_id'
+save_
+
+save__pdbx_entity_src_gen_fract.step_id
+    _item_description.description
+; This item is the unique identifier for this fractionation step.
+;
+   _item.name                 '_pdbx_entity_src_gen_fract.step_id'
+   _item.category_id          pdbx_entity_src_gen_fract
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_fract.next_step_id
+    _item_description.description
+; This item unique identifier for the next production step. This allows
+a workflow to have multiple entry points leading to a single product.
+;
+   _item.name                 '_pdbx_entity_src_gen_fract.next_step_id'
+   _item.category_id          pdbx_entity_src_gen_fract
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_fract.end_construct_id
+    _item_description.description
+;       This item is a pointer to pdbx_construct.id in the PDBX_CONSTRUCT
+        category. The referenced sequence is expected to be the amino
+        acid sequence of the expressed product after the fractionation
+        step.
+;
+   _item.name                 '_pdbx_entity_src_gen_fract.end_construct_id'
+   _item.category_id          pdbx_entity_src_gen_fract
+   _item.mandatory_code       no
+   _item_type.code            code
+   _item_linked.parent_name   '_pdbx_construct.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_fract.end_construct_id'
+save_
+
+save__pdbx_entity_src_gen_fract.robot_id
+    _item_description.description
+; This data item is a pointer to pdbx_robot_system.id
+  in the PDBX_ROBOT_SYSTEM category.
+;
+   _item.name                  '_pdbx_entity_src_gen_fract.robot_id'
+   _item.category_id           pdbx_entity_src_gen_fract
+   _item.mandatory_code        no
+   _item_linked.parent_name    '_pdbx_robot_system.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_fract.robot_id'
+save_
+
+save__pdbx_entity_src_gen_fract.date
+    _item_description.description
+; The date of this production step.
+;
+    _item.name                  '_pdbx_entity_src_gen_fract.date'
+    _item.category_id             pdbx_entity_src_gen_fract
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd:hh:mm
+    loop_
+    _item_examples.case          '2003-12-25'
+                                 '2003-12-25:09:00'
+save_
+
+save__pdbx_entity_src_gen_fract.method
+    _item_description.description
+; This item describes the method of fractionation.
+;
+   _item.name                 '_pdbx_entity_src_gen_fract.method'
+   _item.category_id          pdbx_entity_src_gen_fract
+   _item.mandatory_code       yes
+   _item_type.code            code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+           C   'Centrifugation'
+           M   'Magnetic beads'
+           P   'Phase separation'
+
+    save_
+
+save__pdbx_entity_src_gen_fract.temperature
+    _item_description.description
+; The temperature in degrees celsius at which the fractionation was performed.
+;
+   _item.name                 '_pdbx_entity_src_gen_fract.temperature'
+   _item.category_id          pdbx_entity_src_gen_fract
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           celsius
+save_
+
+save__pdbx_entity_src_gen_fract.details
+  _item_description.description
+; String value containing details of the fractionation.
+;
+   _item.name                 '_pdbx_entity_src_gen_fract.details'
+   _item.category_id          pdbx_entity_src_gen_fract
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_fract.protein_location
+    _item_description.description
+; The fraction containing the protein of interest.
+;
+   _item.name                 '_pdbx_entity_src_gen_fract.protein_location'
+   _item.category_id          pdbx_entity_src_gen_fract
+   _item.mandatory_code       yes
+   _item_type.code            code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+           S   'Supernatant'
+           P   'Pellet'
+           B   'Band in gradient'
+           M   'Magnetic beads'
+           A   'Aqueous phase'
+           L   'Lipid phase'
+
+    save_
+
+save__pdbx_entity_src_gen_fract.protein_volume
+    _item_description.description
+; The volume of the fraction containing the protein.
+;
+   _item.name                 '_pdbx_entity_src_gen_fract.protein_volume'
+   _item.category_id          pdbx_entity_src_gen_fract
+   _item.mandatory_code       no
+   _item_type.code            float
+   _item_units.code           milliliters
+save_
+
+save__pdbx_entity_src_gen_fract.protein_yield
+    _item_description.description
+; The yield in milligrams of protein from the fractionation.
+;
+   _item.name                 '_pdbx_entity_src_gen_fract.protein_yield'
+   _item.category_id          pdbx_entity_src_gen_fract
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           milligrams
+save_
+
+
+save__pdbx_entity_src_gen_fract.protein_yield_method
+    _item_description.description
+; The method used to determine the yield
+;
+   _item.name                 '_pdbx_entity_src_gen_fract.protein_yield_method'
+   _item.category_id          pdbx_entity_src_gen_fract
+   _item.mandatory_code       yes
+   _item_type.code            text
+save_
+
+
+############################
+# PDBX_ENTITY_SRC_GEN_PURE #
+############################
+#
+#  _pdbx_entity_src_gen_pure.entry_id
+#  _pdbx_entity_src_gen_pure.entity_id
+#  _pdbx_entity_src_gen_pure.next_step_id
+#  _pdbx_entity_src_gen_pure.date
+#  _pdbx_entity_src_gen_pure.conc_device_id
+#  _pdbx_entity_src_gen_pure.conc_details
+#  _pdbx_entity_src_gen_pure.conc_assay_method
+#  _pdbx_entity_src_gen_pure.protein_concentration
+#  _pdbx_entity_src_gen_pure.protein_yield
+#  _pdbx_entity_src_gen_pure.protein_purity
+#  _pdbx_entity_src_gen_pure.protein_oligomeric_state
+#  _pdbx_entity_src_gen_pure.storage_buffer_id
+#  _pdbx_entity_src_gen_pure.storage_temperature
+#
+#  _pdbx_entity_src_gen_pure.summary
+#
+
+save_pdbx_entity_src_gen_pure
+   _category.description
+;  This category contains details for the final purified protein product. Note
+   that this category does not contain the amino acid sequence of the protein.
+   The sequence will be found in the ENTITY_POLY_SEQ entry with matching
+   entity_id.
+   Only one PDBX_ENTITY_SRC_GEN_PURE category is allowed per entity, hence there is
+   no step_id for this category.
+;
+
+   _category.id                  pdbx_entity_src_gen_pure
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_pure.entry_id'
+         '_pdbx_entity_src_gen_pure.entity_id'
+         '_pdbx_entity_src_gen_pure.step_id'
+   save_
+
+
+save__pdbx_entity_src_gen_pure.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_pure.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+   _item.name                  '_pdbx_entity_src_gen_pure.entry_id'
+   _item.category_id           pdbx_entity_src_gen_pure
+   _item.mandatory_code        yes
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_pure.entry_id'
+save_
+
+save__pdbx_entity_src_gen_pure.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_pure.entity_id uniquely identifies
+  each protein contained in the project target complex proteins whose
+  structure is to be determined. This data item is a pointer to _entity.id
+  in the ENTITY category.  This item may be a site dependent bar code.
+;
+   _item.name                  '_pdbx_entity_src_gen_pure.entity_id'
+   _item.category_id           pdbx_entity_src_gen_pure
+   _item.mandatory_code        yes
+   _item_linked.parent_name    '_entity.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_pure.entity_id'
+   save_
+
+save__pdbx_entity_src_gen_pure.step_id
+    _item_description.description
+; This item unique identifier the production step.
+;
+   _item.name                 '_pdbx_entity_src_gen_pure.step_id'
+   _item.category_id          pdbx_entity_src_gen_pure
+   _item.mandatory_code       yes
+   _item_type.code            int
+   save_
+
+save__pdbx_entity_src_gen_pure.product_id
+    _item_description.description
+; When present, this item should be a globally unique identifier
+  that identifies the final product. It is envisaged that this
+  should be the same as and product code associated with the
+  sample and would provide the key by which information about
+  the production process may be extracted from the protein
+  production facility. For files describing the protein
+  production process (i.e. where _entity.type is 'P' or 'E')
+  this should have the same value as _entry.id
+;
+   _item.name                 '_pdbx_entity_src_gen_pure.product_id'
+   _item.category_id          pdbx_entity_src_gen_pure
+   _item.mandatory_code       no
+   _item_type.code            code
+save_
+
+save__pdbx_entity_src_gen_pure.date
+    _item_description.description
+; The date of production step.
+;
+    _item.name                  '_pdbx_entity_src_gen_pure.date'
+    _item.category_id            pdbx_entity_src_gen_pure
+    _item.mandatory_code         no
+    _item_type.code              yyyy-mm-dd:hh:mm
+    loop_
+    _item_examples.case         '2003-12-25'
+                                '2003-12-25:09:00'
+     save_
+
+save__pdbx_entity_src_gen_pure.conc_device_id
+    _item_description.description
+; This data item is a pointer to pdbx_robot_system.id
+  in the PDBX_ROBOT_SYSTEM category.
+;
+   _item.name                  '_pdbx_entity_src_gen_pure.conc_device_id'
+   _item.category_id           pdbx_entity_src_gen_pure
+   _item.mandatory_code        no
+   _item_linked.parent_name    '_pdbx_robot_system.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_pure.conc_device_id'
+save_
+
+save__pdbx_entity_src_gen_pure.conc_details
+    _item_description.description
+; Details of the protein concentration procedure
+;
+   _item.name                 '_pdbx_entity_src_gen_pure.conc_details'
+   _item.category_id          pdbx_entity_src_gen_pure
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_pure.conc_assay_method
+    _item_description.description
+; The method used to measure the protein concentration
+;
+   _item.name                 '_pdbx_entity_src_gen_pure.conc_assay_method'
+   _item.category_id          pdbx_entity_src_gen_pure
+   _item.mandatory_code       yes
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_pure.protein_concentration
+    _item_description.description
+; The final concentration of the protein.
+;
+   _item.name                 '_pdbx_entity_src_gen_pure.protein_concentration'
+   _item.category_id          pdbx_entity_src_gen_pure
+   _item.mandatory_code       yes
+   _item_type.code            float
+   _item_units.code           mg_per_ml
+save_
+
+save__pdbx_entity_src_gen_pure.protein_yield
+    _item_description.description
+; The yield of protein in milligrams.
+;
+   _item.name                 '_pdbx_entity_src_gen_pure.protein_yield'
+   _item.category_id          pdbx_entity_src_gen_pure
+   _item.mandatory_code       no
+   _item_type.code            float
+   _item_units.code           milligrams
+save_
+
+save__pdbx_entity_src_gen_pure.protein_purity
+    _item_description.description
+; The purity of the protein (percent).
+;
+   _item.name                 '_pdbx_entity_src_gen_pure.protein_purity'
+   _item.category_id          pdbx_entity_src_gen_pure
+   _item.mandatory_code       no
+   _item_type.code            float
+#   _item_units.code           percent
+save_
+
+save__pdbx_entity_src_gen_pure.protein_oligomeric_state
+    _item_description.description
+; The oligomeric state of the protein. Monomeric is 1, dimeric 2, etc.
+;
+   _item.name                 '_pdbx_entity_src_gen_pure.protein_oligomeric_state'
+   _item.category_id          pdbx_entity_src_gen_pure
+   _item.mandatory_code       no
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_pure.storage_buffer_id
+    _item_description.description
+; This item is a pointer to pdbx_buffer.id in the PDBX_BUFFER category.
+  The referenced buffer is that in which the protein was stored.
+;
+   _item.name                 '_pdbx_entity_src_gen_pure.storage_buffer_id'
+   _item.category_id          pdbx_entity_src_gen_pure
+   _item.mandatory_code       yes
+   _item_linked.parent_name   '_pdbx_buffer.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_pure.storage_buffer_id'
+save_
+
+save__pdbx_entity_src_gen_pure.storage_temperature
+    _item_description.description
+; The temperature in degrees celsius at which the protein was stored.
+;
+   _item.name                 '_pdbx_entity_src_gen_pure.storage_temperature'
+   _item.category_id          pdbx_entity_src_gen_pure
+   _item.mandatory_code       no
+   _item_type.code            float
+   _item_units.code           celsius
+  save_
+
+save__pdbx_entity_src_gen_pure.summary
+    _item_description.description
+; Summary of the details of protein purification method used to obtain the final
+  protein product.  This description should include any lysis, fractionation,
+  proteolysis, refolding, chromatography used as well as the method used the 
+  characterize the final product.
+;
+   _item.name                 '_pdbx_entity_src_gen_pure.summary'
+   _item.category_id          pdbx_entity_src_gen_pure
+   _item.mandatory_code       no
+   _item_type.code            text
+  save_
+
+
+#################################
+# PDBX_ENTITY_SRC_GEN_CHARACTER #
+#################################
+#
+#  _pdbx_entity_src_gen_character.entry_id
+#  _pdbx_entity_src_gen_character.entity_id
+#  _pdbx_entity_src_gen_character.step_id
+#  _pdbx_entity_src_gen_character.robot_id
+#  _pdbx_entity_src_gen_character.date
+#  _pdbx_entity_src_gen_character.method
+#  _pdbx_entity_src_gen_character.value
+#  _pdbx_entity_src_gen_character.details
+#
+
+save_pdbx_entity_src_gen_character
+   _category.description
+;  This category contains details of protein characterisation. It
+   refers to the characteristion of the product of a specific
+   step.
+;
+
+   _category.id                  pdbx_entity_src_gen_character
+   _category.mandatory_code      no
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'entity_group'
+                                 'pdbx_group'
+   loop_
+   _category_key.name
+         '_pdbx_entity_src_gen_character.entry_id'
+         '_pdbx_entity_src_gen_character.entity_id'
+         '_pdbx_entity_src_gen_character.step_id'
+save_
+
+save__pdbx_entity_src_gen_character.entry_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_character.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+   _item.name                 '_pdbx_entity_src_gen_character.entry_id'
+   _item.category_id          pdbx_entity_src_gen_character
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_character.entry_id'
+save_
+
+save__pdbx_entity_src_gen_character.entity_id
+    _item_description.description
+; The value of _pdbx_entity_src_gen_character.entity_id uniquely identifies
+  each protein contained in the project target complex proteins whose
+  structure is to be determined. This data item is a pointer to _entity.id
+  in the ENTITY category. This item may be a site dependent bar code.
+;
+   _item.name                 '_pdbx_entity_src_gen_character.entity_id'
+   _item.category_id          pdbx_entity_src_gen_character
+   _item.mandatory_code       yes
+   _item_linked.parent_name    '_entity.id'
+   _item_linked.child_name     '_pdbx_entity_src_gen_character.entity_id'
+save_
+
+save__pdbx_entity_src_gen_character.step_id
+    _item_description.description
+; This item is the unique identifier for the step whose product
+  has been characterised.
+;
+   _item.name                 '_pdbx_entity_src_gen_character.step_id'
+   _item.category_id          pdbx_entity_src_gen_character
+   _item.mandatory_code       yes
+   _item_type.code            int
+save_
+
+save__pdbx_entity_src_gen_character.robot_id
+    _item_description.description
+; This data item is a pointer to pdbx_robot_system.id
+  in the PDBX_ROBOT_SYSTEM category.
+;
+   _item.name                 '_pdbx_entity_src_gen_character.robot_id'
+   _item.category_id          pdbx_entity_src_gen_character
+   _item.mandatory_code       no
+   _item_linked.parent_name   '_pdbx_robot_system.id'
+   _item_linked.child_name    '_pdbx_entity_src_gen_character.robot_id'
+save_
+
+save__pdbx_entity_src_gen_character.date
+    _item_description.description
+; The date of characterisation step.
+;
+    _item.name                  '_pdbx_entity_src_gen_character.date'
+    _item.category_id             pdbx_entity_src_gen_character
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd:hh:mm
+    loop_
+    _item_examples.case          '2003-12-25'
+                                 '2003-12-25:09:00'
+save_
+
+save__pdbx_entity_src_gen_character.method
+    _item_description.description
+; The method used for protein characterisation.
+;
+   _item.name                 '_pdbx_entity_src_gen_character.method'
+   _item.category_id          pdbx_entity_src_gen_character
+   _item.mandatory_code       yes
+   _item_type.code            text
+   loop_
+   _item_examples.case        'Dynamic light scattering'
+                              'Mass spectrometry'
+save_
+
+save__pdbx_entity_src_gen_character.result
+    _item_description.description
+; The result from this method of protein characterisation.
+;
+   _item.name                 '_pdbx_entity_src_gen_character.result'
+   _item.category_id          pdbx_entity_src_gen_character
+   _item.mandatory_code       yes
+   _item_type.code            text
+save_
+
+save__pdbx_entity_src_gen_character.details
+    _item_description.description
+; Any details associated with this method of protein characterisation.
+;
+   _item.name                 '_pdbx_entity_src_gen_character.details'
+   _item.category_id          pdbx_entity_src_gen_character
+   _item.mandatory_code       no
+   _item_type.code            text
+save_
+
+
+##################
+# PDBX_CONSTRUCT #
+##################
+#
+#    _pdbx_construct.entry_id
+#    _pdbx_construct.id
+#    _pdbx_construct.name
+#    _pdbx_construct.class
+#    _pdbx_construct.type
+#    _pdbx_construct.seq
+#    _pdbx_construct.date
+#    _pdbx_construct.details
+#    _pdbx_construct.robot_id
+#    _pdbx_construct.ref_db_code
+#    _pdbx_construct.ref_db_name
+#    _pdbx_construct.ref_db_align_beg
+#    _pdbx_construct.ref_db_align_end
+#    _pdbx_construct.flag_align
+#    _pdbx_construct.flag_diff
+#
+
+save_pdbx_construct
+    _category.description
+; Data items in the PDBX_CONSTRUCT category specify a sequence of
+  nucleic acids or amino acids. It is a catch-all that may be used to
+  provide details of sequences known to be relevant to the project as well
+  as primers, plasmids, proteins and such like that are either used or
+  produced during the protein production process. Molecules described
+  here are not necessarily complete, so for instance it would be
+  possible to include either a complete plasmid or just its insert.
+  This category may be considered as an abbreviated form of _entity where
+  the molecules described are not required to appear in the final co-ordinates.
+
+  Note that the details provided here all pertain to a single entry as defined
+  at deposition. It is anticipated that _pdbx_construct.id would also be
+  composed of a sequence that is unique within a given site prefixed by a code
+  that identifies that site and would, therefore, be GLOBALLY unique. Thus
+  this category could also be used locally to store details about the different
+  constructs used during protein production without reference to the entry_id
+ (which only becomes a  meaningful concept during deposition).
+;
+
+    _category.id                  pdbx_construct
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_construct.id'
+
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'protein_production_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - hypothetical example
+;
+;
+    _pdbx_construct.entry_id       111000111
+    _pdbx_construct.id             1
+    _pdbx_construct.type           DNA
+    _pdbx_construct.entity_id      1
+    _pdbx_construct.seq
+  ;  gatgctgtag gcataggctt ggttatgccg gtactgccgg gcctcttgcg ggatatcgtc
+     gctcaaggcg cactcccgtt ctggataatg ttttttgcgc cgacatcata acggttctgg
+     caaatattct gaaatgagct gttgacaatt aatcatcgat aagcttcttg
+    # - - - - data truncated for brevity - - - -
+  ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+save_
+
+save__pdbx_construct.entry_id
+    _item_description.description
+; The value of _pdbx_construct.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+   _item.name                '_pdbx_construct.entry_id'
+   _item.category_id           pdbx_construct
+   _item.mandatory_code        yes
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_construct.entry_id'
+save_
+
+save__pdbx_construct.id
+    _item_description.description
+; The value of _pdbx_construct.id must uniquely identify a record
+  in the PDBX_CONSTRUCT list and should be arranged so that it is
+  composed of a site-speicific prefix combined with a value that is
+  unique within a given site.Note that this item need not be a
+  number; it can be any unique identifier.
+;
+    _item.name                   '_pdbx_construct.id'
+    _item.category_id            pdbx_construct
+    _item.mandatory_code         yes
+    _item_type.code              code
+save_
+
+save__pdbx_construct.name
+    _item_description.description
+; _pdbx_construct.name  provides a placeholder for the local name
+  of the construct, for example the plasmid name if this category
+  is used to list plasmids.
+;
+    _item.name                   '_pdbx_construct.name'
+    _item.category_id            pdbx_construct
+    _item.mandatory_code         yes
+    _item_type.code               line
+save_
+
+save__pdbx_construct.organisation
+    _item_description.description
+; _pdbx_construct.organisation describes the organisation in which
+  the _pdbx_construct.id is unique. This will normally be the lab
+  in which the constrcut originated. It is envisaged that this item
+  will permit a globally unique identifier to be constructed in cases
+  where this is not possible from the _pdbx_construct.id alone.
+;
+    _item.name                   '_pdbx_construct.organisation'
+    _item.category_id            pdbx_construct
+    _item.mandatory_code         yes
+    _item_type.code               line
+save_
+
+save__pdbx_construct.entity_id
+    _item_description.description
+; In cases where the construct IS found in the co-ordinates then this
+  item provides a  pointer to _entity.id in the ENTITY category for
+  the corresponding molecule.
+;
+   _item.name                  '_pdbx_construct.entity_id'
+   _item.category_id           pdbx_construct
+   _item.mandatory_code        no
+   _item_linked.parent_name    '_entity.id'
+   _item_linked.child_name     '_pdbx_construct.entity_id'
+save_
+
+save__pdbx_construct.robot_id
+    _item_description.description
+; In cases where the sequence has been determined by a robot this
+  data item provides a pointer to pdbx_robot_system.id in the
+  PDBX_ROBOT_SYSTEM category for the robot responsible
+;
+   _item.name                  '_pdbx_construct.robot_id'
+   _item.category_id           pdbx_construct
+   _item.mandatory_code        no
+   _item_linked.parent_name    '_pdbx_robot_system.id'
+   _item_linked.child_name     '_pdbx_construct.robot_id'
+save_
+
+save__pdbx_construct.date
+    _item_description.description
+; The date that the sequence was determined.
+;
+    _item.name                  '_pdbx_construct.date'
+    _item.category_id             pdbx_construct
+    _item.mandatory_code          no
+    _item_type.code               yyyy-mm-dd:hh:mm
+    loop_
+    _item_examples.case          '2003-12-25'
+                                 '2003-12-25:09:00'
+save_
+
+save__pdbx_construct.details
+    _item_description.description
+; Additional details about the construct that cannot be
+  represented in the category _pdbx_construct_feature.
+;
+    _item.name                    '_pdbx_construct.details'
+    _item.category_id             pdbx_construct
+    _item.mandatory_code          no
+    _item_type.code               text
+save_
+
+save__pdbx_construct.class
+    _item_description.description
+; The primary function of the construct. This should be considered
+  as a guideline only.
+;
+    _item.name                    '_pdbx_construct.class'
+    _item.category_id             pdbx_construct
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_enumeration.value
+           plasmid
+           protein
+           insert
+           primer
+           transcript
+
+     save_
+
+save__pdbx_construct.type
+    _item_description.description
+; The type of nucleic acid sequence in the construct. Note that
+  to find all the DNA molecules it is necessary to search for
+  DNA + cDNA and for RNA, RNA + mRNA + tRNA.
+;
+    _item.name                    '_pdbx_construct.type'
+    _item.category_id             pdbx_construct
+    _item.mandatory_code          yes
+    _item_type.code               code
+     loop_
+    _item_enumeration.value
+           DNA
+           RNA
+           cDNA
+           mRNA
+           tRNA
+           protein
+
+     save_
+
+save__pdbx_construct.seq
+    _item_description.description
+; sequence expressed as string of one-letter base codes or one
+  letter amino acid codes. Unusual residues may be represented
+  either using the appropriate one letter code wild cards or
+  by the three letter code in parentheses.
+;
+    _item.name                  '_pdbx_construct.seq'
+    _item.category_id             pdbx_construct
+    _item.mandatory_code          yes
+    _item_type.code               text
+    _item_examples.case
+;    gatgctgtag gcataggctt ggttatgccg gtactgccgg gcctcttgcg ggatatcgtc
+     gctcaaggcg cactcccgtt ctggataatg ttttttgcgc cgacatcata acggttctgg
+     caaatattct gaaatgagct gttgacaatt aatcatcgat aagcttcttg
+;
+
+save_
+
+
+###########################
+# PDBX_CONSTRUCT_FEATURE  #
+###########################
+#
+#        _pdbx_construct_feature.id
+#        _pdbx_construct_feature.entry_id
+#        _pdbx_construct_feature.entity_id
+#        _pdbx_construct_feature.construct_id
+#        _pdbx_construct_feature.start_seq
+#        _pdbx_construct_feature.end_seq
+#        _pdbx_construct_feature.type
+#        _pdbx_construct_feature.details
+#
+
+save_pdbx_construct_feature
+    _category.description
+; Data items in the PDBX_CONSTRUCT_FEATURE category may be used to
+  specify various properties of a nucleic acid sequence used during
+  protein production.
+;
+
+    _category.id                  pdbx_construct_feature
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_construct_feature.construct_id'
+                                '_pdbx_construct_feature.id'
+
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'protein_production_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - vector pUC28
+;
+;
+        loop_
+        _pdbx_construct_feature.id
+        _pdbx_construct_feature.entry_id
+        _pdbx_construct_feature.construct_id
+        _pdbx_construct_feature.start_seq
+        _pdbx_construct_feature.end_seq
+        _pdbx_construct_feature.type
+        _pdbx_construct_feature.details
+  1  111000111   1 . . .
+     "pKK84-1 ClaI 5260bp 5247..5247 ptac11 TaqI-TaqI 192bp, -35 trp promoter -> pEA300 5452bp"
+  2  111000111   1 . . .
+     "pKK84-1 1..5246 5246bp ClaI = AT^CGAT TaqI =  T^CGA cgact..."
+  3  111000111   1 5247  5436 .
+     "ptac11 190bp ...cat TaqI =  T^CGA ClaI = AT^CGAT"
+  4  111000111   1 5437  5450  .
+     "pKK84-1 5247..5260 14bp"
+  5  111000111   1 . . misc_binding
+     "SIT unique EcoRI-ClaI-HindIII-BamHI-PvuII"
+  6  111000111   1 . .   rep_origin
+     "ORI E. coli pMB1 (ColE1 and pBR322)"
+  7  111000111   1 . .  promoter
+     "PRO E. coli trp"
+  8  111000111   1 . . CDS
+     "ANT E. coli beta-lactamase gene (bla) ampicillin resistance gene (apr/amp)"
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_construct_feature.id
+    _item_description.description
+; The value of _pdbx_construct_feature.id must uniquely
+  identify a record in the PDBX_CONSTRUCT_FEATURE list.
+  Note that this item need not be a number; it can be any unique
+  identifier.
+;
+    _item.name                   '_pdbx_construct_feature.id'
+    _item.category_id            pdbx_construct_feature
+    _item.mandatory_code         yes
+    _item_type.code               code
+    save_
+
+save__pdbx_construct_feature.construct_id
+    _item_description.description
+; The value of _pdbx_construct_feature.construct_id uniquely
+  identifies the construct with which the feature is
+  associated. This is a pointer to _pdbx_construct.id
+  This item may be a site dependent bar code.
+;
+   _item.name                  '_pdbx_construct_feature.construct_id'
+   _item.category_id           pdbx_construct_feature
+   _item.mandatory_code        yes
+   _item_type.code            code
+   _item_linked.parent_name    '_pdbx_construct.id'
+   _item_linked.child_name     '_pdbx_construct_feature.construct_id'
+save_
+
+save__pdbx_construct_feature.entry_id
+    _item_description.description
+; The value of _pdbx_construct_feature.entry_id uniquely identifies
+  a sample consisting of one or more proteins whose structure is
+  to be determined. This is a pointer to _entry.id. This item may
+  be a site dependent bar code.
+;
+   _item.name                  '_pdbx_construct_feature.entry_id'
+   _item.category_id           pdbx_construct_feature
+   _item.mandatory_code        yes
+   _item_linked.parent_name    '_entry.id'
+   _item_linked.child_name     '_pdbx_construct_feature.entry_id'
+save_
+
+save__pdbx_construct_feature.start_seq
+    _item_description.description
+; The sequence position at which the feature begins
+;
+    _item.name                  '_pdbx_construct_feature.start_seq'
+    _item.category_id            pdbx_construct_feature
+    _item.mandatory_code          no
+     loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+    _item_type.code               int
+save_
+
+save__pdbx_construct_feature.end_seq
+    _item_description.description
+; The sequence position at which the feature ends
+;
+    _item.name                  '_pdbx_construct_feature.end_seq'
+    _item.category_id            pdbx_construct_feature
+    _item.mandatory_code          no
+     loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+    _item_type.code               int
+save_
+
+save__pdbx_construct_feature.type
+    _item_description.description
+; The type of the feature
+;
+    _item.name                  '_pdbx_construct_feature.type'
+    _item.category_id            pdbx_construct_feature
+    _item.mandatory_code          no
+    _item_type.code               line
+save_
+
+save__pdbx_construct_feature.details
+    _item_description.description
+; Details that describe the feature
+;
+    _item.name                   '_pdbx_construct_feature.details'
+    _item.category_id            pdbx_construct_feature
+    _item.mandatory_code         no
+    _item_type.code              text
+save_
+
+
+#####################
+# PDBX_ROBOT_SYSTEM #
+#####################
+#
+#    _pdbx_robot_system.id
+#    _pdbx_robot_system.model
+#    _pdbx_robot_system.type
+#    _pdbx_robot_system.manufacturer
+#
+
+save_pdbx_robot_system
+    _category.description
+; The details about each robotic system used to collect data for this
+  project.
+;
+    _category.id                  pdbx_robot_system
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_robot_system.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'pdbx_group'
+
+save_
+
+save__pdbx_robot_system.id
+    _item_description.description
+; Assign a numerical ID to each instrument.
+;
+    _item.name                   '_pdbx_robot_system.id'
+    _item.category_id              pdbx_robot_system
+    _item.mandatory_code           yes
+    _item_type.code                code
+save_
+
+save__pdbx_robot_system.model
+    _item_description.description
+; The model of the robotic system.
+;
+    _item.name                   '_pdbx_robot_system.model'
+    _item.category_id              pdbx_robot_system
+    _item.mandatory_code           no
+    _item_type.code                line
+save_
+
+save__pdbx_robot_system.type
+    _item_description.description
+; The type of robotic system used for in the production pathway.
+;
+    _item.name                   '_pdbx_robot_system.type'
+    _item.category_id              pdbx_robot_system
+    _item.mandatory_code           no
+    _item_type.code                line
+save_
+
+save__pdbx_robot_system.manufacturer
+    _item_description.description
+; The name of the manufacturer of the robotic system.
+;
+    _item.name                   '_pdbx_robot_system.manufacturer'
+    _item.category_id              pdbx_robot_system
+    _item.mandatory_code           no
+    _item_type.code                line
+save_
+
+
+#################
+## PDB_BUFFER  ##
+#################
+#
+#    _pdbx_buffer.id
+#    _pdbx_buffer.name
+#    _pdbx_buffer.details
+#    _pdbx_buffer_components.id
+#    _pdbx_buffer_components.buffer_id
+#    _pdbx_buffer_components.name
+#    _pdbx_buffer_components.volume
+#    _pdbx_buffer_components.conc
+#    _pdbx_buffer_components.details
+#    _pdbx_buffer_components.conc_units
+#    _pdbx_buffer_components.isotopic_labeling
+#
+
+
+
+save_pdbx_buffer
+    _category.description
+;   Data items in the PDBX_BUFFER category
+    record details of the sample buffer. 
+;
+    _category.id                  pdbx_buffer
+    _category.mandatory_code      no
+    _category_key.name           '_pdbx_buffer.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'pdbx_group'
+save_
+
+save__pdbx_buffer.id
+    _item_description.description
+;       The value of _pdbx_buffer.id must
+        uniquely identify the sample buffer.
+;
+    _item.name                  '_pdbx_buffer.id'
+    _item.category_id             pdbx_buffer
+    _item.mandatory_code          yes
+    _item_type.code               code
+save_
+
+save__pdbx_buffer.name
+    _item_description.description
+;       The name of each buffer. 
+;
+    _item.name                  '_pdbx_buffer.name'
+    _item.category_id             pdbx_buffer
+    _item.mandatory_code          no
+    _item_type.code               line
+    _item_examples.case          'Acetic acid'
+save_
+
+save__pdbx_buffer.details
+    _item_description.description
+;   Any additional details to do with buffer. 
+;
+    _item.name                  '_pdbx_buffer.details'
+    _item.category_id             pdbx_buffer
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_examples.case           'aerated'
+save_
+
+###############################
+## PDBX_BUFFER_COMPONENTS    ##
+###############################
+#
+# _pdbx_buffer_components.id
+# _pdbx_buffer_components.buffer_id
+# _pdbx_buffer_components.name
+# _pdbx_buffer_components.volume
+# _pdbx_buffer_components.conc
+# _pdbx_buffer_components.details
+# _pdbx_buffer_components.conc_units
+# _pdbx_buffer_components.isotopic_labeling
+#
+
+save_pdbx_buffer_components
+    _category.description
+;  Constituents of buffer in sample 
+;
+    _category.id                  pdbx_buffer_components
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           
+                                 '_pdbx_buffer_components.buffer_id'
+                                 '_pdbx_buffer_components.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'protein_production_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+;   Example 1 - based on PDB entry 1DYL and laboratory records for the
+                structure corresponding to PDB entry 1DYL
+;
+;loop_
+  _pdbx_buffer_components.buffer_id
+  _pdbx_buffer_components.id
+  _pdbx_buffer_components.name
+  _pdbx_buffer_components.volume
+  _pdbx_buffer_components.conc
+  _pdbx_buffer_components.details
+  1    1 'NaCl'            '0.200 '  '4 '     .
+  1    2 'Acetic Acid'     '0.047 '  '100'    .
+  1    3 'water'           '0.700 '  'neat'   .
+;
+save_
+
+save__pdbx_buffer_components.id
+    _item_description.description
+;   The value of _pdbx_buffer_components.id must 
+    uniquely identify a component of the buffer.
+;
+    _item.name                  '_pdbx_buffer_components.id'
+    _item.category_id             pdbx_buffer_components
+    _item.mandatory_code          yes
+    _item_type.code               code
+save_
+
+save__pdbx_buffer_components.buffer_id
+   _item_description.description
+;      This data item is a pointer to _pdbx_buffer.id in the BUFFER category.
+;
+    _item.name                   '_pdbx_buffer_components.buffer_id'
+    _item.category_id              pdbx_buffer_components
+    _item.mandatory_code           yes
+   _item_linked.parent_name    '_pdbx_buffer.id'
+   _item_linked.child_name     '_pdbx_buffer_components.buffer_id'
+save_
+
+save__pdbx_buffer_components.name
+    _item_description.description
+;       The name of each buffer component. 
+;
+    _item.name                  '_pdbx_buffer_components.name'
+    _item.category_id             pdbx_buffer_components
+    _item.mandatory_code          no
+    _item_type.code               line
+    _item_examples.case           'Acetic acid'
+save_
+
+save__pdbx_buffer_components.volume
+    _item_description.description
+;       The volume of buffer component. 
+;
+    _item.name                  '_pdbx_buffer_components.volume'
+    _item.category_id             pdbx_buffer_components
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_examples.case           0.200
+save_
+
+save__pdbx_buffer_components.conc
+    _item_description.description
+;       The millimolar concentration of buffer component. 
+;  
+    _item.name                  '_pdbx_buffer_components.conc'
+    _item.category_id             pdbx_buffer_components
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_examples.case           200 
+save_
+
+save__pdbx_buffer_components.details
+    _item_description.description
+;       Any additional details to do with buffer composition. 
+;
+    _item.name                  '_pdbx_buffer_components.details'
+    _item.category_id             pdbx_buffer_components
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_examples.case          'pH adjusted with NaOH'
+save_
+#
+
+
+save__pdbx_buffer_components.conc_units
+    _item_description.description
+;       The concentration units of the component.
+;
+    _item.name                   '_pdbx_buffer_components.conc_units'
+    _item.category_id              pdbx_buffer_components
+    _item.mandatory_code           no
+    _item_type.code                code
+     loop_
+    _item_examples.case          
+         'mg/mL for mg per milliliter'
+ 	 'mM for millimolar'
+ 	 '% for percent by volume'             
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+        '%'     'percent by volume'
+        'mM'    'millimolar'
+        'mg/mL' 'mg per milliliter'
+        'M'     'molar'
+        'g/L'   'grams per liter'
+
+     save_
+
+save__pdbx_buffer_components.isotopic_labeling
+    _item_description.description
+;       The isotopic composition of each component, including
+        the % labeling level, if known. For example:
+        1. Uniform (random) labeling with 15N: U-15N
+        2. Uniform (random) labeling with 13C, 15N at known labeling
+           levels: U-95% 13C;U-98% 15N
+        3. Residue selective labeling: U-95% 15N-Thymine
+        4. Site specific labeling: 95% 13C-Ala18,
+        5. Natural abundance labeling in an otherwise uniformly labled
+           biomolecule is designated by NA: U-13C; NA-K,H 
+;
+    _item.name                   '_pdbx_buffer_components.isotopic_labeling'
+    _item.category_id              pdbx_buffer_components
+    _item.mandatory_code           no
+    _item_type.code                line
+    loop_
+    _item_examples.case
+		'U-15N'
+		'U-13C'
+		'U-15N,13C'
+                'U-2H'
+		'other'
+     
+    save_
+
+### EOF  mmcif_pdbx-def-6.dic

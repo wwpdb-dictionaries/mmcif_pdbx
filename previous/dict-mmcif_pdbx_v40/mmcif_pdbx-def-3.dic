@@ -1,0 +1,2982 @@
+###########################################################################
+#
+# File:  mmcif_pdbx-def-3.dic                                             
+# 
+#                      PDB Exchange Data Dictionary
+#
+# This data dictionary contains definitions used by wwPDB for data exchange
+# and data processing.  
+#
+#                           Definition Section 3
+#                            
+#                                                                        
+###########################################################################
+
+##
+## 
+save_pdbx_nmr_details
+    _category.description
+;
+Experimental details of the NMR study that have not been 
+described elsewhere in this deposition.
+;
+    _category.id                  pdbx_nmr_details
+    _category.mandatory_code      no
+     loop_
+    _category_key.name
+                                 '_pdbx_nmr_details.entry_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'nmr_group'            
+                                 'pdbx_group'
+     save_
+
+save__pdbx_nmr_details.entry_id
+   _item_description.description
+;  The entry ID for the structure determination.
+;
+    _item.name                   '_pdbx_nmr_details.entry_id'
+    _item.category_id              pdbx_nmr_details
+    _item.mandatory_code           yes
+    _item_type.code                code
+    _item_linked.child_name	'_pdbx_nmr_details.entry_id'
+    _item_linked.parent_name    '_entry.id'
+    _item_aliases.alias_name     '_rcsb_nmr_details.entry_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
+
+save__pdbx_nmr_details.text
+    _item_description.description
+;   Additional details describing the NMR experiment.
+;
+    _item.name                   '_pdbx_nmr_details.text'
+    _item.category_id              pdbx_nmr_details
+    _item.mandatory_code           no
+    _item_type.code                text
+     loop_
+    _item_examples.case          
+;
+ This structure was determined using standard 2D homonuclear techniques.
+;
+;
+ The structure was determined using triple-resonance NMR spectroscopy.
+;
+    _item_aliases.alias_name     '_rcsb_nmr_details.text'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+##
+
+
+
+##
+## provided to hold a simple solution description.
+
+save_pdbx_nmr_sample_details
+    _category.description
+;   
+Complete description of each NMR sample, including the solvent
+system used.
+;  
+    _category.id                  pdbx_nmr_sample_details
+    _category.mandatory_code      no
+     loop_
+    _category_key.name
+                                 '_pdbx_nmr_sample_details.solution_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'nmr_group'            
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+; 
+This example was taken from the study of MCP-1 which is a dimer under the 
+conditions studied.  Three solutions with different isotope compositions were 
+studied.
+ 
+; 
+;
+ loop_
+ _pdbx_nmr_sample_details.solution_id
+ _pdbx_nmr_sample_details.solvent_system
+ _pdbx_nmr_sample_details.contents
+ 1 MCP-1 '2 mM U-15N,13C, H2O 90 %, D2O 10 %'
+ 2 MCP-1 '1 mM U-50% 15N, MCP-1 1 mM U-50% 13C, H2O 90 %, D2O 10 %'
+ 3 MCP-1 '2 mM U-15N, H2O 90 %, D2O 10 %'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_nmr_sample_details.solution_id
+    _item_description.description
+;   
+The name (number) of the sample.     
+;
+    _item.name                   '_pdbx_nmr_sample_details.solution_id'
+    _item.category_id              pdbx_nmr_sample_details
+    _item.mandatory_code           yes
+    _item_type.code                code
+     loop_
+    _item_examples.case          
+          '1'
+          '2'
+          '3'  
+    _item_aliases.alias_name     '_rcsb_nmr_sample_details.solution_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_sample_details.contents
+    _item_description.description
+;   
+A complete description of each NMR sample. Include the concentration 
+and concentration units for each component (include buffers, etc.). For each
+component describe the isotopic composition, including the % labeling level,
+if known. 
+
+For example:
+1. Uniform (random) labeling with 15N: U-15N
+2. Uniform (random) labeling with 13C, 15N at known labeling
+   levels: U-95% 13C;U-98% 15N
+3. Residue selective labeling: U-95% 15N-Thymine
+4. Site specific labeling: 95% 13C-Ala18,
+5. Natural abundance labeling in an otherwise uniformly labeled
+   biomolecule is designated by NA: U-13C; NA-K,H
+  
+;
+    _item.name                   '_pdbx_nmr_sample_details.contents'
+    _item.category_id              pdbx_nmr_sample_details
+    _item.mandatory_code           no
+    _item_type.code                text
+    _item_examples.case          
+;  
+2mM Ribonuclease  U-15N,13C; 50mM phosphate buffer NA; 90% H2O, 10% D2O 
+;
+    _item_aliases.alias_name     '_rcsb_nmr_sample_details.contents'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_sample_details.solvent_system
+    _item_description.description
+;   
+The solvent system used for this sample.
+;
+    _item.name                   '_pdbx_nmr_sample_details.solvent_system'
+    _item.category_id              pdbx_nmr_sample_details
+    _item.mandatory_code           no
+    _item_type.code                text
+    _item_examples.case          
+;  
+90% H2O, 10% D2O 
+;
+    _item_aliases.alias_name     '_rcsb_nmr_sample_details.solvent_system'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+##
+##
+
+save_pdbx_nmr_exptl_sample
+    _category.description
+;   The chemical constituents of
+    each NMR sample. Each sample is identified by a number and 
+    each component in the sample is identified by name.   
+;
+    _category.id                  pdbx_nmr_exptl_sample
+    _category.mandatory_code      no
+     loop_
+    _category_key.name
+                                 '_pdbx_nmr_exptl_sample.solution_id'
+                                 '_pdbx_nmr_exptl_sample.component'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'nmr_group'            
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+; 
+  Example 1 
+
+  This example was taken from the study of MCP-1 which is a dimer under the 
+  conditions studied. Three solutions with different isotope compositions were 
+  studied.
+;
+#
+; 
+ loop_
+ _pdbx_nmr_exptl_sample.solution_id
+ _pdbx_nmr_exptl_sample.component
+ _pdbx_nmr_exptl_sample.concentration
+ _pdbx_nmr_exptl_sample.concentration_units
+ _pdbx_nmr_exptl_sample.isotopic_labeling
+ 1 MCP-1  2 'mM' 'U-15N,13C'
+ 1 H2O   90 '%'   .
+ 1 D2O   10 '%'   .
+;
+; 
+  Example 2
+
+  This example was taken from the study of MCP-1 which is a dimer under the 
+  conditions studied. Three solutions with different isotope compositions were 
+  studied.
+;
+#
+; 
+ loop_
+ _pdbx_nmr_exptl_sample.solution_id
+ _pdbx_nmr_exptl_sample.component
+ _pdbx_nmr_exptl_sample.concentration
+ _pdbx_nmr_exptl_sample.concentration_units
+ _pdbx_nmr_exptl_sample.isotopic_labeling
+ 2 MCP-1 1 'mM' 'U-50% 15N'
+ 2 H2O  90 '%'  .
+ 2 D2O  10 '%'  .
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_nmr_exptl_sample.solution_id
+    _item_description.description
+;   The name (number) of the sample.     
+;
+    _item.name                   '_pdbx_nmr_exptl_sample.solution_id'
+    _item.category_id              pdbx_nmr_exptl_sample
+    _item.mandatory_code           yes
+    _item_type.code                code
+     loop_
+    _item_examples.case          
+          '1'
+          '2'
+          '3'  
+    _item_aliases.alias_name     '_rcsb_nmr_exptl_sample.solution_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_exptl_sample.component
+    _item_description.description
+;   The name of each component in the sample   
+;
+    _item.name                   '_pdbx_nmr_exptl_sample.component'
+    _item.category_id              pdbx_nmr_exptl_sample
+    _item.mandatory_code           yes
+    _item_type.code                line
+     loop_
+    _item_examples.case          
+         'ribonuclease'
+ 	 'DNA strand 1'
+ 	 'TRIS buffer'
+ 	 'sodium chloride'  
+ 	 'H2O'
+ 	 'D2O'
+    _item_aliases.alias_name     '_rcsb_nmr_exptl_sample.component'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_exptl_sample.concentration
+    _item_description.description
+;   The concentration value of the component.
+;
+    _item.name                   '_pdbx_nmr_exptl_sample.concentration'
+    _item.category_id              pdbx_nmr_exptl_sample
+    _item.mandatory_code           no
+    _item_type.code                float
+     loop_
+    _item_examples.case          
+         '2.0'
+	 '2.7'
+ 	 '0.01'
+    _item_aliases.alias_name     '_rcsb_nmr_exptl_sample.concentration'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_exptl_sample.concentration_range
+    _item_description.description
+;   The concentration range for the component.
+;
+    _item.name                   '_pdbx_nmr_exptl_sample.concentration_range'
+    _item.category_id              pdbx_nmr_exptl_sample
+    _item.mandatory_code           no
+    _item_type.code                float-range
+     loop_
+    _item_examples.case          
+         '2.0-2.2'
+	 '2.7-3.5'
+ 	 '0.01-0.05'
+    _item_aliases.alias_name     '_rcsb_nmr_exptl_sample.concentration_range'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_exptl_sample.concentration_units
+    _item_description.description
+;   The concentration units of the component.
+;
+    _item.name                   '_pdbx_nmr_exptl_sample.concentration_units'
+    _item.category_id              pdbx_nmr_exptl_sample
+    _item.mandatory_code           no
+    _item_type.code                code
+     loop_
+    _item_examples.case          
+         'mg/mL for mg per milliliter'
+ 	 'mM for millimolar'
+ 	 '% for percent by volume'             
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail      
+        '%'     'percent by volume'
+        'mM'    'millimolar'
+        'mg/mL' 'mg per milliliter'
+        'nM'    'nanomolar'
+        'pM'    'picomolar'
+        'M'     'molar'
+        'g/L'   'grams per liter'
+        'ug/mL' 'microgram per milliter'
+        'mg/L'  'milligrams per liter'
+        'mg/uL' 'milligrams per microliter'
+        'ug/uL' 'micrograms per microliter'
+	'uM'    'micromolar'
+	'v/v'   'volume to volume'
+	'w/v'   'mass-volume percent'
+	'w/w'   'weight to weight'
+	'% w/v' 'percent weight to volume'
+	'% w/w' 'percent weight to weight'
+	'% v/v' 'percent volume to volume'
+        'saturated' .
+        'na'        .
+    _item_aliases.alias_name     '_rcsb_nmr_exptl_sample.concentration_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_exptl_sample.isotopic_labeling
+    _item_description.description
+;   The isotopic composition of each component, including
+    the % labeling level, if known. For example:
+    1. Uniform (random) labeling with 15N: U-15N
+    2. Uniform (random) labeling with 13C, 15N at known labeling
+     levels: U-95% 13C;U-98% 15N
+    3. Residue selective labeling: U-95% 15N-Thymine
+    4. Site specific labeling: 95% 13C-Ala18,
+    5. Natural abundance labeling in an otherwise uniformly labled
+      biomolecule is designated by NA: U-13C; NA-K,H 
+;
+    _item.name                   '_pdbx_nmr_exptl_sample.isotopic_labeling'
+    _item.category_id              pdbx_nmr_exptl_sample
+    _item.mandatory_code           no
+    _item_type.code                line
+     loop_
+    _item_examples.case          
+               'U-13C,15N'
+               'U-2H'  
+#     loop_
+#     _item_enumeration.value
+#		'U-15N'
+#		'U-13C'
+#		'U-15N,13C'
+#                'U-2H'
+#		'other'
+    _item_aliases.alias_name     '_rcsb_nmr_exptl_sample.isotopic_labeling'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+###
+### ##########################################################################
+###
+
+save_pdbx_nmr_exptl_sample_conditions
+    _category.description
+;   
+The experimental conditions used to for each sample.  Each set of conditions
+is identified by a numerical code.  
+;
+    _category.id                  pdbx_nmr_exptl_sample_conditions
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          
+                                '_pdbx_nmr_exptl_sample_conditions.conditions_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'nmr_group'            
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+; This example was taken from a pH stability study. 
+;
+#
+;
+ loop_
+ _pdbx_nmr_exptl_sample_conditions.conditions_id
+ _pdbx_nmr_exptl_sample_conditions.temperature
+ _pdbx_nmr_exptl_sample_conditions.pressure
+ _pdbx_nmr_exptl_sample_conditions.pH
+ _pdbx_nmr_exptl_sample_conditions.ionic_strength
+ 1 298 ambient  7  '25mM NaCl'
+ 2 298 ambient  3  '25mM NaCl'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_nmr_exptl_sample_conditions.conditions_id
+    _item_description.description
+;   The condition number as defined above.
+;
+    _item.name                   '_pdbx_nmr_exptl_sample_conditions.conditions_id'
+    _item.category_id              pdbx_nmr_exptl_sample_conditions
+    _item.mandatory_code           yes
+    _item_type.code                code
+     loop_
+    _item_examples.case          
+                 '1'
+                 '2'
+                 '3'  
+    _item_aliases.alias_name     '_rcsb_nmr_exptl_sample_conditions.conditions_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_exptl_sample_conditions.temperature
+    _item_description.description
+;   The temperature (in Kelvin) at which NMR data were
+    collected.
+;
+    _item.name                   '_pdbx_nmr_exptl_sample_conditions.temperature'
+    _item.category_id              pdbx_nmr_exptl_sample_conditions
+    _item.mandatory_code           no
+    _item_type.code                float-range
+     loop_
+    _item_examples.case          
+              '298'       
+    _item_aliases.alias_name     '_rcsb_nmr_exptl_sample_conditions.temperature'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_exptl_sample_conditions.pressure_units
+    _item_description.description
+;   The units of pressure at which NMR data were collected.
+;
+    _item.name                   '_pdbx_nmr_exptl_sample_conditions.pressure_units'
+    _item.category_id              pdbx_nmr_exptl_sample_conditions
+    _item.mandatory_code           no
+    _item_type.code                code
+     loop_
+    _item_examples.case          
+             'Pa'
+             'atm'                 
+             'Torr'                 
+    _item_aliases.alias_name     '_rcsb_nmr_exptl_sample_conditions.pressure_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_exptl_sample_conditions.pressure
+    _item_description.description
+;   The pressure at which NMR data were collected.
+;
+    _item.name                   '_pdbx_nmr_exptl_sample_conditions.pressure'
+    _item.category_id              pdbx_nmr_exptl_sample_conditions
+    _item.mandatory_code           no
+    _item_type.code                line
+     loop_
+    _item_examples.case          
+             'ambient'
+             '1atm'                 
+    _item_aliases.alias_name     '_rcsb_nmr_exptl_sample_conditions.pressure'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_exptl_sample_conditions.pH
+    _item_description.description
+;   The pH at which the NMR data were collected.
+;
+    _item.name                   '_pdbx_nmr_exptl_sample_conditions.pH'
+    _item.category_id              pdbx_nmr_exptl_sample_conditions
+    _item.mandatory_code           no
+    _item_type.code                float-range
+     loop_
+    _item_examples.case          
+              '3.1'
+              '7.0'  
+    _item_aliases.alias_name     '_rcsb_nmr_exptl_sample_conditions.pH'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_exptl_sample_conditions.ionic_strength
+    _item_description.description
+;   The ionic strength at which the NMR data were collected -in lieu of
+    this enter the concentration and identity of the salt in the sample.
+;
+    _item.name                   '_pdbx_nmr_exptl_sample_conditions.ionic_strength'
+    _item.category_id              pdbx_nmr_exptl_sample_conditions
+    _item.mandatory_code           no
+    _item_type.code                line
+#     loop_
+#    _item_examples.case          
+#              '3.1'
+#              '7.0'  
+    _item_aliases.alias_name     '_rcsb_nmr_exptl_sample_conditions.ionic_strength'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+###
+### ##########################################################################
+###
+
+save_pdbx_nmr_spectrometer
+    _category.description
+;   
+The details about each spectrometer used to collect data for this 
+deposition.
+;
+    _category.id                  pdbx_nmr_spectrometer
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_nmr_spectrometer.spectrometer_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'nmr_group'            
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+; The instruments described here are the ones used for the MCP-1 studies.
+;
+#
+;  
+ loop_
+ _pdbx_nmr_spectrometer.spectrometer_id
+ _pdbx_nmr_spectrometer.type
+ _pdbx_nmr_spectrometer.field_strength
+ 1  'Bruker AMX'   600
+ 2  'Bruker AMX'   500
+; 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_nmr_spectrometer.spectrometer_id
+    _item_description.description
+;   
+Assign a numerical ID to each instrument.
+;
+    _item.name                   '_pdbx_nmr_spectrometer.spectrometer_id'
+    _item.category_id              pdbx_nmr_spectrometer
+    _item.mandatory_code           yes
+    _item_type.code                code
+     loop_
+    _item_examples.case          
+     '1'
+     '2'
+     '3'
+    _item_aliases.alias_name     '_rcsb_nmr_spectrometer.spectrometer_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_spectrometer.model
+    _item_description.description
+;   
+The model of the NMR spectrometer.    
+;
+    _item.name                   '_pdbx_nmr_spectrometer.model'
+    _item.category_id              pdbx_nmr_spectrometer
+    _item.mandatory_code           no
+    _item_type.code                line
+     loop_
+    _item_examples.case
+ 'AVANCE'
+ 'WH'
+ 'WM'
+ 'AM'
+ 'AMX' 
+ 'DMX'
+ 'DRX'
+ 'MSL'
+ 'OMEGA'
+ 'OMEGA PSG'
+ 'GX'
+ 'GSX'
+ 'A'
+ 'AL'
+ 'EC'
+ 'EX'
+ 'LA'
+ 'ECP'
+ 'VXRS'
+ 'UNITY'
+ 'UNITYPLUS'
+ 'INOVA'
+    _item_aliases.alias_name     '_rcsb_nmr_spectrometer.model'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_spectrometer.type
+    _item_description.description
+;   
+Select the instrument manufacturer(s) and the model(s) of the NMR(s)
+used for this work.    
+;
+    _item.name                   '_pdbx_nmr_spectrometer.type'
+    _item.category_id              pdbx_nmr_spectrometer
+    _item.mandatory_code           no
+    _item_type.code                line
+     loop_
+    _item_examples.case
+
+ 'Bruker WH'
+ 'Bruker WM'
+ 'Bruker AM'
+ 'Bruker AMX' 
+ 'Bruker DMX'
+ 'Bruker DRX'
+ 'Bruker MSL'
+ 'Bruker AVANCE'
+ 'GE Omega'
+ 'GE Omega PSG'
+ 'JEOL GX'
+ 'JEOL GSX'
+ 'JEOL A'
+ 'JEOL AL'
+ 'JEOL EC'
+ 'JEOL EX'
+ 'JEOL LA'
+ 'JEOL ECP'
+ 'Varian VXRS'
+ 'Varian UNITY'
+ 'Varian UNITYplus'
+ 'Varian INOVA'
+ 'other'
+    _item_aliases.alias_name     '_rcsb_nmr_spectrometer.type'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_spectrometer.manufacturer
+    _item_description.description
+;
+The name of the manufacturer of the spectrometer. 
+;
+    _item.name                   '_pdbx_nmr_spectrometer.manufacturer'
+    _item.category_id              pdbx_nmr_spectrometer
+    _item.mandatory_code           no
+    _item_type.code                line
+     loop_
+    _item_examples.case
+  'Varian' 
+  'Bruker'
+  'JEOL'
+  'GE'
+    _item_aliases.alias_name     '_rcsb_nmr_spectrometer.manufacturer'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_spectrometer.field_strength
+    _item_description.description
+;            
+Select the field strength for protons in MHz.
+;
+    _item.name                   '_pdbx_nmr_spectrometer.field_strength'
+    _item.category_id              pdbx_nmr_spectrometer
+    _item.mandatory_code           no
+    _item_type.code                float
+     loop_
+    _item_examples.case          
+ '360'
+ '400'
+ '500'
+ '600'
+ '750'
+ '800'
+ '850'
+ '900'
+ '950'
+ '1000'
+    _item_aliases.alias_name     '_rcsb_nmr_spectrometer.field_strength'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+###
+
+### ##########################################################################
+###
+
+save_pdbx_nmr_exptl
+    _category.description
+;
+In this section, enter information on those experiments that were 
+used to generate constraint data. For each NMR experiment indicate 
+which sample and which sample conditions were used for the experiment.
+;
+    _category.id                  pdbx_nmr_exptl
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          
+                          '_pdbx_nmr_exptl.experiment_id'
+                          '_pdbx_nmr_exptl.conditions_id'
+                          '_pdbx_nmr_exptl.solution_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'nmr_group'            
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+; This example was taken from the MCP-1 study.
+;
+#
+;
+ loop_ 
+ _pdbx_nmr_exptl.experiment_id
+ _pdbx_nmr_exptl.solution_id
+ _pdbx_nmr_exptl.conditions_id
+ _pdbx_nmr_exptl.type
+ 1 3 1 '3D_15N-separated_NOESY'
+ 2 1 1 '3D_13C-separated_NOESY'
+ 3 1 2 '4D_13C/15N-separated_NOESY'
+ 4 1 1 '4D_13C-separated_NOESY'
+ 5 1 1 '3D_15N-separated_ROESY'
+ 6 3 1 '3D_13C-separated_ROESY'
+;     
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_nmr_exptl.experiment_id
+    _item_description.description
+;   A numerical ID for each experiment.
+;
+    _item.name                   '_pdbx_nmr_exptl.experiment_id'
+    _item.category_id              pdbx_nmr_exptl
+    _item.mandatory_code           yes
+    _item_type.code                code
+     loop_
+    _item_examples.case          
+              '1'
+              '2'
+              '3'
+    _item_aliases.alias_name     '_rcsb_nmr_exptl.experiment_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_exptl.conditions_id
+    _item_description.description
+; The number to identify the set of sample conditions.
+;
+    _item.name                   '_pdbx_nmr_exptl.conditions_id'
+    _item.category_id              pdbx_nmr_exptl
+    _item.mandatory_code           yes
+    _item_type.code                code
+     loop_
+    _item_examples.case          
+               '1'
+               '2'
+ 	       '3'  
+    _item_aliases.alias_name     '_rcsb_nmr_exptl.conditions_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_exptl.solution_id
+    _item_description.description
+;   The solution_id from the Experimental Sample to identify the sample
+    that these conditions refer to. 
+
+    [Remember to save the entries here before returning to the 
+     Experimental Sample form]
+;
+    _item.name                   '_pdbx_nmr_exptl.solution_id'
+    _item.category_id              pdbx_nmr_exptl
+    _item.mandatory_code           yes
+    _item_type.code                code
+     loop_
+    _item_examples.case          
+                 '1'
+                 '2'
+                 '3'  
+    _item_aliases.alias_name     '_rcsb_nmr_exptl.solution_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_exptl.type
+    _item_description.description
+;   The type of NMR experiment.
+;
+    _item.name                   '_pdbx_nmr_exptl.type'
+    _item.category_id              pdbx_nmr_exptl
+    _item.mandatory_code           no
+    _item_type.code                line
+     loop_
+    _item_examples.case          
+ '2D NOESY'
+ '3D_15N-separated_NOESY'
+ '3D_13C-separated_NOESY'
+ '4D_13C-separated_NOESY'
+ '4D_13C/15N-separated_NOESY'
+ '3D_15N-separated_ROESY'
+ '3D_13C-separated_ROESY'
+ 'HNCA-J'
+ 'HNHA'
+ 'DQF-COSY'
+ 'P-COSY'
+ 'PE-COSY'
+ 'E-COSY' 
+    _item_aliases.alias_name     '_rcsb_nmr_exptl.type'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+###
+### ##########################################################################
+###
+
+save_pdbx_nmr_software
+    _category.description
+; 
+Description of the software that was used for data collection, data processing, 
+data analysis, structure calculations and refinement. The description should 
+include the name of the software, the author of the software and the version used.
+;
+    _category.id                  pdbx_nmr_software
+    _category.mandatory_code      no
+
+     loop_
+     _category_key.name         '_pdbx_nmr_software.ordinal' 
+#                                '_pdbx_nmr_software.name'
+#                                '_pdbx_nmr_software.classification'
+#                                '_pdbx_nmr_software.version'
+#  alternate key
+#    _category_key.name          '_pdbx_nmr_software.ordinal'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'nmr_group'            
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+; This example describes the software used in the MCP-1 study.
+;
+#
+; 
+  loop_
+  _pdbx_nmr_software.ordinal
+  _pdbx_nmr_software.name
+  _pdbx_nmr_software.authors
+  _pdbx_nmr_software.version
+  _pdbx_nmr_software.classification
+ 1 UXNMR	 Bruker	  940501.3	 'collection'
+ 2 FELIX	 Hare	  1.1 		 'processing'
+ 3 ANSIG	 Kraulis  3.0  	         'data analysis'
+ 4 X-PLOR        Brunger  3.8            'structure calculation'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_nmr_software.ordinal
+    _item_description.description
+;
+               An ordinal index for this category
+;
+    _item.name                  '_pdbx_nmr_software.ordinal'
+    _item.category_id             pdbx_nmr_software
+    _item.mandatory_code          yes
+    _item_type.code               int    
+     loop_
+    _item_examples.case      1 2
+    _item_aliases.alias_name     '_rcsb_nmr_software.ordinal'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_software.classification
+   _item_description.description
+;  The purpose of the software.
+;
+    _item.name                   '_pdbx_nmr_software.classification'
+    _item.category_id              pdbx_nmr_software
+    _item.mandatory_code           yes
+    _item_type.code                line
+     loop_
+    _item_examples.case   
+              'collection' 
+              'processing'
+              'data analysis'
+              'structure solution'      
+              'refinement'
+              'iterative matrix relaxation'  
+#     loop_
+#   _item_enumeration.value
+#              'collection' 
+#              'processing'
+#              'data analysis'
+#              'structure solution'      
+#              'refinement'
+#              'iterative matrix relaxation'  
+    _item_aliases.alias_name     '_rcsb_nmr_software.classification'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_software.name
+    _item_description.description
+;   The name of the software used for the task.
+;
+    _item.name                   '_pdbx_nmr_software.name'
+    _item.category_id              pdbx_nmr_software
+    _item.mandatory_code           yes
+    _item_type.code                line
+     loop_
+    _item_examples.case          
+ 'ANSIG'  
+ 'AURELIA'
+ 'AZARA'
+ 'CHARMM'
+ 'CORMA'
+ 'DIANA'
+ 'DYANA'
+ 'DSPACE'
+ 'DISGEO'
+ 'DGII'
+ 'DISMAN'
+ 'DINOSAUR'
+ 'DISCOVER'
+ 'FELIX'
+ 'FT_NMR'
+ 'GROMOS'
+ 'IRMA'
+ 'MARDIGRAS'
+ 'NMRPipe'
+ 'SA'
+ 'UXNMR'
+ 'VNMR'
+ 'X-PLOR' 
+ 'XWINNMR' 
+    _item_aliases.alias_name     '_rcsb_nmr_software.name'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_software.version
+    _item_description.description
+;   The version of the software.
+;
+    _item.name                   '_pdbx_nmr_software.version'
+    _item.category_id              pdbx_nmr_software
+    _item.mandatory_code           no
+#    _item.mandatory_code           yes
+    _item_type.code                line
+     loop_
+    _item_examples.case
+              '940501.3'
+              '2.1'
+    _item_aliases.alias_name     '_rcsb_nmr_software.version'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_software.authors
+    _item_description.description
+;   The name of the authors of the software used in this
+    procedure.
+;
+    _item.name                   '_pdbx_nmr_software.authors'
+    _item.category_id              pdbx_nmr_software
+    _item.mandatory_code           no
+    _item_type.code                text
+     loop_
+    _item_examples.case          
+              'Brunger'
+              'Guentert'  
+    _item_aliases.alias_name     '_rcsb_nmr_software.authors'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+# Optional in v4 and changed to a mandatory key in v5
+save__pdbx_nmr_refine.software_ordinal
+    _item_description.description
+;  Pointer to pdbx_nmr_software.ordinal
+;
+   _item.name           '_pdbx_nmr_refine.software_ordinal'
+   _item.category_id     'pdbx_nmr_refine'
+   _item.mandatory_code  no
+   _item_type.code       int
+save_
+
+###
+### ##########################################################################
+###
+
+save_pdbx_nmr_constraints
+    _category.description
+;   This section provides a tabulation of constraint data. 
+;
+    _category.id                  pdbx_nmr_constraints
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_nmr_constraints.entry_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'nmr_group'            
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+; This example uses the data from the MCP-1 structure determination. Remember
+  this is a dimer so there are intersubunit constraints as well as intrasubunit
+  constraints.
+;
+#
+;  
+   loop_
+   _pdbx_nmr_constraints.entry_id
+   _pdbx_nmr_constraints.NOE_constraints_total
+   _pdbx_nmr_constraints.NOE_intraresidue_total_count
+   _pdbx_nmr_constraints.NOE_sequential_total_count
+   _pdbx_nmr_constraints.NOE_medium_range_total_count
+   _pdbx_nmr_constraints.NOE_long_range_total_count
+   _pdbx_nmr_constraints.protein_phi_angle_constraints_total_count
+   1ABC 4458  1144  272  1004   1356  96
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_nmr_constraints.entry_id
+    _item_description.description
+;   You can leave this blank as an ID will be assigned by the MSD 
+    to the constraint file.     
+;
+    _item.name                   '_pdbx_nmr_constraints.entry_id'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           yes
+    _item_type.code                code
+    _item_linked.child_name	'_pdbx_nmr_constraints.entry_id'
+    _item_linked.parent_name    '_entry.id'
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.entry_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_constraints.NOE_constraints_total
+    _item_description.description
+;   The total number of all NOE constraints used in the final
+    structure calculation.
+;
+    _item.name                   '_pdbx_nmr_constraints.NOE_constraints_total'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+              '4458'  
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NOE_constraints_total'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_constraints.NOE_intraresidue_total_count
+    _item_description.description
+;   The total number of all intraresidue, [i-j]=0, NOE constraints 
+    used in the final structure calculation.
+;
+    _item.name                   '_pdbx_nmr_constraints.NOE_intraresidue_total_count'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+               '1144'  
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NOE_intraresidue_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_constraints.NOE_interentity_total_count
+    _item_description.description
+;   The total number of interentity, NOE constraints 
+    used in the final structure calculation. This field should only be
+    if system is complex -i.e more than one entity e.g. a dimer or ligand-protein 
+    complex
+;
+    _item.name                   '_pdbx_nmr_constraints.NOE_interentity_total_count'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+               '272'  
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NOE_interentity_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_constraints.NOE_sequential_total_count
+    _item_description.description
+;   The total number of sequential, [i-j]=1, NOE constraints used 
+    in the final structure calculation.
+;
+    _item.name                   '_pdbx_nmr_constraints.NOE_sequential_total_count'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+                  '1004' 
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NOE_sequential_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_constraints.NOE_medium_range_total_count
+    _item_description.description
+;   The total number of medium range 1<[i-j]<=5 NOE constraints used 
+    in the final structure calculation.
+;
+    _item.name                   '_pdbx_nmr_constraints.NOE_medium_range_total_count'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+             '682'  
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NOE_medium_range_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_constraints.NOE_long_range_total_count
+    _item_description.description
+;   The total number of long range [i-j]>5 NOE constraints used 
+    in the final structure calculation.
+;
+    _item.name                   '_pdbx_nmr_constraints.NOE_long_range_total_count'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+                '1356'  
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NOE_long_range_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_constraints.protein_phi_angle_constraints_total_count
+    _item_description.description
+;   The total number of phi angle constraints used in the final structure
+    calculation
+;
+    _item.name                   '_pdbx_nmr_constraints.protein_phi_angle_constraints_total_count'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+               '96'  
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.protein_phi_angle_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_constraints.protein_psi_angle_constraints_total_count
+    _item_description.description
+;   The total number of psi angle constraints used in the final structure
+    calculation.
+;
+    _item.name                   '_pdbx_nmr_constraints.protein_psi_angle_constraints_total_count'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+               '0'  
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.protein_psi_angle_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_constraints.protein_chi_angle_constraints_total_count
+    _item_description.description
+;   The total number of chi angle constraints used in the final structure
+    calculation.
+;
+    _item.name                   '_pdbx_nmr_constraints.protein_chi_angle_constraints_total_count'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+              '66' 
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.protein_chi_angle_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_constraints.protein_other_angle_constraints_total_count
+    _item_description.description
+;   The total number of other angle constraints used in the final structure
+  calculation.
+;
+    _item.name                   '_pdbx_nmr_constraints.protein_other_angle_constraints_total_count'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+            '0'
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.protein_other_angle_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_constraints.NOE_interproton_distance_evaluation
+    _item_description.description
+;   Describe the method used to quantify the NOE and ROE values.
+;
+    _item.name                   '_pdbx_nmr_constraints.NOE_interproton_distance_evaluation'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           no
+    _item_type.code                text
+     loop_
+    _item_examples.case          
+;
+  NOE buildup curves with 50, 75, 150 ms mixing times were
+  analyzed.
+;
+;
+   Noesy cross peak intensities were classified into three different 
+   catagories with distances of 1.8-2.7 A, 1.8-3.5 A, 1.8- 5.0 A for strong,
+   medium and weak NOEs.
+;   
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NOE_interproton_distance_evaluation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_constraints.NOE_pseudoatom_corrections
+    _item_description.description
+;   Describe any corrections made for pseudoatoms
+;
+    _item.name                   '_pdbx_nmr_constraints.NOE_pseudoatom_corrections'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           no
+    _item_type.code                text
+     loop_
+    _item_examples.case          
+;
+  Pseudo-atoms nomenclature and corrections according to Wuethrich, Billeter, 
+  and Braun, J. Mol.Biol.(1983) 169, 949-961.
+;
+;
+  Pseudoatoms were not used.
+;
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NOE_pseudoatom_corrections'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_constraints.NOE_motional_averaging_correction
+    _item_description.description
+;Describe any corrections that were made to the NOE data for motional averaging.
+;
+    _item.name                   '_pdbx_nmr_constraints.NOE_motional_averaging_correction'
+    _item.category_id              pdbx_nmr_constraints
+    _item.mandatory_code           no
+    _item_type.code                text
+     loop_
+    _item_examples.case          
+                            'Replace with item example text'  
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NOE_motional_averaging_correction'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+##
+
+save__pdbx_nmr_constraints.hydrogen_bond_constraints_total_count
+    _item_description.description 
+;  The total number of hydrogen bond constraints used in the final
+   structure calculation. 
+;
+    _item.name               '_pdbx_nmr_constraints.hydrogen_bond_constraints_total_count'
+    _item.category_id        pdbx_nmr_constraints
+    _item.mandatory_code     no
+    _item_type.code          int
+     loop_
+    _item_examples.case
+               '6'
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.hydrogen_bond_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_constraints.disulfide_bond_constraints_total_count
+    _item_description.description 
+;  The total number of disulfide bond constraints used in the final
+   structure calculation. 
+;
+    _item.name               '_pdbx_nmr_constraints.disulfide_bond_constraints_total_count'
+   _item.category_id         pdbx_nmr_constraints 
+   _item.mandatory_code      no
+   _item_type.code           int
+    loop_
+    _item_examples.case
+               '3'
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.disulfide_bond_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+    save_
+
+
+save__pdbx_nmr_constraints.NA_alpha-angle_constraints_total_count 
+   _item_description.description
+;  The total number of nucleic acid alpha-angle constraints used in
+   the final structure calculation.
+;
+    _item.name              '_pdbx_nmr_constraints.NA_alpha-angle_constraints_total_count'
+    _item.category_id         pdbx_nmr_constraints
+    _item.mandatory_code      no
+    _item_type.code           int
+     loop_
+    _item_examples.case
+               '18'
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NA_alpha-angle_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+    save_
+
+
+
+save__pdbx_nmr_constraints.NA_beta-angle_constraints_total_count
+    _item_description.description 
+;  The total number of nucleic acid beta-angle constraints used in
+   the final structure calculation.
+;
+    _item.name             '_pdbx_nmr_constraints.NA_beta-angle_constraints_total_count'
+    _item.category_id       pdbx_nmr_constraints
+    _item.mandatory_code    no
+    _item_type.code         int 
+     loop_ 
+    _item_examples.case 
+               '24' 
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NA_beta-angle_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+    
+
+save__pdbx_nmr_constraints.NA_gamma-angle_constraints_total_count
+    _item_description.description 
+;  The total number of nucleic acid gamma-angle constraints used in
+   the final structure calculation. 
+;
+   _item.name               '_pdbx_nmr_constraints.NA_gamma-angle_constraints_total_count'
+   _item.category_id         pdbx_nmr_constraints
+   _item.mandatory_code      no
+   _item_type.code           int
+    loop_
+    _item_examples.case
+               '12'
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NA_gamma-angle_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_constraints.NA_delta-angle_constraints_total_count
+    _item_description.description
+;  The total number of nucleic acid delta-angle constraints used in
+   the final structure calculation. 
+;
+    _item.name                '_pdbx_nmr_constraints.NA_delta-angle_constraints_total_count'
+   _item.category_id           pdbx_nmr_constraints
+   _item.mandatory_code      no
+   _item_type.code           int
+    loop_
+    _item_examples.case
+               '15'
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NA_delta-angle_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_constraints.NA_epsilon-angle_constraints_total_count
+    _item_description.description
+;  The total number of nucleic acid epsilon-angle constraints used
+   in the final structure calculation. 
+;
+   _item.name               '_pdbx_nmr_constraints.NA_epsilon-angle_constraints_total_count'
+   _item.category_id          pdbx_nmr_constraints
+   _item.mandatory_code      no
+   _item_type.code           int
+    loop_
+    _item_examples.case
+               '31'
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NA_epsilon-angle_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_constraints.NA_chi-angle_constraints_total_count
+    _item_description.description 
+;  The total number of nucleic acid chi-angle constraints used
+   in the final structure calculation. 
+;
+   _item.name              '_pdbx_nmr_constraints.NA_chi-angle_constraints_total_count'
+   _item.category_id         pdbx_nmr_constraints
+   _item.mandatory_code      no
+   _item_type.code           int
+    loop_
+    _item_examples.case
+               '15'
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NA_chi-angle_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_constraints.NA_other-angle_constraints_total_count
+    _item_description.description 
+;  The total number of nucleic acid other-angle constraints used
+   in the final structure calculation. 
+;
+   _item.name              '_pdbx_nmr_constraints.NA_other-angle_constraints_total_count'
+   _item.category_id         pdbx_nmr_constraints
+   _item.mandatory_code      no
+   _item_type.code           int
+    loop_
+    _item_examples.case
+               '5'
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NA_other-angle_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_constraints.NA_sugar_pucker_constraints_total_count
+    _item_description.description 
+;  The total number of nucleic acid sugar pucker constraints used
+   in the final structure calculation. 
+;
+   _item.name              '_pdbx_nmr_constraints.NA_sugar_pucker_constraints_total_count'
+   _item.category_id         pdbx_nmr_constraints
+   _item.mandatory_code      no
+   _item_type.code           int
+    loop_
+    _item_examples.case
+               '10'
+    _item_aliases.alias_name     '_rcsb_nmr_constraints.NA_sugar_pucker_constraints_total_count'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+##
+
+###
+### ##########################################################################
+###
+
+save_pdbx_nmr_ensemble
+    _category.description
+;   This category contains the information that describes the 
+    ensemble of deposited structures. If only an average structure 
+    has been deposited skip this section. 
+;
+    _category.id                  pdbx_nmr_ensemble
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_nmr_ensemble.entry_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'nmr_group'            
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;This example uses the data from the MCP-1 study.
+;
+#
+;
+  loop_
+  _pdbx_nmr_ensemble.entry_id
+  _pdbx_nmr_ensemble.conformers_calculated_total_number
+  _pdbx_nmr_ensemble.conformers_submitted_total_number
+  _pdbx_nmr_ensemble.conformer_selection_criteria
+  _pdbx_nmr_ensemble.representative_conformer
+   1ABC 40  20  'structures with the least restraint violations'  1
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_nmr_ensemble.entry_id
+    _item_description.description
+;   Leave this blank as the ID is provided by the MSD
+;
+    _item.name                   '_pdbx_nmr_ensemble.entry_id'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           yes
+    _item_type.code                code
+    _item_linked.child_name	'_pdbx_nmr_ensemble.entry_id'
+    _item_linked.parent_name    '_entry.id'
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.entry_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_ensemble.conformers_calculated_total_number
+    _item_description.description
+;   The total number of conformer (models) that were calculated in the final round.
+;
+    _item.name                   '_pdbx_nmr_ensemble.conformers_calculated_total_number'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+                      '40' 
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.conformers_calculated_total_number'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble.conformers_submitted_total_number
+    _item_description.description
+;   The number of conformer (models) that are submitted for the ensemble.
+;
+    _item.name                   '_pdbx_nmr_ensemble.conformers_submitted_total_number'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+                       '20' 
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.conformers_submitted_total_number'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble.conformer_selection_criteria
+    _item_description.description
+;   
+By highlighting the appropriate choice(s), describe how the submitted 
+conformer (models) were selected.
+;
+    _item.name                   '_pdbx_nmr_ensemble.conformer_selection_criteria'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                text
+     loop_
+    _item_examples.case          
+	'structures with the lowest energy'
+	'structures with the least restraint violations'
+	'structures with acceptable covalent geometry'
+	'structures with favorable non-bond energy'
+	'target function'
+	'back calculated data agree with experimental NOESY spectrum'
+	'all calculated structures submitted'
+;   The submitted conformer models are the 25 structures with the lowest 
+    energy.
+;
+;   The submitted conformer models are those with the fewest number of 
+    constraint violations.
+;
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.conformer_selection_criteria'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1  
+     save_
+
+
+
+save__pdbx_nmr_ensemble.representative_conformer
+    _item_description.description
+;   The number of the conformer identified as most representative.
+;
+    _item.name                   '_pdbx_nmr_ensemble.representative_conformer'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+                       '20' 
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.representative_conformer'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_ensemble.average_constraints_per_residue
+    _item_description.description
+;   The average number of constraints per residue for the ensemble
+;
+    _item.name                   '_pdbx_nmr_ensemble.average_constraints_per_residue'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+                 '30.2'
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.average_constraints_per_residue'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble.average_constraint_violations_per_residue
+    _item_description.description
+;   The average number of constraint violations on a per residue basis for
+    the ensemble. 
+;
+    _item.name                   '_pdbx_nmr_ensemble.average_constraint_violations_per_residue'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+                   '0.25'
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.average_constraint_violations_per_residue'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_ensemble.maximum_distance_constraint_violation
+    _item_description.description
+;   The maximum distance constraint violation for the ensemble.
+;
+    _item.name                   '_pdbx_nmr_ensemble.maximum_distance_constraint_violation'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               angstroms
+     loop_
+    _item_examples.case          
+                    '0.4'     
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.maximum_distance_constraint_violation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1    
+     save_
+
+save__pdbx_nmr_ensemble.average_distance_constraint_violation
+    _item_description.description
+;   The average distance restraint violation for the ensemble.
+;
+    _item.name                   '_pdbx_nmr_ensemble.average_distance_constraint_violation'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               angstroms
+     loop_
+    _item_examples.case          
+                      '0.11'  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.average_distance_constraint_violation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble.maximum_upper_distance_constraint_violation
+    _item_description.description
+;   The maximum upper distance constraint violation for the ensemble.
+;
+    _item.name                   '_pdbx_nmr_ensemble.maximum_upper_distance_constraint_violation'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               angstroms
+     loop_
+    _item_examples.case          
+                    '0.4'  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.maximum_upper_distance_constraint_violation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble.maximum_lower_distance_constraint_violation
+    _item_description.description
+;   The maximum lower distance constraint violation for the ensemble.
+;
+    _item.name                   '_pdbx_nmr_ensemble.maximum_lower_distance_constraint_violation'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               angstroms
+     loop_
+    _item_examples.case          
+                        '0.3'  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.maximum_lower_distance_constraint_violation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble.distance_constraint_violation_method
+    _item_description.description
+;   Describe the method used to calculate the distance constraint violation statistics,
+    i.e. are they calculated over all the distance constraints or calculated for
+    violations only?
+;
+    _item.name                   '_pdbx_nmr_ensemble.distance_constraint_violation_method'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                text
+     loop_
+    _item_examples.case          
+                'Statistics were calculated over all of the distance constraints.'
+		'Statistics were calculated for violations only'
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.distance_constraint_violation_method'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble.maximum_torsion_angle_constraint_violation
+    _item_description.description
+;   The maximum torsion angle constraint violation for the ensemble.
+;
+    _item.name                   '_pdbx_nmr_ensemble.maximum_torsion_angle_constraint_violation'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               degrees
+     loop_
+    _item_examples.case          
+                       '4'  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.maximum_torsion_angle_constraint_violation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble.average_torsion_angle_constraint_violation
+    _item_description.description
+;   The average torsion angle constraint violation for the ensemble.
+;
+    _item.name                   '_pdbx_nmr_ensemble.average_torsion_angle_constraint_violation'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               degrees
+     loop_
+    _item_examples.case          
+                      '2.4'  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.average_torsion_angle_constraint_violation'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_ensemble.torsion_angle_constraint_violation_method
+    _item_description.description
+;   This item describes the method used to calculate the torsion angle constraint violation statistics.
+  i.e. are the entered values based on all torsion angle or calculated for violations only? 
+;
+    _item.name                   '_pdbx_nmr_ensemble.torsion_angle_constraint_violation_method'
+    _item.category_id              pdbx_nmr_ensemble
+    _item.mandatory_code           no
+    _item_type.code                text
+     loop_
+    _item_examples.case          
+                      'Statistics were calculated over all the torsion angle constraints.'  
+              'Statistics were calculated for torsion angle constraints violations only.'
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble.torsion_angle_constraint_violation_method'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+###
+### ##########################################################################
+###
+
+save_pdbx_nmr_ensemble_rms
+    _category.description
+; Structural statistics are derived from molecular dynamics and simulated annealing 
+  programs. 
+;
+    _category.id                  pdbx_nmr_ensemble_rms
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_nmr_ensemble_rms.entry_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'nmr_group'            
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;  This example is derived from the MCP-1 structure calculation statistics. 
+   For this  structure the statistics were calculated over residues 5-69 for 
+   both the monomer and dimer .    
+;
+#
+;  
+ loop_
+ _pdbx_nmr_ensemble_rms.entry_id
+ _pdbx_nmr_ensemble_rms.residue_range_begin
+ _pdbx_nmr_ensemble_rms.chain_range_begin
+ _pdbx_nmr_ensemble_rms.residue_range_end
+ _pdbx_nmr_ensemble_rms.chain_range_end
+_pdbx_nmr_ensemble_rms.atom_type
+_pdbx_nmr_ensemble_rms.distance_rms_dev
+_pdbx_nmr_ensemble_rms.distance_rms_dev_error
+ 1ABC 5  A  69  A  'all heavy atoms'  0.22  0.06
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_nmr_ensemble_rms.entry_id
+    _item_description.description
+;               '?'
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.entry_id'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           yes
+    _item_type.code                code
+    _item_linked.child_name	'_pdbx_nmr_ensemble_rms.entry_id'
+    _item_linked.parent_name    '_entry.id'
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.entry_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.residue_range_begin
+    _item_description.description
+; Structure statistics are often calculated only over the well-ordered region(s) 
+  of the biopolymer. Portions of the macromolecule are often mobile and    
+  disordered,  hence they are excluded in calculating the statistics. To define
+  the range(s) over which the statistics are calculated, enter the beginning   
+  residue number(s): e.g. if the regions used were 5-32 and 41-69, enter 5,41      
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.residue_range_begin'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                int
+     loop_
+    _item_examples.case          
+                      5 41  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.residue_range_begin'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.chain_range_begin
+    _item_description.description
+;   The beginning chain id. 
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.chain_range_begin'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                code
+    _item_examples.case          A
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.chain_range_begin'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.residue_range_end
+    _item_description.description
+;   The ending residue number: e.g. 32,69.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.residue_range_end'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                int
+    loop_
+    _item_examples.case          
+     32  69
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.residue_range_end'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.chain_range_end
+    _item_description.description
+;   The ending chain id:
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.chain_range_end'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                code
+    _item_examples.case          A
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.chain_range_end'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.atom_type
+    _item_description.description
+; Statistics are often calculated over only some of the atoms, 
+  e.g. backbone, or heavy atoms. Describe which type of atoms are used for 
+  the statistical analysis.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.atom_type'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                line
+     loop_
+    _item_examples.case          
+ 	'backbone atoms'
+   	'heavy atoms'
+     loop_
+    _item_enumeration.value
+ 'backbone heavy atoms' 
+ 'side chain heavy atoms' 
+ 'all heavy atoms' 
+ 'all atoms' 
+ 'all backbone atoms'
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.atom_type'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.distance_rms_dev
+    _item_description.description
+;  The distance rmsd to the mean structure for the ensemble of structures.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.distance_rms_dev'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               angstroms
+     loop_
+    _item_examples.case          
+          '0.22' 
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.distance_rms_dev'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.distance_rms_dev_error
+    _item_description.description
+; The error in the distance rmsd.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.distance_rms_dev_error'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               angstroms
+     loop_
+    _item_examples.case          
+          '0.07'  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.distance_rms_dev_error'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.covalent_bond_rms_dev
+    _item_description.description
+;   The covalent bond rmsd to the target value for the ensemble.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.covalent_bond_rms_dev'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               angstroms
+     loop_
+    _item_examples.case          
+                     '0.0066' 
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.covalent_bond_rms_dev'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.covalent_bond_rms_dev_error
+    _item_description.description
+;   The error in the covalent bond rmsd.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.covalent_bond_rms_dev_error'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               angstroms
+     loop_
+    _item_examples.case          
+                         '0.0001'  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.covalent_bond_rms_dev_error'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.bond_angle_rms_dev
+    _item_description.description
+;   The bond angle rmsd to the target values for the ensemble.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.bond_angle_rms_dev'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               degrees
+     loop_
+    _item_examples.case          
+                     '0.60'
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.bond_angle_rms_dev'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1  
+     save_
+
+save__pdbx_nmr_ensemble_rms.bond_angle_rms_dev_error
+    _item_description.description
+;   The error in the bond angle rmsd.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.bond_angle_rms_dev_error'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               degrees
+     loop_
+    _item_examples.case          
+                     '0.01'  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.bond_angle_rms_dev_error'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.improper_torsion_angle_rms_dev
+    _item_description.description
+;   The improper torsion angle rmsd to the target values for the ensemble.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.improper_torsion_angle_rms_dev'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               degrees
+     loop_
+    _item_examples.case          
+                       '0.64' 
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.improper_torsion_angle_rms_dev'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.improper_torsion_angle_rms_dev_error
+    _item_description.description
+;   The error in the improper torsion angle rmsd.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.improper_torsion_angle_rms_dev_error'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               degrees
+     loop_
+    _item_examples.case          
+                     '0.04'
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.improper_torsion_angle_rms_dev_error'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+ 
+     save_
+
+save__pdbx_nmr_ensemble_rms.peptide_planarity_rms_dev
+    _item_description.description
+;   The peptide planarity rmsd.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.peptide_planarity_rms_dev'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               angstroms
+     loop_
+    _item_examples.case          
+                      '0.11'  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.peptide_planarity_rms_dev'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.peptide_planarity_rms_dev_error
+    _item_description.description
+;   The error in the peptide planarity rmsd.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.peptide_planarity_rms_dev_error'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               angstroms
+     loop_
+    _item_examples.case          
+                       '0.05'  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.peptide_planarity_rms_dev_error'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_ensemble_rms.dihedral_angles_rms_dev
+    _item_description.description
+;   The dihedral angle rmsd to the target values for the ensemble.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.dihedral_angles_rms_dev'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               degrees
+     loop_
+    _item_examples.case
+                      '0.66'  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.dihedral_angles_rms_dev'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.dihedral_angles_rms_dev_error
+    _item_description.description
+;   The error of the rmsd dihedral angles.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.dihedral_angles_rms_dev_error'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                float
+    _item_units.code               degrees
+     loop_
+    _item_examples.case          
+                        '0.07'  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.dihedral_angles_rms_dev_error'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_ensemble_rms.coord_average_rmsd_method
+    _item_description.description
+;   Describe the method for calculating the coordinate average rmsd.
+;
+    _item.name                   '_pdbx_nmr_ensemble_rms.coord_average_rmsd_method'
+    _item.category_id              pdbx_nmr_ensemble_rms
+    _item.mandatory_code           no
+    _item_type.code                text
+     loop_
+    _item_examples.case          
+                            'Replace with item example text'  
+    _item_aliases.alias_name     '_rcsb_nmr_ensemble_rms.coord_average_rmsd_method'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+
+###
+### ##########################################################################
+###
+
+save_pdbx_nmr_representative
+    _category.description
+; An average structure is often calculated in addition to the ensemble, or one
+  of the ensemble is selected as a representative structure. This section
+  describes selection of the representative structure.
+;
+    _category.id                  pdbx_nmr_representative
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_nmr_representative.entry_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'nmr_group'            
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;   This example is drawn from the MCP-1 structure.
+;
+#
+;
+ _pdbx_nmr_representative.entry_id              1ABC   
+ _pdbx_nmr_representative.conformer_id          15   
+ _pdbx_nmr_representative.selection_criteria    'lowest energy'
+;  
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_nmr_representative.entry_id
+    _item_description.description
+;    msd will assign the ID.
+;
+    _item.name                   '_pdbx_nmr_representative.entry_id'
+    _item.category_id              pdbx_nmr_representative
+    _item.mandatory_code           yes
+    _item_type.code                code
+    _item_linked.child_name	'_pdbx_nmr_representative.entry_id'
+    _item_linked.parent_name    '_entry.id'
+    _item_aliases.alias_name     '_rcsb_nmr_representative.entry_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_representative.conformer_id
+    _item_description.description
+;   If a member of the ensemble has been selected as a representative
+    structure, identify it by its model number.
+;
+    _item.name                   '_pdbx_nmr_representative.conformer_id'
+    _item.category_id              pdbx_nmr_representative
+    _item.mandatory_code           no
+    _item_type.code                line
+     loop_
+    _item_examples.case          
+                            '15'  
+    _item_aliases.alias_name     '_rcsb_nmr_representative.conformer_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_representative.selection_criteria
+    _item_description.description
+;   
+By highlighting the appropriate choice(s), describe the criteria used to 
+select this structure as a representative structure, or if an average 
+structure has been calculated describe how this was done.
+;
+    _item.name                   '_pdbx_nmr_representative.selection_criteria'
+    _item.category_id              pdbx_nmr_representative
+    _item.mandatory_code           no
+    _item_type.code                line
+
+#     loop_
+#    _item_enumeration.value
+# 'closest to the average'
+# 'lowest energy'
+# 'fewest violations'
+# 'minimized average structure'
+
+    _item_examples.case              
+;                       
+The structure closest to the average.
+The structure with the lowest energy was selected.
+The structure with the fewest number of violations was selected.
+A minimized average structure was calculated.  
+;
+
+    _item_aliases.alias_name     '_rcsb_nmr_representative.selection_criteria'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
+
+save_pdbx_nmr_refine
+    _category.description
+;   
+Describe the method and details of the refinement of the deposited structure.
+;
+    _category.id                  pdbx_nmr_refine
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_nmr_refine.entry_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'nmr_group'            
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;   This example is drawn from the MCP-1 structure.
+;
+;
+  loop_
+  _pdbx_nmr_refine.entry_id
+  _pdbx_nmr_refine.method	
+  1ABC 'torsion angle dynamics'
+;
+     save_
+
+save__pdbx_nmr_refine.entry_id
+    _item_description.description
+;   You can leave this blank as an ID will be assigned by the RCSB
+    to the constraint file.     
+;
+    _item.name                   '_pdbx_nmr_refine.entry_id'
+    _item.category_id              pdbx_nmr_refine
+    _item.mandatory_code           yes
+    _item_type.code                code
+    _item_linked.child_name	'_pdbx_nmr_refine.entry_id'
+    _item_linked.parent_name    '_entry.id'
+    _item_aliases.alias_name     '_rcsb_nmr_refine.entry_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_refine.method
+    _item_description.description
+;   The method used to determine the structure.
+;
+    _item.name                   '_pdbx_nmr_refine.method'
+    _item.category_id              pdbx_nmr_refine
+    _item.mandatory_code           no
+    _item_type.code                text
+    _item_examples.case          
+;
+  distance geometry
+  simulated annealing
+  molecular dynamics
+  matrix relaxation
+  torsion angle dynamics
+;
+    _item_aliases.alias_name     '_rcsb_nmr_refine.method'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_refine.details
+    _item_description.description
+;   Additional details about the NMR refinement.
+;
+    _item.name                   '_pdbx_nmr_refine.details'
+    _item.category_id              pdbx_nmr_refine
+    _item.mandatory_code           no
+    _item_type.code                text
+    _item_examples.case          
+;
+Additional comments about the NMR refinement can be placed here, e.g.
+the structures are based on a total of 3344 restraints, 3167 are NOE-derived
+distance constraints, 68 dihedral angle restraints,109 distance restraints 
+from hydrogen bonds.
+;
+    _item_aliases.alias_name     '_rcsb_nmr_refine.details'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+    save_
+##
+##
+save_pdbx_nmr_force_constants
+    _category.description
+;
+The final force constants, including units, employed for the various 
+experimental constraints, covalent geometry constraints, and the non-bonded 
+interaction terms in the target function used for simulated annealing.
+;
+    _category.id                  pdbx_nmr_force_constants
+    _category.mandatory_code      no
+     loop_
+    _category_key.name
+                                 '_pdbx_nmr_force_constants.entry_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'nmr_group'            
+                                 'pdbx_group'
+
+        loop_
+_category_examples.detail
+_category_examples.case
+
+# - - - - - - - - - - - - - - - - - -  - - - - - -  -
+; 
+This example is taken from a study of BAF, a dimeric DNA binding protein. 
+The final force constants in the target function used for simulated 
+annealing are:  Experimental Constraint terms: Distance (NOE,H-bonds), 
+Torsion angles, J coupling, 13C shifts, 1H shifts, Dipolar coupling, 
+D isotope shifts Covalent Geometry Constraint terms: Bond lengths, 
+Angles, Impropers Non-bonded Interaction terms: van der Waals, 
+Type of van der Waals term, Conformational database potential, 
+Radius of gyration.
+;
+#
+;
+ _pdbx_nmr_force_constants.entry_id                                      1ABC 
+ _pdbx_nmr_force_constants.exptl_distance_term                            30. 
+ _pdbx_nmr_force_constants.exptl_distance_term_units                     'kcal/mol/A**2' 
+ _pdbx_nmr_force_constants.exptl_torsion_angles_term                      200. 
+ _pdbx_nmr_force_constants.exptl_torsion_angles_term_units               'kcal/mol/rad**2' 
+ _pdbx_nmr_force_constants.exptl_J_coupling_term                          1. 
+ _pdbx_nmr_force_constants.exptl_J_coupling_term_units                   'kcal/mol/Hz**2'  
+ _pdbx_nmr_force_constants.exptl_13C_shift_term                           0.5 
+ _pdbx_nmr_force_constants.exptl_13C_shift_term_units                    'kcal/mol/ppm**2' 
+ _pdbx_nmr_force_constants.exptl_1H_shift_term                            7.5 
+ _pdbx_nmr_force_constants.exptl_1H_shift_term_units                     'kcal/mol/ppm**2'
+ _pdbx_nmr_force_constants.covalent_geom_bond_term                        1000. 
+ _pdbx_nmr_force_constants.covalent_geom_bond_term_units                  'kcal/mol/A**2'
+ _pdbx_nmr_force_constants.non-bonded_inter_van_der_Waals_term_type       4.
+ _pdbx_nmr_force_constants.non-bonded_inter_van_der_Waals_term_units 'kcal/mol/A**4'
+;
+save_
+
+
+save__pdbx_nmr_force_constants.entry_id    
+     _item_description.description
+;   You can leave this blank as an ID will be assigned by the RCSB.          
+;    
+     _item.name                   '_pdbx_nmr_force_constants.entry_id'    
+     _item.category_id              pdbx_nmr_force_constants
+     _item.mandatory_code           yes   
+     _item_type.code                code    
+     _item_linked.child_name      '_pdbx_nmr_force_constants.entry_id'    
+     _item_linked.parent_name     '_entry.id'     
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.entry_id'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+save_
+
+save__pdbx_nmr_force_constants.exptl_distance_term
+    _item_description.description
+;  The final force constant for distance (NOEs) constraints 
+   term employed in the target function used for simulated annealing. 
+;
+    _item.name                 '_pdbx_nmr_force_constants.exptl_distance_term' 
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                float
+     loop_
+    _item_examples.case             '30'
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_distance_term'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+##
+
+save__pdbx_nmr_force_constants.exptl_distance_term_units
+    _item_description.description
+;   The units for the force constant for the distance 
+    constraints term.
+;
+    _item.name           '_pdbx_nmr_force_constants.exptl_distance_term_units'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                code
+    loop_
+    _item_examples.case        'kcal/mol/ A**2' 
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+        'kcal/mol/A**2'  'kilocalories per mole per square angstrom'
+        'kJ/mol/nm**2'   'kilojoules per mole per square nanometer'
+        'other'          'author added units'
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_distance_term_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_force_constants.exptl_torsion_angles_term
+   _item_description.description
+;  The final force constant for the torsion angle term employed in 
+   the target function used for simulated annealing. 
+;
+    _item.name         '_pdbx_nmr_force_constants.exptl_torsion_angles_term'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                float
+    loop_
+    _item_examples.case            '200'
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_torsion_angles_term'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_force_constants.exptl_torsion_angles_term_units
+    _item_description.description
+;   The units for the force constant for the torsion angle 
+    constraints term.
+;
+    _item.name     '_pdbx_nmr_force_constants.exptl_torsion_angles_term_units'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                code
+    loop_
+    _item_examples.case  'kcal/mol/rad**2'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+        'kcal/mol/rad**2'  'kilocalories per mole per square radian'
+        'kJ/mol/rad**2'    'kilojoules per mole per square radian'
+        'author'           'author added units'
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_torsion_angles_term_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+    save_
+
+##
+
+save__pdbx_nmr_force_constants.exptl_J_coupling_term
+   _item_description.description
+;  The final force constant for J coupling term employed in the 
+   target function used for simulated annealing. 
+;
+    _item.name          '_pdbx_nmr_force_constants.exptl_J_coupling_term'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                float
+    loop_
+    _item_examples.case    '1'
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_J_coupling_term'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_force_constants.exptl_J_coupling_term_units
+    _item_description.description
+;   The units for the force constant for the J coupling term.
+;
+    _item.name     '_pdbx_nmr_force_constants.exptl_J_coupling_term_units'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                code
+    loop_
+    _item_examples.case  'kcal/mol/Hz**2'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+        'kcal/mol/Hz**2'  'kilocalories per mole per square angstrom'
+        'kJ/mol/Hz**2'   'kilojoules per mole per square nanometer'
+        'other'                'author added units'
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_J_coupling_term_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+
+save__pdbx_nmr_force_constants.exptl_13C_shift_term
+   _item_description.description
+;  The final force constant for 13C shift constraints term employed 
+   in the target function used for simulated annealing. 
+;
+    _item.name          '_pdbx_nmr_force_constants.exptl_13C_shift_term'    
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                float
+    loop_
+    _item_examples.case            '0.5'
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_13C_shift_term'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_force_constants.exptl_13C_shift_term_units
+    _item_description.description
+;  The units for the force constant for the 13C shift constraints
+   term.
+;
+    _item.name    '_pdbx_nmr_force_constants.exptl_13C_shift_term_units'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                code
+    loop_
+    _item_examples.case     'kcal/mol/ppm**2'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+    'kcal/mol/ppm**2' 'kilocalories per mole per part per million squared'
+    'kJ/mol/ppm**2'   'kilojoules per mole per part per million squared'
+    'other'                'author added units'
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_13C_shift_term_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+##
+save__pdbx_nmr_force_constants.exptl_1H_shift_term
+   _item_description.description
+;  The final force constant for 1H shift constraints term employed 
+   in the target function used for simulated annealing.
+;
+    _item.name              '_pdbx_nmr_force_constants.exptl_1H_shift_term'    
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                float
+    loop_
+    _item_examples.case      '7.5'
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_1H_shift_term'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_force_constants.exptl_1H_shift_term_units
+    _item_description.description
+;   The units for the force constant for the 1H shift constraints term.
+;
+    _item.name      '_pdbx_nmr_force_constants.exptl_1H_shift_term_units'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                code
+    loop_
+    _item_examples.case  'kcal/mol/ppm**2'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+     'kcal/mol/ppm**2' 'kilocalories per mole per part per million squared'
+     'kJ/mol/ppm**2'   'kilojoules per mole per part per million squared'
+     'other'                'author added units'
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_1H_shift_term_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_force_constants.exptl_dipolar_coupling_term
+   _item_description.description
+;  The final force constant for dipolar coupling constraint term 
+   employed in the target function used for simulated annealing. 
+;
+    _item.name  '_pdbx_nmr_force_constants.exptl_dipolar_coupling_term'    
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                float
+    loop_
+    _item_examples.case             '1'
+
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_dipolar_coupling_term'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+     save_
+
+save__pdbx_nmr_force_constants.exptl_dipolar_coupling_term_units
+    _item_description.description
+;   The units for the force constant for the dipolar coupling 
+    constraints term.
+;
+    _item.name   '_pdbx_nmr_force_constants.exptl_dipolar_coupling_term_units'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                code
+    loop_
+    _item_examples.case     'kcal/mol/Hz**2'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+    'kcal/mol/Hz**2'  'kilocalories per mole per Hertz squared'
+    'kJ/mol/Hz**2'    'kilojoules per mole per Hertz squared'
+    'other'           'author added units'
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_dipolar_coupling_term_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
+save__pdbx_nmr_force_constants.exptl_D_isotope_shift_term
+   _item_description.description
+;  The final force constant for Deuterium isotope shift constraints 
+   term employed in the target function used for simulated annealing. 
+;
+    _item.name  '_pdbx_nmr_force_constants.exptl_D_isotope_shift_term'    
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                float
+    loop_
+    _item_examples.case            '0.5'
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_D_isotope_shift_term'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+###
+### NEXT
+
+
+save__pdbx_nmr_force_constants.exptl_D_isotope_shift_term_units
+    _item_description.description
+;   The units for the force constant for the Deuterium isotope 
+    shift constraints term.
+;
+    _item.name     '_pdbx_nmr_force_constants.exptl_D_isotope_shift_term_units'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                code
+    loop_
+    _item_examples.case      'kcal/mol/ppb**2'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+    'kcal/mol/ppb**2'  'kilocalories per mole per part per billion squared'
+    'kJ/mol/ppb**2'    'kilojoules per mole per part per billion squared'
+    'other'            'author added units' 
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.exptl_D_isotope_shift_term_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
+save__pdbx_nmr_force_constants.covalent_geom_bond_term
+   _item_description.description
+;  The final force constant for the covalent geometry bond length 
+   constraints term employed in the target function used for simulated 
+   annealing. 
+;
+    _item.name  '_pdbx_nmr_force_constants.covalent_geom_bond_term'    
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                float
+    loop_
+    _item_examples.case             '1000'
+
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.covalent_geom_bond_term'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
+save__pdbx_nmr_force_constants.covalent_geom_bond_term_units
+    _item_description.description
+;   The units for the force constant for the covalent geometry bond 
+    length constraints term.
+;
+    _item.name     '_pdbx_nmr_force_constants.covalent_geom_bond_term_units'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                code
+    loop_
+    _item_examples.case       'kcal/mol/A**2'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+    'kcal/mol/A**2'  'kilocalories per mole per square angstrom'
+    'kJ/mol/nm**2'   'kilojoules per mole per square nanometer'
+    'other'                'author added units'
+
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.covalent_geom_bond_term_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
+save__pdbx_nmr_force_constants.covalent_geom_angles_term
+   _item_description.description
+;  The final force constant for covalent geometry angle constraints 
+   term employed in the target function used for simulated annealing. 
+;
+    _item.name  '_pdbx_nmr_force_constants.covalent_geom_angles_term'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                float
+    loop_
+    _item_examples.case            '500'
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.covalent_geom_angles_term'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
+save__pdbx_nmr_force_constants.covalent_geom_angles_term_units
+    _item_description.description
+;   The units for the force constant for the covalent geometry angle 
+    constraints term.
+;
+    _item.name     '_pdbx_nmr_force_constants.covalent_geom_angles_term_units'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                code
+    loop_
+    _item_examples.case            'kcal/mol/rad**2'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+    'kcal/mol/rad**2'  'kilocalories per mole per radian squared'
+    'kJ/mol/rad**2'   'kilojoules per mole per radian squared'
+    'other'                'author added units'
+
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.covalent_geom_angles_term_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
+save__pdbx_nmr_force_constants.covalent_geom_impropers_term
+   _item_description.description
+;  The final force constant for covalent geometry impropers 
+   contstraints term employed in the target function used for simulated 
+   annealing. 
+;
+    _item.name  '_pdbx_nmr_force_constants.covalent_geom_impropers_term'    
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                float
+    loop_
+    _item_examples.case             '500'
+
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.covalent_geom_impropers_term'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
+save__pdbx_nmr_force_constants.covalent_geom_impropers_term_units
+    _item_description.description
+;   The units for the force constant for the covalent geometry 
+    impropers constraints term.
+;
+    _item.name   '_pdbx_nmr_force_constants.covalent_geom_impropers_term_units'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                code
+    loop_
+    _item_examples.case           'kcal/mol/rad**2'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+    'kcal/mol/rad**2'  'kilocalories per mole per radian squared'
+    'kJ/mol/rad**2'    'kilojoules per mole per radian squared'
+    'other'            'author added units'
+
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.covalent_geom_impropers_term_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
+
+save__pdbx_nmr_force_constants.non-bonded_inter_van_der_Waals_term_type
+   _item_description.description
+;  The type of van der Waals term employed in the target function 
+   used for simulated annealing. 
+;
+    _item.name '_pdbx_nmr_force_constants.non-bonded_inter_van_der_Waals_term_type'    
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                text
+    loop_
+    _item_examples.case            'quartic'
+    loop_ 
+    _item_enumeration.value       'quartic'  'other'
+
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.non-bonded_inter_van_der_Waals_term_type'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+    save_
+
+save__pdbx_nmr_force_constants.non-bonded_inter_van_der_Waals_term
+   _item_description.description
+;  The force constant used for the non-bonded interaction van der Waals 
+   term employed in the target function used for simulated annealing. 
+;
+    _item.name  '_pdbx_nmr_force_constants.non-bonded_inter_van_der_Waals_term'    
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                float
+    loop_
+    _item_examples.case            '4'
+
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.non-bonded_inter_van_der_Waals_term'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+    save_
+
+
+
+save__pdbx_nmr_force_constants.non-bonded_inter_van_der_Waals_term_units
+    _item_description.description
+;   The units for the force constant for the van der Waals term.
+;
+    _item.name '_pdbx_nmr_force_constants.non-bonded_inter_van_der_Waals_term_units'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                code
+    loop_
+    _item_examples.case           'kcal/mol/ A**4'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+     'kcal/mol/A**4'  'kilocalories per mole per Angstrom to the 4th power'
+     'kJ/mol/nm**4'   'kilojoules per mole per nanometer to the 4th power'
+     'other'           'author added units'
+
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.non-bonded_inter_van_der_Waals_term_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
+save__pdbx_nmr_force_constants.non-bonded_inter_conf_db_potential_term
+   _item_description.description
+;  The force constant used for the non-bonded interaction conformational 
+   database potential term employed in the target function used for simulated 
+   annealing. 
+;
+    _item.name  '_pdbx_nmr_force_constants.non-bonded_inter_conf_db_potential_term'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                float
+    loop_
+    _item_examples.case             '1.0'
+
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.non-bonded_inter_conf_db_potential_term'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+    save_
+
+
+save__pdbx_nmr_force_constants.non-bonded_inter_radius_of_gyration_term
+   _item_description.description
+;  The force constant used for the non-bonded interaction radius of 
+   gyration term employed in the target function used for simulated annealing. 
+;
+    _item.name '_pdbx_nmr_force_constants.non-bonded_inter_radius_of_gyration_term'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                float
+    loop_
+    _item_examples.case             '100'
+
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.non-bonded_inter_radius_of_gyration_term'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+    save_
+
+save__pdbx_nmr_force_constants.non-bonded_inter_radius_of_gyration_term_units 
+    _item_description.description
+;   The units for the force constant for the radius of gyration term.
+;
+    _item.name '_pdbx_nmr_force_constants.non-bonded_inter_radius_of_gyration_term_units'
+    _item.category_id              pdbx_nmr_force_constants
+    _item.mandatory_code           no
+    _item_type.code                code
+    loop_
+    _item_examples.case           'kcal/mol/ A**2'
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+        'kcal/mol/ A**2'  'kilocalories per mole per square Angstrom'
+        'kJ/mol/ nm**4'   'kilojoules per mole per square nanometer'
+        'other'                'author added units'
+
+    _item_aliases.alias_name     '_rcsb_nmr_force_constants.non-bonded_inter_radius_of_gyration_term_units'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
+##
+### EOF  mmcif_pdbx-def-2.dic

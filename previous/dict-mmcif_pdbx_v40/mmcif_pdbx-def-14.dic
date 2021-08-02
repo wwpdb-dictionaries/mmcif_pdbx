@@ -1,0 +1,5143 @@
+##
+## File: mmcif_pdbx-def-14.dic
+##
+
+ 
+#################################
+## PDBX_VALIDATE_CLOSE_CONTACT ##
+#################################
+
+save_pdbx_validate_close_contact
+    _category.description
+;   Data items in the PDBX_VALIDATE_CLOSE_CONTACT category list the
+    atoms within the entry that are in close contact with regard
+    the distances expected from either covalent bonding or closest
+    approach by van der Waals contacts. Contacts within
+    the asymmetric unit are considered.
+
+    For those contacts not involving hydrogen a limit of
+    2.2 Angstroms is used. For contacts involving a hydrogen atom 
+    a cutoff of 1.6 Angstroms is used.
+;
+    _category.id                  pdbx_validate_close_contact
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_validate_close_contact.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'validate_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_validate_close_contact.id
+_pdbx_validate_close_contact.PDB_model_num
+_pdbx_validate_close_contact.auth_atom_id_1
+_pdbx_validate_close_contact.auth_asym_id_1
+_pdbx_validate_close_contact.auth_comp_id_1
+_pdbx_validate_close_contact.auth_seq_id_1
+_pdbx_validate_close_contact.PDB_ins_code_1
+_pdbx_validate_close_contact.label_alt_id_1
+_pdbx_validate_close_contact.auth_atom_id_2
+_pdbx_validate_close_contact.auth_asym_id_2
+_pdbx_validate_close_contact.auth_comp_id_2
+_pdbx_validate_close_contact.auth_seq_id_2
+_pdbx_validate_close_contact.PDB_ins_code_2
+_pdbx_validate_close_contact.label_alt_id_2
+_pdbx_validate_close_contact.dist
+   1     1     .  B  VAL     36  .  .       .  B  ARG    108  .  .         2.16
+   2     1     .  B  ARG    108  .  .       .  B  VAL     36  .  .         2.16
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_validate_close_contact.id
+    _item_description.description
+;   The value of _pdbx_validate_close_contact.id must uniquely identify 
+    each item in the PDBX_VALIDATE_CLOSE_CONTACT list.
+    This is an integer serial number.
+;
+    _item.name                 '_pdbx_validate_close_contact.id'
+    _item.category_id          pdbx_validate_close_contact
+    _item.mandatory_code       yes
+    _item_type.code            int
+     save_
+
+save__pdbx_validate_close_contact.PDB_model_num
+    _item_description.description
+;   The model number for the given contact
+;
+    _item.name                 '_pdbx_validate_close_contact.PDB_model_num'
+    _item.category_id          pdbx_validate_close_contact
+    _item.mandatory_code       yes
+    _item_type.code            int
+    _item_linked.child_name    '_pdbx_validate_close_contact.PDB_model_num'
+    _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+     save_
+
+
+save__pdbx_validate_close_contact.auth_asym_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the close contact.
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_close_contact.auth_asym_id_1'
+    _item.category_id           pdbx_validate_close_contact
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_close_contact.auth_asym_id_1' 
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_validate_close_contact.auth_atom_id_1
+    _item_description.description
+;    Part of the identifier of the first of the two atom sites that
+     define the close contact.
+     This data item is a pointer to _atom_site.auth_atom_id in the
+     ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_close_contact.auth_atom_id_1'
+    _item.category_id           pdbx_validate_close_contact
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name     '_pdbx_validate_close_contact.auth_atom_id_1' 
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_close_contact.auth_comp_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the close contact.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_close_contact.auth_comp_id_1'
+    _item.category_id           pdbx_validate_close_contact
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_close_contact.auth_comp_id_1'  
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_close_contact.auth_seq_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the close contact.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_close_contact.auth_seq_id_1'
+    _item.category_id           pdbx_validate_close_contact
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_close_contact.auth_seq_id_1'   
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_close_contact.auth_atom_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the close contact.
+
+    This data item is a pointer to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_close_contact.auth_atom_id_2'
+    _item.category_id           pdbx_validate_close_contact
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name     '_pdbx_validate_close_contact.auth_atom_id_2' 
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_close_contact.auth_asym_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the close contact.
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_close_contact.auth_asym_id_2'
+    _item.category_id           pdbx_validate_close_contact
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_close_contact.auth_asym_id_2'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_validate_close_contact.auth_comp_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the close contact.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_close_contact.auth_comp_id_2'
+    _item.category_id           pdbx_validate_close_contact
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_close_contact.auth_comp_id_2'  
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_close_contact.auth_seq_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the close contact.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_close_contact.auth_seq_id_2'
+    _item.category_id           pdbx_validate_close_contact
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_close_contact.auth_seq_id_2'   
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+
+save__pdbx_validate_close_contact.PDB_ins_code_1
+    _item_description.description
+;   Optional identifier of the first of the two atom sites that
+    define the close contact.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_close_contact.PDB_ins_code_1'
+    _item.category_id           pdbx_validate_close_contact
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_close_contact.PDB_ins_code_1'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_close_contact.PDB_ins_code_2
+    _item_description.description
+;   Optional identifier of the second of the two atom sites that
+    define the close contact.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_close_contact.PDB_ins_code_2'
+    _item.category_id           pdbx_validate_close_contact
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_close_contact.PDB_ins_code_2' 
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+
+    save_
+
+save__pdbx_validate_close_contact.label_alt_id_1
+    _item_description.description
+;   An optional identifier of the first of the two atoms that
+    define the close contact.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_close_contact.label_alt_id_1'
+    _item.mandatory_code          no
+    _item.category_id           pdbx_validate_close_contact
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_close_contact.label_alt_id_1'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_validate_close_contact.label_alt_id_2
+    _item_description.description
+;   An optional identifier of the second of the two atoms that
+    define the close contact.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_close_contact.label_alt_id_2'
+    _item.mandatory_code          no
+    _item.category_id           pdbx_validate_close_contact
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_close_contact.label_alt_id_2'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_validate_close_contact.symm_as_xyz_1
+    _item_description.description
+;  The symmetry of the first of the two atoms define the close contact.
+   The Symmetry equivalent position is given in the 'xyz' representation. 
+;
+    _item.name                    '_pdbx_validate_close_contact.symm_as_xyz_1'
+    _item.category_id             pdbx_validate_close_contact
+    _item.mandatory_code          no
+    _item_default.value           'x,y,z'
+    _item_type.code               line
+     save_
+
+save__pdbx_validate_close_contact.symm_as_xyz_2
+    _item_description.description
+;  The symmetry of the second of the two atoms define the close contact.
+   The Symmetry equivalent position is given in the 'xyz' representation. 
+;
+    _item.name                    '_pdbx_validate_close_contact.symm_as_xyz_2'
+    _item.category_id             pdbx_validate_close_contact
+    _item.mandatory_code          no
+    _item_default.value           'x,y,z'
+    _item_type.code               line
+     save_
+
+save__pdbx_validate_close_contact.dist
+    _item_description.description
+;   The value of the close contact for the two atoms defined.
+;
+    _item.name                    '_pdbx_validate_close_contact.dist'
+    _item.category_id             pdbx_validate_close_contact
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+#-----------------------------------------------------------
+ 
+################################
+## PDBX_VALIDATE_SYMM_CONTACT ##
+################################
+
+save_pdbx_validate_symm_contact
+    _category.description
+;   Data items in the PDBX_VALIDATE_SYMM_CONTACT category list the
+    atoms within the entry that are in close contact with regard
+    the distances expected from either covalent bonding or closest
+    approach by van der Waals contacts. Contacts with
+    for symmetry related contacts are considered.
+    For those contacts not involving hydrogen a limit of
+    2.2 Angstroms is used. For contacts involving a hydrogen atom 
+    a cutoff of 1.6Angstrom is used.
+;
+    _category.id                  pdbx_validate_symm_contact
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_validate_symm_contact.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'validate_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_validate_symm_contact.id
+_pdbx_validate_symm_contact.PDB_model_num
+_pdbx_validate_symm_contact.auth_atom_id_1
+_pdbx_validate_symm_contact.auth_asym_id_1
+_pdbx_validate_symm_contact.auth_comp_id_1
+_pdbx_validate_symm_contact.auth_seq_id_1
+_pdbx_validate_symm_contact.PDB_ins_code_1
+_pdbx_validate_symm_contact.label_alt_id_1
+_pdbx_validate_symm_contact.site_symmetry_1
+_pdbx_validate_symm_contact.auth_atom_id_2
+_pdbx_validate_symm_contact.auth_asym_id_2
+_pdbx_validate_symm_contact.auth_comp_id_2
+_pdbx_validate_symm_contact.auth_seq_id_2
+_pdbx_validate_symm_contact.PDB_ins_code_2
+_pdbx_validate_symm_contact.label_alt_id_2
+_pdbx_validate_symm_contact.site_symmetry_2
+_pdbx_validate_symm_contact.dist
+  1     1   O    .  HOH     70  .  .    1555   O    .  HOH     70  .  .    7555       2.05
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_validate_symm_contact.id
+    _item_description.description
+;   The value of _pdbx_validate_symm_contact.id must uniquely identify 
+    each item in the PDBX_VALIDATE_SYMM_CONTACT list.
+    This is an integer serial number.
+;
+    _item.name                 '_pdbx_validate_symm_contact.id'
+    _item.category_id          pdbx_validate_symm_contact
+    _item.mandatory_code       yes
+    _item_type.code            int
+     save_
+
+save__pdbx_validate_symm_contact.PDB_model_num
+    _item_description.description
+;   The model number for the given angle
+;
+    _item.name                 '_pdbx_validate_symm_contact.PDB_model_num'
+    _item.category_id          pdbx_validate_symm_contact
+    _item.mandatory_code       yes
+    _item_type.code            int
+    _item_linked.child_name    '_pdbx_validate_symm_contact.PDB_model_num'
+    _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+     save_
+
+
+save__pdbx_validate_symm_contact.auth_asym_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the close contact.
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_symm_contact.auth_asym_id_1'
+    _item.category_id           pdbx_validate_symm_contact
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_symm_contact.auth_asym_id_1' 
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_validate_symm_contact.auth_atom_id_1
+    _item_description.description
+;    Part of the identifier of the first of the two atom sites that
+     define the close contact.
+
+     This data item is a pointer to _atom_site.auth_atom_id in the
+     ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_symm_contact.auth_atom_id_1'
+    _item.category_id           pdbx_validate_symm_contact
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name     '_pdbx_validate_symm_contact.auth_atom_id_1' 
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_symm_contact.auth_comp_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the close contact.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_symm_contact.auth_comp_id_1'
+    _item.category_id           pdbx_validate_symm_contact
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_symm_contact.auth_comp_id_1'  
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_symm_contact.auth_seq_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the close contact.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_symm_contact.auth_seq_id_1'
+    _item.category_id           pdbx_validate_symm_contact
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_symm_contact.auth_seq_id_1'   
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_symm_contact.auth_atom_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the close contact.
+
+    This data item is a pointer to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_symm_contact.auth_atom_id_2'
+    _item.category_id           pdbx_validate_symm_contact
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name     '_pdbx_validate_symm_contact.auth_atom_id_2' 
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_symm_contact.auth_asym_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the close contact.
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_symm_contact.auth_asym_id_2'
+    _item.category_id           pdbx_validate_symm_contact
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_symm_contact.auth_asym_id_2'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_validate_symm_contact.auth_comp_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the close contact.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_symm_contact.auth_comp_id_2'
+    _item.category_id           pdbx_validate_symm_contact
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_symm_contact.auth_comp_id_2'  
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_symm_contact.auth_seq_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the close contact.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_symm_contact.auth_seq_id_2'
+    _item.category_id           pdbx_validate_symm_contact
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_symm_contact.auth_seq_id_2'   
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+
+save__pdbx_validate_symm_contact.PDB_ins_code_1
+    _item_description.description
+;   Optional identifier of the first of the two atom sites that
+    define the close contact.
+;
+    _item.name                  '_pdbx_validate_symm_contact.PDB_ins_code_1'
+    _item.category_id           pdbx_validate_symm_contact
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_symm_contact.PDB_ins_code_1'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_symm_contact.PDB_ins_code_2
+    _item_description.description
+;   Optional identifier of the second of the two atom sites that
+    define the close contact.
+;
+    _item.name                  '_pdbx_validate_symm_contact.PDB_ins_code_2'
+    _item.category_id           pdbx_validate_symm_contact
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_symm_contact.PDB_ins_code_2' 
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+
+    save_
+
+save__pdbx_validate_symm_contact.label_alt_id_1
+    _item_description.description
+;   An optional identifier of the first of the two atoms that
+    define the close contact.
+
+    This data item is a pointer to _atom_site.label_alt.id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_symm_contact.label_alt_id_1'
+    _item.mandatory_code          no
+    _item.category_id           pdbx_validate_symm_contact
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_symm_contact.label_alt_id_1'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_validate_symm_contact.label_alt_id_2
+    _item_description.description
+;   An optional identifier of the second of the two atoms that
+    define the close contact.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_symm_contact.label_alt_id_2'
+    _item.mandatory_code          no
+    _item.category_id           pdbx_validate_symm_contact
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_symm_contact.label_alt_id_2'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_validate_symm_contact.site_symmetry_1
+    _item_description.description
+;  The symmetry of the first of the two atoms define the close contact. 
+   Symmetry defined in ORTEP style of 555 equal to unit cell with translations
+    +-1 from 555 as 000
+;
+    _item.name                  '_pdbx_validate_symm_contact.site_symmetry_1'
+    _item.category_id             pdbx_validate_symm_contact
+    _item.mandatory_code          yes
+    _item_default.value           '1555'
+    _item_type.code               line
+     save_
+
+save__pdbx_validate_symm_contact.site_symmetry_2
+    _item_description.description
+;  The symmetry of the second of the two atoms define the close contact. 
+   Symmetry defined in ORTEP style of 555 equal to unit cell with translations
+    +-1 from 555 as 000
+;
+    _item.name                   '_pdbx_validate_symm_contact.site_symmetry_2'
+    _item.category_id             pdbx_validate_symm_contact
+    _item.mandatory_code          yes
+    _item_default.value           '1555'
+    _item_type.code               line
+     save_
+
+save__pdbx_validate_symm_contact.dist
+    _item_description.description
+;   The value of the close contact for the two atoms defined.
+;
+    _item.name                    '_pdbx_validate_symm_contact.dist'
+    _item.category_id             pdbx_validate_symm_contact
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+#-----------------------------------------------------------
+
+
+##############################
+## PDBX_VALIDATE_RMSD_BOND  ##
+##############################
+
+save_pdbx_validate_rmsd_bond
+    _category.description
+;   Data items in the PDBX_VALIDATE_RMSD_BOND category list the
+    covalent bonds that have values which deviate from expected 
+    values by more than 6*rmsd.
+;
+    _category.id                  pdbx_validate_rmsd_bond
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_validate_rmsd_bond.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'validate_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_validate_rmsd_bond.id
+_pdbx_validate_rmsd_bond.PDB_model_num
+_pdbx_validate_rmsd_bond.auth_asym_id_1
+_pdbx_validate_rmsd_bond.auth_atom_id_1
+_pdbx_validate_rmsd_bond.auth_comp_id_1
+_pdbx_validate_rmsd_bond.auth_seq_id_1
+_pdbx_validate_rmsd_bond.PDB_ins_code_1
+_pdbx_validate_rmsd_bond.label_alt_id_1
+_pdbx_validate_rmsd_bond.auth_asym_id_2
+_pdbx_validate_rmsd_bond.auth_atom_id_2
+_pdbx_validate_rmsd_bond.auth_comp_id_2
+_pdbx_validate_rmsd_bond.auth_seq_id_2
+_pdbx_validate_rmsd_bond.PDB_ins_code_2
+_pdbx_validate_rmsd_bond.label_alt_id_2
+_pdbx_validate_rmsd_bond.bond_deviation
+_pdbx_validate_rmsd_bond.bond_value
+_pdbx_validate_rmsd_bond.linker_flag
+ 1   0  A   CD   LYS    152  .  .    A   CE   LYS    152  .  .      -0.372     1.136  N
+ 2   0  A   CG   GLU    166  .  .    A   CD   GLU    166  .  .      -0.622     0.893  N
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_validate_rmsd_bond.id
+    _item_description.description
+;   The value of _pdbx_validate_rmsd_bond.id must uniquely identify 
+    each item in the PDBX_VALIDATE_RMSD_BOND list.
+    This is an integer serial number.
+;
+    _item.name                 '_pdbx_validate_rmsd_bond.id'
+    _item.category_id          pdbx_validate_rmsd_bond
+    _item.mandatory_code       yes
+    _item_type.code            int
+     save_
+
+save__pdbx_validate_rmsd_bond.PDB_model_num
+    _item_description.description
+;   The model number for the given bond
+;
+    _item.name                 '_pdbx_validate_rmsd_bond.PDB_model_num'
+    _item.category_id          pdbx_validate_rmsd_bond
+    _item.mandatory_code       yes
+    _item_type.code            int
+    _item_linked.child_name    '_pdbx_validate_rmsd_bond.PDB_model_num'
+    _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+     save_
+
+
+save__pdbx_validate_rmsd_bond.auth_asym_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the covalent bond.
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.auth_asym_id_1'
+    _item.category_id           pdbx_validate_rmsd_bond
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_rmsd_bond.auth_asym_id_1' 
+    _item_linked.parent_name  '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_validate_rmsd_bond.auth_atom_id_1
+    _item_description.description
+;    Part of the identifier of the first of the two atom sites that
+     define the covalent bond.
+
+     This data item is a pointer to _atom_site.auth_atom_id in the
+     ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.auth_atom_id_1'
+    _item.category_id           pdbx_validate_rmsd_bond
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name  '_pdbx_validate_rmsd_bond.auth_atom_id_1'
+    _item_linked.parent_name     '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_rmsd_bond.auth_comp_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the covalent bond.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.auth_comp_id_1'
+    _item.category_id           pdbx_validate_rmsd_bond
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_rmsd_bond.auth_comp_id_1'      
+    _item_linked.parent_name     '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_rmsd_bond.auth_seq_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the covalent bond.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.auth_seq_id_1'
+    _item.category_id           pdbx_validate_rmsd_bond
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_rmsd_bond.auth_seq_id_1'
+    _item_linked.parent_name  '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_rmsd_bond.auth_atom_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the covalent bond.
+
+    This data item is a pointer to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.auth_atom_id_2'
+    _item.category_id           pdbx_validate_rmsd_bond
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name  '_pdbx_validate_rmsd_bond.auth_atom_id_2'
+    _item_linked.parent_name     '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_rmsd_bond.auth_asym_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the covalent bond.
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.auth_asym_id_2'
+    _item.category_id           pdbx_validate_rmsd_bond
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_rmsd_bond.auth_asym_id_2' 
+    _item_linked.parent_name  '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_validate_rmsd_bond.auth_comp_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the covalent bond.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.auth_comp_id_2'
+    _item.category_id           pdbx_validate_rmsd_bond
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_rmsd_bond.auth_comp_id_2'
+    _item_linked.parent_name     '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_rmsd_bond.auth_seq_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the covalent bond.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.auth_seq_id_2'
+    _item.category_id           pdbx_validate_rmsd_bond
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_rmsd_bond.auth_seq_id_2'
+    _item_linked.parent_name  '_atom_site.auth_seq_id'
+     save_
+
+
+save__pdbx_validate_rmsd_bond.PDB_ins_code_1
+    _item_description.description
+;   Optional identifier of the first of the two atom sites that
+    define the covalent bond.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.PDB_ins_code_1'
+    _item.category_id           pdbx_validate_rmsd_bond
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_rmsd_bond.PDB_ins_code_1'
+    _item_linked.parent_name  '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_rmsd_bond.PDB_ins_code_2
+    _item_description.description
+;   Optional identifier of the second of the two atom sites that
+    define the covalent bond.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                 '_pdbx_validate_rmsd_bond.PDB_ins_code_2'
+    _item.category_id           pdbx_validate_rmsd_bond
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name    '_pdbx_validate_rmsd_bond.PDB_ins_code_2'  
+    _item_linked.parent_name   '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_rmsd_bond.label_alt_id_1
+    _item_description.description
+;   An optional identifier of the first of the two atoms that
+    define the covalent bond.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.label_alt_id_1'
+    _item.mandatory_code          no
+    _item.category_id           pdbx_validate_rmsd_bond
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_rmsd_bond.label_alt_id_1'
+    _item_linked.parent_name  '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_validate_rmsd_bond.label_alt_id_2
+    _item_description.description
+;   An optional identifier of the second of the two atoms that
+    define the covalent bond.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.label_alt_id_2'
+    _item.mandatory_code          no
+    _item.category_id           pdbx_validate_rmsd_bond
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_rmsd_bond.label_alt_id_2'
+    _item_linked.parent_name  '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_validate_rmsd_bond.bond_deviation
+    _item_description.description
+;   The value of the deviation from ideal for the defined covalent 
+    bond for the two atoms defined.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.bond_deviation'
+    _item.category_id             pdbx_validate_rmsd_bond
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_validate_rmsd_bond.bond_value
+    _item_description.description
+;   The value of the bond length
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.bond_value'
+    _item.category_id             pdbx_validate_rmsd_bond
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+     save_
+
+save__pdbx_validate_rmsd_bond.bond_target_value
+    _item_description.description
+;   The target value of the bond length
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.bond_target_value'
+    _item.category_id             pdbx_validate_rmsd_bond
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+     save_
+
+save__pdbx_validate_rmsd_bond.bond_standard_deviation
+    _item_description.description
+;   The uncertaintiy in target value of the bond length expressed as a standard deviation.
+;
+    _item.name                  '_pdbx_validate_rmsd_bond.bond_standard_deviation'
+    _item.category_id             pdbx_validate_rmsd_bond
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+     save_
+
+
+
+save__pdbx_validate_rmsd_bond.linker_flag
+    _item_description.description
+;   A flag to indicate if the bond is between two residues
+;
+    _item.name                    '_pdbx_validate_rmsd_bond.linker_flag'
+    _item.category_id             pdbx_validate_rmsd_bond
+    _item.mandatory_code          no
+    _item_type.code               uline
+    _item_default.value           N
+     save_
+
+#------------------------------------------------------------------------
+
+###############################
+## PDBX_VALIDATE_RMSD_ANGLE  ##
+###############################
+
+save_pdbx_validate_rmsd_angle
+    _category.description
+;   Data items in the PDBX_VALIDATE_RMSD_ANGLE category list the
+    the covalent bond angles found in an entry that have
+    values which deviate from expected values by more
+    than 6*rmsd for the particular entry from the expected standard
+    value
+;
+    _category.id                  pdbx_validate_rmsd_angle
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_validate_rmsd_angle.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'validate_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_validate_rmsd_angle.id
+_pdbx_validate_rmsd_angle.PDB_model_num
+_pdbx_validate_rmsd_angle.auth_asym_id_1
+_pdbx_validate_rmsd_angle.auth_atom_id_1
+_pdbx_validate_rmsd_angle.auth_comp_id_1
+_pdbx_validate_rmsd_angle.auth_seq_id_1
+_pdbx_validate_rmsd_angle.PDB_ins_code_1
+_pdbx_validate_rmsd_angle.label_alt_id_1
+_pdbx_validate_rmsd_angle.auth_asym_id_2
+_pdbx_validate_rmsd_angle.auth_atom_id_2
+_pdbx_validate_rmsd_angle.auth_comp_id_2
+_pdbx_validate_rmsd_angle.auth_seq_id_2
+_pdbx_validate_rmsd_angle.PDB_ins_code_2
+_pdbx_validate_rmsd_angle.label_alt_id_2
+_pdbx_validate_rmsd_angle.auth_asym_id_3
+_pdbx_validate_rmsd_angle.auth_atom_id_3
+_pdbx_validate_rmsd_angle.auth_comp_id_3
+_pdbx_validate_rmsd_angle.auth_seq_id_3
+_pdbx_validate_rmsd_angle.PDB_ins_code_3
+_pdbx_validate_rmsd_angle.label_alt_id_3
+_pdbx_validate_rmsd_angle.angle_deviation
+_pdbx_validate_rmsd_angle.angle_value
+_pdbx_validate_rmsd_angle.linker_flag
+ 1  0 A  NE  ARG   35 . .  A  CZ  ARG   35 . .  A  NH2 ARG   35 . .      -3.14   117.16  N
+ 2  0 A  CB  GLU  166 . .  A  CG  GLU  166 . .  A  CD  GLU  166 . .      34.68   148.88  N
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_validate_rmsd_angle.id
+    _item_description.description
+;   The value of _pdbx_validate_rmsd_angle.id must uniquely identify 
+    each item in the PDBX_VALIDATE_RMSD_ANGLE list.
+    This is an integer serial number.
+;
+    _item.name                 '_pdbx_validate_rmsd_angle.id'
+    _item.category_id          pdbx_validate_rmsd_angle
+    _item.mandatory_code       yes
+    _item_type.code            int
+     save_
+
+save__pdbx_validate_rmsd_angle.PDB_model_num
+    _item_description.description
+;   The model number for the given angle
+;
+    _item.name                 '_pdbx_validate_rmsd_angle.PDB_model_num'
+    _item.category_id          pdbx_validate_rmsd_angle
+    _item.mandatory_code       yes
+    _item_type.code            int
+    _item_linked.child_name    '_pdbx_validate_rmsd_angle.PDB_model_num'
+    _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+     save_
+
+
+save__pdbx_validate_rmsd_angle.auth_asym_id_1
+    _item_description.description
+;   Part of the identifier of the first of the three atom sites that
+    define the angle.
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.auth_asym_id_1'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_rmsd_angle.auth_asym_id_1'    
+    _item_linked.parent_name '_atom_site.auth_asym_id' 
+     save_
+
+save__pdbx_validate_rmsd_angle.auth_atom_id_1
+    _item_description.description
+;    Part of the identifier of the first of the three atom sites that
+     define the angle.
+
+     This data item is a pointer to _atom_site.auth_atom_id in the
+     ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.auth_atom_id_1'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name     '_pdbx_validate_rmsd_angle.auth_atom_id_1'    
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_rmsd_angle.auth_comp_id_1
+    _item_description.description
+;   Part of the identifier of the first of the three atom sites that
+    define the angle.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.auth_comp_id_1'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_rmsd_angle.auth_comp_id_1' 
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_rmsd_angle.auth_seq_id_1
+    _item_description.description
+;   Part of the identifier of the first of the three atom sites that
+    define the angle.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.auth_seq_id_1'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_rmsd_angle.auth_seq_id_1'     
+    _item_linked.parent_name '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_rmsd_angle.auth_atom_id_2
+    _item_description.description
+;   Part of the identifier of the second of the three atom sites
+    that define the angle.
+
+    This data item is a pointer to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.auth_atom_id_2'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name     '_pdbx_validate_rmsd_angle.auth_atom_id_2'    
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_rmsd_angle.auth_asym_id_2
+    _item_description.description
+;   identifier of the second of the three atom sites
+    that define the angle.
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.auth_asym_id_2'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_rmsd_angle.auth_asym_id_2'
+    _item_linked.parent_name '_atom_site.auth_asym_id' 
+     save_
+
+save__pdbx_validate_rmsd_angle.auth_comp_id_2
+    _item_description.description
+;   Part of the identifier of the second of the three atom sites
+    that define the angle.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.auth_comp_id_2'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_rmsd_angle.auth_comp_id_2'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_rmsd_angle.auth_seq_id_2
+    _item_description.description
+;   Part of the identifier of the second of the three atom sites
+    that define the angle.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.auth_seq_id_2'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_rmsd_angle.auth_seq_id_2'     
+    _item_linked.parent_name '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_rmsd_angle.auth_atom_id_3
+    _item_description.description
+;   Part of the identifier of the third of the three atom sites that
+    define the angle.
+
+    This data item is a pointer to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.auth_atom_id_3'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name     '_pdbx_validate_rmsd_angle.auth_atom_id_3'    
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_rmsd_angle.auth_asym_id_3
+    _item_description.description
+;   Part of the identifier of the third of the three atom sites that
+    define the angle.
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.auth_asym_id_3'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_rmsd_angle.auth_asym_id_3'
+    _item_linked.parent_name '_atom_site.auth_asym_id' 
+     save_
+
+save__pdbx_validate_rmsd_angle.auth_comp_id_3
+    _item_description.description
+;   Part of the identifier of the third of the three atom sites that
+    define the angle.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.auth_comp_id_3'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_rmsd_angle.auth_comp_id_3'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_rmsd_angle.auth_seq_id_3
+    _item_description.description
+;   Part of the identifier of the third of the three atom sites that
+    define the angle.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.auth_seq_id_3'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_rmsd_angle.auth_seq_id_3'     
+    _item_linked.parent_name '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_rmsd_angle.PDB_ins_code_1
+    _item_description.description
+;   Optional identifier of the first of the three atom sites that
+    define the angle.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.PDB_ins_code_1'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_rmsd_angle.PDB_ins_code_1'   
+    _item_linked.parent_name  '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_rmsd_angle.PDB_ins_code_2
+    _item_description.description
+;   Optional identifier of the second of the three atom sites that
+    define the angle.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.PDB_ins_code_2'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_rmsd_angle.PDB_ins_code_2'
+    _item_linked.parent_name  '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_rmsd_angle.PDB_ins_code_3
+    _item_description.description
+;   Optional identifier of the third of the three atom sites that
+    define the angle.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.PDB_ins_code_3'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_rmsd_angle.PDB_ins_code_3'
+    _item_linked.parent_name  '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_rmsd_angle.label_alt_id_1
+    _item_description.description
+;   An optional identifier of the first of the three atoms that
+    define the covalent angle.
+
+    This data item is a pointer to _atom_site.label_alt.id in the
+    ATOM_SITE category.
+;
+    _item.name                 '_pdbx_validate_rmsd_angle.label_alt_id_1'
+    _item.mandatory_code        no
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item_type.code 		code
+    _item_linked.child_name    '_pdbx_validate_rmsd_angle.label_alt_id_1'
+    _item_linked.parent_name   '_atom_site.label_alt_id'
+     save_
+
+
+save__pdbx_validate_rmsd_angle.label_alt_id_2
+    _item_description.description
+;   An optional identifier of the second of the three atoms that
+    define the covalent angle.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.label_alt_id_2'
+    _item.mandatory_code          no
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_rmsd_angle.label_alt_id_2'
+    _item_linked.parent_name  '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_validate_rmsd_angle.label_alt_id_3
+    _item_description.description
+;   An optional identifier of the third of the three atoms that
+    define the covalent angle.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.label_alt_id_3'
+    _item.mandatory_code          no
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_rmsd_angle.label_alt_id_3'
+    _item_linked.parent_name  '_atom_site.label_alt_id'
+     save_
+
+
+
+save__pdbx_validate_rmsd_angle.angle_deviation
+    _item_description.description
+;   Value of the deviation (in degrees)  from 6*REBI for the angle bounded 
+    by the three sites from the expected dictionary value.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.angle_deviation'
+    _item.category_id           pdbx_validate_rmsd_angle
+    _item.mandatory_code        yes
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+
+save__pdbx_validate_rmsd_angle.angle_value
+    _item_description.description
+;   The value of the bond angle
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.angle_value'
+    _item.category_id             pdbx_validate_rmsd_angle
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+
+save__pdbx_validate_rmsd_angle.angle_target_value
+    _item_description.description
+;   The target value of the bond angle
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.angle_target_value'
+    _item.category_id             pdbx_validate_rmsd_angle
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+
+save__pdbx_validate_rmsd_angle.angle_standard_deviation
+    _item_description.description
+;   The uncertainty in the target value of the bond angle expressed as a standard deviation.
+;
+    _item.name                  '_pdbx_validate_rmsd_angle.angle_standard_deviation'
+    _item.category_id             pdbx_validate_rmsd_angle
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+     save_
+
+save__pdbx_validate_rmsd_angle.linker_flag
+    _item_description.description
+;   A flag to indicate if the angle is between two residues
+;
+    _item.name                    '_pdbx_validate_rmsd_angle.linker_flag'
+    _item.category_id             pdbx_validate_rmsd_angle
+    _item.mandatory_code          no
+    _item_type.code               uline
+    _item_default.value           N
+     save_
+
+#--------------------------------------------------------------------
+
+############################
+## PDBX_VALIDATE_TORSION  ##
+############################
+
+save_pdbx_validate_torsion
+    _category.description
+;   Data items in the PDBX_VALIDATE_TORSION category list the
+    residues with torsion angles outside the expected ramachandran regions
+;
+    _category.id                  pdbx_validate_torsion
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_validate_torsion.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'validate_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_validate_torsion.id
+_pdbx_validate_torsion.PDB_model_num
+_pdbx_validate_torsion.auth_comp_id
+_pdbx_validate_torsion.auth_asym_id
+_pdbx_validate_torsion.auth_seq_id
+_pdbx_validate_torsion.PDB_ins_code
+_pdbx_validate_torsion.phi
+_pdbx_validate_torsion.psi
+   1     1  SER  A  12 .     -64.75     2.02
+   2     1  THR  A  22 .    -116.30    61.44
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_validate_torsion.id
+    _item_description.description
+;   The value of _pdbx_validate_torsion.id must 
+    uniquely identify each item in the PDBX_VALIDATE_TORSION list.
+    This is an integer serial number.
+;
+    _item.name                 '_pdbx_validate_torsion.id'
+    _item.category_id          pdbx_validate_torsion
+    _item.mandatory_code       yes
+    _item_type.code            int
+     save_
+
+save__pdbx_validate_torsion.PDB_model_num
+    _item_description.description
+;   The model number for the given residue
+
+    This data item is a pointer to _atom_site.pdbx_PDB_model_num in the
+    ATOM_SITE category.
+;
+    _item.name                 '_pdbx_validate_torsion.PDB_model_num'
+    _item.category_id          pdbx_validate_torsion
+    _item.mandatory_code       yes
+    _item_type.code            int
+    _item_linked.child_name    '_pdbx_validate_torsion.PDB_model_num'
+    _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+     save_
+
+
+save__pdbx_validate_torsion.auth_asym_id
+    _item_description.description
+;   Part of the identifier of the residue
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_torsion.auth_asym_id'
+    _item.category_id           pdbx_validate_torsion
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_torsion.auth_asym_id' 
+    _item_linked.parent_name  '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_validate_torsion.auth_comp_id
+    _item_description.description
+;   Part of the identifier of the residue
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_torsion.auth_comp_id'
+    _item.category_id           pdbx_validate_torsion
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_torsion.auth_comp_id' 
+    _item_linked.parent_name  '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_torsion.auth_seq_id
+    _item_description.description
+;   Part of the identifier of the residue
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_torsion.auth_seq_id'
+    _item.category_id           pdbx_validate_torsion
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_torsion.auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_torsion.PDB_ins_code
+    _item_description.description
+;   Optional identifier of the residue
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_torsion.PDB_ins_code'
+    _item.category_id           pdbx_validate_torsion
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_torsion.PDB_ins_code' 
+    _item_linked.parent_name  '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_torsion.label_alt_id
+    _item_description.description
+;   Optional identifier of the residue
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_torsion.label_alt_id'
+    _item.category_id           pdbx_validate_torsion
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_torsion.label_alt_id' 
+    _item_linked.parent_name  '_atom_site.label_alt_id'
+    save_
+
+save__pdbx_validate_torsion.phi
+    _item_description.description
+;   The Phi value that for the residue that lies outside normal limits 
+    (in combination with the Psi value) with regards to the rammachandran plot
+;
+    _item.name                  '_pdbx_validate_torsion.phi'
+    _item.category_id             pdbx_validate_torsion
+    _item.mandatory_code          yes
+     loop_
+    _item_range.maximum           
+    _item_range.minimum           180.0    180.0
+                                  180.0   -180.0
+                                 -180.0   -180.0
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__pdbx_validate_torsion.psi
+    _item_description.description
+;   The Psi value that for the residue that lies outside normal limits 
+    (in combination with the Phi value) with regards to the rammachandran plot
+;
+    _item.name                  '_pdbx_validate_torsion.psi'
+    _item.category_id             pdbx_validate_torsion
+    _item.mandatory_code          yes
+     loop_
+    _item_range.maximum           
+    _item_range.minimum           180.0    180.0
+                                  180.0   -180.0
+                                 -180.0   -180.0
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+#------------------------------------------------------
+##################################
+## PDBX_VALIDATE_PEPTIDE_OMEGA  ##
+##################################
+
+save_pdbx_validate_peptide_omega
+    _category.description
+;   Data items in the PDBX_VALIDATE_PEPTIDE_OMEGA category list the
+    residues that contain peptide bonds deviate 
+    significantly from both cis and trans conformation.  
+    cis bonds, if any, are listed on cispep records.  
+    trans is defined as 180 +/- 30 and
+    cis is defined as 0 +/- 30 degrees.
+;
+    _category.id                  pdbx_validate_peptide_omega
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_validate_peptide_omega.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'validate_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_validate_peptide_omega.id
+_pdbx_validate_peptide_omega.PDB_model_num
+_pdbx_validate_peptide_omega.auth_comp_id_1
+_pdbx_validate_peptide_omega.auth_asym_id_1
+_pdbx_validate_peptide_omega.auth_seq_id_1
+_pdbx_validate_peptide_omega.PDB_ins_code_1
+_pdbx_validate_peptide_omega.label_alt_id_1
+_pdbx_validate_peptide_omega.auth_comp_id_2
+_pdbx_validate_peptide_omega.auth_asym_id_2
+_pdbx_validate_peptide_omega.auth_seq_id_2
+_pdbx_validate_peptide_omega.PDB_ins_code_2
+_pdbx_validate_peptide_omega.label_alt_id_2
+_pdbx_validate_peptide_omega.omega
+   1    0 A ASP  414 . .  A ARG  413 . .     147.84
+   2    0 B ASN  289 . .  B ALA  288 . .     -39.12
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_validate_peptide_omega.id
+    _item_description.description
+;   The value of _pdbx_validate_peptide_omega.id must 
+    uniquely identify each item in the PDBX_VALIDATE_PEPTIDE_OMEGA list.
+    This is an integer serial number.
+;
+    _item.name                 '_pdbx_validate_peptide_omega.id'
+    _item.category_id          pdbx_validate_peptide_omega
+    _item.mandatory_code       yes
+    _item_type.code            int
+     save_
+
+save__pdbx_validate_peptide_omega.PDB_model_num
+    _item_description.description
+;   The model number for the given residue
+
+    This data item is a pointer to _atom_site.pdbx_PDB_model_num in the
+    ATOM_SITE category.
+;
+    _item.name             '_pdbx_validate_peptide_omega.PDB_model_num'
+    _item.category_id          pdbx_validate_peptide_omega
+    _item.mandatory_code       yes
+    _item_type.code            int
+    _item_linked.child_name    '_pdbx_validate_peptide_omega.PDB_model_num'
+    _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+     save_
+
+
+save__pdbx_validate_peptide_omega.auth_asym_id_1
+    _item_description.description
+;   Part of the identifier of the first residue in the bond
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                '_pdbx_validate_peptide_omega.auth_asym_id_1'
+    _item.category_id           pdbx_validate_peptide_omega
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_peptide_omega.auth_asym_id_1' 
+    _item_linked.parent_name  '_atom_site.auth_asym_id'
+     save_
+
+
+save__pdbx_validate_peptide_omega.auth_asym_id_2
+    _item_description.description
+;   Part of the identifier of the second residue in the bond
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                '_pdbx_validate_peptide_omega.auth_asym_id_2'
+    _item.category_id           pdbx_validate_peptide_omega
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_peptide_omega.auth_asym_id_2' 
+    _item_linked.parent_name  '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_validate_peptide_omega.auth_comp_id_1
+    _item_description.description
+;   Part of the identifier of the first residue in the bond
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name          '_pdbx_validate_peptide_omega.auth_comp_id_1'
+    _item.category_id           pdbx_validate_peptide_omega
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_peptide_omega.auth_comp_id_1' 
+    _item_linked.parent_name  '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_peptide_omega.auth_comp_id_2
+    _item_description.description
+;   Part of the identifier of the second residue in the bond
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                '_pdbx_validate_peptide_omega.auth_comp_id_2'
+    _item.category_id           pdbx_validate_peptide_omega
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_peptide_omega.auth_comp_id_2' 
+    _item_linked.parent_name  '_atom_site.auth_comp_id'
+     save_
+
+
+save__pdbx_validate_peptide_omega.auth_seq_id_1
+    _item_description.description
+;   Part of the identifier of the first residue in the bond
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name          '_pdbx_validate_peptide_omega.auth_seq_id_1'
+    _item.category_id           pdbx_validate_peptide_omega
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_peptide_omega.auth_seq_id_1'
+    _item_linked.parent_name  '_atom_site.auth_seq_id'
+     save_
+
+
+save__pdbx_validate_peptide_omega.auth_seq_id_2
+    _item_description.description
+;   Part of the identifier of the second residue in the bond
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name          '_pdbx_validate_peptide_omega.auth_seq_id_2'
+    _item.category_id           pdbx_validate_peptide_omega
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_peptide_omega.auth_seq_id_2' 
+    _item_linked.parent_name  '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_peptide_omega.PDB_ins_code_1
+    _item_description.description
+;   Optional identifier of the first residue in the bond
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                '_pdbx_validate_peptide_omega.PDB_ins_code_1'
+    _item.category_id           pdbx_validate_peptide_omega
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_peptide_omega.PDB_ins_code_1'  
+    _item_linked.parent_name  '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+
+save__pdbx_validate_peptide_omega.PDB_ins_code_2
+    _item_description.description
+;   Optional identifier of the second residue in the bond
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name      '_pdbx_validate_peptide_omega.PDB_ins_code_2'
+    _item.category_id           pdbx_validate_peptide_omega
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name  '_pdbx_validate_peptide_omega.PDB_ins_code_2'  
+    _item_linked.parent_name  '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_peptide_omega.label_alt_id_1
+    _item_description.description
+;    Optional identifier of the first residue in the torsion angle
+
+     This data item is a pointer to _atom_site.label_alt_id in the
+     ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_peptide_omega.label_alt_id_1'
+    _item.mandatory_code          no
+    _item.category_id           pdbx_validate_peptide_omega
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_peptide_omega.label_alt_id_1'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_validate_peptide_omega.label_alt_id_2
+    _item_description.description
+;    Optional identifier of the second residue in the torsion angle
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_peptide_omega.label_alt_id_2'
+    _item.mandatory_code          no
+    _item.category_id            pdbx_validate_peptide_omega
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_peptide_omega.label_alt_id_2'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_validate_peptide_omega.omega
+    _item_description.description
+;   The value of the OMEGA angle for the peptide linkage between 
+    the two defined residues
+;
+    _item.name                  '_pdbx_validate_peptide_omega.omega'
+    _item.category_id             pdbx_validate_peptide_omega
+    _item.mandatory_code          yes
+     loop_
+    _item_range.maximum           
+    _item_range.minimum           180.0    180.0
+                                  180.0   -180.0
+                                 -180.0   -180.0
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+
+###########################
+## PDBX_VALIDATE_CHIRAL  ##
+###########################
+
+save_pdbx_validate_chiral
+    _category.description
+;   Data items in the PDBX_VALIDATE_CHIRAL category list the
+    residues that contain unexpected configuration of chiral
+    centers.
+     IMPROPER   HA  N   C   CB   chirality CA
+     IMPROPER   HB1 HB2 CA  CG   stereo CB
+     as this number approaches (+) or (-) 180.0, then the
+     error in predicting the true chirality of the center increases.
+     Improper dihedrals are a measure of the chirality/planarity of the
+     structure at a specific atom. Values around -35 or +35 are expected
+     for chiral atoms, and values around 0 for planar atoms.
+     HERE improper C---N----CA---CB done
+     expected answer is around -120 mean -122.52
+      D-amino acid is +120.0
+;
+
+    _category.id                  pdbx_validate_chiral
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_validate_chiral.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'validate_group'
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_validate_chiral.id
+_pdbx_validate_chiral.PDB_model_num
+_pdbx_validate_chiral.auth_comp_id
+_pdbx_validate_chiral.auth_asym_id
+_pdbx_validate_chiral.auth_seq_id
+_pdbx_validate_chiral.PDB_ins_code
+_pdbx_validate_chiral.details
+_pdbx_validate_chiral.omega
+  1    0 B ASP   405 .  ALPHA-CARBON   150.48
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_validate_chiral.id
+    _item_description.description
+;   The value of _pdbx_validate_chiral.id must 
+    uniquely identify each item in the PDBX_VALIDATE_CHIRAL list.
+    This is an integer serial number.
+;
+    _item.name                 '_pdbx_validate_chiral.id'
+    _item.category_id          pdbx_validate_chiral
+    _item.mandatory_code       yes
+    _item_type.code            int
+     save_
+
+save__pdbx_validate_chiral.PDB_model_num
+    _item_description.description
+;   The model number for the given residue
+
+    This data item is a pointer to _atom_site.pdbx_PDB_model_num in the
+    ATOM_SITE category.
+;
+    _item.name             '_pdbx_validate_chiral.PDB_model_num'
+    _item.category_id          pdbx_validate_chiral
+    _item.mandatory_code       yes
+    _item_type.code            int
+    _item_linked.child_name    '_pdbx_validate_chiral.PDB_model_num'
+    _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+     save_
+
+
+save__pdbx_validate_chiral.auth_asym_id
+    _item_description.description
+;   Part of the identifier of the residue
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                '_pdbx_validate_chiral.auth_asym_id'
+    _item.category_id           pdbx_validate_chiral
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name    '_pdbx_validate_chiral.auth_asym_id' 
+    _item_linked.parent_name   '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_validate_chiral.auth_atom_id
+    _item_description.description
+;   Part of the identifier of the residue
+
+    This data item is a pointer to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                '_pdbx_validate_chiral.auth_atom_id'
+    _item.category_id           pdbx_validate_chiral
+    _item.mandatory_code        no
+    _item_type.code 		atcode
+    _item_linked.child_name    '_pdbx_validate_chiral.auth_atom_id' 
+    _item_linked.parent_name   '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_chiral.label_alt_id
+    _item_description.description
+;   Part of the identifier of the residue
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                '_pdbx_validate_chiral.label_alt_id'
+    _item.category_id           pdbx_validate_chiral
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name    '_pdbx_validate_chiral.label_alt_id' 
+    _item_linked.parent_name   '_atom_site.label_alt_id'
+     save_
+
+
+save__pdbx_validate_chiral.auth_comp_id
+    _item_description.description
+;   Part of the identifier of the residue 
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                '_pdbx_validate_chiral.auth_comp_id'
+    _item.category_id           pdbx_validate_chiral
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name    '_pdbx_validate_chiral.auth_comp_id'    
+    _item_linked.parent_name   '_atom_site.auth_comp_id'
+
+     save_
+
+save__pdbx_validate_chiral.auth_seq_id
+    _item_description.description
+;   Part of the identifier of the residue
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                '_pdbx_validate_chiral.auth_seq_id'
+    _item.category_id           pdbx_validate_chiral
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_chiral.auth_seq_id' 
+    _item_linked.parent_name  '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_chiral.PDB_ins_code
+    _item_description.description
+;   Optional identifier of the residue
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                '_pdbx_validate_chiral.PDB_ins_code'
+    _item.category_id           pdbx_validate_chiral
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name   '_pdbx_validate_chiral.PDB_ins_code' 
+    _item_linked.parent_name  '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+
+save__pdbx_validate_chiral.omega
+    _item_description.description
+;   The value of the OMEGA angle for the peptide linkage between 
+    the two defined residues
+;
+    _item.name                  '_pdbx_validate_chiral.omega'
+    _item.category_id             pdbx_validate_chiral
+    _item.mandatory_code          yes
+     loop_
+    _item_range.maximum           
+    _item_range.minimum           180.0    180.0
+                                  180.0   -180.0
+                                 -180.0   -180.0
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+
+save__pdbx_validate_chiral.details
+    _item_description.description
+;   A description of the outlier angle  e.g. ALPHA-CARBON
+;
+    _item.name                  '_pdbx_validate_chiral.details'
+    _item.category_id             pdbx_validate_chiral
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+
+
+#-----------------------------------------------------------
+
+###########################
+## PDBX_VALIDATE_PLANES  ##
+###########################
+
+save_pdbx_validate_planes
+    _category.description
+;   Data items in the PDBX_VALIDATE_PLANES category list the
+    residues that contain unexpected deviations from planes
+    centers.
+;
+
+    _category.id                  pdbx_validate_planes
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_validate_planes.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'validate_group'
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_validate_planes.id
+_pdbx_validate_planes.PDB_model_num
+_pdbx_validate_planes.auth_comp_id
+_pdbx_validate_planes.auth_asym_id
+_pdbx_validate_planes.auth_seq_id
+_pdbx_validate_planes.PDB_ins_code
+_pdbx_validate_planes.rmsd
+_pdbx_validate_planes.type
+  1     1   DG  A      3  .    0.068  'SIDE CHAIN'
+  2     1   DT  A      4  .    0.198  'SIDE CHAIN'
+  3     1   DC  A      8  .    0.090  'SIDE CHAIN'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_validate_planes.id
+    _item_description.description
+;   The value of _pdbx_validate_planes.id must uniquely identify 
+    each item in the PDBX_VALIDATE_PLANES list.
+
+    This is an integer serial number.
+;
+    _item.name                 '_pdbx_validate_planes.id'
+    _item.category_id          pdbx_validate_planes
+    _item.mandatory_code       yes
+    _item_type.code            int
+     save_
+
+save__pdbx_validate_planes.PDB_model_num
+    _item_description.description
+;   The model number for the given angle
+
+    This data item is a pointer to _atom_site.pdbx_PDB_model_num in the
+    ATOM_SITE category.
+;
+    _item.name                 '_pdbx_validate_planes.PDB_model_num'
+    _item.category_id          pdbx_validate_planes
+    _item.mandatory_code       yes
+    _item_type.code            int
+    _item_linked.child_name    '_pdbx_validate_planes.PDB_model_num'
+    _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+     save_
+
+
+save__pdbx_validate_planes.auth_asym_id
+    _item_description.description
+;   Part of the identifier of the residue in which the plane is calculated
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_planes.auth_asym_id'
+    _item.category_id           pdbx_validate_planes
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_planes.auth_asym_id' 
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_validate_planes.auth_comp_id
+    _item_description.description
+;   Part of the identifier of the residue in which the plane is calculated
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_planes.auth_comp_id'
+    _item.category_id           pdbx_validate_planes
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_planes.auth_comp_id'  
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_planes.auth_seq_id
+    _item_description.description
+;   Part of the identifier of the residue in which the plane is calculated
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_planes.auth_seq_id'
+    _item.category_id           pdbx_validate_planes
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_planes.auth_seq_id'   
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_planes.PDB_ins_code
+    _item_description.description
+;   Optional identifier of the residue in which the plane is calculated
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_planes.PDB_ins_code'
+    _item.category_id           pdbx_validate_planes
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_planes.PDB_ins_code'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_planes.label_alt_id
+    _item_description.description
+;   Optional identifier of the residue in which the plane is calculated
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_planes.label_alt_id'
+    _item.category_id           pdbx_validate_planes
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_planes.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+    save_
+
+
+save__pdbx_validate_planes.rmsd
+    _item_description.description
+;   The value of the overall deviation from ideal plane for the atoms 
+    defining the plane.
+;
+    _item.name                  '_pdbx_validate_planes.rmsd'
+    _item.category_id             pdbx_validate_planes
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_units.code              angstroms_squared
+     save_
+
+save__pdbx_validate_planes.type
+    _item_description.description
+;   The type of plane - MAIN CHAIN or SIDE CHAIN atoms
+;
+    _item.name                  '_pdbx_validate_planes.type'
+    _item.category_id             pdbx_validate_planes
+    _item.mandatory_code          yes
+    _item_type.code              uline
+    loop_
+    _item_enumeration.value  
+    _item_enumeration.detail
+        'MAIN_CHAIN' deprecated
+        'SIDE_CHAIN' deprecated
+        'MAIN CHAIN' .
+        'SIDE CHAIN' .
+      save_
+#-----------------------------------------------------------
+
+################################
+## PDBX_VALIDATE_PLANES_ATOM  ##
+################################
+
+save_pdbx_validate_planes_atom
+    _category.description
+;   Data items in the PDBX_VALIDATE_PLANES_ATOM category list the
+    residues that contain unexpected deviations from planes
+    centers.
+;
+
+    _category.id                  pdbx_validate_planes_atom
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_validate_planes_atom.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'validate_group'
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_validate_planes_atom.plane_id
+_pdbx_validate_planes_atom.id
+_pdbx_validate_planes_atom.PDB_model_num
+_pdbx_validate_planes_atom.auth_asym_id
+_pdbx_validate_planes_atom.auth_comp_id
+_pdbx_validate_planes_atom.auth_seq_id
+_pdbx_validate_planes_atom.PDB_ins_code
+_pdbx_validate_planes_atom.auth_atom_id
+_pdbx_validate_planes_atom.atom_deviation
+  1     1     1   DG  A      3  .   N1          0.003
+  1     2     1   DG  A      3  .   C2          0.011
+  1     3     1   DG  A      3  .   N2          0.074
+  1     4     1   DG  A      3  .   N3          0.005
+  1     5     1   DG  A      3  .   C4          0.010
+  1     6     1   DG  A      3  .   C5          0.029
+  1     7     1   DG  A      3  .   C6          0.039
+  1     8     1   DG  A      3  .   O6          0.074
+  1     9     1   DG  A      3  .   N7          0.050
+  1    10     1   DG  A      3  .   C8          0.129
+  1    11     1   DG  A      3  .   N9          0.033
+  1    12     1   DG  A      3  .   C1'         0.147
+  2     1     1   DT  A      4  .   N1          0.069
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_validate_planes_atom.plane_id
+    _item_description.description
+;   A pointer to _pdbx_validate_planes.id
+    This is an integer serial number.
+;
+    _item.name                 '_pdbx_validate_planes_atom.plane_id'
+    _item.category_id          pdbx_validate_planes_atom
+    _item.mandatory_code       yes
+    _item_type.code            int
+    _item_linked.child_name     '_pdbx_validate_planes_atom.plane_id'   
+    _item_linked.parent_name    '_pdbx_validate_planes.id'   
+     save_
+
+
+save__pdbx_validate_planes_atom.id
+    _item_description.description
+;   The value of _pdbx_validate_planes_atom.id must uniquely identify 
+    each item in the PDBX_VALIDATE_PLANES_ATOM list.
+
+    This is an integer serial number.
+;
+    _item.name                 '_pdbx_validate_planes_atom.id'
+    _item.category_id          pdbx_validate_planes_atom
+    _item.mandatory_code       yes
+    _item_type.code            int
+     save_
+
+save__pdbx_validate_planes_atom.PDB_model_num
+    _item_description.description
+;   The model number for an atom site defining the plane
+
+    This data item is a pointer to _atom_site.pdbx_PDB_model_num in the
+    ATOM_SITE category.
+;
+    _item.name                 '_pdbx_validate_planes_atom.PDB_model_num'
+    _item.category_id          pdbx_validate_planes_atom
+    _item.mandatory_code       yes
+    _item_type.code            int
+    _item_linked.child_name    '_pdbx_validate_planes_atom.PDB_model_num'
+    _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+     save_
+
+
+save__pdbx_validate_planes_atom.auth_asym_id
+    _item_description.description
+;   Part of the identifier of an atom site that defines the plane
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_planes_atom.auth_asym_id'
+    _item.category_id           pdbx_validate_planes_atom
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_planes_atom.auth_asym_id' 
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_validate_planes_atom.auth_comp_id
+    _item_description.description
+;   Part of the identifier of an atom site that defines the plane
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_planes_atom.auth_comp_id'
+    _item.category_id           pdbx_validate_planes_atom
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_planes_atom.auth_comp_id'  
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_planes_atom.auth_seq_id
+    _item_description.description
+;   Part of the identifier of an atom site that defines the plane
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_planes_atom.auth_seq_id'
+    _item.category_id           pdbx_validate_planes_atom
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_planes_atom.auth_seq_id'   
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_planes_atom.PDB_ins_code
+    _item_description.description
+;   Optional identifier of an atom site that defines the plane
+;
+    _item.name                  '_pdbx_validate_planes_atom.PDB_ins_code'
+    _item.category_id           pdbx_validate_planes_atom
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_planes_atom.PDB_ins_code'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+
+save__pdbx_validate_planes_atom.auth_atom_id
+    _item_description.description
+;   Part of the identifier of an atom site that defines the plane
+
+    This data item is a pointer to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_planes_atom.auth_atom_id'
+    _item.category_id           pdbx_validate_planes_atom
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name     '_pdbx_validate_planes_atom.auth_atom_id'
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_planes_atom.atom_deviation
+    _item_description.description
+;   The deviation from the plane per atom
+;
+    _item.name                  '_pdbx_validate_planes_atom.atom_deviation'
+    _item.category_id             pdbx_validate_planes_atom
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_units.code              angstroms_squared
+     save_
+
+#-----------------------------------------------------------
+
+
+#####################################
+## PDBX_VALIDATE_MAIN_CHAIN_PLANE  ##
+#####################################
+
+save_pdbx_validate_main_chain_plane
+    _category.description
+;   Data items in the PDBX_VALIDATE_MAIN_CHAIN_PLANE category list the
+    residues that contain unexpected deviations from planes
+    for main chain atoms as defined by the improper torsion
+    angle describing planarity:
+
+     PLANARITY = C(i-1) - CA(i-1) - N(i) - O(i-1) ==> planar < 5
+                 as a pseudo torsion
+;
+
+    _category.id                  pdbx_validate_main_chain_plane
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_validate_main_chain_plane.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'validate_group'
+                                 'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_validate_main_chain_plane.id
+_pdbx_validate_main_chain_plane.PDB_model_num
+_pdbx_validate_main_chain_plane.auth_comp_id
+_pdbx_validate_main_chain_plane.auth_asym_id
+_pdbx_validate_main_chain_plane.auth_seq_id
+_pdbx_validate_main_chain_plane.PDB_ins_code
+_pdbx_validate_main_chain_plane.improper_torsion_angle
+   1     0  TRP  G     20  .    29.901
+   2     0  TRP  G     21  .   -42.450
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_validate_main_chain_plane.id
+    _item_description.description
+;   The value of _pdbx_validate_main_chain_plane.id must uniquely identify 
+    each item in the PDBX_VALIDATE_MAIN_CHAIN_PLANE list.
+
+    This is an integer serial number.
+;
+    _item.name                 '_pdbx_validate_main_chain_plane.id'
+    _item.category_id          pdbx_validate_main_chain_plane
+    _item.mandatory_code       yes
+    _item_type.code            int
+     save_
+
+save__pdbx_validate_main_chain_plane.PDB_model_num
+    _item_description.description
+;   The model number for the residue in which the plane is calculated
+
+    This data item is a pointer to _atom_site.pdbx_PDB_model_num in the
+    ATOM_SITE category.
+;
+    _item.name                 '_pdbx_validate_main_chain_plane.PDB_model_num'
+    _item.category_id          pdbx_validate_main_chain_plane
+    _item.mandatory_code       yes
+    _item_type.code            int
+    _item_linked.child_name    '_pdbx_validate_main_chain_plane.PDB_model_num'
+    _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+     save_
+
+
+save__pdbx_validate_main_chain_plane.auth_asym_id
+    _item_description.description
+;   Part of the identifier of the residue in which the plane is calculated
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_main_chain_plane.auth_asym_id'
+    _item.category_id           pdbx_validate_main_chain_plane
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_main_chain_plane.auth_asym_id' 
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_validate_main_chain_plane.auth_comp_id
+    _item_description.description
+;   Part of the identifier of the residue in which the plane is calculated
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_main_chain_plane.auth_comp_id'
+    _item.category_id           pdbx_validate_main_chain_plane
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_main_chain_plane.auth_comp_id'  
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_main_chain_plane.auth_seq_id
+    _item_description.description
+;   Part of the identifier of the residue in which the plane is calculated
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_main_chain_plane.auth_seq_id'
+    _item.category_id           pdbx_validate_main_chain_plane
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_main_chain_plane.auth_seq_id'   
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_main_chain_plane.PDB_ins_code
+    _item_description.description
+;   Optional identifier of the residue in which the plane is calculated
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_main_chain_plane.PDB_ins_code'
+    _item.category_id           pdbx_validate_main_chain_plane
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_main_chain_plane.PDB_ins_code'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_main_chain_plane.label_alt_id
+    _item_description.description
+;   Optional identifier of the residue in which the plane is calculated
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_main_chain_plane.label_alt_id'
+    _item.category_id           pdbx_validate_main_chain_plane
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_main_chain_plane.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+    save_
+
+
+save__pdbx_validate_main_chain_plane.improper_torsion_angle
+    _item_description.description
+;   The value for the torsion angle  C(i-1) - CA(i-1) - N(i) - O(i-1) 
+;
+    _item.name                  '_pdbx_validate_main_chain_plane.improper_torsion_angle'
+    _item.category_id             pdbx_validate_main_chain_plane
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+#-----------------------------------------------------------
+
+############################
+## PDBX_STRUCT_CONN_ANGLE ##
+############################
+
+save_pdbx_struct_conn_angle
+    _category.description
+;   Data items in the PDBX_STRUCT_CONN_ANGLE category record the angles 
+    in connections between portions of the structure. 
+;
+    _category.id                 pdbx_struct_conn_angle
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_struct_conn_angle.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'struct_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 PDB entry 2v8d
+;
+;
+loop_
+_pdbx_struct_conn_angle.id
+_pdbx_struct_conn_angle.ptnr1_label_comp_id
+_pdbx_struct_conn_angle.ptnr1_label_asym_id
+_pdbx_struct_conn_angle.ptnr1_label_seq_id
+_pdbx_struct_conn_angle.ptnr1_PDB_ins_code
+_pdbx_struct_conn_angle.ptnr1_label_atom_id
+_pdbx_struct_conn_angle.ptnr2_label_comp_id
+_pdbx_struct_conn_angle.ptnr2_label_asym_id
+_pdbx_struct_conn_angle.ptnr2_label_seq_id
+_pdbx_struct_conn_angle.ptnr2_label_atom_id
+_pdbx_struct_conn_angle.ptnr2_PDB_ins_code
+_pdbx_struct_conn_angle.ptnr3_label_comp_id
+_pdbx_struct_conn_angle.ptnr3_label_asym_id
+_pdbx_struct_conn_angle.ptnr3_label_seq_id
+_pdbx_struct_conn_angle.ptnr3_label_atom_id
+_pdbx_struct_conn_angle.ptnr3_PDB_ins_code
+_pdbx_struct_conn_angle.value
+   1  ASP A  125 .   OD    ZN A  500 .  ZN    HIS A  114 .   NE     104.7
+   2  ASP A  125 .   OD    ZN A  500 .  ZN    HIS A  226 .   NE      91.3
+   3  HIS A  114 .   NE    ZN A  500 .  ZN    HIS A  226 .   NE     120.6
+   4  ASP A  125 .   OD    ZN A  500 .  ZN    HOH A 2041 .   O      172.5
+   5  HIS A  114 .   NE    ZN A  500 .  ZN    HOH A 2041 .   O       80.0
+   6  HIS A  226 .   NE    ZN A  500 .  ZN    HOH A 2041 .   O       91.3
+   7  ASP A  125 .   OD    ZN A  500 .  ZN    HOH A 3001 .   O       76.9
+   8  HIS A  114 .   NE    ZN A  500 .  ZN    HOH A 3001 .   O      112.3
+   9  HIS A  226 .   NE    ZN A  500 .  ZN    HOH A 3001 .   O      127.0
+  10  HOH A 2041 .   O     ZN A  500 .  ZN    HOH A 3001 .   O       95.9
+  11  ASP A  125 .   OD    ZN A  501 .  ZN    GLU A  160 .   OE      89.8
+  12  ASP A  125 .   OD    ZN A  501 .  ZN    HOH A 3001 .   O       95.5
+  13  GLU A  160 .   OE    ZN A  501 .  ZN    HOH A 3001 .   O      109.4
+  14  ASP A  125 .   OD    ZN A  501 .  ZN    HIS A  421 .   NE      90.4
+  15  GLU A  160 .   OE    ZN A  501 .  ZN    HIS A  421 .   NE     111.3
+  16  HOH A 3001 .   O     ZN A  501 .  ZN    HIS A  421 .   NE     138.9
+  17  HOH B 3001 .   O     ZN B  500 .  ZN    HIS B  114 .   NE     106.4
+  18  HOH B 3001 .   O     ZN B  500 .  ZN    ASP B  125 .   OD     100.5
+  19  HIS B  114 .   NE    ZN B  500 .  ZN    ASP B  125 .   OD     115.6
+  20  HOH B 3001 .   O     ZN B  500 .  ZN    HIS B  226 .   NE     123.2
+  21  HIS B  114 .   NE    ZN B  500 .  ZN    HIS B  226 .   NE     123.2
+  22  ASP B  125 .   OD    ZN B  500 .  ZN    HIS B  226 .   NE      82.7
+  23  GLU B  160 .   OE    ZN B  501 .  ZN    ASP B  125 .   OD     148.6
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_struct_conn_angle.id
+    _item_description.description
+;    The value of _pdbx_struct_conn_angle.id must uniquely identify a record in
+     the PDBX_STRUCT_CONN_ANGLE list.
+
+     Note that this item need not be a number; it can be any unique
+     identifier.
+;
+    _item.name                  '_pdbx_struct_conn_angle.id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_struct_conn_angle.ptnr1_label_alt_id
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure
+    angle.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr1_label_alt_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr1_label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr1_label_asym_id
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure angle.
+
+    This data item is a pointer to _atom_site.label_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr1_label_asym_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr1_label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr1_label_atom_id
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure angle.
+    This data item is a pointer to _atom_site.label_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr1_label_atom_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr1_label_atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr1_label_comp_id
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure angle.
+
+    This data item is a pointer to _atom_site.label_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr1_label_comp_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr1_label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr1_label_seq_id
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure angle.
+    This data item is a pointer to _atom_site.label_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr1_label_seq_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr1_label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr1_auth_asym_id
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure angle.
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr1_auth_asym_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr1_auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr1_auth_atom_id
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure angle.
+
+    This data item is a pointer to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr1_auth_atom_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr1_auth_atom_id'
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr1_auth_comp_id
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure angle.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr1_auth_comp_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr1_auth_comp_id'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr1_auth_seq_id
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure angle.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr1_auth_seq_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr1_auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr1_symmetry
+    _item_description.description
+;   Describes the symmetry operation that should be applied to the
+    atom specified by _pdbx_struct_conn_angle.ptnr1_label* to generate the
+    first partner in the structure angle.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr1_symmetry'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               symop
+    _item_examples.case           7_645
+    _item_examples.detail         '7th symm. posn.; +a on x; -b on y'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr2_label_alt_id
+    _item_description.description
+;   A component of the identifier for partner 2 of the structure angle.
+    This data item is a pointer to _atom_site.label_alt.id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr2_label_alt_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr2_label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+
+     save_
+
+save__pdbx_struct_conn_angle.ptnr2_label_asym_id
+    _item_description.description
+;   A component of the identifier for partner 2 of the structure angle.
+
+    This data item is a pointer to _atom_site.label_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr2_label_asym_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr2_label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr2_label_atom_id
+    _item_description.description
+;   A component of the identifier for partner 2 of the structure angle.
+
+    This data item is a pointer to _atom_site.label_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr2_label_atom_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr2_label_atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr2_label_comp_id
+    _item_description.description
+;   A component of the identifier for partner 2 of the structure angle.
+
+    This data item is a pointer to _atom_site.label_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr2_label_comp_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr2_label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr2_label_seq_id
+    _item_description.description
+;   A component of the identifier for partner 2 of the structure angle.
+
+    This data item is a pointer to _atom_site.label_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr2_label_seq_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr2_label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+
+     save_
+
+save__pdbx_struct_conn_angle.ptnr2_auth_asym_id
+    _item_description.description
+;   A component of the identifier for partner 2 of the structure angle.
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr2_auth_asym_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr2_auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_struct_conn_angle.ptnr2_auth_atom_id
+    _item_description.description
+;   A component of the identifier for partner 2 of the structure angle.
+
+    This data item is a pointer to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr2_auth_atom_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr2_auth_atom_id'
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+
+     save_
+
+save__pdbx_struct_conn_angle.ptnr2_auth_comp_id
+    _item_description.description
+;   A component of the identifier for partner 2 of the structure angle.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr2_auth_comp_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr2_auth_comp_id'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+
+     save_
+
+save__pdbx_struct_conn_angle.ptnr2_auth_seq_id
+    _item_description.description
+;   A component of the identifier for partner 2 of the structure angle.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr2_auth_seq_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr2_auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr2_symmetry
+    _item_description.description
+;   Describes the symmetry operation that should be applied to the
+    atom specified by _pdbx_struct_conn_angle.ptnr2_label* to generate the
+    second partner in the structure angle.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr2_symmetry'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               symop
+     save_
+
+save__pdbx_struct_conn_angle.ptnr1_PDB_ins_code
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure angle.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr1_PDB_ins_code'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr1_PDB_ins_code'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr1_auth_alt_id
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure angle. 
+
+    This data item is a pointer to _atom_site.pdbx_auth_alt_id 
+    in the ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr1_auth_alt_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+
+save__pdbx_struct_conn_angle.ptnr2_PDB_ins_code
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure angle.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr2_PDB_ins_code'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr2_PDB_ins_code'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr2_auth_alt_id
+    _item_description.description
+;   A component of the identifier for partner 2 of the structure angle. 
+
+    This data item is a pointer to _atom_site.pdbx_auth_alt_id in 
+    the ATOM_SITE category.
+;
+    _item.name                   '_pdbx_struct_conn_angle.ptnr2_auth_alt_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+
+save__pdbx_struct_conn_angle.ptnr3_auth_alt_id
+    _item_description.description
+;   A component of the identifier for partner 3 of the structure angle. 
+ 
+    This data item is a pointer to _atom_site.pdbx_auth_alt_id in 
+    the ATOM_SITE category.
+;
+    _item.name                   '_pdbx_struct_conn_angle.ptnr3_auth_alt_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__pdbx_struct_conn_angle.ptnr3_auth_asym_id
+    _item_description.description
+;   A component of the identifier for partner 3 of the structure angle. 
+
+    This data item is a pointer to _atom_site.auth_asym_id in 
+    the ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr3_auth_asym_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr3_auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_struct_conn_angle.ptnr3_auth_atom_id
+    _item_description.description
+;   A component of the identifier for partner 3 of the
+    structure angle. 
+
+    This data item is a pointer to  _atom_site.auth_atom_id in 
+    the ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr3_auth_atom_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr3_auth_atom_id'
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+
+     save_
+
+save__pdbx_struct_conn_angle.ptnr3_auth_comp_id
+    _item_description.description
+;   A component of the identifier for partner 3 of the structure angle. 
+
+    This data item is a pointer to _atom_site.auth_comp_id in 
+    the ATOM_SITE category.        
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr3_auth_comp_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr3_auth_comp_id'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+
+     save_
+
+save__pdbx_struct_conn_angle.ptnr3_PDB_ins_code
+    _item_description.description
+;   A component of the identifier for partner 3 of the structure angle. 
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in 
+    the ATOM_SITE category.  
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr3_PDB_ins_code'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr3_PDB_ins_code'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+
+     save_
+
+save__pdbx_struct_conn_angle.ptnr3_auth_seq_id
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure angle. 
+
+    This data item is a pointer to _atom_site.auth_seq_id in 
+    the ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr3_auth_seq_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr3_auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+
+     save_
+
+save__pdbx_struct_conn_angle.ptnr3_label_alt_id
+    _item_description.description
+;   A component of the identifier for partner 3 of the structure angle. 
+
+    This data item is a pointer to _atom_site.label_alt_id in 
+    the ATOM_SITE category.
+;
+    _item.name                   '_pdbx_struct_conn_angle.ptnr3_label_alt_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr3_label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+
+     save_
+
+save__pdbx_struct_conn_angle.ptnr3_label_asym_id
+    _item_description.description
+;   A component of the identifier for partner 3 of the structure angle. 
+   
+    This data item is a pointer to _atom_site.label_asym_id in 
+    the ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr3_label_asym_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr3_label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr3_label_atom_id
+    _item_description.description
+;   A component of the identifier for partner 3 of the structure angle. 
+ 
+    This data item is a pointer to _atom_site.label_atom_id in 
+    the ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr3_label_atom_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr3_label_atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr3_label_comp_id
+    _item_description.description
+;   A component of the identifier for partner 3 of the structure angle. 
+
+    This data item is a pointer to _atom_site.label_comp_id in 
+    the ATOM_SITE category.        
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr3_label_comp_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr3_label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr3_label_seq_id
+    _item_description.description
+;   A component of the identifier for partner 1 of the structure angle. 
+ 
+    This data item is a pointer to _atom_site.label_seq_id in 
+    the ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr3_label_seq_id'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_struct_conn_angle.ptnr3_label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+
+save__pdbx_struct_conn_angle.ptnr3_symmetry
+    _item_description.description
+;   Describes the symmetry operation that should be applied to the
+    atom specified by _pdbx_struct_conn_angle.ptnr3_label* to generate the
+    first partner in the structure angle.
+;
+    _item.name                  '_pdbx_struct_conn_angle.ptnr3_symmetry'
+    _item.category_id            pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_type.code               symop
+    _item_examples.case           7_645
+    _item_examples.detail         '7th symm. posn.; +a on x; -b on y'
+     save_
+
+save__pdbx_struct_conn_angle.value
+    _item_description.description
+;   Angle in degrees defined by the three sites
+    _pdbx_struct_conn_angle.ptnr1_label_atom_id,
+    _pdbx_struct_conn_angle.ptnr2_label_atom_id
+    _pdbx_struct_conn_angle.ptnr3_label_atom_id
+
+;
+    _item.name                  '_pdbx_struct_conn_angle.value'
+    _item.category_id             pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_related.related_name  '_geom_angle.value_esd'
+    _item_related.function_code   associated_esd
+    _item_type.code               float
+    _item_type_conditions.code    esd
+    _item_units.code              degrees
+     save_
+
+save__pdbx_struct_conn_angle.value_esd
+    _item_description.description
+;   The standard uncertainty (estimated standard deviation)
+    of _pdbx_struct_conn_angle.value
+;
+    _item.name                  '_pdbx_struct_conn_angle.value_esd'
+    _item.category_id             pdbx_struct_conn_angle
+    _item.mandatory_code          no
+    _item_related.related_name  '_pdbx_struct_conn_angle.value'
+    _item_related.function_code   associated_value
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+##
+##
+
+save_pdbx_unobs_or_zero_occ_residues
+     _category.description
+;   Data items in the PDBX_UNOBS_OR_ZERO_OCC_RESIDUES category list the
+    residues within the entry that are not observed or have zero occupancy.
+;
+     _category.id                  pdbx_unobs_or_zero_occ_residues
+     _category.mandatory_code      no
+     _category_key.name          '_pdbx_unobs_or_zero_occ_residues.id'
+     loop_
+     _category_group.id          'inclusive_group'
+                                 'pdbx_group'
+      loop_
+     _category_examples.detail
+     _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+     Example 1
+;
+;
+loop_
+_pdbx_unobs_or_zero_occ_residues.id
+_pdbx_unobs_or_zero_occ_residues.polymer_flag
+_pdbx_unobs_or_zero_occ_residues.occupancy_flag
+_pdbx_unobs_or_zero_occ_residues.PDB_model_num
+_pdbx_unobs_or_zero_occ_residues.auth_asym_id
+_pdbx_unobs_or_zero_occ_residues.auth_comp_id
+_pdbx_unobs_or_zero_occ_residues.auth_seq_id
+_pdbx_unobs_or_zero_occ_residues.PDB_ins_code
+    1  Y   1  1   B  VAL     36  .
+    2  Y   1  1   B  ARG    108  .
+    3  N   1  1   D  PPI    438  .
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+      save_
+
+
+save__pdbx_unobs_or_zero_occ_residues.id
+     _item_description.description
+;   The value of _pdbx_unobs_or_zero_occ_residues.id must uniquely identify
+     each item in the PDBX_UNOBS_OR_ZERO_OCC_RESIDUES list.
+
+     This is an integer serial number.
+;
+     _item.name               '_pdbx_unobs_or_zero_occ_residues.id'
+     _item.category_id          pdbx_unobs_or_zero_occ_residues
+     _item.mandatory_code       yes
+     _item_type.code            int
+      save_
+
+save__pdbx_unobs_or_zero_occ_residues.polymer_flag
+     _item_description.description
+;   The value of polymer flag indicates whether the unobserved or 
+    zero occupancy residue is part of a polymer chain or not
+;
+     _item.name                '_pdbx_unobs_or_zero_occ_residues.polymer_flag'
+     _item.category_id          pdbx_unobs_or_zero_occ_residues
+     _item.mandatory_code       yes
+     _item_type.code            ucode
+     loop_
+     _item_enumeration.value  Y N
+      save_
+
+save__pdbx_unobs_or_zero_occ_residues.occupancy_flag
+     _item_description.description
+;     The value of occupancy flag indicates whether the residue
+      is unobserved (= 1) or the coordinates have an occupancy of zero (=0)
+;
+     _item.name                '_pdbx_unobs_or_zero_occ_residues.occupancy_flag'
+     _item.category_id          pdbx_unobs_or_zero_occ_residues
+     _item.mandatory_code       yes
+     _item_type.code            int
+     loop_
+     _item_enumeration.value  1 0
+      save_
+
+save__pdbx_unobs_or_zero_occ_residues.PDB_model_num
+     _item_description.description
+;   Part of the identifier for the unobserved or zero occupancy residue.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_model_num in the
+    ATOM_SITE category.
+
+;
+     _item.name                 '_pdbx_unobs_or_zero_occ_residues.PDB_model_num'
+     _item.category_id          pdbx_unobs_or_zero_occ_residues
+     _item.mandatory_code       yes
+     _item_type.code            int
+     _item_linked.child_name    '_pdbx_unobs_or_zero_occ_residues.PDB_model_num'
+     _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+      save_
+
+save__pdbx_unobs_or_zero_occ_residues.auth_asym_id
+     _item_description.description
+;    Part of the identifier for the unobserved or zero occupancy residue.
+
+     This data item is a pointer to _atom_site.auth_asym_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_unobs_or_zero_occ_residues.auth_asym_id'
+     _item.category_id           pdbx_unobs_or_zero_occ_residues
+     _item.mandatory_code        yes
+     _item_type.code             code
+#     _item_linked.child_name     '_pdbx_unobs_or_zero_occ_residues.auth_asym_id'
+#     _item_linked.parent_name    '_atom_site.auth_asym_id'
+      save_
+
+save__pdbx_unobs_or_zero_occ_residues.auth_comp_id
+     _item_description.description
+;    Part of the identifier for the unobserved or zero occupancy residue.
+
+     This data item is a pointer to _atom_site.auth_comp_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_unobs_or_zero_occ_residues.auth_comp_id'
+     _item.category_id           pdbx_unobs_or_zero_occ_residues
+     _item.mandatory_code        yes
+     _item_type.code             ucode
+     _item_linked.child_name     '_pdbx_unobs_or_zero_occ_residues.auth_comp_id'
+     _item_linked.parent_name    '_chem_comp.id'
+      save_
+
+save__pdbx_unobs_or_zero_occ_residues.auth_seq_id
+     _item_description.description
+;    Part of the identifier for the unobserved or zero occupancy residue.
+
+     This data item is a pointer to _atom_site.auth_seq_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_unobs_or_zero_occ_residues.auth_seq_id'
+     _item.category_id           pdbx_unobs_or_zero_occ_residues
+     _item.mandatory_code        yes
+     _item_type.code             code
+#     _item_linked.child_name     '_pdbx_unobs_or_zero_occ_residues.auth_seq_id'
+#     _item_linked.parent_name    '_atom_site.auth_seq_id'
+      save_
+
+save__pdbx_unobs_or_zero_occ_residues.PDB_ins_code
+     _item_description.description
+;    Part of the identifier for the unobserved or zero occupancy residue.
+
+     This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+     ATOM_SITE category.
+;
+     _item.name                  '_pdbx_unobs_or_zero_occ_residues.PDB_ins_code'
+     _item.category_id           pdbx_unobs_or_zero_occ_residues
+     _item.mandatory_code        no
+     _item_type.code             code
+#     _item_linked.child_name     '_pdbx_unobs_or_zero_occ_residues.PDB_ins_code'
+#     _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+save__pdbx_unobs_or_zero_occ_residues.label_asym_id
+    _item_description.description
+;   Part of the identifier for the unobserved or zero occupancy residue.
+
+    This data item is a pointer to _atom_site.label_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_unobs_or_zero_occ_residues.label_asym_id'
+    _item.category_id            pdbx_unobs_or_zero_occ_residues
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_unobs_or_zero_occ_residues.label_asym_id'
+    _item_linked.parent_name    '_struct_asym.id'
+     save_
+
+save__pdbx_unobs_or_zero_occ_residues.label_comp_id
+    _item_description.description
+;   Part of the identifier for the unobserved or zero occupancy residue.
+  
+    This data item is a pointer to _atom_site.label_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_unobs_or_zero_occ_residues.label_comp_id'
+    _item.category_id            pdbx_unobs_or_zero_occ_residues
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_unobs_or_zero_occ_residues.label_comp_id'
+    _item_linked.parent_name    '_chem_comp.id'
+     save_
+
+save__pdbx_unobs_or_zero_occ_residues.label_seq_id
+    _item_description.description
+;   Part of the identifier for the unobserved or zero occupancy residue.
+
+    This data item is a pointer to _atom_site.label_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_unobs_or_zero_occ_residues.label_seq_id'
+    _item.category_id            pdbx_unobs_or_zero_occ_residues
+    _item.mandatory_code          no
+    _item_type.code               int
+#    _item_linked.child_name     '_pdbx_unobs_or_zero_occ_residues.label_seq_id'
+#    _item_linked.parent_name    '_atom_site.label_seq_id'
+
+     save_
+##
+
+save_pdbx_unobs_or_zero_occ_atoms
+     _category.description
+;    Data items in the PDBX_UNOBS_OR_ZERO_OCC_ATOMS category list the
+     atoms within the entry that are either unobserved or have zero occupancy/
+;
+     _category.id                  pdbx_unobs_or_zero_occ_atoms
+     _category.mandatory_code      no
+     _category_key.name          '_pdbx_unobs_or_zero_occ_atoms.id'
+     loop_
+     _category_group.id          'inclusive_group'
+                                 'pdbx_group'
+      loop_
+     _category_examples.detail
+     _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+     Example 1
+;
+;
+loop_
+_pdbx_unobs_or_zero_occ_atoms.id
+_pdbx_unobs_or_zero_occ_atoms.polymer_flag
+_pdbx_unobs_or_zero_occ_atoms.occupancy_flag
+_pdbx_unobs_or_zero_occ_atoms.PDB_model_num
+_pdbx_unobs_or_zero_occ_atoms.auth_comp_id
+_pdbx_unobs_or_zero_occ_atoms.auth_asym_id
+_pdbx_unobs_or_zero_occ_atoms.auth_seq_id
+_pdbx_unobs_or_zero_occ_atoms.PDB_ins_code
+_pdbx_unobs_or_zero_occ_atoms.auth_atom_id
+_pdbx_unobs_or_zero_occ_atoms.label_alt_id
+  1 Y 1 1  ARG A 412 .   CG  .
+  2 Y 1 1  ARG A 412 .   CD  .
+  3 Y 1 1  ARG A 412 .   NE  .
+  4 Y 1 1  ARG A 412 .   CZ  .
+  5 Y 1 1  ARG A 412 .   NH1 .
+  6 Y 1 1  ARG A 412 .   NH2 .
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+      save_
+
+
+save__pdbx_unobs_or_zero_occ_atoms.id
+     _item_description.description
+;   The value of _pdbx_unobs_or_zero_occ_atoms.id must uniquely identify
+    each item in the PDBX_UNOBS_OR_ZERO_OCC_ATOMS list.
+
+    This is an integer serial number.
+;
+     _item.name               '_pdbx_unobs_or_zero_occ_atoms.id'
+     _item.category_id          pdbx_unobs_or_zero_occ_atoms
+     _item.mandatory_code       yes
+     _item_type.code            int
+      save_
+
+save__pdbx_unobs_or_zero_occ_atoms.polymer_flag
+     _item_description.description
+;   The value of polymer flag indicates whether the unobserved or zero
+    occupancy atom is part of a polymer chain
+;
+     _item.name                '_pdbx_unobs_or_zero_occ_atoms.polymer_flag'
+     _item.category_id          pdbx_unobs_or_zero_occ_atoms
+     _item.mandatory_code       yes
+     _item_type.code            ucode
+     loop_
+     _item_enumeration.value  Y N
+      save_
+
+save__pdbx_unobs_or_zero_occ_atoms.occupancy_flag
+     _item_description.description
+;    The value of occupancy flag indicates whether the atom is
+     either unobserved (=1) or has zero occupancy (=0)
+;
+     _item.name               '_pdbx_unobs_or_zero_occ_atoms.occupancy_flag'
+     _item.category_id          pdbx_unobs_or_zero_occ_atoms
+     _item.mandatory_code       yes
+     _item_type.code            int
+     loop_
+     _item_enumeration.value  1 0
+      save_
+
+save__pdbx_unobs_or_zero_occ_atoms.PDB_model_num
+     _item_description.description
+;      Part of the identifier for the unobserved or zero occupancy atom.
+
+     This data item is a pointer to _atom_site.pdbx_PDB_model_num in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_unobs_or_zero_occ_atoms.PDB_model_num'
+     _item.category_id          pdbx_unobs_or_zero_occ_atoms
+     _item.mandatory_code       yes
+     _item_type.code            int
+     _item_linked.child_name    '_pdbx_unobs_or_zero_occ_atoms.PDB_model_num'
+     _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+      save_
+
+
+save__pdbx_unobs_or_zero_occ_atoms.auth_asym_id
+     _item_description.description
+;    Part of the identifier for the unobserved or zero occupancy atom.
+
+     This data item is a pointer to _atom_site.auth_asym_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_unobs_or_zero_occ_atoms.auth_asym_id'
+     _item.category_id           pdbx_unobs_or_zero_occ_atoms
+     _item.mandatory_code        yes
+     _item_type.code             code		
+#     _item_linked.child_name    '_pdbx_unobs_or_zero_occ_atoms.auth_asym_id'
+#     _item_linked.parent_name   '_atom_site.auth_asym_id'
+
+      save_
+
+save__pdbx_unobs_or_zero_occ_atoms.auth_atom_id
+     _item_description.description
+;     Part of the identifier for the unobserved or zero occupancy atom.
+
+      This data item is a pointer to _atom_site.auth_atom_id in the
+      ATOM_SITE category.
+;
+     _item.name                '_pdbx_unobs_or_zero_occ_atoms.auth_atom_id'
+     _item.category_id           pdbx_unobs_or_zero_occ_atoms
+     _item.mandatory_code        yes
+     _item_type.code             atcode		
+#     _item_linked.child_name     '_pdbx_unobs_or_zero_occ_atoms.auth_atom_id'
+#     _item_linked.parent_name    '_atom_site.auth_atom_id'
+      save_
+
+save__pdbx_unobs_or_zero_occ_atoms.auth_comp_id
+     _item_description.description
+;    Part of the identifier for the unobserved or zero occupancy atom.
+
+     This data item is a pointer to _atom_site.auth_comp_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_unobs_or_zero_occ_atoms.auth_comp_id'
+     _item.category_id           pdbx_unobs_or_zero_occ_atoms
+     _item.mandatory_code        yes
+     _item_type.code             ucode		
+     _item_linked.child_name     '_pdbx_unobs_or_zero_occ_atoms.auth_comp_id'
+     _item_linked.parent_name    '_chem_comp.id'
+      save_
+
+save__pdbx_unobs_or_zero_occ_atoms.auth_seq_id
+     _item_description.description
+;    Part of the identifier for the unobserved or zero occupancy atom.
+
+     This data item is a pointer to _atom_site.auth_seq_id in the
+     ATOM_SITE category.
+;
+     _item.name                '_pdbx_unobs_or_zero_occ_atoms.auth_seq_id'
+     _item.category_id           pdbx_unobs_or_zero_occ_atoms
+     _item.mandatory_code        yes
+     _item_type.code             code		
+#     _item_linked.child_name     '_pdbx_unobs_or_zero_occ_atoms.auth_seq_id'
+#     _item_linked.parent_name    '_atom_site.auth_seq_id'
+      save_
+
+
+save__pdbx_unobs_or_zero_occ_atoms.PDB_ins_code
+     _item_description.description
+;    Part of the identifier for the unobserved or zero occupancy atom.
+
+     This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_unobs_or_zero_occ_atoms.PDB_ins_code'
+     _item.category_id           pdbx_unobs_or_zero_occ_atoms
+     _item.mandatory_code        no
+     _item_type.code             code		
+#     _item_linked.child_name     '_pdbx_unobs_or_zero_occ_atoms.PDB_ins_code'
+#     _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+
+save__pdbx_unobs_or_zero_occ_atoms.label_alt_id
+    _item_description.description
+;   Part of the identifier for the unobserved or zero occupancy atom.
+
+    This data item is a pointer to _atom_site.label_alt.id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_unobs_or_zero_occ_atoms.label_alt_id'
+    _item.category_id            pdbx_unobs_or_zero_occ_atoms
+    _item.mandatory_code          no
+    _item_type.code               code
+#    _item_linked.child_name     '_pdbx_unobs_or_zero_occ_atoms.label_alt_id'
+#    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_unobs_or_zero_occ_atoms.label_atom_id
+    _item_description.description
+;   Part of the identifier for the unobserved or zero occupancy atom.
+
+    This data item is a pointer to _atom_site.label_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_unobs_or_zero_occ_atoms.label_atom_id'
+    _item.category_id            pdbx_unobs_or_zero_occ_atoms
+    _item.mandatory_code          no
+    _item_type.code               atcode
+#    _item_linked.child_name     '_pdbx_unobs_or_zero_occ_atoms.label_atom_id'
+#    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_unobs_or_zero_occ_atoms.label_asym_id
+    _item_description.description
+;   Part of the identifier for the unobserved or zero occupancy atom.
+
+    This data item is a pointer to _atom_site.label_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_unobs_or_zero_occ_atoms.label_asym_id'
+    _item.category_id            pdbx_unobs_or_zero_occ_atoms
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_unobs_or_zero_occ_atoms.label_asym_id'
+    _item_linked.parent_name    '_struct_asym.id'
+     save_
+
+save__pdbx_unobs_or_zero_occ_atoms.label_comp_id
+    _item_description.description
+;   Part of the identifier for the unobserved or zero occupancy atom.
+
+    This data item is a pointer to _atom_site.label_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_unobs_or_zero_occ_atoms.label_comp_id'
+    _item.category_id            pdbx_unobs_or_zero_occ_atoms
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_unobs_or_zero_occ_atoms.label_comp_id'
+    _item_linked.parent_name    '_chem_comp.id'
+     save_
+
+save__pdbx_unobs_or_zero_occ_atoms.label_seq_id
+    _item_description.description
+;   Part of the identifier for the unobserved or zero occupancy atom.
+
+    This data item is a pointer to _atom_site.label_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_unobs_or_zero_occ_atoms.label_seq_id'
+    _item.category_id            pdbx_unobs_or_zero_occ_atoms
+    _item.mandatory_code          no
+    _item_type.code               int
+#    _item_linked.child_name     '_pdbx_unobs_or_zero_occ_atoms.label_seq_id'
+#    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+#
+#
+#-----------------------------------------------------------------
+save__atom_site.pdbx_tls_group_id
+    _item_description.description
+;   The TLS group to which the atom position is assigned.
+    
+    The TLS group is defined in category pdbx_refine_tls.
+    This item is a reference to _pdbx_refine_tls.id.
+;
+    _item.name                  '_atom_site.pdbx_tls_group_id'
+    _item.category_id             atom_site
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_atom_site.pdbx_tls_group_id'
+    _item_linked.parent_name    '_pdbx_refine_tls.id'
+     save_
+
+save__atom_site.pdbx_ncs_dom_id
+    _item_description.description
+;   The NCS domain to which the atom position is assigned.
+
+    The NCS group is defined in category struct_ncs_dom.
+    This item is a reference to _struct_ncs_dom.id.
+;
+    _item.name                  '_atom_site.pdbx_ncs_dom_id'
+    _item.category_id             atom_site
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_atom_site.pdbx_ncs_dom_id'
+    _item_linked.parent_name    '_struct_ncs_dom.id'
+     save_
+
+save__pdbx_struct_assembly.method_details
+    _item_description.description
+;   Provides details of the method used to determine or 
+    compute the assembly.
+;
+    _item.name                  '_pdbx_struct_assembly.method_details'
+    _item.category_id             pdbx_struct_assembly
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+#
+save__pdbx_struct_assembly.oligomeric_details
+    _item_description.description
+;   Provides the details of the oligomeric state of the assembly.
+;
+    _item.name                  '_pdbx_struct_assembly.oligomeric_details'
+    _item.category_id             pdbx_struct_assembly
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_examples.case
+       monomer
+       octameric
+       tetradecameric
+       eicosameric
+       21-meric
+       60-meric
+       180-meric
+       helical
+#
+#     monomeric   octameric       pentadecameric
+#     dimeric     nonameric       hexadecameric
+#     trimeric    decameric       heptadecameric
+#     tetrameric  undecameric     octadecameric
+#     pentameric  dodecameric     nonadecameric
+#     hexameric   tridecameric    eicosameric
+#     heptameric  tetradecameric  
+#     21-meric 22-meric 23-meric 24-meric 25-meric 26-meric 27-meric 28-meric 29-meric 30-meric
+#     31-meric 32-meric 33-meric 34-meric 35-meric 36-meric 37-meric 38-meric 39-meric 40-meric
+#     41-meric 42-meric 43-meric 44-meric 45-meric 46-meric 47-meric 48-meric 49-meric 50-meric
+#     51-meric 52-meric 53-meric 54-meric 55-meric 56-meric 57-meric 58-meric 59-meric 60-meric
+#     62-meric 108-meric 120-meric 180-meric  240-meric
+#     cyclic tetrahedral dihedral octahedral icosahedral
+#
+     save_
+
+save__pdbx_struct_assembly.oligomeric_count
+    _item_description.description
+;   The number of polymer molecules in the assembly.
+;
+    _item.name                  '_pdbx_struct_assembly.oligomeric_count'
+    _item.category_id             pdbx_struct_assembly
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+
+#
+
+#########################
+### PDBX_ENTRY_DETAILS ##
+#########################
+
+save_pdbx_entry_details
+    _category.description
+;   Data items in the PDBX_ENTRY_DETAILS category provide additional
+    details about this entry.
+;
+    _category.id                  pdbx_entry_details
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_entry_details.entry_id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'entry_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+ _pdbx_entry_details.entry_id  1ABC
+ _pdbx_entry_details.nonpolymer_details  
+ ;Inhibitor VX4A in this entry adopts a highly strained conformation 
+  about C32 inorder to fit into the cleft about the active site.
+ ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_entry_details.entry_id
+    _item_description.description
+;  This item identifies the entry.  This is a reference to _entry.id.
+;
+    _item.name                 '_pdbx_entry_details.entry_id'
+    _item.category_id            pdbx_entry_details
+    _item.mandatory_code         yes
+    _item_type.code              code
+    _item_linked.child_name     '_pdbx_entry_details.entry_id'
+    _item_linked.parent_name    '_entry.id'
+    save_
+
+save__pdbx_entry_details.nonpolymer_details
+    _item_description.description
+;  Additional details about the non-polymer components in this entry.
+;
+    _item.name                 '_pdbx_entry_details.nonpolymer_details'
+    _item.category_id            pdbx_entry_details
+    _item.mandatory_code         no
+    _item_type.code              text
+    save_
+
+save__pdbx_entry_details.sequence_details
+    _item_description.description
+;  Additional details about the sequence or sequence database correspondences
+   for this entry.
+;
+    _item.name                   '_pdbx_entry_details.sequence_details'
+    _item.category_id            pdbx_entry_details
+    _item.mandatory_code         no
+    _item_type.code              text
+    save_
+
+save__pdbx_entry_details.compound_details
+    _item_description.description
+;  Additional details about the macromolecular compounds in this entry.
+;
+    _item.name                 '_pdbx_entry_details.compound_details'
+    _item.category_id            pdbx_entry_details
+    _item.mandatory_code         no
+    _item_type.code              text
+    save_
+
+save__pdbx_entry_details.source_details
+    _item_description.description
+;  Additional details about the source and taxonomy of the macromolecular 
+   components in this entry.
+;
+    _item.name                 '_pdbx_entry_details.source_details'
+    _item.category_id            pdbx_entry_details
+    _item.mandatory_code         no
+    _item_type.code              text
+    save_
+
+save__chem_comp.pdbx_processing_site
+    _item_description.description
+;  This data item identifies the deposition site that processed
+   this chemical component defintion.
+;
+    _item.name                 '_chem_comp.pdbx_processing_site'
+    _item.category_id            chem_comp
+    _item.mandatory_code         no
+    _item_type.code              code
+     loop_
+    _item_enumeration.value 
+     'PDBE'   
+     'EBI'
+     'PDBJ'
+     'RCSB'
+    save_
+
+##
+save_pdbx_struct_mod_residue
+     _category.description
+;   Data items in the PDBX_STRUCT_MOD_RESIDUE category list the
+    modified polymer components in the entry and provide some 
+    details describing the nature of the modification.
+;
+     _category.id                  pdbx_struct_mod_residue
+     _category.mandatory_code      no
+     _category_key.name          '_pdbx_struct_mod_residue.id'
+     loop_
+     _category_group.id          'inclusive_group'
+                                 'pdbx_group'
+      loop_
+     _category_examples.detail
+     _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+     Example 1
+;
+;
+loop_
+_pdbx_struct_mod_residue.id
+_pdbx_struct_mod_residue.auth_asym_id
+_pdbx_struct_mod_residue.auth_seq_id
+_pdbx_struct_mod_residue.auth_comp_id
+_pdbx_struct_mod_residue.PDB_ins_code
+_pdbx_struct_mod_residue.parent_comp_id
+_pdbx_struct_mod_residue.details
+ 1   A   66 CRW . ALA  "CIRCULARIZED TRI-PEPTIDE CHROMOPHORE"
+ 2   A   66 CRW . SER  "CIRCULARIZED TRI-PEPTIDE CHROMOPHORE"
+ 3   A   66 CRW . GLY  "CIRCULARIZED TRI-PEPTIDE CHROMOPHORE" 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+      save_
+
+save__pdbx_struct_mod_residue.id
+     _item_description.description
+;    The value of _pdbx_struct_mod_residue.id must uniquely identify
+     each item in the PDBX_STRUCT_MOD_RESIDUE list.
+
+     This is an integer serial number.
+;
+     _item.name               '_pdbx_struct_mod_residue.id'
+     _item.category_id          pdbx_struct_mod_residue
+     _item.mandatory_code       yes
+     _item_type.code            int
+      save_
+
+save__pdbx_struct_mod_residue.PDB_model_num
+     _item_description.description
+;   Part of the identifier for the modified polymer component.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_model_num in the
+    ATOM_SITE category.
+
+;
+     _item.name                 '_pdbx_struct_mod_residue.PDB_model_num'
+     _item.category_id          pdbx_struct_mod_residue
+     _item.mandatory_code       no
+     _item_type.code            int
+     _item_linked.child_name    '_pdbx_struct_mod_residue.PDB_model_num'
+     _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+      save_
+
+save__pdbx_struct_mod_residue.auth_asym_id
+     _item_description.description
+;    Part of the identifier for the modified polymer component.
+
+     This data item is a pointer to _atom_site.auth_asym_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_struct_mod_residue.auth_asym_id'
+     _item.category_id           pdbx_struct_mod_residue
+     _item.mandatory_code        yes
+     _item_type.code             code
+     _item_linked.child_name     '_pdbx_struct_mod_residue.auth_asym_id'
+     _item_linked.parent_name    '_atom_site.auth_asym_id'
+      save_
+
+save__pdbx_struct_mod_residue.auth_comp_id
+     _item_description.description
+;    Part of the identifier for the modified polymer component.
+
+     This data item is a pointer to _atom_site.auth_comp_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_struct_mod_residue.auth_comp_id'
+     _item.category_id           pdbx_struct_mod_residue
+     _item.mandatory_code        yes
+     _item_type.code             code
+     _item_linked.child_name     '_pdbx_struct_mod_residue.auth_comp_id'
+     _item_linked.parent_name    '_atom_site.auth_comp_id'
+      save_
+
+save__pdbx_struct_mod_residue.auth_seq_id
+     _item_description.description
+;    Part of the identifier for the modified polymer component.
+
+     This data item is a pointer to _atom_site.auth_seq_id in the
+     ATOM_SITE category.
+;
+     _item.name                 '_pdbx_struct_mod_residue.auth_seq_id'
+     _item.category_id           pdbx_struct_mod_residue
+     _item.mandatory_code        yes
+     _item_type.code             code
+     _item_linked.child_name     '_pdbx_struct_mod_residue.auth_seq_id'
+     _item_linked.parent_name    '_atom_site.auth_seq_id'
+      save_
+
+save__pdbx_struct_mod_residue.PDB_ins_code
+     _item_description.description
+;    Part of the identifier for the modified polymer component.
+
+     This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+     ATOM_SITE category.
+;
+     _item.name                  '_pdbx_struct_mod_residue.PDB_ins_code'
+     _item.category_id           pdbx_struct_mod_residue
+     _item.mandatory_code        no
+     _item_type.code             code
+     _item_linked.child_name     '_pdbx_struct_mod_residue.PDB_ins_code'
+     _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+     save_
+
+save__pdbx_struct_mod_residue.label_asym_id
+    _item_description.description
+;   Part of the identifier for the modified polymer component.
+
+    This data item is a pointer to _atom_site.label_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_mod_residue.label_asym_id'
+    _item.category_id            pdbx_struct_mod_residue
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_struct_mod_residue.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_struct_mod_residue.label_comp_id
+    _item_description.description
+;   Part of the identifier for the modified polymer component.
+  
+    This data item is a pointer to _atom_site.label_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_mod_residue.label_comp_id'
+    _item.category_id            pdbx_struct_mod_residue
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_struct_mod_residue.label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_struct_mod_residue.label_seq_id
+    _item_description.description
+;   Part of the identifier for the unobserved or zero occupancy residue.
+
+    This data item is a pointer to _atom_site.label_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_struct_mod_residue.label_seq_id'
+    _item.category_id            pdbx_struct_mod_residue
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_struct_mod_residue.label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+
+save__pdbx_struct_mod_residue.parent_comp_id
+     _item_description.description
+;    The parent component identifier for this modified polymer component.
+;
+     _item.name                 '_pdbx_struct_mod_residue.parent_comp_id'
+     _item.category_id           pdbx_struct_mod_residue
+     _item.mandatory_code        no
+     _item_type.code             code
+      save_
+
+save__pdbx_struct_mod_residue.details
+     _item_description.description
+;    Details of the modification for this polymer component.
+;
+     _item.name                 '_pdbx_struct_mod_residue.details'
+     _item.category_id           pdbx_struct_mod_residue
+     _item.mandatory_code        no
+     _item_type.code             text
+      save_
+##
+##
+
+#################################
+# PDBX_STRUCT_REF_SEQ_INSERTION #
+#################################
+
+save_pdbx_struct_ref_seq_insertion
+     _category.description
+;    Data items in the PDBX_STRUCT_REF_SEQ_INSERTION category 
+     annotate insertions in the sequence of the entity described 
+     in the referenced database entry.
+;
+     _category.id                  pdbx_struct_ref_seq_insertion
+     _category.mandatory_code      no
+     _category_key.name          '_pdbx_struct_ref_seq_insertion.id'
+     loop_
+     _category_group.id           'inclusive_group'
+                                  'struct_group'
+                                  'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_struct_ref_seq_insertion.id
+_pdbx_struct_ref_seq_insertion.comp_id
+_pdbx_struct_ref_seq_insertion.asym_id
+_pdbx_struct_ref_seq_insertion.seq_id
+_pdbx_struct_ref_seq_insertion.auth_asym_id
+_pdbx_struct_ref_seq_insertion.auth_seq_id
+_pdbx_struct_ref_seq_insertion.PDB_ins_code
+_pdbx_struct_ref_seq_insertion.db_name
+_pdbx_struct_ref_seq_insertion.db_code
+_pdbx_struct_ref_seq_insertion.details
+1 GLY A 102 A 104 . UNP P00752 'INSERTION'
+2 TRP A 103 A 105 . UNP P00752 'INSERTION'
+;
+      save_
+
+save__pdbx_struct_ref_seq_insertion.id
+     _item_description.description
+;   The value of _pdbx_struct_ref_seq_insertion.id must
+    uniquely identify a record in the PDBX_STRUCT_REF_SEQ_INSERTION list.
+;
+     _item.name              '_pdbx_struct_ref_seq_insertion.id'
+     _item.category_id         pdbx_struct_ref_seq_insertion
+     _item.mandatory_code      yes
+     _item_type.code           code
+      save_
+
+save__pdbx_struct_ref_seq_insertion.comp_id
+     _item_description.description
+;   Part of the identifier of the inserted residue.
+
+    This data item is a pointer to _pdbx_poly_seq_scheme.mon_id in the
+    PDBX_POLY_SEQ_SCHEME category.
+;
+     _item.name                  '_pdbx_struct_ref_seq_insertion.comp_id'
+     _item.category_id             pdbx_struct_ref_seq_insertion
+     _item.mandatory_code          yes
+     _item_type.code               ucode
+     _item_linked.parent_name    '_pdbx_poly_seq_scheme.mon_id'
+     _item_linked.child_name     '_pdbx_struct_ref_seq_insertion.comp_id'
+      save_
+
+
+save__pdbx_struct_ref_seq_insertion.asym_id
+    _item_description.description
+;   Part of the identifier of the inserted residue.
+
+    This data item is a pointer to _pdbx_poly_seq_scheme.asym_id in the
+    PDBX_POLY_SEQ_SCHEME category.
+;
+    _item.name                 '_pdbx_struct_ref_seq_insertion.asym_id'
+    _item.category_id           pdbx_struct_ref_seq_insertion
+    _item.mandatory_code        yes
+    _item_type.code             code
+    _item_linked.parent_name    '_pdbx_poly_seq_scheme.asym_id'
+    _item_linked.child_name     '_pdbx_struct_ref_seq_insertion.asym_id'
+
+   save_
+
+save__pdbx_struct_ref_seq_insertion.auth_asym_id
+    _item_description.description
+;   Part of the author identifier of the inserted residue.
+
+    This data item is a pointer to _pdbx_poly_seq_scheme.pdb_strand_id in the
+    PDBX_POLY_SEQ_SCHEME category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_insertion.auth_asym_id'
+    _item.category_id           pdbx_struct_ref_seq_insertion
+    _item.mandatory_code        no
+    _item_type.code             code
+    _item_linked.parent_name    '_pdbx_poly_seq_scheme.pdb_strand_id'
+    _item_linked.child_name     '_pdbx_struct_ref_seq_insertion.auth_asym_id'
+   save_
+
+save__pdbx_struct_ref_seq_insertion.auth_seq_id
+    _item_description.description
+;   Part of the author identifier of the inserted residue.
+
+    This data item is a pointer to _pdbx_poly_seq_scheme.auth_seq_num in the
+    PDBX_POLY_SEQ_SCHEME category.
+;
+    _item.name                  '_pdbx_struct_ref_seq_insertion.auth_seq_id'
+    _item.category_id            pdbx_struct_ref_seq_insertion
+    _item.mandatory_code         yes
+    _item_type.code              code
+    _item_linked.parent_name    '_pdbx_poly_seq_scheme.auth_seq_num'
+    _item_linked.child_name     '_pdbx_struct_ref_seq_insertion.auth_seq_id'
+    save_
+
+save__pdbx_struct_ref_seq_insertion.seq_id
+    _item_description.description
+;   Part of the author identifier of the inserted residue.
+
+    This data item is a pointer to _pdbx_poly_seq_scheme.seq_id in the
+    PDBX_POLY_SEQ_SCHEME category.
+;
+    _item.name               '_pdbx_struct_ref_seq_insertion.seq_id'
+    _item.category_id         pdbx_struct_ref_seq_insertion
+    _item.mandatory_code      yes
+    _item_type.code           int
+    _item_linked.parent_name  '_pdbx_poly_seq_scheme.seq_id'
+    _item_linked.child_name   '_pdbx_struct_ref_seq_insertion.seq_id'
+    save_
+
+save__pdbx_struct_ref_seq_insertion.PDB_ins_code
+    _item_description.description
+;   Part of the author identifier of the inserted residue.
+
+    This data item is a pointer to _pdbx_poly_seq_scheme.pdb_ins_code in the
+    PDBX_POLY_SEQ_SCHEME category.
+;
+    _item.name               '_pdbx_struct_ref_seq_insertion.PDB_ins_code'
+    _item.category_id         pdbx_struct_ref_seq_insertion
+    _item.mandatory_code      no
+    _item_type.code           code
+    _item_linked.parent_name '_pdbx_poly_seq_scheme.pdb_ins_code'
+    _item_linked.child_name  '_pdbx_struct_ref_seq_insertion.PDB_ins_code'
+ 
+    save_
+
+save__pdbx_struct_ref_seq_insertion.details
+     _item_description.description
+;  A description of any special aspects of the insertion
+;
+    _item.name             '_pdbx_struct_ref_seq_insertion.details'
+    _item.category_id       pdbx_struct_ref_seq_insertion
+    _item.mandatory_code    no
+    _item_type.code         text
+    save_
+
+save__pdbx_struct_ref_seq_insertion.db_code
+     _item_description.description
+;   The code for this entity or biological unit or for a closely
+    related entity or biological unit in the named database.
+;
+     _item.name                  '_pdbx_struct_ref_seq_insertion.db_code'
+     _item.category_id             pdbx_struct_ref_seq_insertion
+     _item.mandatory_code          yes
+     _item_type.code               line
+      save_
+
+save__pdbx_struct_ref_seq_insertion.db_name
+     _item_description.description
+;    The name of the database containing reference information about
+     this entity or biological unit.
+;
+     _item.name                  '_pdbx_struct_ref_seq_insertion.db_name'
+     _item.category_id             pdbx_struct_ref_seq_insertion
+     _item.mandatory_code          yes
+     _item_type.code               line
+      save_ 
+
+
+################################
+# PDBX_STRUCT_REF_SEQ_DELETION #
+################################
+
+save_pdbx_struct_ref_seq_deletion
+     _category.description
+;    Data items in the PDBX_STRUCT_REF_SEQ_INSERTION category 
+     annotate deletions in the sequence of the entity described 
+     in the referenced database entry.
+;
+     _category.id                  pdbx_struct_ref_seq_deletion
+     _category.mandatory_code      no
+     _category_key.name          '_pdbx_struct_ref_seq_deletion.id'
+     loop_
+     _category_group.id           'inclusive_group'
+                                  'struct_group'
+                                  'pdbx_group'
+
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_struct_ref_seq_deletion.id
+_pdbx_struct_ref_seq_deletion.details
+_pdbx_struct_ref_seq_deletion.asym_id
+_pdbx_struct_ref_seq_deletion.comp_id
+_pdbx_struct_ref_seq_deletion.db_seq_id
+_pdbx_struct_ref_seq_deletion.db_code
+_pdbx_struct_ref_seq_deletion.db_name
+1 . A LEU 23 P15456 UNP
+1 . A THR 24 P15456 UNP
+1 . A GLN 25 P15456 UNP
+;
+      save_
+
+save__pdbx_struct_ref_seq_deletion.id
+     _item_description.description
+;   The value of _pdbx_struct_ref_seq_deletion.id must
+    uniquely identify a record in the PDBX_STRUCT_REF_SEQ_DELETION list.
+;
+     _item.name               '_pdbx_struct_ref_seq_deletion.id'
+     _item.category_id         pdbx_struct_ref_seq_deletion
+     _item.mandatory_code      yes
+     _item_type.code           code
+      save_
+
+save__pdbx_struct_ref_seq_deletion.details
+     _item_description.description
+;  A description of any special aspects of the deletion
+;
+    _item.name             '_pdbx_struct_ref_seq_deletion.details'
+    _item.category_id        pdbx_struct_ref_seq_deletion
+    _item.mandatory_code     no
+    _item_type.code          text
+    save_
+
+save__pdbx_struct_ref_seq_deletion.asym_id
+    _item_description.description
+;   Identifies the polymer entity instance in this entry corresponding
+    to the reference sequence in which the deletion is specified.
+
+    This data item is a pointer to _pdbx_poly_seq_scheme.asym_id in the
+    PDBX_POLY_SEQ_SCHEME category.
+;
+    _item.name                 '_pdbx_struct_ref_seq_deletion.asym_id'
+    _item.category_id           pdbx_struct_ref_seq_deletion
+    _item.mandatory_code        yes
+    _item_type.code             code
+    _item_linked.parent_name    '_pdbx_poly_seq_scheme.asym_id'
+    _item_linked.child_name     '_pdbx_struct_ref_seq_deletion.asym_id'
+
+   save_
+
+save__pdbx_struct_ref_seq_deletion.comp_id
+     _item_description.description
+;    The monomer name found at this position in the referenced
+     database entry.
+;
+     _item.name                  '_pdbx_struct_ref_seq_deletion.comp_id'
+     _item.category_id             pdbx_struct_ref_seq_deletion
+     _item.mandatory_code          yes
+     _item_type.code               ucode
+      save_
+
+save__pdbx_struct_ref_seq_deletion.db_seq_id
+     _item_description.description
+;   This data item is the database sequence numbering of the deleted
+    residue
+;
+     _item.name                  '_pdbx_struct_ref_seq_deletion.db_seq_id'
+     _item.category_id             pdbx_struct_ref_seq_deletion
+     _item.mandatory_code          yes
+     _item_type.code               int
+      save_
+
+save__pdbx_struct_ref_seq_deletion.db_code
+     _item_description.description
+;   The code for this entity or biological unit or for a closely
+    related entity or biological unit in the named database.
+;
+     _item.name                  '_pdbx_struct_ref_seq_deletion.db_code'
+     _item.category_id             pdbx_struct_ref_seq_deletion
+     _item.mandatory_code          yes
+     _item_type.code               line
+      save_
+
+save__pdbx_struct_ref_seq_deletion.db_name
+     _item_description.description
+;    The name of the database containing reference information about
+     this entity or biological unit.
+;
+     _item.name                  '_pdbx_struct_ref_seq_deletion.db_name'
+     _item.category_id             pdbx_struct_ref_seq_deletion
+     _item.mandatory_code          yes
+     _item_type.code               line
+      save_
+##
+##
+
+########################################
+## PDBX_REMEDIATION_ATOM_SITE_MAPPING ##
+########################################
+
+save_pdbx_remediation_atom_site_mapping
+    _category.description
+;   Data items in the PDBX_REMEDIATION_ATOM_SITE_MAPPING category records
+    mapping information between selected molecular entities that have been
+    chemically redefined.   The prior and current atom nomenclature is 
+    tabulated in this category.
+;
+    _category.id                 'pdbx_remediation_atom_site_mapping'
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_remediation_atom_site_mapping.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'atom_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example component QUA
+;
+;
+loop_
+_pdbx_remediation_atom_site_mapping.id
+_pdbx_remediation_atom_site_mapping.group_PDB
+_pdbx_remediation_atom_site_mapping.pdbx_align
+_pdbx_remediation_atom_site_mapping.label_atom_id
+_pdbx_remediation_atom_site_mapping.label_comp_id
+_pdbx_remediation_atom_site_mapping.label_asym_id
+_pdbx_remediation_atom_site_mapping.label_seq_id
+_pdbx_remediation_atom_site_mapping.label_alt_id
+_pdbx_remediation_atom_site_mapping.PDB_ins_code
+_pdbx_remediation_atom_site_mapping.pre_group_PDB
+_pdbx_remediation_atom_site_mapping.pre_pdbx_align
+_pdbx_remediation_atom_site_mapping.pre_auth_atom_id
+_pdbx_remediation_atom_site_mapping.pre_auth_comp_id
+_pdbx_remediation_atom_site_mapping.pre_auth_asym_id
+_pdbx_remediation_atom_site_mapping.pre_auth_seq_id
+_pdbx_remediation_atom_site_mapping.pre_auth_alt_id
+_pdbx_remediation_atom_site_mapping.pre_PDB_ins_code
+_pdbx_remediation_atom_site_mapping.auth_atom_id
+_pdbx_remediation_atom_site_mapping.auth_comp_id
+_pdbx_remediation_atom_site_mapping.auth_asym_id
+_pdbx_remediation_atom_site_mapping.auth_seq_id
+_pdbx_remediation_atom_site_mapping.auth_alt_id
+1 HETATM 1 O12 QUA C 0 . . HETATM 1 O12 QUA C 7 . . O12 QUA C 7 .
+2 HETATM 1 C11 QUA C 0 . . HETATM 1 C11 QUA C 7 . . C11 QUA C 7 . 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     _pdbx_category_context.type         WWPDB_LOCAL  
+     _pdbx_category_context.category_id  pdbx_remediation_atom_site_mapping
+     save_
+
+save__pdbx_remediation_atom_site_mapping.id
+    _item_description.description
+;    The value of pdbx_remediation_atom_site_mapping.id must uniquely identify a record in
+     the PDBX_REMEDIATION_ATOM_SITE_MAPPING list.
+
+     Note that this item need not be a number; it can be any unique
+     identifier.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_remediation_atom_site_mapping.group_PDB
+    _item_description.description
+;              The PDB group of atoms to which the atom site belongs. 
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.group_PDB'
+    _item.category_id             pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_enumeration.value       ATOM
+                                  HETATM
+     save_
+
+save__pdbx_remediation_atom_site_mapping.label_alt_id
+    _item_description.description
+;   A component of the atom_site identifier.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.label_alt_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.label_asym_id
+    _item_description.description
+;   A component of the atom_site identifier.
+
+    This data item is a pointer to _atom_site.label_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.label_asym_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.label_atom_id
+    _item_description.description
+;   A component of the atom_site identifier.
+
+    This data item is a pointer to _atom_site.label_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.label_atom_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.label_atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.label_comp_id
+    _item_description.description
+;   A component of the atom_site identifier.
+
+    This data item is a pointer to _atom_site.label_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.label_comp_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.label_seq_id
+    _item_description.description
+;   A component of the atom_site identifier.
+
+    This data item is a pointer to _atom_site.label_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.label_seq_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.label_seq_id'
+    _item_linked.parent_name    '_atom_site.label_seq_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.pdbx_align
+    _item_description.description
+;   An optional alignment flag.
+
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.pdbx_align'
+    _item.category_id             pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+
+save__pdbx_remediation_atom_site_mapping.PDB_ins_code
+    _item_description.description
+;   Optional atom_site identifier.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.PDB_ins_code'
+    _item.category_id           pdbx_remediation_atom_site_mapping
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.PDB_ins_code'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+    save_
+##
+##
+save__pdbx_remediation_atom_site_mapping.pre_auth_asym_id
+    _item_description.description
+;   A component of the prior atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.pre_auth_asym_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__pdbx_remediation_atom_site_mapping.pre_auth_atom_id
+    _item_description.description
+;   A component of the prior atom_site identifier.
+
+    This data item corrresponds to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.pre_auth_atom_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               atcode
+     save_
+
+save__pdbx_remediation_atom_site_mapping.pre_auth_comp_id
+    _item_description.description
+;   A component of the prior atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.pre_auth_comp_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__pdbx_remediation_atom_site_mapping.pre_auth_seq_id
+    _item_description.description
+;   A component of the prior atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.pre_auth_seq_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__pdbx_remediation_atom_site_mapping.pre_PDB_ins_code
+    _item_description.description
+;   A component of the prior atom_site identifier.
+
+    This data item corresponds to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.pre_PDB_ins_code'
+    _item.category_id           pdbx_remediation_atom_site_mapping
+    _item.mandatory_code        no
+    _item_type.code 		code
+    save_
+
+save__pdbx_remediation_atom_site_mapping.pre_group_PDB
+    _item_description.description
+;     A component of the prior atom_site identifier.
+
+     This item corresponds to the PDB group of atoms to which the atom site belongs. 
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.pre_group_PDB'
+    _item.category_id             pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_enumeration.value       ATOM
+                                  HETATM
+     save_
+
+save__pdbx_remediation_atom_site_mapping.pre_auth_alt_id
+    _item_description.description
+;   A component of the prior atom_site identifier.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.pre_auth_alt_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+     save_
+
+save__pdbx_remediation_atom_site_mapping.pre_pdbx_align
+    _item_description.description
+;   An optional alignment flag.
+
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.pre_pdbx_align'
+    _item.category_id             pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               int
+     save_
+#
+save__pdbx_remediation_atom_site_mapping.auth_asym_id
+    _item_description.description
+;   A component of the current atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.auth_asym_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.auth_asym_id'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.auth_atom_id
+    _item_description.description
+;   A component of the current atom_site identifier.
+
+    This data item corrresponds to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.auth_atom_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.auth_atom_id'
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.auth_comp_id
+    _item_description.description
+;   A component of the current atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.auth_comp_id'
+    _item.category_id            pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.auth_comp_id'
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.auth_seq_id
+    _item_description.description
+;   A component of the current atom_site identifier.
+
+    This data item corresponds to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.auth_seq_id'
+    _item.category_id             pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.auth_seq_id'
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.auth_alt_id
+    _item_description.description
+;   A component of the current atom_site identifier labeling alternate locations.
+
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.auth_alt_id'
+    _item.category_id             pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               code
+#    _item_linked.child_name     '_pdbx_remediation_atom_site_mapping.auth_alt_id'
+#   _item_linked.parent_name    '_atom_site.pdbx_auth_alt_id'
+     save_
+
+save__pdbx_remediation_atom_site_mapping.occupancy
+    _item_description.description
+;              The fraction of the atom type present at the current atom site.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.occupancy'
+    _item.category_id             pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+save__pdbx_remediation_atom_site_mapping.pre_occupancy
+    _item_description.description
+;              The fraction of the atom type present for the prior atom site.
+;
+    _item.name                  '_pdbx_remediation_atom_site_mapping.pre_occupancy'
+    _item.category_id             pdbx_remediation_atom_site_mapping
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+##
+##
+save__refine.pdbx_TLS_residual_ADP_flag
+    _item_description.description
+;     A flag for TLS refinements identifying the type of atomic displacement parameters stored
+      in _atom_site.B_iso_or_equiv.  
+;
+    _item.name                   '_refine.pdbx_TLS_residual_ADP_flag'
+    _item.category_id             refine
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_enumeration.value 
+    _item_enumeration.detail       
+        'LIKELY RESIDUAL'  
+         'Residual B values  (excluding TLS contributions) are likely specified for some or all atom sites'
+        'UNVERIFIED'  .
+     save_
+
+#save__refine.pdbx_adp_type
+#    _item_description.description
+#;     A code describing the type of atomic displacement parameters used stored
+#      in _atom_site.B_iso_or_equiv.  
+#
+#;
+#    _item.name                   '_refine.pdbx_adp_type'
+#    _item.category_id             refine
+#    _item.mandatory_code          no
+#    _item_type.code               code
+#     loop_
+#    _item_enumeration.value 
+#    _item_enumeration.detail       
+#        'FULL'      'Full Isotropic B values specified for all atom sites'
+#        'RESIDUAL'  'Residual B values  (excluding TLS contributions) specified for some or all atom sites'
+#     save_
+#
+save__diffrn_radiation.pdbx_scattering_type
+    _item_description.description
+;  The radiation scattering type for this diffraction data set.
+;
+    _item.name                  '_diffrn_radiation.pdbx_scattering_type'
+    _item.category_id             diffrn_radiation
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_enumeration.value       'x-ray' 'neutron' 'electron'
+     save_
+
+save__refln.pdbx_diffrn_id
+    _item_description.description
+;   An optional identifier for the diffraction data set containing this reflection.
+;
+    _item.name                  '_refln.pdbx_diffrn_id'
+    _item.category_id             refln
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_refln.pdbx_diffrn_id'
+    _item_linked.parent_name    '_diffrn.id'
+     save_
+
+save__reflns.pdbx_diffrn_id
+    _item_description.description
+;   An identifier for the diffraction data set for this set of summary statistics.
+
+    Multiple diffraction data sets entered as a comma separated list.
+;
+    _item.name                  '_reflns.pdbx_diffrn_id'
+    _item.category_id             reflns
+    _item.mandatory_code          yes
+    _item_type.code               code
+#    _item_linked.child_name     '_reflns.pdbx_diffrn_id'
+#    _item_linked.parent_name    '_diffrn.id'
+     save_
+
+save__refine.pdbx_diffrn_id
+    _item_description.description
+;   An identifier for the diffraction data set used in this refinement.
+ 
+    Multiple diffraction data sets specified as a comma separated list.
+;
+    _item.name                  '_refine.pdbx_diffrn_id'
+    _item.category_id             refine
+    _item.mandatory_code          no
+    _item_type.code               code
+#    _item_linked.child_name     '_refine.pdbx_diffrn_id'
+#    _item_linked.parent_name    '_diffrn.id'
+     save_
+
+save__reflns_shell.pdbx_ordinal
+    _item_description.description
+;   An ordinal identifier for this resolution shell.
+;
+    _item.name                  '_reflns_shell.pdbx_ordinal'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+
+save__reflns.pdbx_ordinal
+    _item_description.description
+;   An ordinal identifier for this set of reflection statistics.
+;
+    _item.name                  '_reflns.pdbx_ordinal'
+    _item.category_id             reflns
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__reflns_shell.pdbx_diffrn_id
+    _item_description.description
+;   An identifier for the diffraction data set corresponding to this resolution shell.
+
+    Multiple diffraction data sets specified as a comma separated list.
+;
+    _item.name                  '_reflns_shell.pdbx_diffrn_id'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          no
+    _item_type.code               code
+#    _item_linked.child_name     '_reflns_shell.pdbx_diffrn_id'
+#    _item_linked.parent_name    '_diffrn.id'
+     save_
+
+##
+###################################
+## PDBX_VALIDATE_POLYMER_LINKAGE ##
+###################################
+
+save_pdbx_validate_polymer_linkage
+    _category.description
+;   Data items in the PDBX_VALIDATE_POLYMER_LINKAGE category list the
+    polymer linkages within the entry that are outside of typlical 
+    covalent distances.
+
+;
+    _category.id                  pdbx_validate_polymer_linkage
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_validate_polymer_linkage.id'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'validate_group'
+                                 'pdbx_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 
+;
+;
+loop_
+_pdbx_validate_polymer_linkage.id
+_pdbx_validate_polymer_linkage.PDB_model_num
+_pdbx_validate_polymer_linkage.auth_atom_id_1
+_pdbx_validate_polymer_linkage.auth_asym_id_1
+_pdbx_validate_polymer_linkage.auth_comp_id_1
+_pdbx_validate_polymer_linkage.auth_seq_id_1
+_pdbx_validate_polymer_linkage.PDB_ins_code_1
+_pdbx_validate_polymer_linkage.label_alt_id_1
+_pdbx_validate_polymer_linkage.auth_atom_id_2
+_pdbx_validate_polymer_linkage.auth_asym_id_2
+_pdbx_validate_polymer_linkage.auth_comp_id_2
+_pdbx_validate_polymer_linkage.auth_seq_id_2
+_pdbx_validate_polymer_linkage.PDB_ins_code_2
+_pdbx_validate_polymer_linkage.label_alt_id_2
+_pdbx_validate_polymer_linkage.dist
+   1     1     .  B  VAL    107  .  .       .  B  ARG    108  .  .         3.16
+   2     1     .  B  ARG    110  .  .       .  B  LYS    110  .  .         2.95
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_validate_polymer_linkage.id
+    _item_description.description
+;   The value of _pdbx_validate_polymer_linkage.id must uniquely identify 
+    each item in the PDBX_VALIDATE_POLYMER_LINKAGE list.
+
+    This is an integer serial number.
+;
+    _item.name                 '_pdbx_validate_polymer_linkage.id'
+    _item.category_id          pdbx_validate_polymer_linkage
+    _item.mandatory_code       yes
+    _item_type.code            int
+     save_
+
+save__pdbx_validate_polymer_linkage.PDB_model_num
+    _item_description.description
+;   The model number for the given linkage
+;
+    _item.name                 '_pdbx_validate_polymer_linkage.PDB_model_num'
+    _item.category_id          pdbx_validate_polymer_linkage
+    _item.mandatory_code       yes
+    _item_type.code            int
+    _item_linked.child_name    '_pdbx_validate_polymer_linkage.PDB_model_num'
+    _item_linked.parent_name   '_atom_site.pdbx_PDB_model_num'
+     save_
+
+
+save__pdbx_validate_polymer_linkage.auth_asym_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_asym_id_1'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_asym_id_1' 
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_atom_id_1
+    _item_description.description
+;    Part of the identifier of the first of the two atom sites that
+     define the linkage.
+
+     This data item is a pointer to _atom_site.auth_atom_id in the
+     ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_atom_id_1'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_atom_id_1' 
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_comp_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_comp_id_1'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_comp_id_1'  
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_seq_id_1
+    _item_description.description
+;   Part of the identifier of the first of the two atom sites that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_seq_id_1'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_seq_id_1'   
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_atom_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the linkage.
+
+    This data item is a pointer to _atom_site.auth_atom_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_atom_id_2'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		atcode
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_atom_id_2' 
+    _item_linked.parent_name    '_atom_site.auth_atom_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_asym_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the linkage.
+
+    This data item is a pointer to _atom_site.auth_asym_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_asym_id_2'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_asym_id_2'
+    _item_linked.parent_name    '_atom_site.auth_asym_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_comp_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the linkage.
+
+    This data item is a pointer to _atom_site.auth_comp_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_comp_id_2'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_comp_id_2'  
+    _item_linked.parent_name    '_atom_site.auth_comp_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.auth_seq_id_2
+    _item_description.description
+;   Part of the identifier of the second of the two atom sites
+    that define the linkage.
+
+    This data item is a pointer to _atom_site.auth_seq_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.auth_seq_id_2'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        yes
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.auth_seq_id_2'   
+    _item_linked.parent_name    '_atom_site.auth_seq_id'
+     save_
+
+
+save__pdbx_validate_polymer_linkage.PDB_ins_code_1
+    _item_description.description
+;   Optional identifier of the first of the two atom sites that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.PDB_ins_code_1'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.PDB_ins_code_1'
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+    save_
+
+save__pdbx_validate_polymer_linkage.PDB_ins_code_2
+    _item_description.description
+;   Optional identifier of the second of the two atom sites that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.PDB_ins_code_2'
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item.mandatory_code        no
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.PDB_ins_code_2' 
+    _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+
+    save_
+
+save__pdbx_validate_polymer_linkage.label_alt_id_1
+    _item_description.description
+;   An optional identifier of the first of the two atoms that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.label_alt_id_1'
+    _item.mandatory_code          no
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.label_alt_id_1'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.label_alt_id_2
+    _item_description.description
+;   An optional identifier of the second of the two atoms that
+    define the linkage.
+
+    This data item is a pointer to _atom_site.label_alt_id in the
+    ATOM_SITE category.
+;
+    _item.name                  '_pdbx_validate_polymer_linkage.label_alt_id_2'
+    _item.mandatory_code          no
+    _item.category_id           pdbx_validate_polymer_linkage
+    _item_type.code 		code
+    _item_linked.child_name     '_pdbx_validate_polymer_linkage.label_alt_id_2'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+     save_
+
+save__pdbx_validate_polymer_linkage.dist
+    _item_description.description
+;   The value of the polymer linkage for the two atoms defined.
+;
+    _item.name                    '_pdbx_validate_polymer_linkage.dist'
+    _item.category_id             pdbx_validate_polymer_linkage
+    _item.mandatory_code          yes
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+

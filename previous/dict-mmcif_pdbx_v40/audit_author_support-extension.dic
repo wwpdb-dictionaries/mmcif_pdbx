@@ -1,0 +1,127 @@
+##
+# File:      pdbx_audit_author_support-extension.dic
+# Original:  Apr 11, 2012  JDW
+#
+# Updated: -- 
+#
+# Draft dictionary extension for describing support details for entry authors.
+#
+## 
+
+########################
+## PDBX_AUDIT_AUTHOR  ##
+########################
+
+save__pdbx_audit_author.grant_support_flag
+    _item_description.description
+;              A flag to identify a grant supported author
+;
+    _item.name                  '_pdbx_audit_author.grant_support_flag'
+    _item.category_id             pdbx_audit_author
+    _item.mandatory_code          no
+    _item_type.code               ucode
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+      'Y'  'yes, grant funded'
+      'N'  'no,  not grant funded'
+     save_
+
+
+
+
+###############################
+## PDBX_AUDIT_AUTHOR_SUPPORT ##
+###############################
+
+save_pdbx_audit_author_support
+    _category.description
+;              Data items in the PDBX_AUDIT_AUTHOR_SUPPORT category record details about
+               funding support for author(s) of the data block.
+;
+    _category.id                  pdbx_audit_author_support
+    _category.mandatory_code      no
+    _category_key.name           '_pdbx_audit_author_support.ordinal'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'audit_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+     loop_
+     _pdbx_audit_author_support.id
+     _pdbx_audit_author_support.author_id
+     _pdbx_audit_author_support.funding_organization
+     _pdbx_audit_author_support.grant_number
+     _pdbx_audit_author_support.country
+     1  1 'National Institute for General Medical Sciences' '1R01GM072999-01' 'United States'  
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_audit_author_support.funding_organization
+    _item_description.description
+;              The name of the organization providing funding support for this 
+               author.
+;
+    _item.name                  '_pdbx_audit_author_support.funding_organization'
+    _item.category_id             pdbx_audit_author_support
+    _item.mandatory_code          no
+    _item_type.code               text
+     loop
+    _item_examples.case
+       'National Institutes of Health'
+       'Welcome Trust'
+       'National Institute of General Medical Sciences'
+     save_
+
+save__pdbx_audit_author_support.country 
+    _item_description.description
+;              The country providing the funding support for this author.
+;
+    _item.name                  '_pdbx_audit_author_support.funding_organization'
+    _item.category_id             pdbx_audit_author_support
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+
+save__pdbx_audit_author_support.grant_number
+    _item_description.description
+;              The grant number supporting this author.
+;
+    _item.name                  '_pdbx_audit_author_support.funding_organization'
+    _item.category_id             pdbx_audit_author_support
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+save__pdbx_audit_author_support.author_id
+    _item_description.description
+;              A reference to the pdbx_audit_author.ordinal.
+;
+    _item.name                  '_pdbx_audit_author_support.author_id'
+    _item.category_id             pdbx_audit_author_support
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name	 '_pdbx_audit_author_support.author_id'
+    _item_linked.parent_name     '_pdbx_audit_author.ordinal'
+     save_
+
+save__pdbx_audit_author_support.id
+    _item_description.description
+;              A unique sequential integer identifier for each source of support for this autor author. 
+;
+    _item.name                  '_pdbx_audit_author_support.id'
+    _item.category_id             pdbx_audit_author_support
+    _item.mandatory_code          yes
+    _item_type.code               int
+     loop_
+    _item_examples.case          1 2 3
+     save_

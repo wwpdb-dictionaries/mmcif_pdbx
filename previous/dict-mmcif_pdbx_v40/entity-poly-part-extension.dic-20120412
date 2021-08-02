@@ -1,0 +1,513 @@
+##
+# File:      entity-poly-part-extension.dic
+# Original:  Jan 25, 2012  JDW
+#
+# Updated: -- 
+#
+# Jan 26, 2012 - jdw -  updated with suggestions from SV
+# Apr 12, 2012 - jdw -  updated with consensus comments from group
+#
+# Draft dictionary extension for describing polymeric molecules with derived
+# from multiple biological sources.
+#
+## 
+
+###########################
+## PDBX_ENTITY_POLY_PART ##
+###########################
+
+save_pdbx_entity_poly_part
+    _category.description
+;              Data items in the PDBX_ENTITY_POLY_PART category describe
+               the decomposition of polymeric entities into sections derived
+	       from distinct biological sources. 
+;
+    _category.id                  pdbx_entity_poly_part
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_entity_poly_part.entity_id'
+                                 '_pdbx_entity_poly_part.part_id'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+  loop_
+ _pdbx_entity_poly_part.entity_id
+ _pdbx_entity_poly_part.part_id
+ _pdbx_entity_poly_part.sequence_type
+ _pdbx_entity_poly_part.seq_one_letter_code
+ 1 1  'N-terminal expression tag'  HHHLEK
+ 1 2  'Fusion component'           TEQEEGGEAVHEVE...
+ 1 3   Linker                      GGGGGG
+ 1 4  'Fusion component'           PATGTK...
+ 1 5  'Fusion component'           ASSG...
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_entity_poly_part.part_id
+    _item_description.description
+;              This data item uniquely identifies a polymer section within a polymer
+               entity.
+;
+    _item.name                  '_pdbx_entity_poly_part.part_id'
+    _item.category_id             pdbx_entity_poly_part
+    _item.mandatory_code          yes
+    _item_type.code		  int
+    _item_linked.child_name     '_pdbx_entity_poly_part.part_id'
+    _item_linked.parent_name    '_chem_comp_atom.part_id'
+     save_
+
+save__pdbx_entity_poly_part.entity_id
+    _item_description.description
+;              This data item is a reference to the polymer entity identifier.
+;
+    _item.name                  '_pdbx_entity_poly_part.entity_id'
+    _item.category_id             pdbx_entity_poly_part
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_entity_poly_part.entity_id'
+    _item_linked.parent_name    '_entity_poly.entity_id'
+     save_
+
+
+save__pdbx_entity_poly_part.beg_seq_num
+    _item_description.description
+;              The beginning polymer sequence position for this polymer section.  
+
+               A reference to the sequence position in the _entity_poly_seq.num.
+;
+    _item.name                  '_pdbx_entity_poly_part.beg_seq_num'
+    _item.category_id             pdbx_entity_poly_part
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_entity_poly_part.beg_seq_num'
+    _item_linked.parent_name    '_entity_poly_seq.num'
+     save_
+
+save__pdbx_entity_poly_part.end_seq_num
+    _item_description.description
+;              The ending polymer sequence position for this polymer section.  
+
+               A reference to the sequence position in the _entity_poly_seq.num.
+;
+    _item.name                  '_pdbx_entity_poly_part.end_seq_num'
+    _item.category_id             pdbx_entity_poly_part
+    _item.mandatory_code          no
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_entity_poly_part.end_seq_num'
+    _item_linked.parent_name    '_entity_poly_seq.num'
+     save_
+
+save__pdbx_entity_poly_part.seq_one_letter_code
+    _item_description.description
+;              Chemical sequence expressed as string of one-letter 
+               amino acid codes. Modifications and non-standard 
+               amino acids are coded as X.
+;
+    _item.name                  '_pdbx_entity_poly_part.seq_one_letter_code'
+    _item.category_id             entity_poly_part
+    _item.mandatory_code          yes
+    _item_type.code               text
+    _item_examples.case
+;
+A  for alanine or adenine
+B  for ambiguous asparagine/aspartic-acid
+R  for arginine
+N  for asparagine
+D  for aspartic-acid
+C  for cysteine or cystine or cytosine
+Q  for glutamine
+E  for glutamic-acid
+Z  for ambiguous glutamine/glutamic acid
+G  for glycine or guanine
+H  for histidine
+I  for isoleucine
+L  for leucine
+K  for lysine
+M  for methionine
+F  for phenylalanine
+P  for proline
+S  for serine
+T  for threonine or thymine
+W  for tryptophan
+Y  for tyrosine
+V  for valine
+U  for uracil
+O  for water
+X  for other
+;
+     save_
+
+save__pdbx_entity_poly_part.seq_one_letter_code_can
+    _item_description.description
+;              Cannonical chemical sequence expressed as string of 
+               one-letter amino acid codes. Modifications are coded
+               as the parent amino acid where possible. 
+
+A  for alanine or adenine
+B  for ambiguous asparagine/aspartic-acid
+R  for arginine
+N  for asparagine
+D  for aspartic-acid
+C  for cysteine or cystine or cytosine
+Q  for glutamine
+E  for glutamic-acid
+Z  for ambiguous glutamine/glutamic acid
+G  for glycine or guanine
+H  for histidine
+I  for isoleucine
+L  for leucine
+K  for lysine
+M  for methionine
+F  for phenylalanine
+P  for proline
+S  for serine
+T  for threonine or thymine
+W  for tryptophan
+Y  for tyrosine
+V  for valine
+U  for uracil
+;
+    _item.name                  '_pdbx_entity_poly_part.seq_one_letter_code_can'
+    _item.category_id             pdbx_entity_poly_part
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_examples.case
+;
+MSHHWGYGKHNGPEHWHKDFPIAKGERQSPVDIDTHTAKYDPSLKPLSVSYDQATSLRILNNGAAFNVEFD
+;
+     save_
+
+save__pdbx_entity_poly_part.ec_number
+    _item_description.description
+;             Enzyme Commission (EC) number(s) related to this entity part.
+;
+    _item.name                  '_pdbx_entity_poly_part.ec_number'
+    _item.category_id             pdbx_entity_poly_part
+    _item.mandatory_code          no
+    _item_type.code               ec-type
+    _item_examples.case           2.7.7.7  
+     save_
+
+save__pdbx_entity_poly_part.mutation
+    _item_description.description
+;              Details about any mutation(s) related to this entity part.
+;
+    _item.name                  '_pdbx_entity_poly_part.mutation'
+    _item.category_id             pdbx_entity_poly_part
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+    _item_examples.case           'Y31H'
+                                  'DEL(298-323)'
+     save_
+
+save__pdbx_entity_poly_part.sequence_type
+    _item_description.description
+; The type of sequence 
+;
+    _item.name                  '_pdbx_entity_poly_part.sequence_type'
+    _item.category_id             pdbx_entity_poly_type
+    _item.mandatory_code          yes
+    _item_type.code               line
+     loop_
+    _item_enumeration.value
+     'N-terminal expression tag' 
+     'C-terminal expression tag'
+     'Linker'
+     'Fusion component'
+     save_
+
+save__pdbx_entity_poly_part.name
+    _item_description.description
+;             The name associated with this part of the polymer entity.
+;
+    _item.name                  '_pdbx_entity_poly_part.name'
+    _item.category_id             pdbx_entity_poly_part
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_entity_poly_part.details
+    _item_description.description
+;             The additional details related to this polymer entity part.
+;
+    _item.name                  '_pdbx_entity_poly_part.details'
+    _item.category_id             pdbx_entity_poly_part
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+
+
+###############################
+## PDBX_ENTITY_POLY_PART_SRC ##
+###############################
+
+save_pdbx_entity_poly_part_src
+    _category.description
+;              Data items in the PDBX_ENTITY_POLY_PART_SRC category record details of
+               the source from which this polymer entity part was obtained.
+;
+    _category.id                  pdbx_entity_poly_part_src
+    _category.mandatory_code      no
+     loop_
+    _category_key.name          '_pdbx_entity_poly_part_src.entity_id'
+                                '_pdbx_entity_poly_part_src.part_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'entity_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - 
+;
+;
+    loop_
+    _pdbx_entity_poly_part_src.entity_id
+    _pdbx_entity_poly_part_src.part_id
+    _pdbx_entity_poly_part_src.gene_src_scientific_name      
+    _pdbx_entity_poly_part_src.gene_src_ncbi_taxonomy_id    
+     1  1 'Influenza A virus'  41857
+     1  2 'Influenza B virus'  529646 
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_entity_poly_part_src.entity_id
+    _item_description.description
+;              This data item is a pointer to _entity_poly.entity_id in the ENTITY_POLY category.
+;
+    _item.name                  '_pdbx_entity_poly_part_src.entity_id'
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_entity_poly_part_src.entity_id'
+    _item_linked.parent_name    '_entity_poly.entity_id'
+     save_
+
+
+save__pdbx_entity_poly_part_src.part_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_entity_poly_part.part_id in the 
+               PDBX_ENTITY_POLY_PART category.
+;
+    _item.name                  '_pdbx_entity_poly_part_src.part_id'
+    _item.mandatory_code          yes
+    _item_type.code               int
+    _item_linked.child_name     '_pdbx_entity_poly_part_src.part_id'
+    _item_linked.parent_name    '_pdbx_entity_poly_part.part_id'
+     save_
+
+save__pdbx_entity_poly_part_src.gene_src_common_name
+    _item_description.description
+;              The common name of the natural organism from which the gene was
+               obtained.
+;
+    _item.name                  '_pdbx_entity_poly_part_src.gene_src_common_name'
+    _item.category_id             pdbx_entity_poly_part_src
+    _item.mandatory_code          no
+    _item_type.code               text
+    loop_
+    _item_examples.case          'human'
+                                 'yeast'
+     save_
+
+save__pdbx_entity_poly_part_src.gene_src_scientific_name
+    _item_description.description
+;              Scientific name of the organism.
+
+               Conforming to the 
+;
+    _item.name                  '_pdbx_entity_poly_part.gene_src_scientific_name'
+    _item.category_id             pdbx_entity_poly_part
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_examples.case       
+;
+ESCHERICHIA COLI
+HOMO SAPIENS
+SACCHAROMYCES CEREVISIAE
+;
+     save_
+
+save__pdbx_entity_poly_part_src.gene_src_variant
+    _item_description.description
+;              Identifies the variant.
+;
+    _item.name                  '_pdbx_entity_poly_part.gene_src_variant'
+    _item.category_id             pdbx_entity_poly_part
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_examples.case       'DELTAH1DELTATRP'
+     save_
+
+save__pdbx_entity_poly_part_src.gene_src_details
+    _item_description.description
+;              A description of special aspects of the natural organism from
+               which the gene was obtained.
+;
+    _item.name                  '_pdbx_entity_poly_part_src.gene_src_details'
+    _item.category_id             pdbx_entity_poly_part_src
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+save__pdbx_entity_poly_part_src.gene_src_strain
+    _item_description.description
+;              The strain of the natural organism from which the gene was
+               obtained, if relevant.
+;
+    _item.name                  '_pdbx_entity_poly_part_src.gene_src_strain'
+    _item.category_id             pdbx_entity_poly_part_src
+    _item.mandatory_code          no
+    _item_type.code               text
+    loop_
+    _item_examples.case          'DH5a'
+                                 'BMH 71-18'
+     save_
+
+save__pdbx_entity_poly_part_src.gene_src_tissue
+    _item_description.description
+;              The tissue of the natural organism from which the gene was
+               obtained.
+;
+    _item.name                  '_pdbx_entity_poly_part_src.gene_src_tissue'
+    _item.category_id             pdbx_entity_poly_part_src
+    _item.mandatory_code          no
+    _item_type.code               text
+    loop_
+    _item_examples.case          'heart'
+                                 'liver'
+                                 'eye lens'
+     save_
+
+save__pdbx_entity_poly_part_src.gene_src_tissue_fraction
+    _item_description.description
+;              The subcellular fraction of the tissue of the natural organism
+               from which the gene was obtained.
+;
+    _item.name                  '_pdbx_entity_poly_part_src.gene_src_tissue_fraction'
+    _item.category_id             pdbx_entity_poly_part_src
+    _item.mandatory_code          no
+    _item_type.code               text
+    loop_
+    _item_examples.case          'mitochondria'
+                                 'nucleus'
+                                 'membrane'
+     save_
+
+save__pdbx_entity_poly_part_src.gene_src_ncbi_taxonomy_id
+    _item_description.description
+;  NCBI Taxonomy identifier for the gene source organism.
+
+   Reference:
+
+   Wheeler DL, Chappey C, Lash AE, Leipe DD, Madden TL, Schuler GD,
+   Tatusova TA, Rapp BA (2000). Database resources of the National
+   Center for Biotechnology Information. Nucleic Acids Res 2000 Jan
+   1;28(1):10-4 
+
+   Benson DA, Karsch-Mizrachi I, Lipman DJ, Ostell J, Rapp BA,
+   Wheeler DL (2000). GenBank. Nucleic Acids Res 2000 Jan 1;28(1):15-18.
+
+;
+    _item.name                  '_pdbx_entity_poly_part_src.gene_src_ncbi_taxonomy_id'
+    _item.category_id            'pdbx_entity_poly_part_src'
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+
+
+save__pdbx_entity_poly_part.seq_one_letter_code
+    _item_description.description
+;              Chemical sequence expressed as string of one-letter 
+               amino acid codes. Modifications and non-standard 
+               amino acids are coded as X.
+;
+    _item.name                  '_pdbx_entity_poly_part.seq_one_letter_code'
+    _item.category_id             entity_poly_part
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_examples.case
+;
+A  for alanine or adenine
+B  for ambiguous asparagine/aspartic-acid
+R  for arginine
+N  for asparagine
+D  for aspartic-acid
+C  for cysteine or cystine or cytosine
+Q  for glutamine
+E  for glutamic-acid
+Z  for ambiguous glutamine/glutamic acid
+G  for glycine or guanine
+H  for histidine
+I  for isoleucine
+L  for leucine
+K  for lysine
+M  for methionine
+F  for phenylalanine
+P  for proline
+S  for serine
+T  for threonine or thymine
+W  for tryptophan
+Y  for tyrosine
+V  for valine
+U  for uracil
+O  for water
+X  for other
+;
+     save_
+
+save__pdbx_entity_poly_part.seq_one_letter_code_can
+    _item_description.description
+;              Cannonical chemical sequence expressed as string of 
+               one-letter amino acid codes. Modifications are coded
+               as the parent amino acid where possible. 
+
+A  for alanine or adenine
+B  for ambiguous asparagine/aspartic-acid
+R  for arginine
+N  for asparagine
+D  for aspartic-acid
+C  for cysteine or cystine or cytosine
+Q  for glutamine
+E  for glutamic-acid
+Z  for ambiguous glutamine/glutamic acid
+G  for glycine or guanine
+H  for histidine
+I  for isoleucine
+L  for leucine
+K  for lysine
+M  for methionine
+F  for phenylalanine
+P  for proline
+S  for serine
+T  for threonine or thymine
+W  for tryptophan
+Y  for tyrosine
+V  for valine
+U  for uracil
+;
+    _item.name                  '_pdbx_entity_poly_part.seq_one_letter_code_can'
+    _item.category_id             pdbx_entity_poly_part
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_examples.case
+;
+MSHHWGYGKHNGPEHWHKDFPIAKGERQSPVDIDTHTAKYDPSLKPLSVSYDQATSLRILNNGAAFNVEFD
+;
+     save_
