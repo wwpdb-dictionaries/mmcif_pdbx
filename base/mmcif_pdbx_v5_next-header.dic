@@ -2636,6 +2636,8 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization enumeration.
     + Add internal _struct.pdbx_center_of_mass_x, _struct.pdbx_center_of_mass_y,
      _struct.pdbx_center_of_mass_z.
+    + Add _em_entity_assembly.chimera and _emd_supramolecule.chimera
+
 ;
 ###########################################################################
 #
