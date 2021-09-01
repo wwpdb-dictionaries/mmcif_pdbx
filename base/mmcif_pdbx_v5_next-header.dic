@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.356
+    _dictionary.version         5.357
 #
      loop_
     _dictionary_history.version
@@ -2639,6 +2639,17 @@ data_mmcif_pdbx.dic
     + Add _em_entity_assembly.chimera and _emd_supramolecule.chimera
 
 ;
+5.357  2021-09-01
+;
+    Changes (ep):
+    + Using new conditional context for pdbx_contact_author, selectively all
+      principal investogator information out
+    + Extend _pdbx_audit_support.funding_organization enumeration
+    + Extend _em_software.name and _emd_software.name enumerations
+    + Add _em_image_recording.avg_electron_dose_per_subtomogram and
+      _emd_image_recording.average_electron_dose_per_subtomogram
+    + Extend _em_map.type, _emd_map.type and _emd_map_upload.type enumerations
+;
 ###########################################################################
 #
 # File:  mmcif_pdbx-data.dic
@@ -3465,5 +3476,32 @@ data_mmcif_pdbx.dic
      'electrons_per_picometres_cubed'
      'electrons_per_angstroms_cubed'                       '*'   1.0E-06
 ###
+
+##################
+## Conditionals ##
+##################
+loop_
+_pdbx_comparison_operator_list.code
+_pdbx_comparison_operator_list.description
+                                    =       Equal
+                                    >=      "greater or equal"
+                                    !=      "Not equal"
+                                    <       "Less than"
+                                    not_set "If not set"
+                                    true    "Always true"
+
+loop_
+_pdbx_conditional_context_list.ordinal_id
+_pdbx_conditional_context_list.context_id
+_pdbx_conditional_context_list.target_item_name
+_pdbx_conditional_context_list.target_item_value
+_pdbx_conditional_context_list.cmp_op
+_pdbx_conditional_context_list.log_op
+1 WWPDB_NOT_ACCEPT_GDPR_20210924 '_pdbx_database_status.date_accepted_terms_and_conditions' ?                                    not_set ?
+2 WWPDB_NOT_ACCEPT_GDPR_20210924 '_pdbx_database_status.date_accepted_terms_and_conditions' 2021-09-24                           <       or
+3 WWPDB_NOT_PI                   '_pdbx_contact_author.role'                                ?                                    not_set ?
+4 WWPDB_NOT_PI                   '_pdbx_contact_author.role'                               'principal investigator/group leader' !=      or
+5 WWPDB_ALWAYS_SUPPRESS          '_pdbx_contact_author.role'                                ?                                    true    ?
+
 
 ### EOF mmcif_pdbx-data.dic

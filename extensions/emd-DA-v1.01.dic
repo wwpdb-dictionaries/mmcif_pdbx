@@ -786,6 +786,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  'CCP4 package'                    .
         '_emd_software.name'  cisTEM                            .
         '_emd_software.name'  CNS                               .
+        '_emd_software.name'  'Confidence Maps'                 .
         '_emd_software.name'  Coot                              .
         '_emd_software.name'  Cow                               .	
         '_emd_software.name'  crYOLO                            .
@@ -798,6 +799,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  DIALS                             .	
         '_emd_software.name'  DigitalMicrograph                 .
         '_emd_software.name'  DireX                             .
+        '_emd_software.name'  DockEM                            .	
         '_emd_software.name'  'DoG Picker'                      .
         '_emd_software.name'  Dynamo                            .
         '_emd_software.name'  emClarity                         .
@@ -823,6 +825,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  Gctf                              .
 	'_emd_software.name'  Gorgon                            .
         '_emd_software.name'  HADDOCK                           .
+        '_emd_software.name'  HARUSPEX                          .
         '_emd_software.name'  hsearch_lorentz                   .
         '_emd_software.name'  I-TASSER                          .
         '_emd_software.name'  ICON                              .
@@ -838,6 +841,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  JALIGN                            .
         '_emd_software.name'  jspr                              .
         '_emd_software.name'  JSUBTOMO                          .
+        '_emd_software.name'  LAFTER                            .
         '_emd_software.name'  LIBG                              .
         '_emd_software.name'  Latitude                          .
         '_emd_software.name'  Leginon                           .
@@ -5590,6 +5594,27 @@ save__emd_image_recording.average_electron_dose_per_image
      "_emd_image_recording.average_electron_dose_per_image"  1 1000
      save_
 
+save__emd_image_recording.average_electron_dose_per_subtomogram
+    _item_description.description
+; The average total electron dose received by the specimen for each subtomogram (electrons per square angstrom).
+;
+    _item.name                  '_emd_image_recording.average_electron_dose_per_subtomogram'
+    _item.category_id             emd_image_recording
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              electrons_angstrom_squared
+    loop_
+    _item_range.minimum
+    _item_range.maximum           0.0  .
+                                  0.0 0.0
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+     '_emd_image_recording.average_electron_dose_per_subtomogram'  0 0
+     '_emd_image_recording.average_electron_dose_per_subtomogram'  0 200
+     save_
+
 save__emd_image_recording.details
     _item_description.description
 ;    Any additional details about image recording.
@@ -8324,7 +8349,15 @@ save__emd_map.type
         "primary map"
         "additional map"
         "mask"
-        "half map"
+	"half map"
+	"raw map"
+	"FSC half map mask"
+	"FSC map-model mask"
+        "alignment mask"
+        "focused refinement mask"
+        "3D classification map"
+        "focus refinement map"
+        "segmentation"
      save_
 
 save__emd_map.partition

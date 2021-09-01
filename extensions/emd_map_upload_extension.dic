@@ -97,6 +97,14 @@ save__emd_map_upload.type
         "additional map"
         "mask"
         "half map"
+	"raw map"
+	"FSC half map mask"
+	"FSC map-model mask"
+        "alignment mask"
+        "focused refinement mask"
+        "3D classification map"
+        "focus refinement map"
+        "segmentation"
      save_
 
 save__emd_map_upload.partition
