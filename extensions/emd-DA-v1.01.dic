@@ -5611,8 +5611,8 @@ save__emd_image_recording.average_electron_dose_per_subtomogram
     _pdbx_item_range.name
     _pdbx_item_range.minimum
     _pdbx_item_range.maximum
-     '_emd_image_recording.average_electron_dose_per_subtomogram'  0 0
-     '_emd_image_recording.average_electron_dose_per_subtomogram'  0 200
+     '_emd_image_recording.average_electron_dose_per_subtomogram'  10 10
+     '_emd_image_recording.average_electron_dose_per_subtomogram'  10 200
      save_
 
 save__emd_image_recording.details

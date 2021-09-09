@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.357
+    _dictionary.version         5.358
 #
      loop_
     _dictionary_history.version
@@ -2649,6 +2649,13 @@ data_mmcif_pdbx.dic
     + Add _em_image_recording.avg_electron_dose_per_subtomogram and
       _emd_image_recording.average_electron_dose_per_subtomogram
     + Extend _em_map.type, _emd_map.type and _emd_map_upload.type enumerations
+;
+5.358  2021-09-09
+;
+    Changes (ep):
+    + Correct advisory limits for _em_image_recording.avg_electron_dose_per_subtomogram
+      and _emd_image_recording.average_electron_dose_per_subtomogram
+    + Extend _pdbx_audit_support.funding_organization enumeration.
 ;
 ###########################################################################
 #

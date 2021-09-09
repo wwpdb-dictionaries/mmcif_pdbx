@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.349
+    _dictionary.version         5.350
 #
      loop_
     _dictionary_history.version
@@ -2518,6 +2518,12 @@ data_mmcif_pdbx.dic
       _atom_site.pdbx_label_index, _atom_site.pdbx_sifts_xref_db_name,
       _atom_site.pdbx_sifts_xref_db_acc, _atom_site.pdbx_sifts_xref_db_num,
       _atom_site.pdbx_sifts_xref_db_res
+;
+5.350  2021-09-09
+;
+    Changes (ep):
+    + Correct advisory limits for _em_image_recording.avg_electron_dose_per_subtomogram
+    + Extend _pdbx_audit_support.funding_organization enumeration.
 ;
 
 #
