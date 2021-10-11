@@ -835,6 +835,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  IMOD                              .
         '_emd_software.name'  iMODFIT                           .
         '_emd_software.name'  IMP                               .
+        '_emd_software.name'  IPET                              .	
         '_emd_software.name'  ISOLDE                            .
         '_emd_software.name'  J3DR                              .
         '_emd_software.name'  JADAS                             .
@@ -896,6 +897,7 @@ encouraged to provide a value in this field.
         '_emd_software.name'  'TOM Toolbox'                     .
         '_emd_software.name'  TOMO3D                            .
         '_emd_software.name'  TOMOCTF                           .
+        '_emd_software.name'  TomoAlign                         .
         '_emd_software.name'  Topaz                             .
         '_emd_software.name'  'UCSF Chimera'                    .
         '_emd_software.name'  'UCSF ChimeraX'                   .

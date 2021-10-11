@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.350
+    _dictionary.version         5.351
 #
      loop_
     _dictionary_history.version
@@ -2524,6 +2524,15 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Correct advisory limits for _em_image_recording.avg_electron_dose_per_subtomogram
     + Extend _pdbx_audit_support.funding_organization enumeration.
+;
+5.351  2021-10-11
+;
+    Changes (ep):
+    + Update deposition help text for _diffrn.abient_temp
+    + Extend _pdbx_audit_support.funding_organization enumeration.
+    + Add "BRUKER IMUS 3.0 MICROFOCUS" to _diffrn_source.type enumeration
+    + Add IPET and TomoAlign to _em_software.name enumeration
+    + Change pdx_item_tye for _pdbx_struct_ref_seq_depositor_info.db_seq_one_letter_code
 ;
 
 #
