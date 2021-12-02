@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.352
+    _dictionary.version         5.353
 #
      loop_
     _dictionary_history.version
@@ -2543,6 +2543,22 @@ data_mmcif_pdbx.dic
     + Add "RIGAKU PhotonJet-R" to _diffrn_source.type enumeration
     + Enhance pdb_id and support PDB extented codes
 ;
+5.353  2021-12-06
+;
+    Changes (ep/Antanas Vaitkus):
+    + Correct capitalization of angstrom in descriptions
+    + Correct capitalization of kelvins as a unit. Remove the word
+      "degrees" in context of it
+    + Add "SCINTILLATION" to _diffrn_detector.detector enumeration
+    + Add "Cyberstar LaBr3", "DECTRIS EIGER2 S 1M", "DECTRIS EIGER2 S 4M",
+      "DECTRIS EIGER2 S 9M", "DECTRIS EIGER2 S 16M" to
+      _diffrn_detector.type deposition enumeration
+    + Add "ESRF BEAMLINE ID22" to _diffrn_source.type enumertion
+    + Add "GSAS", "ISOLDE" and "PRODD" to _software.name enumeration
+    + Extend _pdbx_sudit_support.funding_organization enumeration
+    + Add "TFS Selectris" and "TFS Selectris X" to _em_imaging_optics.energyfilter_name
+    + Add "FEI tomography" to _em_software.name enumeration
+;
 #
 ###########################################################################
 #
@@ -2567,13 +2583,13 @@ data_mmcif_pdbx.dic
     _sub_category.description
               'cartesian_coordinate'
 ;              The collection of x, y, and z components of a position specified
-               with reference to a Cartesian (orthogonal Angstrom) coordinate
+               with reference to a Cartesian (orthogonal angstrom) coordinate
                system.
 ;
               'cartesian_coordinate_esd'
 ;              The collection of estimated standard deviations of the x, y, and
                z components of a position specified with reference to a
-               Cartesian (orthogonal Angstrom) coordinate system.
+               Cartesian (orthogonal angstrom) coordinate system.
 ;
               'fractional_coordinate'
 ;              The collection of x, y, and z components of a position specified
@@ -3132,7 +3148,7 @@ data_mmcif_pdbx.dic
      'micrometres'            'micrometres (metres * 10^( -6)^)'
      'nanometres'             'nanometres  (metres * 10^( -9)^)'
      'nanometers'             'nanometers  (metres * 10^( -9)^)'
-     'angstroms'              'Angstroms   (metres * 10^(-10)^)'
+     'angstroms'              'angstroms   (metres * 10^(-10)^)'
      'picometres'             'picometres  (metres * 10^(-12)^)'
      'femtometres'            'femtometres (metres * 10^(-15)^)'
 #
@@ -3150,12 +3166,12 @@ data_mmcif_pdbx.dic
 #
      'micrometres_squared'    'micrometres squared (metres * 10^( -6)^)^2^'
      'nanometres_squared'     'nanometres squared (metres * 10^( -9)^)^2^'
-     'angstroms_squared'      'Angstroms squared  (metres * 10^(-10)^)^2^'
-     '8pi2_angstroms_squared' '8pi^2^ * Angstroms squared (metres * 10^(-10)^)^2^'
+     'angstroms_squared'      'angstroms squared  (metres * 10^(-10)^)^2^'
+     '8pi2_angstroms_squared' '8pi^2^ * angstroms squared (metres * 10^(-10)^)^2^'
      'picometres_squared'     'picometres squared (metres * 10^(-12)^)^2^'
 #
      'nanometres_cubed'       'nanometres cubed (metres * 10^( -9)^)^3^'
-     'angstroms_cubed'        'Angstroms cubed  (metres * 10^(-10)^)^3^'
+     'angstroms_cubed'        'angstroms cubed  (metres * 10^(-10)^)^3^'
      'picometres_cubed'       'picometres cubed (metres * 10^(-12)^)^3^'
 #
      'kilopascals'            'kilopascals'
@@ -3173,7 +3189,7 @@ data_mmcif_pdbx.dic
      'degrees_per_minute'     'degrees (of arc) per minute'
 #
      'celsius'                'degrees (of temperature) Celsius'
-     'kelvins'                'degrees (of temperature) Kelvin'
+     'kelvins'                'temperature in kelvins'
 #
      'electrons'              'electrons'
 #
@@ -3183,7 +3199,7 @@ data_mmcif_pdbx.dic
 ; electrons per nanometres cubed (electrons/(metres * 10^( -9)^)^(-3)^)
 ;
      'electrons_per_angstroms_cubed'
-; electrons per Angstroms cubed (electrons/(metres * 10^(-10)^)^(-3)^)
+; electrons per angstroms cubed (electrons/(metres * 10^(-10)^)^(-3)^)
 ;
      'electrons_per_picometres_cubed'
 ; electrons per picometres cubed (electrons/(metres * 10^(-12)^)^(-3)^)
@@ -3200,7 +3216,7 @@ data_mmcif_pdbx.dic
 ; arbitrary system of units.
 ;
 #
-     'angstroms_degrees'      'Angstroms * degrees'
+     'angstroms_degrees'      'angstroms * degrees'
 #
      'degrees_squared'        'degrees squared'
 #
@@ -3220,7 +3236,7 @@ data_mmcif_pdbx.dic
      'microns_squared'        'micrometres squared (metres * 10^( -6)^)^2^'
      'microns'                'micrometres  (metres * 10^( -6)^)'
 #
-     'electrons_angstrom_squared'   'electrons square Angstrom'
+     'electrons_angstrom_squared'   'electrons square angstrom'
      'electron_volts'         'electron volts'
      'kiloelectron_volts'     'KeV (electron volts * 10^( 3)^)'
 #     'mg/ml'                  'mg per milliliter'

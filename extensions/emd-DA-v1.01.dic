@@ -815,6 +815,7 @@ encouraged to provide a value in this field.
 	'_emd_software.name'  eTasED                            .
         '_emd_software.name'  ETHAN                             .
         '_emd_software.name'  eTomo                             .
+        '_emd_software.name' 'FEI tomography'                   .	
         '_emd_software.name'  FindEM                            .
         '_emd_software.name'  FitCTF2                           .
         '_emd_software.name'  Flex-EM                           .
@@ -2334,7 +2335,7 @@ save__emd_virus_shell.name
 
 save__emd_virus_shell.diameter
     _item_description.description
-; The diameter of this virus shell in Angstrom
+; The diameter of this virus shell in angstroms
 ;
     _item.name                   '_emd_virus_shell.diameter'
     _item.category_id              emd_virus_shell
@@ -3100,7 +3101,7 @@ save__emd_sectioning_focused_ion_beam.duration
 
 save__emd_sectioning_focused_ion_beam.temperature
     _item_description.description
-;  Temperature of the sample during milling, in degrees Kelvin
+;  Temperature of the sample during milling, in kelvins
 ;
     _item.name                  '_emd_sectioning_focused_ion_beam.temperature'
     _item.category_id           emd_sectioning_focused_ion_beam
@@ -3220,7 +3221,7 @@ save__emd_sectioning_ultramicrotomy.instrument
 
 save__emd_sectioning_ultramicrotomy.temperature
     _item_description.description
-;  Temperature of the sample during microtome sectioning, in degrees Kelvin
+;  Temperature of the sample during microtome sectioning, in kelvins
 ;
     _item.name                  '_emd_sectioning_ultramicrotomy.temperature'
     _item.category_id           emd_sectioning_ultramicrotomy
@@ -3350,7 +3351,7 @@ save__emd_crystal_formation.atmosphere
 
 save__emd_crystal_formation.temperature
     _item_description.description
-;  The value of the temperature in degrees Kelvin used for
+;  The value of the temperature in kelvins used for
    growing the crystals.
 ;
     _item.name                  '_emd_crystal_formation.temperature'
@@ -3793,7 +3794,7 @@ save__emd_shadowing.angle
      save_
 
 save__emd_shadowing.thickness
-    _item_description.description  'Thickness of the deposited shadow coat, in Angstroms.'
+    _item_description.description  'Thickness of the deposited shadow coat, in angstroms.'
     _item.name                  '_emd_shadowing.thickness'
     _item.category_id           emd_shadowing
     _item.mandatory_code        yes
@@ -4022,7 +4023,7 @@ save__emd_support_film.material
      save_
 
 save__emd_support_film.thickness
-    _item_description.description 'Thickness of the support film, in Angstroms'
+    _item_description.description 'Thickness of the support film, in angstroms'
     _item.name                  '_emd_support_film.thickness'
     _item.category_id           emd_support_film
     _item.mandatory_code        no
@@ -4967,7 +4968,9 @@ save__emd_specialist_optics.energyfilter_name
          'GIF 2002'
          'GIF 2000'
          'GIF 200'
-         'In-column Omega Filter'
+         'TFS Selectris'
+         'TFS Selectris X'
+	 'In-column Omega Filter'
      save_
 
 save__emd_specialist_optics.energyfilter_lower
@@ -5840,7 +5843,7 @@ save__emd_two_d_crystal_parameters.emd_image_processing_id
 
 save__emd_two_d_crystal_parameters.a
     _item_description.description
-;      Unit-cell length a in Angstroms.
+;      Unit-cell length a in angstroms.
 ;
     _item.name                  '_emd_two_d_crystal_parameters.a'
     _item.category_id             emd_two_d_crystal_parameters
@@ -5856,7 +5859,7 @@ save__emd_two_d_crystal_parameters.a
 
 save__emd_two_d_crystal_parameters.b
     _item_description.description
-;      Unit-cell length b in Angstroms.
+;      Unit-cell length b in angstroms.
 ;
     _item.name                  '_emd_two_d_crystal_parameters.b'
     _item.category_id             emd_two_d_crystal_parameters
@@ -6040,7 +6043,7 @@ save__emd_three_d_crystal_parameters.emd_image_processing_id
 
 save__emd_three_d_crystal_parameters.a
     _item_description.description
-;      Unit-cell length a in Angstroms.
+;      Unit-cell length a in angstroms.
 ;
     _item.name                  '_emd_three_d_crystal_parameters.a'
     _item.category_id             emd_three_d_crystal_parameters
@@ -6056,7 +6059,7 @@ save__emd_three_d_crystal_parameters.a
 
 save__emd_three_d_crystal_parameters.b
     _item_description.description
-;      Unit-cell length b in Angstroms.
+;      Unit-cell length b in angstroms.
 ;
     _item.name                  '_emd_three_d_crystal_parameters.b'
     _item.category_id             emd_three_d_crystal_parameters
@@ -6072,7 +6075,7 @@ save__emd_three_d_crystal_parameters.b
 
 save__emd_three_d_crystal_parameters.c
     _item_description.description
-;      Unit-cell length c in Angstroms.
+;      Unit-cell length c in angstroms.
 ;
     _item.name                  '_emd_three_d_crystal_parameters.c'
     _item.category_id             emd_three_d_crystal_parameters
@@ -7786,7 +7789,7 @@ save__emd_crystallography_stats.phase_error_rejection_criteria
 
 save__emd_crystallography_stats.high_resolution
     _item_description.description
-;  High resolution limit of the structure factor data, in Angstroms
+;  High resolution limit of the structure factor data, in angstroms
 ;
     _item.name                  '_emd_crystallography_stats.high_resolution'
     _item.category_id           emd_crystallography_stats
@@ -7859,7 +7862,7 @@ save__emd_crystallography_shell.emd_crystallography_stats_id
 
 save__emd_crystallography_shell.high_resolution
     _item_description.description
-;  High resolution limit for this shell (Angstroms)
+;  High resolution limit for this shell (angstroms)
 ;
     _item.name                  '_emd_crystallography_shell.high_resolution'
     _item.category_id           emd_crystallography_shell
@@ -7873,7 +7876,7 @@ save__emd_crystallography_shell.high_resolution
 
 save__emd_crystallography_shell.low_resolution
     _item_description.description
-;  Low resolution limit for this shell (Angstroms)
+;  Low resolution limit for this shell (angstroms)
 ;
     _item.name                  '_emd_crystallography_shell.low_resolution'
     _item.category_id           emd_crystallography_shell
@@ -8656,7 +8659,7 @@ save__emd_map.limit_sec
 
 save__emd_map.pixel_spacing_x
     _item_description.description
-;    The length in Angstroms of one voxel along the X axis.
+;    The length in angstroms of one voxel along the X axis.
 ;
     _item.name                   '_emd_map.pixel_spacing_x'
     _item.category_id              emd_map
@@ -8678,7 +8681,7 @@ save__emd_map.pixel_spacing_x
 
 save__emd_map.pixel_spacing_y
     _item_description.description
-;    The length in Angstroms of one voxel along the Y axis.
+;    The length in angstroms of one voxel along the Y axis.
 ;
     _item.name                   '_emd_map.pixel_spacing_y'
     _item.category_id              emd_map
@@ -8700,7 +8703,7 @@ save__emd_map.pixel_spacing_y
 
 save__emd_map.pixel_spacing_z
     _item_description.description
-;    The length in Angstroms of one voxel along the Z axis.
+;    The length in angstroms of one voxel along the Z axis.
 ;
     _item.name                   '_emd_map.pixel_spacing_z'
     _item.category_id              emd_map
@@ -9223,7 +9226,7 @@ save__emd_map.endian_type
 
 #save__emd_mask.pixel_spacing_x
 #    _item_description.description
-#;    The length in Angstroms of one voxel along the X axis.
+#;    The length in angstroms of one voxel along the X axis.
 #;
 #    _item.name                   '_emd_mask.pixel_spacing_x'
 #    _item.category_id              emd_mask
@@ -9245,7 +9248,7 @@ save__emd_map.endian_type
 
 #save__emd_mask.pixel_spacing_y
 #    _item_description.description
-#;    The length in Angstroms of one voxel along the Y axis.
+#;    The length in angstroms of one voxel along the Y axis.
 #;
 #    _item.name                   '_emd_mask.pixel_spacing_y'
 #    _item.category_id              emd_mask
@@ -9267,7 +9270,7 @@ save__emd_map.endian_type
 
 #save__emd_mask.pixel_spacing_z
 #    _item_description.description
-#;    The length in Angstroms of one voxel along the Z axis.
+#;    The length in angstroms of one voxel along the Z axis.
 #;
 #    _item.name                   '_emd_mask.pixel_spacing_z'
 #    _item.category_id              emd_mask

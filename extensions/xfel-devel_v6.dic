@@ -1,0 +1,325 @@
+####
+# These extensions are in development
+####
+
+
+
+save__pdbx_serial_crystallography_data_reduction.lattices_merged
+    _item_description.description
+;           For experiments in which samples are provided in a
+            continuous stream, the total number of crystal lattices
+            that were merged in the final dataset.  Can be
+            less than frames_indexed depending on filtering during merging or
+	    can be more than frames_indexed if there are multiple lattices.
+	    per frame.
+;
+    _item.name                  '_pdbx_serial_crystallography_data_reduction.lattices_merged'
+    _item.category_id             pdbx_serial_crystallography_data_reduction
+    _item.mandatory_code          no
+    _item_type.code               int
+     loop_
+    _item_examples.case           1200 5750
+    _item_range.maximum           .
+    _item_range.minimum           0
+     save_
+
+
+save__cell.pdbx_esd_method
+    _item_description.description
+;              How the estimated standard deviation was determined.
+;
+    _item.name                  '_cell.pdbx_esd_method'
+    _item.category_id             cell
+    _item.mandatory_code          no
+    loop_
+    _item_related.related_name
+    _item_related.function_code '_cell.angle_alpha_esd'
+                                  associated_value
+				'_cell.angle_beta_esd'
+                                  associated_value
+				'_cell.angle_gamma_esd'
+                                  associated_value
+				'_cell.length_a_esd'
+                                  associated_value
+				'_cell.length_b_esd'
+                                  associated_value
+				'_cell.length_c_esd'
+                                  associated_value
+    _item_sub_category.id         cell_angle_esd
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      'single crystal' 'ESD for a single crystal'
+				  'window' 'ESD from measuring the unit cell using a moving window accross many frames'
+				  'scan varying' 'Error using a scan varying restraint accross the crystal as a whole'
+                                  'propagated' 'Propagated error from several crystals'
+				  'population' 'Propagated error from a population of many crystals, for example from serial crystallography'
+     save_
+
+save__reflns.pdbx_CC_method
+    _item_description.description
+;             Method for selecting half datasets used in computing CC1/2 and
+              CCstar
+
+              The following enumerated values are used:
+
+              by_observation: unmerged reflection intensities are randomly
+              divided into two half-sets of nearly equal size.
+
+              Recommendation from Karplus PA, Diederichs K. Linking
+              crystallographic model and data quality. Science.
+              2012;336(6084):1030-1033.
+
+              by_lattice: crystals are pre-sorted into two half datasets of
+              nearly equal size (such as by odd vs. even crystal number).
+
+              See Hattne, J., Echols, N., Tran, R. et al. Accurate
+              macromolecular structures using minimal measurements from X-ray
+              free-electron lasers. Nat Methods 11, 545-548 (2014) and White,
+              T.A. (2019). Acta Cryst. D75, 219-233.
+;
+    _item.name                  '_reflns.pdbx_CC_method'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      by_observation 'Karplus method'
+                                  by_lattice     'Hattne method'
+     save_
+
+
+save__exptl_crystal.pdbx_mosaic_method
+    _item_description.description
+;              How parameters derived from the spot shape (such as mosaic block
+               size and rotation, beam divergence, and crossfire) and their
+	       errors were estimated. See the related items section.
+
+	       This can be a written description or a citation to a specific
+	       software package that determined these parameters.
+
+	       Note, these parameters are considered derived terms from the
+	       data, as opposed to measured terms from the instrument (such
+	       as diffrn_radiation.div_x_source, a term similar to
+	       pdbx_crystal_alignment.crossfire_x).
+;
+    _item.name                  '_exptl_crystal.pdbx_mosaic_method'
+    _item.category_id             exptl_crystal
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_related.related_name
+    _item_related.function_code '_exptl_crystal.pdbx_mosaic_rotation'
+                                  associated_value
+				'_exptl_crystal.pdbx_mosaic_block_size'
+                                  associated_value
+				'_pdbx_crystal_alignment.overall_beam_divergence'
+                                  associated_value
+				'_pdbx_crystal_alignment.crossfire_x'
+                                  associated_value
+				'_pdbx_crystal_alignment.crossfire_y'
+                                  associated_value
+				'_pdbx_crystal_alignment.crossfire_xy'
+                                  associated_value
+     save_
+
+
+save__exptl_crystal.pdbx_mosaic_rotation
+    _item_description.description
+;
+    Isotropic approximation of the distribution of mis-orientation angles
+    specified in degrees of all the mosaic domain blocks in the crystal,
+    represented as a standard deviation. Here, a mosaic block is a set of
+    contiguous unit cells assumed to be perfectly aligned. Lower mosaicity
+    indicates better ordered crystals. See for example:
+
+    Nave, C. (1998). Acta Cryst. D54, 848-853.
+
+    Note that many software packages estimate the mosaic rotation distribution
+    differently and may combine several physical properties of the experiment
+    into a single mosaic term. This term will help fit the modeled spots
+    to the observed spots without necessarily being directly related to the
+    physics of the crystal itself.
+;
+    _item.name                  '_exptl_crystal.pdbx_mosaic_rotation'
+    _item.category_id             exptl_crystal
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+    _item_range.maximum           .
+    _item_range.minimum           0
+    _item_related.related_name  '_exptl_crystal.pdbx_mosaic_method'
+    _item_related.function_code   associated_value
+     save_
+
+
+save__exptl_crystal.pdbx_mosaic_rotation_esd
+    _item_description.description
+;    The uncertainty in the mosaic rotation estimate for the crystal.
+;
+    _item.name                  '_exptl_crystal.pdbx_mosaic_rotation_esd'
+    _item.category_id             exptl_crystal
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+    _item_range.maximum           .
+    _item_range.minimum           0
+    _item_related.related_name  '_exptl_crystal.pdbx_mosaic_rotation'
+    _item_related.function_code   associated_esd
+     save_
+
+
+save__exptl_crystal.pdbx_mosaic_block_size
+    _item_description.description
+;
+    Isotropic and resolution-independent term representing the average size of
+    mosaic domains in the crystal specified in Angstroms.  Larger size indicates
+    better ordered crystals.
+;
+    _item.name                  '_exptl_crystal.pdbx_mosaic_block_size'
+    _item.category_id             exptl_crystal
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+    _item_range.maximum           .
+    _item_range.minimum           0
+    _item_related.related_name  '_exptl_crystal.pdbx_mosaic_method'
+    _item_related.function_code   associated_value
+     save_
+
+
+save__exptl_crystal.pdbx_mosaic_block_size_esd
+    _item_description.description
+;    The uncertainty in the mosaic block size estimate for the crystal.
+;
+    _item.name                  '_exptl_crystal.pdbx_mosaic_block_size_esd'
+    _item.category_id             exptl_crystal
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              angstroms
+    _item_range.maximum           .
+    _item_range.minimum           0
+    _item_related.related_name  '_exptl_crystal.pdbx_mosaic_block_size'
+    _item_related.function_code   associated_esd
+     save_
+
+
+save__pdbx_crystal_alignment.overall_beam_divergence
+    _item_description.description
+;
+    Isotropic distribution of photon angles from the source impacting on the
+    crystal in degrees. Note this is typically a derived quantity, inferred
+    from measuring the radial profile of the measured reflections, and it may
+    be convolved with effects from the bandpass.
+;
+    _item.name                  '_pdbx_crystal_alignment.overall_beam_divergence'
+    _item.category_id             pdbx_crystal_alignment
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+    _item_range.maximum           .
+    _item_range.minimum           0
+    _item_related.related_name  '_exptl_crystal.pdbx_mosaic_method'
+    _item_related.function_code   associated_value
+     save_
+
+
+save__pdbx_crystal_alignment.overall_beam_divergence_esd
+    _item_description.description
+;    The uncertainty in the beam divergence estimate.
+;
+    _item.name                  '_pdbx_crystal_alignment.overall_beam_divergence_esd'
+    _item.category_id             pdbx_crystal_alignment
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+    _item_range.maximum           .
+    _item_range.minimum           0
+    _item_related.related_name  '_pdbx_crystal_alignment.overall_beam_divergence'
+    _item_related.function_code   associated_esd
+     save_
+
+
+save__pdbx_crystal_alignment.crossfire_x
+   _item_description.description
+;       Angular spread (in degrees) of incident X-ray along the
+        horizontal (x) direction. Default is 0.
+;
+   _item.name                  '_pdbx_crystal_alignment.crossfire_x'
+   _item.category_id           pdbx_crystal_alignment
+   _item.mandatory_code        no
+   _item_type.code             float
+   _item_units.code            degrees
+   _item_related.related_name  '_exptl_crystal.pdbx_mosaic_method'
+   _item_related.function_code   associated_value
+   save_
+
+save__pdbx_crystal_alignment.crossfire_x_esd
+   _item_description.description
+;       The estimated deviation of angular spread (in degrees) of
+        incident X-ray along the horizontal (x) direction.
+;
+   _item.name                  '_pdbx_crystal_alignment.crossfire_x_esd'
+   _item.category_id           pdbx_crystal_alignment
+   _item.mandatory_code        no
+   _item_type.code             float
+   _item_units.code            degrees
+   _item_related.related_name  '_pdbx_crystal_alignment.crossfire_x'
+   _item_related.function_code   associated_esd
+   save_
+
+save__pdbx_crystal_alignment.crossfire_y
+   _item_description.description
+;       Angular spread (in degrees) of incident X-ray along the
+        vertical (y) direction. Default is 0.
+;
+   _item.name                  '_pdbx_crystal_alignment.crossfire_y'
+   _item.category_id           pdbx_crystal_alignment
+   _item.mandatory_code        no
+   _item_type.code             float
+   _item_units.code            degrees
+   _item_related.related_name  '_exptl_crystal.pdbx_mosaic_method'
+   _item_related.function_code   associated_value
+   save_
+
+save__pdbx_crystal_alignment.crossfire_y_esd
+   _item_description.description
+;       The estimated deviation of angular spread (in degrees) of
+        incident X-ray along the vertical (y) direction.
+;
+   _item.name                  '_pdbx_crystal_alignment.crossfire_y_esd'
+   _item.category_id           pdbx_crystal_alignment
+   _item.mandatory_code        no
+   _item_type.code             float
+   _item_units.code            degrees
+   _item_related.related_name  '_pdbx_crystal_alignment.crossfire_y'
+   _item_related.function_code   associated_esd
+   save_
+
+save__pdbx_crystal_alignment.crossfire_xy
+   _item_description.description
+;       Correlated xy component of the beam spread. This tends to be
+        zero within error (in degrees^2).
+;
+   _item.name                  '_pdbx_crystal_alignment.crossfire_xy'
+   _item.category_id           pdbx_crystal_alignment
+   _item.mandatory_code        no
+   _item_type.code             float
+   _item_units.code            degrees
+   _item_related.related_name  '_exptl_crystal.pdbx_mosaic_method'
+   _item_related.function_code   associated_value
+   save_
+
+save__pdbx_crystal_alignment.crossfire_xy_esd
+   _item_description.description
+;       The estimated deviation of correlated xy component of the beam
+        spread (in degrees^2).
+;
+   _item.name                  '_pdbx_crystal_alignment.crossfire_xy_esd'
+   _item.category_id           pdbx_crystal_alignment
+   _item.mandatory_code        no
+   _item_type.code             float
+   _item_units.code            degrees
+   _item_related.related_name  '_pdbx_crystal_alignment.crossfire_xy'
+   _item_related.function_code   associated_esd
+   save_

@@ -1,0 +1,182 @@
+####
+# These extensions are in development
+# Should new subcategories be added like cell_angle_population_esd
+#
+# Current definition
+#               'cell_angle_esd'
+#              The collection of estimated standard deviations of the alpha,
+#               beta, and gamma angles of a unit cell.
+
+
+####
+
+
+
+save__pdbx_serial_crystallography_data_reduction.lattices_merged
+    _item_description.description
+;           For experiments in which samples are provided in a
+            continuous stream, the total number of crystal lattices
+	    that were merged in the final dataset.  Can be
+	    less than frames_indexed depending on filtering during merging.
+;
+    _item.name                  '_pdbx_serial_crystallography_data_reduction.lattices_merged'
+    _item.category_id             pdbx_serial_crystallography_data_reduction
+    _item.mandatory_code          no
+    _item_type.code               int
+     loop_
+    _item_examples.case           1200 5750
+    _item_range.maximum           .
+    _item_range.minimum           0
+     save_
+
+
+save__cell.pdbx_angle_alpha_population_esd
+    _item_description.description
+;              The standard uncertainty (estimated standard deviation)
+               of _cell.angle_alpha from all crystals included from
+	       a serial crystallographic dataset.
+;
+    _item.name                  '_cell.pdbx_angle_alpha_population_esd'
+    _item.category_id             cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_cell.pdbx_angle_beta_population_esd'
+                                '_cell.pdbx_angle_gamma_population_esd'
+    _item_related.related_name  '_cell.angle_alpha'
+    _item_related.function_code   associated_value
+    _item_sub_category.id         cell_angle_esd
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__cell.pdbx_angle_beta_population_esd
+    _item_description.description
+;              The standard uncertainty (estimated standard deviation)
+               of _cell.angle_beta from all crystals included from
+	       a serial crystallographic dataset.
+;
+    _item.name                  '_cell.pdbx_angle_beta_population_esd'
+    _item.category_id             cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_cell.pdbx_angle_alpha_population_esd'
+                                '_cell.pdbx_angle_gamma_population_esd'
+    _item_related.related_name  '_cell.angle_beta'
+    _item_related.function_code   associated_value
+    _item_sub_category.id         cell_angle_esd
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+
+save__cell.pdbx_angle_gamma_population_esd
+    _item_description.description
+;              The standard uncertainty (estimated standard deviation)
+               of _cell.angle_gamma from all crystals included from
+	       a serial crystallographic dataset.
+;
+    _item.name                  '_cell.pdbx_angle_gamma_population_esd'
+    _item.category_id             cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_cell.pdbx_angle_alpha_population_esd'
+                                '_cell.pdbx_angle_beta_population_esd'
+    _item_related.related_name  '_cell.angle_gamma'
+    _item_related.function_code   associated_value
+    _item_sub_category.id         cell_angle_esd
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__cell.pdbx_length_a_population_esd
+    _item_description.description
+;              The standard uncertainty (estimated standard deviation)
+               of _cell.length_a from all crystals included from
+	       a serial crystallographic dataset.
+;
+    _item.name                  '_cell.pdbx_length_a_population_esd'
+    _item.category_id             cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_cell.pdbx_length_b_population_esd'
+                                '_cell.pdbx_length_c_population_esd'
+    _item_related.related_name  '_cell.length_a'
+    _item_related.function_code   associated_value
+    _item_sub_category.id         cell_length_esd
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__cell.pdbx_length_b_population_esd
+    _item_description.description
+;              The standard uncertainty (estimated standard deviation)
+               of _cell.length_b from all crystals included from
+	       a serial crystallographic dataset.
+;
+    _item.name                  '_cell.pdbx_length_b_population_esd'
+    _item.category_id             cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_cell.pdbx_length_a_population_esd'
+                                '_cell.pdbx_length_c_population_esd'
+    _item_related.related_name  '_cell.length_b'
+    _item_related.function_code   associated_value
+    _item_sub_category.id         cell_length_esd
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__cell.pdbx_length_c_population_esd
+    _item_description.description
+;              The standard uncertainty (estimated standard deviation)
+               of _cell.length_c from all crystals included from
+	       a serial crystallographic dataset.
+;
+    _item.name                  '_cell.pdbx_length_c_population_esd'
+    _item.category_id             cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_cell.pdbx_length_a_population_esd'
+                                '_cell.pdbx_length_b_population_esd'
+    _item_related.related_name  '_cell.length_c'
+    _item_related.function_code   associated_value
+    _item_sub_category.id         cell_length_esd
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__reflns.pdbx_CC_method
+    _item_description.description
+;             Method for selecting half datasets used in computing CC1/2 and CCstar
+
+              The following enumerated values are used:
+
+              by_observation: unmerged reflection intensities are randomly divided into
+	        two half-sets regardless of which crystal the intensity was determined from.
+
+                Recommendation from Karplus PA, Diederichs K. Linking crystallographic model and
+	        data quality. Science. 2012;336(6084):1030-1033.
+
+              by_lattice: crystals are pre-sorted into two half datasets of nearly equal size
+	        (such as by odd vs. even crystal number).
+
+                See Hattne, J., Echols, N., Tran, R. et al. Accurate macromolecular structures using minimal
+		measurements from X-ray free-electron lasers. Nat Methods 11, 545–548 (2014) and White, T.A. (2019). Acta Cryst. D75, 219-233.
+;
+    _item.name                  '_reflns.pdbx_CC_method'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      by_observation 'Karpuls method'
+                                  by_lattice     'Hattne method'
+     save_
+
+
