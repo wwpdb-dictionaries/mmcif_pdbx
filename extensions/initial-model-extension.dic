@@ -1,0 +1,168 @@
+## File: initial-model-extension.dic
+## Date: 02-Dec-2021
+##
+##
+
+###################################
+#  PDBX_INITIAL_REFINEMENT_MODEL  #
+###################################
+
+save_pdbx_initial_refinement_model
+    _category.description
+;              Data items in the pdbx_initial_refinement_model record the starting model(s) used in structure determination.
+;
+    _category.id                  pdbx_initial_refinement_model
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_initial_refinement_model.id'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - hypothetical example
+;
+;
+       _pdbx_initial_refinement_model.id               1
+       _pdbx_initial_refinement_model.entity_id_list   1
+       _pdbx_initial_refinement_model.type             'experimental model'
+       _pdbx_initial_refinement_model.source_name      PDB
+       _pdbx_initial_refinement_model.accession_code   3LTQ
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    _pdbx_category_context.type         WWPDB_LOCAL
+    _pdbx_category_context.category_id  pdbx_initial_refinement_model
+
+     save_
+
+save__pdbx_initial_refinement_model.id
+    _item_description.description
+;              A unique identifier for the starting model record.
+;
+    _item.name                  '_pdbx_initial_refinement_model.id'
+    _item.category_id             pdbx_initial_refinement_model
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
+
+save__pdbx_initial_refinement_model.entity_id_list
+    _item_description.description
+;              A comma separated list of entities reflecting the initial model used for refinement
+;
+    _item.name                  '_pdbx_initial_refinement_model.entity_id_list'
+    _item.category_id             pdbx_initial_refinement_model
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+
+save__pdbx_initial_refinement_model.type
+    _item_description.description
+;              This item describes the type of the initial model was generated
+;
+    _item.name                  '_pdbx_initial_refinement_model.type'
+    _item.category_id             pdbx_initial_refinement_model
+    _item.mandatory_code          yes
+    _item_type.code               line
+     loop_
+    _item_enumeration.value
+                                  'in silico model'
+                                  'experimental model'
+                                  'integrative model'
+                                  other
+     save_
+
+save__pdbx_initial_refinement_model.source_name
+    _item_description.description
+;              This item identifies the resource of initial model used for refinement
+;
+    _item.name                  '_pdbx_initial_refinement_model.source_name'
+    _item.category_id             pdbx_initial_refinement_model
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_enumeration.value
+                                   PDB
+                                   AlphaFoldDB
+                                   GoogleCollab
+                                   RoseTTAFold
+                                   SwissModel
+                                   Modeler
+                                   ITasser
+                                   Other
+     save_
+
+save__pdbx_initial_refinement_model.accession_code
+    _item_description.description
+;              This item identifies an accession code of the resource where the initial model
+               is used
+;
+    _item.name                  '_pdbx_initial_refinement_model.accession_code'
+    _item.category_id             pdbx_initial_refinement_model
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+save__pdbx_initial_refinement_model.details
+    _item_description.description
+;              A description of special aspects of the initial model
+;
+    _item.name                  '_pdbx_initial_refinement_model.details'
+    _item.category_id             pdbx_initial_refinement_model
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+#######################
+#  EM_3D_FITTING  #
+#######################
+save__em_3d_fitting.initial_refinement_model_id
+    _item_description.description
+;    The value of _em_3d_fitting.initial_refinement_model_id itentifies the id
+     in the _pdbx_initial_refinement_model
+;
+    _item.name                    '_em_3d_fitting.initial_refinement_model_id'
+    _item.category_id               em_3d_fitting
+    _item.mandatory_code            no
+    _item_type.code                 int
+    _item_linked.child_name       '_em_3d_fitting.initial_refinement_model_id'
+    _item_linked.parent_name      '_pdbx_initial_refinement_model.id'
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_em_3d_fitting.initial_refinement_model_id'
+    save_
+
+
+########################
+#  EM_3D_FITTING_list  #
+########################
+save__em_3d_fitting_list.chain_id
+    _item_description.description
+; The ID of the biopolymer chain used for fitting, e.g., A.  Please note that
+only one chain can be specified per instance.  If all chains of a particular
+structure have been used for fitting, this field can be left blank.
+;
+    _item.name                   '_em_3d_fitting_list.chain_id'
+    _item.category_id              em_3d_fitting_list
+    _item.mandatory_code           no
+    _item_type.code                asym_id
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_em_3d_fitting_list.chain_id'
+
+     save_
+
+save__em_3d_fitting_list.chain_residue_range
+    _item_description.description
+;  The residue ranges of the initial model used in this fitting.
+;
+    _item.name                   '_em_3d_fitting_list.chain_residue_range'
+    _item.category_id              em_3d_fitting_list
+    _item.mandatory_code           no
+    _item_type.code                int-range
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_em_3d_fitting_list.chain_residue_range'
+
+     save_

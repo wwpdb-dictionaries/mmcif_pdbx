@@ -1,0 +1,52 @@
+## File: initial-model-extension-EMD.dic
+## Date: 02-Dec-2021
+##
+##
+
+#####################
+#  EMD__MODELLING   #
+#####################
+save__emd_modelling.initial_refinement_model_id
+    _item_description.description
+;    The value of _emd_modelling.initial_refinement_model_id itentifies the id
+     in the _pdbx_initial_refinement_model
+;
+    _item.name                    '_emd_modelling.initial_refinement_model_id'
+    _item.category_id               emd_modelling
+    _item.mandatory_code            no
+    _item_type.code                 int
+    _item_linked.child_name       '_emd_modelling.initial_refinement_model_id'
+    _item_linked.parent_name      '_pdbx_initial_refinement_model.id'
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_emd_modelling.initial_refinement_model_id'
+    save_
+
+
+#################################
+#  EMD_MODELLING_INITIAL_MODEL  #
+#################################
+save__emd_modelling_initial_model.chain_id
+    _item_description.description
+; The ID of the biopolymer chain used for fitting, e.g., A.  Please note that
+only one chain can be specified per instance.  If all chains of a particular
+structure have been used for fitting, this field can be left blank.
+;
+    _item.name                   '_emd_modelling_initial_model.chain_id'
+    _item.category_id              emd_modelling_initial_model
+    _item.mandatory_code           no
+    _item_type.code                asym_id
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_emd_modelling_initial_model.chain_id'
+     save_
+
+save__emd_modelling_initial_model.chain_residue_range
+    _item_description.description
+;  The ranges of the initial model used for for fitting.
+;
+    _item.name                   '_emd_modelling_initial_model.chain_residue_range'
+    _item.category_id              emd_modelling_initial_model
+    _item.mandatory_code           no
+    _item_type.code                int-range
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name '_emd_modelling_initial_model.chain_residue_range'
+     save_

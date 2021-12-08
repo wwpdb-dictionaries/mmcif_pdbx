@@ -22,11 +22,14 @@ nlM = '\n'
 # Allow blank lines
 blanklO = '([\t ]*\n)*'
 nlO = '\n?'
+# Row w/ mandatory newline
 rowNlM = '((%s%s%s){3})?(%s%s%s%s)' % (wsO, flt, wsM, flt, spO, nlM, blanklO)
+# Row w/ optional newline
 rowNlO = '((%s%s%s){3})(%s%s%s%s)' % (wsO, flt, wsM, flt, spO, nlO, blanklO)
 #Last line with WS might not need nl - not handled by blanklO
 assembly_re = '((%s){3})*(%s){2}(%s)%s' % (rowNlM, rowNlM, rowNlO, wsO)
-
+# Matrix - two rows with mandatory - last optional
+matrix_re = '(%s){2}(%s)%s' % (rowNlM, rowNlO, wsO)
 
 @pytest.fixture(scope = "module")
 def getRe(dictionary):
@@ -37,6 +40,16 @@ def getRe(dictionary):
         reg = dictionary.getTypeRegexAlt('pdbx_struct_assembly_gen_depositor_info',
                                          'full_matrices')
     return reg
+
+@pytest.fixture(scope = "module")
+def getReMatrix(dictionary):
+    if os.getenv("RE_DEVEL"):
+        reg_matrix = matrix_re
+        print("RE_DEVEL_MTX: %r" % reg_matrix)
+    else:
+        reg_matrix = dictionary.getTypeRegexAlt('pdbx_struct_oper_list',
+                                                'full_matrix')
+    return reg_matrix
 
 def check_row(assem_str, nlm=False):
     """Checks row to ensure behaves properly"""
@@ -63,6 +76,14 @@ def check_assem(reg, assem_str):
     else:
         return False
 
+def check_matrix(reg, matrix_str):
+    """Checks matrix string to ensure complies with regular expression"""
+    res = re.search("^%s$" % reg, matrix_str)
+    if res:
+        return True
+    else:
+        return False
+    
 ####  Tests start here
 def testRow():
     """Tests logic of what is a row"""
@@ -109,7 +130,19 @@ def testMultipleNewlines(getRe):
     assert check_assem(reg, ' 1   0   0  0\n0  1 0  0\n\n 0 0 1 0\n\n   \n')
     assert check_assem(reg, ' 1   0   0  0\n0  1 0  0\n\n 0 0 1 0\n    \n   ')
 
+  
 def testDesignedFailures(getRe):
     reg = getRe
     assert not check_assem(reg, '-0.5000000000 0.8660254038 0.0000000000 0.0000000000 -0.8660254038 -0.5000000000 0.0000000000 123.4120841409 0.0000000000 0.1000000000 1.0000000000 0.2000000000')
     assert not check_assem(reg, '1.0000000000 0.0000000000 0.0000000000 0.0000000000\n0.0000000000 1.0000000000 0.0000000000 0.0000000000\n0.0000000000 0.0000000000 1.0000000000 0.0000000000\n-0.5000000000 -0.8660254038 0.0000000000 106.8780000000\n0.8660254038 -0.5000000000 0.0000000000 61.7060420704\n0.0000000000 0.0000000000 1.0000000000 0.0000000000\n-0.5000000000 0.8660254038 0.0000000000 0.0000000000 -0.8660254038 -0.5000000000 0.0000000000 123.4120841409 0.0000000000 0.0000000000 1.0000000000 0.0000000000')
+
+def testMatrix(getReMatrix):
+    reg = getReMatrix
+    assert check_matrix(reg, ' 1   0   0  0\n0  1 0  0\n 0 0 1 0')
+    assert check_matrix(reg, ' 1   0   0  0\n0  1 0  0\n\n 0 0 1 0\n')
+    assert check_matrix(reg, ' 1   0   0  0\n0  1 0  0\n\n 0 0 1 0\n\n')
+    assert check_matrix(reg, ' 1   0   0  0\n0  1 0  0\n\n 0 0 1 0\n\n   \n')
+    assert check_matrix(reg, ' 1   0   0  0\n0  1 0  0\n\n 0 0 1 0\n    \n   ')
+    assert not check_matrix(reg, ' 1   0   0  0\n0  1 0  0\n\n 0 0 1')  # missing a value
+    assert not check_matrix(reg, ' 1   0   0  0\n0  1 0  0\n  0 0 1 0\n 1   0   0  0\n0  1 0  0\n  0 0 1 0')
+

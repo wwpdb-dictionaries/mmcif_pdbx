@@ -13,4 +13,6 @@ extensions/anomalous-stats-extension.dic
 extensions/signal-extension.dic
 extensions/unmerged-refln-extension.dic
 extensions/sifts-extension.dic
+extensions/initial-model-extension.dic
+extensions/initial-model-extension-EMD.dic
 base/mmcif_pdbx_v5_next-def-ilg.dic

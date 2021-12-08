@@ -2675,7 +2675,7 @@ data_mmcif_pdbx.dic
     + Add "RIGAKU PhotonJet-R" to _diffrn_source.type enumeration
     + Enhance pdb_id and pdb_id_ci to support PDB extented codes
 ;
-5.361  2021-12-06
+5.361  2021-12-07
 ;
     Changes (ep/Antanas Vaitkus):
     + Correct capitalization of angstrom in descriptions
@@ -2690,6 +2690,10 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_sudit_support.funding_organization enumeration
     + Add "TFS Selectris" and "TFS Selectris X" to _em_imaging_optics.energyfilter_name
     + Add "FEI tomography" to _em_software.name enumeration
+    + Add pdbx_initial_refinement_model category and definitions for
+      _em_3d_fitting.initial_refinement_model_id, _em_3d_fitting_list.chain_id,
+      _em_3d_fitting_list.chain_residue_range
+    + Add _pdbx_struct_oper_list.full_matrix
 ;
 ###########################################################################
 #
@@ -3238,6 +3242,11 @@ data_mmcif_pdbx.dic
                3x4_matrices         char
                '(((([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3})?(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n([\t ]*\n)*)){3})*((([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3})?(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n([\t ]*\n)*)){2}((([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3})(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n?([\t ]*\n)*))[ \t]*'
 ;              A set of 3x4 matrices separated by spaces and newlines on each line.
+               Final newline optional. Optional spaces at start of lines. Blank lines accepted.
+;
+               3x4_matrix           char
+               '((([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3})?(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n([\t ]*\n)*)){2}((([ \t]*-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? +){3})(-?(([0-9]+)[.]?|([0-9]*[.][0-9]+))([(][0-9]+[)])?([eE][+-]?[0-9]+)? *\n?([\t ]*\n)*))[ \t]*'
+;              A 3x4 matrix separated by spaces and newlines on each line.
                Final newline optional. Optional spaces at start of lines. Blank lines accepted.
 ;
                pdbx_related_db_id   char

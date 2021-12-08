@@ -93,6 +93,7 @@ em_2d_crystal_entity                1 em_2d_crystal_entity:em_image_processing:1
 em_2d_projection_selection          1 em_2d_projection_selection:entry:1                    . .
 em_3d_crystal_entity                1 em_3d_crystal_entity:em_image_processing:1            . .
 em_3d_fitting                       1 em_3d_fitting:entry:1                                 . .
+em_3d_fitting                       2 em_3d_fitting:pdbx_initial_refinement_model:1        . .
 em_3d_fitting_list                  1 em_3d_fitting_list:em_3d_fitting:1                    . .
 em_3d_reconstruction                1 em_3d_reconstruction:citation:1                       . .
 em_3d_reconstruction                2 em_3d_reconstruction:entry:2                          . .
@@ -179,6 +180,7 @@ emd_image_processing                1 emd_image_processing:emd_image_recording:1
 emd_image_recording                 1 emd_image_recording:emd_microscopy:1                         . .
 emd_layer_lines                     1 emd_layer_lines:emd_structure_determination:1                . .
 emd_microscopy                      1 emd_microscopy:emd_specimen:1                                . .
+emd_modelling                       1 emd_modelling:pdbx_initial_refinement_model:1                . .
 emd_modelling_initial_model         1 emd_modelling_initial_model:emd_modelling:1                  . .
 emd_particle_selection              1 emd_particle_selection:emd_image_processing:1                . .
 emd_sectioning_focused_ion_beam     1 emd_sectioning_focused_ion_beam:emd_tomography_preparation:1 . .
@@ -937,6 +939,8 @@ em_2d_crystal_entity                1 '_em_2d_crystal_entity.image_processing_id
 em_2d_projection_selection          1 '_em_2d_projection_selection.entry_id'                 '_entry.id'                  entry
 em_3d_crystal_entity                1 '_em_3d_crystal_entity.image_processing_id'            '_em_image_processing.id'    em_image_processing
 em_3d_fitting                       1 '_em_3d_fitting.entry_id'                              '_entry.id'                  entry
+em_3d_fitting                       2 '_em_3d_fitting.initial_refinement_model_id'           '_pdbx_initial_refinement_model.id'  pdbx_initial_refinement_model
+
 em_3d_fitting_list                  1 '_em_3d_fitting_list.3d_fitting_id'                    '_em_3d_fitting.id'          em_3d_fitting
 em_3d_reconstruction                1 '_em_3d_reconstruction.citation_id'                    '_citation.id'               citation
 em_3d_reconstruction                2 '_em_3d_reconstruction.entry_id'                       '_entry.id'                  entry
@@ -1024,6 +1028,7 @@ emd_image_processing                1 '_emd_image_processing.emd_image_recording
 emd_image_recording                 1 '_emd_image_recording.emd_microscopy_id'                         '_emd_microscopy.id'              emd_microscopy
 emd_layer_lines                     1 '_emd_layer_lines.emd_structure_determination_id'                '_emd_structure_determination.id' emd_structure_determination
 emd_microscopy                      1 '_emd_microscopy.emd_specimen_id'                                '_emd_specimen.id'                emd_specimen
+emd_modelling                       1 '_emd_modelling.initial_refinement_model_id'                     '_pdbx_initial_refinement_model.id' pdbx_initial_refinement_model
 emd_modelling_initial_model         1 '_emd_modelling_initial_model.emd_modelling_id'                  '_emd_modelling.id'               emd_modelling
 emd_particle_selection              1 '_emd_particle_selection.emd_image_processing_id'                '_emd_image_processing.id'        emd_image_processing
 emd_sectioning_focused_ion_beam     1 '_emd_sectioning_focused_ion_beam.emd_tomography_preparation_id' '_emd_tomography_preparation.id'  emd_tomography_preparation
