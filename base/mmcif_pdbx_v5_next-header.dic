@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.361
+    _dictionary.version         5.362
 #
      loop_
     _dictionary_history.version
@@ -2695,6 +2695,14 @@ data_mmcif_pdbx.dic
       _em_3d_fitting_list.chain_residue_range
     + Add _pdbx_struct_oper_list.full_matrix
 ;
+5.362  2022-01-11
+;
+    Changes (ep):
+    + Introduce _pdbx_entity_remapping and _pdbx_chain_remapping categories
+    + Extend _pdbx_sudit_support.funding_organization enumeration
+    + Add "xia2.multiplex" to _software.name enumeration
+;
+#
 ###########################################################################
 #
 # File:  mmcif_pdbx-data.dic

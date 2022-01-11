@@ -237,6 +237,11 @@ pdbx_chem_comp_atom_related              1  pdbx_chem_comp_atom_related:chem_com
 pdbx_chem_comp_atom_related              2  pdbx_chem_comp_atom_related:chem_comp_atom:2                              . .
 pdbx_chem_comp_atom_related              2  pdbx_chem_comp_atom_related:pdbx_chem_comp_related:3                      . .
 #
+# Assembly
+pdbx_chain_remapping                     1  pdbx_chain_remapping:entity:1                                             . .
+pdbx_chain_remapping                     2  pdbx_chain_remapping:atom_site:2                                          . .
+pdbx_entity_remapping                    1  pdbx_entity_remapping:entity:1                                            . .
+#
 pdbx_construct                           1  pdbx_construct:entity:1                                                   . .
 pdbx_construct                           2  pdbx_construct:entry:2                                                    . .
 pdbx_construct                           3  pdbx_construct:pdbx_robot_system:3                                        . .
@@ -1214,6 +1219,12 @@ pdbx_chem_comp_related                   1  '_pdbx_chem_comp_related.comp_id'   
 pdbx_chem_comp_atom_related              1  '_pdbx_chem_comp_atom_related.comp_id'                '_chem_comp.id'                             chem_comp
 pdbx_chem_comp_atom_related              2  '_pdbx_chem_comp_atom_related.atom_id'                '_chem_comp_atom.atom_id'                   chem_comp_atom
 pdbx_chem_comp_atom_related              3  '_pdbx_chem_comp_atom_related.related_type'           '_pdbx_chem_comp_related.relationship_type' pdbx_chem_comp_related
+#
+# Assembly
+pdbx_chain_remapping                     1  '_pdbx_chain_remapping.entity_id'                     '_entity.id'                                entity
+pdbx_chain_remapping                     2  '_pdbx_chain_remapping.label_asym_id'                 '_atom_site.label_asym_id'                  atom_site
+pdbx_chain_remapping                     2  '_pdbx_chain_remapping.auth_asym_id'                  '_atom_site.auth_asym_id'                   atom_site
+pdbx_entity_remapping                    1  '_pdbx_entity_remapping.entity_id'                    '_entity.id'                                entity
 #
 pdbx_construct                           1  '_pdbx_construct.entity_id'                           '_entity.id'                                entity
 pdbx_construct                           2  '_pdbx_construct.entry_id'                            '_entry.id'                                 entry
