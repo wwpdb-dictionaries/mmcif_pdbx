@@ -2560,12 +2560,15 @@ data_mmcif_pdbx.dic
     + Add "FEI tomography" to _em_software.name enumeration
     + Add _pdbx_struct_oper_list.full_matrix
 ;
-5.354  2022-01-11
+5.354  2022-01-12
 ;
     Changes (ep):
     + Introduce _pdbx_entity_remapping and _pdbx_chain_remapping categories
     + Extend _pdbx_sudit_support.funding_organization enumeration
     + Add "xia2.multiplex" to _software.name enumeration
+    + Extend enumeration _database_2.database_id to include "AFDB", "SMR",
+      "MODBASE", "AFDB"
+    + Add _struct.pdbx_structure_determination_methodology
 ;
 #
 ###########################################################################
