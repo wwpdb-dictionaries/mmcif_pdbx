@@ -2704,6 +2704,7 @@ data_mmcif_pdbx.dic
     + Extend enumeration _database_2.database_id to include "AFDB", "SMR",
       "MODBASE", "AFDB"
     + Add _struct.pdbx_structure_determination_methodology
+    + Add "EMS Lacey Carbon" to _emd_grid.model and _em_sample_support.grid_type
 ;
 #
 ###########################################################################
