@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.362
+    _dictionary.version         5.363
 #
      loop_
     _dictionary_history.version
@@ -2705,6 +2705,12 @@ data_mmcif_pdbx.dic
       "MODBASE", "AFDB"
     + Add _struct.pdbx_structure_determination_methodology
     + Add "EMS Lacey Carbon" to _emd_grid.model and _em_sample_support.grid_type
+;
+5.363  2022-02-02
+;
+    Changes (ep):
+    + Adjust enumerations in _database_2.database_id
+    + Extend _pdbx_sudit_support.funding_organization enumeration
 ;
 #
 ###########################################################################
