@@ -9,4 +9,5 @@ extensions/signal-extension.dic
 extensions/unmerged-refln-extension.dic
 extensions/sifts-extension.dic
 extensions/assembly-model-extension.dic
+extensions/xfel2-extension.dic
 base/mmcif_pdbx_v50-def-ilg.dic

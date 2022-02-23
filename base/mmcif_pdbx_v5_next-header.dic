@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.363
+    _dictionary.version         5.364
 #
      loop_
     _dictionary_history.version
@@ -2711,6 +2711,28 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Adjust enumerations in _database_2.database_id
     + Extend _pdbx_sudit_support.funding_organization enumeration
+;
+5.364  2022-02-23
+;
+    Changes (ep/Aaron Brewster):
+    + Enchanced descriptions and addition of attributes to better support
+      serial crystallography.
+      New definitions:
+       _pdbx_serial_crystallography_data_reduction.lattices_merged
+       _cell.pdbx_esd_method
+       _reflns.pdbx_CC_split_method,
+       _exptl_crystal.pdbx_mosaic_method
+       _exptl_crystal.pdbx_mosaic_block_size
+       _exptl_crystal.pdbx_mosaic_block_size_esd
+       _pdbx_crystal_alignment.overall_beam_divergence
+       _pdbx_crystal_alignment.overall_beam_divergence_esd
+      Updated definitions (description, ranges)
+       _pdbx_crystal_alignment.crossfire_x, _pdbx_crystal_alignment.crossfire_x_esd,
+       _pdbx_crystal_alignment.crossfire_y, _pdbx_crystal_alignment.crossfire_y_esd,
+       _exptl_crystal.pdbx_mosaicity
+    + Extend _pdbx_sudit_support.funding_organization enumeration
+    + Added 'ESRF BEAMLINE BM07' to _diffrn_source.type enumeration and 'BM07' to
+      diffrn_source.pdbx_synchrotron_beamline
 ;
 #
 ###########################################################################
