@@ -87,9 +87,9 @@ save__pdbx_initial_refinement_model.source_name
      loop_
     _item_enumeration.value
                                    PDB
-                                   AlphaFoldDB
-                                   GoogleCollab
+                                   AlphaFold
                                    RoseTTAFold
+				   ModelArchive
                                    SwissModel
                                    Modeller
                                    ITasser

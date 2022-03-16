@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.364
+    _dictionary.version         5.365
 #
      loop_
     _dictionary_history.version
@@ -2730,9 +2730,20 @@ data_mmcif_pdbx.dic
        _pdbx_crystal_alignment.crossfire_x, _pdbx_crystal_alignment.crossfire_x_esd,
        _pdbx_crystal_alignment.crossfire_y, _pdbx_crystal_alignment.crossfire_y_esd,
        _exptl_crystal.pdbx_mosaicity
-    + Extend _pdbx_sudit_support.funding_organization enumeration
+    + Extend _pdbx_audit_support.funding_organization enumeration
     + Added 'ESRF BEAMLINE BM07' to _diffrn_source.type enumeration and 'BM07' to
       diffrn_source.pdbx_synchrotron_beamline
+    + Clean up enumeration in pdbx_initial_refinement_model.source_name
+    + Add pdbx_chem_comp_audit to audit_group
+;
+5.365  2022-03-16
+;
+    Changes (ep):
+    + Cleanup enumeration of _pdbx_initial_refinement_model.source_name
+    + Add PRIME-X to _software.name enumeration
+    + Enhance description of _entity_poly.pdbx_seq_one_letter_code_can
+      to describe chromophore handling
+    + Extend _pdbx_audit_support.funding_organization enumeration
 ;
 #
 ###########################################################################
