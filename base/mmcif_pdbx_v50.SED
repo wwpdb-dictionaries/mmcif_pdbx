@@ -1,2 +1,8 @@
-s/##V50##//
 /^##V5NEXT##.*$/d
+s/ *#V50_GROW$//
+s/ *#V50_SHELL_FREE//
+s/ *#V50_SHELL_POS//
+s/ *#V50_RMERGE_ALL//
+s/ *#V50_SHELL_RMERGE//
+s/ *#V50_REFLNS_RMERGE_OBS//
+s/ *#V50_REFLNS_SHELL_SYM//
