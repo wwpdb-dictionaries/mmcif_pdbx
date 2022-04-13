@@ -1,7 +1,5 @@
 base/mmcif_pdbx_v50-header.dic
 base/mmcif_pdbx-base.dic
-base/em-V5public.dic
-extensions/depositor_info-extension.dic
 extensions/xfel-extensions-v3.dic
 extensions/entity_branch-extension.dic
 extensions/chem_comp-extension.dic
