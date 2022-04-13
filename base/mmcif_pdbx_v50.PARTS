@@ -8,6 +8,7 @@ extensions/anomalous-stats-extension.dic
 extensions/signal-extension.dic
 extensions/unmerged-refln-extension.dic
 extensions/sifts-extension.dic
+extensions/data_usage_extension.dic
 extensions/assembly-model-extension.dic
 extensions/xfel2-extension.dic
 base/mmcif_pdbx_v50-def-ilg.dic

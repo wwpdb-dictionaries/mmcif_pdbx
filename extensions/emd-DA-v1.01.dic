@@ -9935,3 +9935,17 @@ public when an entry is placed on hold.
        HOLD8W
        HPUB
      save_
+
+save__emd_depui.composite_map_deposition
+    _item_description.description
+; Indicates whether the authors have declared that this is a composite map deposition
+;
+    _item.name                  '_emd_depui.composite_map_deposition'
+    _item.category_id           emd_depui
+    _item.mandatory_code        no
+    _item_type.code             line
+    loop_
+     _item_enumeration.value
+                "COMPOSITE MAP"
+                NO
+     save_
