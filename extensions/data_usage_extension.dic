@@ -42,15 +42,15 @@ save_pdbx_data_usage
 ;
 ;
        loop_
-       _pdbx_data_usage.id                
-       _pdbx_data_usage.type              
+       _pdbx_data_usage.id
+       _pdbx_data_usage.type
        _pdbx_data_usage.details
        _pdbx_data_usage.url
        _pdbx_data_usage.name
        1 license "Data in this file are subject to CC0 creative commons license"
        https://creativecommons.org/share-your-work/public-domain/cc0 CC0
        2 disclaimer
-       ; You have the right to use this file provided that the license 
+       ; You have the right to use this file provided that the license
        remains intact
        ;
        ? ?
@@ -78,11 +78,11 @@ save__pdbx_data_usage.type
     _item.mandatory_code          yes
     _item_type.code               code
     _item_examples.case          'license'
-               
+
     loop_
       _item_enumeration.value
       _item_enumeration.detail    'license'        .
-                                  'disclaimer'     .    
+                                  'disclaimer'     .
      save_
 
 save__pdbx_data_usage.details
