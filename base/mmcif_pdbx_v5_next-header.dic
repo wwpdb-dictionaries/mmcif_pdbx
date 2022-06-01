@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.366
+    _dictionary.version         5.367
 #
      loop_
     _dictionary_history.version
@@ -2751,6 +2751,14 @@ data_mmcif_pdbx.dic
     + Add _em_depui.composite_map_deposition and _emd_depui.composite_map_deposition
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Add pdbx_data_usage category
+;
+5.367  2022-06-01
+;
+    Changes (ep):
+    + Extend _pdbx_audit_support.funding_organization enumeration
+    + Add "POSITION SENSITIVE DETECTOR" to _diffrn_detector.detector enumeration
+    + Add Careless and Xtrapol8 to _software.name PDBX enumeration
+    + Add "5ATM 3HE, CURVED 120X30 DEGREES" to _diffrn_detector.type enumeration
 ;
 #
 ###########################################################################
