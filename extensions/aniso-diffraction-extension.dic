@@ -615,8 +615,11 @@ save__reflns.pdbx_aniso_B_tensor_eigenvalue_1
     _item_sub_category.id          eigendecomposition
     _item_sub_category.pdbx_label  aniso_B_tensor
 
-    _item_range.minimum            0.0
-    _item_range.maximum             .
+    loop_
+    _item_range.minimum
+    _item_range.maximum
+                                   0.0  0.0
+                                   0.0  .
 
     _item_aliases.alias_name     '_reflns.gphl_aniso_B_tensor_eigenvalue_1'
     _item_aliases.dictionary       gphl-proc-aniso-extension.dic
@@ -640,8 +643,12 @@ save__reflns.pdbx_aniso_B_tensor_eigenvalue_2
     _item_sub_category.id          eigendecomposition
     _item_sub_category.pdbx_label  aniso_B_tensor
 
-    _item_range.minimum            0.0
-    _item_range.maximum             .
+    loop_
+    _item_range.minimum
+    _item_range.maximum
+                                   0.0  0.0
+                                   0.0  .
+
 
     _item_aliases.alias_name     '_reflns.gphl_aniso_B_tensor_eigenvalue_2'
     _item_aliases.dictionary       gphl-proc-aniso-extension.dic
@@ -664,8 +671,11 @@ save__reflns.pdbx_aniso_B_tensor_eigenvalue_3
     _item_sub_category.id          eigendecomposition
     _item_sub_category.pdbx_label  aniso_B_tensor
 
-    _item_range.minimum            0.0
-    _item_range.maximum             .
+    loop_
+    _item_range.minimum
+    _item_range.maximum
+                                   0.0  0.0
+                                   0.0  .
 
     _item_aliases.alias_name     '_reflns.gphl_aniso_B_tensor_eigenvalue_3'
     _item_aliases.dictionary       gphl-proc-aniso-extension.dic
