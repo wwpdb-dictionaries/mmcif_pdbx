@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.367
+    _dictionary.version         5.368
 #
      loop_
     _dictionary_history.version
@@ -2759,6 +2759,16 @@ data_mmcif_pdbx.dic
     + Add "POSITION SENSITIVE DETECTOR" to _diffrn_detector.detector enumeration
     + Add Careless and Xtrapol8 to _software.name PDBX enumeration
     + Add "5ATM 3HE, CURVED 120X30 DEGREES" to _diffrn_detector.type enumeration
+;
+5.368  2022-07-19
+;
+    Changes (ep/mw):
+    + Extend _pdbx_audit_support.funding_organization enumeration
+    + Add "DIRECT ELECTRON APOLLO (4k x 4k)" to _em_image_recording.film_or_detector_mode enumeration
+    + Initial model extension added to dictionary (_pdbx_initial_refinement)
+    + pdbx_investigation category added to the model
+    + Add "CHESS BEAMLINE 7B2" to _diffrn_source.type enumeration
+    + include 0 in the range for _reflns.pdbx_aniso_B_tensor_eigenvalue_*
 ;
 #
 ###########################################################################

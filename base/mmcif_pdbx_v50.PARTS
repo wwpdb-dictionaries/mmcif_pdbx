@@ -11,4 +11,6 @@ extensions/sifts-extension.dic
 extensions/data_usage_extension.dic
 extensions/assembly-model-extension.dic
 extensions/xfel2-extension.dic
+extensions/initial-model-extension.dic
+extensions/investigation.dic
 base/mmcif_pdbx_v50-def-ilg.dic

@@ -18,4 +18,5 @@ extensions/initial-model-extension.dic
 extensions/initial-model-extension-EMD.dic
 extensions/assembly-model-extension.dic
 extensions/xfel2-extension.dic
+extensions/investigation.dic
 base/mmcif_pdbx_v5_next-def-ilg.dic

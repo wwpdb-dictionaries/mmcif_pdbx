@@ -1,0 +1,116 @@
+#data_mmcif_pdbx_investigation.dic
+
+#_pdbx_dictionary_component.datablock_id   mmcif_pdbx_investigation.dic
+#_pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_investigation.dic
+#_pdbx_dictionary_component.title          "PDBx/mmCIF Dictionary Investigation Extension"
+#_pdbx_dictionary_component.version        0.0.1
+
+#loop_
+#_pdbx_dictionary_component_history.dictionary_component_id
+#_pdbx_dictionary_component_history.version
+#_pdbx_dictionary_component_history.update
+#_pdbx_dictionary_component_history.revision
+#mmcif_pdbx_investigation.dic  0.0.1  2022-02-24
+#;
+#Changes (EP):
+#+ Initial version
+#;
+
+# Open issues
+# 1. What are the investigation types
+# 2. Should reference to external data be a DOI or generic url?  Should we require a data source to be able to issue stable DOIs?
+
+######################
+# PDBX_INVESTIGATION #
+######################
+save_pdbx_investigation
+    _category.description
+;              The PDBX_INVESTIGATION category provides a information of an investigation associated with this file.
+;
+    _category.id                  pdbx_investigation
+    _category.mandatory_code      no
+    loop_
+    _category_key.name          '_pdbx_investigation.id'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1
+;
+;
+       _pdbx_investigation.id                 1
+       _pdbx_investigation.type               'Fragment Screening'
+       _pdbx_investigation.resource_name      PDB
+       _pdbx_investigation.resource_accession FRAG_001
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_investigation.id
+    _item_description.description
+;              Uniquely identifies an investigation
+;
+    _item.name                  '_pdbx_investigation.id'
+    _item.category_id             pdbx_investigation
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_examples.case           1
+     save_
+
+save__pdbx_investigation.type
+    _item_description.description
+;              Describes the type of investigation.
+;
+    _item.name                  '_pdbx_investigation.type'
+    _item.category_id             pdbx_investigation
+    _item.mandatory_code          yes
+    _item_type.code               line
+    _item_examples.case          'Fragment Screening'
+    loop_
+      _item_enumeration.value
+      _item_enumeration.detail    'Fragment Screening'        .
+                                  'Crystallization Screening' .
+     save_
+
+save__pdbx_investigation.resource_name
+    _item_description.description
+;             The name of the resource archiving this investigation
+;
+    _item.name                  '_pdbx_investigation.resource_name'
+    _item.category_id             pdbx_investigation
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_examples.case	          'PDB'
+    loop_
+      _item_enumeration.value
+      _item_enumeration.detail    PDB   .
+                                  BMRB  .
+				  EMDB  .
+    save_
+
+save__pdbx_investigation.resource_accession
+    _item_description.description
+;             The accession used to identify this investigation
+;
+    _item.name                  '_pdbx_investigation.resource_accession'
+    _item.category_id             pdbx_investigation
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_examples.case	          'FRAG_001'
+    save_
+
+
+save__pdbx_investigation.details
+    _item_description.description
+;              Additional details relevant to the investigation.
+;
+    _item.name                  '_pdbx_investigation.details'
+    _item.category_id             pdbx_investigation
+    _item.mandatory_code          no
+    _item_type.code               text
+    save_
