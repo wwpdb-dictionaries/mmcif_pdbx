@@ -2631,6 +2631,7 @@ data_mmcif_pdbx.dic
     + pdbx_investigation category added to the model
     + Add "CHESS BEAMLINE 7B2" to _diffrn_source.type enumeration
     + include 0 in the range for _reflns.pdbx_aniso_B_tensor_eigenvalue_*
+    + Mark _struct.pdbx_structure_determination_methodology as internal to WWPDB
 ;
 
 #
