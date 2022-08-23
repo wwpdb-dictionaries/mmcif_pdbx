@@ -1,0 +1,188 @@
+####################
+## em_map_upload ##
+####################
+
+save_em_map_upload
+    _category.description
+;   Data items in the em_map_upload category record author provided map information
+    Pixel size, contour level, and annotation details from the depositor.
+;
+    _category.id                  em_map_upload
+    _category.mandatory_code       no
+    _category_key.name           '_em_map_upload.id'
+     loop_
+    _category_group.id
+                                 'inclusive_group'
+                                 'em_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+;Example 1
+;
+;   _em_map_upload.id                    1
+    _em_map_upload.annotation_details    'D7 structure of Groel at 4.2 Angstrom resolution'
+    _em_map_upload.contour_level         1
+    _em_map_upload.pixel_spacing         1.06
+    _em_map_upload.partition             1
+    _em_map_upload.type                  'primary map'
+    _em_map_upload.file                  'D_001_map_P1.map'
+    _em_map_upload.original_file         'depositors_map.map'
+;
+     save_
+
+save__em_map_upload.id
+    _item_description.description
+;   Unique id for the em_map_upload category.
+;
+    _item.name                   '_em_map_upload.id'
+    _item.category_id              em_map_upload
+    _item.mandatory_code           yes
+    _item_type.code                positive_int
+     save_
+
+save__em_map_upload.contour_level
+    _item_description.description
+;   recommended contour level for viewing the map
+;
+    _item.name                  '_em_map_upload.contour_level'
+    _item.category_id           em_map_upload
+    _item.mandatory_code        no
+    _item_type.code             float
+     save_
+
+save__em_map_upload.annotation_details
+    _item_description.description
+;   map annotation details
+;
+    _item.name                  '_em_map_upload.annotation_details'
+    _item.category_id           em_map_upload
+    _item.mandatory_code        no
+    _item_type.code             text
+     save_
+
+save__em_map_upload.file
+    _item_description.description
+;   Map file name.
+;
+    _item.name                  '_em_map_upload.file'
+    _item.category_id           em_map_upload
+    _item.mandatory_code        no
+    _item_type.code             line
+    _item_examples.case           'D_001_map_P1.map.V1'
+     save_
+
+save__em_map_upload.original_file
+    _item_description.description
+;   Map original file name.
+;
+    _item.name                  '_em_map_upload.original_file'
+    _item.category_id           em_map_upload
+    _item.mandatory_code        no
+    _item_type.code             line
+    _item_examples.case           'emd_5470.map.gz'
+     save_
+
+save__em_map_upload.type
+    _item_description.description
+;   map format
+;
+    _item.name                  '_em_map_upload.type'
+    _item.category_id           em_map_upload
+    _item.mandatory_code        yes
+    _item_type.code             line
+     loop_
+    _item_enumeration.value
+        #"MAP "
+        "primary map"
+        "additional map"
+        "mask"
+        "half map"
+	"raw map"
+	"FSC half map mask"
+	"FSC map-model mask"
+        "alignment mask"
+        "focused refinement mask"
+        "3D classification map"
+        "focus refinement map"
+        "segmentation"
+     save_
+
+save__em_map_upload.partition
+    _item_description.description
+;   Map or mask filename partition number.
+    Internal DepUI item to keep track of actual map names in the filesystem.
+;
+    _item.name                  '_em_map_upload.partition'
+    _item.category_id           em_map_upload
+    _item.mandatory_code        no
+    _item_type.code             positive_int
+     save_
+
+
+save__em_map_upload.pixel_spacing_x
+    _item_description.description
+;    The length in Angstroms of one voxel along x.
+;
+    _item.name                   '_em_map_upload.pixel_spacing_x'
+    _item.category_id              em_map_upload
+    _item.mandatory_code           yes
+    _item_type.code                float
+    loop_
+    _item_range.maximum
+    _item_range.minimum
+     .  0.0
+    0.0 0.0
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+     "_em_map_upload.pixel_spacing_x"  0.1 0.1
+     "_em_map_upload.pixel_spacing_x"  0.1 5.0
+     "_em_map_upload.pixel_spacing_x"  5.0 5.0
+      save_
+
+save__em_map_upload.pixel_spacing_y
+    _item_description.description
+;    The length in Angstroms of one voxel along y.
+;
+    _item.name                   '_em_map_upload.pixel_spacing_y'
+    _item.category_id              em_map_upload
+    _item.mandatory_code           yes
+    _item_type.code                float
+    loop_
+    _item_range.maximum
+    _item_range.minimum
+     .  0.0
+    0.0 0.0
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+     "_em_map_upload.pixel_spacing_y"  0.1 0.1
+     "_em_map_upload.pixel_spacing_y"  0.1 5.0
+     "_em_map_upload.pixel_spacing_y"  5.0 5.0
+      save_
+
+save__em_map_upload.pixel_spacing_z
+    _item_description.description
+;    The length in Angstroms of one voxel along z.
+;
+    _item.name                   '_em_map_upload.pixel_spacing_z'
+    _item.category_id              em_map_upload
+    _item.mandatory_code           yes
+    _item_type.code                float
+    loop_
+    _item_range.maximum
+    _item_range.minimum
+     .  0.0
+    0.0 0.0
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+     "_em_map_upload.pixel_spacing_z"  0.1 0.1
+     "_em_map_upload.pixel_spacing_z"  0.1 5.0
+     "_em_map_upload.pixel_spacing_z"  5.0 5.0
+      save_
+
+#############
