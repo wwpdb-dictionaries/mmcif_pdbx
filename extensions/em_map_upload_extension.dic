@@ -37,7 +37,7 @@ save__em_map_upload.id
     _item.name                   '_em_map_upload.id'
     _item.category_id              em_map_upload
     _item.mandatory_code           yes
-    _item_type.code                positive_int
+    _item_type.code                code
      save_
 
 save__em_map_upload.contour_level
@@ -115,7 +115,7 @@ save__em_map_upload.partition
     _item.name                  '_em_map_upload.partition'
     _item.category_id           em_map_upload
     _item.mandatory_code        no
-    _item_type.code             positive_int
+    _item_type.code             code
      save_
 
 
