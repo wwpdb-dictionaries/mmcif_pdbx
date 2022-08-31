@@ -5763,9 +5763,9 @@ save__emd_image_digitization.sampling_interval
     _item_examples.case           1.7
     loop_
     _item_range.maximum
-    _item_range.minimum           50.0  0.0
-                                  0.0   0.0
-                                  50.0  50.0
+    _item_range.minimum           100.0    0.0
+                                    0.0    0.0
+                                  100.0  100.0
     loop_
     _pdbx_item_range.name
     _pdbx_item_range.minimum

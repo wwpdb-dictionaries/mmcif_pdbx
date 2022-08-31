@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.368
+    _dictionary.version         5.369
 #
      loop_
     _dictionary_history.version
@@ -2770,6 +2770,16 @@ data_mmcif_pdbx.dic
     + Add "CHESS BEAMLINE 7B2" to _diffrn_source.type enumeration
     + include 0 in the range for _reflns.pdbx_aniso_B_tensor_eigenvalue_*
     + Mark _struct.pdbx_structure_determination_methodology as internal to WWPDB
+;
+5.369  2022-08-31
+;
+    Changes (ep/rp/cv):
+    + Consolidate EMD/EM namespaces
+    + Update _pdbx_audit_support
+    + Correct _atom_type.scat_Cromer_Mann_* example
+    + Add cctbx.xfel.merge and STARGazer to _software.name enumeration
+    + Add "DECTRIS EIGER2 R 4M" to _diffrn_detector.type
+    + Expand range of _em_image_scans.sampling_size to 100.0
 ;
 #
 ###########################################################################

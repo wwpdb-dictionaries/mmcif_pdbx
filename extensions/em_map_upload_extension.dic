@@ -22,7 +22,9 @@ save_em_map_upload
 ;   _em_map_upload.id                    1
     _em_map_upload.annotation_details    'D7 structure of Groel at 4.2 Angstrom resolution'
     _em_map_upload.contour_level         1
-    _em_map_upload.pixel_spacing         1.06
+    _em_map_upload.pixel_spacing_x       1.06
+    _em_map_upload.pixel_spacing_y       1.06
+    _em_map_upload.pixel_spacing_z       1.06
     _em_map_upload.partition             1
     _em_map_upload.type                  'primary map'
     _em_map_upload.file                  'D_001_map_P1.map'
