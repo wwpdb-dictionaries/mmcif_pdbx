@@ -8,6 +8,7 @@ extensions/binding-assay-extension.dic
 extensions/entity_branch-extension.dic
 extensions/chem_comp-extension.dic
 extensions/emd_map_upload_extension.dic
+extensions/em_map_upload_extension.dic
 extensions/aniso-diffraction-extension.dic
 extensions/anomalous-stats-extension.dic
 extensions/signal-extension.dic
