@@ -1,0 +1,21 @@
+##
+# mmcif_pdbx_v5_nextl.dic (generator)
+##
+
+data_mmcif_pdbx.dic
+#
+loop_
+_pdbx_include_dictionary.dictionary_id
+_pdbx_include_dictionary.dictionary_locator
+_pdbx_include_dictionary.include_mode
+_pdbx_include_dictionary.dictionary_namespace_prefix
+_pdbx_include_dictionary.dictionary_namespace_prefix_replace
+mmcif_pdbx_v5_next-header.dic        mmcif_pdbx_v5_next-header.dic   extend . .
+#mmcif_pdbx_v5_next-data.dic          base/mmcif_ddl-data.dic        extend . .
+mmcif_pdbx_v5_next-base.dic          mmcif_pdbx-base.dic             extend . .
+mmcif_pdbx_v5_next-variable.dic           mmcif_pdbx_v5_next-variable.dic      extend . .
+# V5_next extensions are in this file
+mmcif_pdbx_v5_next-ext.dic           mmcif_pdbx_v5_next-ext.dic      extend . .
+mmcif_pdbx_v5_next-def-ilg.dic   mmcif_pdbx_v5_next-def-ilg.dic extend . .
+
+

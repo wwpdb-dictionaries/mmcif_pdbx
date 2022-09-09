@@ -1,0 +1,45 @@
+#
+# mmcif_pdbx_v50 extensions that are included
+#
+
+data_mmc_pdbx_v5_next-ext.dic
+
+#
+loop_
+_pdbx_include_dictionary.dictionary_id
+_pdbx_include_dictionary.dictionary_locator
+_pdbx_include_dictionary.include_mode
+_pdbx_include_dictionary.dictionary_namespace_prefix
+_pdbx_include_dictionary.dictionary_namespace_prefix_replace
+# xfel_extensions depends on xfel2-extensions 
+xfel_extensions-v3.dic           ../extensions/xfel-extensions-v3.dic          extend . .
+# base depends on this now -- maybe move pdbx_mosiac_method to base
+xfel2-extension.dic              ../extensions/xfel2-extension.dic             extend . .
+
+entity_branch-extension.dic      ../extensions/entity_branch-extension.dic     extend . .
+chem_comp-extension.dic          ../extensions/chem_comp-extension.dic         extend . .
+aniso-diffraction-extension.dic  ../extensions/aniso-diffraction-extension.dic extend . .
+anomalous-stats-extension.dic    ../extensions/anomalous-stats-extension.dic   extend . . 
+signal-extension.dic             ../extensions/signal-extension.dic            extend . .
+unmerged-refln-extension.dic     ../extensions/unmerged-refln-extension.dic    extend . .
+sifts-extension.dic              ../extensions/sifts-extension.dic             extend . .
+mmcif_pdbx_license.dic           ../extensions/data_usage_extension.dic        extend . .
+assembly-model-extension.dic     ../extensions/assembly-model-extension.dic    extend . .
+
+
+initial-model-extension.dic      ../extensions/initial-model-extension.dic     extend . .
+mmcif_pdbx_investigation.dic     ../extensions/investigation.dic               extend . .
+
+# V5 next EMD namespace related, and EMDB internal
+# emd-DA and initial-model-extension-EMD must go together
+emd-DA-v1.01.dic                 ../extensions/emd-DA-v1.01.dic                extend . .
+initial-model-extension-EMD.dic  ../extensions/initial-model-extension-EMD.dic extend . .
+emd_map_upload_extension.dic     ../extensions/emd_map_upload_extension.dic    extend . .
+em_map_upload_extension.dic      ../extensions/em_map_upload_extension.dic     extend . .
+
+
+# In development
+diffrn-data-set-extension.dic    ../extensions/diffrn-data-set-extension-v2.dic extend . .
+comment-ext.dic                  ../extensions/comment-ext.dic                  extend . .
+binding-assay-extension.dic      ../extensions/binding-assay-extension.dic      extend .. .
+

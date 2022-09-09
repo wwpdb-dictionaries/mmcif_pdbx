@@ -2,6 +2,8 @@
 ## Date: 31-Mar-2016
 ##
 ##
+data_binding-assay-extension.dic
+
 save_pdbx_binding_assay
     _category.description
 ;              Data items in the pdbx_binding_assay category record the results

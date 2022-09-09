@@ -3,6 +3,26 @@
 ##
 ##
 
+data_initial-model-extension-EMD.dic
+
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+emd_modelling                       1 emd_modelling:pdbx_initial_refinement_model:1                . .
+
+
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+emd_modelling                       1 '_emd_modelling.initial_refinement_model_id'                     '_pdbx_initial_refinement_model.id' pdbx_initial_refinement_model
+
+
 #####################
 #  EMD__MODELLING   #
 #####################

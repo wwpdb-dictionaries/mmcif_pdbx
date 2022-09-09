@@ -48,6 +48,8 @@
 # data item terms and category hierarchy follow EMDB D&A XSD 2.0
 ###########################################################################
 
+data_emd-DA-v1.01.dic
+
 ###################
 ## EMD DATATYPES ##
 ###################
@@ -66,6 +68,105 @@
 #   boolean char 'YES|NO' 'Boolean type'
 #   space char 'REAL|RECIPROCAL' 'Type of space'
 #   author char "[A-Za-z '\-]+[a-z]+, +([A-Z\-]+\.)+$" 'Author name in PDB format: Taylor, C.A.'
+
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+emd_angle_assignment                1 emd_angle_assignment:emd_image_processing:1                  . .
+emd_buffer                          1 emd_buffer:emd_specimen:1                                    . .
+emd_buffer_component                1 emd_buffer_component:emd_buffer:1                            . .
+emd_crystal_formation               1 emd_crystal_formation:emd_specimen:1                         . .
+emd_crystallography_stats           1 emd_crystallography_stats:emd_image_processing:1             . .
+emd_ctf_correction                  1 emd_ctf_correction:emd_image_processing:1                    . .
+emd_embedding                       1 emd_embedding:emd_specimen:1                                 . .
+emd_fiducial_markers                1 emd_fiducial_markers:emd_tomography_preparation:1            . .
+emd_final_classification            1 emd_final_classification:emd_image_processing:1              . .
+emd_final_reconstruction            1 emd_final_reconstruction:emd_image_processing:1              . .
+emd_grid                            1 emd_grid:emd_specimen:1                                      . .
+emd_grid_pretreatment               1 emd_grid_pretreatment:emd_grid:1                             . .
+emd_helical_parameters              1 emd_helical_parameters:emd_image_processing:1                . .
+emd_high_pressure_freezing          1 emd_high_pressure_freezing:emd_tomography_preparation:1      . .
+emd_image_digitization              1 emd_image_digitization:emd_image_recording:1                 . .
+emd_image_processing                1 emd_image_processing:emd_image_recording:1                   . .
+emd_image_recording                 1 emd_image_recording:emd_microscopy:1                         . .
+emd_layer_lines                     1 emd_layer_lines:emd_structure_determination:1                . .
+emd_microscopy                      1 emd_microscopy:emd_specimen:1                                . .
+emd_modelling_initial_model         1 emd_modelling_initial_model:emd_modelling:1                  . .
+emd_particle_selection              1 emd_particle_selection:emd_image_processing:1                . .
+emd_sectioning_focused_ion_beam     1 emd_sectioning_focused_ion_beam:emd_tomography_preparation:1 . .
+emd_sectioning_ultramicrotomy       1 emd_sectioning_ultramicrotomy:emd_tomography_preparation:1   . .
+emd_shadowing                       1 emd_shadowing:emd_specimen:1                                 . .
+emd_software                        1 emd_software:emd_image_processing:1                          . .
+emd_software                        2 emd_software:emd_microscopy:2                                . .
+emd_software                        3 emd_software:emd_modelling:3                                 . .
+emd_staining                        1 emd_staining:emd_specimen:1                                  . .
+emd_startup_model                   1 emd_startup_model:emd_image_processing:1                     . .
+emd_structure_factors               1 emd_structure_factors:emd_structure_determination:1          . .
+emd_support_film                    1 emd_support_film:emd_grid:1                                  . .
+emd_symmetry_point                  1 emd_symmetry_point:emd_image_processing:1                    . .
+emd_three_d_crystal_parameters      1 emd_three_d_crystal_parameters:emd_image_processing:1        . .
+emd_tomography_preparation          1 emd_tomography_preparation:emd_specimen:1                    . .
+emd_two_d_crystal_parameters        1 emd_two_d_crystal_parameters:emd_image_processing:1          . .
+emd_virus                           1 emd_virus:emd_supramolecule:1                                . .
+emd_virus_natural_host              1 emd_virus_natural_host:emd_supramolecule:1                   . .
+emd_virus_shell                     1 emd_virus_shell:emd_supramolecule:1                          . .
+emd_virus_synthetic                 1 emd_virus_synthetic:emd_supramolecule:1                      . .
+emd_vitrification                   1 emd_vitrification:emd_specimen:1                             . .
+emd_volume_selection                1 emd_volume_selection:emd_image_processing:1                  . .
+
+
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+emd_angle_assignment                1 '_emd_angle_assignment.emd_image_processing_id'                  '_emd_image_processing.id'        emd_image_processing
+emd_buffer                          1 '_emd_buffer.emd_specimen_id'                                    '_emd_specimen.id'                emd_specimen
+emd_buffer_component                1 '_emd_buffer_component.emd_buffer_id'                            '_emd_buffer.id'                  emd_buffer
+emd_crystal_formation               1 '_emd_crystal_formation.emd_specimen_id'                         '_emd_specimen.id'                emd_specimen
+emd_crystallography_stats           1 '_emd_crystallography_stats.emd_image_processing_id'             '_emd_image_processing.id'        emd_image_processing
+emd_ctf_correction                  1 '_emd_ctf_correction.emd_image_processing_id'                    '_emd_image_processing.id'        emd_image_processing
+emd_embedding                       1 '_emd_embedding.emd_specimen_id'                                 '_emd_specimen.id'                emd_specimen
+emd_fiducial_markers                1 '_emd_fiducial_markers.emd_tomography_preparation_id'            '_emd_tomography_preparation.id'  emd_tomography_preparation
+emd_final_classification            1 '_emd_final_classification.emd_image_processing_id'              '_emd_image_processing.id'        emd_image_processing
+emd_final_reconstruction            1 '_emd_final_reconstruction.emd_image_processing_id'              '_emd_image_processing.id'        emd_image_processing
+emd_grid                            1 '_emd_grid.emd_specimen_id'                                      '_emd_specimen.id'                emd_specimen
+emd_grid_pretreatment               1 '_emd_grid_pretreatment.emd_grid_id'                             '_emd_grid.id'                    emd_grid
+emd_helical_parameters              1 '_emd_helical_parameters.emd_image_processing_id'                '_emd_image_processing.id'        emd_image_processing
+emd_high_pressure_freezing          1 '_emd_high_pressure_freezing.emd_tomography_preparation_id'      '_emd_tomography_preparation.id'  emd_tomography_preparation
+emd_image_digitization              1 '_emd_image_digitization.emd_image_recording_id'                 '_emd_image_recording.id'         emd_image_recording
+emd_image_processing                1 '_emd_image_processing.emd_image_recording_id'                   '_emd_image_recording.id'         emd_image_recording
+emd_image_recording                 1 '_emd_image_recording.emd_microscopy_id'                         '_emd_microscopy.id'              emd_microscopy
+emd_layer_lines                     1 '_emd_layer_lines.emd_structure_determination_id'                '_emd_structure_determination.id' emd_structure_determination
+emd_microscopy                      1 '_emd_microscopy.emd_specimen_id'                                '_emd_specimen.id'                emd_specimen
+emd_modelling_initial_model         1 '_emd_modelling_initial_model.emd_modelling_id'                  '_emd_modelling.id'               emd_modelling
+emd_particle_selection              1 '_emd_particle_selection.emd_image_processing_id'                '_emd_image_processing.id'        emd_image_processing
+emd_sectioning_focused_ion_beam     1 '_emd_sectioning_focused_ion_beam.emd_tomography_preparation_id' '_emd_tomography_preparation.id'  emd_tomography_preparation
+emd_sectioning_ultramicrotomy       1 '_emd_sectioning_ultramicrotomy.emd_tomography_preparation_id'   '_emd_tomography_preparation.id'  emd_tomography_preparation
+emd_shadowing                       1 '_emd_shadowing.emd_specimen_id'                                 '_emd_specimen.id'                emd_specimen
+emd_software                        1 '_emd_software.emd_image_processing_id'                          '_emd_image_processing.id'        emd_image_processing
+emd_software                        2 '_emd_software.emd_microscopy_id'                                '_emd_microscopy.id'              emd_microscopy
+emd_software                        3 '_emd_software.emd_modelling_id'                                 '_emd_modelling.id'               emd_modelling
+emd_staining                        1 '_emd_staining.emd_specimen_id'                                  '_emd_specimen.id'                emd_specimen
+emd_startup_model                   1 '_emd_startup_model.emd_image_processing_id'                     '_emd_image_processing.id'        emd_image_processing
+emd_structure_factors               1 '_emd_structure_factors.emd_structure_determination_id'          '_emd_structure_determination.id' emd_structure_determination
+emd_support_film                    1 '_emd_support_film.emd_grid_id'                                  '_emd_grid.id'                    emd_grid
+emd_symmetry_point                  1 '_emd_symmetry_point.emd_image_processing_id'                    '_emd_image_processing.id'        emd_image_processing
+emd_three_d_crystal_parameters      1 '_emd_three_d_crystal_parameters.emd_image_processing_id'        '_emd_image_processing.id'        emd_image_processing
+emd_tomography_preparation          1 '_emd_tomography_preparation.emd_specimen_id'                    '_emd_specimen.id'                emd_specimen
+emd_two_d_crystal_parameters        1 '_emd_two_d_crystal_parameters.emd_image_processing_id'          '_emd_image_processing.id'        emd_image_processing
+emd_virus                           1 '_emd_virus.emd_supramolecule_id'                                '_emd_supramolecule.id'           emd_supramolecule
+emd_virus_natural_host              1 '_emd_virus_natural_host.emd_supramolecule_id'                   '_emd_supramolecule.id'           emd_supramolecule
+emd_virus_shell                     1 '_emd_virus_shell.emd_supramolecule_id'                          '_emd_supramolecule.id'           emd_supramolecule
+emd_virus_synthetic                 1 '_emd_virus_synthetic.emd_supramolecule_id'                      '_emd_supramolecule.id'           emd_supramolecule
+emd_vitrification                   1 '_emd_vitrification.emd_specimen_id'                             '_emd_specimen.id'                emd_specimen
+emd_volume_selection                1 '_emd_volume_selection.emd_image_processing_id'                  '_emd_image_processing.id'        emd_image_processing
+
+
 
 ##########
 ## EMD ##

@@ -1,8 +1,4 @@
-####
-# These extensions are in development
-####
-
-
+data_xfel2-extension.dic
 
 save__pdbx_serial_crystallography_data_reduction.lattices_merged
     _item_description.description

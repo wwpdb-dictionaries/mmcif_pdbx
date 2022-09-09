@@ -1,0 +1,289 @@
+###########################################################################
+#
+# File:  mmcif_pdbx_v5_next-ext-rcsb.dic
+#
+#            mmCIF PDBx V5_next overrides
+#
+###########################################################################
+data_mmcif_pdbx_v5_next-ext.dic
+
+save__exptl_crystal_grow.temp
+    _item_description.description
+;              The temperature in kelvins at which the crystal was grown.
+               If more than one temperature was employed during the
+               crystallization process, the final temperature should be noted
+               here and the protocol  involving multiple temperatures should be
+               described in _exptl_crystal_grow.details.
+;
+    _item.name                  '_exptl_crystal_grow.temp'
+    _item.category_id             exptl_crystal_grow
+    _item.mandatory_code          no
+    _pdbx_item.name            "_exptl_crystal_grow.temp"
+    _pdbx_item.mandatory_code  yes
+    _item_range.maximum         350.0
+    _item_range.minimum         150.0
+
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+      "_exptl_crystal_grow.temp"  277  277
+      "_exptl_crystal_grow.temp"  277  316
+      "_exptl_crystal_grow.temp"  316  316
+    _item_related.related_name  '_exptl_crystal_grow.temp_esd'
+    _item_related.function_code   associated_esd
+    _item_type.code               float
+    _item_type_conditions.code    esd
+    _item_units.code              kelvins
+     save_
+
+
+save__refine_ls_shell.R_factor_R_free
+    _item_description.description
+;              Residual factor R for reflections that satisfy the resolution
+               limits established by _refine_ls_shell.d_res_high and
+               _refine_ls_shell.d_res_low and the observation limit
+               established by _reflns.observed_criterion, and that were
+               used as the test reflections (i.e. were excluded from the
+               refinement) when the refinement included the calculation
+               of a 'free' R factor. Details of how reflections were assigned
+               to the working and test sets are given in _reflns.R_free_details.
+
+                   sum|F~obs~ - F~calc~|
+               R = ---------------------
+                        sum|F~obs~|
+
+               F~obs~  = the observed structure-factor amplitudes
+               F~calc~ = the calculated structure-factor amplitudes
+
+               sum is taken over the specified reflections
+;
+    _item.name                  '_refine_ls_shell.R_factor_R_free'
+    _item.category_id             refine_ls_shell
+    _item.mandatory_code          no
+    loop_
+    _item_range.maximum
+    _item_range.minimum          10.0   0.0
+                                  0.0   0.0
+    loop_
+    _item_related.related_name
+    _item_related.function_code '_refine_ls_shell.wR_factor_R_free'
+                                  alternate
+                                '_refine_ls_shell.R_factor_R_free_error'
+                                  associated_error
+    _item_type.code               float
+    _pdbx_item.name            "_refine_ls_shell.R_factor_R_free"
+    _pdbx_item.mandatory_code  no
+    #
+    _pdbx_item_description.name         "_refine_ls_shell.R_factor_R_free"
+    _pdbx_item_description.description  "Within the indicated shell,  the number of reflections that satisfy both resolution limits and observation criterion, but not used throughout  structural solution and refinement. i.e. the data pre-allocated for cross-validation R-free calculation"
+   #   #
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+      "_refine_ls_shell.R_factor_R_free"   0.1   0.1
+      "_refine_ls_shell.R_factor_R_free"   0.1  0.45
+      "_refine_ls_shell.R_factor_R_free"  0.45  0.45
+      "_refine_ls_shell.R_factor_R_free"     0     0
+      "_refine_ls_shell.R_factor_R_free"     0     1
+      "_refine_ls_shell.R_factor_R_free"     1     1
+    #
+     save_
+
+save__reflns_shell.percent_possible_all
+    _item_description.description
+;              The percentage of geometrically possible reflections represented
+               by all reflections measured for this shell.
+;
+    _item.name                  '_reflns_shell.percent_possible_all'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          no
+    _item_aliases.alias_name    '_reflns_shell_percent_possible_all'
+    _item_aliases.dictionary      cif_core.dic
+    _item_aliases.version         2.0.1
+    loop_
+    _item_range.maximum
+    _item_range.minimum
+				100.0 100.0
+				100.0   0.0
+                                  0.0   0.0
+    _item_type.code               float
+    _pdbx_item_description.name         "_reflns_shell.percent_possible_all"
+    _pdbx_item_description.description  "Percentage of possible reflections collected in this resolution shell"
+    #   #
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+      "_reflns_shell.percent_possible_all"   20   20
+      "_reflns_shell.percent_possible_all"   20  100
+      "_reflns_shell.percent_possible_all"  100  100
+     save_
+
+save__reflns_shell.Rmerge_I_all
+    _item_description.description
+;              The value of Rmerge(I) for all reflections in a given shell.
+
+                           sum~i~(sum~j~|I~j~ - <I>|)
+               Rmerge(I) = --------------------------
+                               sum~i~(sum~j~<I>)
+
+               I~j~ = the intensity of the jth observation of reflection i
+               <I>  = the mean of the intensities of all observations of
+                      reflection i
+
+               sum~i~ is taken over all reflections
+               sum~j~ is taken over all observations of each reflection
+
+;
+    _item.name                  '_reflns_shell.Rmerge_I_all'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          no
+    _item_aliases.alias_name    '_reflns_shell_Rmerge_I_all'
+    _item_aliases.dictionary      cif_core.dic
+    _item_aliases.version         2.0.1
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+    _item_type.code               float
+     save_
+
+save__reflns_shell.Rmerge_I_obs
+    _item_description.description
+;              The value of Rmerge(I) for reflections classified as 'observed'
+               (see _reflns.observed_criterion) in a given shell.
+
+                           sum~i~(sum~j~|I~j~ - <I>|)
+               Rmerge(I) = --------------------------
+                               sum~i~(sum~j~<I>)
+
+               I~j~ = the intensity of the jth observation of reflection i
+               <I>  = the mean of the intensities of all observations of
+                      reflection i
+
+               sum~i~ is taken over all reflections
+               sum~j~ is taken over all observations of each reflection
+;
+    _item.name                  '_reflns_shell.Rmerge_I_obs'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          no
+    _item_aliases.alias_name    '_reflns_shell_Rmerge_I_obs'
+    _item_aliases.dictionary      cif_core.dic
+    _item_aliases.version         2.0.1
+    loop_
+    _item_range.maximum
+    _item_range.minimum
+                               10.0    0.0
+    _item_type.code               float
+    _pdbx_item.name            "_reflns_shell.Rmerge_I_obs"
+    _pdbx_item.mandatory_code  no
+    #
+    _pdbx_item_description.name         "_reflns_shell.Rmerge_I_obs"
+    _pdbx_item_description.description  "For this resolution shell, provide the Rmerge of data collection as a decimal number"
+    #   #
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+      "_reflns_shell.Rmerge_I_obs"  0.01  0.01
+      "_reflns_shell.Rmerge_I_obs"  0.01   1.8
+      "_reflns_shell.Rmerge_I_obs"   1.8   1.8
+    #
+     save_
+
+save__reflns.pdbx_Rmerge_I_obs
+    _item_description.description
+;     The R value for merging intensities satisfying the observed
+      criteria in this data set.
+;
+    _item.name                  '_reflns.pdbx_Rmerge_I_obs'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    _item_type.code               float
+    _pdbx_item.name            "_reflns.pdbx_Rmerge_I_obs"
+    _pdbx_item.mandatory_code  no
+    #
+    _pdbx_item_description.name         "_reflns.pdbx_Rmerge_I_obs"
+    _pdbx_item_description.description  "Provide the Rmerge of data collection as a decimal number.  This is sometimes referred to the linear R-factor"
+    _item_aliases.alias_name     '_reflns.ndb_Rmerge_I_obs'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+      "_reflns.pdbx_Rmerge_I_obs"  0.01  0.01
+      "_reflns.pdbx_Rmerge_I_obs"  0.01   0.2
+      "_reflns.pdbx_Rmerge_I_obs"   0.2   0.2
+    loop_
+    _item_range.minimum
+    _item_range.maximum
+                                   0.0   10.0
+     save_
+
+save__reflns.pdbx_Rmerge_I_all
+    _item_description.description
+;     The R value for merging all intensities in this data set.
+;
+    _item.name                  '_reflns.pdbx_Rmerge_I_all'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_range.minimum            0.0
+    _item_range.maximum            .
+     save_
+
+save__reflns.pdbx_Rsym_value
+    _item_description.description
+;              The R sym value as a decimal number.
+;
+    _item.name                  '_reflns.pdbx_Rsym_value'
+    _item.category_id             reflns
+    _item.mandatory_code          no
+    _item_examples.case           0.02
+    _item_type.code               float
+    _item_aliases.alias_name     '_reflns.ndb_Rsym_value'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+   #
+    _pdbx_item.name            "_reflns.pdbx_Rsym_value"
+    _pdbx_item.mandatory_code  no
+    #   #
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+      "_reflns.pdbx_Rsym_value"  0.01  0.01
+      "_reflns.pdbx_Rsym_value"  0.01   0.2
+      "_reflns.pdbx_Rsym_value"   0.2   0.2
+    _item_range.minimum            0.0
+    _item_range.maximum            .
+    #
+
+     save_
+save__reflns_shell.pdbx_Rsym_value
+    _item_description.description
+;              R sym value in percent.
+;
+    _item.name                  '_reflns_shell.pdbx_Rsym_value'
+    _item.category_id             reflns_shell
+    _item.mandatory_code          no
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                                  .      0.0
+    _item_type.code               float
+    loop_
+    _pdbx_item_range.name
+    _pdbx_item_range.minimum
+    _pdbx_item_range.maximum
+      "_reflns_shell.pdbx_Rsym_value"  0.01  0.01
+      "_reflns_shell.pdbx_Rsym_value"  0.01   1.8
+      "_reflns_shell.pdbx_Rsym_value"   1.8   1.8
+    _item_aliases.alias_name     '_reflns_shell.ndb_Rsym_value'
+    _item_aliases.dictionary     'cif_rcsb.dic'
+    _item_aliases.version        1.1
+
+     save_
+
