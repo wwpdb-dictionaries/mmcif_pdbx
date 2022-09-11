@@ -1,4 +1,4 @@
-data_mmcif_pdbx_v5_next-def-ilg.dic
+data_mmcif_pdbx-def-ilg.dic
 #
 loop_
 _pdbx_item_linked_group.category_id
@@ -94,6 +94,7 @@ em_2d_crystal_entity                1 em_2d_crystal_entity:em_image_processing:1
 em_2d_projection_selection          1 em_2d_projection_selection:entry:1                    . .
 em_3d_crystal_entity                1 em_3d_crystal_entity:em_image_processing:1            . .
 em_3d_fitting                       1 em_3d_fitting:entry:1                                 . .
+# em_3d_fitting has a second in an extension
 em_3d_fitting_list                  1 em_3d_fitting_list:em_3d_fitting:1                    . .
 em_3d_reconstruction                1 em_3d_reconstruction:citation:1                       . .
 em_3d_reconstruction                2 em_3d_reconstruction:entry:2                          . .
@@ -161,7 +162,6 @@ em_vitrification                    2 em_vitrification:entry:2                  
 em_vitrification                    3 em_vitrification:em_specimen:3                        . .
 em_volume_selection                 1 em_volume_selection:em_image_processing:1             . .
 #
-#
 entity                                   1  entity:entity:1                                                           . .
 entity_keywords                          1  entity_keywords:entity:1                                                  . .
 entity_link                              1  entity_link:chem_link:1                                                   . .
@@ -211,10 +211,10 @@ pdbx_atom_site_aniso_tls                 2  pdbx_atom_site_aniso_tls:atom_sites_
 pdbx_atom_site_aniso_tls                 3  pdbx_atom_site_aniso_tls:pdbx_refine_tls:3                                . .
 pdbx_audit                               1  pdbx_audit:audit:1                                                        . .
 pdbx_audit                               2  pdbx_audit:entry:2                                                        . .
-pdbx_audit_revision_category             1  pdbx_audit_revision_category:pdbx_audit_revision_history:1                . .
-pdbx_audit_revision_details              1  pdbx_audit_revision_details:pdbx_audit_revision_history:1                 . .
-pdbx_audit_revision_group                1  pdbx_audit_revision_group:pdbx_audit_revision_history:1                   . .
-pdbx_audit_revision_item                 1  pdbx_audit_revision_item:pdbx_audit_revision_history:1                    . .
+pdbx_audit_revision_category             1 pdbx_audit_revision_category:pdbx_audit_revision_history:1                 . .
+pdbx_audit_revision_details              1 pdbx_audit_revision_details:pdbx_audit_revision_history:1                  . .
+pdbx_audit_revision_group                1 pdbx_audit_revision_group:pdbx_audit_revision_history:1                    . .
+pdbx_audit_revision_item                 1 pdbx_audit_revision_item:pdbx_audit_revision_history:1                     . .
 pdbx_buffer_components                   1  pdbx_buffer_components:pdbx_buffer:1                                      . .
 pdbx_chem_comp_atom_edit                 1  pdbx_chem_comp_atom_edit:pdbx_chem_comp_import:1                          . .
 pdbx_chem_comp_audit                     1  pdbx_chem_comp_audit:chem_comp:1                                          . .
@@ -230,8 +230,7 @@ pdbx_chem_comp_model_descriptor          1  pdbx_chem_comp_model_descriptor:pdbx
 pdbx_chem_comp_model_feature             1  pdbx_chem_comp_model_feature:pdbx_chem_comp_model:1                       . .
 pdbx_chem_comp_model_reference           1  pdbx_chem_comp_model_reference:pdbx_chem_comp_model:1                     . .
 #
-#
-#
+
 pdbx_construct                           1  pdbx_construct:entity:1                                                   . .
 pdbx_construct                           2  pdbx_construct:entry:2                                                    . .
 pdbx_construct                           3  pdbx_construct:pdbx_robot_system:3                                        . .
@@ -244,13 +243,13 @@ pdbx_database_proc                       1  pdbx_database_proc:entry:1          
 pdbx_database_status                     1  pdbx_database_status:entry:1                                              . .
 pdbx_database_status_history             1  pdbx_database_status_history:entry:1                                      . .
 pdbx_deposit_group_index                 1  pdbx_deposit_group_index:pdbx_deposit_group:1                             . .
-pdbx_diffrn_reflns_shell            1 pdbx_diffrn_reflns_shell:diffrn:1                                . .
-pdbx_domain_range                   1 pdbx_domain_range:atom_site:1                                             . .
-pdbx_domain_range                   2 pdbx_domain_range:atom_site:2                                             . .
-pdbx_domain_range                   3 pdbx_domain_range:pdbx_domain:3                                           . .
-#pdbx_entity_annotation             1 pdbx_entity_annotation:entity:1                                           . .
-pdbx_entity_assembly                1 pdbx_entity_assembly:entity:1                                             . .
-pdbx_entity_assembly                2 pdbx_entity_assembly:struct_biol:2                                        . .
+pdbx_diffrn_reflns_shell                 1  pdbx_diffrn_reflns_shell:diffrn:1                                         . .
+pdbx_domain_range                        1  pdbx_domain_range:atom_site:1                                             . .
+pdbx_domain_range                        2  pdbx_domain_range:atom_site:2                                             . .
+pdbx_domain_range                        3  pdbx_domain_range:pdbx_domain:3                                           . .
+#pdbx_entity_annotation                   1  pdbx_entity_annotation:entity:1                                           . .
+pdbx_entity_assembly                     1  pdbx_entity_assembly:entity:1                                             . .
+pdbx_entity_assembly                     2  pdbx_entity_assembly:struct_biol:2                                        . .
 
 
 pdbx_entity_instance_feature             1  pdbx_entity_instance_feature:atom_site:1                                  , ,
@@ -376,7 +375,7 @@ pdbx_struct_assembly_auth_classification 1  pdbx_struct_asssembly_auth_classific
 pdbx_struct_assembly_auth_evidence       1  pdbx_struct_asssembly_auth_evidence:pdbx_struct_assembly:1                . .
 pdbx_struct_assembly_auth_evidence_depositor_info 1  pdbx_struct_asssembly_auth_evidence_depositor_info:pdbx_struct_assembly_depositor_info:1  . .
 pdbx_struct_assembly_gen                 1  pdbx_struct_assembly_gen:pdbx_struct_assembly:1                           . .
-pdbx_struct_assembly_gen_depositor_info  1  pdbx_struct_assembly_gen_depositor_info:pdbx_struct_assembly_depositor_info:1 . .
+pdbx_struct_assembly_gen_depositor_info  1  pdbx_struct_assembly_gen_depositor_info:pdbx_struct_assembly_depositor_info:1  . .
 pdbx_struct_asym_gen                     1  pdbx_struct_asym_gen:pdbx_struct_entity_inst:1                            . .
 pdbx_struct_asym_gen                     2  pdbx_struct_asym_gen:struct_asym:2                                        . .
 pdbx_struct_chem_comp_diagnostics        1  pdbx_struct_chem_comp_diagnostics:atom_site:1                             . .
@@ -423,7 +422,6 @@ pdbx_validate_symm_contact               1  pdbx_validate_symm_contact:atom_site
 pdbx_validate_symm_contact               2  pdbx_validate_symm_contact:atom_site:2                                    . .
 pdbx_validate_torsion                    1  pdbx_validate_torsion:atom_site:1                                         . .
 pdbx_version                             1  pdbx_version:entry:1                                                      . .
-#pdbx_xfel_source                         1 pdbx_xfel_source:diffrn:1                                                  . .
 pdbx_xplor_file                          1  pdbx_xplor_file:refine:1                                                  . .
 phasing_MAD                              1  phasing_MAD:entry:1                                                       . .
 phasing_MAD_clust                        1  phasing_MAD_clust:phasing_MAD_expt:1                                      . .
@@ -468,7 +466,6 @@ refln                                    4  refln:diffrn:4                      
 reflns                                   1  reflns:entry:1                                                            . .
 software                                 1  software:citation:1                                                       . .
 
-
 struct                                   1  struct:entry:1                                                            . .
 struct_asym                              1  struct_asym:entity:1                                                      . .
 struct_biol                              1  struct_biol:struct_biol:1                                                 . .
@@ -483,8 +480,7 @@ struct_conn                              1  struct_conn:atom_site:1             
 struct_conn                              2  struct_conn:atom_site:2                                                   . .
 struct_conn                              3  struct_conn:atom_site:3                                                   . .
 struct_conn                              4  struct_conn:atom_site:4                                                   . .
-#Carbohydrate - has 5 & 6
-#
+#Carbohydrate has 5 & 6 values for struct_conn
 struct_keywords                          1  struct_keywords:entry:1                                                   . .
 struct_mon_details                       1  struct_mon_details:entry:1                                                . .
 struct_mon_nucl                          1  struct_mon_nucl:atom_site:1                                               . .
@@ -726,7 +722,7 @@ pdbx_reference_linked_entity_link          1  pdbx_reference_linked_entity_link:
 
 pdbx_solvent_atom_site_mapping             1  pdbx_solvent_atom_site_mapping:atom_site:1                                      . .
 
-pdbx_entity_branch_descriptor              1  pdbx_entity_branch_descriptor:entity:1                                          . .
+pdbx_entity_branch_descriptor              1  pdbx_entity_branch_descriptor:entity:1                                                 . .
 pdbx_helical_symmetry_depositor_info       1  pdbx_helical_symmetry_depositor_info:entry:1                                    . .
 #
 
@@ -784,7 +780,7 @@ chem_comp_angle                          1  '_chem_comp_angle.comp_id'          
 chem_comp_angle                          1  '_chem_comp_angle.atom_id_1'                          '_chem_comp_atom.atom_id'                   chem_comp_atom
 chem_comp_angle                          2  '_chem_comp_angle.atom_id_2'                          '_chem_comp_atom.atom_id'                   chem_comp_atom
 chem_comp_angle                          3  '_chem_comp_angle.atom_id_3'                          '_chem_comp_atom.atom_id'                   chem_comp_atom
-#chem_comp_atom                           1  '_chem_comp_atom.type_symbol'                         '_atom_type.symbol'                        atom_type
+#chem_comp_atom                           1  '_chem_comp_atom.type_symbol'                         '_atom_type.symbol'                         atom_type
 chem_comp_atom                           2  '_chem_comp_atom.comp_id'                             '_chem_comp.id'                             chem_comp
 #
 chem_comp_bond                           1  '_chem_comp_bond.comp_id'                             '_chem_comp_atom.comp_id'                   chem_comp_atom
@@ -852,7 +848,7 @@ em_2d_crystal_entity                1 '_em_2d_crystal_entity.image_processing_id
 em_2d_projection_selection          1 '_em_2d_projection_selection.entry_id'                 '_entry.id'                  entry
 em_3d_crystal_entity                1 '_em_3d_crystal_entity.image_processing_id'            '_em_image_processing.id'    em_image_processing
 em_3d_fitting                       1 '_em_3d_fitting.entry_id'                              '_entry.id'                  entry
-
+# Second value for em_3d_fitting in an extension
 em_3d_fitting_list                  1 '_em_3d_fitting_list.3d_fitting_id'                    '_em_3d_fitting.id'          em_3d_fitting
 em_3d_reconstruction                1 '_em_3d_reconstruction.citation_id'                    '_citation.id'               citation
 em_3d_reconstruction                2 '_em_3d_reconstruction.entry_id'                       '_entry.id'                  entry
@@ -919,8 +915,6 @@ em_vitrification                    1 '_em_vitrification.citation_id'           
 em_vitrification                    2 '_em_vitrification.entry_id'                           '_entry.id'                  entry
 em_vitrification                    3 '_em_vitrification.specimen_id'                        '_em_specimen.id'            em_specimen
 em_volume_selection                 1 '_em_volume_selection.image_processing_id'             '_em_image_processing.id'    em_image_processing
-#
-#
 #
 entity                                   1  '_entity.pdbx_parent_entity_id'                       '_entity.id'                                entity
 entity_keywords                          1  '_entity_keywords.entity_id'                          '_entity.id'                                entity
@@ -1156,7 +1150,7 @@ pdbx_audit_revision_group                1  '_pdbx_audit_revision_group.data_con
 pdbx_audit_revision_group                1  '_pdbx_audit_revision_group.revision_ordinal'         '_pdbx_audit_revision_history.ordinal'           pdbx_audit_revision_history
 pdbx_audit_revision_item                 1  '_pdbx_audit_revision_item.data_content_type'         '_pdbx_audit_revision_history.data_content_type' pdbx_audit_revision_history
 pdbx_audit_revision_item                 1  '_pdbx_audit_revision_item.revision_ordinal'          '_pdbx_audit_revision_history.ordinal'           pdbx_audit_revision_history
-
+#
 pdbx_buffer_components                   1  '_pdbx_buffer_components.buffer_id'                   '_pdbx_buffer.id'                           pdbx_buffer
 pdbx_chem_comp_atom_edit                 1  '_pdbx_chem_comp_atom_edit.comp_id'                   '_pdbx_chem_comp_import.comp_id'            pdbx_chem_comp_import
 pdbx_chem_comp_audit                     1  '_pdbx_chem_comp_audit.comp_id'                       '_chem_comp.id'                             chem_comp
@@ -1176,7 +1170,6 @@ pdbx_chem_comp_model_feature             1  '_pdbx_chem_comp_model_feature.model
 pdbx_chem_comp_model_reference           1  '_pdbx_chem_comp_model_reference.model_id'            '_pdbx_chem_comp_model.id'                  pdbx_chem_comp_model
 #
 #
-# Assembly
 #
 pdbx_construct                           1  '_pdbx_construct.entity_id'                           '_entity.id'                                entity
 pdbx_construct                           2  '_pdbx_construct.entry_id'                            '_entry.id'                                 entry
@@ -1190,7 +1183,7 @@ pdbx_database_proc                       1  '_pdbx_database_proc.entry_id'      
 pdbx_database_status                     1  '_pdbx_database_status.entry_id'                      '_entry.id'                                 entry
 pdbx_database_status_history             1  '_pdbx_database_status_history.entry_id'              '_entry.id'                                 entry
 pdbx_deposit_group_index                 1  '_pdbx_deposit_group_index.group_id'                  '_pdbx_deposit_group.group_id'              pdbx_deposit_group
-pdbx_diffrn_reflns_shell            1 '_pdbx_diffrn_reflns_shell.diffrn_id'                  '_diffrn.id'                                             diffrn
+pdbx_diffrn_reflns_shell                 1  '_pdbx_diffrn_reflns_shell.diffrn_id'                 '_diffrn.id'                                diffrn
 pdbx_domain_range                        1  '_pdbx_domain_range.beg_label_alt_id'                 '_atom_site.label_alt_id'                   atom_site
 pdbx_domain_range                        1  '_pdbx_domain_range.beg_label_asym_id'                '_atom_site.label_asym_id'                  atom_site
 pdbx_domain_range                        1  '_pdbx_domain_range.beg_label_comp_id'                '_atom_site.label_comp_id'                  atom_site
@@ -1209,7 +1202,6 @@ pdbx_domain_range                        3  '_pdbx_domain_range.domain_id'      
 #pdbx_entity_annotation                   1  '_pdbx_entity_annotation.entity_id'                   '_entity.id'                                entity
 pdbx_entity_assembly                     1  '_pdbx_entity_assembly.entity_id'                     '_entity.id'                                entity
 pdbx_entity_assembly                     2  '_pdbx_entity_assembly.biol_id'                       '_struct_biol.id'                           struct_biol
-
 #
 pdbx_entity_instance_feature             1 '_pdbx_entity_instance_feature.asym_id'                '_atom_site.label_asym_id'                  atom_site
 pdbx_entity_instance_feature             1 '_pdbx_entity_instance_feature.auth_asym_id'           '_atom_site.auth_asym_id'                   atom_site
@@ -1387,7 +1379,7 @@ pdbx_struct_assembly_auth_classification 1  '_pdbx_struct_assembly_auth_classifi
 pdbx_struct_assembly_auth_evidence       1  '_pdbx_struct_assembly_auth_evidence.assembly_id'     '_pdbx_struct_assembly.id'                  pdbx_struct_assembly
 pdbx_struct_assembly_auth_evidence_depositor_info  1  '_pdbx_struct_assembly_auth_evidence_depositor_info.assembly_id'     '_pdbx_struct_assembly_depositor_info.id'  pdbx_struct_assembly_depositor_info
 pdbx_struct_assembly_gen                 1  '_pdbx_struct_assembly_gen.assembly_id'               '_pdbx_struct_assembly.id'                  pdbx_struct_assembly
-pdbx_struct_assembly_gen_depositor_info  1  '_pdbx_struct_assembly_gen_depositor_info.assembly_id' '_pdbx_struct_assembly_depositor_info.id'  pdbx_struct_assembly_depositor_info
+pdbx_struct_assembly_gen_depositor_info  1  '_pdbx_struct_assembly_gen_depositor_info.assembly_id' '_pdbx_struct_assembly_depositor_info.id' pdbx_struct_assembly_depositor_info
 pdbx_struct_asym_gen                     1  '_pdbx_struct_asym_gen.entity_inst_id'                '_pdbx_struct_entity_inst.id'               pdbx_struct_entity_inst
 pdbx_struct_asym_gen                     2  '_pdbx_struct_asym_gen.asym_id'                       '_struct_asym.id'                           struct_asym
 pdbx_struct_chem_comp_diagnostics        1  '_pdbx_struct_chem_comp_diagnostics.pdb_strand_id'    '_atom_site.auth_asym_id'                   atom_site
@@ -1579,7 +1571,6 @@ pdbx_validate_torsion                    1  '_pdbx_validate_torsion.auth_seq_id'
 pdbx_validate_torsion                    1  '_pdbx_validate_torsion.PDB_ins_code'                 '_atom_site.pdbx_PDB_ins_code'              atom_site
 pdbx_validate_torsion                    1  '_pdbx_validate_torsion.label_alt_id'                 '_atom_site.label_alt_id'                   atom_site
 pdbx_version                             1  '_pdbx_version.entry_id'                              '_entry.id'                                 entry
-#pdbx_xfel_source                         1  '_pdbx_xfel_source.diffrn_id'                         '_diffrn.id'                                diffrn
 pdbx_xplor_file                          1  '_pdbx_xplor_file.pdbx_refine_id'                     '_refine.pdbx_refine_id'                    refine
 phasing_MAD                              1  '_phasing_MAD.entry_id'                               '_entry.id'                                 entry
 phasing_MAD_clust                        1  '_phasing_MAD_clust.expt_id'                          '_phasing_MAD_expt.id'                      phasing_MAD_expt
@@ -1622,10 +1613,9 @@ refln                                    3  '_refln.scale_group_code'           
 refln                                    4  '_refln.pdbx_diffrn_id'                               '_diffrn.id'                                diffrn
 #
 reflns                                   1  '_reflns.entry_id'                                    '_entry.id'                                 entry
+# There is a 2 operation
+
 software                                 1  '_software.citation_id'                               '_citation.id'                              citation
-
-
-
 struct                                   1  '_struct.entry_id'                                    '_entry.id'                                 entry
 struct_asym                              1  '_struct_asym.entity_id'                              '_entity.id'                                entity
 struct_biol                              1  '_struct_biol.pdbx_parent_biol_id'                    '_struct_biol.id'                           struct_biol
@@ -1684,7 +1674,8 @@ struct_conn                              3  '_struct_conn.pdbx_ptnr3_label_comp_
 struct_conn                              3  '_struct_conn.pdbx_ptnr3_label_seq_id'                '_atom_site.label_seq_id'                   atom_site
 struct_conn                              3  '_struct_conn.pdbx_ptnr3_label_alt_id'                '_atom_site.label_alt_id'                   atom_site
 struct_conn                              4  '_struct_conn.conn_type_id'                           '_struct_conn_type.id'                      struct_conn_type
-#
+# struct_conn 5 & 6 in an extension
+
 struct_keywords                          1  '_struct_keywords.entry_id'                           '_entry.id'                                 entry
 struct_mon_details                       1  '_struct_mon_details.entry_id'                        '_entry.id'                                 entry
 struct_mon_nucl                          1  '_struct_mon_nucl.auth_asym_id'                       '_atom_site.auth_asym_id'                   atom_site
@@ -2220,7 +2211,7 @@ pdbx_chem_comp_subcomponent_struct_conn  2   '_pdbx_chem_comp_subcomponent_struc
 pdbx_chem_comp_subcomponent_struct_conn  2   '_pdbx_chem_comp_subcomponent_struct_conn.comp_id_2'     '_chem_comp_atom.pdbx_component_comp_id'    chem_comp_atom
 pdbx_chem_comp_subcomponent_struct_conn  2   '_pdbx_chem_comp_subcomponent_struct_conn.seq_id_2'      '_chem_comp_atom.pdbx_residue_numbering'    chem_comp_atom
 #
-pdbx_chem_comp_subcomponent_entity_list  1   '_pdbx_chem_comp_subcomponent_entity_list.parent_comp_id'  '_chem_comp.id'   chem_comp
+pdbx_chem_comp_subcomponent_entity_list  1   '_pdbx_chem_comp_subcomponent_entity_list.parent_comp_id' '_chem_comp.id'                            chem_comp
 #
 pdbx_chem_comp_synonyms                  1   '_pdbx_chem_comp_synonyms.comp_id'                       '_chem_comp.id'                             chem_comp
 pdbx_struct_special_symmetry 1   '_pdbx_struct_special_symmetry.auth_comp_id'  '_chem_comp.id'                   chem_comp

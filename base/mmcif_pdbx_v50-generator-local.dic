@@ -10,13 +10,13 @@ _pdbx_include_dictionary.dictionary_locator
 _pdbx_include_dictionary.include_mode
 _pdbx_include_dictionary.dictionary_namespace_prefix
 _pdbx_include_dictionary.dictionary_namespace_prefix_replace
-mmcif_pdbx_v50-header.dic        mmcif_pdbx_v50-header.dic   extend . .
+mmcif_pdbx_v50-header.dic        mmcif_pdbx_v50-header.dic    extend . .
 #mmcif_pdbx_v50-data.dic          base/mmcif_ddl-data.dic     extend . .
-mmcif_pdbx_v50-base.dic          mmcif_pdbx-base.dic extend . .
-mmcif_pdbx_v50_variable.dic      mmcif_pdbx_v50-variable.dic      extend . .
+mmcif_pdbx_v50-base.dic          mmcif_pdbx-base.dic          extend . .
+mmcif_pdbx_v50_variable.dic      mmcif_pdbx_v50-variable.dic  extend . .
 # V50 extensions are in this file
-mmcif_pdbx_v50-ext.dic           mmcif_pdbx_v50-ext.dic      extend . .
-mmcif_pdbx_v50-ddl-def-ilg.dic   mmcif_pdbx_v50-def-ilg.dic extend . .
+mmcif_pdbx_v50-ext.dic           mmcif_pdbx_v50-ext.dic       extend . .
+mmcif_pdbx-def-ilg.dic           mmcif_pdbx-def-ilg.dic       extend . .
 
 #loop_
 #_pdbx_include_item.item_name
