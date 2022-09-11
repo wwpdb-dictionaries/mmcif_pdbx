@@ -94,6 +94,7 @@ em_2d_crystal_entity                1 em_2d_crystal_entity:em_image_processing:1
 em_2d_projection_selection          1 em_2d_projection_selection:entry:1                    . .
 em_3d_crystal_entity                1 em_3d_crystal_entity:em_image_processing:1            . .
 em_3d_fitting                       1 em_3d_fitting:entry:1                                 . .
+# em_3d_fitting has a second in an extension
 em_3d_fitting_list                  1 em_3d_fitting_list:em_3d_fitting:1                    . .
 em_3d_reconstruction                1 em_3d_reconstruction:citation:1                       . .
 em_3d_reconstruction                2 em_3d_reconstruction:entry:2                          . .
@@ -479,7 +480,7 @@ struct_conn                              1  struct_conn:atom_site:1             
 struct_conn                              2  struct_conn:atom_site:2                                                   . .
 struct_conn                              3  struct_conn:atom_site:3                                                   . .
 struct_conn                              4  struct_conn:atom_site:4                                                   . .
-#Carbohydrate has 5 & 6
+#Carbohydrate has 5 & 6 values for struct_conn
 struct_keywords                          1  struct_keywords:entry:1                                                   . .
 struct_mon_details                       1  struct_mon_details:entry:1                                                . .
 struct_mon_nucl                          1  struct_mon_nucl:atom_site:1                                               . .
@@ -847,6 +848,7 @@ em_2d_crystal_entity                1 '_em_2d_crystal_entity.image_processing_id
 em_2d_projection_selection          1 '_em_2d_projection_selection.entry_id'                 '_entry.id'                  entry
 em_3d_crystal_entity                1 '_em_3d_crystal_entity.image_processing_id'            '_em_image_processing.id'    em_image_processing
 em_3d_fitting                       1 '_em_3d_fitting.entry_id'                              '_entry.id'                  entry
+# Second value for em_3d_fitting in an extension
 em_3d_fitting_list                  1 '_em_3d_fitting_list.3d_fitting_id'                    '_em_3d_fitting.id'          em_3d_fitting
 em_3d_reconstruction                1 '_em_3d_reconstruction.citation_id'                    '_citation.id'               citation
 em_3d_reconstruction                2 '_em_3d_reconstruction.entry_id'                       '_entry.id'                  entry
@@ -1672,6 +1674,8 @@ struct_conn                              3  '_struct_conn.pdbx_ptnr3_label_comp_
 struct_conn                              3  '_struct_conn.pdbx_ptnr3_label_seq_id'                '_atom_site.label_seq_id'                   atom_site
 struct_conn                              3  '_struct_conn.pdbx_ptnr3_label_alt_id'                '_atom_site.label_alt_id'                   atom_site
 struct_conn                              4  '_struct_conn.conn_type_id'                           '_struct_conn_type.id'                      struct_conn_type
+# struct_conn 5 & 6 in an extension
+
 struct_keywords                          1  '_struct_keywords.entry_id'                           '_entry.id'                                 entry
 struct_mon_details                       1  '_struct_mon_details.entry_id'                        '_entry.id'                                 entry
 struct_mon_nucl                          1  '_struct_mon_nucl.auth_asym_id'                       '_atom_site.auth_asym_id'                   atom_site
