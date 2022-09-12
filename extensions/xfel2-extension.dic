@@ -80,40 +80,6 @@ save__reflns.pdbx_CC_split_method
      save_
 
 
-save__exptl_crystal.pdbx_mosaic_method
-    _item_description.description
-;              How parameters derived from the spot shape (such as mosaic block
-               size and rotation, beam divergence, and crossfire) and their
-	       errors were estimated. See the related items section.
-
-	       This can be a written description or a citation to a specific
-	       software package that determined these parameters.
-
-	       Note, these parameters are considered derived terms from the
-	       data, as opposed to measured terms from the instrument (such
-	       as diffrn_radiation.div_x_source, a term similar to
-	       pdbx_crystal_alignment.crossfire_x).
-;
-    _item.name                  '_exptl_crystal.pdbx_mosaic_method'
-    _item.category_id             exptl_crystal
-    _item.mandatory_code          no
-    _item_type.code               ucode
-    loop_
-    _item_related.related_name
-    _item_related.function_code '_exptl_crystal.pdbx_mosaicity'
-                                  associated_value
-				'_exptl_crystal.pdbx_mosaic_block_size'
-                                  associated_value
-				'_pdbx_crystal_alignment.overall_beam_divergence'
-                                  associated_value
-				'_pdbx_crystal_alignment.crossfire_x'
-                                  associated_value
-				'_pdbx_crystal_alignment.crossfire_y'
-                                  associated_value
-				'_pdbx_crystal_alignment.crossfire_xy'
-                                  associated_value
-     save_
-
 
 # save__exptl_crystal.pdbx_mosaicity
 #     _item_description.description
@@ -158,77 +124,6 @@ save__exptl_crystal.pdbx_mosaic_method
 #     _item_related.related_name  '_exptl_crystal.pdbx_mosaicity'
 #     _item_related.function_code   associated_esd
 #      save_
-
-
-save__exptl_crystal.pdbx_mosaic_block_size
-    _item_description.description
-;
-    Isotropic and resolution-independent term representing the average size of
-    mosaic domains in the crystal specified in Angstroms.  Larger size indicates
-    better ordered crystals.
-;
-    _item.name                  '_exptl_crystal.pdbx_mosaic_block_size'
-    _item.category_id             exptl_crystal
-    _item.mandatory_code          no
-    _item_type.code               float
-    _item_units.code              angstroms
-    _item_range.maximum           .
-    _item_range.minimum           0
-    _item_related.related_name  '_exptl_crystal.pdbx_mosaic_method'
-    _item_related.function_code   associated_value
-     save_
-
-
-save__exptl_crystal.pdbx_mosaic_block_size_esd
-    _item_description.description
-;    The uncertainty in the mosaic block size estimate for the crystal.
-;
-    _item.name                  '_exptl_crystal.pdbx_mosaic_block_size_esd'
-    _item.category_id             exptl_crystal
-    _item.mandatory_code          no
-    _item_type.code               float
-    _item_units.code              angstroms
-    _item_range.maximum           .
-    _item_range.minimum           0
-    _item_related.related_name  '_exptl_crystal.pdbx_mosaic_block_size'
-    _item_related.function_code   associated_esd
-     save_
-
-
-save__pdbx_crystal_alignment.overall_beam_divergence
-    _item_description.description
-;
-    Isotropic distribution of photon angles from the source impacting on the
-    crystal in degrees. Note this is typically a derived quantity, inferred
-    from measuring the radial profile of the measured reflections, and it may
-    be convolved with effects from the bandpass.
-;
-    _item.name                  '_pdbx_crystal_alignment.overall_beam_divergence'
-    _item.category_id             pdbx_crystal_alignment
-    _item.mandatory_code          no
-    _item_type.code               float
-    _item_units.code              degrees
-    _item_range.maximum           .
-    _item_range.minimum           0
-    _item_related.related_name  '_exptl_crystal.pdbx_mosaic_method'
-    _item_related.function_code   associated_value
-     save_
-
-
-save__pdbx_crystal_alignment.overall_beam_divergence_esd
-    _item_description.description
-;    The uncertainty in the beam divergence estimate.
-;
-    _item.name                  '_pdbx_crystal_alignment.overall_beam_divergence_esd'
-    _item.category_id             pdbx_crystal_alignment
-    _item.mandatory_code          no
-    _item_type.code               float
-    _item_units.code              degrees
-    _item_range.maximum           .
-    _item_range.minimum           0
-    _item_related.related_name  '_pdbx_crystal_alignment.overall_beam_divergence'
-    _item_related.function_code   associated_esd
-     save_
 
 
 # save__pdbx_crystal_alignment.crossfire_x
