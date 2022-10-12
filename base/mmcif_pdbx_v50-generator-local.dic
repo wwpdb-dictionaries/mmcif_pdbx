@@ -17,6 +17,8 @@ mmcif_pdbx_v50_variable.dic      mmcif_pdbx_v50-variable.dic  extend . .
 # V50 extensions are in this file
 mmcif_pdbx_v50-ext.dic           mmcif_pdbx_v50-ext.dic       extend . .
 mmcif_pdbx-def-ilg.dic           mmcif_pdbx-def-ilg.dic       extend . .
+# PDB specific extension
+mmcif_pdbx-def-pdb-ilg.dic       mmcif_pdbx-def-pdb-ilg.dic   extend . .
 
 #loop_
 #_pdbx_include_item.item_name

@@ -499,9 +499,7 @@ struct_ref                               1  struct_ref:entity:1                 
 struct_ref                               2  struct_ref:struct_biol:2                                                  . .
 struct_ref_seq                           1  struct_ref_seq:entity_poly_seq:1                                          . .
 struct_ref_seq                           2  struct_ref_seq:entity_poly_seq:2                                          . .
-struct_ref_seq                           3  struct_ref_seq:pdbx_poly_seq_scheme:3                                     . .
-struct_ref_seq                           4  struct_ref_seq:pdbx_poly_seq_scheme:4                                     . .
-struct_ref_seq                           5  struct_ref_seq:struct_ref:5                                               . .
+#  Groups 3-5 of struct_ref_seq moved to separated file
 #struct_ref_seq_dif                       1  struct_ref_seq_dif:chem_comp:1                                            . .
 struct_ref_seq_dif                       2  struct_ref_seq_dif:entity_poly_seq:2                                      . .
 struct_ref_seq_dif                       3  struct_ref_seq_dif:pdbx_poly_seq_scheme:3                                 . .
@@ -1721,15 +1719,8 @@ struct_ref                               1  '_struct_ref.entity_id'             
 struct_ref                               2  '_struct_ref.biol_id'                                 '_struct_biol.id'                           struct_biol
 struct_ref_seq                           1  '_struct_ref_seq.seq_align_beg'                       '_entity_poly_seq.num'                      entity_poly_seq
 struct_ref_seq                           2  '_struct_ref_seq.seq_align_end'                       '_entity_poly_seq.num'                      entity_poly_seq
-struct_ref_seq                           3  '_struct_ref_seq.seq_align_beg'                       '_pdbx_poly_seq_scheme.seq_id'              pdbx_poly_seq_scheme
-struct_ref_seq                           3  '_struct_ref_seq.pdbx_strand_id'                      '_pdbx_poly_seq_scheme.pdb_strand_id'       pdbx_poly_seq_scheme
-struct_ref_seq                           3  '_struct_ref_seq.pdbx_auth_seq_align_beg'             '_pdbx_poly_seq_scheme.pdb_seq_num'         pdbx_poly_seq_scheme
-struct_ref_seq                           3  '_struct_ref_seq.pdbx_seq_align_beg_ins_code'         '_pdbx_poly_seq_scheme.pdb_ins_code'        pdbx_poly_seq_scheme
-struct_ref_seq                           4  '_struct_ref_seq.pdbx_strand_id'                      '_pdbx_poly_seq_scheme.pdb_strand_id'       pdbx_poly_seq_scheme
-struct_ref_seq                           4  '_struct_ref_seq.seq_align_end'                       '_pdbx_poly_seq_scheme.seq_id'              pdbx_poly_seq_scheme
-struct_ref_seq                           4  '_struct_ref_seq.pdbx_auth_seq_align_end'             '_pdbx_poly_seq_scheme.pdb_seq_num'         pdbx_poly_seq_scheme
-struct_ref_seq                           4  '_struct_ref_seq.pdbx_seq_align_end_ins_code'         '_pdbx_poly_seq_scheme.pdb_ins_code'        pdbx_poly_seq_scheme
-struct_ref_seq                           5  '_struct_ref_seq.ref_id'                              '_struct_ref.id'                            struct_ref
+# Groups 3-5 moved to separate file
+
 #struct_ref_seq_dif                       1  '_struct_ref_seq_dif.db_mon_id'                       '_chem_comp.id'                             chem_comp
 struct_ref_seq_dif                       2  '_struct_ref_seq_dif.mon_id'                          '_entity_poly_seq.mon_id'                   entity_poly_seq
 struct_ref_seq_dif                       2  '_struct_ref_seq_dif.seq_num'                         '_entity_poly_seq.num'                      entity_poly_seq
