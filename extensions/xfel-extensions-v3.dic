@@ -15,6 +15,34 @@
 # 19-Jun-2018  Reorganization of category names
 #
 
+data_xfel_extensions-v3.dic
+
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+pdbx_serial_crystallography_data_reduction                 1 pdbx_xfel_data_reduction:diffrn:1                                          . .
+pdbx_serial_crystallography_measurement                    1 pdbx_xfel_measurement:diffrn:1                                             . .
+pdbx_serial_crystallography_sample_delivery                1 pdbx_xfel_sample_delivery:diffrn:1                                         . .
+pdbx_serial_crystallography_sample_delivery_injection      1 pdbx_xfel_sample_delivery_injection:diffrn:1                               . .
+pdbx_serial_crystallography_sample_delivery_fixed_target      1 pdbx_xfel_sample_delivery_fixed_target:diffrn:1                               . .
+
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+pdbx_serial_crystallography_data_reduction                 1  '_pdbx_serial_crystallography_data_reduction.diffrn_id'                 '_diffrn.id'                                diffrn
+pdbx_serial_crystallography_measurement                    1  '_pdbx_serial_crystallography_measurement.diffrn_id'                    '_diffrn.id'                                diffrn
+pdbx_serial_crystallography_sample_delivery                1  '_pdbx_serial_crystallography_sample_delivery.diffrn_id'                '_diffrn.id'                                diffrn
+pdbx_serial_crystallography_sample_delivery_injection      1  '_pdbx_serial_crystallography_sample_delivery_injection.diffrn_id'      '_diffrn.id'                                diffrn
+pdbx_serial_crystallography_sample_delivery_fixed_target    1  '_pdbx_serial_crystallography_sample_delivery_fixed_target.diffrn_id'      '_diffrn.id'                                diffrn
+
+
+
 ###################
 # DIFFRN
 ###################

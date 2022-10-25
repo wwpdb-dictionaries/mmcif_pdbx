@@ -5,6 +5,29 @@
 #
 #
 
+data_assembly-model-extension.dic
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+pdbx_chain_remapping                     1  pdbx_chain_remapping:entity:1                                             . .
+pdbx_chain_remapping                     2  pdbx_chain_remapping:atom_site:2                                          . .
+pdbx_entity_remapping                    1  pdbx_entity_remapping:entity:1                                            . .
+
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+pdbx_chain_remapping                     1  '_pdbx_chain_remapping.entity_id'                     '_entity.id'                                entity
+pdbx_chain_remapping                     2  '_pdbx_chain_remapping.label_asym_id'                 '_atom_site.label_asym_id'                  atom_site
+pdbx_chain_remapping                     2  '_pdbx_chain_remapping.auth_asym_id'                  '_atom_site.auth_asym_id'                   atom_site
+pdbx_entity_remapping                    1  '_pdbx_entity_remapping.entity_id'                    '_entity.id'                                entity
+
+
 ##########################
 #  PDBX_ENTITY_REMAPPING #
 ##########################

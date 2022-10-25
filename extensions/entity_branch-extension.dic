@@ -26,6 +26,58 @@
 #
 # ----------------------------------------------------------------------------------------------------------------------------
 
+data_entity_branch-extension.dic
+
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+pdbx_branch_scheme                       1  pdbx_branch_scheme:atom_site:1                                            . .
+pdbx_branch_scheme                       2  pdbx_branch_scheme:entity:2                                               . .
+pdbx_branch_scheme                       3  pdbx_branch_scheme:pdbx_entity_branch_list:3                              . .
+pdbx_entity_branch                  1 pdbx_entity_branch:entity:1                                 . .
+pdbx_entity_branch_link             1 pdbx_entity_branch_link:chem_comp_atom:1                    . .
+pdbx_entity_branch_link             2 pdbx_entity_branch_link:chem_comp_atom:2                    . .
+pdbx_entity_branch_link             3 pdbx_entity_branch_link:pdbx_entity_branch_list:3           . .
+
+pdbx_entity_branch_list             1 pdbx_entity_branch_list:chem_comp:1                         . .
+pdbx_entity_branch_list             2 pdbx_entity_branch_list:entity:2                            . .
+
+struct_conn                              5  struct_conn:chem_comp_atom:5                                              . .
+struct_conn                              6  struct_conn:chem_comp_atom:6                                              . .
+
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+pdbx_branch_scheme                       1 '_pdbx_branch_scheme.asym_id'                          '_atom_site.label_asym_id'                  atom_site
+pdbx_branch_scheme                       1 '_pdbx_branch_scheme.mon_id'                           '_atom_site.label_comp_id'                  atom_site
+pdbx_branch_scheme                       1 '_pdbx_branch_scheme.pdb_mon_id'                       '_atom_site.auth_comp_id'                   atom_site
+pdbx_branch_scheme                       1 '_pdbx_branch_scheme.pdb_seq_num'                      '_atom_site.auth_seq_id'                    atom_site
+pdbx_branch_scheme                       1 '_pdbx_branch_scheme.pdb_ins_code'                     '_atom_site.pdbx_PDB_ins_code'              atom_site
+pdbx_branch_scheme                       1 '_pdbx_branch_scheme.pdb_asym_id'                      '_atom_site.auth_asym_id'                   atom_site
+pdbx_branch_scheme                       2 '_pdbx_branch_scheme.entity_id'                        '_entity.id'                                entity
+pdbx_branch_scheme                       3 '_pdbx_branch_scheme.num'                              '_pdbx_entity_branch_list.num'              pdbx_entity_branch_list
+# Carbo
+pdbx_entity_branch                       1  '_pdbx_entity_branch.entity_id'                       '_entity.id'                                entity
+# Hand crafted - keep 1 and 2 separate
+pdbx_entity_branch_link                  1  '_pdbx_entity_branch_link.atom_id_1'                  '_chem_comp_atom.atom_id'                   chem_comp_atom
+pdbx_entity_branch_link                  1  '_pdbx_entity_branch_link.entity_branch_list_num_1'   '_pdbx_entity_branch_list.num'              pdbx_entity_branch_list
+pdbx_entity_branch_link                  1  '_pdbx_entity_branch_link.leaving_atom_id_1'          '_chem_comp_atom.atom_id'                   chem_comp_atom
+pdbx_entity_branch_link                  1  '_pdbx_entity_branch_link.entity_id'                  '_pdbx_entity_branch_list.entity_id'        pdbx_entity_branch_list
+pdbx_entity_branch_link                  2  '_pdbx_entity_branch_link.atom_id_2'                  '_chem_comp_atom.atom_id'                   chem_comp_atom
+pdbx_entity_branch_link                  2  '_pdbx_entity_branch_link.entity_branch_list_num_2'   '_pdbx_entity_branch_list.num'              pdbx_entity_branch_list
+pdbx_entity_branch_link                  2  '_pdbx_entity_branch_link.leaving_atom_id_2'          '_chem_comp_atom.atom_id'                   chem_comp_atom
+pdbx_entity_branch_link                  3  '_pdbx_entity_branch_link.entity_id'                  '_pdbx_entity_branch_list.entity_id'        pdbx_entity_branch_list
+pdbx_entity_branch_list                  1  '_pdbx_entity_branch_list.comp_id'                    '_chem_comp.id'                             chem_comp
+pdbx_entity_branch_list                  2  '_pdbx_entity_branch_list.entity_id'                  '_entity.id'                                entity
+# Carbohydrate
+struct_conn                              5  '_struct_conn.pdbx_ptnr1_leaving_atom_id'             '_chem_comp_atom.atom_id'                   chem_comp_atom
+struct_conn                              6  '_struct_conn.pdbx_ptnr2_leaving_atom_id'             '_chem_comp_atom.atom_id'                   chem_comp_atom
 
 #################
 ## STRUCT_CONN ##

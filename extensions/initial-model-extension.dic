@@ -3,6 +3,25 @@
 ##
 ##
 
+data_initial-model-extension.dic
+
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+em_3d_fitting                       2 em_3d_fitting:pdbx_initial_refinement_model:1        . .
+
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+em_3d_fitting                       2 '_em_3d_fitting.initial_refinement_model_id'           '_pdbx_initial_refinement_model.id'  pdbx_initial_refinement_model
+
+
 ###################################
 #  PDBX_INITIAL_REFINEMENT_MODEL  #
 ###################################

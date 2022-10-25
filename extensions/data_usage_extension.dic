@@ -1,20 +1,20 @@
-# data_mmcif_pdbx_license.dic
+data_mmcif_pdbx_license.dic
 
-# _pdbx_dictionary_component.datablock_id   mmcif_pdbx_license.dic
-# _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_license.dic
-# _pdbx_dictionary_component.title          "PDBx/mmCIF Dictionary License Extension"
-# _pdbx_dictionary_component.version        0.0.1
+_pdbx_dictionary_component.datablock_id   mmcif_pdbx_license.dic
+_pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_license.dic
+_pdbx_dictionary_component.title          "PDBx/mmCIF Dictionary License Extension"
+_pdbx_dictionary_component.version        0.0.1
 
-# loop_
-# _pdbx_dictionary_component_history.dictionary_component_id
-# _pdbx_dictionary_component_history.version
-# _pdbx_dictionary_component_history.update
-# _pdbx_dictionary_component_history.revision
-# mmcif_pdbx_license.dic  0.0.1  2022-03-16
-# ;
-# Changes (EP):
-# + Initial version
-# ;
+loop_
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+mmcif_pdbx_license.dic  0.0.1  2022-03-16
+;
+Changes (EP):
++ Initial version
+;
 
 
 ###################

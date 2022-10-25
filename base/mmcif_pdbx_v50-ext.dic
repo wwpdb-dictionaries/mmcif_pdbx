@@ -1,0 +1,27 @@
+#
+# mmcif_pdbx_v50 extensions that are included
+#
+
+data_mmc_pdbx_v5_next-ext.dic
+
+#
+loop_
+_pdbx_include_dictionary.dictionary_id
+_pdbx_include_dictionary.dictionary_locator
+_pdbx_include_dictionary.include_mode
+_pdbx_include_dictionary.dictionary_namespace_prefix
+_pdbx_include_dictionary.dictionary_namespace_prefix_replace
+xfel_extensions-v3.dic           ../extensions/xfel-extensions-v3.dic           extend . .
+pdbx_audit_support-extension.dic ../extensions/pdbx_audit_support-extension.dic extend . .
+entity_branch-extension.dic      ../extensions/entity_branch-extension.dic      extend . .
+chem_comp-extension.dic          ../extensions/chem_comp-extension.dic          extend . .
+aniso-diffraction-extension.dic  ../extensions/aniso-diffraction-extension.dic  extend . .
+anomalous-stats-extension.dic    ../extensions/anomalous-stats-extension.dic    extend . . 
+signal-extension.dic             ../extensions/signal-extension.dic             extend . .
+unmerged-refln-extension.dic     ../extensions/unmerged-refln-extension.dic     extend . .
+sifts-extension.dic              ../extensions/sifts-extension.dic              extend . .
+mmcif_pdbx_license.dic           ../extensions/data_usage_extension.dic         extend . .
+assembly-model-extension.dic     ../extensions/assembly-model-extension.dic     extend . .
+xfel2-extension.dic              ../extensions/xfel2-extension.dic              extend . .
+initial-model-extension.dic      ../extensions/initial-model-extension.dic      extend . .
+mmcif_pdbx_investigation.dic     ../extensions/investigation.dic                extend . .

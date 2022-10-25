@@ -1,0 +1,825 @@
+##
+# File:      pdbx_audit_support-extension.dic
+# Original:  Apr 11, 2012  JDW
+#
+# Updated: --
+#     May 2, 2012 - Remove author relationship
+#     Sep 1, 2012 - Adjust data types.
+#
+# Draft dictionary extension for describing support details for data entry.
+#
+##
+
+data_pdbx_audit_support-extension.dic
+
+_pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
+_pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
+_pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
+_pdbx_dictionary_component.version        0.4
+
+loop_
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+mmcif_pdbx_audit_support-extension.dic  0.1  2012-04-11
+;
+Changes (JW):
++ Initial version
+;
+mmcif_pdbx_audit_support-extension.dic  0.2  2012-05-02
+;
+Changes (JW):
++ Remove author relationship
+;
+mmcif_pdbx_audit_support-extension.dic  0.3  2012-09-01
+;
+Changes (JW):
++ Adjust data types
+;
+mmcif_pdbx_audit_support-extension.dic  0.4  2022-10-18
+;
+Changes (EP):
++ Version separated from core dictonary.  Many intermediate versions took place.
+;
+
+########################
+## PDBX_AUDIT_SUPPORT ##
+########################
+
+save_pdbx_audit_support
+    _category.description
+;              Data items in the PDBX_AUDIT_SUPPORT category record details about
+               funding support for the entry.
+;
+    _category.id                  pdbx_audit_support
+    _category.mandatory_code      no
+    _category_key.name           '_pdbx_audit_support.ordinal'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'audit_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 -
+;
+;
+     loop_
+     _pdbx_audit_support.ordinal
+     _pdbx_audit_support.funding_organization
+     _pdbx_audit_support.grant_number
+     _pdbx_audit_support.country
+     1  'National Institutes of Health/National Institute of General Medical Sciences' '1R01GM072999-01' 'United States'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_audit_support.funding_organization
+    _item_description.description
+;              The name of the organization providing funding support for the
+               entry.
+;
+    _item.name                  '_pdbx_audit_support.funding_organization'
+    _item.category_id             pdbx_audit_support
+    _item.mandatory_code          no
+    _pdbx_item.name             '_pdbx_audit_support.funding_organization'
+    _pdbx_item.mandatory_code     yes
+    _item_type.code               text
+     loop_
+    _item_examples.case
+       'National Institutes of Health'
+       'Wellcome Trust'
+       'National Institutes of Health/National Institute of General Medical Sciences'
+     loop_
+       _pdbx_item_enumeration.name
+       _pdbx_item_enumeration.value
+       _pdbx_item_enumeration.detail
+         '_pdbx_audit_support.funding_organization'  'Academia Sinica (Taiwan)'                                                                        Taiwan
+         '_pdbx_audit_support.funding_organization'  'Academy of Finland'                                                                              Finland
+         '_pdbx_audit_support.funding_organization'  'Accelerated Early staGe drug dIScovery (AEGIS)'                                                  'European Union'
+         '_pdbx_audit_support.funding_organization'  'Adaptimmune Ltd'                                                                                 'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'The French Muscular Dystrophy Telethon (AFM-Telethon)'                                           France
+         '_pdbx_audit_support.funding_organization'  'Agencia Estatal de Investigacion (AEI)'                                                          Spain
+         '_pdbx_audit_support.funding_organization'  'Agencia Nacional de Investigacion e Innovacion (ANII)'                                           Uruguay
+         '_pdbx_audit_support.funding_organization'  'Agencia Nacional de Promocion Cientifica y Tecnologica (FONCYT)'                                 Argentina
+         '_pdbx_audit_support.funding_organization'  'Agence Nationale de la Recherche (ANR)'                                                          France
+         '_pdbx_audit_support.funding_organization'  'Agence Nationale de Recherches Sur le Sida et les Hepatites Virales (ANRS)'                      France
+         '_pdbx_audit_support.funding_organization'  'Ake Wiberg Foundation'                                                                           'European Union'
+         '_pdbx_audit_support.funding_organization'  'Alexander von Humboldt Foundation'                                                               Germany
+         '_pdbx_audit_support.funding_organization'  'Almirall, LLC'                                                                                   'United States'
+         '_pdbx_audit_support.funding_organization'  'Alzheimer Forschung Initiative e.V.'                                                             Germany
+         '_pdbx_audit_support.funding_organization'  'Alzheimers Drug Discovery Foundation (ADDF)'                                                     'United States'
+	 '_pdbx_audit_support.funding_organization'  'Alzheimers Research UK (ARUK)'                                                                   'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'American Cancer Society'                                                                         'United States'
+         '_pdbx_audit_support.funding_organization'  'American Diabetes Association'                                                                   'United States'
+         '_pdbx_audit_support.funding_organization'  'American Epilepsy Society'                                                                       'United States'
+         '_pdbx_audit_support.funding_organization'  'American Heart Association'                                                                      'United States'
+         '_pdbx_audit_support.funding_organization'  'Amyloidosis Foundation'                                                                          'United States'
+         '_pdbx_audit_support.funding_organization'  'Aprea Therapeutics AB'                                                                           Sweden
+         '_pdbx_audit_support.funding_organization'  'ATIP-Avenir'                                                                                     France
+         '_pdbx_audit_support.funding_organization'  'Australian Research Council (ARC)'                                                               Australia
+         '_pdbx_audit_support.funding_organization'  'Australian Science and Industry Endowment Fund (SIEF)'                                           Australia
+         '_pdbx_audit_support.funding_organization'  'Austrian Research Promotion Agency'                                                              Austria
+         '_pdbx_audit_support.funding_organization'  'Austrian Science Fund'                                                                           Austria
+         '_pdbx_audit_support.funding_organization'  'Autonomous Community of Madrid'                                                                  Spain
+         '_pdbx_audit_support.funding_organization'  'Baden-Wuerttemberg-Stiftung'                                                                     Germany
+         '_pdbx_audit_support.funding_organization'  'Banting Postdoctoral Fellowships'                                                                Canada
+         '_pdbx_audit_support.funding_organization'  'Bavarian State Ministry for Education, Culture, Science and Arts'                                Germany
+         '_pdbx_audit_support.funding_organization'  'Belgian Foundation against Cancer'                                                               Netherlands
+         '_pdbx_audit_support.funding_organization'  'Belarusian Republican Foundation for Fundamental Research'                                       Belarus
+         '_pdbx_audit_support.funding_organization'  'Bill & Melinda Gates Foundation'                                                                 'United States'
+         '_pdbx_audit_support.funding_organization'  'Biotechnology and Biological Sciences Research Council (BBSRC)'                                  'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Birkbeck College'                                                                                'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Bloodwise'                                                                                       'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Board of Research in Nuclear Sciences (BRNS)'                                                    India
+         '_pdbx_audit_support.funding_organization'  'Boehringer Ingelheim Fonds (BIF)'                                                                Germany
+
+         '_pdbx_audit_support.funding_organization'  'Brazilian National Council for Scientific and Technological Development (CNPq)'                  Brazil
+         '_pdbx_audit_support.funding_organization'  'British Heart Foundation'                                                                        'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Brookhaven National Laboratory (BNL)'                                                            'United States'
+         '_pdbx_audit_support.funding_organization'  'Burroughs Wellcome Fund'                                                                         'United States'
+	 '_pdbx_audit_support.funding_organization'  'Business Finland'                                                                                Finland
+         '_pdbx_audit_support.funding_organization'  'CAMS Innovation Fund for Medical Sciences (CIFMS)'                                               'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Canada Excellence Research Chair Award'                                                          Canada
+         '_pdbx_audit_support.funding_organization'  'Canada Foundation for Innovation'                                                                Canada
+         '_pdbx_audit_support.funding_organization'  'Canada Research Chairs'                                                                          Canada
+         '_pdbx_audit_support.funding_organization'  'Canadian Glycomics Network (GLYCONET)'                                                           Canada
+         '_pdbx_audit_support.funding_organization'  'Canadian Institutes of Health Research (CIHR)'                                                   Canada
+         '_pdbx_audit_support.funding_organization'  'Canadian Institute for Advanced Research (CIFAR)'                                                Canada
+         '_pdbx_audit_support.funding_organization'  'Cancer Council WA'                                                                               Australia
+         '_pdbx_audit_support.funding_organization'  'Cancerfonden'                                                                                    Sweden
+         '_pdbx_audit_support.funding_organization'  'CancerGenomiCs.nl'                                                                               Netherlands
+         '_pdbx_audit_support.funding_organization'  'Cancer and Polio Research Fund'                                                                  'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Cancer Prevention and Research Institute of Texas (CPRIT)'                                       'United States'
+         '_pdbx_audit_support.funding_organization'  'Cancer Research UK'                                                                              'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Carl Trygger Foundation'                                                                         Sweden
+         '_pdbx_audit_support.funding_organization'  'Centre National de la Recherche Scientifique (CNRS)'                                             France
+	 '_pdbx_audit_support.funding_organization'  'Chan Zuckerberg Initiative'                                                                      'United States'
+         '_pdbx_audit_support.funding_organization'  'CHDI Foundation'                                                                                 'United States'
+         '_pdbx_audit_support.funding_organization'  'Childrens Discovery Institute of Washington University and St. Louis Childrens Hospital'         'United States'
+         '_pdbx_audit_support.funding_organization'  'Chinese Academy of Sciences'                                                                     China
+         '_pdbx_audit_support.funding_organization'  'Chinese Scholarship Council'                                                                     China
+
+         '_pdbx_audit_support.funding_organization'  'Christian Doppler Forschungsgesellschaft'                                                        Austria
+         '_pdbx_audit_support.funding_organization'  'CIFAR Azrieli Global Scholars'                                                                   Canada
+         '_pdbx_audit_support.funding_organization'  'Columbia Technology Ventures'                                                                   'United States'
+         '_pdbx_audit_support.funding_organization'  'Comision Nacional Cientifica y Technologica (CONICYT)'                                           Chile
+         '_pdbx_audit_support.funding_organization'  'Commonwealth Scholarship Commission (United Kingdom)'                                            'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Comunidad de Madrid'                                                                             Spain
+         '_pdbx_audit_support.funding_organization'  'Consejo Nacional de Ciencia y Tecnologia (CONACYT)'                                              Mexico
+         '_pdbx_audit_support.funding_organization'  'Consortia for HIV/AIDS Vaccine Development'                                                      'United States'
+         '_pdbx_audit_support.funding_organization'  'Coordination for the Improvement of Higher Education Personnel'                                  Brazil
+         '_pdbx_audit_support.funding_organization'  'Council of Scientific & Industrial Research (CSIR)'                                              India
+         '_pdbx_audit_support.funding_organization'  'Crohns and Colitis Foundation'                                                                   'United States'
+         '_pdbx_audit_support.funding_organization'  'Croatian Science Foundation'                                                                     Croatia
+         '_pdbx_audit_support.funding_organization'  'CRDF Global'                                                                                    'United States'
+         '_pdbx_audit_support.funding_organization'  'Cystic Fibrosis Foundation'                                                                      'United States'
+         '_pdbx_audit_support.funding_organization'  'Czech Academy of Sciences'                                                                       'Czech Republic'
+         '_pdbx_audit_support.funding_organization'  'Czech Science Foundation'                                                                        'Czech Republic'
+         '_pdbx_audit_support.funding_organization'  'Danish Agency for Science Technology and Innovation'                                             Denmark
+         '_pdbx_audit_support.funding_organization'  'Danish Council for Independent Research'                                                         Denmark
+         '_pdbx_audit_support.funding_organization'  'Danish National Research Foundation'                                                             Denmark
+         '_pdbx_audit_support.funding_organization'  'Damon Runyon Cancer Research Foundation'                                                         'United States'
+
+         '_pdbx_audit_support.funding_organization'  'David and Lucile Packard Foundation'                                                             'United States'
+         '_pdbx_audit_support.funding_organization'  'Defence Science and Technology Laboratory (DSTL)'                                                'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Defense Threat Reduction Agency (DTRA)'                                                          'United States'
+         '_pdbx_audit_support.funding_organization'  'Dementia Research Institute (DRI)'                                                               'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Department of Defense (DOD, United States)'                                                      'United States'
+         '_pdbx_audit_support.funding_organization'  'Department of Energy (DOE, United States)'                                                       'United States'
+         '_pdbx_audit_support.funding_organization'  'Department of Biotechnology (DBT, India)'                                                        India
+         '_pdbx_audit_support.funding_organization'  'Department of Health & Human Services (HHS)'                                                     'United States'
+         '_pdbx_audit_support.funding_organization'  'Department of Science & Technology (DST, India)'                                                 India
+         '_pdbx_audit_support.funding_organization'  'Department of Veterans Affairs (VA, United States)'                                              'United States'
+         '_pdbx_audit_support.funding_organization'  'DOC Fellowship of the Austrian Academy of Sciences'                                              Austria
+         '_pdbx_audit_support.funding_organization'  'Dutch Kidney Foundation'                                                                         Netherlands
+         '_pdbx_audit_support.funding_organization'  'EIPOD fellowship under Marie Sklodowska-Curie Actions COFUND'                                    Germany
+         '_pdbx_audit_support.funding_organization'  'Elite Network of Bavaria'                                                                        Germany
+         '_pdbx_audit_support.funding_organization'  'Engineering and Physical Sciences Research Council'                                              'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Enterprise Ireland'                                                                              Ireland
+
+         '_pdbx_audit_support.funding_organization'  'Estonian Research Council'                                                                       Estonia
+         '_pdbx_audit_support.funding_organization'  'European Commission'                                                                             'European Union'
+         '_pdbx_audit_support.funding_organization'  'European Communitys Seventh Framework Programme'                                                 'European Union'
+         '_pdbx_audit_support.funding_organization'  'European Institute of Chemistry and Biology (IECB)'                                              France
+         '_pdbx_audit_support.funding_organization'  'European Molecular Biology Organization (EMBO)'                                                  'European Union'
+         '_pdbx_audit_support.funding_organization'  'European Regional Development Fund'                                                              'European Union'
+         '_pdbx_audit_support.funding_organization'  'European Research Council (ERC)'                                                                 'European Union'
+         '_pdbx_audit_support.funding_organization'  'European Union (EU)'                                                                             'European Union'
+         '_pdbx_audit_support.funding_organization'  'F. Hoffmann-La Roche LTD'                                                                        Switzerland
+         '_pdbx_audit_support.funding_organization'  'Fundacao para a Ciencia e a Tecnologia'                                                          Portugal
+         '_pdbx_audit_support.funding_organization'  'Finnish Cultural Foundation'                                                                     Finland
+         '_pdbx_audit_support.funding_organization'  'Florence Instruct-ERIC Center'                                                                   Italy
+         '_pdbx_audit_support.funding_organization'  'Fondation ARC'                                                                                   France
+         '_pdbx_audit_support.funding_organization'  'Foundation for Barnes-Jewish Hospital'                                                           'United States'
+         '_pdbx_audit_support.funding_organization'  'Foundation for Medical Research (France)'                                                        France
+         '_pdbx_audit_support.funding_organization'  'Foundation for Polish Science'                                                                   Poland
+
+         '_pdbx_audit_support.funding_organization'  'Foundation for Science and Technology (FCT)'                                                     'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Fondazione CARIPLO'                                                                              Italy
+         '_pdbx_audit_support.funding_organization'  'Fonds de Recherche du Quebec - Nature et Technologies (FRQNT)'                                   Canada
+         '_pdbx_audit_support.funding_organization'  'Fonds de Recherche du Quebec - Sante (FRQS)'                                                     Canada
+         # Being deprecated
+         '_pdbx_audit_support.funding_organization'  'Fonds National de la Recherche Scientifique (FNRS)'                                              Belgium
+         '_pdbx_audit_support.funding_organization'  'Fonds de la Recherche Scientifique (FNRS)'                                                       Belgium
+         '_pdbx_audit_support.funding_organization'  'French Alternative Energies and Atomic Energy Commission (CEA)'                                  France
+         '_pdbx_audit_support.funding_organization'  'French Infrastructure for Integrated Structural Biology (FRISBI)'                                France
+         '_pdbx_audit_support.funding_organization'  'French League Against Cancer'                                                                    France
+         '_pdbx_audit_support.funding_organization'  'French Ministry of Armed Forces'                                                                 France
+         '_pdbx_audit_support.funding_organization'  'French Muscular Dystrophy Association'                                                           France
+         '_pdbx_audit_support.funding_organization'  'French National Institute of Agricultural Research (INRAE)'                                      France
+         '_pdbx_audit_support.funding_organization'  'French National Research Agency'                                                                 France
+         '_pdbx_audit_support.funding_organization'  'Friedreichs Ataxia Research Alliance (FARA)'                                                     'United States'
+         '_pdbx_audit_support.funding_organization'  'Future Leader Fellowship'                                                                        'United Kingdom'
+
+         '_pdbx_audit_support.funding_organization'  'General Secretariat for Research and Technology (GSRT)'                                          'European Union'
+         '_pdbx_audit_support.funding_organization'  'Generalitat de Catalunya'                                                                        Spain
+         '_pdbx_audit_support.funding_organization'  'German Federal Ministry for Economic Affairs and Energy'                                         Germany
+         '_pdbx_audit_support.funding_organization'  'German Federal Ministry for Education and Research'                                              Germany
+         '_pdbx_audit_support.funding_organization'  'German-Israeli Foundation for Research and Development'                                          Germany
+         '_pdbx_audit_support.funding_organization'  'German Research Foundation (DFG)'                                                                Germany
+         '_pdbx_audit_support.funding_organization'  'GHR Foundation'                                                                                  'United States'
+         '_pdbx_audit_support.funding_organization'  'Global Challenges Research Fund'                                                                 'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Global Health Innovative Technology Fund'                                                        Japan
+         '_pdbx_audit_support.funding_organization'  'Grant Agency of the Czech Republic'                                                              'Czech Republic'
+         '_pdbx_audit_support.funding_organization'  'Grenoble Alliance for Integrated Structural Cell Biology (GRAL)'                                 France
+         '_pdbx_audit_support.funding_organization'  'Grenoble Instruct-ERIC Center (ISBG)'                                                            France
+         '_pdbx_audit_support.funding_organization'  'H2020 Marie Curie Actions of the European Commission'                                            'European Union'
+         '_pdbx_audit_support.funding_organization'  'Health-Holland'                                                                                  'Netherlands'
+         '_pdbx_audit_support.funding_organization'  'Health Research Council (HRC)'                                                                   'New Zealand'
+         '_pdbx_audit_support.funding_organization'  'Hellenic Foundation for Research and Innovation (HFRI)'                                          Greece
+         '_pdbx_audit_support.funding_organization'  'Helmholtz Association'                                                                           Germany
+	 '_pdbx_audit_support.funding_organization'  'Heritage Medical Research Institute'                                                             'United States'
+         '_pdbx_audit_support.funding_organization'  'Herman Frasch Foundation'                                                                        'United States'
+         '_pdbx_audit_support.funding_organization'  'Hessian Ministry of Science, Higher Education and Art (HMWK)'                                    Germany
+         '_pdbx_audit_support.funding_organization'  'Higher Education Funding Council for England'                                                    'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Howard Hughes Medical Institute (HHMI)'                                                          'United States'
+         '_pdbx_audit_support.funding_organization'  'Human Frontier Science Program (HFSP)'                                                           France
+         '_pdbx_audit_support.funding_organization'  'Hungarian Academy of Sciences'                                                                   Hungary
+         '_pdbx_audit_support.funding_organization'  'Hungarian Ministry of Finance'                                                                   Hungary
+         '_pdbx_audit_support.funding_organization'  'Hungarian National Research, Development and Innovation Office'                                  Hungary
+         '_pdbx_audit_support.funding_organization'  'Imperial College London'                                                                         'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Indian Council of Medical Research'                                                              India
+         '_pdbx_audit_support.funding_organization'  'Instruct-ERIC Center (Strasbourg Centre)'                                                        France
+         '_pdbx_audit_support.funding_organization'  iNEXT                                                                                             'European Union'
+         '_pdbx_audit_support.funding_organization'  iNEXT-Discovery                                                                                   'European Union'	
+         '_pdbx_audit_support.funding_organization'  Innosuisse                                                                                        'European Union'
+         '_pdbx_audit_support.funding_organization'  'Innovative Medicines Initiative'                                                                 Switzerland
+         '_pdbx_audit_support.funding_organization'  'Institut Laue-Langevin'                                                                          France
+         '_pdbx_audit_support.funding_organization'  'Institut National du Cancer (inCA)'                                                              France
+         '_pdbx_audit_support.funding_organization'  'Institute for Integrative Biology of the Cell (I2BC)'                                            France
+         '_pdbx_audit_support.funding_organization'  'Institute of Chemical Physics Russian Academy of Science'                                        'Russian Federation'
+         '_pdbx_audit_support.funding_organization'  'International AIDS Vaccine Initiative'                                                           'United States'
+         '_pdbx_audit_support.funding_organization'  'Irish Research Council'                                                                          Ireland
+         '_pdbx_audit_support.funding_organization'  'Israel Ministry of Science and Technology'                                                       Israel
+         '_pdbx_audit_support.funding_organization'  'Israel Science Foundation'                                                                       Israel
+         '_pdbx_audit_support.funding_organization'  'Italian Association for Cancer Research'                                                         Italy
+         '_pdbx_audit_support.funding_organization'  'Italian Ministry of Education'                                                                   Italy
+         '_pdbx_audit_support.funding_organization'  'Italian Ministry of Health'                                                                      Italy
+         '_pdbx_audit_support.funding_organization'  'Italian Medicines Agency'                                                                        Italy
+         '_pdbx_audit_support.funding_organization'  'Italian National Research Council (CNR)'                                                         Italy
+         '_pdbx_audit_support.funding_organization'  'Jack Ma Foundation'                                                                              China
+         '_pdbx_audit_support.funding_organization'  'Jane and Aatos Erkko Foundation'                                                                 Finland
+         '_pdbx_audit_support.funding_organization'  'Jane Coffin Childs (JCC) Fund'                                                                   'United States'
+         '_pdbx_audit_support.funding_organization'  'Japan Agency for Medical Research and Development (AMED)'                                        Japan
+         '_pdbx_audit_support.funding_organization'  'Japan Science and Technology'                                                                    Japan
+         '_pdbx_audit_support.funding_organization'  'Japan Society for the Promotion of Science (JSPS)'                                               Japan
+         '_pdbx_audit_support.funding_organization'  'Joachim Herz Stiftung'                                                                           Germany
+         '_pdbx_audit_support.funding_organization'  'John Innes Foundation'                                                                           'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Joint Supercomputer Center of the Russian Academy of Sciences'                                   'Russian Federation'
+         '_pdbx_audit_support.funding_organization'  'Kay Kendall Leukaemia Fund'                                                                      'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Kidney Research UK'                                                                              'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Knut and Alice Wallenberg Foundation'                                                            Sweden
+         '_pdbx_audit_support.funding_organization'  'KU Leuven'                                                                                       Belgium
+         '_pdbx_audit_support.funding_organization'  'La Caixa Foundation'                                                                             Spain
+         '_pdbx_audit_support.funding_organization'  'Laboratories of Excellence (LabEx)'                                                              France
+         '_pdbx_audit_support.funding_organization'  'Leducq Foundation'                                                                               France
+         '_pdbx_audit_support.funding_organization'  'Leibniz Association'                                                                             Germany
+         '_pdbx_audit_support.funding_organization'  'Leukemia & Lymphoma Society'                                                                     'United States'
+         '_pdbx_audit_support.funding_organization'  'Leverhulme Trust'                                                                                'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'LOreal-UNESCO'                                                                                   France
+         '_pdbx_audit_support.funding_organization'  'Louis-Jeantet Foundation'                                                                        Switzerland
+         '_pdbx_audit_support.funding_organization'  'LOEWE Center DRUID'                                                                              Germany
+         '_pdbx_audit_support.funding_organization'  'Ludwig Institute for Cancer Research (LICR)'                                                     'United States'
+         '_pdbx_audit_support.funding_organization'  Lundbeckfonden                                                                                    Denmark
+         '_pdbx_audit_support.funding_organization'  'Lustgarten Foundation'                                                                           'United States'
+         '_pdbx_audit_support.funding_organization'  'Marie Sklodowska-Curie Actions, FragNET ITN'                                                     'European Union'
+         '_pdbx_audit_support.funding_organization'  'Marsden Fund'                                                                                    'New Zealand'
+         '_pdbx_audit_support.funding_organization'  'Massachusetts Consortium on Pathogen Readiness (MassCPR)'                                        'United States'
+
+         '_pdbx_audit_support.funding_organization'  'Max Planck Bristol Centre for Minimal Biology - University of Bristol'                           'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Max Planck Society'                                                                              Germany
+         '_pdbx_audit_support.funding_organization'  'Medical Research Council (MRC, Canada)'                                                          Canada
+         '_pdbx_audit_support.funding_organization'  'Medical Research Council (MRC, United Kingdom)'                                                  'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Mercatus Center'                                                                                 'United States'
+         '_pdbx_audit_support.funding_organization'  'Michael J. Fox Foundation'                                                                       'United States'
+         '_pdbx_audit_support.funding_organization'  'Minas Gerais State Agency for Research and Development (FAPEMIG)'                                Brazil
+         '_pdbx_audit_support.funding_organization'  'Ministerio de Ciencia e Innovacion (MCIN)'                                                       Spain
+         '_pdbx_audit_support.funding_organization'  'Ministero dell Universita e della Ricerca'                                                       Italy
+         '_pdbx_audit_support.funding_organization'  'Ministry of Business, Innovation and Employment (New Zealand)'                                   'New Zealand'
+         '_pdbx_audit_support.funding_organization'  'Ministry of Economy and Competitiveness (MINECO)'                                                Spain
+         '_pdbx_audit_support.funding_organization'  'Ministry of Education (MoE, China)'                                                              China
+         '_pdbx_audit_support.funding_organization'  'Ministry of Education (MoE, Czech Republic)'                                                     'Czech Republic'
+         '_pdbx_audit_support.funding_organization'  'Ministry of Education (MoE, Korea)'                                                              'Korea, Republic Of'
+         '_pdbx_audit_support.funding_organization'  'Ministry of Education (MoE, Singapore)'                                                          Singapore
+         '_pdbx_audit_support.funding_organization'  'Ministry of Education and Science of the Russian Federation'                                     'Russian Federation'
+         '_pdbx_audit_support.funding_organization'  'Ministry of Education, Culture, Sports, Science and Technology (Japan)'                          Japan
+         '_pdbx_audit_support.funding_organization'  'Ministry of Education, Youth and Sports of the Czech Republic'                                   'Czech Republic'
+         '_pdbx_audit_support.funding_organization'  'Ministry of Human Capacities'                                                                    Hungary
+         '_pdbx_audit_support.funding_organization'  'Ministry of Science and Higher Education of the Russian Federation'                              'Russian Federation'
+         '_pdbx_audit_support.funding_organization'  'Ministry of Science, Education and Sports of the Republic of Croatia'                            Croatia
+
+         '_pdbx_audit_support.funding_organization'  'Ministry of Science, ICT and Future Planning (MSIP)'                                             'Korea, Republic Of'
+         '_pdbx_audit_support.funding_organization'  'Ministry of Science, Technology and Innovation (MOSTI, Malaysia)'                                Malaysia
+         '_pdbx_audit_support.funding_organization'  'Ministry of Science and Higher Education (Poland)'                                               Poland
+         '_pdbx_audit_support.funding_organization'  'Ministry of Science and Technology (MoST, China)'                                                China
+         '_pdbx_audit_support.funding_organization'  'Ministry of Science and Technology (MoST, Taiwan)'                                               Taiwan
+         '_pdbx_audit_support.funding_organization'  'Mizutani Foundation for Glycoscience'                                                            Japan
+         '_pdbx_audit_support.funding_organization'  'Molecular and Cell Biology and Postgenomic Technologies'                                         Hungary
+
+         '_pdbx_audit_support.funding_organization'  'Monash Warwick Alliance'                                                                         Australia
+         '_pdbx_audit_support.funding_organization'  'Monash University/ARC Centre of Excellence in Advanced Molecular Imaging Alliance'               Australia
+         '_pdbx_audit_support.funding_organization'  'Montpellier University of Excellence (MUSE)'                                                     France
+
+         '_pdbx_audit_support.funding_organization'  'National Aeronautic Space Administration (NASA, United States)'                                  'United States'
+         '_pdbx_audit_support.funding_organization'  'National Authority for Scientific Research in Romania (ANCS)'                                    'Romania'
+         '_pdbx_audit_support.funding_organization'  'National Basic Research Program of China (973 Program)'                                          China
+         '_pdbx_audit_support.funding_organization'  'National Center for Genetic Engineering and Biotechnology (Thailand)'                            Thailand
+         '_pdbx_audit_support.funding_organization'  'National Center for Research and Development (Poland)'                                           Poland
+         '_pdbx_audit_support.funding_organization'  'National Fund for Scientific Research'                                                           Belgium
+	 '_pdbx_audit_support.funding_organization'  'National Health and Medical Research Council (NHMRC, Australia)'                                 'Australia'
+         '_pdbx_audit_support.funding_organization'  'National Institute of Food and Agriculture (NIFA, United States)'                                'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/Eunice Kennedy Shriver National Institute of Child Health & Human Development (NIH/NICHD)'  'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/John E. Fogarty International Center (NIH/FIC)'                    'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Cancer Institute (NIH/NCI)'                              'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Center for Advancing Translational Sciences (NIH/NCATS)' 'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Center for Complementary and Integrative Health (NIH/NCCIH)'  'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Center for Research Resources (NIH/NCRR)'                'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Eye Institute (NIH/NEI)'                                 'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Heart, Lung, and Blood Institute (NIH/NHLBI)'            'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Human Genome Research Institute (NIH/NHGRI)'             'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute Of Allergy and Infectious Diseases (NIH/NIAID)' 'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute of Arthritis and Musculoskeletal and Skin Diseases (NIH/NIAMS)'  'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute on Alcohol Abuse and Alcoholism (NIH/NIAAA)'    'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute of Biomedical Imaging and Bioengineering (NIH/NIBIB)' 'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute of Dental and Craniofacial Research (NIH/NIDCR)' 'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute of Diabetes and Digestive and Kidney Disease (NIH/NIDDK)'  'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute of Environmental Health Sciences (NIH/NIEHS)'   'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute of General Medical Sciences (NIH/NIGMS)'        'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute of Mental Health (NIH/NIMH)'                    'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute on Minority Health and Health Disparities (NIH/NIMHD)'  'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute of Neurological Disorders and Stroke (NIH/NINDS)' 'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute on Deafness and Other Communication Disorders (NIH/NIDCD)' 'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute on Drug Abuse (NIH/NIDA)'                       'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Library of Medicine (NIH/NLM)'                            'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/National Institute on Aging (NIH/NIA)'                             'United States'
+         '_pdbx_audit_support.funding_organization'  'National Institutes of Health/Office of the Director'                                            'United States'
+         '_pdbx_audit_support.funding_organization'  'National Natural Science Foundation of China (NSFC)'                                             China
+         '_pdbx_audit_support.funding_organization'  'National Research Council (NRC, Argentina)'                                                      Argentina
+         '_pdbx_audit_support.funding_organization'  'National Research Development and Innovation Office (NKFIH)'                                     Hungary
+         '_pdbx_audit_support.funding_organization'  'National Research Foundation (NRF, Korea)'                                                       'Korea, Republic Of'
+         '_pdbx_audit_support.funding_organization'  'National Research Foundation (NRF, Singapore)'                                                   Singapore
+         '_pdbx_audit_support.funding_organization'  'National Research Foundation in South Africa'                                                    'South Africa'
+         '_pdbx_audit_support.funding_organization'  'National Science Council (NSC, Taiwan)'                                                          Taiwan
+         '_pdbx_audit_support.funding_organization'  'National Science Foundation (NSF, China)'                                                        China
+         '_pdbx_audit_support.funding_organization'  'National Science Foundation (NSF, United States)'                                                'United States'
+         '_pdbx_audit_support.funding_organization'  'National Virtual Biotechnology Laboratory (NVBL)'                                                'United States'
+         '_pdbx_audit_support.funding_organization'  'National Scientific and Technical Research Council (CONICET)'                                    Argentina
+         '_pdbx_audit_support.funding_organization'  'NATO Science for Peace and Security Program'                                                     Belgium
+         '_pdbx_audit_support.funding_organization'  'Natural Environment Research Council (NERC)'                                                     'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Natural Sciences and Engineering Research Council (NSERC, Canada)'                               Canada
+         '_pdbx_audit_support.funding_organization'  'Netherlands Organisation for Scientific Research (NWO)'                                          Netherlands
+         '_pdbx_audit_support.funding_organization'  'New Energy and Industrial Technology Development Organization (NEDO)'                            Japan
+         '_pdbx_audit_support.funding_organization'  'Norwegian Cancer Society'                                                                        Norway
+         '_pdbx_audit_support.funding_organization'  'Norwegian Research Council'                                                                      Norway
+         '_pdbx_audit_support.funding_organization'  'Not funded'                                                                                      .
+         '_pdbx_audit_support.funding_organization'  'Novartis FreeNovation'                                                                           .
+         '_pdbx_audit_support.funding_organization'  'Novo Nordisk Foundation'                                                                         Denmark
+         '_pdbx_audit_support.funding_organization'  'Obel Family Foundation'                                                                          Denmark
+         '_pdbx_audit_support.funding_organization'  'Office of Naval Research (ONR)'                                                                  'United States'
+         '_pdbx_audit_support.funding_organization'  'Oncode Institute'                                                                                Netherlands
+         '_pdbx_audit_support.funding_organization'  'Ontario Early Researcher Awards'                                                                 Canada
+         '_pdbx_audit_support.funding_organization'  'Ontario Institute for Cancer Research'                                                           Canada
+         '_pdbx_audit_support.funding_organization'  'Ontario Ministry of Colleges and Universities'                                                   Canada
+         '_pdbx_audit_support.funding_organization'  'Ontario Research Fund'                                                                           Canada
+         '_pdbx_audit_support.funding_organization'   OpenPlant                                                                                        'United Kingdom'
+
+         '_pdbx_audit_support.funding_organization'  'Other government'                                                                                .
+         '_pdbx_audit_support.funding_organization'  'Other private'                                                                                   .
+
+         '_pdbx_audit_support.funding_organization'  'Parker Institute for Cancer Immunotherapy'                                                       'United States'
+         '_pdbx_audit_support.funding_organization'  'Partnership for Structural Biology (PSB)'                                                        France
+         '_pdbx_audit_support.funding_organization'  'Pasteur Institute'                                                                               France
+         '_pdbx_audit_support.funding_organization'  'Polish National Science Centre'                                                                  Poland
+         '_pdbx_audit_support.funding_organization'  'Programa de Apoyo a Proyectos de Investigacion e Innovacion Tecnologica (PAPIIT)'                Mexico
+         '_pdbx_audit_support.funding_organization'  'Promedica Siftung'                                                                               Switzerland
+         '_pdbx_audit_support.funding_organization'  'Qatar Foundation'                                                                                Qatar
+         '_pdbx_audit_support.funding_organization'  'Queen Mary University of London'                                                                 'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Regione Lazio (Italy)'                                                                           Italy
+         '_pdbx_audit_support.funding_organization'  'Research Council of Lithuania'                                                                   Lithuania
+         '_pdbx_audit_support.funding_organization'  'Research Council of Norway'                                                                      Norway
+         '_pdbx_audit_support.funding_organization'  'Research Foundation - Flanders (FWO)'                                                            Belgium
+         '_pdbx_audit_support.funding_organization'  'Richard and Susan Smith Family Foundation'                                                       'United States'
+         '_pdbx_audit_support.funding_organization'  'Rita Allen Foundation'                                                                           'United States'
+	 '_pdbx_audit_support.funding_organization'  'Robert A. Welch Foundation'                                                                      'United States'
+         '_pdbx_audit_support.funding_organization'  'Royal Society'                                                                                   'United Kingdom'
+	
+         '_pdbx_audit_support.funding_organization'  'Royal Society of New Zealand'                                                                    'New Zealand'
+         '_pdbx_audit_support.funding_organization'  'Rural Development Administration'                                                                'United States'
+         '_pdbx_audit_support.funding_organization'  'Russian Federation President Grant'                                                              'Russian Federation'
+         '_pdbx_audit_support.funding_organization'  'Russian Foundation for Basic Research'                                                           'Russian Federation'
+         '_pdbx_audit_support.funding_organization'  'Russian Science Foundation'                                                                      'Russian Federation'
+         '_pdbx_audit_support.funding_organization'  'Samsung Science and Technology Foundation'                                                       'Korea, Republic Of'
+         '_pdbx_audit_support.funding_organization'  'Sao Paulo Research Foundation (FAPESP)'                                                          Brazil
+         '_pdbx_audit_support.funding_organization'  'Sarcoma UK'                                                                                      'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Saudi Ministry of Education'                                                                     'Saudi Arabia'
+         '_pdbx_audit_support.funding_organization'  'Science and Engineering Research Board (SERB)'                                                   India
+         '_pdbx_audit_support.funding_organization'  'Science Foundation Ireland'                                                                      Ireland
+	
+         '_pdbx_audit_support.funding_organization'  'Science and Technology Funding Council'                                                          'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Seneca Foundation'                                                                               'United States'
+         '_pdbx_audit_support.funding_organization'  'Shirley Boyde Foundation'                                                                        'Hong Kong'
+         '_pdbx_audit_support.funding_organization'  'Sigrid Juselius Foundation'                                                                      Finland
+         '_pdbx_audit_support.funding_organization'  'Simons Foundation'                                                                               'United States'
+	 '_pdbx_audit_support.funding_organization'  'South African Medical Research Council self-initiated research grant (SAMRC SIR Grant)'          'South Africa'
+	
+         '_pdbx_audit_support.funding_organization'  'Spanish Ministry of Economy and Competitiveness'                                                 Spain
+         '_pdbx_audit_support.funding_organization'  'Spanish Ministry of Science, Innovation, and Universities'                                       Spain
+         '_pdbx_audit_support.funding_organization'  'Spanish National Research Council'                                                               Spain
+         '_pdbx_audit_support.funding_organization'  'Spar Nord Foundation'                                                                            Germany
+         '_pdbx_audit_support.funding_organization'  'Slovenian Research Agency'                                                                       Slovenia
+#         '_pdbx_audit_support.funding_organization'  "St. Jude Children's Research Hospital (ALSAC)"                                                  'United States'
+         '_pdbx_audit_support.funding_organization'  'St. Petersburg State University'                                                                 'Russian Federation'
+         '_pdbx_audit_support.funding_organization'  'Swedish Energy Agency'                                                                           Sweden
+         '_pdbx_audit_support.funding_organization'  'Swedish Research Council'                                                                        Sweden
+         '_pdbx_audit_support.funding_organization'  'Swiss Cancer League'                                                                             Switzerland
+         '_pdbx_audit_support.funding_organization'  'Swiss Nanoscience Institute'                                                                     Switzerland
+         '_pdbx_audit_support.funding_organization'  'Swiss National Science Foundation'                                                               Switzerland
+	
+         '_pdbx_audit_support.funding_organization'  'Synchrotron Light Research Institute (SLRI)'                                                     Thailand
+
+         '_pdbx_audit_support.funding_organization'  'Technology Agency of the Czech Republic'                                                         'Czech Republic'
+         '_pdbx_audit_support.funding_organization'  'Techical University of Denmark (DTU)'                                                            'Denmark'
+         '_pdbx_audit_support.funding_organization'  'TESS Research Foundation'                                                                        'United States'
+         '_pdbx_audit_support.funding_organization'  'The Carlsberg Foundation'                                                                        Denmark
+         '_pdbx_audit_support.funding_organization'  'The Carnegie Trust for the Universities of Scotland'                                             'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'The Comammox Research Platform'                                                                  Austria
+         '_pdbx_audit_support.funding_organization'  'The Crafoord Foundation'                                                                         Sweden
+         '_pdbx_audit_support.funding_organization'  'The Francis Crick Institute'                                                                     'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'The Giovanni Armenise-Harvard Foundation'                                                        'United States'
+         '_pdbx_audit_support.funding_organization'  'The Grant Agency of The University of South Bohemia'                                             'Czech Republic'
+         '_pdbx_audit_support.funding_organization'  'The G. Harold and Leila Y. Mathers Foundation'                                                   'United States'
+         '_pdbx_audit_support.funding_organization'  'The Hospital For Sick Children Foundation'                                                       Canada
+         '_pdbx_audit_support.funding_organization'  'The Institute of Cancer Research (ICR)'                                                          'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'The Lister Institute of Preventive Medicine'                                                     'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'The Mark Foundation'                                                                             'United States'
+         '_pdbx_audit_support.funding_organization'  'The Pew Charitable Trusts'                                                                       'United States'
+         '_pdbx_audit_support.funding_organization'  'The Robertson Foundation'                                                                        'United States'
+         '_pdbx_audit_support.funding_organization'  'The Structural Genomics Consortium (SGC)'                                                        Canada
+         '_pdbx_audit_support.funding_organization'  'The Swedish Foundation for Strategic Research'                                                   Sweden
+         '_pdbx_audit_support.funding_organization'  'The Thailand Research Fund (TRF)'                                                                Thailand
+         '_pdbx_audit_support.funding_organization'  'The Vallee Foundation Inc.'                                                                      'United States'
+         '_pdbx_audit_support.funding_organization'  'The Yanmar Environmental Sustainability Support Association'                                     Japan
+
+         '_pdbx_audit_support.funding_organization'  'The University Grants Committee, Research Grants Council (RGC)'                                  'Hong Kong'
+         '_pdbx_audit_support.funding_organization'  'Tobacco-Related Disease Research Program (TRDRP)'                                                'United States'
+         '_pdbx_audit_support.funding_organization'  'Tower Cancer Research Foundation'                                                                'United States'
+         '_pdbx_audit_support.funding_organization'  'Translational Therapeutics Accelerator (TRx)'                                                    'United States'
+         '_pdbx_audit_support.funding_organization'  'Tuberous Sclerosis Association'                                                                  'United States'
+         '_pdbx_audit_support.funding_organization'  'UK Research and Innovation (UKRI)'                                                               'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'United States - Israel Binational Science Foundation (BSF)'                                      'United States'
+         '_pdbx_audit_support.funding_organization'  'United States Department of Agriculture (USDA)'                                                  'United States'
+         '_pdbx_audit_support.funding_organization'  'Universite de Toulouse'                                                                          France
+         '_pdbx_audit_support.funding_organization'  'University of Bologna'                                                                           Italy
+         '_pdbx_audit_support.funding_organization'  'University of Cambridge'                                                                         'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'University of Helsinki'                                                                          Finland
+         '_pdbx_audit_support.funding_organization'  'University of Helsinki Research Foundation'                                                      Finland
+         '_pdbx_audit_support.funding_organization'  'University of Patras'                                                                            Greece
+         '_pdbx_audit_support.funding_organization'  'University and Research - University of Milan'                                                   Italy
+         '_pdbx_audit_support.funding_organization'  'University of Vienna Research Platform Comammox'                                                 Austria
+         '_pdbx_audit_support.funding_organization'  'University of Warwick'                                                                           'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'University of Zurich'                                                                            Switzerland
+
+         '_pdbx_audit_support.funding_organization'  'V Foundation for Cancer Research'                                                               'United States'
+	 '_pdbx_audit_support.funding_organization'  'Velux Stiftung'                                                                                  Switzerland
+         '_pdbx_audit_support.funding_organization'  'Vidyasirimedhi Institute of Science and Technology (VISTEC)'                                     Thailand
+         '_pdbx_audit_support.funding_organization'  'Vienna Science and Technology Fund (WWTF)'                                                       Austria
+         '_pdbx_audit_support.funding_organization'  'Vinnova'                                                                                         Sweden
+         '_pdbx_audit_support.funding_organization'  'Volkswagen Foundation'                                                                           Germany
+         '_pdbx_audit_support.funding_organization'  'W. M. Keck Foundation'                                                                           'United States'
+         '_pdbx_audit_support.funding_organization'  'Walloon Excellence in Lifesciences & BIOtechnology (WELBIO)'                                     Belgium
+         '_pdbx_audit_support.funding_organization'  'Welch Foundation'                                                                                'United States'
+         '_pdbx_audit_support.funding_organization'  'Wellcome Trust'                                                                                  'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Wenner-Gren Foundation'                                                                          'United States'
+         '_pdbx_audit_support.funding_organization'  'Wolfson Foundation'                                                                              'United Kingdom'
+	 '_pdbx_audit_support.funding_organization'  'World Health Organization (WHO)'                                                                 'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Worldwide Cancer Research'                                                                       'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Yousef Jameel Scholarship'                                                                       Egypt
+	
+     #
+     save_
+
+save__pdbx_audit_support.country
+    _item_description.description
+;              The country/region providing the funding support for the entry.
+;
+    _item.name                  '_pdbx_audit_support.country'
+    _item.category_id             pdbx_audit_support
+    _item.mandatory_code          no
+    _item_type.code               line
+   loop_
+   _pdbx_item_enumeration.name
+   _pdbx_item_enumeration.value
+   _pdbx_item_enumeration.detail
+     "_pdbx_audit_support.country"  "United Kingdom"                                .
+     "_pdbx_audit_support.country"  "United States"                                 .
+     "_pdbx_audit_support.country"  Japan                                           .
+     "_pdbx_audit_support.country"  Afghanistan                                     .
+     "_pdbx_audit_support.country"  "Aland Islands"                                 .
+     "_pdbx_audit_support.country"  Albania                                         .
+     "_pdbx_audit_support.country"  Algeria                                         .
+     "_pdbx_audit_support.country"  "American Samoa"                                .
+     "_pdbx_audit_support.country"  Andorra                                         .
+     "_pdbx_audit_support.country"  Angola                                          .
+     "_pdbx_audit_support.country"  Anguilla                                        .
+     "_pdbx_audit_support.country"  Antarctica                                      .
+     "_pdbx_audit_support.country"  "Antigua And Barbuda"                           .
+     "_pdbx_audit_support.country"  Argentina                                       .
+     "_pdbx_audit_support.country"  Armenia                                         .
+     "_pdbx_audit_support.country"  Aruba                                           .
+     "_pdbx_audit_support.country"  Australia                                       .
+     "_pdbx_audit_support.country"  Austria                                         .
+     "_pdbx_audit_support.country"  Azerbaijan                                      .
+     "_pdbx_audit_support.country"  Bahamas                                         .
+     "_pdbx_audit_support.country"  Bahrain                                         .
+     "_pdbx_audit_support.country"  Bangladesh                                      .
+     "_pdbx_audit_support.country"  Barbados                                        .
+     "_pdbx_audit_support.country"  Belarus                                         .
+     "_pdbx_audit_support.country"  Belgium                                         .
+     "_pdbx_audit_support.country"  Belize                                          .
+     "_pdbx_audit_support.country"  Benin                                           .
+     "_pdbx_audit_support.country"  Bermuda                                         .
+     "_pdbx_audit_support.country"  Bhutan                                          .
+     "_pdbx_audit_support.country"  "Bolivia, Plurinational State Of"               .
+     "_pdbx_audit_support.country"  "Bonaire, Sint Eustatius And Saba"              .
+     "_pdbx_audit_support.country"  "Bosnia And Herzegovina"                        .
+     "_pdbx_audit_support.country"  Botswana                                        .
+     "_pdbx_audit_support.country"  "Bouvet Island"                                 .
+     "_pdbx_audit_support.country"  Brazil                                          .
+     "_pdbx_audit_support.country"  "British Indian Ocean Territory"                .
+     "_pdbx_audit_support.country"  "Brunei Darussalam"                             .
+     "_pdbx_audit_support.country"  Bulgaria                                        .
+     "_pdbx_audit_support.country"  "Burkina Faso"                                  .
+     "_pdbx_audit_support.country"  Burundi                                         .
+     "_pdbx_audit_support.country"  Cambodia                                        .
+     "_pdbx_audit_support.country"  Cameroon                                        .
+     "_pdbx_audit_support.country"  Canada                                          .
+     "_pdbx_audit_support.country"  "Cape Verde"                                    .
+     "_pdbx_audit_support.country"  "Cayman Islands"                                .
+     "_pdbx_audit_support.country"  "Central African Republic"                      .
+     "_pdbx_audit_support.country"  Chad                                            .
+     "_pdbx_audit_support.country"  Chile                                           .
+     "_pdbx_audit_support.country"  China                                           .
+     "_pdbx_audit_support.country"  "Christmas Island"                              .
+     "_pdbx_audit_support.country"  "Cocos (Keeling) Islands"                       .
+     "_pdbx_audit_support.country"  Colombia                                        .
+     "_pdbx_audit_support.country"  Comoros                                         .
+     "_pdbx_audit_support.country"  Congo                                           .
+     "_pdbx_audit_support.country"  "Congo, The Democratic Republic Of The"         .
+     "_pdbx_audit_support.country"  "Cook Islands"                                  .
+     "_pdbx_audit_support.country"  "Costa Rica"                                    .
+     "_pdbx_audit_support.country"  "Cote D'Ivoire"                                 .
+     "_pdbx_audit_support.country"  Croatia                                         .
+     "_pdbx_audit_support.country"  Cuba                                            .
+     "_pdbx_audit_support.country"  Curacao                                         .
+     "_pdbx_audit_support.country"  Cyprus                                          .
+     "_pdbx_audit_support.country"  "Czech Republic"                                .
+     "_pdbx_audit_support.country"  Denmark                                         .
+     "_pdbx_audit_support.country"  Djibouti                                        .
+     "_pdbx_audit_support.country"  Dominica                                        .
+     "_pdbx_audit_support.country"  "Dominican Republic"                            .
+     "_pdbx_audit_support.country"  Ecuador                                         .
+     "_pdbx_audit_support.country"  Egypt                                           .
+     "_pdbx_audit_support.country"  "El Salvador"                                   .
+     "_pdbx_audit_support.country"  "Equatorial Guinea"                             .
+     "_pdbx_audit_support.country"  Eritrea                                         .
+     "_pdbx_audit_support.country"  Estonia                                         .
+     "_pdbx_audit_support.country"  Ethiopia                                        .
+     # While not a country, is a country like grouping that provides funding
+     "_pdbx_audit_support.country"  "European Union"                                .
+     "_pdbx_audit_support.country"  "Falkland Islands (Malvinas)"                   .
+     "_pdbx_audit_support.country"  "Faroe Islands"                                 .
+     "_pdbx_audit_support.country"  Fiji                                            .
+     "_pdbx_audit_support.country"  Finland                                         .
+     "_pdbx_audit_support.country"  France                                          .
+     "_pdbx_audit_support.country"  "French Guiana"                                 .
+     "_pdbx_audit_support.country"  "French Polynesia"                              .
+     "_pdbx_audit_support.country"  "French Southern Territories"                   .
+     "_pdbx_audit_support.country"  Gabon                                           .
+     "_pdbx_audit_support.country"  Gambia                                          .
+     "_pdbx_audit_support.country"  Georgia                                         .
+     "_pdbx_audit_support.country"  Germany                                         .
+     "_pdbx_audit_support.country"  Ghana                                           .
+     "_pdbx_audit_support.country"  Gibraltar                                       .
+     "_pdbx_audit_support.country"  Greece                                          .
+     "_pdbx_audit_support.country"  Greenland                                       .
+     "_pdbx_audit_support.country"  Grenada                                         .
+     "_pdbx_audit_support.country"  Guadeloupe                                      .
+     "_pdbx_audit_support.country"  Guam                                            .
+     "_pdbx_audit_support.country"  Guatemala                                       .
+     "_pdbx_audit_support.country"  Guernsey                                        .
+     "_pdbx_audit_support.country"  Guinea                                          .
+     "_pdbx_audit_support.country"  Guinea-Bissau                                   .
+     "_pdbx_audit_support.country"  Guyana                                          .
+     "_pdbx_audit_support.country"  Haiti                                           .
+     "_pdbx_audit_support.country"  "Heard Island And Mcdonald Islands"             .
+     "_pdbx_audit_support.country"  "Holy See (Vatican City State)"                 .
+     "_pdbx_audit_support.country"  Honduras                                        .
+     "_pdbx_audit_support.country"  "Hong Kong"                                     .
+     "_pdbx_audit_support.country"  Hungary                                         .
+     "_pdbx_audit_support.country"  Iceland                                         .
+     "_pdbx_audit_support.country"  India                                           .
+     "_pdbx_audit_support.country"  Indonesia                                       .
+     "_pdbx_audit_support.country"  "Iran, Islamic Republic Of"                     .
+     "_pdbx_audit_support.country"  Iraq                                            .
+     "_pdbx_audit_support.country"  Ireland                                         .
+     "_pdbx_audit_support.country"  "Isle Of Man"                                   .
+     "_pdbx_audit_support.country"  Israel                                          .
+     "_pdbx_audit_support.country"  Italy                                           .
+     "_pdbx_audit_support.country"  Jamaica                                         .
+     "_pdbx_audit_support.country"  Jersey                                          .
+     "_pdbx_audit_support.country"  Jordan                                          .
+     "_pdbx_audit_support.country"  Kazakhstan                                      .
+     "_pdbx_audit_support.country"  Kenya                                           .
+     "_pdbx_audit_support.country"  Kiribati                                        .
+     "_pdbx_audit_support.country"  "Korea, Democratic People's Republic Of"        .
+     "_pdbx_audit_support.country"  "Korea, Republic Of"                            .
+     "_pdbx_audit_support.country"  Kuwait                                          .
+     "_pdbx_audit_support.country"  Kyrgyzstan                                      .
+     "_pdbx_audit_support.country"  "Lao People's Democratic Republic"              .
+     "_pdbx_audit_support.country"  Latvia                                          .
+     "_pdbx_audit_support.country"  Lebanon                                         .
+     "_pdbx_audit_support.country"  Lesotho                                         .
+     "_pdbx_audit_support.country"  Liberia                                         .
+     "_pdbx_audit_support.country"  Libya                                           .
+     "_pdbx_audit_support.country"  Liechtenstein                                   .
+     "_pdbx_audit_support.country"  Lithuania                                       .
+     "_pdbx_audit_support.country"  Luxembourg                                      .
+     "_pdbx_audit_support.country"  Macao                                           .
+     "_pdbx_audit_support.country"  Macedonia                                       .
+     "_pdbx_audit_support.country"  Madagascar                                      .
+     "_pdbx_audit_support.country"  Malawi                                          .
+     "_pdbx_audit_support.country"  Malaysia                                        .
+     "_pdbx_audit_support.country"  Maldives                                        .
+     "_pdbx_audit_support.country"  Mali                                            .
+     "_pdbx_audit_support.country"  Malta                                           .
+     "_pdbx_audit_support.country"  "Marshall Islands"                              .
+     "_pdbx_audit_support.country"  Martinique                                      .
+     "_pdbx_audit_support.country"  Mauritania                                      .
+     "_pdbx_audit_support.country"  Mauritius                                       .
+     "_pdbx_audit_support.country"  Mayotte                                         .
+     "_pdbx_audit_support.country"  Mexico                                          .
+     "_pdbx_audit_support.country"  "Micronesia, Federated States Of"               .
+     "_pdbx_audit_support.country"  "Moldova, Republic Of"                          .
+     "_pdbx_audit_support.country"  Monaco                                          .
+     "_pdbx_audit_support.country"  Mongolia                                        .
+     "_pdbx_audit_support.country"  Montenegro                                      .
+     "_pdbx_audit_support.country"  Montserrat                                      .
+     "_pdbx_audit_support.country"  Morocco                                         .
+     "_pdbx_audit_support.country"  Mozambique                                      .
+     "_pdbx_audit_support.country"  Myanmar                                         .
+     "_pdbx_audit_support.country"  Namibia                                         .
+     "_pdbx_audit_support.country"  Nauru                                           .
+     "_pdbx_audit_support.country"  Nepal                                           .
+     "_pdbx_audit_support.country"  Netherlands                                     .
+     "_pdbx_audit_support.country"  "New Caledonia"                                 .
+     "_pdbx_audit_support.country"  "New Zealand"                                   .
+     "_pdbx_audit_support.country"  Nicaragua                                       .
+     "_pdbx_audit_support.country"  Niger                                           .
+     "_pdbx_audit_support.country"  Nigeria                                         .
+     "_pdbx_audit_support.country"  Niue                                            .
+     "_pdbx_audit_support.country"  "Norfolk Island"                                .
+     "_pdbx_audit_support.country"  "Northern Mariana Islands"                      .
+     "_pdbx_audit_support.country"  Norway                                          .
+     "_pdbx_audit_support.country"  Oman                                            .
+     "_pdbx_audit_support.country"  Pakistan                                        .
+     "_pdbx_audit_support.country"  Palau                                           .
+     "_pdbx_audit_support.country"  "Palestinian Territory"                         .
+     "_pdbx_audit_support.country"  Panama                                          .
+     "_pdbx_audit_support.country"  "Papua New Guinea"                              .
+     "_pdbx_audit_support.country"  Paraguay                                        .
+     "_pdbx_audit_support.country"  Peru                                            .
+     "_pdbx_audit_support.country"  Philippines                                     .
+     "_pdbx_audit_support.country"  Pitcairn                                        .
+     "_pdbx_audit_support.country"  Poland                                          .
+     "_pdbx_audit_support.country"  Portugal                                        .
+     "_pdbx_audit_support.country"  "Puerto Rico"                                   .
+     "_pdbx_audit_support.country"  Qatar                                           .
+     "_pdbx_audit_support.country"  Reunion                                         .
+     "_pdbx_audit_support.country"  Romania                                         .
+     "_pdbx_audit_support.country"  "Russian Federation"                            .
+     "_pdbx_audit_support.country"  Rwanda                                          .
+     "_pdbx_audit_support.country"  "Saint Barthelemy"                              .
+     "_pdbx_audit_support.country"  "Saint Helena, Ascension And Tristan Da Cunha"  .
+     "_pdbx_audit_support.country"  "Saint Kitts And Nevis"                         .
+     "_pdbx_audit_support.country"  "Saint Lucia"                                   .
+     "_pdbx_audit_support.country"  "Saint Martin (French Part)"                    .
+     "_pdbx_audit_support.country"  "Saint Pierre And Miquelon"                     .
+     "_pdbx_audit_support.country"  "Saint Vincent And The Grenadines"              .
+     "_pdbx_audit_support.country"  Samoa                                           .
+     "_pdbx_audit_support.country"  "San Marino"                                    .
+     "_pdbx_audit_support.country"  "Sao Tome And Principe"                         .
+     "_pdbx_audit_support.country"  "Saudi Arabia"                                  .
+     "_pdbx_audit_support.country"  Senegal                                         .
+     "_pdbx_audit_support.country"  Serbia                                          .
+     "_pdbx_audit_support.country"  Seychelles                                      .
+     "_pdbx_audit_support.country"  "Sierra Leone"                                  .
+     "_pdbx_audit_support.country"  Singapore                                       .
+     "_pdbx_audit_support.country"  "Sint Maarten (Dutch Part)"                     .
+     "_pdbx_audit_support.country"  Slovakia                                        .
+     "_pdbx_audit_support.country"  Slovenia                                        .
+     "_pdbx_audit_support.country"  "Solomon Islands"                               .
+     "_pdbx_audit_support.country"  Somalia                                         .
+     "_pdbx_audit_support.country"  "South Africa"                                  .
+     "_pdbx_audit_support.country"  "South Georgia And The South Sandwich Islands"  .
+     "_pdbx_audit_support.country"  "South Sudan"                                   .
+     "_pdbx_audit_support.country"  Spain                                           .
+     "_pdbx_audit_support.country"  "Sri Lanka"                                     .
+     "_pdbx_audit_support.country"  Sudan                                           .
+     "_pdbx_audit_support.country"  Suriname                                        .
+     "_pdbx_audit_support.country"  "Svalbard And Jan Mayen"                        .
+     "_pdbx_audit_support.country"  Swaziland                                       .
+     "_pdbx_audit_support.country"  Sweden                                          .
+     "_pdbx_audit_support.country"  Switzerland                                     .
+     "_pdbx_audit_support.country"  "Syrian Arab Republic"                          .
+     "_pdbx_audit_support.country"  Taiwan                                          .
+     "_pdbx_audit_support.country"  Tajikistan                                      .
+     "_pdbx_audit_support.country"  "Tanzania, United Republic Of"                  .
+     "_pdbx_audit_support.country"  Thailand                                        .
+     "_pdbx_audit_support.country"  Timor-Leste                                     .
+     "_pdbx_audit_support.country"  Togo                                            .
+     "_pdbx_audit_support.country"  Tokelau                                         .
+     "_pdbx_audit_support.country"  Tonga                                           .
+     "_pdbx_audit_support.country"  "Trinidad And Tobago"                           .
+     "_pdbx_audit_support.country"  Tunisia                                         .
+     "_pdbx_audit_support.country"  Turkey                                          .
+     "_pdbx_audit_support.country"  Turkmenistan                                    .
+     "_pdbx_audit_support.country"  "Turks And Caicos Islands"                      .
+     "_pdbx_audit_support.country"  Tuvalu                                          .
+     "_pdbx_audit_support.country"  Uganda                                          .
+     "_pdbx_audit_support.country"  Ukraine                                         .
+     "_pdbx_audit_support.country"  "United Arab Emirates"                          .
+     "_pdbx_audit_support.country"  "United States Minor Outlying Islands"          .
+     "_pdbx_audit_support.country"  Uruguay                                         .
+     "_pdbx_audit_support.country"  Uzbekistan                                      .
+     "_pdbx_audit_support.country"  Vanuatu                                         .
+     "_pdbx_audit_support.country"  "Venezuela, Bolivarian Republic Of"             .
+     "_pdbx_audit_support.country"  "Viet Nam"                                      .
+     "_pdbx_audit_support.country"  "Virgin Islands, British"                       .
+     "_pdbx_audit_support.country"  "Virgin Islands, U.S."                          .
+     "_pdbx_audit_support.country"  "Wallis And Futuna"                             .
+     "_pdbx_audit_support.country"  "Western Sahara"                                .
+     "_pdbx_audit_support.country"  Yemen                                           .
+     "_pdbx_audit_support.country"  Zambia                                          .
+     "_pdbx_audit_support.country"  Zimbabwe                                        .
+   #
+     save_
+
+
+save__pdbx_audit_support.grant_number
+    _item_description.description
+;              The grant number associated with this source of support.
+;
+    _item.name                  '_pdbx_audit_support.grant_number'
+    _item.category_id             pdbx_audit_support
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+save__pdbx_audit_support.details
+    _item_description.description
+;              Additional details regarding the funding of this entry
+;
+    _item.name                   '_pdbx_audit_support.details'
+    _item.category_id             pdbx_audit_support
+    _item.mandatory_code          no
+    _item_type.code               line
+    _pdbx_item_context.type       WWPDB_LOCAL
+    _pdbx_item_context.item_name  '_pdbx_audit_support.details'
+     save_
+
+
+save__pdbx_audit_support.ordinal
+    _item_description.description
+;              A unique sequential integer identifier for each source of support for this entry.
+;
+    _item.name                  '_pdbx_audit_support.ordinal'
+    _item.category_id             pdbx_audit_support
+    _item.mandatory_code          yes
+    _item_type.code               int
+     loop_
+    _item_examples.case          1 2 3
+     save_

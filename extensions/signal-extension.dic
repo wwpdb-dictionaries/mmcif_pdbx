@@ -3,6 +3,24 @@
 # in defining a cut-off surface between observed and unobserved reflections
 #
 
+data_signal_extension.dic
+
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+reflns          2   reflns:software:2  . .
+
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+reflns                                   2  '_reflns.pdbx_signal_software_id'                     '_software.name'                            software
+
 #####################
 ## Category REFLNS ##
 #####################
