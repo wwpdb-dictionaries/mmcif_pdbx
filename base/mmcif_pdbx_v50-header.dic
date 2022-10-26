@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.361
+    _dictionary.version         5.362
 #
      loop_
     _dictionary_history.version
@@ -2642,4 +2642,18 @@ data_mmcif_pdbx.dic
     + Add cctbx.xfel.merge and STARGazer to _software.name enumeration
     + Add "DECTRIS EIGER2 R 4M" to _diffrn_detector.type
     + Expand range of _em_image_scans.sampling_size to 100.0
+;
+5.362  2022-10-25
+;
+    Changes (ep):
+    + Add _em_3d_fitting_list.accession_code,
+      _em_3d_fitting_list.source_name,
+      _em_3d_fitting_list.type
+    + Deprecate _em_3d_fitting.initiali_refinement_model_id
+    + Extend em_software.name list to include CryoDRGN and CryoDRGN2
+    + Add "DECTRIS EIGER2 X CdTe 9M" and "DECTRIS EIGER2 XE CdTe 9M"
+      to _diffrn_detector.type
+    + Extend _pdbx_audit_support.funding_organization enumeration
+    + Mark _pdbx_nmr_chem_shift_ref.atom_group and
+      _pdbx_nmr_constraint_file.constraint_type as closed enumeration
 ;

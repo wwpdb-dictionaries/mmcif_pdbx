@@ -2,6 +2,7 @@
 
 import pytest
 
+@pytest.mark.skip(reason="EMD namespace no longer maintained")
 def testDepUiEnums(dictionary):
     """Tests that EMD vs EM enumerations are in sync"""
     #            first                second             use_alt

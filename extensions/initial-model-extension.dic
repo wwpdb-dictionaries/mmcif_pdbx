@@ -5,21 +5,55 @@
 
 data_initial-model-extension.dic
 
-loop_
-_pdbx_item_linked_group.category_id
-_pdbx_item_linked_group.link_group_id
-_pdbx_item_linked_group.label
-_pdbx_item_linked_group.context
-_pdbx_item_linked_group.condition_id
-em_3d_fitting                       2 em_3d_fitting:pdbx_initial_refinement_model:1        . .
+_pdbx_dictionary_component.datablock_id   initial-model-extension.dic
+_pdbx_dictionary_component.dictionary_component_id   initial-model-extension.dic
+_pdbx_dictionary_component.title          "PDBx/mmCIF Initial model extension"
+_pdbx_dictionary_component.version        0.2
 
 loop_
-_pdbx_item_linked_group_list.child_category_id
-_pdbx_item_linked_group_list.link_group_id
-_pdbx_item_linked_group_list.child_name
-_pdbx_item_linked_group_list.parent_name
-_pdbx_item_linked_group_list.parent_category_id
-em_3d_fitting                       2 '_em_3d_fitting.initial_refinement_model_id'           '_pdbx_initial_refinement_model.id'  pdbx_initial_refinement_model
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+initial-model-extension.dic  0.1  2021-12-02
+;
+Changes (EP):
++ Initial version
+;
+initial-model-extension.dic  0.2  2022-10-25
+;
+Changes (EP):
++ Mark _em_3d_fitting.initial_refinement_model_id as deprecated
++ Remove context from pdbx_initial_refinement_model, _em_3d_fitting_list.chain_id,
+  _em_3d_fitting_list.chain_residue_range.
++ Add _em_3d_fitting_list.type, _em_3d_fitting_list.source_name, _em_3d_fitting_list.accession_code
+;
+
+loop_
+_item_type_list.code
+_item_type_list.primitive_code
+_item_type_list.construct
+_item_type_list.detail
+               entity_id_list     uchar
+               '[0-9]+(,[0-9]+)*'
+               "comma separated numeric codes (no spaces)  ..."
+
+
+# loop_
+# _pdbx_item_linked_group.category_id
+# _pdbx_item_linked_group.link_group_id
+# _pdbx_item_linked_group.label
+# _pdbx_item_linked_group.context
+# _pdbx_item_linked_group.condition_id
+# em_3d_fitting                       2 em_3d_fitting:pdbx_initial_refinement_model:1        . .
+
+# loop_
+# _pdbx_item_linked_group_list.child_category_id
+# _pdbx_item_linked_group_list.link_group_id
+# _pdbx_item_linked_group_list.child_name
+# _pdbx_item_linked_group_list.parent_name
+# _pdbx_item_linked_group_list.parent_category_id
+# em_3d_fitting                       2 '_em_3d_fitting.initial_refinement_model_id'           '_pdbx_initial_refinement_model.id'  pdbx_initial_refinement_model
 
 
 ###################################
@@ -53,8 +87,6 @@ save_pdbx_initial_refinement_model
        _pdbx_initial_refinement_model.accession_code   3LTQ
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    _pdbx_category_context.type         WWPDB_LOCAL
-    _pdbx_category_context.category_id  pdbx_initial_refinement_model
 
      save_
 
@@ -75,7 +107,7 @@ save__pdbx_initial_refinement_model.entity_id_list
     _item.name                  '_pdbx_initial_refinement_model.entity_id_list'
     _item.category_id             pdbx_initial_refinement_model
     _item.mandatory_code          no
-    _item_type.code               line
+    _item_type.code               entity_id_list
      save_
 
 
@@ -148,9 +180,9 @@ save__em_3d_fitting.initial_refinement_model_id
     _item.category_id               em_3d_fitting
     _item.mandatory_code            no
     _item_type.code                 int
-    _item_linked.child_name       '_em_3d_fitting.initial_refinement_model_id'
-    _item_linked.parent_name      '_pdbx_initial_refinement_model.id'
-    _pdbx_item_context.type       WWPDB_LOCAL
+    # _item_linked.child_name       '_em_3d_fitting.initial_refinement_model_id'
+    # _item_linked.parent_name      '_pdbx_initial_refinement_model.id'
+    _pdbx_item_context.type       WWPDB_DEPRECATED
     _pdbx_item_context.item_name  '_em_3d_fitting.initial_refinement_model_id'
     save_
 
@@ -168,8 +200,6 @@ structure have been used for fitting, this field can be left blank.
     _item.category_id              em_3d_fitting_list
     _item.mandatory_code           no
     _item_type.code                asym_id
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_em_3d_fitting_list.chain_id'
 
      save_
 
@@ -181,7 +211,52 @@ save__em_3d_fitting_list.chain_residue_range
     _item.category_id              em_3d_fitting_list
     _item.mandatory_code           no
     _item_type.code                int-range
-    _pdbx_item_context.type       WWPDB_LOCAL
-    _pdbx_item_context.item_name  '_em_3d_fitting_list.chain_residue_range'
 
+     save_
+
+save__em_3d_fitting_list.source_name
+    _item_description.description
+;              This item identifies the resource of initial model used for refinement
+;
+    _item.name                  '_em_3d_fitting_list.source_name'
+    _item.category_id             em_3d_fitting_list
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_enumeration.value
+                                   PDB
+                                   AlphaFold
+                                   RoseTTAFold
+				   ModelArchive
+                                   SwissModel
+                                   Modeller
+                                   ITasser
+                                   Other
+     save_
+
+save__em_3d_fitting_list.type
+    _item_description.description
+;              This item describes the type of the initial model was generated
+;
+    _item.name                  '_em_3d_fitting_list.type'
+    _item.category_id             em_3d_fitting_list
+    _item.mandatory_code          yes
+    _item_type.code               line
+     loop_
+    _item_enumeration.value
+                                  'in silico model'
+                                  'experimental model'
+                                  'integrative model'
+                                  other
+     save_
+
+save__em_3d_fitting_list.accession_code
+    _item_description.description
+;              This item identifies an accession code of the resource where the initial model
+               is used
+;
+    _item.name                  '_em_3d_fitting_list.accession_code'
+    _item.category_id             em_3d_fitting_list
+    _item.mandatory_code          no
+    _item_type.code               line
      save_

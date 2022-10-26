@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.4
+_pdbx_dictionary_component.version        0.5
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -41,6 +41,13 @@ mmcif_pdbx_audit_support-extension.dic  0.4  2022-10-18
 ;
 Changes (EP):
 + Version separated from core dictonary.  Many intermediate versions took place.
+;
+mmcif_pdbx_audit_support-extension.dic  0.5  2022-10-25
+;
+Changes (EP):
++ Add "Department of Education of the Basque Government", "Department of Science and Innovation, South Africa",
+  "Defense Advanced Research Projects Agency (DARPA)", "Weston Havens Foundation", "Jacob and Lena Joels Memorial Foundation, Hebrew University of Jerusalem",
+  "'Ministry of Education and Science of the Republic of Kazakhstan", "University of College London", "Bulgairan National Science Fund"
 ;
 
 ########################
@@ -140,6 +147,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Brazilian National Council for Scientific and Technological Development (CNPq)'                  Brazil
          '_pdbx_audit_support.funding_organization'  'British Heart Foundation'                                                                        'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Brookhaven National Laboratory (BNL)'                                                            'United States'
+         '_pdbx_audit_support.funding_organization'  'Bulgarian National Science Fund'                                                                 Bulgaria
          '_pdbx_audit_support.funding_organization'  'Burroughs Wellcome Fund'                                                                         'United States'
 	 '_pdbx_audit_support.funding_organization'  'Business Finland'                                                                                Finland
          '_pdbx_audit_support.funding_organization'  'CAMS Innovation Fund for Medical Sciences (CIFMS)'                                               'United Kingdom'
@@ -186,12 +194,15 @@ save__pdbx_audit_support.funding_organization
 
          '_pdbx_audit_support.funding_organization'  'David and Lucile Packard Foundation'                                                             'United States'
          '_pdbx_audit_support.funding_organization'  'Defence Science and Technology Laboratory (DSTL)'                                                'United Kingdom'
-         '_pdbx_audit_support.funding_organization'  'Defense Threat Reduction Agency (DTRA)'                                                          'United States'
+         '_pdbx_audit_support.funding_organization'  'Defense Advanced Research Projects Agency (DARPA)'                                               'United States'
+         '_pdbx_audit_support.funding_organization'  'Defense Threat Reduction Agency (DTRA)'                                                          'United States'	 
          '_pdbx_audit_support.funding_organization'  'Dementia Research Institute (DRI)'                                                               'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Department of Education of the Basque Government'                                                'Sri Lanka'
          '_pdbx_audit_support.funding_organization'  'Department of Defense (DOD, United States)'                                                      'United States'
          '_pdbx_audit_support.funding_organization'  'Department of Energy (DOE, United States)'                                                       'United States'
          '_pdbx_audit_support.funding_organization'  'Department of Biotechnology (DBT, India)'                                                        India
          '_pdbx_audit_support.funding_organization'  'Department of Health & Human Services (HHS)'                                                     'United States'
+         '_pdbx_audit_support.funding_organization'   'Department of Science and Innovation, South Africa'                                             'South Africa'
          '_pdbx_audit_support.funding_organization'  'Department of Science & Technology (DST, India)'                                                 India
          '_pdbx_audit_support.funding_organization'  'Department of Veterans Affairs (VA, United States)'                                              'United States'
          '_pdbx_audit_support.funding_organization'  'DOC Fellowship of the Austrian Academy of Sciences'                                              Austria
@@ -281,6 +292,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Italian Ministry of Health'                                                                      Italy
          '_pdbx_audit_support.funding_organization'  'Italian Medicines Agency'                                                                        Italy
          '_pdbx_audit_support.funding_organization'  'Italian National Research Council (CNR)'                                                         Italy
+         '_pdbx_audit_support.funding_organization'  'Jacob and Lena Joels Memorial Foundation, Hebrew University of Jerusalem'                         Israel
          '_pdbx_audit_support.funding_organization'  'Jack Ma Foundation'                                                                              China
          '_pdbx_audit_support.funding_organization'  'Jane and Aatos Erkko Foundation'                                                                 Finland
          '_pdbx_audit_support.funding_organization'  'Jane Coffin Childs (JCC) Fund'                                                                   'United States'
@@ -325,7 +337,8 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Ministry of Education (MoE, Czech Republic)'                                                     'Czech Republic'
          '_pdbx_audit_support.funding_organization'  'Ministry of Education (MoE, Korea)'                                                              'Korea, Republic Of'
          '_pdbx_audit_support.funding_organization'  'Ministry of Education (MoE, Singapore)'                                                          Singapore
-         '_pdbx_audit_support.funding_organization'  'Ministry of Education and Science of the Russian Federation'                                     'Russian Federation'
+         '_pdbx_audit_support.funding_organization'  'Ministry of Education and Science of the Republic of Kazakhstan'                                 Kazakhstan
+         '_pdbx_audit_support.funding_organization'  'Ministry of Education and Science of the Russian Federation'                                     'Russian Federation'	 
          '_pdbx_audit_support.funding_organization'  'Ministry of Education, Culture, Sports, Science and Technology (Japan)'                          Japan
          '_pdbx_audit_support.funding_organization'  'Ministry of Education, Youth and Sports of the Czech Republic'                                   'Czech Republic'
          '_pdbx_audit_support.funding_organization'  'Ministry of Human Capacities'                                                                    Hungary
@@ -495,6 +508,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Universite de Toulouse'                                                                          France
          '_pdbx_audit_support.funding_organization'  'University of Bologna'                                                                           Italy
          '_pdbx_audit_support.funding_organization'  'University of Cambridge'                                                                         'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'University of College London'                                                                    'United Kingdom'	 
          '_pdbx_audit_support.funding_organization'  'University of Helsinki'                                                                          Finland
          '_pdbx_audit_support.funding_organization'  'University of Helsinki Research Foundation'                                                      Finland
          '_pdbx_audit_support.funding_organization'  'University of Patras'                                                                            Greece
@@ -514,7 +528,8 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Welch Foundation'                                                                                'United States'
          '_pdbx_audit_support.funding_organization'  'Wellcome Trust'                                                                                  'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Wenner-Gren Foundation'                                                                          'United States'
-         '_pdbx_audit_support.funding_organization'  'Wolfson Foundation'                                                                              'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Weston Havens Foundation'                                                                        'United States'
+	 '_pdbx_audit_support.funding_organization'  'Wolfson Foundation'                                                                              'United Kingdom'
 	 '_pdbx_audit_support.funding_organization'  'World Health Organization (WHO)'                                                                 'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Worldwide Cancer Research'                                                                       'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Yousef Jameel Scholarship'                                                                       Egypt
