@@ -240,7 +240,7 @@ save__em_3d_fitting_list.type
 ;
     _item.name                  '_em_3d_fitting_list.type'
     _item.category_id             em_3d_fitting_list
-    _item.mandatory_code          yes
+    _item.mandatory_code          no  # Until data remediated
     _item_type.code               line
      loop_
     _item_enumeration.value
