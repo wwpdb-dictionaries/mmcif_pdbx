@@ -25,3 +25,4 @@ assembly-model-extension.dic     ../extensions/assembly-model-extension.dic     
 xfel2-extension.dic              ../extensions/xfel2-extension.dic              extend . .
 initial-model-extension.dic      ../extensions/initial-model-extension.dic      extend . .
 mmcif_pdbx_investigation.dic     ../extensions/investigation.dic                extend . .
+batch_extension.dic              ../extensions/batch-extension.dic              extend . .

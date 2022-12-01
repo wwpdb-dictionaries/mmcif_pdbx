@@ -1,0 +1,1014 @@
+####
+# These extensions are under development
+####
+
+data_batch_extension.dic
+
+
+#############################
+## DIFFRN_REFLN extensions ##
+#############################
+
+save__diffrn_refln.frame_id
+    _item_description.description
+;             Pointer to _diffrn_scan_frame.frame_id in the DIFFRN_SCAN_FRAME
+              category.
+;
+    _item.name                     '_diffrn_refln.frame_id'
+    _item.category_id              diffrn_refln
+    _item.mandatory_code           no
+    _item_type.code                code
+    _item_linked.child_name        '_diffrn_refln.frame_id'
+    _item_linked.parent_name       '_diffrn_scan_frame.frame_id'
+    
+     save_
+
+save__diffrn_refln.pdbx_batch_id
+    _item_description.description
+;              Pointer to _pdbx_diffrn_batch.id in the PDBX_DIFFRN_BATCH category.
+;
+    _item.name                     '_diffrn_refln.pdbx_batch_id'
+    _item.category_id              diffrn_refln
+    _item.mandatory_code           no
+    _item_type.code                code
+    _item_linked.child_name        '_diffrn_refln.pdbx_batch_id'
+    _item_linked.parent_name       '_pdbx_diffrn_batch.id'
+    
+     save_
+
+save__diffrn_refln.pdbx_detector_obs_fast
+    _item_description.description
+;              Detector coordinate (in pixels) along the direction of
+               the fast changing array index (of the 2D diffraction
+               data) as observed for this reflection. This is often
+               the position where the reflection centroid is observed.
+
+               The fast changing array index of the 2D diffraction
+               array is often also defined as the detector
+               X-coordinate, while the slow changing array index is
+               defined as the Y-coordinate. This can vary depending on
+               the convention of the detector and the facility,
+               especially for multi-panel detectors.              
+;
+    _item.name                     '_diffrn_refln.pdbx_detector_obs_fast'
+    _item.category_id              diffrn_refln
+    _item.mandatory_code           no
+    _item_dependent.dependent_name '_diffrn_refln.pdbx_detector_obs_slow'
+    _item_related.related_name     '_diffrn_refln.pdbx_detector_calc_fast'
+    _item_related.function_code    alternate
+    _item_type.code                float
+
+     save_
+
+save__diffrn_refln.pdbx_detector_obs_slow
+    _item_description.description
+;              Detector coordinate (in pixels) along the direction of
+               the slow changing array index (of the 2D diffraction
+               data) as observed for this reflection. This is often
+               the position where the reflection centroid is observed.
+
+               The slow changing array index of the 2D diffraction
+               array is often also defined as the detector
+               Y-coordinate, while the fast changing array index is
+               defined as the X-coordinate. This can vary depending on
+               the convention of the detector and the facility,
+               especially for multi-panel detectors.
+;
+    _item.name                     '_diffrn_refln.pdbx_detector_obs_slow'
+    _item.category_id              diffrn_refln
+    _item.mandatory_code           no
+    _item_dependent.dependent_name '_diffrn_refln.pdbx_detector_obs_fast'
+    _item_related.related_name     '_diffrn_refln.pdbx_detector_calc_slow'
+    _item_related.function_code    alternate
+    _item_type.code                float
+
+     save_
+
+save__diffrn_refln.pdbx_detector_calc_fast
+    _item_description.description
+;              Detector coordinate (in pixels) along the direction of
+               the fast changing array index (of the 2D diffraction
+               data) for this reflection. This is often the position
+               where the calculated reflection is predicted to occur.
+
+               The fast changing array index of the 2D diffraction
+               array is often also defined as the detector
+               X-coordinate, while the slow changing array index is
+               defined as the Y-coordinate. This can vary depending on
+               the convention of the detector and the facility,
+               especially for multi-panel detectors.
+;
+    _item.name                     '_diffrn_refln.pdbx_detector_calc_fast'
+    _item.category_id              diffrn_refln
+    _item.mandatory_code           no
+    _item_dependent.dependent_name '_diffrn_refln.pdbx_detector_calc_slow'
+    _item_related.related_name     '_diffrn_refln.pdbx_detector_obs_fast'
+    _item_related.function_code    alternate
+    _item_type.code                float
+
+     save_
+
+save__diffrn_refln.pdbx_detector_calc_slow
+    _item_description.description
+;              Detector coordinate (in pixels) along the direction of
+               the slow changing array index (of the 2D diffraction
+               data) for this reflection. This is often the position
+               where the calculated reflection is predicted to occur.
+
+               The slow changing array index of the 2D diffraction
+               array is often also defined as the detector
+               Y-coordinate, while the fast changing array index is
+               defined as the X-coordinate. This can vary depending on
+               the convention of the detector and the facility,
+               especially for multi-panel detectors.
+;
+    _item.name                     '_diffrn_refln.pdbx_detector_calc_slow'
+    _item.category_id              diffrn_refln
+    _item.mandatory_code           no
+    _item_dependent.dependent_name '_diffrn_refln.pdbx_detector_calc_fast'
+    _item_related.related_name     '_diffrn_refln.pdbx_detector_obs_slow'
+    _item_related.function_code    alternate
+    _item_type.code                float
+
+     save_
+
+save__diffrn_refln.pdbx_panel_mapping_id
+    _item_description.description
+;               Pointer to _pdbx_diffrn_detector_panel_mapping.id in the
+                PDBX_DIFFRN_DETECTOR_PANEL_MAPPING category
+;
+    _item.name                     '_diffrn_refln.pdbx_panel_mapping_id'
+    _item.category_id              diffrn_refln
+    _item.mandatory_code           no
+    _item_type.code                code
+    _item_linked.child_name        '_diffrn_refln.pdbx_panel_mapping_id'
+    _item_linked.parent_name       '_pdbx_diffrn_detector_panel_mapping.id'
+    
+     save_
+
+
+#######################
+## PDBX_DIFFRN_BATCH ##
+#######################
+
+save_pdbx_diffrn_batch
+    _category.description
+;              Data items in the PDBX_DIFFRN_BATCH category provide a
+               mechanism to describe common characteristics of a group of
+               reflections within the DIFFRN_REFLN category.
+
+               This grouping can be due to reflections occuring on the
+               same image, within the same lattice, on the same
+               detector panel or a combination of these.
+;
+    _category.id                  pdbx_diffrn_batch
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_diffrn_batch.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'diffrn_group'
+     save_
+
+save__pdbx_diffrn_batch.id
+    _item_description.description
+;              The value of _pdbx_diffrn_batch.id must uniquely identify the
+               information associated with reflections in the DIFFRN_REFLN
+               category.
+;
+    _item.name                  '_pdbx_diffrn_batch.id'
+    _item.category_id             pdbx_diffrn_batch
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_diffrn_batch.diffrn_id
+    _item_description.description
+;              This data item is a pointer to _diffrn.id in the DIFFRN
+               category.
+;
+    _item.name                  '_pdbx_diffrn_batch.diffrn_id'
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_diffrn_batch.diffrn_id'
+    _item_linked.parent_name    '_diffrn.id'
+     save_
+
+save__pdbx_diffrn_batch.cell_id
+    _item_description.description
+;              This data item is a pointer to _diffrn_cell.id in
+               the PDBX_DIFFRN_CELL category.
+;
+    _item.name                  '_pdbx_diffrn_batch.cell_id'
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_diffrn_batch.cell_id'
+    _item_linked.parent_name    '_pdbx_diffrn_cell.id'
+     save_
+
+save__pdbx_diffrn_batch.wavelength_id
+    _item_description.description
+;              This data item is a pointer to _diffrn_radiation_wavelength.id in
+               the DIFFRN_RADIATION_WAVELENGTH category.
+;
+    _item.name                  '_pdbx_diffrn_batch.wavelength_id'
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_diffrn_batch.wavelength_id'
+    _item_linked.parent_name    '_diffrn_radiation_wavelength.id'
+     save_
+
+save__pdbx_diffrn_batch.space_group_id
+    _item_description.description
+;              This data item is a pointer to _space_group.id in
+               the SPACE_GROUP category.
+;
+    _item.name                  '_pdbx_diffrn_batch.space_group_id'
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_diffrn_batch.space_group_id'
+    _item_linked.parent_name    '_space_group.id'
+     save_
+
+save__pdbx_diffrn_batch.detector_id
+    _item_description.description
+;              This data item is a pointer to _diffrn_detector.id in the
+               DIFFRN_DETECTOR category.
+;
+    _item.name                  '_pdbx_diffrn_batch.detector_id'
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_diffrn_batch.detector_id'
+    _item_linked.parent_name    '_diffrn_detector.id'
+     save_
+
+save__pdbx_diffrn_batch.orientation_id
+    _item_description.description
+;              This data item is a pointer to _pdbx_diffrn_orientation.id in the
+               PDBX_DIFFRN_ORIENTATION category.
+;
+    _item.name                  '_pdbx_diffrn_batch.orientation_id'
+    _item.mandatory_code          no
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_diffrn_batch.orientation_id'
+    _item_linked.parent_name    '_pdbx_diffrn_orientation.id'
+    
+     save_
+
+######################
+## PDBX_DIFFRN_CELL ##
+######################
+
+save_pdbx_diffrn_cell
+    _category.description
+;              Data items in the PDBX_DIFFRN_CELL category record details about
+               a particular set of unit cell parameters.
+;
+    _category.id                  pdbx_diffrn_cell
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_diffrn_cell.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'diffrn_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - based on 6W01.
+;
+;
+    loop_
+    _pdbx_diffrn_cell.id
+    _pdbx_diffrn_cell.length_a
+    _pdbx_diffrn_cell.length_a_esd
+    _pdbx_diffrn_cell.length_b
+    _pdbx_diffrn_cell.length_b_esd
+    _pdbx_diffrn_cell.length_c
+    _pdbx_diffrn_cell.length_c_esd
+    _pdbx_diffrn_cell.angle_alpha
+    _pdbx_diffrn_cell.angle_alpha_esd
+    _pdbx_diffrn_cell.angle_beta
+    _pdbx_diffrn_cell.angle_beta_esd
+    _pdbx_diffrn_cell.angle_gamma
+    _pdbx_diffrn_cell.angle_gamma_esd
+    1 150.672 0.042 150.672 0.042 111.477 0.160 90.00 0.0 90.00 0.0 120.00 0.0
+    2 150.607 0.068 150.607 0.068 111.465 0.061 90.00 0.0 90.00 0.0 120.00 0.0
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_diffrn_cell.id
+    _item_description.description
+;              The value of _pdbx_diffrn_cell.id must uniquely identify the
+               information associated with cell in the PDBX_DIFFRN_CELL
+               category.
+;
+    _item.name                  '_pdbx_diffrn_cell.id'
+    _item.category_id             pdbx_diffrn_cell
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_diffrn_cell.angle_alpha
+    _item_description.description
+;              Unit-cell angle alpha in degrees.
+;
+    _item.name                  '_pdbx_diffrn_cell.angle_alpha'
+    _item.category_id             pdbx_diffrn_cell
+    _item.mandatory_code          no
+    _item_default.value           90.0
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_cell.angle_beta'
+                                '_pdbx_diffrn_cell.angle_gamma'
+    loop_
+    _item_range.maximum
+    _item_range.minimum           180.0   180.0
+                                  180.0     0.0
+                                    0.0     0.0
+    _item_related.related_name  '_pdbx_diffrn_cell.angle_alpha_esd'
+    _item_related.function_code   associated_esd
+    _item_sub_category.id         cell_angle
+    _item_type.code               float
+    _item_type_conditions.code    esd
+    _item_units.code              degrees
+     save_
+
+save__pdbx_diffrn_cell.angle_alpha_esd
+    _item_description.description
+;              The standard uncertainty (estimated standard deviation)
+               of _pdbx_diffrn_cell.angle_alpha.
+;
+    _item.name                  '_pdbx_diffrn_cell.angle_alpha_esd'
+    _item.category_id             pdbx_diffrn_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_cell.angle_beta_esd'
+                                '_pdbx_diffrn_cell.angle_gamma_esd'
+    _item_related.related_name  '_pdbx_diffrn_cell.angle_alpha'
+    _item_related.function_code   associated_value
+    _item_sub_category.id         cell_angle_esd
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__pdbx_diffrn_cell.angle_beta
+    _item_description.description
+;              Unit-cell angle beta in degrees.
+;
+    _item.name                  '_pdbx_diffrn_cell.angle_beta'
+    _item.category_id             pdbx_diffrn_cell
+    _item.mandatory_code          no
+    _item_default.value           90.0
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_cell.angle_alpha'
+                                '_pdbx_diffrn_cell.angle_gamma'
+    loop_
+    _item_range.maximum
+    _item_range.minimum           180.0   180.0
+                                  180.0     0.0
+                                    0.0     0.0
+    _item_related.related_name  '_pdbx_diffrn_cell.angle_beta_esd'
+    _item_related.function_code   associated_esd
+    _item_sub_category.id         cell_angle
+    _item_type.code               float
+    _item_type_conditions.code    esd
+    _item_units.code              degrees
+     save_
+
+save__pdbx_diffrn_cell.angle_beta_esd
+    _item_description.description
+;              The standard uncertainty (estimated standard deviation)
+               of _pdbx_diffrn_cell.angle_beta.
+;
+    _item.name                  '_pdbx_diffrn_cell.angle_beta_esd'
+    _item.category_id             pdbx_diffrn_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_cell.angle_alpha_esd'
+                                '_pdbx_diffrn_cell.angle_gamma_esd'
+    _item_related.related_name  '_pdbx_diffrn_cell.angle_beta'
+    _item_related.function_code   associated_value
+    _item_sub_category.id         cell_angle_esd
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__pdbx_diffrn_cell.angle_gamma
+    _item_description.description
+;              Unit-cell angle gamma in degrees.
+;
+    _item.name                  '_pdbx_diffrn_cell.angle_gamma'
+    _item.category_id             pdbx_diffrn_cell
+    _item.mandatory_code          no
+    _item_default.value           90.0
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_cell.angle_alpha'
+                                '_pdbx_diffrn_cell.angle_beta'
+    loop_
+    _item_range.maximum
+    _item_range.minimum           180.0   180.0
+                                  180.0     0.0
+                                    0.0     0.0
+    _item_related.related_name  '_pdbx_diffrn_cell.angle_gamma_esd'
+    _item_related.function_code   associated_esd
+    _item_sub_category.id         cell_angle
+    _item_type.code               float
+    _item_type_conditions.code    esd
+    _item_units.code              degrees
+     save_
+
+save__pdbx_diffrn_cell.angle_gamma_esd
+    _item_description.description
+;              The standard uncertainty (estimated standard deviation)
+               of _pdbx_diffrn_cell.angle_gamma.
+;
+    _item.name                  '_pdbx_diffrn_cell.angle_gamma_esd'
+    _item.category_id             pdbx_diffrn_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_cell.angle_alpha_esd'
+                                '_pdbx_diffrn_cell.angle_beta_esd'
+    _item_related.related_name  '_pdbx_diffrn_cell.angle_gamma'
+    _item_related.function_code   associated_value
+    _item_sub_category.id         cell_angle_esd
+    _item_type.code               float
+    _item_units.code              degrees
+     save_
+
+save__pdbx_diffrn_cell.length_a
+    _item_description.description
+;             Unit-cell length a in angstroms.
+;
+    _item.name                  '_pdbx_diffrn_cell.length_a'
+    _item.category_id             pdbx_diffrn_cell
+    _item.mandatory_code          yes
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_cell.length_b'
+                                '_pdbx_diffrn_cell.length_c'
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_related.related_name  '_pdbx_diffrn_cell.length_a_esd'
+    _item_related.function_code   associated_esd
+    _item_sub_category.id         cell_length
+    _item_type.code               float
+    _item_type_conditions.code    esd
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_cell.length_a_esd
+    _item_description.description
+;              The standard uncertainty (estimated standard deviation)
+               of _pdbx_diffrn_cell.length_a.
+;
+    _item.name                  '_pdbx_diffrn_cell.length_a_esd'
+    _item.category_id             pdbx_diffrn_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_cell.length_b_esd'
+                                '_pdbx_diffrn_cell.length_c_esd'
+    _item_related.related_name  '_pdbx_diffrn_cell.length_a'
+    _item_related.function_code   associated_value
+    _item_sub_category.id         cell_length_esd
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_cell.length_b
+    _item_description.description
+;              Unit-cell length b in angstroms.
+;
+    _item.name                  '_pdbx_diffrn_cell.length_b'
+    _item.category_id             pdbx_diffrn_cell
+    _item.mandatory_code          yes
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_cell.length_a'
+                                '_pdbx_diffrn_cell.length_c'
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_related.related_name  '_pdbx_diffrn_cell.length_b_esd'
+    _item_related.function_code   associated_esd
+    _item_sub_category.id         cell_length
+    _item_type.code               float
+    _item_type_conditions.code    esd
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_cell.length_b_esd
+    _item_description.description
+;              The standard uncertainty (estimated standard deviation)
+               of _pdbx_diffrn_cell.length_b.
+;
+    _item.name                  '_pdbx_diffrn_cell.length_b_esd'
+    _item.category_id             pdbx_diffrn_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_cell.length_a_esd'
+                                '_pdbx_diffrn_cell.length_c_esd'
+    _item_related.related_name  '_pdbx_diffrn_cell.length_b'
+    _item_related.function_code   associated_value
+    _item_sub_category.id         cell_length_esd
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_cell.length_c
+    _item_description.description
+;              Unit-cell length c in angstroms.
+;
+    _item.name                  '_pdbx_diffrn_cell.length_c'
+    _item.category_id             pdbx_diffrn_cell
+    _item.mandatory_code          yes
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_cell.length_a'
+                                '_pdbx_diffrn_cell.length_b'
+    loop_
+    _item_range.maximum
+    _item_range.minimum            .    0.0
+                                  0.0   0.0
+    _item_related.related_name  '_pdbx_diffrn_cell.length_c_esd'
+    _item_related.function_code   associated_esd
+    _item_sub_category.id         cell_length
+    _item_type.code               float
+    _item_type_conditions.code    esd
+    _item_units.code              angstroms
+     save_
+
+save__pdbx_diffrn_cell.length_c_esd
+    _item_description.description
+;              The standard uncertainty (estimated standard deviation)
+               of _pdbx_diffrn_cell.length_c.
+;
+    _item.name                  '_pdbx_diffrn_cell.length_c_esd'
+    _item.category_id             pdbx_diffrn_cell
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_cell.length_a_esd'
+                                '_pdbx_diffrn_cell.length_b_esd'
+    _item_related.related_name  '_pdbx_diffrn_cell.length_c'
+    _item_related.function_code   associated_value
+    _item_sub_category.id         cell_length_esd
+    _item_type.code               float
+    _item_units.code              angstroms
+     save_
+
+#############################
+## PDBX_DIFFRN_ORIENTATION ##
+#############################
+
+save_pdbx_diffrn_orientation
+    _category.description
+;              Data items in the PDBX_DIFFRN_ORIENTATION category record details about
+               a particular crystal orientation.
+;
+    _category.id                  pdbx_diffrn_orientation
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_diffrn_orientation.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'diffrn_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - based on 6W01.
+;
+;
+    loop_
+    _pdbx_diffrn_orientation.id
+    _pdbx_diffrn_orientation.matrix[1][1]
+    _pdbx_diffrn_orientation.matrix[1][2]
+    _pdbx_diffrn_orientation.matrix[1][3]
+    _pdbx_diffrn_orientation.matrix[2][1]
+    _pdbx_diffrn_orientation.matrix[2][2]
+    _pdbx_diffrn_orientation.matrix[2][3]
+    _pdbx_diffrn_orientation.matrix[3][1]
+    _pdbx_diffrn_orientation.matrix[3][2]
+    _pdbx_diffrn_orientation.matrix[3][3]
+    _pdbx_diffrn_orientation.type
+    1 69.373940 -130.908295 27.435501 79.867874 119.642296 -44.824940 14.660122 30.056683 106.345345 'Unit cell axis directions'
+    2 0.04013 -0.296 0.9543 -0.5429 0.7953 0.2695 -0.8388 -0.529 -0.1288 'U matrix'
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_diffrn_orientation.id
+    _item_description.description
+;              The value of _pdbx_diffrn_orientation.id must uniquely identify the
+               orientation information associated with reflections in the DIFFRN_REFLN
+               category.
+;
+    _item.name                  '_pdbx_diffrn_orientation.id'
+    _item.category_id             pdbx_diffrn_orientation
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_diffrn_orientation.matrix[1][1]
+    _item_description.description
+;              The [1][1] element of the 3x3 matrix that defines the
+               orientation of the reciprocal cell with respect to the
+               local right-handed coordinate system. See also
+               _pdbx_diffrn_orientation.type.
+;
+    _item.name                  '_pdbx_diffrn_orientation.matrix[1][1]'
+    _item.category_id             pdbx_diffrn_orientation
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_orientation.matrix[1][2]'
+                                '_pdbx_diffrn_orientation.matrix[1][3]'
+                                '_pdbx_diffrn_orientation.matrix[2][1]'
+                                '_pdbx_diffrn_orientation.matrix[2][2]'
+                                '_pdbx_diffrn_orientation.matrix[2][3]'
+                                '_pdbx_diffrn_orientation.matrix[3][1]'
+                                '_pdbx_diffrn_orientation.matrix[3][2]'
+                                '_pdbx_diffrn_orientation.matrix[3][3]'
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_orientation.matrix[1][2]
+    _item_description.description
+;              The [1][2] element of the 3x3 matrix that defines the
+               orientation of the reciprocal cell with respect to the
+               local right-handed coordinate system. See also
+               _pdbx_diffrn_orientation.type.
+;
+    _item.name                  '_pdbx_diffrn_orientation.matrix[1][2]'
+    _item.category_id             pdbx_diffrn_orientation
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_orientation.matrix[1][1]'
+                                '_pdbx_diffrn_orientation.matrix[1][3]'
+                                '_pdbx_diffrn_orientation.matrix[2][1]'
+                                '_pdbx_diffrn_orientation.matrix[2][2]'
+                                '_pdbx_diffrn_orientation.matrix[2][3]'
+                                '_pdbx_diffrn_orientation.matrix[3][1]'
+                                '_pdbx_diffrn_orientation.matrix[3][2]'
+                                '_pdbx_diffrn_orientation.matrix[3][3]'
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_orientation.matrix[1][3]
+    _item_description.description
+;              The [1][3] element of the 3x3 matrix that defines the
+               orientation of the reciprocal cell with respect to the
+               local right-handed coordinate system. See also
+               _pdbx_diffrn_orientation.type.
+;
+    _item.name                  '_pdbx_diffrn_orientation.matrix[1][3]'
+    _item.category_id             pdbx_diffrn_orientation
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_orientation.matrix[1][1]'
+                                '_pdbx_diffrn_orientation.matrix[1][2]'
+                                '_pdbx_diffrn_orientation.matrix[2][1]'
+                                '_pdbx_diffrn_orientation.matrix[2][2]'
+                                '_pdbx_diffrn_orientation.matrix[2][3]'
+                                '_pdbx_diffrn_orientation.matrix[3][1]'
+                                '_pdbx_diffrn_orientation.matrix[3][2]'
+                                '_pdbx_diffrn_orientation.matrix[3][3]'
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_orientation.matrix[2][1]
+    _item_description.description
+;              The [2][1] element of the 3x3 matrix that defines the
+               orientation of the reciprocal cell with respect to the
+               local right-handed coordinate system. See also
+               _pdbx_diffrn_orientation.type.
+;
+    _item.name                  '_pdbx_diffrn_orientation.matrix[2][1]'
+    _item.category_id             pdbx_diffrn_orientation
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_orientation.matrix[1][1]'
+                                '_pdbx_diffrn_orientation.matrix[1][2]'
+                                '_pdbx_diffrn_orientation.matrix[1][3]'
+                                '_pdbx_diffrn_orientation.matrix[2][2]'
+                                '_pdbx_diffrn_orientation.matrix[2][3]'
+                                '_pdbx_diffrn_orientation.matrix[3][1]'
+                                '_pdbx_diffrn_orientation.matrix[3][2]'
+                                '_pdbx_diffrn_orientation.matrix[3][3]'
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_orientation.matrix[2][2]
+    _item_description.description
+;              The [2][2] element of the 3x3 matrix that defines the
+               orientation of the reciprocal cell with respect to the
+               local right-handed coordinate system. See also
+               _pdbx_diffrn_orientation.type.
+;
+    _item.name                  '_pdbx_diffrn_orientation.matrix[2][2]'
+    _item.category_id             pdbx_diffrn_orientation
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_orientation.matrix[1][1]'
+                                '_pdbx_diffrn_orientation.matrix[1][2]'
+                                '_pdbx_diffrn_orientation.matrix[1][3]'
+                                '_pdbx_diffrn_orientation.matrix[2][1]'
+                                '_pdbx_diffrn_orientation.matrix[2][3]'
+                                '_pdbx_diffrn_orientation.matrix[3][1]'
+                                '_pdbx_diffrn_orientation.matrix[3][2]'
+                                '_pdbx_diffrn_orientation.matrix[3][3]'
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_orientation.matrix[2][3]
+    _item_description.description
+;              The [2][3] element of the 3x3 matrix that defines the
+               orientation of the reciprocal cell with respect to the
+               local right-handed coordinate system. See also
+               _pdbx_diffrn_orientation.type.
+;
+    _item.name                  '_pdbx_diffrn_orientation.matrix[2][3]'
+    _item.category_id             pdbx_diffrn_orientation
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_orientation.matrix[1][1]'
+                                '_pdbx_diffrn_orientation.matrix[1][2]'
+                                '_pdbx_diffrn_orientation.matrix[1][3]'
+                                '_pdbx_diffrn_orientation.matrix[2][1]'
+                                '_pdbx_diffrn_orientation.matrix[2][2]'
+                                '_pdbx_diffrn_orientation.matrix[3][1]'
+                                '_pdbx_diffrn_orientation.matrix[3][2]'
+                                '_pdbx_diffrn_orientation.matrix[3][3]'
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_orientation.matrix[3][1]
+    _item_description.description
+;              The [3][1] element of the 3x3 matrix that defines the
+               orientation of the reciprocal cell with respect to the
+               local right-handed coordinate system. See also
+               _pdbx_diffrn_orientation.type.
+;
+    _item.name                  '_pdbx_diffrn_orientation.matrix[3][1]'
+    _item.category_id             pdbx_diffrn_orientation
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_orientation.matrix[1][1]'
+                                '_pdbx_diffrn_orientation.matrix[1][2]'
+                                '_pdbx_diffrn_orientation.matrix[1][3]'
+                                '_pdbx_diffrn_orientation.matrix[2][1]'
+                                '_pdbx_diffrn_orientation.matrix[2][2]'
+                                '_pdbx_diffrn_orientation.matrix[2][3]'
+                                '_pdbx_diffrn_orientation.matrix[3][2]'
+                                '_pdbx_diffrn_orientation.matrix[3][3]'
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_orientation.matrix[3][2]
+    _item_description.description
+;              The [3][2] element of the 3x3 matrix that defines the
+               orientation of the reciprocal cell with respect to the
+               local right-handed coordinate system. See also
+               _pdbx_diffrn_orientation.type.
+;
+    _item.name                  '_pdbx_diffrn_orientation.matrix[3][2]'
+    _item.category_id             pdbx_diffrn_orientation
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_orientation.matrix[1][1]'
+                                '_pdbx_diffrn_orientation.matrix[1][2]'
+                                '_pdbx_diffrn_orientation.matrix[1][3]'
+                                '_pdbx_diffrn_orientation.matrix[2][1]'
+                                '_pdbx_diffrn_orientation.matrix[2][2]'
+                                '_pdbx_diffrn_orientation.matrix[2][3]'
+                                '_pdbx_diffrn_orientation.matrix[3][1]'
+                                '_pdbx_diffrn_orientation.matrix[3][3]'
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+
+save__pdbx_diffrn_orientation.matrix[3][3]
+    _item_description.description
+;              The [3][3] element of the 3x3 matrix that defines the
+               orientation of the reciprocal cell with respect to the
+               local right-handed coordinate system. See also
+               _pdbx_diffrn_orientation.type.
+;
+    _item.name                  '_pdbx_diffrn_orientation.matrix[3][3]'
+    _item.category_id             pdbx_diffrn_orientation
+    _item.mandatory_code          no
+    loop_
+    _item_dependent.dependent_name
+                                '_pdbx_diffrn_orientation.matrix[1][1]'
+                                '_pdbx_diffrn_orientation.matrix[1][2]'
+                                '_pdbx_diffrn_orientation.matrix[1][3]'
+                                '_pdbx_diffrn_orientation.matrix[2][1]'
+                                '_pdbx_diffrn_orientation.matrix[2][2]'
+                                '_pdbx_diffrn_orientation.matrix[2][3]'
+                                '_pdbx_diffrn_orientation.matrix[3][1]'
+                                '_pdbx_diffrn_orientation.matrix[3][2]'
+    _item_sub_category.id         matrix
+    _item_type.code               float
+     save_
+     
+save__pdbx_diffrn_orientation.type
+    _item_description.description
+;              A description of the orientation matrix type and how it should
+               be applied to define the orientation of the crystal with respect
+               to the local right-handed coordinate system.
+;
+    _item.name                  '_pdbx_diffrn_orientation.type'
+    _item.category_id             pdbx_diffrn_orientation
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+          'U matrix'                  'U matrix'
+          'UB matrix'                 'UB matrix'
+          'Real-space unit cell axis directions' 'Laboratory coordinates of the real-space unit cell a ([1][1-3]), b ([2][1-3]) and c ([3][1-3]) axes of the unrotated crystal (at datum position of the spindle axis)'
+      save_
+
+############################
+## PDBX_DIFFRN_BATCH_SCAN ##
+############################
+
+save_pdbx_diffrn_batch_scan
+    _category.description
+;              Data items in the PDBX_DIFFRN_BATCH_SCAN category provide a
+               mechanism to associate derived quantities
+               (PDBX_DIFFRACTION_BATCH category) with experimental
+               information about scans within the DIFFRN_SCAN
+               category.
+;
+    _category.id                  pdbx_diffrn_batch_scan
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_diffrn_batch_scan.batch_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'diffrn_group'
+     save_
+
+save__pdbx_diffrn_batch_scan.batch_id
+    _item_description.description
+;              The value of _pdbx_diffrn_batch_scan.batch_id must
+               uniquely identify the association between the derived
+               quantities (PDBX_DIFFRN_BATCH category) and
+               experimental scan information (DIFFRN_SCAN category).
+
+               This is a pointer into the PDBX_DIFFRN_BATCH category
+               (pdbx_diffrn_batch.id item).               
+;
+    _item.name                  '_pdbx_diffrn_batch_scan.batch_id'
+    _item.category_id             pdbx_diffrn_batch_scan
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_diffrn_batch_scan.scan_id
+    _item_description.description
+;              The value of _pdbx_diffrn_batch_scan.scan_id is a
+               pointer to diffrn_scan.id in the experimental scan
+               information (DIFFRN_SCAN category).
+;
+    _item.name                  '_pdbx_diffrn_batch_scan.scan_id'
+    _item.category_id             pdbx_diffrn_batch_scan
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+########################################
+## PDBX_DIFFRN_DETECTOR_PANEL_MAPPING ##
+########################################
+
+save_pdbx_diffrn_detector_panel_mapping
+    _category.description
+;              Data items in the PDBX_DIFFRN_DETECTOR_PANEL_MAPPING category provide
+               a mechanism to associate detector panel information with an actual
+               detector.
+;
+    _category.id                  pdbx_diffrn_detector_panel_mapping
+    _category.mandatory_code      no
+    _category_key.name          '_pdbx_diffrn_detector_panel_mapping.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'diffrn_group'
+     save_
+
+save__pdbx_diffrn_detector_panel_mapping.id
+    _item_description.description
+;              The value of _pdbx_diffrn_detector_panel_mapping.id must uniquely identify the
+               information associated with panels and detectors in the X, Y and Z
+               categories.
+;
+    _item.name                  '_pdbx_diffrn_detector_panel_mapping.id'
+    _item.category_id             pdbx_diffrn_detector_panel_mapping
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_diffrn_detector_panel_mapping.detector_id
+    _item_description.description
+;              This data item is a pointer to _diffrn_detector.id in
+               the DIFFRN_DETECTOR category.
+;
+    _item.name                  '_pdbx_diffrn_detector_panel_mapping.detector_id'
+    _item.category_id             pdbx_diffrn_detector_panel_mapping
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_pdbx_diffrn_detector_panel_mapping.detector_id'
+    _item_linked.parent_name      '_diffrn_detector.id'
+
+     save_
+
+save__pdbx_diffrn_detector_panel_mapping.array_id
+    _item_description.description
+;              This item is a pointer to _array_structure.id in the
+               ARRAY_STRUCTURE category.
+;
+    _item.name                  '_pdbx_diffrn_detector_panel_mapping.array_id'
+    _item.category_id             pdbx_diffrn_detector_panel_mapping
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_pdbx_diffrn_detector_panel_mapping.array_id'
+    _item_linked.parent_name      '_array_structure.id'
+
+     save_
+
+save__pdbx_diffrn_detector_panel_mapping.array_section_id
+    _item_description.description
+;              This item is a pointer to _array_structure_list_section.id in the
+               ARRAY_STRUCTURE_LIST_SECTION category.
+;
+    _item.name                  '_pdbx_diffrn_detector_panel_mapping.array_section_id'
+    _item.category_id             pdbx_diffrn_detector_panel_mapping
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_pdbx_diffrn_detector_panel_mapping.array_section_id'
+    _item_linked.parent_name      '_array_structure_list_section.id'
+
+     save_
+
+#### Links
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+diffrn_refln                         6  diffrn_refln:diffrn_scan_frame:6                              . .
+diffrn_refln                         7  diffrn_refln:pdbx_diffrn_batch:7                              . .
+diffrn_refln                         8  diffrn_refln:pdbx_diffrn_detector_panel_mapping:8              . .
+pdbx_diffrn_batch                    1  pdbx_diffrn_batch:diffrn:1                                    . .
+pdbx_diffrn_batch                    2  pdbx_diffrn_batch:pdbx_diffrn_cell:2                          . .
+pdbx_diffrn_batch                    3  pdbx_diffrn_batch:diffrn_radiation_wavelength:3               . .
+pdbx_diffrn_batch                    4  pdbx_diffrn_batch:space_group:4                               . .
+pdbx_diffrn_batch                    5  pdbx_diffrn_batch:diffrn_detector:5                           . .
+pdbx_diffrn_batch                    6  pdbx_diffrn_batch:pdbx_diffrn_orientation:6                   . .
+pdbx_diffrn_detector_panel_mapping   1  pdbx_diffrn_detector_panel_mapping:diffrn_detector:1          . .
+pdbx_diffrn_detector_panel_mapping   2  pdbx_diffrn_detector_panel_mapping:array_structure:2          . .
+pdbx_diffrn_detector_panel_mapping   2  pdbx_diffrn_detector_panel_mapping:array_structure_list:3     . .
+
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+diffrn_refln                             6  '_diffrn_refln.frame_id'                                '_diffrn_scan_frame.frame_id'              diffrn_scan_frame
+diffrn_refln                             7  '_diffrn_refln.pdbx_batch_id'                           '_pdbx_diffrn_batch.id'                    pdbx_diffrn_batch
+diffrn_refln                             8  '_diffrn_refln.pdbx_panel_mapping_id'                   '_pdbx_diffrn_detector_panel_mapping.id'   pdbx_diffrn_detector_panel_mapping
+pdbx_diffrn_batch                        1  '_pdbx_diffrn_batch.diffrn_id'                          '_diffrn.id'                               diffrn
+pdbx_diffrn_batch                        2  '_pdbx_diffrn_batch.cell_id'                            '_pdbx_diffrn_cell.id'                     pdbx_diffrn_cell
+pdbx_diffrn_batch                        3  '_pdbx_diffrn_batch.wavelength_id'                      '_diffrn_radiation_wavelength.id'          diffrn_radiation_wavelength
+pdbx_diffrn_batch                        4  '_pdbx_diffrn_batch.space_group_id'                     '_space_group.id'                          space_group
+pdbx_diffrn_batch                        5  '_pdbx_diffrn_batch.detector_id'                        '_diffrn_detector.id'                      diffrn_detector
+pdbx_diffrn_batch                        6  '_pdbx_diffrn_batch.orientation_id'                     '_pdbx_diffrn_orientation.id'              pdbx_diffrn_orientation
+pdbx_diffrn_detector_panel_mapping       1  '_pdbx_diffrn_detector_panel_mapping.detector_id'       '_diffrn_detector.id'                      diffrn_detector
+pdbx_diffrn_detector_panel_mapping       2  '_pdbx_diffrn_detector_panel_mapping.array_id'          '_array_structure.id'                      array_structure
+pdbx_diffrn_detector_panel_mapping       3  '_pdbx_diffrn_detector_panel_mapping.array_section_id'  '_array_structure_list_section.id'         array_structure_list_section
