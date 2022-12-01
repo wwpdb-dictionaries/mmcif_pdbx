@@ -1,0 +1,4054 @@
+# Partial pulling in of ImgCIF dictionary 1.8.6
+
+data_cif_img.dic
+
+###############
+# DIFFRN_SCAN #
+###############
+
+save_diffrn_scan
+    _category.description
+;   Data items in the DIFFRN_SCAN  category describe the parameters of one
+    or more scans, relating axis positions to frames.
+;
+    _category.id                   diffrn_scan
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+
+     loop_
+    _category_key.name            '_diffrn_scan.id'
+#                                  '_diffrn_scan.variant'
+     loop_
+    _category_group.id            'inclusive_group'
+                                  'diffrn_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;   Example 1. derived from a suggestion by R. M. Sweet.
+
+   The vector of each axis is not given here, because it is provided in
+   the AXIS category.  By making _diffrn_scan_axis.scan_id and
+   _diffrn_scan_axis.axis_id keys of the DIFFRN_SCAN_AXIS category,
+   an arbitrary number of scanning and fixed axes can be specified for a
+   scan.  In this example, three rotation axes and one translation axis
+   at nonzero values are specified, with one axis stepping.  There is no
+   reason why more axes could not have been specified to step. Range
+   information has been specified, but note that it can be calculated from
+   the  number of frames and the increment, so the data item
+   _diffrn_scan_axis.angle_range  could be dropped.
+
+   Both the sweep data and the data for a single frame are specified.
+
+   Note that the information on how the axes are stepped is given twice,
+   once in terms of the overall averages in the value of
+   _diffrn_scan.integration_time and the values for DIFFRN_SCAN_AXIS,
+   and precisely for the given frame in the value for
+   _diffrn_scan_frame.integration_time  and the values for
+   DIFFRN_SCAN_FRAME_AXIS .  If dose-related adjustments are made to
+   scan times and nonlinear stepping is done, these values may differ.
+   Therefore, in interpreting the data for a particular frame it is
+   important to use the frame-specific data.
+
+   There are three date/times in this set: *.date_start and
+   *. date_end_estimated, both of which are mandatory, because the former
+   is data which can be logged at the start of collection and the latter
+   is data that can be estimated at the same time, and *.date_end which
+   can only be logged exactly if the data collection completes normally.
+;
+;
+      _diffrn_scan.id                    1
+      _diffrn_scan.date_start          '2001-11-18T03:26:42'
+      _diffrn_scan.date_end_estimated  '2001-11-18T03:36:45'
+      _diffrn_scan.date_end            '2001-11-18T03:36:45'
+      _diffrn_scan.integration_time     3.0
+      _diffrn_scan.frame_id_start       mad_L2_000
+      _diffrn_scan.frame_id_end         mad_L2_200
+      _diffrn_scan.frames               201
+
+     loop_
+      _diffrn_scan_axis.scan_id
+      _diffrn_scan_axis.axis_id
+      _diffrn_scan_axis.angle_start
+      _diffrn_scan_axis.angle_range
+      _diffrn_scan_axis.angle_increment
+      _diffrn_scan_axis.displacement_start
+      _diffrn_scan_axis.displacement_range
+      _diffrn_scan_axis.displacement_increment
+
+       1 omega 200.0 20.0 0.1 . . .
+       1 kappa -40.0  0.0 0.0 . . .
+       1 phi   127.5  0.0 0.0 . . .
+       1 tranz  . . .   2.3 0.0 0.0
+
+      _diffrn_scan_frame.scan_id                    1
+      _diffrn_scan_frame.date                '2001-11-18T03:27:33'
+      _diffrn_scan_frame.integration_time     3.0
+      _diffrn_scan_frame.frame_id             mad_L2_018
+      _diffrn_scan_frame.frame_number         18
+
+     loop_
+      _diffrn_scan_frame_axis.frame_id
+      _diffrn_scan_frame_axis.axis_id
+      _diffrn_scan_frame_axis.angle
+      _diffrn_scan_frame_axis.angle_increment
+      _diffrn_scan_frame_axis.displacement
+      _diffrn_scan_frame_axis.displacement_increment
+
+       mad_L2_018 omega 201.8  0.1 ..
+       mad_L2_018 kappa -40.0  0.0 ..
+       mad_L2_018 phi   127.5  0.0 ..
+       mad_L2_018 tranz  .     .  2.3 0.0
+;
+
+       save_
+
+
+save__diffrn_scan.id
+    _item_description.description
+;             The value of _diffrn_scan.id  uniquely identifies each
+              scan.  The identifier is used to tie together all the
+              information about the scan.
+;
+     loop_
+    _item.name
+    _item.category_id
+    _item.mandatory_code
+       '_diffrn_scan.id'                 diffrn_scan             yes
+       '_diffrn_scan_axis.scan_id'       diffrn_scan_axis        yes
+#       '_diffrn_scan_collection.scan_id'
+#                                           diffrn_scan_collection  implicit
+       '_diffrn_scan_frame.scan_id'      diffrn_scan_frame       yes
+    _item_type.code               code
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+       '_diffrn_scan_axis.scan_id'          '_diffrn_scan.id'
+       '_diffrn_scan_axis.scan_id'          '_diffrn_scan.id'
+       '_diffrn_scan_frame.scan_id'         '_diffrn_scan.id'
+     save_
+
+
+save__diffrn_scan.date_end
+    _item_description.description
+;             The date and time of the end of the scan.  Note that this
+              may be an estimate generated during the scan, before the
+              precise time of the end of the scan is known, in which
+              case _diffrn_scan.date_end_estimated  should be used instead.
+;
+    _item.name                 '_diffrn_scan.date_end'
+    _item.category_id          diffrn_scan
+    _item.mandatory_code       no
+    _item_type.code            yyyy-mm-dd
+     save_
+
+
+save__diffrn_scan.date_end_estimated
+    _item_description.description
+;             The estimated date and time of the end of the scan.  Note
+              that this may be generated at the start or during the scan,
+              before the precise time of the end of the scan is known.
+;
+    _item.name                 '_diffrn_scan.date_end_estimated'
+    _item.category_id          diffrn_scan
+#    _item.mandatory_code       yes
+    _item.mandatory_code       no
+    _item_type.code            yyyy-mm-dd
+     save_
+
+
+save__diffrn_scan.date_start
+    _item_description.description
+;             The date and time of the start of the scan.
+;
+    _item.name                 '_diffrn_scan.date_start'
+    _item.category_id          diffrn_scan
+#    _item.mandatory_code       yes
+    _item.mandatory_code       no
+    _item_type.code            yyyy-mm-dd
+     save_
+
+
+save__diffrn_scan.integration_time
+    _item_description.description
+;             Approximate average time in seconds to integrate each
+              step of the scan.  The precise time for integration
+              of each particular step must be provided in
+              _diffrn_scan_frame.integration_time, even
+              if all steps have the same integration time.
+;
+    _item.name                 '_diffrn_scan.integration_time'
+    _item.category_id          diffrn_scan
+    _item.mandatory_code       no
+    _item_type.code            float
+    _item_units.code           'seconds'
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            .   0.0
+     save_
+
+
+save__diffrn_scan.frame_id_start
+    _item_description.description
+;             The value of this data item is the identifier of the
+              first frame in the scan.
+
+              This item is a pointer to _diffrn_data_frame.id  in the
+              DIFFRN_DATA_FRAME  category.
+;
+    _item.name                 '_diffrn_scan.frame_id_start'
+    _item.category_id          diffrn_scan
+    _item.mandatory_code       yes
+    _item_type.code            code
+     save_
+
+
+save__diffrn_scan.frame_id_end
+    _item_description.description
+;             The value of this data item is the identifier of the
+              last frame in the scan.
+
+              This item is a pointer to _diffrn_data_frame.id  in the
+              DIFFRN_DATA_FRAME  category.
+;
+    _item.name                 '_diffrn_scan.frame_id_end'
+    _item.category_id          diffrn_scan
+    _item.mandatory_code       yes
+    _item_type.code            code
+     save_
+
+
+save__diffrn_scan.frames
+    _item_description.description
+;             The value of this data item is the number of frames in
+              the scan.
+;
+    _item.name                 '_diffrn_scan.frames'
+    _item.category_id          diffrn_scan
+    _item.mandatory_code       no
+    _item_type.code            int
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            .   1
+                            1   1
+     save_
+
+save__diffrn_scan.time_period
+    _item_description.description
+;             Approximate average time in seconds between the start
+              of each step of the scan.  The precise start-to-start
+              time increment of each particular step may be provided in
+              _diffrn_scan_frame.time_period.
+;
+    _item.name                 '_diffrn_scan.time_period'
+    _item.category_id          diffrn_scan
+    _item.mandatory_code       no
+    _item_type.code            float
+    _item_units.code           'seconds'
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            .   0.0
+     save_
+
+
+save__diffrn_scan.time_rstrt_incr
+    _item_description.description
+;             Approximate average time in seconds between the end
+              of integration of each step of the scan and the start
+              of integration of the next step.
+
+              In general, this will agree with
+              _diffrn_scan_frame.time_rstrt_incr .  The
+              sum of the values of _diffrn_scan_frame.integration_time
+              and  _diffrn_scan_frame.time_rstrt_incr  is the
+              time from the start of integration of one frame and the start of
+              integration for the next frame and should equal the value of
+              _diffrn_scan_frame.time_period  for this
+              frame.   If the individual frame values vary, then the value of
+              _diffrn_scan.time_rstrt_incr  will be
+              representative of the ensemble of values of
+              _diffrn_scan_frame.time_rstrt_incr  (e.g.
+              the mean).
+;
+    _item.name                 '_diffrn_scan.time_rstrt_incr'
+    _item.category_id          diffrn_scan
+    _item.mandatory_code       no
+    _item_type.code            float
+    _item_units.code           'seconds'
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            .   0.0
+     save_
+
+
+# save__diffrn_scan.variant
+#     _item_description.description
+# ;             The value of _diffrn_scan.variant  gives the variant
+#               to which the given DIFFRN_SCAN row is related.
+
+#               If this value is not given, the variant is assumed to be
+#               the default null variant.
+
+#               This item is a pointer to _variant.variant  in the
+#               VARIANT  category.
+# ;
+#     _item.name                  '_diffrn_scan.variant'
+#     _item.category_id             diffrn_scan
+#     _item.mandatory_code          implicit
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+####################
+# DIFFRN_SCAN_AXIS #
+####################
+
+save_diffrn_scan_axis
+    _category.description
+;   Data items in the DIFFRN_SCAN_AXIS  category describe the settings of
+    axes for particular scans.  Unspecified axes are assumed to be at
+    their zero points.
+;
+    _category.id                   diffrn_scan_axis
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+
+     loop_
+    _category_key.name
+                                  '_diffrn_scan_axis.scan_id'
+                                  '_diffrn_scan_axis.axis_id'
+#                                  '_diffrn_scan_axis.variant'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'diffrn_group'
+     save_
+
+
+save__diffrn_scan_axis.scan_id
+    _item_description.description
+;             The value of this data item is the identifier of the
+              scan for which axis settings are being specified.
+
+              Multiple axes may be specified for the same value of
+              _diffrn_scan.id.
+
+              This item is a pointer to _diffrn_scan.id  in the
+              DIFFRN_SCAN  category.
+;
+    _item.name                 '_diffrn_scan_axis.scan_id'
+    _item.category_id          diffrn_scan_axis
+    _item.mandatory_code       yes
+    _item_type.code            code
+     save_
+
+
+save__diffrn_scan_axis.axis_id
+    _item_description.description
+;             The value of this data item is the identifier of one of
+              the axes for the scan for which settings are being specified.
+
+              Multiple axes may be specified for the same value of
+              _diffrn_scan.id.
+
+              This item is a pointer to _axis.id  in the
+              AXIS category.
+;
+    _item.name                 '_diffrn_scan_axis.axis_id'
+    _item.category_id          diffrn_scan_axis
+    _item.mandatory_code       yes
+    _item_type.code            code
+     save_
+
+
+save__diffrn_scan_axis.angle_start
+    _item_description.description
+;             The starting position for the specified axis in degrees.
+;
+    _item.name                 '_diffrn_scan_axis.angle_start'
+    _item.category_id          diffrn_scan_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'degrees'
+     save_
+
+
+save__diffrn_scan_axis.angle_range
+    _item_description.description
+;             The range from the starting position for the specified axis
+              in degrees.
+;
+    _item.name                 '_diffrn_scan_axis.angle_range'
+    _item.category_id          diffrn_scan_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'degrees'
+     save_
+
+
+save__diffrn_scan_axis.angle_increment
+    _item_description.description
+;             The increment for each step for the specified axis
+              in degrees.  In general, this will agree with
+              _diffrn_scan_frame_axis.angle_increment . The
+              sum of the values of _diffrn_scan_frame_axis.angle  and
+              _diffrn_scan_frame_axis.angle_increment  is the
+              angular setting of the axis at the end of the integration
+              time for a given frame.  If the individual frame values
+              vary, then the value of
+              _diffrn_scan_axis.angle_increment  will be
+              representative
+              of the ensemble of values of
+              _diffrn_scan_frame_axis.angle_increment  (e.g.
+              the mean).
+;
+    _item.name                 '_diffrn_scan_axis.angle_increment'
+    _item.category_id          diffrn_scan_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'degrees'
+     save_
+
+
+save__diffrn_scan_axis.angle_rstrt_incr
+    _item_description.description
+;             The increment after each step for the specified axis
+              in degrees.  In general, this will agree with
+              _diffrn_scan_frame_axis.angle_rstrt_incr .  The
+              sum of the values of _diffrn_scan_frame_axis.angle,
+              _diffrn_scan_frame_axis.angle_increment
+              and  _diffrn_scan_frame_axis.angle_rstrt_incr  is the
+              angular setting of the axis at the start of the integration
+              time for the next frame relative to a given frame and
+              should equal _diffrn_scan_frame_axis.angle  for this
+              next frame.   If the individual frame values
+              vary, then the value of
+              _diffrn_scan_axis.angle_rstrt_incr  will be
+              representative
+              of the ensemble of values of
+              _diffrn_scan_frame_axis.angle_rstrt_incr  (e.g.
+              the mean).
+;
+    _item.name                 '_diffrn_scan_axis.angle_rstrt_incr'
+    _item.category_id          diffrn_scan_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'degrees'
+     save_
+
+
+save__diffrn_scan_axis.displacement_start
+    _item_description.description
+;             The starting position for the specified axis in millimetres.
+;
+    _item.name                 '_diffrn_scan_axis.displacement_start'
+    _item.category_id          diffrn_scan_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+save__diffrn_scan_axis.displacement_range
+    _item_description.description
+;             The range from the starting position for the specified axis
+              in millimetres.
+;
+    _item.name                 '_diffrn_scan_axis.displacement_range'
+    _item.category_id          diffrn_scan_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+save__diffrn_scan_axis.displacement_increment
+    _item_description.description
+;             The increment for each step for the specified axis
+              in millimetres.  In general, this will agree with
+              _diffrn_scan_frame_axis.displacement_increment.
+              The sum of the values of
+              _diffrn_scan_frame_axis.displacement  and
+              _diffrn_scan_frame_axis.displacement_increment  is the
+              angular setting of the axis at the end of the integration
+              time for a given frame.  If the individual frame values
+              vary, then the value of
+               _diffrn_scan_axis.displacement_increment  will be
+              representative of the ensemble of values of
+               _diffrn_scan_frame_axis.displacement_increment  (e.g.
+               the mean).
+;
+    _item.name                 '_diffrn_scan_axis.displacement_increment'
+    _item.category_id          diffrn_scan_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+save__diffrn_scan_axis.displacement_rstrt_incr
+    _item_description.description
+;             The increment for each step for the specified axis
+              in millimetres.  In general, this will agree with
+              _diffrn_scan_frame_axis.displacement_rstrt_incr.
+              The sum of the values of
+              _diffrn_scan_frame_axis.displacement,
+              _diffrn_scan_frame_axis.displacement_increment  and
+              _diffrn_scan_frame_axis.displacement_rstrt_incr  is the
+              angular setting of the axis at the start of the integration
+              time for the next frame relative to a given frame and
+              should equal _diffrn_scan_frame_axis.displacement
+              for this next frame.  If the individual frame values
+              vary, then the value of
+              _diffrn_scan_axis.displacement_rstrt_incr  will be
+              representative of the ensemble of values of
+               _diffrn_scan_frame_axis.displacement_rstrt_incr  (e.g.
+               the mean).
+;
+    _item.name                 '_diffrn_scan_axis.displacement_rstrt_incr'
+    _item.category_id          diffrn_scan_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+save__diffrn_scan_axis.reference_angle
+    _item_description.description
+;             The setting of the specified axis in degrees
+              against which measurements of the reference beam centre
+              and reference detector distance should be made.
+
+              In general, this will agree with
+              _diffrn_scan_frame_axis.reference_angle.
+
+              If the individual frame values vary, then the value of
+              _diffrn_scan_axis.reference_angle  will be
+              representative of the ensemble of values of
+              _diffrn_scan_frame_axis.reference_angle  (e.g.
+              the mean).
+
+              If not specified, the value defaults to zero.
+;
+    _item.name                 '_diffrn_scan_axis.reference_angle'
+    _item.category_id          diffrn_scan_axis
+    _item.mandatory_code       implicit
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'degrees'
+     save_
+
+
+save__diffrn_scan_axis.reference_displacement
+    _item_description.description
+;             The setting of the specified axis in millimetres
+              against which measurements of the reference beam centre
+              and reference detector distance should be made.
+
+              In general, this will agree with
+              _diffrn_scan_frame_axis.reference_displacement.
+
+              If the individual frame values vary, then the value of
+              _diffrn_scan_axis.reference_displacement  will be
+              representative of the ensemble of values of
+              _diffrn_scan_frame_axis.reference_displacement  (e.g.
+              the mean).
+
+;
+    _item.name                 '_diffrn_scan_axis.reference_displacement'
+    _item.category_id          diffrn_scan_axis
+    _item.mandatory_code       implicit
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+# save__diffrn_scan_axis.variant
+#     _item_description.description
+# ;             The value of _diffrn_scan_axis.variant  gives the variant
+#               to which the given DIFFRN_SCAN_AXIS row is related.
+
+#               If this value is not given, the variant is assumed to be
+#               the default null variant.
+
+#               This item is a pointer to _variant.variant  in the
+#               VARIANT  category.
+# ;
+#     _item.name                  '_diffrn_scan_axis.variant'
+#     _item.category_id             diffrn_scan_axis
+#     _item.mandatory_code          implicit
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+##########################
+# DIFFRN_SCAN_COLLECTION #
+##########################
+
+save_diffrn_scan_collection
+    _category.description
+;   Data items in the DIFFRN_SCAN_COLLECTION  category describe
+    the collection strategy for each scan.
+
+    This category is a preliminary version being developed as
+    synchrotron and XFEL collection strategies evolve.
+;
+    _category.id                   diffrn_scan_collection
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+     loop_
+    _category_key.name
+                                  '_diffrn_scan_collection.scan_id'
+#                                  '_diffrn_scan_collection.variant'
+     loop_
+    _category_group.id            'inclusive_group'
+                                  'diffrn_group'
+     loop_
+    _category_examples.case
+    _category_examples.detail
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;   Example 1 - Describing a multi-wedge raster scan.
+;
+;
+        loop_
+        _diffrn_scan_collection.scan_id
+        _diffrn_scan_collection.details
+
+        multi_wedge
+    ;   scan 20 micrometre beam in 100 micrometre steps on 31
+        by 46 alternating raster of 20 degree wedges
+    ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__diffrn_scan_collection.details
+    _item_description.description
+;             The value of _diffrn_scan_collection.details  should give a
+              description of special aspects of each collection strategy.
+;
+    _item.name                  '_diffrn_scan_collection.details'
+    _item.category_id             diffrn_scan_collection
+    _item.mandatory_code          no
+    _item_type.code               text
+     save_
+
+
+save__diffrn_scan_collection.scan_id
+    _item_description.description
+;             The value of _diffrn_scan_collection.scan_id  identifies the scan
+              containing this frame.
+
+              This item is a pointer to _diffrn_scan.id  in the
+              DIFFRN_SCAN  category.
+
+              In the case of a single-scan dataset, the value is implicit.
+;
+    _item.name             '_diffrn_scan_collection.scan_id'
+    _item.category_id        diffrn_scan_collection
+    _item.mandatory_code     implicit
+    _item_type.code          code
+     save_
+
+
+save__diffrn_scan_collection.type
+    _item_description.description
+;             The value of _diffrn_scan_collection.type  identifies
+              the strategy used in this scan, e.g. `rotation', 'raster',
+              'vector', 'still', etc.
+
+              The default is 'rotation'.
+;
+    _item.name                  '_diffrn_scan_collection.type'
+    _item.category_id             diffrn_scan_collection
+    _item.mandatory_code          implicit
+    _item_default.value           'rotation'
+    _item_type.code               text
+     save_
+
+
+save__diffrn_scan_collection.translation_width
+    _item_description.description
+;             The value of _diffrn_scan_collection.translation_width
+              gives the average single step translation in micrometres
+              in collection strategies for which this information is
+               appropriate, e.g. 'vector'.
+;
+    _item.name                  '_diffrn_scan_collection.translation_width'
+    _item.category_id             diffrn_scan_collection
+    _item.mandatory_code          no
+    _item_default.value           0.0
+    _item_type.code               float
+    _item_units.code              micrometres
+
+     save_
+
+
+# save__diffrn_scan_collection.variant
+#     _item_description.description
+# ;             The value of _diffrn_scan_collection.variant  gives the variant
+#               to which the given DIFFRN_SCAN_COLLECTION row is related.
+
+#               If this value is not given, the variant is assumed to be
+#               the default null variant.
+
+#               This item is a pointer to _variant.variant  in the
+#               VARIANT  category.
+# ;
+#     _item.name                  '_diffrn_scan_collection.variant'
+#     _item.category_id             diffrn_scan_collection
+#     _item.mandatory_code          implicit
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+
+
+#####################
+# DIFFRN_SCAN_FRAME #
+#####################
+
+save_diffrn_scan_frame
+    _category.description
+;   Data items in the DIFFRN_SCAN_FRAME  category describe
+    the relationships of particular frames to scans.
+;
+    _category.id                   diffrn_scan_frame
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+
+     loop_
+    _category_key.name
+                                  '_diffrn_scan_frame.scan_id'
+                                  '_diffrn_scan_frame.frame_id'
+#                                  '_diffrn_scan_frame.variant'
+     loop_
+    _category_group.id            'inclusive_group'
+                                  'diffrn_group'
+     save_
+
+
+save__diffrn_scan_frame.date
+    _item_description.description
+;             The date and time of the start of the frame being scanned.
+;
+    _item.name                 '_diffrn_scan_frame.date'
+    _item.category_id          diffrn_scan_frame
+    _item.mandatory_code       no
+    _item_type.code            yyyy-mm-dd
+     save_
+
+
+save__diffrn_scan_frame.frame_id
+    _item_description.description
+;             The value of this data item is the identifier of the
+              frame being examined.
+
+              This item is a pointer to _diffrn_data_frame.id  in the
+              DIFFRN_DATA_FRAME  category.
+;
+    _item.name                 '_diffrn_scan_frame.frame_id'
+    _item.category_id          diffrn_scan_frame
+    _item.mandatory_code       yes
+    _item_type.code            code
+     save_
+
+
+save__diffrn_scan_frame.frame_number
+    _item_description.description
+;             The value of this data item is the number of the frame
+              within the scan, starting with 1.  It is not necessarily
+              the same as the value of _diffrn_scan_frame.frame_id,
+              but it may be.
+
+;
+    _item.name                 '_diffrn_scan_frame.frame_number'
+    _item.category_id          diffrn_scan_frame
+    _item.mandatory_code       no
+    _item_type.code            int
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            .   0
+                            0   0
+     save_
+
+
+save__diffrn_scan_frame.integration_time
+    _item_description.description
+;             The time in seconds to integrate this step of the scan.
+              This should be the precise time of integration of each
+              particular frame.  The value of this data item should
+              be given explicitly for each frame and not inferred
+              from the value of _diffrn_scan.integration_time.
+;
+    _item.name                 '_diffrn_scan_frame.integration_time'
+    _item.category_id          diffrn_scan_frame
+    _item.mandatory_code       yes
+    _item_type.code            float
+    _item_units.code           'seconds'
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            .   0.0
+     save_
+
+
+save__diffrn_scan_frame.polarizn_Stokes_I
+    _item_description.description
+;             The quantity Ip+In+Inp, where Ip is the intensity (amplitude
+              squared) of the electric vector in the plane of polarization,
+              In is the intensity (amplitude squared) of the electric vector
+              in the plane of the normal to the plane of polarization,
+              and Inp is the intensity (amplitude squared) of the
+              non-polarized (incoherent) electric vector.
+
+              This is an average or other representative sample of the
+              frame.
+
+              This is the first of the Stokes polarization parameters,
+              I, Q, U, V [also known as I, M, C, S; see Berry et al. (1977)].
+
+              If the absolute intensity is not known, the value 1.0
+              is assumed for I, and all four Stokes parameters are
+              dimensionless.  When the absolute intensity is known,
+              all four Stokes parameters are in units of watts per
+              square metre.
+
+              Note that, if the polarized intensity Ip+In is required,
+              (Ip+In)^2^ is the sum of Q^2^+U^2^+V^2^.
+
+              Reference:
+              Berry, H. H., Gabrielse, G. & Livingston, A. E. (1977).
+              'Measurement of the Stokes parameters of light',
+              Appl. Optics, 16:12, 3200--3205.
+;
+    _item.name                  '_diffrn_scan_frame.polarizn_Stokes_I'
+    _item.category_id             diffrn_scan_frame
+    _item.mandatory_code          implicit
+    _item_default.value           1.0
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                                   .    0.0
+                                  0.0   0.0
+    _item_type.code               float
+     save_
+
+# save__diffrn_scan_frame.polarizn_Stokes_I_esd
+#     _item_description.description
+# ;             The standard uncertainty (estimated standard deviation, e.s.d.)
+#               of _diffrn_scan_frame.polarizn_Stokes_I,
+#               Ip+In+Inp, where Ip is the intensity (amplitude squared)
+#               of the electric vector in the plane of polarization,
+#               In is the intensity (amplitude squared) of the electric vector
+#               in the plane of the normal to the plane of polarization,
+#               and Inp is the intensity (amplitude squared) of the
+#               non-polarized (incoherent) electric vector.
+# ;
+#     _item.name                  '_diffrn_scan_frame.polarizn_Stokes_I_esd'
+# #    _item.category_id             diffrn_radiation
+#     _item.category_id             diffrn_scan_frame
+#     _item.mandatory_code          no
+#      loop_
+#     _item_range.maximum
+#     _item_range.minimum           .      0.0
+#                                   0.0    0.0
+#     _item_type.code               float
+#      loop_
+#     _item_related.related_name
+#     _item_related.function_code  '_diffrn_scan_frame.polarizn_Stokes_I'
+#                                  'associated_value'
+#      save_
+
+
+# save__diffrn_scan_frame.polarizn_Stokes_Q
+#     _item_description.description
+# ;             The quantity (Ip-In)*cos(2*theta), where Ip is the intensity
+#               (amplitude squared) of the electric vector in the plane of
+#               polarization, In is the intensity (amplitude squared) of
+#               the electric vector in the plane of the normal to the
+#               plane of polarization, and theta is the angle as viewed
+#               from the specimen, between the normal to the polarization
+#               plane and the laboratory Y axis as defined in the
+#               AXIS  category.
+
+#               This is an average or other representative sample of the
+#               frame.
+
+#               This is the second of the Stokes polarization parameters,
+#               I, Q, U, V [also known as I, M, C, S; see Berry et al. (1977)].
+
+#               If the absolute intensity is not known, the value 1.0
+#               is assumed for I, and all four Stokes parameters are
+#               dimensionless.  When the absolute intensity is known,
+#               all four Stokes parameters are in units of watts per
+#               square metre.
+
+#               Reference:
+#               Berry, H. H., Gabrielse, G. & Livingston, A. E. (1977).
+#               'Measurement of the Stokes parameters of light',
+#               Appl. Optics, 16:12, 3200--3205.
+# ;
+#     _item.name                  '_diffrn_scan_frame.polarizn_Stokes_Q'
+#     _item.category_id             diffrn_scan_frame
+#     _item.mandatory_code          no
+#      loop_
+#     _item_type.code               float
+#      save_
+
+
+# save__diffrn_scan_frame.polarizn_Stokes_Q_esd
+#     _item_description.description
+# ;             The standard uncertainty (estimated standard deviation, e.s.d.)
+#               of _diffrn_scan_frame.polarizn_Stokes_Q,
+#               (Ip-In)*cos(2*theta), where Ip is the intensity
+#               (amplitude squared) of the electric vector in the plane of
+#               polarization, In is the intensity (amplitude squared) of
+#               the electric vector in the plane of the normal to the
+#               plane of polarization, and theta is the angle as viewed
+#               from the specimen, between the normal to the polarization
+#               plane and the laboratory Y-axis as defined in the
+#               AXIS  category.
+# ;
+#     _item.name                  '_diffrn_scan_frame.polarizn_Stokes_Q_esd'
+# #    _item.category_id             diffrn_radiation
+#     _item.category_id             diffrn_scan_frame
+#     _item.mandatory_code          no
+#      loop_
+#     _item_range.maximum
+#     _item_range.minimum           .      0.0
+#                                   0.0    0.0
+#     _item_type.code               float
+#      loop_
+#     _item_related.related_name
+#     _item_related.function_code  '_diffrn_scan_frame.polarizn_Stokes_Q'
+#                                  'associated_value'
+#      save_
+
+
+# save__diffrn_scan_frame.polarizn_Stokes_U
+#     _item_description.description
+# ;             The quantity (Ip-In)*sin(2*theta), where Ip is the intensity
+#               (amplitude squared) of the electric vector in the plane of
+#               polarization, In is the intensity (amplitude squared) of
+#               the electric vector in the plane of the normal to the
+#               plane of polarization, and theta is the angle as viewed
+#               from the specimen, between the normal to the polarization
+#               plane and the laboratory Y axis as defined in the
+#               AXIS  category.
+
+#               This is an average or other representative sample of the
+#               frame.
+
+#               This is the third of the Stokes polarization parameters,
+#               I, Q, U, V [also known as I, M, C, S; see Berry et al. (1977)]
+
+#               If the absolute intensity is not known, the value 1.0
+#               is assumed for I, and all four Stokes parameters are
+#               dimensionless.  When the absolute intensity is known,
+#               all four Stokes parameters are in units of watts per
+#               square metre.
+
+#               Reference:
+#               Berry, H. H., Gabrielse, G. & Livingston, A. E. (1977).
+#               'Measurement of the Stokes parameters of light',
+#               Appl. Optics, 16:12, 3200--3205.
+# ;
+#     _item.name                  '_diffrn_scan_frame.polarizn_Stokes_U'
+#     _item.category_id             diffrn_scan_frame
+#     _item.mandatory_code          no
+#      loop_
+#     _item_type.code               float
+#      save_
+
+# save__diffrn_scan_frame.polarizn_Stokes_U_esd
+#     _item_description.description
+# ;             The standard uncertainty (estimated standard deviation, e.s.d.)
+#               of _diffrn_scan_frame.polarizn_Stokes_U,
+#               (Ip-In)*sin(2*theta), where Ip is the intensity
+#               (amplitude squared) of the electric vector in the plane of
+#               polarization, In is the intensity (amplitude squared) of
+#               the electric vector in the plane of the normal to the
+#               plane of polarization, and theta is the angle as viewed
+#               from the specimen, between the normal to the polarization
+#               plane and the laboratory Y-axis as defined in the
+#               AXIS  category.
+# ;
+#     _item.name                  '_diffrn_scan_frame.polarizn_Stokes_U_esd'
+# #    _item.category_id             diffrn_radiation
+#     _item.category_id             diffrn_scan_frame
+#     _item.mandatory_code          no
+#      loop_
+#     _item_range.maximum
+#     _item_range.minimum           .      0.0
+#                                   0.0    0.0
+#     _item_type.code               float
+#      loop_
+#     _item_related.related_name
+#     _item_related.function_code  '_diffrn_scan_frame.polarizn_Stokes_U'
+#                                  'associated_value'
+#      save_
+
+
+# save__diffrn_scan_frame.polarizn_Stokes_V
+#     _item_description.description
+# ;             The quantity +/-2*sqrt(IpIn), with a + sign for right-handed
+#               circular polarization, where Ip is the intensity
+#               (amplitude squared) of the electric vector in the plane of
+#               polarization and In is the intensity (amplitude squared) of
+#               the electric vector in the plane of the normal to the
+#               plane of polarization, and theta is the angle as viewed
+#               from the specimen, between the normal to the polarization
+#               plane and the laboratory Y axis as defined in the
+#               AXIS  category.
+
+#               This is an average or other representative sample of the
+#               frame.
+
+#               This is the fourth of the Stokes polarization parameters,
+#               I, Q, U, V [also known as I, M, C, S; see Berry et al. (1977)].
+
+#               If the absolute intensity is not known, the value 1.0
+#               is assumed for I, and all four Stokes parameters are
+#               dimensionless.  When the absolute intensity is known,
+#               all four Stokes parameters are in units of watts per
+#               square metre.
+
+#               Reference:
+#               Berry, H. H., Gabrielse, G. & Livingston, A. E. (1977).
+#               'Measurement of the Stokes parameters of light',
+#               Appl. Optics, 16:12, 3200--3205.
+# ;
+#     _item.name                  '_diffrn_scan_frame.polarizn_Stokes_V'
+#     _item.category_id             diffrn_scan_frame
+#     _item.mandatory_code          no
+#      loop_
+#     _item_type.code               float
+#      save_
+
+
+# save__diffrn_scan_frame.polarizn_Stokes_V_esd
+#     _item_description.description
+# ;             The standard uncertainty (estimated standard deviation, e.s.d.)
+#               of _diffrn_scan_frame.polarizn_Stokes_V,
+#               +/-2*sqrt(IpIn), with a + sign for right-handed circular
+#               polarization, where Ip is the intensity
+#               (amplitude squared) of the electric vector in the plane of
+#               polarization and In is the intensity (amplitude squared) of
+#               the electric vector in the plane of the normal to the
+#               plane of polarization, and theta is the angle as viewed
+#               from the specimen, between the normal to the polarization
+#               plane and the laboratory Y-axis as defined in the
+#               AXIS  category.
+# ;
+#     _item.name                  '_diffrn_scan_frame.polarizn_Stokes_V_esd'
+# #    _item.category_id             diffrn_radiation
+#     _item.category_id             diffrn_scan_frame
+#     _item.mandatory_code          no
+#      loop_
+#     _item_range.maximum
+#     _item_range.minimum           .      0.0
+#                                   0.0    0.0
+#     _item_type.code               float
+#      loop_
+#     _item_related.related_name
+#     _item_related.function_code  '_diffrn_scan_frame.polarizn_Stokes_V'
+#                                  'associated_value'
+#      save_
+
+
+save__diffrn_scan_frame.scan_id
+    _item_description.description
+;             The value of _diffrn_scan_frame.scan_id  identifies the scan
+              containing this frame.
+
+              This item is a pointer to _diffrn_scan.id  in the
+              DIFFRN_SCAN  category.
+;
+    _item.name             '_diffrn_scan_frame.scan_id'
+    _item.category_id        diffrn_scan_frame
+    _item.mandatory_code     yes
+    _item_type.code          code
+     save_
+
+
+save__diffrn_scan_frame.time_period
+    _item_description.description
+;             The time in seconds between the start of this frame and the
+              start of the next frame, if any.  If there is no next frame,
+              a null value should be given.
+;
+    _item.name                 '_diffrn_scan_frame.time_period'
+    _item.category_id          diffrn_scan_frame
+    _item.mandatory_code       no
+    _item_type.code            float
+    _item_units.code           'seconds'
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            .   0.0
+     save_
+
+
+save__diffrn_scan_frame.time_rstrt_incr
+    _item_description.description
+;             The time in seconds between the end of integration of this step of the scan
+              and the start of integration of the next step.
+
+              The sum of the values of _diffrn_scan_frame.integration_time
+              and  _diffrn_scan_frame.time_rstrt_incr  is the
+              time from the start of integration of one frame and the start of
+              integration for the next frame and should equal the value of
+              _diffrn_scan_frame.time_period  for this
+              frame.   The value of _diffrn_scan.time_rstrt_incr  will be
+              representative of the ensemble of values of
+              _diffrn_scan_frame.time_rstrt_incr  (e.g.
+              the mean).
+
+              If there is no next frame, a null value should be given.
+;
+    _item.name                 '_diffrn_scan_frame.time_rstrt_incr'
+    _item.category_id          diffrn_scan_frame
+    _item.mandatory_code       no
+    _item_type.code            float
+    _item_units.code           'seconds'
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            .   0.0
+     save_
+
+# save__diffrn_scan_frame.variant
+#     _item_description.description
+# ;             The value of _diffrn_scan_frame.variant  gives the variant
+#               to which the given DIFFRN_SCAN_FRAME row is related.
+
+#               If this value is not given, the variant is assumed to be
+#               the default null variant.
+
+#               This item is a pointer to _variant.variant  in the
+#               VARIANT  category.
+# ;
+#     _item.name                  '_diffrn_scan_frame.variant'
+#     _item.category_id             diffrn_scan_frame
+# #    _item.mandatory_code          implicit
+#     _item.mandatory_code          no
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+
+##########################
+# DIFFRN_SCAN_FRAME_AXIS #
+##########################
+
+save_diffrn_scan_frame_axis
+    _category.description
+;   Data items in the DIFFRN_SCAN_FRAME_AXIS  category describe the
+    settings of axes for particular frames.  Unspecified axes are
+    assumed to be at their zero points.  If, for any given frame,
+    nonzero values apply for any of the data items in this category,
+    those values should be given explicitly in this category and not
+    simply inferred from values in DIFFRN_SCAN_AXIS.
+;
+    _category.id                   diffrn_scan_frame_axis
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+
+     loop_
+    _category_key.name
+                                  '_diffrn_scan_frame_axis.frame_id'
+                                  '_diffrn_scan_frame_axis.axis_id'
+#                                  '_diffrn_scan_frame_axis.variant'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'diffrn_group'
+     save_
+
+
+save__diffrn_scan_frame_axis.axis_id
+    _item_description.description
+;             The value of this data item is the identifier of one of
+              the axes for the frame for which settings are being specified.
+
+              Multiple axes may be specified for the same value of
+              _diffrn_scan_frame.frame_id.
+
+              This item is a pointer to _axis.id  in the
+              AXIS  category.
+;
+    _item.name                 '_diffrn_scan_frame_axis.axis_id'
+    _item.category_id          diffrn_scan_frame_axis
+    _item.mandatory_code       yes
+    _item_type.code            code
+     save_
+
+
+save__diffrn_scan_frame_axis.angle
+    _item_description.description
+;             The setting of the specified axis in degrees for this frame.
+              This is the setting at the start of the integration time.
+;
+    _item.name                 '_diffrn_scan_frame_axis.angle'
+    _item.category_id          diffrn_scan_frame_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'degrees'
+     save_
+
+
+save__diffrn_scan_frame_axis.angle_increment
+    _item_description.description
+;             The increment for this frame for the angular setting of
+              the specified axis in degrees.  The sum of the values
+              of _diffrn_scan_frame_axis.angle  and
+              _diffrn_scan_frame_axis.angle_increment  is the
+              angular setting of the axis at the end of the integration
+              time for this frame.
+;
+    _item.name                 '_diffrn_scan_frame_axis.angle_increment'
+    _item.category_id          diffrn_scan_frame_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'degrees'
+     save_
+
+
+save__diffrn_scan_frame_axis.angle_rstrt_incr
+    _item_description.description
+;             The increment after this frame for the angular setting of
+              the specified axis in degrees.  The sum of the values
+              of _diffrn_scan_frame_axis.angle,
+              _diffrn_scan_frame_axis.angle_increment  and
+              _diffrn_scan_frame_axis.angle_rstrt_incr  is the
+              angular setting of the axis at the start of the integration
+              time for the next frame and should equal
+              _diffrn_scan_frame_axis.angle  for this next frame.
+;
+    _item.name               '_diffrn_scan_frame_axis.angle_rstrt_incr'
+    _item.category_id          diffrn_scan_frame_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'degrees'
+     save_
+
+
+save__diffrn_scan_frame_axis.displacement
+    _item_description.description
+;             The setting of the specified axis in millimetres for this
+              frame.  This is the setting at the start of the integration
+              time.
+;
+    _item.name               '_diffrn_scan_frame_axis.displacement'
+    _item.category_id          diffrn_scan_frame_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+save__diffrn_scan_frame_axis.displacement_increment
+    _item_description.description
+;             The increment for this frame for the displacement setting of
+              the specified axis in millimetres.  The sum of the values
+              of _diffrn_scan_frame_axis.displacement  and
+              _diffrn_scan_frame_axis.displacement_increment  is the
+              angular setting of the axis at the end of the integration
+              time for this frame.
+;
+    _item.name               '_diffrn_scan_frame_axis.displacement_increment'
+    _item.category_id          diffrn_scan_frame_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+save__diffrn_scan_frame_axis.displacement_rstrt_incr
+    _item_description.description
+;             The increment for this frame for the displacement setting of
+              the specified axis in millimetres.  The sum of the values
+              of _diffrn_scan_frame_axis.displacement,
+              _diffrn_scan_frame_axis.displacement_increment  and
+              _diffrn_scan_frame_axis.displacement_rstrt_incr  is the
+              angular setting of the axis at the start of the integration
+              time for the next frame and should equal
+              _diffrn_scan_frame_axis.displacement  for this next frame.
+;
+    _item.name               '_diffrn_scan_frame_axis.displacement_rstrt_incr'
+    _item.category_id          diffrn_scan_frame_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+save__diffrn_scan_frame_axis.frame_id
+    _item_description.description
+;             The value of this data item is the identifier of the
+              frame for which axis settings are being specified.
+
+              Multiple axes may be specified for the same value of
+              _diffrn_scan_frame.frame_id.
+
+              This item is a pointer to _diffrn_data_frame.id  in the
+              DIFFRN_DATA_FRAME  category.
+;
+    _item.name               '_diffrn_scan_frame_axis.frame_id'
+    _item.category_id          diffrn_scan_frame_axis
+    _item.mandatory_code       yes
+    _item_type.code            code
+     save_
+
+
+save__diffrn_scan_frame_axis.reference_angle
+    _item_description.description
+;             The setting of the specified axis in degrees
+              against which measurements of the reference beam centre
+              and reference detector distance should be made.
+
+              This is normally the same for all frames, but the
+              option is provided here of making changes when
+              needed.
+
+              If not provided, it is assumed to be zero.
+;
+    _item.name               '_diffrn_scan_frame_axis.reference_angle'
+    _item.category_id          diffrn_scan_frame_axis
+    _item.mandatory_code       implicit
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'degrees'
+     save_
+
+
+save__diffrn_scan_frame_axis.reference_displacement
+    _item_description.description
+;             The setting of the specified axis in millimetres for this
+              frame against which measurements of the reference beam centre
+              and reference detector distance should be made.
+
+              This is normally the same for all frames, but the
+              option is provided here of making changes when
+              needed.
+
+              If not provided, it is assumed to be equal to
+              _diffrn_scan_frame_axis.displacement.
+;
+    _item.name               '_diffrn_scan_frame_axis.reference_displacement'
+    _item.category_id          diffrn_scan_frame_axis
+    _item.mandatory_code       implicit
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+# save__diffrn_scan_frame_axis.variant
+#     _item_description.description
+# ;             The value of _diffrn_scan_frame_axis.variant  gives the variant
+#               to which the given DIFFRN_SCAN_FRAME_AXIS row is related.
+
+#               If this value is not given, the variant is assumed to be
+#               the default null variant.
+
+#               This item is a pointer to _variant.variant  in the
+#               VARIANT  category.
+# ;
+#     _item.name                  '_diffrn_scan_frame_axis.variant'
+#     _item.category_id             diffrn_scan_frame_axis
+#     _item.mandatory_code          implicit
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+
+###################
+# DIFFRN_DETECTOR #
+###################
+
+# diffrn_detector.id should be added as a category key
+
+save__diffrn_detector.id
+    _item_description.description
+;             The value of _diffrn_detector.id  must uniquely identify
+              each detector used to collect each diffraction data set.
+
+              If the value of _diffrn_detector.id  is not given, it is
+              implicitly equal to the value of
+              _diffrn_detector.diffrn_id.
+;
+     loop_
+    _item.name
+    _item.category_id
+    _item.mandatory_code
+             '_diffrn_detector.id'         diffrn_detector       implicit
+             '_diffrn_detector_axis.detector_id'
+                                           diffrn_detector_axis       yes
+#             '_diffrn_scan_frame_monitor.detector_id'
+#                                           diffrn_scan_frame_monitor  yes
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+             '_diffrn_detector_axis.detector_id'
+                                         '_diffrn_detector.id'
+#             '_diffrn_scan_frame_monitor.detector_id'
+#                                         '_diffrn_detector.id'
+
+    _item_type.code               code
+     save_
+
+save__diffrn_detector.number_of_axes
+    _item_description.description
+;             The value of _diffrn_detector.number_of_axes  gives the
+              number of axes of the positioner for the detector identified
+              by _diffrn_detector.id.
+
+              The word 'positioner' is a general term used in
+              instrumentation design for devices that are used to change
+              the positions of portions of apparatus by linear
+              translation, rotation or combinations of such motions.
+
+              Axes which are used to provide a coordinate system for the
+              face of an area detector should not be counted for this
+              data item.
+
+              The description of each axis should be provided by entries
+              in DIFFRN_DETECTOR_AXIS.
+;
+    _item.name                  '_diffrn_detector.number_of_axes'
+    _item.category_id             diffrn_detector
+    _item.mandatory_code          no
+     loop_
+    _item_range.maximum
+    _item_range.minimum           .   1
+                                  1   1
+    _item_type.code               int
+     save_
+
+#####################
+# ARRAY_INTENSITIES #
+#####################
+
+
+save_array_intensities
+    _category.description
+;   Data items in the ARRAY_INTENSITIES  category record the
+    information required to recover the intensity data from
+    the set of data values stored in the ARRAY_DATA  category.
+
+    The detector may have a complex relationship
+    between the raw intensity values and the number of
+    incident photons.  In most cases, the number stored
+    in the final array will have a simple linear relationship
+    to the actual number of incident photons, given by
+    _array_intensities.gain.  If raw, uncorrected values
+    are presented (e.g. for calibration experiments), the
+    value of _array_intensities.linearity  will be 'raw'
+    and _array_intensities.gain will not be used.
+;
+    _category.id                   array_intensities
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+
+     loop_
+    _category_key.name             '_array_intensities.array_id'
+                                   '_array_intensities.binary_id'
+#                                   '_array_intensities.variant'
+     loop_
+    _category_group.id             'inclusive_group'
+                                   'array_data_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+        Example 1
+;
+;
+        loop_
+        _array_intensities.array_id
+        _array_intensities.linearity
+        _array_intensities.gain
+        _array_intensities.overload
+        _array_intensities.undefined_value
+        _array_intensities.pixel_fast_bin_size
+        _array_intensities.pixel_slow_bin_size
+        _array_intensities.pixel_binning_method
+        image_1   linear  1.2    655535   0   2   2    hardware
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__array_intensities.array_id
+    _item_description.description
+;             This item is a pointer to _array_structure.id  in the
+              ARRAY_STRUCTURE  category.
+;
+    _item.name                  '_array_intensities.array_id'
+    _item.category_id             array_intensities
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
+
+
+save__array_intensities.binary_id
+    _item_description.description
+;             This item is a pointer to _array_data.binary_id  in the
+              ARRAY_DATA  category.
+;
+    _item.name                  '_array_intensities.binary_id'
+    _item.category_id             array_intensities
+    _item.mandatory_code          implicit
+    _item_type.code               int
+     save_
+
+
+save__array_intensities.details
+    _item_description.description
+;             A description of special aspects of the calculation of array
+              intensities.
+;
+    _item.name                  '_array_intensities.details'
+    _item.category_id             array_intensities
+    _item.mandatory_code          no
+    _item_type.code                   text
+    _item_examples.case         'Gain_setting: low gain (vrf = -0.300)'
+     save_
+
+
+save__array_intensities.gain
+    _item_description.description
+;             Detector 'gain'. The factor by which linearized
+              intensity count values should be divided to produce
+              true photon counts.
+;
+    _item.name              '_array_intensities.gain'
+    _item.category_id          array_intensities
+    _item.mandatory_code       yes
+    _item_type.code            float
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            .   0.0
+    _item_units.code           'counts_per_photon'
+     loop_
+    _item_related.related_name
+    _item_related.function_code  '_array_intensities.gain_esd'
+                                 'associated_value'
+     save_
+
+
+save__array_intensities.gain_esd
+    _item_description.description
+;             The standard uncertainty (estimated standard deviation, e.s.d.)
+              of detector 'gain'.
+;
+    _item.name              '_array_intensities.gain_esd'
+    _item.category_id          array_intensities
+    _item.mandatory_code       yes
+    _item_type.code            float
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            .   0.0
+
+    _item_units.code          'counts_per_photon'
+     loop_
+    _item_related.related_name
+    _item_related.function_code  '_array_intensities.gain'
+                                 'associated_esd'
+     save_
+
+
+save__array_intensities.linearity
+    _item_description.description
+;             The intensity linearity scaling method used to convert
+              from the raw intensity to the stored element value:
+
+             'linear' is linear.
+
+             'offset'  means that the value defined by
+             _array_intensities.offset  should be added to each
+             element value.
+
+             'scaling' means that the value defined by
+             _array_intensities.scaling  should be multiplied with each
+             element value.
+
+             'scaling_offset' is the combination of the two previous cases,
+             with the scale factor applied before the offset value.
+
+             'sqrt_scaled' means that the square root of raw
+             intensities multiplied by _array_intensities.scaling  is
+             calculated and stored, perhaps rounded to the nearest
+             integer. Thus, linearization involves dividing the stored
+             values by _array_intensities.scaling  and squaring the
+             result.
+
+             'logarithmic_scaled' means that the logarithm base 10 of
+             raw intensities multiplied by _array_intensities.scaling
+             is calculated and stored, perhaps rounded to the nearest
+             integer. Thus, linearization involves dividing the stored
+             values by _array_intensities.scaling  and calculating 10
+             to the power of this number.
+
+             'raw' means that the data are a set of raw values straight
+             from the detector.
+;
+
+    _item.name               '_array_intensities.linearity'
+    _item.category_id          array_intensities
+    _item.mandatory_code       yes
+    _item_type.code            code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+                              'linear' .
+                              'offset'
+;            The value defined by  _array_intensities.offset  should
+             be added to each element value.
+;
+                              'scaling'
+;            The value defined by _array_intensities.scaling  should be
+             multiplied with each element value.
+;
+                              'scaling_offset'
+;            The combination of the scaling and offset
+             with the scale factor applied before the offset value.
+;
+                              'sqrt_scaled'
+;            The square root of raw intensities multiplied by
+             _array_intensities.scaling  is calculated and stored,
+             perhaps rounded to the nearest integer. Thus,
+             linearization involves dividing the stored
+             values by _array_intensities.scaling  and squaring the
+             result.
+;
+                              'logarithmic_scaled'
+;            The logarithm base 10 of raw intensities multiplied by
+             _array_intensities.scaling   is calculated and stored,
+             perhaps rounded to the nearest integer. Thus,
+             linearization involves dividing the stored values by
+             _array_intensities.scaling  and calculating 10 to the
+             power of this number.
+;
+                              'raw'
+;            The array consists of raw values to which no corrections have
+             been applied.  While the handling of the data is similar to
+             that given for 'linear' data with no offset, the meaning of
+             the data differs in that the number of incident photons is
+             not necessarily linearly related to the number of counts
+             reported.  This value is intended for use either in
+             calibration experiments or to allow for handling more
+             complex data-fitting algorithms than are allowed for by
+             this data item.
+;
+
+     save_
+
+
+save__array_intensities.offset
+    _item_description.description
+;             Offset value to add to array element values in the manner
+              described by the item _array_intensities.linearity.
+;
+    _item.name                 '_array_intensities.offset'
+    _item.category_id          array_intensities
+    _item.mandatory_code       no
+    _item_type.code            float
+     save_
+
+
+save__array_intensities.overload
+    _item_description.description
+;             The saturation intensity level for this data array, i.e. the
+              value above which correct intensities may not be recorded.
+
+              The valid pixel values are those less than
+              _array_intensities.overload  and greater than or equal to
+              _array_intensities.underload
+;
+    _item.name                 '_array_intensities.overload'
+    _item.category_id          array_intensities
+    _item.mandatory_code       no
+    _item_type.code            float
+    _item_units.code          'counts'
+     save_
+
+
+save__array_intensities.pixel_fast_bin_size
+    _item_description.description
+;             The value of _array_intensities.pixel_fast_bin_size  specifies
+              the number of pixels that compose one element in the direction
+              of the most rapidly varying array dimension.
+
+              Typical values are 1, 2, 4 or 8.  When there is 1 pixel per
+              array element in both directions, the value given for
+              _array_intensities.pixel_binning_method  normally should be
+              'none'.
+
+              It is specified as a float to allow for binning algorithms that
+              create array elements that are not integer multiples of the
+              detector pixel size.
+;
+    _item.name              '_array_intensities.pixel_fast_bin_size'
+    _item.category_id          array_intensities
+    _item.mandatory_code       implicit
+    _item_type.code            float
+    _item_default.value        1.
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            .   0.0
+    _item_units.code           'pixels_per_element'
+     save_
+
+
+save__array_intensities.pixel_slow_bin_size
+    _item_description.description
+;             The value of _array_intensities.pixel_slow_bin_size  specifies
+              the number of pixels that compose one element in the direction
+              of the second most rapidly varying array dimension.
+
+              Typical values are 1, 2, 4 or 8.  When there is 1 pixel per
+              array element in both directions, the value given for
+              _array_intensities.pixel_binning_method  normally should be
+              'none'.
+
+              It is specified as a float to allow for binning algorithms that
+              create array elements that are not integer multiples of the
+              detector pixel size.
+;
+    _item.name              '_array_intensities.pixel_slow_bin_size'
+    _item.category_id          array_intensities
+    _item.mandatory_code       implicit
+    _item_type.code            float
+    _item_default.value        1.
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            .   0.0
+    _item_units.code           'pixels_per_element'
+     save_
+
+
+save__array_intensities.pixel_binning_method
+    _item_description.description
+;             The value of _array_intensities.pixel_binning_method  specifies
+              the method used to derive array elements from multiple pixels.
+;
+    _item.name              '_array_intensities.pixel_binning_method'
+    _item.category_id          array_intensities
+    _item.mandatory_code       implicit
+    _item_type.code            code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+                               'hardware'
+;              The element intensities were derived from the raw data of one
+               or more pixels by use of hardware in the detector, e.g. by use
+               of shift registers in a CCD to combine pixels into super-pixels.
+;
+                               'software'
+;              The element intensities were derived from the raw data of more
+               than one pixel by use of software.
+;
+                               'combined'
+;              The element intensities were derived from the raw data of more
+               than one pixel by use of both hardware and software, as when
+               hardware binning is used in one direction and software in the
+               other.
+;
+                               'none'
+;              In both directions, the data have not been binned.  The
+               number of pixels is equal to the number of elements.
+
+               When the value of _array_intensities.pixel_binning_method  is
+               'none' the values of _array_intensities.pixel_fast_bin_size
+               and _array_intensities.pixel_slow_bin_size  both must be 1.
+;
+                               'unspecified'
+;              The method used to derive element intensities is not specified.
+;
+    _item_default.value        'unspecified'
+     save_
+
+
+save__array_intensities.scaling
+    _item_description.description
+;             Multiplicative scaling value to be applied to array data
+              in the manner described by the item
+              _array_intensities.linearity.
+;
+    _item.name                 '_array_intensities.scaling'
+    _item.category_id          array_intensities
+    _item.mandatory_code       no
+    _item_type.code            float
+     save_
+
+
+save__array_intensities.undefined_value
+    _item_description.description
+;             A value to be substituted for undefined values in
+              the data array.
+;
+    _item.name                 '_array_intensities.undefined_value'
+    _item.category_id          array_intensities
+    _item.mandatory_code       no
+    _item_type.code            float
+     save_
+
+
+save__array_intensities.underload
+    _item_description.description
+;             The lowest value at which pixels for this detector are
+              measured.
+
+              The valid pixel values are those less than
+              _array_intensities.overload  and greater than or equal to
+              _array_intensities.underload
+
+;
+    _item.name                 '_array_intensities.underload'
+    _item.category_id          array_intensities
+    _item.mandatory_code       no
+    _item_type.code            float
+    _item_units.code          'counts'
+     save_
+
+
+# save__array_intensities.variant
+#     _item_description.description
+# ;             The value of _array_intensities.variant  gives the variant
+#               to which the given ARRAY_INTENSITIES row is related.
+
+#               If this value is not given, the variant is assumed to be
+#               the default null variant.
+
+#               This item is a pointer to _variant.variant  in the
+#               VARIANT  category.
+# ;
+#     _item.name                  '_array_intensities.variant'
+#     _item.category_id             array_intensities
+#     _item.mandatory_code          implicit
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+###################
+# ARRAY_STRUCTURE #
+###################
+
+
+save_array_structure
+    _category.description
+;   Data items in the ARRAY_STRUCTURE  category record the organization and
+    encoding of array data that may be stored in the ARRAY_DATA  category.
+;
+    _category.id                   array_structure
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+     loop_
+    _category_key.name             '_array_structure.id'
+#                                   '_array_structure.variant'
+     loop_
+    _category_group.id             'inclusive_group'
+                                   'array_data_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;   Example 1.
+;
+;
+     loop_
+    _array_structure.id
+    _array_structure.encoding_type
+    _array_structure.compression_type
+    _array_structure.byte_order
+     image_1       "unsigned 16-bit integer"  none  little_endian
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__array_structure.byte_order
+    _item_description.description
+;             The order of bytes for integer values which require more
+              than 1 byte.
+
+              (IBM-PCs and compatibles, and DEC VAXs use low-byte-first
+              ordered integers, whereas Hewlett Packard 700
+              series, Sun-4 and Silicon Graphics use high-byte-first
+              ordered integers.  DEC Alphas can produce/use either
+              depending on a compiler switch.)
+;
+
+    _item.name                     '_array_structure.byte_order'
+    _item.category_id               array_structure
+    _item.mandatory_code            yes
+    _item_type.code                 ucode
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+                                   'big_endian'
+;       The first byte in the byte stream of the bytes which make up an
+        integer value is the most significant byte of an integer.
+;
+                                   'little_endian'
+;       The last byte in the byte stream of the bytes which make up an
+        integer value is the most significant byte of an integer.
+;
+     save_
+
+
+save__array_structure.compression_type
+    _item_description.description
+;             Type of data-compression method used to compress the array
+              data.
+;
+    _item.name                   '_array_structure.compression_type'
+    _item.category_id             array_structure
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_default.value           'none'
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+                                  'byte_offset'
+;       Using the 'byte_offset' compression scheme as per A. Hammersley
+        and the CBFlib manual, section 3.3.3
+;
+                                  'canonical'
+;       Using the 'canonical' compression scheme (International Tables
+        for Crystallography Volume G, Section 5.6.3.1) and CBFlib
+        manual section 3.3.1
+;
+                                  'nibble_offset'
+;       Using the 'nibble_offset' compression scheme as per H. Bernstein
+        and the CBFlib manual, section 3.3.4
+;
+                                  'none'
+;       Data are stored in normal format as defined by
+        _array_structure.encoding_type  and
+        _array_structure.byte_order.
+;
+                                  'packed'
+;       Using the 'packed' compression scheme, a CCP4-style packing
+        as per J. P. Abrahams pack_c.c and CBFlib manual, section 3.3.2.
+;
+                                  'packed_v2'
+;       Using the 'packed' compression scheme, version 2, as per
+        J. P. Abrahams pack_c.c and CBFlib manual, section 3.3.2.
+;
+     save_
+
+
+save__array_structure.compression_type_flag
+    _item_description.description
+;             Flags modifying the type of data-compression method used to
+              compress the arraydata.
+;
+    _item.name                   '_array_structure.compression_type_flag'
+    _item.category_id             array_structure
+    _item.mandatory_code          no
+    _item_type.code               ucode
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+                                  'uncorrelated_sections'
+;       When applying packed or packed_v2 compression on an array with
+        uncorrelated sections, do not average in points from the prior
+        section.
+;
+                                  'flat'
+;       When applying packed or packed_v2 compression on an array that
+        treats the entire image as a single line set the maximum number
+        of bits for an offset to 65 bits.
+
+        The flag is included for compatibility with software prior to
+        CBFlib_0.7.7, and should not be used for new data sets.
+;
+     save_
+
+
+save__array_structure.encoding_type
+    _item_description.description
+;             Data encoding of a single element of array data.
+
+              The type 'unsigned 1-bit integer' is used for
+              packed Boolean arrays for masks.  Each element
+              of the array corresponds to a single bit
+              packed in unsigned 8-bit data.
+
+              In several cases, the IEEE format is referenced.
+              See IEEE Standard 754-1985 (IEEE, 1985).
+
+              Reference: IEEE (1985). IEEE Standard for Binary Floating-Point
+              Arithmetic. ANSI/IEEE Std 754-1985. New York: Institute of
+              Electrical and Electronics Engineers.
+;
+
+    _item.name                '_array_structure.encoding_type'
+    _item.category_id          array_structure
+    _item.mandatory_code       yes
+    _item_type.code            uline
+     loop_
+    _item_enumeration.value
+                              'unsigned 1-bit integer'
+                              'unsigned 8-bit integer'
+                              'signed 8-bit integer'
+                              'unsigned 16-bit integer'
+                              'signed 16-bit integer'
+                              'unsigned 32-bit integer'
+                              'signed 32-bit integer'
+                              'signed 32-bit real IEEE'
+                              'signed 64-bit real IEEE'
+                              'signed 32-bit complex IEEE'
+     save_
+
+
+save__array_structure.id
+    _item_description.description
+;             The value of _array_structure.id  must uniquely identify
+              each item of array data.
+
+              This item has been made implicit and given a default value of 1
+              as a convenience in writing miniCBF files.  Normally an
+              explicit name with useful content should be used.
+;
+     loop_
+    _item.name
+    _item.category_id
+    _item.mandatory_code
+             '_array_structure.id'              array_structure      implicit
+             '_array_data.array_id'             array_data           implicit
+             '_array_structure_list.array_id'   array_structure_list implicit
+             '_array_structure_list_section.array_id'
+                                        array_structure_list_section implicit
+             '_array_intensities.array_id'      array_intensities    implicit
+             '_diffrn_data_frame.array_id'      diffrn_data_frame    implicit
+
+
+    _item_default.value           1
+    _item_type.code               code
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+             '_array_data.array_id'
+                      '_array_structure.id'
+             '_array_structure_list.array_id'
+                      '_array_structure.id'
+             '_array_structure_list_section.array_id'
+                      '_array_structure.id'
+             '_array_intensities.array_id'
+                      '_array_structure.id'
+             '_diffrn_data_frame.array_id'
+                      '_array_structure.id'
+
+     save_
+
+
+# save__array_structure.variant
+#     _item_description.description
+# ;             The value of _array_structure.variant  gives the variant
+#               to which the given ARRAY_STRUCTURE row is related.
+
+#               If this value is not given, the variant is assumed to be
+#               the default null variant.
+
+#               This item is a pointer to _variant.variant  in the
+#               VARIANT  category.
+# ;
+#     _item.name                  '_array_structure.variant'
+#     _item.category_id             array_structure
+#     _item.mandatory_code          implicit
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+##############
+# ARRAY_DATA #
+##############
+
+
+save_array_data
+    _category.description
+;   Data items in the ARRAY_DATA  category are the containers for
+    the array data items described in the category ARRAY_STRUCTURE.
+
+    It is recognized that the data in this category need to be used in
+    two distinct ways.  During a data collection the lack of ancillary
+    data and timing constraints in processing data may dictate the
+    need to make a 'miniCBF', nothing more than an essential minimum
+    of information to record the results of the data collection.  In that
+    case it is proper to use the ARRAY_DATA  category as a
+    container for just a single image and a compacted, beamline-dependent
+    list of data collection parameter values.  In such
+    a case, only the tags '_array_data.header_convention',
+    '_array_data.header_contents'  and '_array_data.data' need be
+  populated.
+
+    For full processing and archiving, most of the tags in this
+    dictionary will need to be populated.
+;
+    _category.id                   array_data
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+     loop_
+    _category_key.name             '_array_data.array_id'
+                                   '_array_data.binary_id'
+#                                   '_array_data.variant'
+     loop_
+    _category_group.id             'inclusive_group'
+                                   'array_data_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+        Example 1.
+
+        This example shows two binary data blocks.  The first one
+        was compressed by the CBF_CANONICAL compression algorithm and is
+        presented as hexadecimal data.  The first character 'H' on the
+        data lines means hexadecimal.  It could have been 'O' for octal
+        or 'D' for decimal.  The second character on the line shows
+        the number of bytes in each word (in this case '4'), which then
+        requires eight hexadecimal digits per word.  The third character
+        gives the order of octets within a word, in this case '<'
+        for the ordering 4321 (i.e. 'big-endian').  Alternatively, the
+        character '>' could have been used for the ordering 1234
+        (i.e. 'little-endian').  The block has a 'message digest'
+        to check the integrity of the data.
+
+        The second block is similar, but uses CBF_PACKED compression
+        and BASE64 encoding.  Note that the size and the digest are
+        different.
+;
+;
+
+         loop_
+        _array_data.array_id
+        _array_data.binary_id
+        _array_data.data
+        image_1 1
+        ;
+        --CIF-BINARY-FORMAT-SECTION--
+        Content-Type: application/octet-stream;
+             conversions="X-CBF_CANONICAL"
+        Content-Transfer-Encoding: X-BASE16
+        X-Binary-Size: 3927126
+        X-Binary-ID: 1
+        Content-MD5: u2sTJEovAHkmkDjPi+gWsg==
+
+        # Hexadecimal encoding, byte 0, byte order ...21
+        #
+        H4< 0050B810 00000000 00000000 00000000 000F423F 00000000 00000000 ...
+        ....
+        --CIF-BINARY-FORMAT-SECTION----
+        ;
+        image_2 2
+        ;
+        --CIF-BINARY-FORMAT-SECTION--
+        Content-Type: application/octet-stream;
+             conversions="X-CBF-PACKED"
+        Content-Transfer-Encoding: BASE64
+        X-Binary-Size: 3745758
+        X-Binary-ID: 2
+        Content-MD5: 1zsJjWPfol2GYl2V+QSXrw==
+
+        ELhQAAAAAAAA...
+        ...
+        --CIF-BINARY-FORMAT-SECTION----
+        ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+        Example 2.
+
+        This example shows a single image in a miniCBF, provided by
+        E. Eikenberry.  The entire CBF consists of one data block
+        containing one category and three tags.  The CBFlib
+        program convert_miniCBF and a suitable template file
+        can be used to convert this miniCBF to a full imgCIF
+        file.
+;
+;
+        ###CBF: VERSION 1.5
+        # CBF file written by CBFlib v0.7.8
+
+        data_insulin_pilatus6m
+
+        _array_data.header_convention  SLS_1.0
+        _array_data.header_contents
+        ;
+        # Detector: PILATUS 6M SN: 60-0001
+        # 2007/Jun/17 15:12:36.928
+        # Pixel_size 172e-6 m x 172e-6 m
+        # Silicon sensor, thickness 0.000320 m
+        # Exposure_time 0.995000 s
+        # Exposure_period 1.000000 s
+        # Tau = 194.0e-09 s
+        # Count_cutoff 1048575 counts
+        # Threshold_setting 5000 eV
+        # Wavelength 1.2398 A
+        # Energy_range (0, 0) eV
+        # Detector_distance 0.15500 m
+        # Detector_Voffset -0.01003 m
+        # Beam_xy (1231.00, 1277.00) pixels
+        # Flux 22487563295 ph/s
+        # Filter_transmission 0.0008
+        # Start_angle 13.0000 deg.
+        # Angle_increment 1.0000 deg.
+        # Detector_2theta 0.0000 deg.
+        # Polarization 0.990
+        # Alpha 0.0000 deg.
+        # Kappa 0.0000 deg.
+        # Phi 0.0000 deg.
+        # Chi 0.0000 deg.
+        # Oscillation_axis  X, CW
+        # N_oscillations 1
+        ;
+
+        _array_data.data
+        ;
+        --CIF-BINARY-FORMAT-SECTION--
+        Content-Type: application/octet-stream;
+             conversions="x-CBF_BYTE_OFFSET"
+        Content-Transfer-Encoding: BINARY
+        X-Binary-Size: 6247567
+        X-Binary-ID: 1
+        X-Binary-Element-Type: "signed 32-bit integer"
+        X-Binary-Element-Byte-Order: LITTLE_ENDIAN
+        Content-MD5: 8wO6i2+899lf5iO8QPdgrw==
+        X-Binary-Number-of-Elements: 6224001
+        X-Binary-Size-Fastest-Dimension: 2463
+        X-Binary-Size-Second-Dimension: 2527
+        X-Binary-Size-Padding: 4095
+
+        ...
+
+        --CIF-BINARY-FORMAT-SECTION----
+        ;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+save_
+
+
+save__array_data.array_id
+    _item_description.description
+;             This item is a pointer to _array_structure.id  in the
+              ARRAY_STRUCTURE  category.
+
+              If not given, it defaults to 1.
+
+;
+    _item.name                  '_array_data.array_id'
+    _item.category_id             array_data
+    _item.mandatory_code          implicit
+    _item_default.value           1
+    _item_type.code               code
+     save_
+
+
+save__array_data.binary_id
+    _item_description.description
+;             This item is an integer identifier which, along with
+              _array_data.array_id, should uniquely identify the
+              particular block of array data.
+
+              If _array_data.binary_id  is not explicitly given,
+              it defaults to 1.
+
+              The value of _array_data.binary_id  distinguishes
+              among multiple sets of data with the same array
+              structure.
+
+              If the MIME header of the data array specifies a
+              value for X-Binary-ID, the value of  _array_data.binary_id
+              should be equal to the value given for X-Binary-ID.
+;
+     loop_
+    _item.name
+    _item.category_id
+    _item.mandatory_code
+             '_array_data.binary_id'            array_data
+                                                                implicit
+             '_diffrn_data_frame.binary_id'     diffrn_data_frame
+                                                                implicit
+             '_array_intensities.binary_id'     array_intensities
+                                                                implicit
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+             '_diffrn_data_frame.binary_id'     '_array_data.binary_id'
+             '_array_intensities.binary_id'     '_array_data.binary_id'
+
+    _item_default.value           1
+    _item_type.code               int
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            1  1
+                            .  1
+     save_
+
+
+save__array_data.data
+    _item_description.description
+;             The value of _array_data.data  contains the array data
+              encapsulated in a STAR string.  The value of this item is
+              required unless a value is given for
+               _array_data.external_data_id  instead, in which
+              case, a null value of '.' should be given here.
+
+              The representation used is a variant on the
+              Multipurpose Internet Mail Extensions (MIME) specified
+              in RFC 2045-2049 by N. Freed et al.  The boundary
+              delimiter used in writing an imgCIF or CBF is
+              \n--CIF-BINARY-FORMAT-SECTION-- (including the
+              required initial \n--, where \n represents the system
+              newline character(s)).
+
+              The Content-Type may be any of the discrete types permitted
+              in RFC 2045; 'application/octet-stream' is recommended
+              for diffraction images in the ARRAY_DATA category.
+              Note:  When appropriate in other categories, e.g. for
+              photographs of crystals, more precise types, such as
+              'image/jpeg', 'image/tiff', 'image/png', etc. should be used.
+
+              If an octet stream was compressed, the compression should
+              be specified by the parameter
+                conversions="X-CBF_PACKED"
+              or the parameter
+                conversions="X-CBF_CANONICAL"
+              or the parameter
+                conversions="X-CBF_BYTE_OFFSET"
+              or the parameter
+                conversions="X-CBF_BACKGROUND_OFFSET_DELTA"
+
+              If the parameter
+                conversions="X-CBF_PACKED"
+              is given it may be further modified with the parameters
+                uncorrelated_sections
+              or
+                flat
+              (e.g. conversions="X-CBF_PACKED flat").
+              In such cases the _array_structure.compression_type_flag
+              should also be present with the corresponding value.
+
+              If the "uncorrelated_sections" parameter is
+              given, each section will be compressed without using
+              the prior section for averaging.
+
+              If the "flat" parameter is given, each
+              image will be treated as one long row.
+
+              Note that X-CBF_CANONICAL and X-CBF_PACKED are
+              slower but more efficient compressions than the others.
+              The X-CBF_BYTE_OFFSET compression is a good compromise
+              between speed and efficiency for ordinary diffraction
+              images.  The X-CBF_BACKGROUND_OFFSET_DELTA compression
+              is oriented towards sparse data, such as masks and
+              tables of replacement pixel values for images with
+              overloaded spots.
+
+              The Content-Transfer-Encoding may be 'BASE64',
+              'Quoted-Printable', 'X-BASE8', 'X-BASE10',
+              'X-BASE16' or 'X-BASE32K', for an imgCIF or 'BINARY'
+              for a CBF.  The octal, decimal and hexadecimal transfer
+              encodings are provided for convenience in debugging and
+              are not recommended for archiving and data interchange.
+
+              In a CIF, one of the parameters 'charset=us-ascii',
+              'charset=utf-8' or 'charset=utf-16' may be used on the
+              Content-Transfer-Encoding to specify the character set
+              used for the external presentation of the encoded data.
+              If no charset parameter is given, the character set of
+              the enclosing CIF is assumed.  In any case, if a BOM
+              flag is detected (FE FF for big-endian UTF-16, FF FE for
+              little-endian UTF-16 or EF BB BF for UTF-8) is detected,
+              the indicated charset will be assumed until the end of the
+              encoded data or the detection of a different BOM.  The
+              charset of the Content-Transfer-Encoding is not the character
+              set of the encoded data, only the character set of the
+              presentation of the encoded data and should be respecified
+              for each distinct STAR string.
+
+              In an imgCIF file, the encoded binary data begin after
+              the empty line terminating the header.  In an imgCIF file,
+              the encoded binary data ends with the terminating boundary
+              delimiter '\n--CIF-BINARY-FORMAT-SECTION----'
+              in the currently effective charset or with the '\n;'
+              that terminates the STAR string.
+
+              In a CBF, the raw binary data begin after an empty line
+              terminating the header and after the sequence:
+
+              Octet   Hex   Decimal  Purpose
+                0     0C       12    Ctrl-L: page break
+                1     1A       26    Ctrl-Z: stop listings, MS-DOS
+                2     04       04    Ctrl-D: stop listings, UNIX
+                3     D5      213    binary section begins
+
+              None of these octets are included in the calculation of
+              the message size or in the calculation of the
+              message digest.
+
+              The X-Binary-Size header specifies the size of the
+              equivalent binary data in octets.  If compression was
+              used, this size is the size after compression, including
+              any book-keeping fields.  An adjustment is made for
+              the deprecated binary formats in which eight bytes of binary
+              header are used for the compression type.  In this case,
+              the eight bytes used for the compression type are subtracted
+              from the size, so that the same size will be reported
+              if the compression type is supplied in the MIME header.
+              Use of the MIME header is the recommended way to
+              supply the compression type.  In general, no portion of
+              the  binary header is included in the calculation of the size.
+
+              The X-Binary-Element-Type header specifies the type of
+              binary data in the octets, using the same descriptive
+              phrases as in _array_structure.encoding_type.  The default
+              value is 'unsigned 32-bit integer'.
+
+              An MD5 message digest may, optionally, be used. The 'RSA Data
+              Security, Inc. MD5 Message-Digest Algorithm' should be used.
+              No portion of the header is included in the calculation of the
+              message digest.
+
+              If the Transfer Encoding is 'X-BASE8', 'X-BASE10' or
+              'X-BASE16', the data are presented as octal, decimal or
+              hexadecimal data organized into lines or words.  Each word
+              is created by composing octets of data in fixed groups of
+              2, 3, 4, 6 or 8 octets, either in the order ...4321 ('big-
+              endian') or 1234... ('little-endian').  If there are fewer
+              than the specified number of octets to fill the last word,
+              then the missing octets are presented as '==' for each
+              missing octet.  Exactly two equal signs are used for each
+              missing octet even for octal and decimal encoding.
+              The format of lines is:
+
+              rnd xxxxxx xxxxxx xxxxxx
+
+              where r is 'H', 'O' or 'D' for hexadecimal, octal or
+              decimal, n is the number of octets per word and d is '<'
+              or '>' for the '...4321' and '1234...' octet orderings,
+              respectively.  The '==' padding for the last word should
+              be on the appropriate side to correspond to the missing
+              octets, e.g.
+
+              H4< FFFFFFFF FFFFFFFF 07FFFFFF ====0000
+
+              or
+
+              H3> FF0700 00====
+
+              For these hexadecimal, octal and decimal formats only,
+              comments beginning with '#' are permitted to improve
+              readability.
+
+              BASE64 encoding follows MIME conventions.  Octets are
+              in groups of three: c1, c2, c3.  The resulting 24 bits
+              are broken into four six-bit quantities, starting with
+              the high-order six bits (c1 >> 2) of the first octet, then
+              the low-order two bits of the first octet followed by the
+              high-order four bits of the second octet [(c1 & 3)<<4 | (c2>>4)],
+              then the bottom four bits of the second octet followed by the
+              high-order two bits of the last octet [(c2 & 15)<<2 | (c3>>6)],
+              then the bottom six bits of the last octet (c3 & 63).  Each
+              of these four quantities is translated into an ASCII character
+              using the mapping:
+
+                        1         2         3         4         5         6
+              0123456789012345678901234567890123456789012345678901234567890123
+              |         |         |         |         |         |         |
+              ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/
+
+              with short groups of octets padded on the right with one '='
+              if c3 is missing, and with '==' if both c2 and c3 are missing.
+
+              X-BASE32K encoding is similar to BASE64 encoding, except that
+              sets of 15 octets are encoded as sets of 8 16-bit Unicode
+              characters, by breaking the 120 bits into 8 15-bit quantities.
+              256 is added to each 15-bit quantity to bring it into a
+              printable Unicode range.  When encoding, zero padding is used
+              to fill out the last 15-bit quantity.  If 8 or more bits of
+              padding are used, a single equals sign (hexadecimal 003D) is
+              appended.  Embedded whitespace and newlines are introduced
+              to produce lines of no more than 80 characters each.  On
+              decoding, all printable ASCII characters and ASCII whitespace
+              characters are ignored except for any trailing equals signs.
+              The number of trailing equals signs indicated the number of
+              trailing octets to be trimmed from the end of the decoded data
+              (see Darakev et al., 2006).
+
+              QUOTED-PRINTABLE encoding also follows MIME conventions, copying
+              octets without translation if their ASCII values are 32...38,
+              42, 48...57, 59, 60, 62, 64...126 and the octet is not a ';'
+              in column 1.  All other characters are translated to =nn, where
+              nn is the hexadecimal encoding of the octet.  All lines are
+              'wrapped' with a terminating '=' (i.e. the MIME conventions
+              for an implicit line terminator are never used).
+
+              The 'X-Binary-Element-Byte-Order' can specify either
+              'BIG_ENDIAN' or 'LITTLE_ENDIAN' byte order of the image
+              data.  Only LITTLE_ENDIAN is recommended.  Processors
+              may treat BIG_ENDIAN as a warning of data that can
+              only be processed by special software.
+
+              The 'X-Binary-Number-of-Elements' specifies the number of
+              elements (not the number of octets) in the decompressed,
+              decoded image.
+
+              The optional 'X-Binary-Size-Fastest-Dimension' specifies the
+              number of elements (not the number of octets) in one row of the
+              fastest changing dimension of the binary data array. This
+              information must be in the MIME header for proper operation of
+              some of the decompression algorithms.
+
+              The optional 'X-Binary-Size-Second-Dimension' specifies the
+              number of elements (not the number of octets) in one column of
+              the second-fastest changing dimension of the binary data array.
+              This information must be in the MIME header for proper operation
+              of some of the decompression algorithms.
+
+              The optional 'X-Binary-Size-Third-Dimension' specifies the
+              number of sections for the third-fastest changing dimension of
+              the binary data array.
+
+              The optional 'X-Binary-Size-Padding' specifies the size in
+              octets of an optional padding after the binary array data and
+              before the closing flags for a binary section.
+
+              Reference:
+
+              Darakev, G., Litchev, V., Mitev, K. Z. & Bernstein, H. J. (2006).
+              'Efficient Support of Binary Data in the XML Implementation of
+              the NeXus File Format', abstract W0165, ACA Summer Meeting,
+              Honolulu, HI, USA, July 2006.
+;
+    _item.name                  '_array_data.data'
+    _item.category_id             array_data
+    _item.mandatory_code          yes
+    _item_type.code               binary
+save_
+
+save__array_data.external_data_id
+    _item_description.description
+;             This item is a pointer to _array_data_external_data.id  in the
+              ARRAY_DATA_EXTERNAL_DATA  category.
+
+              If not given, then the actual array data should be specified as
+              the value of _array_data.data.  If
+              both values are given, the value on _array_data.data  takes
+              precedence, and a warning of a possible conflict should be issued.
+
+;
+    _item.name                  '_array_data.external_data_id'
+    _item.category_id             array_data
+    _item.mandatory_code          implicit
+    _item_default.value           1
+    _item_type.code               code
+     save_
+
+save__array_data.header_contents
+    _item_description.description
+;             This item is a text field for use in minimal CBF files to carry
+              essential header information to be kept with image data
+              in _array_data.data when the tags that normally carry the
+              structured metadata for the image have not been populated.
+
+              Normally this data item should not appear when the full set
+              of tags has been populated and _diffrn_data_frame.details
+              appears.
+;
+    _item.name                  '_array_data.header_contents'
+    _item.category_id            array_data
+    _item.mandatory_code         no
+    _item_type.code              text
+     save_
+
+
+save__array_data.header_convention
+    _item_description.description
+;             This item is an identifier for the convention followed in
+              constructing the contents of _array_data.header_contents
+
+              The permitted values are of an image creator identifier
+              followed by an underscore and a version string.  To avoid
+              confusion about conventions, all creator identifiers
+              should be registered with the IUCr and the conventions
+              for all identifiers and versions should be posted on
+              the MEDSBIO.org web site.
+;
+    _item.name                  '_array_data.header_convention'
+    _item.category_id            array_data
+    _item.mandatory_code         no
+    _item_type.code              code
+     save_
+
+
+# save__array_data.variant
+#     _item_description.description
+# ;             The value of _array_data.variant  gives the variant
+#               to which the given ARRAY_DATA row is related.
+
+#               If this value is not given, the variant is assumed to be
+#               the default null variant.
+
+#               This item is a pointer to _variant.variant  in the
+#               VARIANT  category.
+# ;
+#     _item.name                  '_array_data.variant'
+#     _item.category_id             array_data
+#     _item.mandatory_code          implicit
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+
+########################
+# ARRAY_STRUCTURE_LIST #
+########################
+
+
+save_array_structure_list
+    _category.description
+;    Data items in the ARRAY_STRUCTURE_LIST  category record the size
+     and organization of each array dimension.
+
+     The relationship to physical axes may be given.
+;
+    _category.id                   array_structure_list
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+
+     loop_
+    _category_key.name             '_array_structure_list.array_id'
+                                   '_array_structure_list.index'
+#                                   '_array_structure_list.variant'
+     loop_
+    _category_group.id             'inclusive_group'
+                                   'array_data_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;       Example 1. An image array of 1300 x 1200 elements.  The raster
+                    order of the image is left to right (increasing) in the
+                    first dimension and bottom to top (decreasing) in
+                    the second dimension.
+;
+;
+        loop_
+       _array_structure_list.array_id
+       _array_structure_list.index
+       _array_structure_list.dimension
+       _array_structure_list.precedence
+       _array_structure_list.direction
+       _array_structure_list.axis_set_id
+        image_1   1    1300    1     increasing  ELEMENT_X
+        image_1   2    1200    2     decreasing  ELEMENY_Y
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__array_structure_list.array_id
+    _item_description.description
+;             This item is a pointer to _array_structure.id  in the
+              ARRAY_STRUCTURE  category.
+;
+    _item.name                  '_array_structure_list.array_id'
+    _item.category_id             array_structure_list
+    _item.mandatory_code          implicit
+    _item_type.code               code
+save_
+
+save__array_structure_list.array_section_id
+    _item_description.description
+;             This item is a pointer to _array_structure_list_section.id  in the
+              ARRAY_STRUCTURE_LIST_SECTION  category.
+;
+    _item.name                  '_array_structure_list.array_section_id'
+    _item.category_id             array_structure_list
+    _item.mandatory_code          implicit
+    # Added EP
+    _item_default.value            1
+    
+    _item_type.code               code
+save_
+
+
+save__array_structure_list.axis_set_id
+    _item_description.description
+;             This is a descriptor for the physical axis or set of axes
+              corresponding to an array index.
+
+              This data item is related to the axes of the detector
+              itself given in DIFFRN_DETECTOR_AXIS, but usually differs
+              in that the axes in this category are the axes of the
+              coordinate system of reported data points, while the axes in
+              DIFFRN_DETECTOR_AXIS  are the physical axes
+              of the detector describing the 'poise' of the detector as an
+              overall physical object.
+
+              If there is only one axis in the set, the identifier of
+              that axis should be used as the identifier of the set.
+;
+     loop_
+    _item.name
+    _item.category_id
+    _item.mandatory_code
+           '_array_structure_list.axis_set_id'
+                                  array_structure_list            yes
+           '_array_structure_list_axis.axis_set_id'
+                                  array_structure_list_axis       implicit
+    _item_type.code               code
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_array_structure_list_axis.axis_set_id'
+                               '_array_structure_list.axis_set_id'
+     save_
+
+
+save__array_structure_list.dimension
+    _item_description.description
+;             The number of elements stored in the array structure in
+              this dimension.
+;
+    _item.name                '_array_structure_list.dimension'
+    _item.category_id          array_structure_list
+    _item.mandatory_code       yes
+    _item_type.code            int
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            1  1
+                            .  1
+     save_
+
+
+save__array_structure_list.direction
+    _item_description.description
+;             Identifies the direction in which this array index changes.
+;
+    _item.name                '_array_structure_list.direction'
+    _item.category_id          array_structure_list
+    _item.mandatory_code       yes
+    _item_type.code            code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+
+                              'increasing'
+;       Indicates the index changes from 1 to the maximum dimension.
+;
+                              'decreasing'
+;       Indicates the index changes from the maximum dimension to 1.
+;
+     save_
+
+
+save__array_structure_list.index
+    _item_description.description
+;             Identifies the one-based index of the row or column in the
+              array structure.
+;
+     loop_
+    _item.name
+    _item.category_id
+    _item.mandatory_code
+           '_array_structure_list.index'        array_structure_list   yes
+           '_array_structure_list.precedence'   array_structure_list   yes
+#           '_array_element_size.index'          array_element_size     yes
+
+    _item_type.code            int
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+          '_array_structure_list_section.index'
+                        '_array_structure_list.index'
+#          '_array_element_size.index'
+#                        '_array_structure_list.index'
+
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            1  1
+                            .  1
+     save_
+
+
+save__array_structure_list.precedence
+    _item_description.description
+;             Identifies the rank order in which this array index changes
+              with respect to other array indices.  The precedence of 1
+              indicates the index which changes fastest.
+;
+    _item.name                '_array_structure_list.precedence'
+    _item.category_id          array_structure_list
+    _item.mandatory_code       yes
+    _item_type.code            int
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            1  1
+                            .  1
+     save_
+
+
+# save__array_structure_list.variant
+#     _item_description.description
+# ;             The value of _array_structure_list.variant  gives the variant
+#               to which the given ARRAY_STRUCTURE_LIST row is related.
+
+#               If this value is not given, the variant is assumed to be
+#               the default null variant.
+
+#               This item is a pointer to _variant.variant  in the
+#               VARIANT  category.
+# ;
+#     _item.name                  '_array_structure_list.variant'
+#     _item.category_id             array_structure_list
+#     _item.mandatory_code          implicit
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+#############################
+# ARRAY_STRUCTURE_LIST_AXIS #
+#############################
+
+save_array_structure_list_axis
+    _category.description
+;   Data items in the ARRAY_STRUCTURE_LIST_AXIS  category describe
+    the physical settings of sets of axes for the centres of pixels that
+    correspond to data points described in the
+    ARRAY_STRUCTURE_LIST  category.
+
+    In the simplest cases, the physical increments of a single axis correspond
+    to the increments of a single array index.  More complex organizations,
+    e.g. spiral scans, may require coupled motions along multiple axes.
+
+    Note that a spiral scan uses two coupled axes: one for the angular
+    direction and one for the radial direction.  This differs from a
+    cylindrical scan for which the two axes are not coupled into one
+    set.
+
+    Axes may be specified either for an entire array or for just a section
+    of an array.
+;
+    _category.id                   array_structure_list_axis
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+
+     loop_
+    _category_key.name
+                                  '_array_structure_list_axis.axis_set_id'
+                                  '_array_structure_list_axis.axis_id'
+#                                  '_array_structure_list_axis.variant'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'array_data_group'
+     save_
+
+
+save__array_structure_list_axis.axis_id
+    _item_description.description
+;             The value of this data item is the identifier of one of
+              the axes in the set of axes for which settings are being
+              specified.
+
+              Multiple axes may be specified for the same value of
+              _array_structure_list_axis.axis_set_id.
+
+              This item is a pointer to _axis.id  in the
+              AXIS  category.
+;
+    _item.name                 '_array_structure_list_axis.axis_id'
+    _item.category_id          array_structure_list_axis
+    _item.mandatory_code       yes
+    _item_type.code            code
+     save_
+
+
+save__array_structure_list_axis.axis_set_id
+    _item_description.description
+;             The value of this data item is the identifier of the
+               set of axes for which axis settings are being specified.
+
+               Multiple axes may be specified for the same value of
+               _array_structure_list_axis.axis_set_id.
+
+               This item is a pointer to
+               _array_structure_list.axis_set_id
+               in the ARRAY_STRUCTURE_LIST  category.
+
+               If this item is not specified, it defaults to the corresponding
+               axis identifier.
+;
+    _item.name                 '_array_structure_list_axis.axis_set_id'
+    _item.category_id          array_structure_list_axis
+    _item.mandatory_code       implicit
+    _item_type.code            code
+     save_
+
+
+save__array_structure_list_axis.angle
+    _item_description.description
+;             The setting of the specified axis in degrees for the first
+               data point of the array index with the corresponding value
+               of _array_structure_list.axis_set_id.  If the index is
+               specified as 'increasing', this will be the centre of the
+               pixel with index value 1.  If the index is specified as
+             'decreasing', this will be the centre of the pixel with
+               maximum index value.
+;
+    _item.name                 '_array_structure_list_axis.angle'
+    _item.category_id          array_structure_list_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'degrees'
+     save_
+
+
+save__array_structure_list_axis.angle_increment
+    _item_description.description
+;             The pixel-centre-to-pixel-centre increment in the angular
+               setting of the specified axis in degrees.  This is not
+               meaningful in the case of 'constant velocity' spiral scans
+               and should not be specified for this case.
+
+               See _array_structure_list_axis.angular_pitch.
+
+;
+    _item.name                 '_array_structure_list_axis.angle_increment'
+    _item.category_id          array_structure_list_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'degrees'
+     save_
+
+
+save__array_structure_list_axis.displacement
+    _item_description.description
+;             The setting of the specified axis in millimetres for the first
+               data point of the array index with the corresponding value
+               of _array_structure_list.axis_set_id.  If the index is
+               specified as 'increasing', this will be the centre of the
+               pixel with index value 1.  If the index is specified as
+             'decreasing', this will be the centre of the pixel with
+               maximum index value.
+;
+    _item.name               '_array_structure_list_axis.displacement'
+    _item.category_id          array_structure_list_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+save__array_structure_list_axis.fract_displacement
+    _item_description.description
+;             The setting of the specified axis as a decimal fraction of
+               the axis unit vector for the first data point of the array
+               index with the corresponding value of
+               _array_structure_list.axis_set_id.
+
+               If the index is specified as 'increasing', this will be the
+               centre of the pixel with index value 1.  If the index is
+               specified as 'decreasing', this will be the centre of the
+               pixel with maximum index value.
+;
+    _item.name               '_array_structure_list_axis.fract_displacement'
+    _item.category_id          array_structure_list_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+     save_
+
+
+save__array_structure_list_axis.displacement_increment
+    _item_description.description
+;             The pixel-centre-to-pixel-centre increment for the displacement
+               setting of the specified axis in millimetres.
+;
+    _item.name
+        '_array_structure_list_axis.displacement_increment'
+    _item.category_id          array_structure_list_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+save__array_structure_list_axis.fract_displacement_increment
+    _item_description.description
+;             The pixel-centre-to-pixel-centre increment for the displacement
+               setting of the specified axis as a decimal fraction of the
+               axis unit vector.
+;
+    _item.name
+        '_array_structure_list_axis.fract_displacement_increment'
+    _item.category_id          array_structure_list_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+save__array_structure_list_axis.angular_pitch
+    _item_description.description
+;             The pixel-centre-to-pixel-centre distance for a one-step
+               change in the setting of the specified axis in millimetres.
+
+               This is meaningful only for 'constant velocity' spiral scans
+               or for uncoupled angular scans at a constant radius
+               (cylindrical scans) and should not be specified for cases
+               in which the angle between pixels (rather than the distance
+               between pixels) is uniform.
+
+               See _array_structure_list_axis.angle_increment.
+;
+    _item.name               '_array_structure_list_axis.angular_pitch'
+    _item.category_id          array_structure_list_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+save__array_structure_list_axis.radial_pitch
+    _item_description.description
+;             The radial distance from one 'cylinder' of pixels to the
+               next in millimetres.  If the scan is a 'constant velocity'
+               scan with differing angular displacements between pixels,
+               the value of this item may differ significantly from the
+               value of _array_structure_list_axis.displacement_increment.
+;
+    _item.name               '_array_structure_list_axis.radial_pitch'
+    _item.category_id          array_structure_list_axis
+    _item.mandatory_code       no
+    _item_default.value        0.0
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+save__array_structure_list_axis.reference_angle
+    _item_description.description
+;             The value of _array_structure_list_axis.reference_angle
+               specifies the setting of the angle of this axis used for
+               determining a reference beam centre and a reference detector
+               distance.  It is normally expected to be identical to the
+               value of _array_structure_list_axis.angle.
+
+;
+    _item.name '_array_structure_list_axis.reference_angle'
+    _item.category_id          array_structure_list_axis
+    _item.mandatory_code       implicit
+    _item_type.code            float
+    _item_units.code           'degrees'
+     save_
+
+
+save__array_structure_list_axis.reference_displacement
+    _item_description.description
+;             The value of _array_structure_list_axis.reference_displacement
+               specifies the setting of the displacement of this axis used
+               for determining a reference beam centre and a reference detector
+               distance.  It is normally expected to be identical to the value
+               of _array_structure_list_axis.displacement.
+
+;
+    _item.name '_array_structure_list_axis.reference_displacement'
+    _item.category_id          array_structure_list_axis
+    _item.mandatory_code       implicit
+    _item_type.code            float
+    _item_units.code           'millimetres'
+     save_
+
+
+# save__array_structure_list_axis.variant
+#     _item_description.description
+# ;            The value of _array_structure_list_axis.variant  gives the variant
+#               to which the given ARRAY_STRUCTURE_LIST_AXIS row is related.
+
+#               If this value is not given, the variant is assumed to be
+#               the default null variant.
+
+#               This item is a pointer to _variant.variant  in the
+#               VARIANT  category.
+# ;
+#     _item.name                  '_array_structure_list_axis.variant'
+#     _item.category_id             array_structure_list_axis
+#     _item.mandatory_code          implicit
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+################################
+# ARRAY_STRUCTURE_LIST_SECTION #
+################################
+
+
+save_array_structure_list_section
+    _category.description
+;   Data items in the ARRAY_STRUCTURE_LIST_SECTION  category identify
+    the dimension-by-dimension start, end and stride of each section of an
+    array that is to be referenced.
+
+    For any array with identifier ARRAYID, array section ids of the form
+    ARRAYID(start1:end1:stride1,start2:end2:stride2, ...) are defined
+    by default.
+
+    For the given index, the elements in the section are of indices:
+    _array_structure_list_section.start,
+    _array_structure_list_section.start + _array_structure_list_section.stride,
+    _array_structure_list_section.start + 2*_array_structure_list_section.stride,
+    ...
+
+    stopping either when the indices leave the limits of the indices
+    of that dimension or
+    [min(_array_structure_list_section.start, _array_structure_list_section.end),
+     max(_array_structure_list_section.start, _array_structure_list_section.end)].
+
+
+    The ordering of these elements is determined by the overall ordering of
+    _array_structure_list_section.array_id  and not by the ordering implied
+    by the stride.
+;
+    _category.id                   array_structure_list_section
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+
+     loop_
+    _category_key.name             '_array_structure_list_section.id'
+                                   '_array_structure_list_section.array_id'
+                                   '_array_structure_list_section.index'
+#                                   '_array_structure_list_section.variant'
+     loop_
+    _category_group.id             'inclusive_group'
+                                   'array_data_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;       Example 1. An image array, myarray, of 1300 x 1200 elements, and
+                    700 frames is defined in ARRAY_STRUCTURE_LIST, and
+                    the array section identifier
+
+                    "myarray(101:1200,101:1100,1:700:10)"
+
+                    is explicitly defined taking every 10th frame and
+                    removing a 100 pixel border.  Note that even though
+                    the slow index high is 700, the last frame that
+                    will actually be included is only 691.
+;
+;
+
+     loop_
+    _array_structure_list.array_id
+    _array_structure_list.index
+    _array_structure_list.dimension
+    _array_structure_list.precedence
+    _array_structure_list.direction
+    _array_structure_list.axis_set_id
+    myarray   1    1300    1     increasing  ELEMENT_X
+    myarray   2    1200    2     increasing  ELEMENT_Y
+    myarray   3    700     3     increasing  FRAME_NO
+
+     loop_
+    _array_structure_list_section.id
+    _array_structure_list_section.array_id
+    _array_structure_list_section.index
+    _array_structure_list_section.start
+    _array_structure_list_section.end
+    _array_structure_list_section.stride
+    "myarray(101:1200,101:1100,1:700:10)"  myarray 1 101 1200  .
+    "myarray(101:1200,101:1100,1:700:10)"  myarray 2 101 1100  .
+    "myarray(101:1200,101:1100,1:700:10)"  myarray 3   1  700  10
+
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__array_structure_list_section.array_id
+    _item_description.description
+;             This item is a pointer to _array_structure.id  in the
+              ARRAY_STRUCTURE  category.
+;
+    _item.name                  '_array_structure_list_section.array_id'
+    _item.category_id             array_structure_list_section
+    _item.mandatory_code          implicit
+    _item_type.code               code
+save_
+
+
+save__array_structure_list_section.end
+    _item_description.description
+;             Identifies the ending ordinal, numbered from 1, for an array
+              element of index _array_structure_list_section.index  in the
+              section.
+
+              The value defaults to the dimension for index
+              _array_structure_list_section.index
+              of the array.
+
+              Note that this agrees with the Fortran convention, rather than
+              the Python convention in that, if compatible with the stride,
+              the end element is included in the section as in Fortran, rather
+              than being one beyond the section as in Python.
+;
+
+    _item.name               '_array_structure_list_section.end'
+    _item.category_id          array_structure_list_section
+    _item.mandatory_code       implicit
+    _item_type.code            int
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            1  1
+                            .  1
+     save_
+
+
+save__array_structure_list_section.id
+    _item_description.description
+;             Uniquely identifies the array section chosen.
+
+              To avoid confusion array section IDs that contain parentheses
+              should conform to the default syntax
+
+              ARRAYID(start1:end1:stride1,start2:end2:stride2, ...)
+;
+    _item.name                  '_array_structure_list_section.id'
+    _item.category_id             array_structure_list_section
+    _item.mandatory_code          yes
+    _item_type.code               code
+
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+                            '_diffrn_data_frame.array_section_id'
+                              '_array_structure_list_section.id'
+#                            '_map_segment.array_section_id'
+#                              '_array_structure_list_section.id'
+
+save_
+
+
+save__array_structure_list_section.index
+    _item_description.description
+;             This item is a pointer to _array_structure_list.index
+              in the ARRAY_STRUCTURE_LIST  category.
+
+              Identifies the one-based index of the row, column, sheet ...
+              the ARRAY_STRUCTURE_LIST  category.
+
+              For a multidimensional array, a value must be explicitly given.
+
+              If an index is omitted from a section then all elements for that
+              index are assumed to be included in the section.
+;
+    _item.name                 '_array_structure_list_section.index'
+    _item.category_id          array_structure_list_section
+    _item.mandatory_code       implicit
+    _item_type.code            int
+     save_
+
+
+save__array_structure_list_section.start
+    _item_description.description
+;             Identifies the starting ordinal, numbered from 1,
+              for an array element of index _array_structure_list_section.index
+              in the section.
+
+              The value defaults to 1.   For the given index, the elements in
+              the section are of indices:
+              _array_structure_list_section.start,
+              _array_structure_list_section.start
+                 + _array_structure_list_section.stride,
+              _array_structure_list_section.start
+                 + 2*_array_structure_list_section.stride,
+                  ...
+
+              stopping either when the indices leave the limits of the indices
+              of that dimension or
+              [min(_array_structure_list_section.start,
+                  _array_structure_list_section.end ),
+               max(_array_structure_list_section.start,
+                  _array_structure_list_section.end )].
+
+
+              The ordering of these elements is determined by the overall
+              ordering of _array_structure_list_section.array_id  and not by
+              the ordering implied by the stride.
+;
+    _item.name                 '_array_structure_list_section.start'
+    _item.category_id          array_structure_list_section
+    _item.mandatory_code       implicit
+    _item_type.code            int
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            1  1
+                            .  1
+     save_
+
+
+save__array_structure_list_section.stride
+    _item_description.description
+;             Identifies the incremental steps to be taken when moving
+              element to element in the section in that particular
+              dimension.  The value of _array_structure_list_section.stride
+              may be positive or negative.  If the stride is zero, the section
+              is just defined by _array_structure_list_section.start.
+;
+    _item.name                '_array_structure_list_section.stride'
+    _item.category_id          array_structure_list_section
+    _item.mandatory_code       no
+    _item_default.value        1
+    _item_type.code            int
+     loop_
+    _item_range.maximum
+    _item_range.minimum
+                            1  1
+                            .  1
+     save_
+
+
+# save__array_structure_list_section.variant
+#     _item_description.description
+# ;             The value of _array_structure_list_section.variant  gives the
+#               variant to which the given ARRAY_STRUCTURE_LIST_SECTION row
+#               is related.
+
+#               If this value is not given, the variant is assumed to be
+#               the default null variant.
+
+#               This item is a pointer to _variant.variant  in the
+#               VARIANT  category.
+# ;
+#     _item.name                  '_array_structure_list_section.variant'
+#     _item.category_id             array_structure_list_section
+#     _item.mandatory_code          implicit
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+#####################
+# DIFFRN_DATA_FRAME #
+#####################
+
+
+save_diffrn_data_frame
+    _category.description
+;            Data items in the DIFFRN_DATA_FRAME  category record
+              the details about each frame of data.
+
+              The items in this category were previously in a
+              DIFFRN_FRAME_DATA category, which is now deprecated.
+              The items from the old category are provided
+              as aliases but should not be used for new work.
+;
+    _category.id                   diffrn_data_frame
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+
+     loop_
+    _category_key.name             '_diffrn_data_frame.id'
+                                   '_diffrn_data_frame.detector_element_id'
+#                                   '_diffrn_data_frame.variant'
+     loop_
+    _category_group.id             'inclusive_group'
+                                   'array_data_group'
+                                   'diffrn_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;     Example 1. a frame containing data from four frame elements.
+
+                       Each frame element has a common array configuration
+                       'array_1' described in ARRAY_STRUCTURE  and related
+                       categories.  The data for each detector element are
+                       stored in four groups of binary data in the
+                       ARRAY_DATA  category, linked by the array_id and
+                       binary_id.
+;
+;
+        loop_
+        _diffrn_data_frame.id
+        _diffrn_data_frame.detector_element_id
+        _diffrn_data_frame.array_id
+        _diffrn_data_frame.binary_id
+        frame_1   d1_ccd_1  array_1  1
+        frame_1   d1_ccd_2  array_1  2
+        frame_1   d1_ccd_3  array_1  3
+        frame_1   d1_ccd_4  array_1  4
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__diffrn_data_frame.array_id
+    _item_description.description
+;            This item is a pointer to _array_structure.id  in the
+              ARRAY_STRUCTURE  category.
+;
+    _item.name                  '_diffrn_data_frame.array_id'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          implicit
+    _item_aliases.alias_name    '_diffrn_frame_data.array_id'
+    _item_aliases.dictionary      cif_img.dic
+    _item_aliases.version         1.0
+    _item_type.code               code
+     save_
+
+
+save__diffrn_data_frame.array_section_id
+    _item_description.description
+;            This item is a pointer to _array_structure_list_section.id
+              in the ARRAY_STRUCTURE_LIST_SECTION  category.
+;
+    _item.name                  '_diffrn_data_frame.array_section_id'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          implicit
+    _item_type.code               code
+     save_
+
+
+save__diffrn_data_frame.binary_id
+    _item_description.description
+;            This item is a pointer to _array_data.binary_id  in the
+              ARRAY_DATA  category.
+;
+    _item.name                  '_diffrn_data_frame.binary_id'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          implicit
+    _item_aliases.alias_name    '_diffrn_frame_data.binary_id'
+    _item_aliases.dictionary      cif_img.dic
+    _item_aliases.version         1.0
+    _item_type.code               int
+     save_
+
+
+save__diffrn_data_frame.center_fast
+    _item_description.description
+;            The value of _diffrn_data_frame.center_fast  is
+              the fast index axis beam centre position relative to the detector
+              element face in the units specified in the data item
+              _diffrn_data_frame.center_units  along the fast
+              axis of the detector from the centre of the first pixel to
+              the point at which the Z axis (which should be collinear with the
+              beam) intersects the face of the detector, if in fact it does.
+              At the time of the measurement the current settings of
+              the detector positioner for the given frame are used.
+
+              It is important to note that for measurements in mm,
+              the sense of the axis is used, rather than the sign of the
+              pixel-to-pixel increments.
+
+;
+    _item.name '_diffrn_data_frame.center_fast'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__diffrn_data_frame.center_slow
+    _item_description.description
+;             The value of _diffrn_data_frame.center_slow  is
+              the slow index axis beam centre position relative to the detector
+              element face in the units specified in the data item
+              _diffrn_data_frame.center_units  along the slow
+              axis of the detector from the centre of the first pixel to
+              the point at which the Z axis (which should be collinear with the
+              beam) intersects the face of the detector, if in fact it does.
+              At the time of the measurement the current settings of
+              the detector positioner for the given frame are used.
+
+              It is important to note that the sense of the axis is used,
+              rather than the sign of the pixel-to-pixel increments.
+;
+    _item.name '_diffrn_data_frame.center_slow'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__diffrn_data_frame.center_derived
+    _item_description.description
+;             The value of _diffrn_data_frame.center_derived
+              is assumed to be 'yes', i.e. that values of
+              _diffrn_data_frame.center_fast  and
+              _diffrn_data_frame.center_slow
+              are derived from the axis settings rather than measured.
+;
+    _item.name                  '_diffrn_data_frame.center_derived'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    _item_default.value           'yes'
+     save_
+
+
+save__diffrn_data_frame.center_units
+    _item_description.description
+;             The value of _diffrn_data_frame.center_units
+              specifies the units in which the values of
+              _diffrn_data_frame.center_fast  and
+              _diffrn_data_frame.center_slow
+              are presented.  The default is 'mm' for millimetres.  The
+              alternatives are 'pixels' and 'bins'.  In all cases the
+              centre distances are measured from the centre of the
+              first pixel, i.e. in a 2x2 binning, the measuring origin
+              is offset from the centres of the bins by one half pixel
+              towards the first pixel.
+
+              If 'bins' is specified, the data in
+                  _array_intensities.pixel_fast_bin_size,
+                  _array_intensities.pixel_slow_bin_size, and
+                  _array_intensities.pixel_binning_method
+              are used to define the binning scheme.
+;
+    _item.name '_diffrn_data_frame.center_units'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+                                   mm        'millimetres'
+                                   pixels    'detector pixels'
+                                   bins      'detector bins'
+     save_
+
+
+save__diffrn_data_frame.detector_element_id
+    _item_description.description
+;             This item is a pointer to _diffrn_detector_element.id
+              in the DIFFRN_DETECTOR_ELEMENT  category.
+;
+    _item.name                  '_diffrn_data_frame.detector_element_id'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          yes
+    _item_aliases.alias_name    '_diffrn_frame_data.detector_element_id'
+    _item_aliases.dictionary      cif_img.dic
+    _item_aliases.version         1.0
+    _item_type.code               code
+     save_
+
+
+save__diffrn_data_frame.id
+    _item_description.description
+;             The value of _diffrn_data_frame.id  must uniquely identify
+              each complete frame of data.
+;
+     loop_
+    _item.name
+    _item.category_id
+    _item.mandatory_code
+           '_diffrn_data_frame.id'        diffrn_data_frame  yes
+           '_diffrn_refln.frame_id'       diffrn_refln       yes
+           '_diffrn_scan.frame_id_start'  diffrn_scan        yes
+           '_diffrn_scan.frame_id_end'    diffrn_scan        yes
+           '_diffrn_scan_frame.frame_id'  diffrn_scan_frame  yes
+           '_diffrn_scan_frame_axis.frame_id'
+                                          diffrn_scan_frame_axis
+                                                             yes
+#           '_diffrn_scan_frame_monitor.frame_id'
+#                                          diffrn_scan_frame_monitor
+#                                                             implicit
+    _item_aliases.alias_name    '_diffrn_frame_data.id'
+    _item_aliases.dictionary      cif_img.dic
+    _item_aliases.version         1.0
+    _item_type.code               code
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_diffrn_refln.frame_id'        '_diffrn_data_frame.id'
+           '_diffrn_scan.frame_id_start'   '_diffrn_data_frame.id'
+           '_diffrn_scan.frame_id_end'     '_diffrn_data_frame.id'
+           '_diffrn_scan_frame.frame_id'   '_diffrn_data_frame.id'
+           '_diffrn_scan_frame_axis.frame_id'
+                                           '_diffrn_data_frame.id'
+#           '_diffrn_scan_frame_monitor.frame_id'
+#                                           '_diffrn_data_frame.id'
+     save_
+
+
+save__diffrn_data_frame.details
+    _item_description.description
+;             The value of _diffrn_data_frame.details  should give a
+              description of special aspects of each frame of data.
+
+              This is an appropriate location in which to record
+              information from vendor headers as presented in those
+              headers, but it should never be used as a substitute
+              for providing the fully parsed information within
+              the appropriate imgCIF/CBF categories.
+
+              Normally, when a conversion from a miniCBF has been done
+              the data from _array_data.header_convention
+              should be transferred to this data item and
+              _array_data.header_convention
+              should be removed.
+;
+    _item.name                  '_diffrn_data_frame.details'
+    _item.category_id             diffrn_data_frame
+    _item.mandatory_code          no
+    _item_aliases.alias_name    '_diffrn_frame_data.details'
+    _item_aliases.dictionary      cif_img.dic
+    _item_aliases.version         1.4
+    _item_type.code               text
+     loop_
+    _item_examples.case
+    _item_examples.detail
+;
+HEADER_BYTES = 512;
+DIM = 2;
+BYTE_ORDER = big_endian;
+TYPE = unsigned_short;
+SIZE1 = 3072;
+SIZE2 = 3072;
+PIXEL_SIZE = 0.102588;
+BIN = 2x2;
+DETECTOR_SN = 901;
+TIME = 29.945155;
+DISTANCE = 200.000000;
+PHI = 85.000000;
+OSC_START = 85.000000;
+OSC_RANGE = 1.000000;
+WAVELENGTH = 0.979381;
+BEAM_CENTER_X = 157.500000;
+BEAM_CENTER_Y = 157.500000;
+PIXEL SIZE = 0.102588;
+OSCILLATION RANGE = 1;
+EXPOSURE TIME = 29.9452;
+TWO THETA = 0;
+BEAM CENTRE = 157.5 157.5;
+;
+;              Example of header information extracted from an ADSC Quantum
+               315 detector header by CBFlib_0.7.6.  Image provided by Chris
+               Nielsen of ADSC from a data collection at SSRL beamline 1-5.
+;
+     save_
+
+
+# save__diffrn_data_frame.variant
+#     _item_description.description
+# ;             The value of _diffrn_data_frame.variant  gives the variant
+#               to which the given DIFFRN_DATA_FRAME row is related.
+
+#               If this value is not given, the variant is assumed to be
+#               the default null variant.
+
+#               This item is a pointer to _variant.variant  in the
+#               VARIANT  category.
+# ;
+#     _item.name                  '_diffrn_data_frame.variant'
+#     _item.category_id             diffrn_data_frame
+#     _item.mandatory_code          implicit
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+
+
+########################
+# DIFFRN_DETECTOR_AXIS #
+########################
+
+
+save_diffrn_detector_axis
+    _category.description
+;   Data items in the DIFFRN_DETECTOR_AXIS  category associate
+    axes with detectors.
+;
+    _category.id                   diffrn_detector_axis
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+
+     loop_
+    _category_key.name          '_diffrn_detector_axis.detector_id'
+                                '_diffrn_detector_axis.axis_id'
+#                                '_diffrn_detector_axis.variant'
+     loop_
+    _category_group.id           'inclusive_group'
+                                 'diffrn_group'
+     save_
+
+
+save__diffrn_detector_axis.axis_id
+    _item_description.description
+;             This data item is a pointer to _axis.id  in
+               the AXIS category.
+;
+    _item.name                  '_diffrn_detector_axis.axis_id'
+    _item.category_id             diffrn_detector_axis
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+
+save__diffrn_detector_axis.detector_id
+    _item_description.description
+;             This data item is a pointer to _diffrn_detector.id  in
+              the DIFFRN_DETECTOR  category.
+
+              This item was previously named _diffrn_detector_axis.id
+              which is now a deprecated name.  The old name is
+              provided as an alias but should not be used for new work.
+;
+    _item.name                  '_diffrn_detector_axis.detector_id'
+    _item.category_id             diffrn_detector_axis
+    _item.mandatory_code          yes
+    _item_aliases.alias_name    '_diffrn_detector_axis.id'
+    _item_aliases.dictionary      cif_img.dic
+    _item_aliases.version         1.0
+    _item_type.code               code
+     save_
+
+
+# save__diffrn_detector_axis.variant
+#     _item_description.description
+# ;            The value of _diffrn_detector_axis.variant  gives the variant
+#              to which the given DIFFRN_DETECTOR_AXIS row is related.
+
+#              If this value is not given, the variant is assumed to be
+#              the default null variant.
+
+#              This item is a pointer to _variant.variant  in the
+#              VARIANT  category.
+# ;
+#     _item.name                  '_diffrn_detector_axis.variant'
+#     _item.category_id             diffrn_detector_axis
+#     _item.mandatory_code          implicit
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+###########################
+# DIFFRN_DETECTOR_ELEMENT #
+###########################
+
+
+save_diffrn_detector_element
+    _category.description
+;   Data items in the DIFFRN_DETECTOR_ELEMENT  category record
+    the details about spatial layout and other characteristics
+    of each element of a detector which may have multiple elements.
+
+    In most cases, giving more detailed information
+    in ARRAY_STRUCTURE_LIST and ARRAY_STRUCTURE_LIST_AXIS
+    is preferable to simply providing the centre of the
+    detector element.
+;
+    _category.id                   diffrn_detector_element
+    _category.mandatory_code       no
+    _category.NX_mapping_details
+; in online version
+;
+
+     loop_
+    _category_key.name             '_diffrn_detector_element.id'
+                                   '_diffrn_detector_element.detector_id'
+#                                   '_diffrn_detector_element.variant'
+     loop_
+    _category_group.id             'inclusive_group'
+                                   'array_data_group'
+                                   'diffrn_group'
+     loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;      Example 1. Detector d1 is composed of four CCD detector elements,
+        each 200 mm by 200 mm, arranged in a square, in the pattern
+
+                   1     2
+                      *
+                   3     4
+
+        Note that the beam centre is slightly displaced from each of the
+        detector elements, just beyond the lower right corner of 1,
+        the lower left corner of 2, the upper right corner of 3 and
+        the upper left corner of 4.  For each element, the detector
+        face coordinate system is assumed to have the fast axis
+        running from left to right and the slow axis running from
+        top to bottom with the origin at the top left corner.
+;
+;
+        loop_
+        _diffrn_detector_element.detector_id
+        _diffrn_detector_element.id
+        _diffrn_detector_element.reference_center_fast
+        _diffrn_detector_element.reference_center_slow
+        _diffrn_detector_element.reference_center_units
+        d1     d1_ccd_1  201.5 201.5  mm
+        d1     d1_ccd_2  -1.8  201.5  mm
+        d1     d1_ccd_3  201.6  -1.4  mm
+        d1     d1_ccd_4  -1.7   -1.5  mm
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__diffrn_detector_element.id
+    _item_description.description
+;            The value of _diffrn_detector_element.id  must uniquely
+             identify each element of a detector.
+;
+     loop_
+    _item.name
+    _item.category_id
+    _item.mandatory_code
+           '_diffrn_detector_element.id'
+           diffrn_detector_element
+           yes
+    _item_type.code               code
+     loop_
+    _item_linked.child_name
+    _item_linked.parent_name
+           '_diffrn_data_frame.detector_element_id'
+           '_diffrn_detector_element.id'
+
+     save_
+
+
+save__diffrn_detector_element.detector_id
+    _item_description.description
+;             This item is a pointer to _diffrn_detector.id
+              in the DIFFRN_DETECTOR  category.
+;
+    _item.name                  '_diffrn_detector_element.detector_id'
+    _item.category_id             diffrn_detector_element
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+
+save__diffrn_detector_element.reference_center_fast
+    _item_description.description
+;             The value of _diffrn_detector_element.reference_center_fast  is
+              the fast index axis beam centre position relative to the detector
+              element face in the units specified in the data item
+              _diffrn_detector_element.reference_center_units  along the fast
+              axis of the detector from the centre of the first pixel to
+              the point at which the Z-axis (which should be collinear with the
+              beam) intersects the face of the detector, if in fact it does.
+              At the time of the measurement all settings of the detector
+              positioner should be at their reference settings.  If more than
+              one reference setting has been used the value given should be
+              representative of the beam centre as determined from the ensemble
+              of settings.
+
+              It is important to note that for measurements in mm,
+              the sense of the axis is used, rather than the sign of the
+              pixel-to-pixel increments.
+
+;
+    _item.name '_diffrn_detector_element.reference_center_fast'
+    _item.category_id             diffrn_detector_element
+    _item.mandatory_code          no
+    _item_type.code               float
+
+     save_
+
+
+save__diffrn_detector_element.reference_center_slow
+    _item_description.description
+;             The value of _diffrn_detector_element.reference_center_slow  is
+              the slow index axis beam centre position relative to the detector
+              element face in the units specified in the data item
+              _diffrn_detector_element.reference_center_units  along the slow
+              axis of the detector from the centre of the first pixel to
+              the point at which the Z-axis (which should be collinear with the
+              beam) intersects the face of the detector, if in fact it does.
+              At the time of the measurement all settings of the detector
+              positioner should be at their reference settings.  If more than
+              one reference setting has been used the value given should be
+              representative of the beam centre as determined from the ensemble
+              of settings.
+
+              It is important to note that the sense of the axis is used,
+              rather than the sign of the pixel-to-pixel increments.
+;
+    _item.name '_diffrn_detector_element.reference_center_slow'
+    _item.category_id             diffrn_detector_element
+    _item.mandatory_code          no
+    _item_type.code               float
+     save_
+
+
+save__diffrn_detector_element.reference_center_units
+    _item_description.description
+;             The value of _diffrn_detector_element.reference_center_units
+              specifies the units in which the values of
+              _diffrn_detector_element.reference_center_fast  and
+              _diffrn_detector_element.reference_center_slow
+              are presented.  The default is 'mm' for millimetres.  The
+              alternatives are 'pixels' and 'bins'.  In all cases the
+              centre distances are measured from the centre of the
+              first pixel, i.e. in a 2x2 binning, the measuring origin
+              is offset from the centres of the bins by one half pixel
+              towards the first pixel.
+
+              If 'bins' is specified, the data in
+                  _array_intensities.pixel_fast_bin_size,
+                  _array_intensities.pixel_slow_bin_size, and
+                  _array_intensities.pixel_binning_method
+              are used to define the binning scheme.
+;
+    _item.name '_diffrn_detector_element.reference_center_units'
+    _item.category_id             diffrn_detector_element
+    _item.mandatory_code          no
+    _item_type.code               code
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+                                   mm        'millimetres'
+                                   pixels    'detector pixels'
+                                   bins      'detector bins'
+     save_
+
+
+# save__diffrn_detector_element.variant
+#     _item_description.description
+# ;             The value of _diffrn_detector_element.variant  gives the variant
+#               to which the given DIFFRN_DETECTOR_ELEMENT row is related.
+
+#               If this value is not given, the variant is assumed to be
+#               the default null variant.
+
+#               This item is a pointer to _variant.variant  in the
+#                VARIANT  category.
+# ;
+#     _item.name                  '_diffrn_detector_element.variant'
+#     _item.category_id             diffrn_detector_element
+#     _item.mandatory_code          implicit
+#     _item_default.value          .
+#     _item_type.code               code
+#      save_
+
+#####################
+## ITEM_UNITS_LIST ##
+#####################
+     loop_
+    _item_units_list.code
+    _item_units_list.detail
+     'pixels_per_element'     '(image) pixels per (array) element'
+
+
+#### Links
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+array_data                          1  array_data:array_structure:1                            . .
+array_intensities                   1  array_intensitites:array_structure:1                    . .
+array_intensities                   2  array_intensitites:array_data:2                         . .
+array_structure_list        1  array_structure_list:array_structure:1                     . .
+array_structure_list_axis       1  array_structure_list_axis:array_structure_list:1       . .
+array_structure_list_section    1   array_structure_list_section:array_structure:1        . .
+array_structure_list_section    2   array_structure_list_section:array_structure_list:2   . .
+diffrn_data_frame               1   diffrn_data_frame:array_structure:1                   . .
+diffrn_data_frame               2   diffrn_data_frame:array_data:2                        . .
+diffrn_data_frame               3   diffrn_data_frame:array_structure_list_section:3      . .
+diffrn_data_frame               4   diffrn_data_frame:diffrn_detector_element:4           . .
+diffrn_detector_axis            1   diffrn_detector_axis:diffrn_detector:1                . .
+diffrn_scan                     1   diffrn_scan:diffrn_data_frame:1                       . .
+diffrn_scan_axis                1   diffrn_scan_axis:diffrn_scan:1                        . .
+diffrn_scan_frame               1   diffrn_scan_frame:diffrn_scan:1                       . .
+diffrn_scan_frame               2   diffrn_scan_frame:diffrn_data_frame:2                 . .
+diffrn_scan_frame_axis          1   diffrn_scan_frame_axis:diffrn_data_frame:1            . .
+
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+array_data                            1  '_array_data.array_id'                     '_array_structure.id'                   array_structure
+array_intensities                     1  '_array_intensities.array_id'              '_array_structure.id'                   array_structure
+array_intensities                     2  '_array_intensities.binary_id'             '_array_data.binary_id'                 array_data
+array_structure_list                  1  '_array_structure_list.array_id'           '_array_structure.id'                   array_structure
+array_structure_list_axis             1  '_array_structure_list_axis.axis_set_id'   '_array_structure_list.axis_set_id'     array_structure_list
+array_structure_list_section          1  '_array_structure_list_section.array_id'   '_array_structure.id'                   array_structure
+array_structure_list_section          2  '_array_structure_list_section.index'      '_array_structure_list.index'           array_structure_list
+diffrn_data_frame                     1  '_diffrn_data_frame.array_id'              '_array_structure.id'                   array_structure
+diffrn_data_frame                     2  '_diffrn_data_frame.binary_id'             '_array_data.binary_id'                 array_data
+diffrn_data_frame                     3  '_diffrn_data_frame.array_section_id'      '_array_structure_list_section.id'      array_structure_list_section
+diffrn_data_frame                     4  '_diffrn_data_frame.detector_element_id'   '_diffrn_detector_element.id'           diffrn_detector_element
+diffrn_detector_axis                  1  '_diffrn_detector_axis.detector_id'        '_diffrn_detector.id'                   diffrn_detector
+# For a scan - must have same frame id -- is this correct
+diffrn_scan                           1  '_diffrn_scan.frame_id_start'              '_diffrn_data_frame.id'                 diffrn_data_frame
+diffrn_scan                           1  '_diffrn_scan.frame_id_end'                '_diffrn_data_frame.id'                 diffrn_data_frame
+diffrn_scan_axis                      1  '_diffrn_scan_axis.scan_id'                '_diffrn_scan.id'                       diffrn_scan
+diffrn_scan_frame                     1  '_diffrn_scan_frame.scan_id'               '_diffrn_scan.id'                       diffrn_scan
+diffrn_scan_frame                     2  '_diffrn_scan_frame.frame_id'              '_diffrn_data_frame.id'                 diffrn_data_frame
+diffrn_scan_frame_axis                1  '_diffrn_scan_frame_axis.frame_id'         '_diffrn_data_frame.id'                 diffrn_data_frame
