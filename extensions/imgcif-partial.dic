@@ -97,9 +97,9 @@ save_diffrn_scan
       _diffrn_scan_frame_axis.displacement
       _diffrn_scan_frame_axis.displacement_increment
 
-       mad_L2_018 omega 201.8  0.1 ..
-       mad_L2_018 kappa -40.0  0.0 ..
-       mad_L2_018 phi   127.5  0.0 ..
+       mad_L2_018 omega 201.8  0.1 . .
+       mad_L2_018 kappa -40.0  0.0 . .
+       mad_L2_018 phi   127.5  0.0 . .
        mad_L2_018 tranz  .     .  2.3 0.0
 ;
 
@@ -621,16 +621,16 @@ save_diffrn_scan_collection
     _category_group.id            'inclusive_group'
                                   'diffrn_group'
      loop_
-    _category_examples.case
     _category_examples.detail
+    _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-;   Example 1 - Describing a multi-wedge raster scan.
+;
+        Example 1 - Describing a multi-wedge raster scan.
 ;
 ;
         loop_
         _diffrn_scan_collection.scan_id
         _diffrn_scan_collection.details
-
         multi_wedge
     ;   scan 20 micrometre beam in 100 micrometre steps on 31
         by 46 alternating raster of 20 degree wedges
@@ -2196,75 +2196,6 @@ save_array_data
 
         ELhQAAAAAAAA...
         ...
-        --CIF-BINARY-FORMAT-SECTION----
-        ;
-;
-# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-;
-        Example 2.
-
-        This example shows a single image in a miniCBF, provided by
-        E. Eikenberry.  The entire CBF consists of one data block
-        containing one category and three tags.  The CBFlib
-        program convert_miniCBF and a suitable template file
-        can be used to convert this miniCBF to a full imgCIF
-        file.
-;
-;
-        ###CBF: VERSION 1.5
-        # CBF file written by CBFlib v0.7.8
-
-        data_insulin_pilatus6m
-
-        _array_data.header_convention  SLS_1.0
-        _array_data.header_contents
-        ;
-        # Detector: PILATUS 6M SN: 60-0001
-        # 2007/Jun/17 15:12:36.928
-        # Pixel_size 172e-6 m x 172e-6 m
-        # Silicon sensor, thickness 0.000320 m
-        # Exposure_time 0.995000 s
-        # Exposure_period 1.000000 s
-        # Tau = 194.0e-09 s
-        # Count_cutoff 1048575 counts
-        # Threshold_setting 5000 eV
-        # Wavelength 1.2398 A
-        # Energy_range (0, 0) eV
-        # Detector_distance 0.15500 m
-        # Detector_Voffset -0.01003 m
-        # Beam_xy (1231.00, 1277.00) pixels
-        # Flux 22487563295 ph/s
-        # Filter_transmission 0.0008
-        # Start_angle 13.0000 deg.
-        # Angle_increment 1.0000 deg.
-        # Detector_2theta 0.0000 deg.
-        # Polarization 0.990
-        # Alpha 0.0000 deg.
-        # Kappa 0.0000 deg.
-        # Phi 0.0000 deg.
-        # Chi 0.0000 deg.
-        # Oscillation_axis  X, CW
-        # N_oscillations 1
-        ;
-
-        _array_data.data
-        ;
-        --CIF-BINARY-FORMAT-SECTION--
-        Content-Type: application/octet-stream;
-             conversions="x-CBF_BYTE_OFFSET"
-        Content-Transfer-Encoding: BINARY
-        X-Binary-Size: 6247567
-        X-Binary-ID: 1
-        X-Binary-Element-Type: "signed 32-bit integer"
-        X-Binary-Element-Byte-Order: LITTLE_ENDIAN
-        Content-MD5: 8wO6i2+899lf5iO8QPdgrw==
-        X-Binary-Number-of-Elements: 6224001
-        X-Binary-Size-Fastest-Dimension: 2463
-        X-Binary-Size-Second-Dimension: 2527
-        X-Binary-Size-Padding: 4095
-
-        ...
-
         --CIF-BINARY-FORMAT-SECTION----
         ;
 ;

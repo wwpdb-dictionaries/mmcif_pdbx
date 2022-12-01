@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.370
+    _dictionary.version         5.371
 #
      loop_
     _dictionary_history.version
@@ -2794,5 +2794,16 @@ data_mmcif_pdbx.dic
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Mark _pdbx_nmr_chem_shift_ref.atom_group and
       _pdbx_nmr_constraint_file.constraint_type as closed enumeration
+;
+5.371  2022-12-01
+;
+    Changes (ep/cv/ab):
+    * Integrate unmerged data by bringing in minimal imgCIF dictionary and
+      define new categories _pdbx_diffrn_batch, _pdbx_diffrn_cell, _pdbx_diffrn_orientation
+      _pdbx_diffrn_batch_scan, _pdbx_diffrn_detector_panel_mapping. Add
+      _diffrn_refln.frame_id, _diffrn_refln.pdbx_batch_id, _diffrn_refln.pdbx_detector_obs_fast,
+      _diffrn_refln.pdbx_detector_obs_slow, _diffrn_refln.pdbx_detector_calc_fast,
+      _diffrn_refln.pdbx_detector_calc_slow, _diffrn_refln.pdbx_panel_mapping_id
+    * Define uchar5 data type _chem_comp.three_letter_code
 ;
 #

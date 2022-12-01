@@ -440,6 +440,11 @@ data_mmcif_pdbx-data.dic
 ;
                data item for 3 character codes
 ;
+               uchar5    uchar
+              '[+]?[A-Za-z0-9][A-Za-z0-9]?[A-Za-z0-9]?[A-Za-z0-9]?[A-Za-z0-9]?'
+;
+               data item for 5 character codes
+;
                uchar1    uchar
               '[+]?[A-Za-z0-9]'
 ;
