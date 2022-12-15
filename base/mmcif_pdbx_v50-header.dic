@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.363
+    _dictionary.version         5.364
 #
      loop_
     _dictionary_history.version
@@ -2660,11 +2660,25 @@ data_mmcif_pdbx.dic
 5.363  2022-12-01
 ;
     Changes (ep/cv/ab):
-    * Integrate unmerged data by bringing in minimal imgCIF dictionary and
+    + Integrate unmerged data by bringing in minimal imgCIF dictionary and
       define new categories _pdbx_diffrn_batch, _pdbx_diffrn_cell, _pdbx_diffrn_orientation
       _pdbx_diffrn_batch_scan, _pdbx_diffrn_detector_panel_mapping. Add
       _diffrn_refln.frame_id, _diffrn_refln.pdbx_batch_id, _diffrn_refln.pdbx_detector_obs_fast,
       _diffrn_refln.pdbx_detector_obs_slow, _diffrn_refln.pdbx_detector_calc_fast,
       _diffrn_refln.pdbx_detector_calc_slow, _diffrn_refln.pdbx_panel_mapping_id
-    * Define uchar5 data type _chem_comp.three_letter_code
+    + Define uchar5 data type _chem_comp.three_letter_code
 ;
+5.364  2022-12-15
+;
+    Changes (ep):
+    + Mark _pdbx_initial_refinement_model.type as non-mandatory for deposition system
+    + Attributes for _struct_ncs_oper changed to mandatory
+    + Deposition type for _em_imaging.nominal_defocus_max and
+      _em_imaging.nominal_defocus_min to int
+    + Add "RIGAKU PhotonJet-S" and "BRUKER IMUS DIAMOND MICROFOCUS"
+      to _diffrn_source.type
+    + Add EMIRA to _em_software.name enumeration
+    + Add CSBID to _pdbx_SG_project.full_name_of_center, _pdbx_SG_project.initial_of_center
+      enumerations
+    + Extend _pdbx_audit_support.funding_organization enumeration
+;    

@@ -28,6 +28,11 @@ Changes (EP):
   _em_3d_fitting_list.chain_residue_range.
 + Add _em_3d_fitting_list.type, _em_3d_fitting_list.source_name, _em_3d_fitting_list.accession_code
 ;
+initial-model-extension.dic  0.2  2022-12-13
+;
+Changes (EP):
++ Mark _pdbx_initial_refinement_model.type as non-mandatory for deposition system.
+;
 
 loop_
 _item_type_list.code
@@ -118,6 +123,9 @@ save__pdbx_initial_refinement_model.type
     _item.name                  '_pdbx_initial_refinement_model.type'
     _item.category_id             pdbx_initial_refinement_model
     _item.mandatory_code          yes
+
+    _pdbx_item.mandatory_code     no
+    
     _item_type.code               line
      loop_
     _item_enumeration.value

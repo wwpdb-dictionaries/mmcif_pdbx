@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.5
+_pdbx_dictionary_component.version        0.6
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -48,6 +48,13 @@ Changes (EP):
 + Add "Department of Education of the Basque Government", "Department of Science and Innovation, South Africa",
   "Defense Advanced Research Projects Agency (DARPA)", "Weston Havens Foundation", "Jacob and Lena Joels Memorial Foundation, Hebrew University of Jerusalem",
   "'Ministry of Education and Science of the Republic of Kazakhstan", "University of College London", "Bulgairan National Science Fund"
+;
+mmcif_pdbx_audit_support-extension.dic  0.6  2022-12-13
+;
+Changes (EP):
++ Add "Gatsby Charitable Foundation", "Emergence program from University Grenoble Alpes",
+  "Vrije Universiteit Brussel", ">Instruct-ERIC Center (Helsinki)"
++ Change country for "Spar Nord Foundation" to Denmark
 ;
 
 ########################
@@ -209,6 +216,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Dutch Kidney Foundation'                                                                         Netherlands
          '_pdbx_audit_support.funding_organization'  'EIPOD fellowship under Marie Sklodowska-Curie Actions COFUND'                                    Germany
          '_pdbx_audit_support.funding_organization'  'Elite Network of Bavaria'                                                                        Germany
+         '_pdbx_audit_support.funding_organization'   'Emergence program from Universite Grenoble Alpes'                                               France
          '_pdbx_audit_support.funding_organization'  'Engineering and Physical Sciences Research Council'                                              'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Enterprise Ireland'                                                                              Ireland
 
@@ -246,6 +254,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Friedreichs Ataxia Research Alliance (FARA)'                                                     'United States'
          '_pdbx_audit_support.funding_organization'  'Future Leader Fellowship'                                                                        'United Kingdom'
 
+         '_pdbx_audit_support.funding_organization'  'Gatsby Charitable Foundation'                                                                    'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'General Secretariat for Research and Technology (GSRT)'                                          'European Union'
          '_pdbx_audit_support.funding_organization'  'Generalitat de Catalunya'                                                                        Spain
          '_pdbx_audit_support.funding_organization'  'German Federal Ministry for Economic Affairs and Energy'                                         Germany
@@ -275,6 +284,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Imperial College London'                                                                         'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Indian Council of Medical Research'                                                              India
          '_pdbx_audit_support.funding_organization'  'Instruct-ERIC Center (Strasbourg Centre)'                                                        France
+         '_pdbx_audit_support.funding_organization'  'Instruct-ERIC Center (Helsinki)'                                                                 Finland
          '_pdbx_audit_support.funding_organization'  iNEXT                                                                                             'European Union'
          '_pdbx_audit_support.funding_organization'  iNEXT-Discovery                                                                                   'European Union'	
          '_pdbx_audit_support.funding_organization'  Innosuisse                                                                                        'European Union'
@@ -462,7 +472,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Spanish Ministry of Economy and Competitiveness'                                                 Spain
          '_pdbx_audit_support.funding_organization'  'Spanish Ministry of Science, Innovation, and Universities'                                       Spain
          '_pdbx_audit_support.funding_organization'  'Spanish National Research Council'                                                               Spain
-         '_pdbx_audit_support.funding_organization'  'Spar Nord Foundation'                                                                            Germany
+         '_pdbx_audit_support.funding_organization'  'Spar Nord Foundation'                                                                            Denmark
          '_pdbx_audit_support.funding_organization'  'Slovenian Research Agency'                                                                       Slovenia
 #         '_pdbx_audit_support.funding_organization'  "St. Jude Children's Research Hospital (ALSAC)"                                                  'United States'
          '_pdbx_audit_support.funding_organization'  'St. Petersburg State University'                                                                 'Russian Federation'
@@ -523,6 +533,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Vienna Science and Technology Fund (WWTF)'                                                       Austria
          '_pdbx_audit_support.funding_organization'  'Vinnova'                                                                                         Sweden
          '_pdbx_audit_support.funding_organization'  'Volkswagen Foundation'                                                                           Germany
+         '_pdbx_audit_support.funding_organization'  'Vrije Universiteit Brussel (Blegium)'                                                            Belgium
          '_pdbx_audit_support.funding_organization'  'W. M. Keck Foundation'                                                                           'United States'
          '_pdbx_audit_support.funding_organization'  'Walloon Excellence in Lifesciences & BIOtechnology (WELBIO)'                                     Belgium
          '_pdbx_audit_support.funding_organization'  'Welch Foundation'                                                                                'United States'

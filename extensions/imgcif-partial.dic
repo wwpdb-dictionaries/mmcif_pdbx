@@ -1424,7 +1424,10 @@ save__diffrn_detector.id
 #                                         '_diffrn_detector.id'
 
     _item_type.code               code
-     save_
+    # Added EP - default value - implicit not codified in dictionary relating
+    _item_default.value        1
+
+    save_
 
 save__diffrn_detector.number_of_axes
     _item_description.description
