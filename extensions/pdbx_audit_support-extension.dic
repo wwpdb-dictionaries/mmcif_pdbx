@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.6
+_pdbx_dictionary_component.version        0.7
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -56,7 +56,13 @@ Changes (EP):
   "Vrije Universiteit Brussel", ">Instruct-ERIC Center (Helsinki)"
 + Change country for "Spar Nord Foundation" to Denmark
 ;
-
+mmcif_pdbx_audit_support-extension.dic  0.7  2023-01-09
+;
+Changes (EP):
++ Add 'Ministry of Agriculture, Forestry and Fisheries (MAFF)', 'The Australian Cancer Research Fund'
+ 'The Brian M. Davis Charitable Foundation Centenary Fellowship',
+ 'The Walter and Eliza Hall Institute of Medical Research'
+;
 ########################
 ## PDBX_AUDIT_SUPPORT ##
 ########################
@@ -341,6 +347,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Minas Gerais State Agency for Research and Development (FAPEMIG)'                                Brazil
          '_pdbx_audit_support.funding_organization'  'Ministerio de Ciencia e Innovacion (MCIN)'                                                       Spain
          '_pdbx_audit_support.funding_organization'  'Ministero dell Universita e della Ricerca'                                                       Italy
+         '_pdbx_audit_support.funding_organization'  'Ministry of Agriculture, Forestry and Fisheries (MAFF)'                                          Japan
          '_pdbx_audit_support.funding_organization'  'Ministry of Business, Innovation and Employment (New Zealand)'                                   'New Zealand'
          '_pdbx_audit_support.funding_organization'  'Ministry of Economy and Competitiveness (MINECO)'                                                Spain
          '_pdbx_audit_support.funding_organization'  'Ministry of Education (MoE, China)'                                                              China
@@ -487,6 +494,8 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Technology Agency of the Czech Republic'                                                         'Czech Republic'
          '_pdbx_audit_support.funding_organization'  'Techical University of Denmark (DTU)'                                                            'Denmark'
          '_pdbx_audit_support.funding_organization'  'TESS Research Foundation'                                                                        'United States'
+         '_pdbx_audit_support.funding_organization'  'The Australian Cancer Research Fund'                                                             Australia
+         '_pdbx_audit_support.funding_organization'  'The Brian M. Davis Charitable Foundation Centenary Fellowship'                                   Australia
          '_pdbx_audit_support.funding_organization'  'The Carlsberg Foundation'                                                                        Denmark
          '_pdbx_audit_support.funding_organization'  'The Carnegie Trust for the Universities of Scotland'                                             'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'The Comammox Research Platform'                                                                  Austria
@@ -505,6 +514,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'The Swedish Foundation for Strategic Research'                                                   Sweden
          '_pdbx_audit_support.funding_organization'  'The Thailand Research Fund (TRF)'                                                                Thailand
          '_pdbx_audit_support.funding_organization'  'The Vallee Foundation Inc.'                                                                      'United States'
+         '_pdbx_audit_support.funding_organization'  'The Walter and Eliza Hall Institute of Medical Research'                                         Australia
          '_pdbx_audit_support.funding_organization'  'The Yanmar Environmental Sustainability Support Association'                                     Japan
 
          '_pdbx_audit_support.funding_organization'  'The University Grants Committee, Research Grants Council (RGC)'                                  'Hong Kong'
@@ -533,7 +543,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Vienna Science and Technology Fund (WWTF)'                                                       Austria
          '_pdbx_audit_support.funding_organization'  'Vinnova'                                                                                         Sweden
          '_pdbx_audit_support.funding_organization'  'Volkswagen Foundation'                                                                           Germany
-         '_pdbx_audit_support.funding_organization'  'Vrije Universiteit Brussel (Blegium)'                                                            Belgium
+         '_pdbx_audit_support.funding_organization'  'Vrije Universiteit Brussel'                                                                      Belgium
          '_pdbx_audit_support.funding_organization'  'W. M. Keck Foundation'                                                                           'United States'
          '_pdbx_audit_support.funding_organization'  'Walloon Excellence in Lifesciences & BIOtechnology (WELBIO)'                                     Belgium
          '_pdbx_audit_support.funding_organization'  'Welch Foundation'                                                                                'United States'
