@@ -1,0 +1,28 @@
+data_mmcif_pdbx-conditionals.dic
+
+##################
+## Conditionals ##
+##################
+loop_
+_pdbx_comparison_operator_list.code
+_pdbx_comparison_operator_list.description
+                                    =       Equal
+                                    >=      "greater or equal"
+                                    !=      "Not equal"
+                                    <       "Less than"
+                                    not_set "If not set"
+                                    true    "Always true"
+
+loop_
+_pdbx_conditional_context_list.ordinal_id
+_pdbx_conditional_context_list.context_id
+_pdbx_conditional_context_list.target_item_name
+_pdbx_conditional_context_list.target_item_value
+_pdbx_conditional_context_list.cmp_op
+_pdbx_conditional_context_list.log_op
+1 WWPDB_NOT_ACCEPT_GDPR_20210924 '_pdbx_database_status.date_accepted_terms_and_conditions' ?                                    not_set ?
+2 WWPDB_NOT_ACCEPT_GDPR_20210924 '_pdbx_database_status.date_accepted_terms_and_conditions' 2021-09-24                           <       or
+3 WWPDB_NOT_PI                   '_pdbx_contact_author.role'                                ?                                    not_set ?
+4 WWPDB_NOT_PI                   '_pdbx_contact_author.role'                               'principal investigator/group leader' !=      or
+5 WWPDB_ALWAYS_SUPPRESS          '_pdbx_contact_author.role'                                ?                                    true    ?
+

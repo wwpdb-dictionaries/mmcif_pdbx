@@ -12,6 +12,7 @@ _pdbx_include_dictionary.dictionary_namespace_prefix
 _pdbx_include_dictionary.dictionary_namespace_prefix_replace
 mmcif_pdbx_v50-header.dic        mmcif_pdbx_v50-header.dic    extend . .
 mmcif_pdbx_data.dic              mmcif_pdbx-data.dic          extend . .
+mmcif_pdbx_conditionals.dic      mmcif_pdbx-conditionals.dic  extend . .
 mmcif_pdbx_v50-base.dic          mmcif_pdbx-base.dic          extend . .
 mmcif_pdbx_v50_variable.dic      mmcif_pdbx_v50-variable.dic  extend . .
 # V50 extensions are in this file
