@@ -6,6 +6,29 @@
 #
 
 data_sifts-extension.dic
+_pdbx_dictionary_component.datablock_id   mmcif_pdbx_sifts.dic
+_pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_sifts.dic
+_pdbx_dictionary_component.title          "PDBx/mmCIF Dictionary Sifts Extension"
+_pdbx_dictionary_component.version        0.0.2
+
+loop_
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+mmcif_pdbx_sifts.dic  0.0.1  2021-08-01
+;
+Changes (EP/PC):
++ Initial version
+;
+mmcif_pdbx_sifts.dic  0.0.2  2022-08-01
+;
+Changes (EP):
++ Change _pdbx_sifts_xref_db.res_type enumeration to examples
++ Add pdbx_sifts_xref_db_segments.seq_id_start and
+  pdbx_sifts_xref_db_segments.seq_id_start as keys for category.
+;
+
 
 loop_
 _pdbx_item_linked_group.category_id
@@ -292,23 +315,22 @@ save__pdbx_sifts_xref_db.res_type
     _item_type.code             line
 
     loop_
-    _item_enumeration.value
-    _item_enumeration.detail
-                                'engineered mutation'     .
-                                'cloning artifact'        .
-                                'variant'                 .
-                                'expression tag'          .
-                                'insertion'               .
-                                'deletion'                .
-                                'chromophore'             .
-                                'linker'                  .
-                                'conflict'                .
-                                'acetylation'             .
-                                'amidation'               .
-                                'initiating methionine'   .
-                                'modified residue'        .
-                                'microheterogeneity'      .
-                                'microheterogeneity/modified residue'  .
+    _item_examples.case
+                                'engineered mutation'    
+                                'cloning artifact'       
+                                'variant'                
+                                'expression tag'         
+                                'insertion'              
+                                'deletion'               
+                                'chromophore'            
+                                'linker'                 
+                                'conflict'               
+                                'acetylation'            
+                                'amidation'              
+                                'initiating methionine'  
+                                'modified residue'       
+                                'microheterogeneity'     
+                                'microheterogeneity/modified residue'
      save_
 
 save__pdbx_sifts_xref_db.observed
@@ -405,6 +427,9 @@ save_pdbx_sifts_xref_db_segments
                             '_pdbx_sifts_xref_db_segments.xref_db_acc'
                             '_pdbx_sifts_xref_db_segments.segment_id'
                             '_pdbx_sifts_xref_db_segments.instance_id'
+			    # Temporary
+			    '_pdbx_sifts_xref_db_segments.seq_id_start'
+			    '_pdbx_sifts_xref_db_segments.seq_id_end'
     #
     loop_
     _category_group.id      'inclusive_group'

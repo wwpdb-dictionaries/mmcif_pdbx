@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.365
+    _dictionary.version         5.366
 #
      loop_
     _dictionary_history.version
@@ -2687,4 +2687,11 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Add 'PDB-Dev' to _pdbx_database_related.db_name enumeration
     + Extend _pdbx_audit_support.funding_organization enumeration
+;
+5.366  2023-01-28
+;
+    Changes (ep):
+    + Change _pdbx_sifts_xref_db.res_type enumeration to examples
+    + Add pdbx_sifts_xref_db_segments.seq_id_start and
+      pdbx_sifts_xref_db_segments.seq_id_start as keys for category.
 ;
