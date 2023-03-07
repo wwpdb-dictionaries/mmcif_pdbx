@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.7
+_pdbx_dictionary_component.version        0.8
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -62,6 +62,12 @@ Changes (EP):
 + Add 'Ministry of Agriculture, Forestry and Fisheries (MAFF)', 'The Australian Cancer Research Fund'
  'The Brian M. Davis Charitable Foundation Centenary Fellowship',
  'The Walter and Eliza Hall Institute of Medical Research'
+;
+mmcif_pdbx_audit_support-extension.dic  0.8  2023-03-07
+;
+Changes (EP):
++ Add 'Becton-Dickinson and Company', 'McKnight Foundation', 'Roechling Stiftung', 'ROME Therapeutics, Inc.',  'University of Alicante',
+  'University of Oxford, Medical Sciences Internal Fund (MSIF)'
 ;
 ########################
 ## PDBX_AUDIT_SUPPORT ##
@@ -148,6 +154,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Baden-Wuerttemberg-Stiftung'                                                                     Germany
          '_pdbx_audit_support.funding_organization'  'Banting Postdoctoral Fellowships'                                                                Canada
          '_pdbx_audit_support.funding_organization'  'Bavarian State Ministry for Education, Culture, Science and Arts'                                Germany
+         '_pdbx_audit_support.funding_organization'  'Becton-Dickinson and Company'                                                                    'United States'
          '_pdbx_audit_support.funding_organization'  'Belgian Foundation against Cancer'                                                               Netherlands
          '_pdbx_audit_support.funding_organization'  'Belarusian Republican Foundation for Fundamental Research'                                       Belarus
          '_pdbx_audit_support.funding_organization'  'Bill & Melinda Gates Foundation'                                                                 'United States'
@@ -318,6 +325,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Joachim Herz Stiftung'                                                                           Germany
          '_pdbx_audit_support.funding_organization'  'John Innes Foundation'                                                                           'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Joint Supercomputer Center of the Russian Academy of Sciences'                                   'Russian Federation'
+         '_pdbx_audit_support.funding_organization'  'Junta de Castilla y Leon, Consejeria de Educacion y Cultura y Fondo Social Europeo'              Spain
          '_pdbx_audit_support.funding_organization'  'Kay Kendall Leukaemia Fund'                                                                      'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Kidney Research UK'                                                                              'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Knut and Alice Wallenberg Foundation'                                                            Sweden
@@ -341,6 +349,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Max Planck Bristol Centre for Minimal Biology - University of Bristol'                           'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Max Planck Society'                                                                              Germany
          '_pdbx_audit_support.funding_organization'  'Medical Research Council (MRC, Canada)'                                                          Canada
+         '_pdbx_audit_support.funding_organization'  'McKnight Foundation'                                                                             'United States'
          '_pdbx_audit_support.funding_organization'  'Medical Research Council (MRC, United Kingdom)'                                                  'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Mercatus Center'                                                                                 'United States'
          '_pdbx_audit_support.funding_organization'  'Michael J. Fox Foundation'                                                                       'United States'
@@ -455,6 +464,8 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Richard and Susan Smith Family Foundation'                                                       'United States'
          '_pdbx_audit_support.funding_organization'  'Rita Allen Foundation'                                                                           'United States'
 	 '_pdbx_audit_support.funding_organization'  'Robert A. Welch Foundation'                                                                      'United States'
+         '_pdbx_audit_support.funding_organization'  'Roechling Stiftung'                                                                              Germany
+         '_pdbx_audit_support.funding_organization'  'ROME Therapeutics, Inc.'                                                                         'United States'
          '_pdbx_audit_support.funding_organization'  'Royal Society'                                                                                   'United Kingdom'
 	
          '_pdbx_audit_support.funding_organization'  'Royal Society of New Zealand'                                                                    'New Zealand'
@@ -526,11 +537,13 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'United States - Israel Binational Science Foundation (BSF)'                                      'United States'
          '_pdbx_audit_support.funding_organization'  'United States Department of Agriculture (USDA)'                                                  'United States'
          '_pdbx_audit_support.funding_organization'  'Universite de Toulouse'                                                                          France
+         '_pdbx_audit_support.funding_organization'  'University of Alicante'                                                                          Spain
          '_pdbx_audit_support.funding_organization'  'University of Bologna'                                                                           Italy
          '_pdbx_audit_support.funding_organization'  'University of Cambridge'                                                                         'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'University of College London'                                                                    'United Kingdom'	 
          '_pdbx_audit_support.funding_organization'  'University of Helsinki'                                                                          Finland
          '_pdbx_audit_support.funding_organization'  'University of Helsinki Research Foundation'                                                      Finland
+         '_pdbx_audit_support.funding_organization'  'University of Oxford, Medical Sciences Internal Fund (MSIF)'                                     'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'University of Patras'                                                                            Greece
          '_pdbx_audit_support.funding_organization'  'University and Research - University of Milan'                                                   Italy
          '_pdbx_audit_support.funding_organization'  'University of Vienna Research Platform Comammox'                                                 Austria
