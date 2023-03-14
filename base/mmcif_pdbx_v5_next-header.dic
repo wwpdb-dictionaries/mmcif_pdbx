@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.375
+    _dictionary.version         5.376
 #
      loop_
     _dictionary_history.version
@@ -2838,4 +2838,13 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Add 'Ewald Sphere Correction' to _em_software.name enumeration
+;
+5.376  2023-03-14
+;
+    Changes (ep):
+    + Move 'EWALD SPHERE CORRECTION' to _em_software.category enumeration
+    + Add _pdbx_depui_entry_details.validated_identifier_ORCID
+    + Add "Malvern Panalytical PIXcel 1D" to _diffrn_detector.type enumeration
+    + Add "TFS FALCON 4i (4k x 4x)" to _em_image_recording.film_or_detector_model
+    + Extend _pdbx_audit_support.funding_organization enumeration
 ;

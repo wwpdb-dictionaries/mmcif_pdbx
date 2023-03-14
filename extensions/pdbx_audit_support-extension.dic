@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.8
+_pdbx_dictionary_component.version        0.9
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -69,6 +69,13 @@ Changes (EP):
 + Add 'Becton-Dickinson and Company', 'McKnight Foundation', 'Roechling Stiftung', 'ROME Therapeutics, Inc.',  'University of Alicante',
   'University of Oxford, Medical Sciences Internal Fund (MSIF)'
 ;
+mmcif_pdbx_audit_support-extension.dic  0.9  2023-03-14
+;
+Changes (EP):
++ Add 'Alexs Lemonade Stand Foundation for Cancer', 'Clas Groschinsky Memorial Fund',
+  'Sven and Dagmar Salens Foundation'
+;
+
 ########################
 ## PDBX_AUDIT_SUPPORT ##
 ########################
@@ -136,6 +143,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Ake Wiberg Foundation'                                                                           'European Union'
          '_pdbx_audit_support.funding_organization'  'Alexander von Humboldt Foundation'                                                               Germany
          '_pdbx_audit_support.funding_organization'  'Almirall, LLC'                                                                                   'United States'
+         '_pdbx_audit_support.funding_organization'  'Alexs Lemonade Stand Foundation for Cancer'                                                      'United States'
          '_pdbx_audit_support.funding_organization'  'Alzheimer Forschung Initiative e.V.'                                                             Germany
          '_pdbx_audit_support.funding_organization'  'Alzheimers Drug Discovery Foundation (ADDF)'                                                     'United States'
 	 '_pdbx_audit_support.funding_organization'  'Alzheimers Research UK (ARUK)'                                                                   'United Kingdom'
@@ -193,7 +201,8 @@ save__pdbx_audit_support.funding_organization
 
          '_pdbx_audit_support.funding_organization'  'Christian Doppler Forschungsgesellschaft'                                                        Austria
          '_pdbx_audit_support.funding_organization'  'CIFAR Azrieli Global Scholars'                                                                   Canada
-         '_pdbx_audit_support.funding_organization'  'Columbia Technology Ventures'                                                                   'United States'
+	 '_pdbx_audit_support.funding_organization'  'Clas Groschinsky Memorial Fund'                                                                  Sweden
+	 '_pdbx_audit_support.funding_organization'  'Columbia Technology Ventures'                                                                   'United States'
          '_pdbx_audit_support.funding_organization'  'Comision Nacional Cientifica y Technologica (CONICYT)'                                           Chile
          '_pdbx_audit_support.funding_organization'  'Commonwealth Scholarship Commission (United Kingdom)'                                            'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Comunidad de Madrid'                                                                             Spain
@@ -494,7 +503,8 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Slovenian Research Agency'                                                                       Slovenia
 #         '_pdbx_audit_support.funding_organization'  "St. Jude Children's Research Hospital (ALSAC)"                                                  'United States'
          '_pdbx_audit_support.funding_organization'  'St. Petersburg State University'                                                                 'Russian Federation'
-         '_pdbx_audit_support.funding_organization'  'Swedish Energy Agency'                                                                           Sweden
+	 '_pdbx_audit_support.funding_organization'   'Sven and Dagmar Salens Foundation'                                                              Sweden
+	 '_pdbx_audit_support.funding_organization'  'Swedish Energy Agency'                                                                           Sweden
          '_pdbx_audit_support.funding_organization'  'Swedish Research Council'                                                                        Sweden
          '_pdbx_audit_support.funding_organization'  'Swiss Cancer League'                                                                             Switzerland
          '_pdbx_audit_support.funding_organization'  'Swiss Nanoscience Institute'                                                                     Switzerland
