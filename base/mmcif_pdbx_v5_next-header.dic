@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.376
+    _dictionary.version         5.377
 #
      loop_
     _dictionary_history.version
@@ -2847,4 +2847,13 @@ data_mmcif_pdbx.dic
     + Add "Malvern Panalytical PIXcel 1D" to _diffrn_detector.type enumeration
     + Add "TFS FALCON 4i (4k x 4x)" to _em_image_recording.film_or_detector_model
     + Extend _pdbx_audit_support.funding_organization enumeration
+;
+5.377  2023-04-12
+;
+    + Add 'HOLD FOR 6 WEEKS' to enumerations for _pdbx_database_status.dep_release_code_struct_fact
+      and _pdbx_database_status.dep_release_code_nmr_constraints
+    + Extend _pdbx_audit_support.funding_organization enumeration
+    + Add _reflns.pdbx_redundancy lower limit of 0.
+    + Add 'Histidine' to _pdbx_nmr_chem_shift_ref.mol_common_name enumeration
+    + Update pdbx_nmr_software.name list
 ;
