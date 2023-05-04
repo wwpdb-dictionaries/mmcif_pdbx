@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.377
+    _dictionary.version         5.378
 #
      loop_
     _dictionary_history.version
@@ -2856,4 +2856,16 @@ data_mmcif_pdbx.dic
     + Add _reflns.pdbx_redundancy lower limit of 0.
     + Add 'Histidine' to _pdbx_nmr_chem_shift_ref.mol_common_name enumeration
     + Update pdbx_nmr_software.name list
+;
+5.378  2023-05-03
+;
+    Changes (ep):
+    + Correct "TFS FALCON 4i (4k x 4k)" to _em_image_recording.film_or_detector_model
+    + Add 'Au-flat 1.2/1.3' to _em_sample_support.grid_type enumeration
+    + Extend _pdbx_audit_support.funding_organization enumeration
+    + Add IPLT to _em_software.name enumeration
+    + Adjust entity_id_list data type to be alphanumeric entities which is more in line with
+      entity.id type.
+    + Define pdb_id_u data type as case insensitive
+    + Change data type for _em_3d_fitting_list.pdb_entry_id to pdb_id_u
 ;

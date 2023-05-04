@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.10
+_pdbx_dictionary_component.version        0.11
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -79,6 +79,12 @@ mmcif_pdbx_audit_support-extension.dic  0.10  2023-04-12
 ;
 Changes (EP):
 + Add 'Diamond Light Source', 'Palacky University of Olomouc', 'University of Southhampton'
+;
+mmcif_pdbx_audit_support-extension.dic  0.11  2023-05-03
+;
+Changes (EP):
++ Add 'Compagnia di San Paolo Foundation', 'Emerson Collective', 'Johns Hopkins University',
+  'La Region Occitanie', 'Maryland Stem Cell Research Fund', 'Willowcroft Foundation'
 ;
 
 ########################
@@ -210,6 +216,7 @@ save__pdbx_audit_support.funding_organization
 	 '_pdbx_audit_support.funding_organization'  'Columbia Technology Ventures'                                                                   'United States'
          '_pdbx_audit_support.funding_organization'  'Comision Nacional Cientifica y Technologica (CONICYT)'                                           Chile
          '_pdbx_audit_support.funding_organization'  'Commonwealth Scholarship Commission (United Kingdom)'                                            'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Compagnia di San Paolo Foundation'                                                               Italy
          '_pdbx_audit_support.funding_organization'  'Comunidad de Madrid'                                                                             Spain
          '_pdbx_audit_support.funding_organization'  'Consejo Nacional de Ciencia y Tecnologia (CONACYT)'                                              Mexico
          '_pdbx_audit_support.funding_organization'  'Consortia for HIV/AIDS Vaccine Development'                                                      'United States'
@@ -244,7 +251,8 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Dutch Kidney Foundation'                                                                         Netherlands
          '_pdbx_audit_support.funding_organization'  'EIPOD fellowship under Marie Sklodowska-Curie Actions COFUND'                                    Germany
          '_pdbx_audit_support.funding_organization'  'Elite Network of Bavaria'                                                                        Germany
-         '_pdbx_audit_support.funding_organization'   'Emergence program from Universite Grenoble Alpes'                                               France
+         '_pdbx_audit_support.funding_organization'  'Emergence program from Universite Grenoble Alpes'                                                France
+         '_pdbx_audit_support.funding_organization'  'Emerson Collective'                                                                              'United States'
          '_pdbx_audit_support.funding_organization'  'Engineering and Physical Sciences Research Council'                                              'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Enterprise Ireland'                                                                              Ireland
 
@@ -339,6 +347,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Japan Society for the Promotion of Science (JSPS)'                                               Japan
          '_pdbx_audit_support.funding_organization'  'Joachim Herz Stiftung'                                                                           Germany
          '_pdbx_audit_support.funding_organization'  'John Innes Foundation'                                                                           'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Johns Hopkins University'                                                                        'United States'
          '_pdbx_audit_support.funding_organization'  'Joint Supercomputer Center of the Russian Academy of Sciences'                                   'Russian Federation'
          '_pdbx_audit_support.funding_organization'  'Junta de Castilla y Leon, Consejeria de Educacion y Cultura y Fondo Social Europeo'              Spain
          '_pdbx_audit_support.funding_organization'  'Kay Kendall Leukaemia Fund'                                                                      'United Kingdom'
@@ -346,6 +355,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Knut and Alice Wallenberg Foundation'                                                            Sweden
          '_pdbx_audit_support.funding_organization'  'KU Leuven'                                                                                       Belgium
          '_pdbx_audit_support.funding_organization'  'La Caixa Foundation'                                                                             Spain
+         '_pdbx_audit_support.funding_organization'  'La Region Occitanie'                                                                             Italy
          '_pdbx_audit_support.funding_organization'  'Laboratories of Excellence (LabEx)'                                                              France
          '_pdbx_audit_support.funding_organization'  'Leducq Foundation'                                                                               France
          '_pdbx_audit_support.funding_organization'  'Leibniz Association'                                                                             Germany
@@ -359,7 +369,8 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Lustgarten Foundation'                                                                           'United States'
          '_pdbx_audit_support.funding_organization'  'Marie Sklodowska-Curie Actions, FragNET ITN'                                                     'European Union'
          '_pdbx_audit_support.funding_organization'  'Marsden Fund'                                                                                    'New Zealand'
-         '_pdbx_audit_support.funding_organization'  'Massachusetts Consortium on Pathogen Readiness (MassCPR)'                                        'United States'
+         '_pdbx_audit_support.funding_organization'  'Maryland Stem Cell Research Fund'                                                                'United States'
+	 '_pdbx_audit_support.funding_organization'  'Massachusetts Consortium on Pathogen Readiness (MassCPR)'                                        'United States'
 
          '_pdbx_audit_support.funding_organization'  'Max Planck Bristol Centre for Minimal Biology - University of Bristol'                           'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Max Planck Society'                                                                              Germany
@@ -560,6 +571,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'University of College London'                                                                    'United Kingdom'	 
          '_pdbx_audit_support.funding_organization'  'University of Helsinki'                                                                          Finland
          '_pdbx_audit_support.funding_organization'  'University of Helsinki Research Foundation'                                                      Finland
+         '_pdbx_audit_support.funding_organization'  'University of Naples Federico II'                                                                Italy
          '_pdbx_audit_support.funding_organization'  'University of Oxford, Medical Sciences Internal Fund (MSIF)'                                     'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'University of Patras'                                                                            Greece
          '_pdbx_audit_support.funding_organization'  'University and Research - University of Milan'                                                   Italy
@@ -581,7 +593,8 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Wellcome Trust'                                                                                  'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Wenner-Gren Foundation'                                                                          'United States'
          '_pdbx_audit_support.funding_organization'  'Weston Havens Foundation'                                                                        'United States'
-	 '_pdbx_audit_support.funding_organization'  'Wolfson Foundation'                                                                              'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Willowcroft Foundation'                                                                          'United States'
+         '_pdbx_audit_support.funding_organization'  'Wolfson Foundation'                                                                              'United Kingdom'
 	 '_pdbx_audit_support.funding_organization'  'World Health Organization (WHO)'                                                                 'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Worldwide Cancer Research'                                                                       'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Yousef Jameel Scholarship'                                                                       Egypt

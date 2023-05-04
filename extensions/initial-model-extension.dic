@@ -33,6 +33,12 @@ initial-model-extension.dic  0.2  2022-12-13
 Changes (EP):
 + Mark _pdbx_initial_refinement_model.type as non-mandatory for deposition system.
 ;
+initial-model-extension.dic  0.3  2022-05-03
+;
+Changes (EP):
++ Adjust entity_id_list data type to be alphanumeric entities which is more in line with
+  entity.id type.
+;
 
 loop_
 _item_type_list.code
@@ -40,8 +46,8 @@ _item_type_list.primitive_code
 _item_type_list.construct
 _item_type_list.detail
                entity_id_list     uchar
-               '[0-9]+(,[0-9]+)*'
-               "comma separated numeric codes (no spaces)  ..."
+               '[0-9A-Za-z]+(,[0-9A-Za-z]+)*'
+               "comma separated alphanumeric codes (no spaces)  ..."
 
 
 # loop_
