@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.11
+_pdbx_dictionary_component.version        0.12
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -85,6 +85,13 @@ mmcif_pdbx_audit_support-extension.dic  0.11  2023-05-03
 Changes (EP):
 + Add 'Compagnia di San Paolo Foundation', 'Emerson Collective', 'Johns Hopkins University',
   'La Region Occitanie', 'Maryland Stem Cell Research Fund', 'Willowcroft Foundation'
+;
+mmcif_pdbx_audit_support-extension.dic  0.12  2023-06-01
+;
+Changes (EP):
++ Add 'Sven och Lilly Lawskis fond for naturvetenskaplig forskning', 'Uppsala Antibiotic Center',
+  'The Helen and Milton A. Kimmelman Center for Biomolecular Structure and Assembly'
+
 ;
 
 ########################
@@ -519,10 +526,12 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Spanish National Research Council'                                                               Spain
          '_pdbx_audit_support.funding_organization'  'Spar Nord Foundation'                                                                            Denmark
          '_pdbx_audit_support.funding_organization'  'Slovenian Research Agency'                                                                       Slovenia
+# Current editor tool cannot handle a single quote in string
 #         '_pdbx_audit_support.funding_organization'  "St. Jude Children's Research Hospital (ALSAC)"                                                  'United States'
          '_pdbx_audit_support.funding_organization'  'St. Petersburg State University'                                                                 'Russian Federation'
 	 '_pdbx_audit_support.funding_organization'   'Sven and Dagmar Salens Foundation'                                                              Sweden
-	 '_pdbx_audit_support.funding_organization'  'Swedish Energy Agency'                                                                           Sweden
+	 '_pdbx_audit_support.funding_organization'   "Sven och Lilly Lawskis fond for naturvetenskaplig forskning"                                    Sweden
+         '_pdbx_audit_support.funding_organization'  'Swedish Energy Agency'                                                                           Sweden
          '_pdbx_audit_support.funding_organization'  'Swedish Research Council'                                                                        Sweden
          '_pdbx_audit_support.funding_organization'  'Swiss Cancer League'                                                                             Switzerland
          '_pdbx_audit_support.funding_organization'  'Swiss Nanoscience Institute'                                                                     Switzerland
@@ -543,6 +552,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'The Giovanni Armenise-Harvard Foundation'                                                        'United States'
          '_pdbx_audit_support.funding_organization'  'The Grant Agency of The University of South Bohemia'                                             'Czech Republic'
          '_pdbx_audit_support.funding_organization'  'The G. Harold and Leila Y. Mathers Foundation'                                                   'United States'
+         '_pdbx_audit_support.funding_organization'  'The Helen and Milton A. Kimmelman Center for Biomolecular Structure and Assembly'                Israel
          '_pdbx_audit_support.funding_organization'  'The Hospital For Sick Children Foundation'                                                       Canada
          '_pdbx_audit_support.funding_organization'  'The Institute of Cancer Research (ICR)'                                                          'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'The Lister Institute of Preventive Medicine'                                                     'United Kingdom'
@@ -579,7 +589,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'University of Vienna Research Platform Comammox'                                                 Austria
          '_pdbx_audit_support.funding_organization'  'University of Warwick'                                                                           'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'University of Zurich'                                                                            Switzerland
-
+         '_pdbx_audit_support.funding_organization'  'Uppsala Antibiotic Center'                                                                       Sweden
          '_pdbx_audit_support.funding_organization'  'V Foundation for Cancer Research'                                                               'United States'
 	 '_pdbx_audit_support.funding_organization'  'Velux Stiftung'                                                                                  Switzerland
          '_pdbx_audit_support.funding_organization'  'Vidyasirimedhi Institute of Science and Technology (VISTEC)'                                     Thailand

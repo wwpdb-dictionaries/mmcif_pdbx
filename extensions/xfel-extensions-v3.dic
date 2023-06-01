@@ -15,7 +15,23 @@
 # 19-Jun-2018  Reorganization of category names
 #
 
-data_xfel_extensions-v3.dic
+data_mmcif_xfel_extensions-v3.dic
+
+_pdbx_dictionary_component.datablock_id   mmcif_xfel_extensions-v3.dic
+_pdbx_dictionary_component.dictionary_component_id   mmcif_xfel_extensions-v3.dic
+_pdbx_dictionary_component.title          "PDBx/mmCIF XFELDictionary License Extension"
+_pdbx_dictionary_component.version        0.0.1
+
+loop_
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+mmcif_xfel_extensions-v3.dic  0.0.1  2023-05-31
+;
+Changes (EP):
++ Make _diffrn.pdbx_serial_crystal_experiment mandatory for deposition
+;
 
 loop_
 _pdbx_item_linked_group.category_id
@@ -54,6 +70,8 @@ save__diffrn.pdbx_serial_crystal_experiment
    _item.name            '_diffrn.pdbx_serial_crystal_experiment'
    _item.category_id     diffrn
    _item.mandatory_code  no
+   #
+   _pdbx_item.mandatory_code  yes
    #
    _item_type.code       text
    #

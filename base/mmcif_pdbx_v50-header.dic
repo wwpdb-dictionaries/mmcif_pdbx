@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.370
+    _dictionary.version         5.371
 #
      loop_
     _dictionary_history.version
@@ -2731,3 +2731,15 @@ data_mmcif_pdbx.dic
     + Define pdb_id_u data type as case insensitive
     + Change data type for _em_3d_fitting_list.pdb_entry_id to pdb_id_u
 ;
+5.371  2023-06-01
+;
+    Changes (ep/cl):
+    + Add _ndb_struct_na_base_pair.hbond_type_leontis_westhof to eventually replace
+      _ndb_struct_na_base_pair.hbond_type_12
+    + Extend _pdbx_audit_support.funding_organization enumeration
+    + Change "LNLS SIRUS" to "LNLS SIRIUS" in _diffrn_source.pdbx_synchrotron_site
+      and _diffrn_source.type enumerations
+    + Change type of _em_obsolete.id to code
+    + Make _diffrn.pdbx_serial_crystal_experiment mandatory for deposition
+;
+
