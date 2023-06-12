@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.379
+    _dictionary.version         5.380
 #
      loop_
     _dictionary_history.version
@@ -2879,4 +2879,14 @@ data_mmcif_pdbx.dic
       and _diffrn_source.type enumerations
     + Change type of _em_obsolete.id to code
     + Make _diffrn.pdbx_serial_crystal_experiment mandatory for deposition
+;
+5.380  2023-06-12
+;
+    Changes (ep):
+    + Change type of _em_3d_fitting_list.pdb_entry_id to pdb_id_u
+    + Add "MALVERN PANALYTICAL EMPYREAN TUBE" to _diffrn_source.type enumeration
+    + Add _em_entity_assembly_naturalsource.details
+    + Remove open enumeration from _pdbx_nmr_chem_shift_ref.mol_common_name
+    + Make _pdbx_reference_entity_sequence.one_letter_codes non-mandatory
+    + Extend _pdbx_audit_support.funding_organization enumeration
 ;

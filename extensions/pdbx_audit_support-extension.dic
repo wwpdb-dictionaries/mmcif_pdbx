@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.12
+_pdbx_dictionary_component.version        0.13
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -91,7 +91,12 @@ mmcif_pdbx_audit_support-extension.dic  0.12  2023-06-01
 Changes (EP):
 + Add 'Sven och Lilly Lawskis fond for naturvetenskaplig forskning', 'Uppsala Antibiotic Center',
   'The Helen and Milton A. Kimmelman Center for Biomolecular Structure and Assembly'
-
+;
+mmcif_pdbx_audit_support-extension.dic  0.13  2023-06-12
+;
+Changes (EP):
++ Add 'Fondation pour la Recherche Medicale (FRM)', 'La ligue contre le cancer',
+  'Region Auvergne Rhone Alpes'
 ;
 
 ########################
@@ -280,6 +285,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Foundation for Medical Research (France)'                                                        France
          '_pdbx_audit_support.funding_organization'  'Foundation for Polish Science'                                                                   Poland
 
+         '_pdbx_audit_support.funding_organization'  'Fondation pour la Recherche Medicale (FRM)'                                                      France
          '_pdbx_audit_support.funding_organization'  'Foundation for Science and Technology (FCT)'                                                     'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Fondazione CARIPLO'                                                                              Italy
          '_pdbx_audit_support.funding_organization'  'Fonds de Recherche du Quebec - Nature et Technologies (FRQNT)'                                   Canada
@@ -362,6 +368,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Knut and Alice Wallenberg Foundation'                                                            Sweden
          '_pdbx_audit_support.funding_organization'  'KU Leuven'                                                                                       Belgium
          '_pdbx_audit_support.funding_organization'  'La Caixa Foundation'                                                                             Spain
+         '_pdbx_audit_support.funding_organization'  'La ligue contre le cancer'                                                                       France
          '_pdbx_audit_support.funding_organization'  'La Region Occitanie'                                                                             Italy
          '_pdbx_audit_support.funding_organization'  'Laboratories of Excellence (LabEx)'                                                              France
          '_pdbx_audit_support.funding_organization'  'Leducq Foundation'                                                                               France
@@ -491,6 +498,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Promedica Siftung'                                                                               Switzerland
          '_pdbx_audit_support.funding_organization'  'Qatar Foundation'                                                                                Qatar
          '_pdbx_audit_support.funding_organization'  'Queen Mary University of London'                                                                 'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Region Auvergne Rhone Alpes'                                                                     France
          '_pdbx_audit_support.funding_organization'  'Regione Lazio (Italy)'                                                                           Italy
          '_pdbx_audit_support.funding_organization'  'Research Council of Lithuania'                                                                   Lithuania
          '_pdbx_audit_support.funding_organization'  'Research Council of Norway'                                                                      Norway
