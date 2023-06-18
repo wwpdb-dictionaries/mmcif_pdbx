@@ -1,0 +1,1359 @@
+# ----------------------------------------------------------------------------------------------------------------------------
+#
+#  File: ptm-extension.dic
+#  Date: 26-May-2023 MGB
+#  Update: 26-May-2023
+#
+#  Dictionary extensions for: 
+#     - Extending the chemical components definition to backbone, N-terminal and C-terminal flags
+#     - Extending the chemical components definition to support the description of protein modifications
+#     - Extending the model definition to support annotation of protein modifications in the model
+#
+#  PDBX_CHEM_COMP_PCM - Lists all the protein modifications that the chemical component can be used to describe
+#
+#  PDBX_MODIFICATION_FEATURE - Lists all the protein modifications in the model
+#
+# ----------------------------------------------------------------------------------------------------------------------------
+
+data_ptm-extension.dic
+
+##################
+#   Meta Data    #
+##################
+
+_pdbx_dictionary_component.datablock_id   ptm-extension.dic
+_pdbx_dictionary_component.dictionary_component_id   ptm-extension.dic
+_pdbx_dictionary_component.title          "PDBx/mmCIF PTM extension"
+_pdbx_dictionary_component.version        0.10
+
+loop_
+_dictionary_history.version
+_dictionary_history.update
+_dictionary_history.revision
+0.1  2023-05-26  
+;  
+  Changes (mgb)
+  + added new item type for UniProt PTM Accession IDs (PTM-XXXX) 
+  + added new item for PTM project to flag if the CCD can be used to 
+    represent a protein modification
+      _chem_comp.pdbx_pcm
+  + added new category for PTM project list all protein modifications in the entry
+      _pdbx_chem_comp_pcm.pcm_id                                        
+      _pdbx_chem_comp_pcm.comp_id 			
+      _pdbx_chem_comp_pcm.modified_residue_id
+      _pdbx_chem_comp_pcm.type                                             
+      _pdbx_chem_comp_pcm.category                                      
+      _pdbx_chem_comp_pcm.position                             
+      _pdbx_chem_comp_pcm.polypeptide_position 
+      _pdbx_chem_comp_pcm.comp_id_linking_atom
+      _pdbx_chem_comp_pcm.modified_residue_id_linking_atom
+      _pdbx_chem_comp_pcm.uniprot_specific_ptm_accession
+      _pdbx_chem_comp_pcm.uniprot_generic_ptm_accession
+      + added new item for PTM project to flag if an entry contains protein modifications
+      _pdbx_entry_details.has_protein_modification
+  + added new category for PTM project list all protein modifications in the entry
+      _pdbx_modification_feature.ordinal
+      _pdbx_modification_feature.label_comp_id
+      _pdbx_modification_feature.label_asym_id
+      _pdbx_modification_feature.label_seq_id
+      _pdbx_modification_feature.modified_residue_label_comp_id
+      _pdbx_modification_feature.modified_residue_label_asym_id
+      _pdbx_modification_feature.modified_residue_label_seq_id
+      _pdbx_modification_feature.auth_comp_id
+      _pdbx_modification_feature.auth_asym_id
+      _pdbx_modification_feature.auth_seq_id
+      _pdbx_modification_feature.PDB_ins_code
+      _pdbx_modification_feature.modified_residue_auth_comp_id
+      _pdbx_modification_feature.modified_residue_auth_asym_id
+      _pdbx_modification_feature.modified_residue_auth_seq_id
+      _pdbx_modification_feature.modified_residue_PDB_ins_code
+      _pdbx_modification_feature.comp_id_linking_atom
+      _pdbx_modification_feature.modified_residue_id_linking_atom
+      _pdbx_modification_feature.modified_residue_id
+      _pdbx_modification_feature.ref_pcm_id
+      _pdbx_modification_feature.ref_comp_id
+      _pdbx_modification_feature.type
+      _pdbx_modification_feature.category
+      _pdbx_modification_feature.biological_function
+      _pdbx_modification_feature.biological_function_details
+;
+
+####################
+#    Item Types    #
+####################
+
+#
+loop_
+_item_type_list.code
+_item_type_list.primitive_code
+_item_type_list.construct
+_item_type_list.detail
+uniprot_ptm_id            char   PTM-[0-9]{4}  "UniProt PTM List Accession ID Pattern - PTM-XXXX"
+
+
+###########################
+#   Parent/Child Links    #
+###########################
+
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+pdbx_chem_comp_pcm                                         1  pdbx_chem_comp_pcm:chem_comp:1                                                            .  .  
+pdbx_modification_feature                                  1  pdbx_modification_feature:atom_site:1                                                     .  .  
+pdbx_modification_feature                                  2  pdbx_modification_feature:atom_site:2                                                     .  .  
+
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+pdbx_chem_comp_pcm                                         1  "_pdbx_chem_comp_pcm.comp_id"                                          "_chem_comp.id"                                             chem_comp                               
+pdbx_modification_feature                                  1  "_pdbx_modification_feature.label_comp_id"                             "_atom_site.label_comp_id"                                  atom_site                               
+pdbx_modification_feature                                  1  "_pdbx_modification_feature.label_asym_id"                             "_atom_site.label_asym_id"                                  atom_site                               
+pdbx_modification_feature                                  1  "_pdbx_modification_feature.label_seq_id"                              "_atom_site.label_seq_id"                                   atom_site                               
+pdbx_modification_feature                                  1  "_pdbx_modification_feature.auth_comp_id"                              "_atom_site.auth_comp_id"                                   atom_site                               
+pdbx_modification_feature                                  1  "_pdbx_modification_feature.auth_asym_id"                              "_atom_site.auth_asym_id"                                   atom_site                               
+pdbx_modification_feature                                  1  "_pdbx_modification_feature.auth_seq_id"                               "_atom_site.auth_seq_id"                                    atom_site                               
+pdbx_modification_feature                                  1  "_pdbx_modification_feature.PDB_ins_code"                              "_atom_site.pdbx_PDB_ins_code"                              atom_site                               
+pdbx_modification_feature                                  2  "_pdbx_modification_feature.modified_residue_label_comp_id"            "_atom_site.label_comp_id"                                  atom_site                               
+pdbx_modification_feature                                  2  "_pdbx_modification_feature.modified_residue_label_asym_id"            "_atom_site.label_asym_id"                                  atom_site                               
+pdbx_modification_feature                                  2  "_pdbx_modification_feature.modified_residue_label_seq_id"             "_atom_site.label_seq_id"                                   atom_site                               
+pdbx_modification_feature                                  2  "_pdbx_modification_feature.modified_residue_auth_comp_id"             "_atom_site.auth_comp_id"                                   atom_site                               
+pdbx_modification_feature                                  2  "_pdbx_modification_feature.modified_residue_auth_asym_id"             "_atom_site.auth_asym_id"                                   atom_site                               
+pdbx_modification_feature                                  2  "_pdbx_modification_feature.modified_residue_auth_seq_id"              "_atom_site.auth_seq_id"                                    atom_site                               
+pdbx_modification_feature                                  2  "_pdbx_modification_feature.modified_residue_PDB_ins_code"             "_atom_site.pdbx_PDB_ins_code"                              atom_site                               
+
+##################################################
+#                                                #
+#               PTM CCD Data Items               #
+#                                                #
+##################################################
+
+##############################
+#   New item in _chem_comp   #
+##############################
+
+#
+save__chem_comp.pdbx_pcm
+   _item_description.description  "              A flag to indicate if the CCD can be used to represent a protein modification."
+   #
+   _item.name            "_chem_comp.pdbx_pcm"
+   _item.category_id     chem_comp
+   _item.mandatory_code  no
+   #
+   _item_type.code  code
+   _item_examples.case Y
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     Y  "Yes - Can be used to represent a protein modification"  
+     N  "No - Should never be used to represent a protein modification"  
+   #
+save_
+#
+
+####################################
+#   New items in _chem_comp_atom   #
+####################################
+
+#
+save__chem_comp_atom.pdbx_backbone_atom_flag
+   _item_description.description  "              A flag indicating the backbone atoms in polypeptide units."
+   #
+   _item.name            "_chem_comp_atom.pdbx_backbone_atom_flag"
+   _item.category_id     chem_comp_atom
+   _item.mandatory_code  no
+   #
+   _item_type.code  ucode
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     Y  "Yes - a part of the polypeptide backbone"  
+     N  "No  - not part of the polypeptide backbone"  
+save_
+#
+save__chem_comp_atom.pdbx_n_terminal_atom_flag
+   _item_description.description  "              A flag indicating the N-terminal amino-group atoms in polypeptide units."
+   #
+   _item.name            "_chem_comp_atom.pdbx_n_terminal_atom_flag"
+   _item.category_id     chem_comp_atom
+   _item.mandatory_code  no
+   #
+   _item_type.code  ucode
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     Y  "Yes - a part of the N-terminal group"  
+     N  "No  - not part of the N-terminal group"  
+   #
+save_
+#
+save__chem_comp_atom.pdbx_c_terminal_atom_flag
+   _item_description.description  "              A flag indicating the C-terminal carboxyl-group atoms in polypeptide units."
+   #
+   _item.name            "_chem_comp_atom.pdbx_c_terminal_atom_flag"
+   _item.category_id     chem_comp_atom
+   _item.mandatory_code  no
+   #
+   _item_type.code  ucode
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     Y  "Yes - a part of the C-terminal group"  
+     N  "No  - not part of the C-terminal group"  
+   #
+save_
+
+
+#########################################
+#   New Category - pdbx_chem_comp_pcm   #
+#########################################
+
+save_pdbx_chem_comp_pcm
+   _category.description     
+;              Data items in the PDBX_CHEM_COMP_PCM category provide 
+               information about the protein modifications that are described 
+               by the chemical component.
+;
+
+   _category.id              pdbx_chem_comp_pcm
+   _category.mandatory_code  no
+   #
+   _category_key.name  "_pdbx_chem_comp_pcm.pcm_id"
+   #
+   loop_
+   _category_group.id
+    inclusive_group
+    chem_comp_dictionary_group 
+    chem_comp_group
+    pdbx_group
+   #
+   loop_
+   _category_examples.detail
+   _category_examples.case
+     
+;
+    An example of the category for the phosphoserine (SEP) chemical component.
+;
+  
+;
+    loop_
+    _pdbx_chem_comp_pcm.pcm_id                                        
+    _pdbx_chem_comp_pcm.comp_id 			
+    _pdbx_chem_comp_pcm.modified_residue_id
+    _pdbx_chem_comp_pcm.type                                             
+    _pdbx_chem_comp_pcm.category                                      
+    _pdbx_chem_comp_pcm.position                             
+    _pdbx_chem_comp_pcm.polypeptide_position 
+    _pdbx_chem_comp_pcm.comp_id_linking_atom
+    _pdbx_chem_comp_pcm.modified_residue_id_linking_atom
+    _pdbx_chem_comp_pcm.uniprot_specific_ptm_accession
+    _pdbx_chem_comp_pcm.uniprot_generic_ptm_accession
+    1 SEP SER Phosphorylation "Named protein modification" "Amino-acid side chain" "Any position" . . PTM-0253 ?
+;
+  
+;
+    An example of the category for the Alpha-L-fucopyranose (FUC) chemical component.
+;
+  
+;
+    loop_
+    _pdbx_chem_comp_pcm.pcm_id                                        
+    _pdbx_chem_comp_pcm.comp_id 			
+    _pdbx_chem_comp_pcm.modified_residue_id
+    _pdbx_chem_comp_pcm.type                                             
+    _pdbx_chem_comp_pcm.category                                      
+    _pdbx_chem_comp_pcm.position                             
+    _pdbx_chem_comp_pcm.polypeptide_position 
+    _pdbx_chem_comp_pcm.comp_id_linking_atom
+    _pdbx_chem_comp_pcm.modified_residue_id_linking_atom
+    _pdbx_chem_comp_pcm.uniprot_specific_ptm_accession
+    _pdbx_chem_comp_pcm.uniprot_generic_ptm_accession
+    1 FUC SER . Carbohydrate "Amino-acid side chain" "Any position" C1 OG  ? ? 
+    2 FUC THR . Carbohydrate "Amino-acid side chain" "Any position" C1 OG1 ? ?
+;
+
+   #
+save_
+#
+save__pdbx_chem_comp_pcm.pcm_id
+   _item_description.description  "          An ordinal index for this category."
+   #
+   _item.name            "_pdbx_chem_comp_pcm.pcm_id"
+   _item.category_id     pdbx_chem_comp_pcm
+   _item.mandatory_code  yes
+   #
+   _item_type.code  int
+   _item_examples.case 1
+   #
+save_
+#
+save__pdbx_chem_comp_pcm.comp_id 
+   _item_description.description  "          Chemical component identifier for the CCD that contains the modification group."
+   #
+   _item.name            "_pdbx_chem_comp_pcm.comp_id"
+   _item.category_id     pdbx_chem_comp_pcm
+   _item.mandatory_code  yes
+   #
+   _item_linked.child_name   "_pdbx_chem_comp_pcm.comp_id"
+   _item_linked.parent_name  "_chem_comp.id"
+   #
+   _item_type.code  ucode
+   _item_examples.case SEP
+   #
+save_
+#
+save__pdbx_chem_comp_pcm.modified_residue_id
+   _item_description.description  "          Chemical component identifier for the amino acid residue that is being modified."
+   #
+   _item.name            "_pdbx_chem_comp_pcm.modified_residue_id"
+   _item.category_id     pdbx_chem_comp_pcm
+   _item.mandatory_code  no
+   #
+   _item_type.code  uline
+   _item_examples.case SER
+   #
+save_
+#
+save__pdbx_chem_comp_pcm.type
+   _item_description.description  "          The type of protein modification."
+   #
+   _item.name            "_pdbx_chem_comp_pcm.type"
+   _item.category_id     pdbx_chem_comp_pcm
+   _item.mandatory_code  no
+   #
+   _item_type.code  line
+   _item_examples.case Phosphorylation
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+    "12-Hydroxyfarnesylation"                          .
+    "12-Oxomyristoylation"                             .
+    "12R-Hydroxymyristoylation"                        .
+    "14-Hydroxy-10,13-dioxo-7-heptadecenoic acid"      .
+    "(3-Aminopropyl)(5'-adenosyl)phosphono amidation"  .
+    "2-Aminoadipylation"                               .
+    "2-Aminoethylphosphorylation"                      .
+    "2-Cholinephosphorylation"                         .
+    "2-Hydroxyisobutyrylation"                         .
+    "2-Oxo-5,5-dimethylhexanoylation"                  .
+    "2-Oxobutanoic acid"                               .
+    "2,3-Dicarboxypropylation"                         .
+    "3-Oxoalanine"                                     .
+    "3-Phenyllactic acid"                              .
+    "(3R)-3-Hydroxybutyrylation"                       .
+    "4-Phosphopantetheine"                             .
+    "ADP-ribosylation"                                 .
+    "ADP-riboxanation"                                 .
+    "AMPylation"                                       .
+    "Acetamidation"                                    .
+    "Acetamidomethylation"                             .
+    "Acetylation"                                      .
+    "Allysine"                                         .
+    "Amination"                                        .
+    "Arachidoylation"                                  .
+    "Archaeol"                                         .
+    "Arsenylation"                                     .
+    "Bacillithiolation"                                .
+    "Benzoylation"                                     .
+    "Benzylation"                                      .
+    "Beta-amino acid"                                  .
+    "Beta-hydroxybutyrylation"                         .
+    "Beta-lysylation"                                  .
+    "Beta-mercaptoethanol"                             .
+    "Biotinylation"                                    .
+    "Bromination"                                      .
+    "Butyrylation"                                     .
+    "Carbamoylation"                                   .
+    "Carboxyethylation"                                .
+    "Carboxylation"                                    .
+    "Carboxymethylation"                               .
+    "cGMPylation"                                      .
+    "Chlorination"                                     .
+    "Cholesterylation"                                 .
+    "Citrullination"                                   .
+    "Crotonylation"                                    .
+    "Cyanation"                                        .
+    "D-amino acid"                                     .
+    "Deamidation"                                      .
+    "Decanoylation"                                    .
+    "Decarboxylation"                                  .
+    "Dehydroamino acid"                                .
+    "Dehydrocoelenterazination"                        .
+    "Dehydrogenation"                                  .
+    "Dehydroxylation"                                  .
+    "Deoxidation"                                      .
+    "Deoxyhypusine"                                    .
+    "Diacylglycerol"                                   .
+    "Dihydroxyacetonation"                             .
+    "Diphosphorylation"                                .
+    "Diphthamide"                                      .
+    "Dipyrromethane methylation"                       .
+    "Dopaminylation"                                   .
+    "Ethylation"                                       .
+    "Ethylsulfanylation"                               .
+    "Farnesylation"                                    .
+    "Fluorination"                                     .
+    "Formylation"                                      .
+    "GMPylation"                                       .
+    "Geranylgeranylation"                              .
+    "Glutarylation"                                    .
+    "Glutathionylation"                                .
+    "Glycerophosphorylation"                           .
+    "Glycerylphosphorylethanolamination"               .
+    "Heptanoylation"                                   .
+    "Hexanoylation"                                    .
+    "Histaminylation"                                  .
+    "Hydrogenation"                                    .
+    "Hydroperoxylation"                                .
+    "Hydroxylation"                                    .
+    "Hypusine"                                         .
+    "Iodination"                                       .
+    "Lactoylation"                                     .
+    "Laurylation"                                      .
+    "Lipoylation"                                      .
+    "Malonylation"                                     .
+    "Methylamination"                                  .
+    "Methylation"                                      .
+    "Methylsulfanylation"                              .
+    "Methylsulfation"                                  .
+    "Myristoylation"                                   .
+    "N-pyruvic acid 2-iminylation"                     .
+    "Nitration"                                        .
+    "Nitrosylation"                                    .
+    "Noradrenylation"                                  .
+    "Norleucine"                                       .
+    "Octanoylation"                                    .
+    "Oleiylation"                                      .
+    "Ornithine"                                        .
+    "Oxidation"                                        .
+    "Palmitoleoylation"                                .
+    "Palmitoylation"                                   .
+    "Pentadecanoylation"                               .
+    "Pentanoylation"                                   .
+    "Phosphatidylethanolamine amidation"               .
+    "Phosphoenolpyruvate"                              .
+    "Phosphorylation"                                  .
+    "Propionylation"                                   .
+    "Pyridoxal phosphate"                              .
+    "Pyrrolidone carboxylic acid"                      .
+    "Pyruvic acid"                                     .
+    "Retinoylation"                                    .
+    "Selanylation"                                     .
+    "Selenocysteine"                                   .
+    "Selenomethionine"                                 .
+    "Serotonylation"                                   .
+    "Stearoylation"                                    .
+    "Stereoisomerisation"                              .
+    "Succinamide ring"                                 .
+    "Succination"                                      .
+    "Succinylation"                                    .
+    "Sulfation"                                        .
+    "Sulfhydration"                                    .
+    "Sulfonation"                                      .
+    "Tert-butylation"                                  .
+    "Thyroxine"                                        .
+    "Triiodothyronine"                                 .
+    "UMPylation"                                       .
+   #
+save_
+#
+save__pdbx_chem_comp_pcm.category
+   _item_description.description  "          The category of protein modification."
+   #
+   _item.name            "_pdbx_chem_comp_pcm.category"
+   _item.category_id     pdbx_chem_comp_pcm
+   _item.mandatory_code  yes
+   #
+   _item_type.code  line
+   _item_examples.case "Named protein modification"
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+    "ADP-Ribose"                      "ADP-ribose protein modifications"
+    "Biotin"                          "Biotin protein modifications"
+    "Carbohydrate"                    "Carbohydrate protein modifications"
+    "Chromophore/chromophore-like"    "Chromophore or chromophore-like protein modifications"
+    "Covalent chemical modification"  "A diverse range of chemical compounds that form covalent bonds with amino acids. Not covered by any of the other modification categories"
+    "Crosslinker"                     "STILL BEING DEFINED"
+    "Disulfide"                       "Disulfide bridge protein modifications"
+    "Flavin"                          "Flavin protein modifications"
+    "Heme/heme-like"                  "Heme or heme-like protein modifications "
+    "Lipid/lipid-like"                "Lipid or lipid-like protein modifications"
+    "Named protein modification"      "All protein modifications that are well defined into known types, have limited diversity, and are not explicitly covered by any other category. It includes PTMs, PCMs, rare amino acids and unnatural amino acids"
+    "Non-standard linkage"            "Non-standard covalent chemical linkages directly between two polypeptide residues"
+    "Non-standard residue"            "A diverse range of non-standard polypeptide residues that are not considered to be 'Named protein modifications'. These cannot be practically split into two CCDs, which describe the standard polypeptide residue and the modification group, and are not covered by any of the other modification categories"
+    "Nucleotide monophosphate"        "Nucleotide monophosphate protein modifications"
+    "Terminal acetylation"            "Terminal acetylation protein modification"
+    "Terminal amidation"              "Terminal amidation protein modification"
+   #
+save_
+#
+save__pdbx_chem_comp_pcm.position
+   _item_description.description  "          The position of the modification on the amino acid."
+   #
+   _item.name            "_pdbx_chem_comp_pcm.position"
+   _item.category_id     pdbx_chem_comp_pcm
+   _item.mandatory_code  yes
+   #
+   _item_type.code  line
+   _item_examples.case "Amino acid side chain"
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+    "Amino-acid side chain"               "Protein modification occurs on the amino acid side chain"
+    "Amino-acid backbone"                 "Protein modification occurs on the amino acid backbone"
+    "Amino-acid side chain and backbone"  "Protein modification occurs on both the amino acid side chain and backbone"
+
+   #
+save_
+#
+save__pdbx_chem_comp_pcm.polypeptide_position
+   _item_description.description  "          The position of the modification on the polypeptide."
+   #
+   _item.name            "_pdbx_chem_comp_pcm.polypeptide_position"
+   _item.category_id     pdbx_chem_comp_pcm
+   _item.mandatory_code  yes
+   #
+   _item_type.code  line
+   _item_examples.case "Any position"
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+    "C-terminal"    "Protein modification can only occur on C-terminus"
+    "N-terminal"    "Protein modification can only occur on N-terminus"
+    "Any position"  "Protein modification can occur in any position of the polypeptide sequence"
+   #
+save_
+#
+save__pdbx_chem_comp_pcm.comp_id_linking_atom
+   _item_description.description
+;              The atom on the modification group that covalently links the 
+               modification to the residue that is being modified. This is 
+               only added when the protein modification is linked and so the 
+               amino acid group and the modification group are described by 
+               separate CCDs.
+; 
+   #
+   _item.name            "_pdbx_chem_comp_pcm.comp_id_linking_atom"
+   _item.category_id     pdbx_chem_comp_pcm
+   _item.mandatory_code  no
+   #
+   _item_type.code  atcode
+   _item_examples.case C1
+   #
+save_
+#
+save__pdbx_chem_comp_pcm.modified_residue_id_linking_atom
+   _item_description.description
+;              The atom on the polypeptide residue group that covalently links 
+               the modification to the residue that is being modified. This is 
+               only added when the protein modification is linked and so the 
+               amino acid group and the modification group are described by 
+               separate CCDs.
+;
+
+   #
+   _item.name            "_pdbx_chem_comp_pcm.modified_residue_id_linking_atom"
+   _item.category_id     pdbx_chem_comp_pcm
+   _item.mandatory_code  no
+   #
+   _item_type.code  atcode
+   _item_examples.case OG
+   #
+save_
+#
+save__pdbx_chem_comp_pcm.uniprot_specific_ptm_accession
+   _item_description.description  "          The UniProt PTM accession code that is an exact match for the protein modification."
+   #
+   _item.name            "_pdbx_chem_comp_pcm.uniprot_specific_ptm_accession"
+   _item.category_id     pdbx_chem_comp_pcm
+   _item.mandatory_code  no
+   #
+   _item_type.code  uniprot_ptm_id
+   _item_examples.case PTM-0253
+   #
+save_
+#
+save__pdbx_chem_comp_pcm.uniprot_generic_ptm_accession
+   _item_description.description  "          The UniProt PTM accession code that describes the group of PTMs of which this protein modification is a member."
+   #
+   _item.name            "_pdbx_chem_comp_pcm.uniprot_generic_ptm_accession"
+   _item.category_id     pdbx_chem_comp_pcm
+   _item.mandatory_code  no
+   #
+   _item_type.code  uniprot_ptm_id
+   _item_examples.case PTM-0252
+   #
+save_
+
+#############################################
+#   Internal items for pdbx_chem_comp_pcm   #
+#############################################
+
+
+#
+save__pdbx_chem_comp_pcm.first_instance_model_db_code
+   _item_description.description  "          The PDB Entry ID for the first model that contains the protein modification."
+   #
+   _item.name            "_pdbx_chem_comp_pcm.first_instance_model_db_code"
+   _item.category_id     pdbx_chem_comp_pcm
+   _item.mandatory_code  no
+   #
+   _item_type.code  line
+   _item_examples.case 4PEP
+   #
+   _pdbx_item_context.type       WWPDB_LOCAL
+   _pdbx_item_context.item_name  "_pdbx_chem_comp_pcm.first_instance_model_db_code"
+   #
+save_
+
+##################################################
+#                                                #
+#              PTM mmCIF Data Items              #
+#                                                #
+##################################################
+
+#######################################
+#   New item in _pdbx_entry_details   #
+#######################################
+
+#
+save__pdbx_entry_details.has_protein_modification
+   _item_description.description  "              A flag to indicate if the model contains any protein modifications."
+   #
+   _item.name            "_pdbx_entry_details.has_protein_modification"
+   _item.category_id     pdbx_entry_details
+   _item.mandatory_code  no
+   #
+   _item_type.code  code
+   _item_examples.case Y
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     Y  "Protein modification present"  
+   #
+save_
+#
+
+################################################
+#   New Category - pdbx_modification_feature   #
+################################################
+
+save_pdbx_modification_feature
+   _category.description     
+;              Data items in the PDBX_MODIFICATION_FEATURE category provides 
+               information about all the protein modifications that have been 
+               modeled in the entry.
+;
+
+   _category.id              pdbx_modification_feature
+   _category.mandatory_code  no
+   #
+   _category_key.name  "_pdbx_modification_feature.ordinal"
+   #
+   loop_
+   _category_group.id
+    inclusive_group
+    struct_group
+   #
+   loop_
+   _category_examples.detail
+   _category_examples.case
+     
+;
+    An example of the category in an entry that contains a disulfide bridge and 
+    two phosphoserine modifications.
+;
+  
+;
+    loop_
+    _pdbx_modification_feature.ordinal
+    _pdbx_modification_feature.label_comp_id
+    _pdbx_modification_feature.label_asym_id
+    _pdbx_modification_feature.label_seq_id
+    _pdbx_modification_feature.modified_residue_label_comp_id
+    _pdbx_modification_feature.modified_residue_label_asym_id
+    _pdbx_modification_feature.modified_residue_label_seq_id
+    _pdbx_modification_feature.auth_comp_id
+    _pdbx_modification_feature.auth_asym_id
+    _pdbx_modification_feature.auth_seq_id
+    _pdbx_modification_feature.PDB_ins_code
+    _pdbx_modification_feature.modified_residue_auth_comp_id
+    _pdbx_modification_feature.modified_residue_auth_asym_id
+    _pdbx_modification_feature.modified_residue_auth_seq_id
+    _pdbx_modification_feature.modified_residue_PDB_ins_code
+    _pdbx_modification_feature.comp_id_linking_atom
+    _pdbx_modification_feature.modified_residue_id_linking_atom
+    _pdbx_modification_feature.modified_residue_id
+    _pdbx_modification_feature.ref_pcm_id
+    _pdbx_modification_feature.ref_comp_id
+    _pdbx_modification_feature.type
+    _pdbx_modification_feature.category
+    _pdbx_modification_feature.biological_function
+    _pdbx_modification_feature.biological_function_details
+    1 CYS B 46 CYS A 46 CYS B 46 ? CYS A 46 ? SG SG .   . .   .               Disulfide                    ? ?
+    2 SEP A 65 .   . .  SEP A 65 ? .   . .  . .  .  SER 1 SEP Phosphorylation 'Named protein modification' ? ?
+    3 SEP B 65 .   . .  SEP B 65 ? .   . .  . .  .  SER 1 SEP Phosphorylation 'Named protein modification' ? ?
+;
+  
+;
+    An example of the category in an entry that contains a two cysteine 
+    hydroxylation modification sites and two palmitoylation modification sites.
+;
+  
+;
+    loop_
+    _pdbx_modification_feature.ordinal
+    _pdbx_modification_feature.label_comp_id
+    _pdbx_modification_feature.label_asym_id
+    _pdbx_modification_feature.label_seq_id
+    _pdbx_modification_feature.modified_residue_label_comp_id
+    _pdbx_modification_feature.modified_residue_label_asym_id
+    _pdbx_modification_feature.modified_residue_label_seq_id
+    _pdbx_modification_feature.auth_comp_id
+    _pdbx_modification_feature.auth_asym_id
+    _pdbx_modification_feature.auth_seq_id
+    _pdbx_modification_feature.PDB_ins_code
+    _pdbx_modification_feature.modified_residue_auth_comp_id
+    _pdbx_modification_feature.modified_residue_auth_asym_id
+    _pdbx_modification_feature.modified_residue_auth_seq_id
+    _pdbx_modification_feature.modified_residue_PDB_ins_code
+    _pdbx_modification_feature.comp_id_linking_atom
+    _pdbx_modification_feature.modified_residue_id_linking_atom
+    _pdbx_modification_feature.modified_residue_id
+    _pdbx_modification_feature.ref_pcm_id
+    _pdbx_modification_feature.ref_comp_id
+    _pdbx_modification_feature.type
+    _pdbx_modification_feature.category
+    _pdbx_modification_feature.biological_function
+    _pdbx_modification_feature.biological_function_details
+    1 CSO C 32 .   . .  CSO C 32   ? .   . .  . .  .  CYS 1 CSO Hydroxylation  'Named protein modification' ? ?
+    2 CSO D 32 .   . .  CSO D 32   ? .   . .  . .  .  CYS 1 CSO Hydroxylation  'Named protein modification' ? ?
+    3 PLM E .  CYS A 82 PLM A 1068 ? CYS A 68 ? C1 SG CYS 6 PLM Palmitoylation 'Lipid/lipid-like'           ? ?
+    4 PLM F .  CYS B 82 PLM B 1068 ? CYS B 68 ? C1 SG CYS 6 PLM Palmitoylation 'Lipid/lipid-like'           ? ?
+;
+
+   #
+save_
+#
+save__pdbx_modification_feature.ordinal
+   _item_description.description  "          An ordinal index for this category."
+   #
+   _item.name            "_pdbx_modification_feature.ordinal"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  yes
+   #
+   _item_type.code  int
+   _item_examples.case 1
+   #
+save_
+#
+save__pdbx_modification_feature.label_comp_id
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               describes the protein modification.
+
+               This data item is a pointer to _atom_site.label_comp_id in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.label_comp_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  yes
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.label_comp_id"
+   _item_linked.parent_name  "_atom_site.label_comp_id"
+   #
+   _item_type.code  ucode
+   #
+   loop_
+   _item_examples.case
+     "SEP"   
+     "PLM"   
+   #
+save_
+#
+save__pdbx_modification_feature.label_asym_id
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               describes the protein modification.
+
+               This data item is a pointer to _atom_site.label_asym_id in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.label_asym_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  yes
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.label_asym_id"
+   _item_linked.parent_name  "_atom_site.label_asym_id"
+   #
+   _item_type.code  code
+   _item_examples.case E
+   #
+save_
+#
+save__pdbx_modification_feature.label_seq_id
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               describes the protein modification.
+
+               This data item is a pointer to _atom_site.label_seq_id in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.label_seq_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.label_seq_id"
+   _item_linked.parent_name  "_atom_site.label_seq_id"
+   #
+   _item_type.code  int
+   _item_examples.case 65
+   #
+save_
+#
+save__pdbx_modification_feature.modified_residue_label_comp_id
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               is being modified.
+
+               This data item is a pointer to _atom_site.label_comp_id in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.modified_residue_label_comp_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.modified_residue_label_comp_id"
+   _item_linked.parent_name  "_atom_site.label_comp_id"
+   #
+   _item_type.code  ucode
+   _item_examples.case CYS
+   #
+save_
+#
+save__pdbx_modification_feature.modified_residue_label_asym_id
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               is being modified.
+
+               This data item is a pointer to _atom_site.label_asym_id in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.modified_residue_label_asym_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.modified_residue_label_asym_id"
+   _item_linked.parent_name  "_atom_site.label_asym_id"
+   #
+   _item_type.code  code
+   _item_examples.case A
+   #
+save_
+#
+save__pdbx_modification_feature.modified_residue_label_seq_id
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               is being modified.
+
+               This data item is a pointer to _atom_site.label_seq_id in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.modified_residue_label_seq_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.modified_residue_label_seq_id"
+   _item_linked.parent_name  "_atom_site.label_seq_id"
+   #
+   _item_type.code  int
+   _item_examples.case 82
+   #
+save_
+#
+save__pdbx_modification_feature.auth_comp_id
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               describes the protein modification.
+
+               This data item is a pointer to _atom_site.auth_comp_id in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.auth_comp_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.auth_comp_id"
+   _item_linked.parent_name  "_atom_site.auth_comp_id"
+   #
+   _item_type.code  code
+   _item_examples.case PLM
+   #
+save_
+#
+save__pdbx_modification_feature.auth_asym_id
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               describes the protein modification.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.auth_asym_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.auth_asym_id"
+   _item_linked.parent_name  "_atom_site.auth_asym_id"
+   #
+   _item_type.code  code
+   _item_examples.case A
+   #
+save_
+#
+save__pdbx_modification_feature.auth_seq_id
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               describes the protein modification.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.auth_seq_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.auth_seq_id"
+   _item_linked.parent_name  "_atom_site.auth_seq_id"
+   #
+   _item_type.code  code
+   _item_examples.case 65
+   #
+save_
+#
+save__pdbx_modification_feature.PDB_ins_code
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               describes the protein modification.
+
+               This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.PDB_ins_code"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.PDB_ins_code"
+   _item_linked.parent_name  "_atom_site.pdbx_PDB_ins_code"
+   #
+   _item_type.code  code
+   _item_examples.case 1
+   #
+save_
+#
+save__pdbx_modification_feature.modified_residue_auth_comp_id
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               is being modified.
+
+               This data item is a pointer to _atom_site.auth_comp_id in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.modified_residue_auth_comp_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.modified_residue_auth_comp_id"
+   _item_linked.parent_name  "_atom_site.auth_comp_id"
+   #
+   _item_type.code  code
+   _item_examples.case CYS
+   #
+save_
+#
+save__pdbx_modification_feature.modified_residue_auth_asym_id
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               is being modified.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.modified_residue_auth_asym_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.modified_residue_auth_asym_id"
+   _item_linked.parent_name  "_atom_site.auth_asym_id"
+   #
+   _item_type.code  code
+   _item_examples.case A
+   #
+save_
+#
+save__pdbx_modification_feature.modified_residue_auth_seq_id
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               is being modified.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.modified_residue_auth_seq_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.modified_residue_auth_seq_id"
+   _item_linked.parent_name  "_atom_site.auth_seq_id"
+   #
+   _item_type.code  code
+   _item_examples.case 82
+   #
+save_
+#
+save__pdbx_modification_feature.modified_residue_PDB_ins_code
+   _item_description.description
+;              A component of the identifier for the chemical component that 
+               is being modified.
+
+               This data item is a pointer to _atom_site.pdbx_PDB_ins_code in the 
+               ATOM_SITE category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.modified_residue_PDB_ins_code"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_linked.child_name   "_pdbx_modification_feature.modified_residue_PDB_ins_code"
+   _item_linked.parent_name  "_atom_site.pdbx_PDB_ins_code"
+   #
+   _item_type.code  code
+   _item_examples.case 1
+   #
+save_
+#
+save__pdbx_modification_feature.comp_id_linking_atom
+   _item_description.description 
+;              The atom on the modification group that covalently links the 
+               modification to the residue that is being modified. This is 
+               only added when the protein modification is linked and so the 
+               amino acid group and the modification group are described by 
+               separate CCDs.
+;
+   #
+   _item.name            "_pdbx_modification_feature.comp_id_linking_atom"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_type.code  atcode
+   _item_examples.case C1
+   #
+save_
+#
+save__pdbx_modification_feature.modified_residue_id_linking_atom
+   _item_description.description
+;              The atom on the polypeptide residue group that covalently links 
+               the modification to the residue that is being modified. This is 
+               only added when the protein modification is linked and so the 
+               amino acid group and the modification group are described by 
+               separate CCDs.
+;
+   #
+   _item.name            "_pdbx_modification_feature.modified_residue_id_linking_atom"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_type.code  atcode
+   _item_examples.case SG
+   #
+save_
+#
+save__pdbx_modification_feature.modified_residue_id
+   _item_description.description  "          Chemical component identifier for the amino acid residue that is being modified."
+   #
+   _item.name            "_pdbx_modification_feature.modified_residue_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_type.code  uline
+   _item_examples.case CYS
+   #
+save_
+#
+save__pdbx_modification_feature.ref_pcm_id
+   _item_description.description
+;              A component of the identifier for the unique kind of protein 
+               modification.
+               
+               This data item is a pointer to _pdbx_chem_comp_pcm.pcm_id in the 
+               CHEM_COMP_PCM category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.ref_pcm_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_type.code  int
+   _item_examples.case 1
+   #
+save_
+#
+save__pdbx_modification_feature.ref_comp_id
+   _item_description.description
+;              A component of the identifier for the unique kind of protein 
+               modification.
+               
+               This data item is a pointer to _pdbx_chem_comp_pcm.comp_id in the 
+               CHEM_COMP_PCM category.
+;
+   #
+   _item.name            "_pdbx_modification_feature.ref_comp_id"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_type.code  ucode
+   _item_examples.case PLM
+   #
+save_
+#
+save__pdbx_modification_feature.type
+   _item_description.description  "          The type of protein modification."
+   #
+   _item.name            "_pdbx_modification_feature.type"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_type.code  line
+   _item_examples.case Phosphorylation
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+    "12-Hydroxyfarnesylation"                          .
+    "12-Oxomyristoylation"                             .
+    "12R-Hydroxymyristoylation"                        .
+    "14-Hydroxy-10,13-dioxo-7-heptadecenoic acid"      .
+    "(3-Aminopropyl)(5'-adenosyl)phosphono amidation"  .
+    "2-Aminoadipylation"                               .
+    "2-Aminoethylphosphorylation"                      .
+    "2-Cholinephosphorylation"                         .
+    "2-Hydroxyisobutyrylation"                         .
+    "2-Oxo-5,5-dimethylhexanoylation"                  .
+    "2-Oxobutanoic acid"                               .
+    "2,3-Dicarboxypropylation"                         .
+    "3-Oxoalanine"                                     .
+    "3-Phenyllactic acid"                              .
+    "(3R)-3-Hydroxybutyrylation"                       .
+    "4-Phosphopantetheine"                             .
+    "ADP-ribosylation"                                 .
+    "ADP-riboxanation"                                 .
+    "AMPylation"                                       .
+    "Acetamidation"                                    .
+    "Acetamidomethylation"                             .
+    "Acetylation"                                      .
+    "Allysine"                                         .
+    "Amination"                                        .
+    "Arachidoylation"                                  .
+    "Archaeol"                                         .
+    "Arsenylation"                                     .
+    "Bacillithiolation"                                .
+    "Benzoylation"                                     .
+    "Benzylation"                                      .
+    "Beta-amino acid"                                  .
+    "Beta-hydroxybutyrylation"                         .
+    "Beta-lysylation"                                  .
+    "Beta-mercaptoethanol"                             .
+    "Biotinylation"                                    .
+    "Bromination"                                      .
+    "Butyrylation"                                     .
+    "Carbamoylation"                                   .
+    "Carboxyethylation"                                .
+    "Carboxylation"                                    .
+    "Carboxymethylation"                               .
+    "cGMPylation"                                      .
+    "Chlorination"                                     .
+    "Cholesterylation"                                 .
+    "Citrullination"                                   .
+    "Crotonylation"                                    .
+    "Cyanation"                                        .
+    "D-amino acid"                                     .
+    "Deamidation"                                      .
+    "Decanoylation"                                    .
+    "Decarboxylation"                                  .
+    "Dehydroamino acid"                                .
+    "Dehydrocoelenterazination"                        .
+    "Dehydrogenation"                                  .
+    "Dehydroxylation"                                  .
+    "Deoxidation"                                      .
+    "Deoxyhypusine"                                    .
+    "Diacylglycerol"                                   .
+    "Dihydroxyacetonation"                             .
+    "Diphosphorylation"                                .
+    "Diphthamide"                                      .
+    "Dipyrromethane methylation"                       .
+    "Dopaminylation"                                   .
+    "Ethylation"                                       .
+    "Ethylsulfanylation"                               .
+    "Farnesylation"                                    .
+    "Fluorination"                                     .
+    "Formylation"                                      .
+    "GMPylation"                                       .
+    "Geranylgeranylation"                              .
+    "Glutarylation"                                    .
+    "Glutathionylation"                                .
+    "Glycerophosphorylation"                           .
+    "Glycerylphosphorylethanolamination"               .
+    "Heptanoylation"                                   .
+    "Hexanoylation"                                    .
+    "Histaminylation"                                  .
+    "Hydrogenation"                                    .
+    "Hydroperoxylation"                                .
+    "Hydroxylation"                                    .
+    "Hypusine"                                         .
+    "Iodination"                                       .
+    "Lactoylation"                                     .
+    "Laurylation"                                      .
+    "Lipoylation"                                      .
+    "Malonylation"                                     .
+    "Methylamination"                                  .
+    "Methylation"                                      .
+    "Methylsulfanylation"                              .
+    "Methylsulfation"                                  .
+    "Myristoylation"                                   .
+    "N-pyruvic acid 2-iminylation"                     .
+    "Nitration"                                        .
+    "Nitrosylation"                                    .
+    "Noradrenylation"                                  .
+    "Norleucine"                                       .
+    "Octanoylation"                                    .
+    "Oleiylation"                                      .
+    "Ornithine"                                        .
+    "Oxidation"                                        .
+    "Palmitoleoylation"                                .
+    "Palmitoylation"                                   .
+    "Pentadecanoylation"                               .
+    "Pentanoylation"                                   .
+    "Phosphatidylethanolamine amidation"               .
+    "Phosphoenolpyruvate"                              .
+    "Phosphorylation"                                  .
+    "Propionylation"                                   .
+    "Pyridoxal phosphate"                              .
+    "Pyrrolidone carboxylic acid"                      .
+    "Pyruvic acid"                                     .
+    "Retinoylation"                                    .
+    "Selanylation"                                     .
+    "Selenocysteine"                                   .
+    "Selenomethionine"                                 .
+    "Serotonylation"                                   .
+    "Stearoylation"                                    .
+    "Stereoisomerisation"                              .
+    "Succinamide ring"                                 .
+    "Succination"                                      .
+    "Succinylation"                                    .
+    "Sulfation"                                        .
+    "Sulfhydration"                                    .
+    "Sulfonation"                                      .
+    "Tert-butylation"                                  .
+    "Thyroxine"                                        .
+    "Triiodothyronine"                                 .
+    "UMPylation"                                       .
+   #
+save_
+#
+save__pdbx_modification_feature.category
+   _item_description.description  "          The category of protein modification."
+   #
+   _item.name            "_pdbx_modification_feature.category"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  yes
+   #
+   _item_type.code  line
+   _item_examples.case "Named protein modification"
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+    "ADP-Ribose"                      "ADP-ribose protein modifications"
+    "Biotin"                          "Biotin protein modifications"
+    "Carbohydrate"                    "Carbohydrate protein modifications"
+    "Chromophore/chromophore-like"    "Chromophore or chromophore-like protein modifications"
+    "Covalent chemical modification"  "A diverse range of chemical compounds that form covalent bonds with amino acids. Not covered by any of the other modification categories"
+    "Crosslinker"                     "STILL BEING DEFINED"
+    "Disulfide"                       "Disulfide bridge protein modifications"
+    "Flavin"                          "Flavin protein modifications"
+    "Heme/heme-like"                  "Heme or heme-like protein modifications "
+    "Lipid/lipid-like"                "Lipid or lipid-like protein modifications"
+    "Named protein modification"      "All protein modifications that are well defined into known types, have limited diversity, and are not explicitly covered by any other category. It includes PTMs, PCMs, rare amino acids and unnatural amino acids"
+    "Non-standard linkage"            "Non-standard covalent chemical linkages directly between two polypeptide residues"
+    "Non-standard residue"            "A diverse range of non-standard polypeptide residues that are not considered to be 'Named protein modifications'. These cannot be practically split into two CCDs, which describe the standard polypeptide residue and the modification group, and are not covered by any of the other modification categories"
+    "Nucleotide monophosphate"        "Nucleotide monophosphate protein modifications"
+    "Terminal acetylation"            "Terminal acetylation protein modification"
+    "Terminal amidation"              "Terminal amidation protein modification"
+   #
+save_
+#
+save__pdbx_modification_feature.biological_function
+   _item_description.description
+;              A flag to indicate if the protein modification at this site can 
+               occur naturally and that it is expected to have a biological 
+               function.
+;
+   #
+   _item.name            "_pdbx_modification_feature.biological_function"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_type.code  code
+   _item_examples.case Y
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     Y  "Protein modification has a biological function"  
+     N  "Protein modification does not have a biological function"  
+   #
+save_
+#
+save__pdbx_modification_feature.biological_function_details
+   _item_description.description  "          Details of the biological function of the protein modification at this site."
+   #
+   _item.name            "_pdbx_modification_feature.biological_function_details"
+   _item.category_id     pdbx_modification_feature
+   _item.mandatory_code  no
+   #
+   _item_type.code  text
+   #
+   loop_
+   _item_examples.case
+     "Phosphorylation at this position is required for full activity of the enzyme"   
+     "Glycosylation of this region of the protein surface shields the protein from antibody recognition"   
+   #
+save_

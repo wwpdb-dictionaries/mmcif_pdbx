@@ -42,5 +42,6 @@ em_map_upload_extension.dic      ../extensions/em_map_upload_extension.dic      
 diffrn-data-set-extension.dic    ../extensions/diffrn-data-set-extension-v2.dic extend . .
 comment-ext.dic                  ../extensions/comment-ext.dic                  extend . .
 binding-assay-extension.dic      ../extensions/binding-assay-extension.dic      extend . .
+ptm-extension.doc                ../extensions/ptm-extension.dic                extend . .
 
-batch_extension.dic   ../extensions/batch-extension.dic  extend . .
+batch_extension.dic              ../extensions/batch-extension.dic  extend . .
