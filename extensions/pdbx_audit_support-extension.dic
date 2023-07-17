@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.13
+_pdbx_dictionary_component.version        0.14
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -97,6 +97,12 @@ mmcif_pdbx_audit_support-extension.dic  0.13  2023-06-12
 Changes (EP):
 + Add 'Fondation pour la Recherche Medicale (FRM)', 'La ligue contre le cancer',
   'Region Auvergne Rhone Alpes'
+;
+mmcif_pdbx_audit_support-extension.dic  0.14  2023-07-15
+;
+Changes (EP):
++ Add 'Ecole polytechnique', 'Luxembourg Centre for Systems Biomedicine (LCSB), University of Luxembourg'
+
 ;
 
 ########################
@@ -261,6 +267,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Diamond Light Source'                                                                            'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'DOC Fellowship of the Austrian Academy of Sciences'                                              Austria
          '_pdbx_audit_support.funding_organization'  'Dutch Kidney Foundation'                                                                         Netherlands
+         '_pdbx_audit_support.funding_organization'  'Ecole polytechnique'                                                                             France
          '_pdbx_audit_support.funding_organization'  'EIPOD fellowship under Marie Sklodowska-Curie Actions COFUND'                                    Germany
          '_pdbx_audit_support.funding_organization'  'Elite Network of Bavaria'                                                                        Germany
          '_pdbx_audit_support.funding_organization'  'Emergence program from Universite Grenoble Alpes'                                                France
@@ -379,7 +386,8 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Louis-Jeantet Foundation'                                                                        Switzerland
          '_pdbx_audit_support.funding_organization'  'LOEWE Center DRUID'                                                                              Germany
          '_pdbx_audit_support.funding_organization'  'Ludwig Institute for Cancer Research (LICR)'                                                     'United States'
-         '_pdbx_audit_support.funding_organization'  Lundbeckfonden                                                                                    Denmark
+         '_pdbx_audit_support.funding_organization'   Lundbeckfonden                                                                                   Denmark
+         '_pdbx_audit_support.funding_organization'  'Luxembourg Centre for Systems Biomedicine (LCSB), University of Luxembourg'                      Luxembourg
          '_pdbx_audit_support.funding_organization'  'Lustgarten Foundation'                                                                           'United States'
          '_pdbx_audit_support.funding_organization'  'Marie Sklodowska-Curie Actions, FragNET ITN'                                                     'European Union'
          '_pdbx_audit_support.funding_organization'  'Marsden Fund'                                                                                    'New Zealand'

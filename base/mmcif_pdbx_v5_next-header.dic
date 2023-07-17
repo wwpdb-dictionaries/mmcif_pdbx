@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.381
+    _dictionary.version         5.382
 #
      loop_
     _dictionary_history.version
@@ -2900,4 +2900,15 @@ data_mmcif_pdbx.dic
       _chem_comp_atom.pdbx_n_terminal_atom_flag, _chem_comp_atom.pdbx_c_terminal_atom_flag,
       category pdbx_chem_comp_pcm, _pdbx_entry_details.has_protein_modification,
       category pdbx_modification_feature
+;
+5.382  2023-07-17
+;
+    Changes (ep):
+    + Add  "JEOL 1400/HR + YPS FEG" to _em_imaginh.microscope_model enumeration
+    + Add "DECTRIS SINGLA (1k x 1k)" to _em_image_recording.film_or_detector_model enumeration
+    + Extend _pdbx_audit_support.funding_organization enumeration
+    + Add 'consensus EM volume' and 'focused EM volume' to pdbx_database_related.content_type  
+    + Add 'Modify backbone' to _pdbx_chem_comp_audit.action_type enumeration
+    + Add 'Modify backbone' to _pdbx_chem_comp_audit.action_type enumeration
+    + Add Servalcat to _em_softare.name, and _software.name enumerations
 ;
