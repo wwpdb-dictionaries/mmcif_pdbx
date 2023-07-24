@@ -8,7 +8,7 @@ data_initial-model-extension.dic
 _pdbx_dictionary_component.datablock_id   initial-model-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   initial-model-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF Initial model extension"
-_pdbx_dictionary_component.version        0.2
+_pdbx_dictionary_component.version        0.5
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -28,16 +28,21 @@ Changes (EP):
   _em_3d_fitting_list.chain_residue_range.
 + Add _em_3d_fitting_list.type, _em_3d_fitting_list.source_name, _em_3d_fitting_list.accession_code
 ;
-initial-model-extension.dic  0.2  2022-12-13
+initial-model-extension.dic  0.3  2022-12-13
 ;
 Changes (EP):
 + Mark _pdbx_initial_refinement_model.type as non-mandatory for deposition system.
 ;
-initial-model-extension.dic  0.3  2022-05-03
+initial-model-extension.dic  0.4  2023-05-03
 ;
 Changes (EP):
 + Adjust entity_id_list data type to be alphanumeric entities which is more in line with
   entity.id type.
+;
+initial-model-extension.dic  0.5  2023-07-24
+;
+Changes (EP):
++ Add _em_3d_fitting_list.initial_refinement_model_id
 ;
 
 loop_
@@ -50,21 +55,21 @@ _item_type_list.detail
                "comma separated alphanumeric codes (no spaces)  ..."
 
 
-# loop_
-# _pdbx_item_linked_group.category_id
-# _pdbx_item_linked_group.link_group_id
-# _pdbx_item_linked_group.label
-# _pdbx_item_linked_group.context
-# _pdbx_item_linked_group.condition_id
-# em_3d_fitting                       2 em_3d_fitting:pdbx_initial_refinement_model:1        . .
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+em_3d_fitting_list                    2 em_3d_fitting_list:pdbx_initial_refinement_model:1        . .
 
-# loop_
-# _pdbx_item_linked_group_list.child_category_id
-# _pdbx_item_linked_group_list.link_group_id
-# _pdbx_item_linked_group_list.child_name
-# _pdbx_item_linked_group_list.parent_name
-# _pdbx_item_linked_group_list.parent_category_id
-# em_3d_fitting                       2 '_em_3d_fitting.initial_refinement_model_id'           '_pdbx_initial_refinement_model.id'  pdbx_initial_refinement_model
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+em_3d_fitting_list                    2 '_em_3d_fitting_list.initial_refinement_model_id'           '_pdbx_initial_refinement_model.id'  pdbx_initial_refinement_model
 
 
 ###################################
@@ -274,3 +279,16 @@ save__em_3d_fitting_list.accession_code
     _item.mandatory_code          no
     _item_type.code               line
      save_
+
+save__em_3d_fitting_list.initial_refinement_model_id
+    _item_description.description
+;    The value of _em_3d_fitting.initial_refinement_model_id itentifies the id
+     in the _pdbx_initial_refinement_model
+;
+    _item.name                    '_em_3d_fitting_list.initial_refinement_model_id'
+    _item.category_id               em_3d_fitting_list
+    _item.mandatory_code            no
+    _item_type.code                 int
+    _item_linked.child_name       '_em_3d_fitting_list.initial_refinement_model_id'
+    _item_linked.parent_name      '_pdbx_initial_refinement_model.id'
+    save_

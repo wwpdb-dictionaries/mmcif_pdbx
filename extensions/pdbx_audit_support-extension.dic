@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.14
+_pdbx_dictionary_component.version        0.15
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -102,6 +102,13 @@ mmcif_pdbx_audit_support-extension.dic  0.14  2023-07-15
 ;
 Changes (EP):
 + Add 'Ecole polytechnique', 'Luxembourg Centre for Systems Biomedicine (LCSB), University of Luxembourg'
+
+;
+mmcif_pdbx_audit_support-extension.dic  0.15  2023-07-24
+;
+Changes (EP):
++ Add 'Independent Research Fund Denmark - Technology and Production Sciences', 'Research England',
+  'Innovate UK'
 
 ;
 
@@ -338,12 +345,14 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Hungarian Ministry of Finance'                                                                   Hungary
          '_pdbx_audit_support.funding_organization'  'Hungarian National Research, Development and Innovation Office'                                  Hungary
          '_pdbx_audit_support.funding_organization'  'Imperial College London'                                                                         'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Independent Research Fund Denmark - Technology and Production Sciences'                          Denmark
          '_pdbx_audit_support.funding_organization'  'Indian Council of Medical Research'                                                              India
          '_pdbx_audit_support.funding_organization'  'Instruct-ERIC Center (Strasbourg Centre)'                                                        France
          '_pdbx_audit_support.funding_organization'  'Instruct-ERIC Center (Helsinki)'                                                                 Finland
          '_pdbx_audit_support.funding_organization'  iNEXT                                                                                             'European Union'
          '_pdbx_audit_support.funding_organization'  iNEXT-Discovery                                                                                   'European Union'	
          '_pdbx_audit_support.funding_organization'  Innosuisse                                                                                        'European Union'
+         '_pdbx_audit_support.funding_organization'  'Innovate UK'                                                                                     'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Innovative Medicines Initiative'                                                                 Switzerland
          '_pdbx_audit_support.funding_organization'  'Institut Laue-Langevin'                                                                          France
          '_pdbx_audit_support.funding_organization'  'Institut National du Cancer (inCA)'                                                              France
@@ -510,6 +519,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Regione Lazio (Italy)'                                                                           Italy
          '_pdbx_audit_support.funding_organization'  'Research Council of Lithuania'                                                                   Lithuania
          '_pdbx_audit_support.funding_organization'  'Research Council of Norway'                                                                      Norway
+         '_pdbx_audit_support.funding_organization'  'Research Englad'                                                                                 'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Research Foundation - Flanders (FWO)'                                                            Belgium
          '_pdbx_audit_support.funding_organization'  'Richard and Susan Smith Family Foundation'                                                       'United States'
          '_pdbx_audit_support.funding_organization'  'Rita Allen Foundation'                                                                           'United States'
