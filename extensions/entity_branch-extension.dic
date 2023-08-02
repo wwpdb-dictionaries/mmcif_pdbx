@@ -38,9 +38,13 @@ pdbx_branch_scheme                       1  pdbx_branch_scheme:atom_site:1      
 pdbx_branch_scheme                       2  pdbx_branch_scheme:entity:2                                               . .
 pdbx_branch_scheme                       3  pdbx_branch_scheme:pdbx_entity_branch_list:3                              . .
 pdbx_entity_branch                  1 pdbx_entity_branch:entity:1                                 . .
+
 pdbx_entity_branch_link             1 pdbx_entity_branch_link:chem_comp_atom:1                    . .
 pdbx_entity_branch_link             2 pdbx_entity_branch_link:chem_comp_atom:2                    . .
-pdbx_entity_branch_link             3 pdbx_entity_branch_link:pdbx_entity_branch_list:3           . .
+pdbx_entity_branch_link             3 pdbx_entity_branch_link:chem_comp_atom:3                    . .
+pdbx_entity_branch_link             4 pdbx_entity_branch_link:chem_comp_atom:4                    . .
+pdbx_entity_branch_link             5 pdbx_entity_branch_link:pdbx_entity_branch_list:5           . .
+pdbx_entity_branch_link             6 pdbx_entity_branch_link:pdbx_entity_branch_list:6           . .
 
 pdbx_entity_branch_list             1 pdbx_entity_branch_list:chem_comp:1                         . .
 pdbx_entity_branch_list             2 pdbx_entity_branch_list:entity:2                            . .
@@ -66,13 +70,15 @@ pdbx_branch_scheme                       3 '_pdbx_branch_scheme.num'            
 pdbx_entity_branch                       1  '_pdbx_entity_branch.entity_id'                       '_entity.id'                                entity
 # Hand crafted - keep 1 and 2 separate
 pdbx_entity_branch_link                  1  '_pdbx_entity_branch_link.atom_id_1'                  '_chem_comp_atom.atom_id'                   chem_comp_atom
-pdbx_entity_branch_link                  1  '_pdbx_entity_branch_link.entity_branch_list_num_1'   '_pdbx_entity_branch_list.num'              pdbx_entity_branch_list
-pdbx_entity_branch_link                  1  '_pdbx_entity_branch_link.leaving_atom_id_1'          '_chem_comp_atom.atom_id'                   chem_comp_atom
-pdbx_entity_branch_link                  1  '_pdbx_entity_branch_link.entity_id'                  '_pdbx_entity_branch_list.entity_id'        pdbx_entity_branch_list
-pdbx_entity_branch_link                  2  '_pdbx_entity_branch_link.atom_id_2'                  '_chem_comp_atom.atom_id'                   chem_comp_atom
-pdbx_entity_branch_link                  2  '_pdbx_entity_branch_link.entity_branch_list_num_2'   '_pdbx_entity_branch_list.num'              pdbx_entity_branch_list
-pdbx_entity_branch_link                  2  '_pdbx_entity_branch_link.leaving_atom_id_2'          '_chem_comp_atom.atom_id'                   chem_comp_atom
-pdbx_entity_branch_link                  3  '_pdbx_entity_branch_link.entity_id'                  '_pdbx_entity_branch_list.entity_id'        pdbx_entity_branch_list
+pdbx_entity_branch_link                  2  '_pdbx_entity_branch_link.leaving_atom_id_1'          '_chem_comp_atom.atom_id'                   chem_comp_atom
+pdbx_entity_branch_link                  3  '_pdbx_entity_branch_link.atom_id_2'                  '_chem_comp_atom.atom_id'                   chem_comp_atom
+pdbx_entity_branch_link                  4  '_pdbx_entity_branch_link.leaving_atom_id_2'          '_chem_comp_atom.atom_id'                   chem_comp_atom
+
+pdbx_entity_branch_link                  5  '_pdbx_entity_branch_link.entity_branch_list_num_1'   '_pdbx_entity_branch_list.num'              pdbx_entity_branch_list
+pdbx_entity_branch_link                  5  '_pdbx_entity_branch_link.entity_id'                  '_pdbx_entity_branch_list.entity_id'        pdbx_entity_branch_list
+pdbx_entity_branch_link                  6  '_pdbx_entity_branch_link.entity_branch_list_num_2'   '_pdbx_entity_branch_list.num'              pdbx_entity_branch_list
+pdbx_entity_branch_link                  6  '_pdbx_entity_branch_link.entity_id'                  '_pdbx_entity_branch_list.entity_id'        pdbx_entity_branch_list
+
 pdbx_entity_branch_list                  1  '_pdbx_entity_branch_list.comp_id'                    '_chem_comp.id'                             chem_comp
 pdbx_entity_branch_list                  2  '_pdbx_entity_branch_list.entity_id'                  '_entity.id'                                entity
 # Carbohydrate

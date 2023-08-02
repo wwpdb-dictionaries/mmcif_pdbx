@@ -8,7 +8,7 @@ data_initial-model-extension.dic
 _pdbx_dictionary_component.datablock_id   initial-model-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   initial-model-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF Initial model extension"
-_pdbx_dictionary_component.version        0.5
+_pdbx_dictionary_component.version        0.6
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -43,6 +43,11 @@ initial-model-extension.dic  0.5  2023-07-24
 ;
 Changes (EP):
 + Add _em_3d_fitting_list.initial_refinement_model_id
+;
+initial-model-extension.dic  0.6  2023-08-02
+;
+Changes (EP):
++ Add PDB-Dev to pdbx_initial_refinement_model.source_name enumeration
 ;
 
 loop_
@@ -163,6 +168,7 @@ save__pdbx_initial_refinement_model.source_name
                                    SwissModel
                                    Modeller
                                    ITasser
+				   PDB-Dev
                                    Other
      save_
 

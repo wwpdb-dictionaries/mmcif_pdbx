@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.383
+    _dictionary.version         5.384
 #
      loop_
     _dictionary_history.version
@@ -2921,4 +2921,10 @@ data_mmcif_pdbx.dic
     + Add "SSRF BEAMLINE BL03HB" and "SSRF BEAMLINE BL17UM" to
       _diffrn_source.type
     + Extend _pdbx_audit_support.funding_organization enumeration
+;
+5.384  2023-08-02
+;
+    Changes (ep):
+    + Correct pdbx_item_linked_group_list definitions for pdbx_entity_branch_link 
+    + Add PDB-Dev to pdbx_initial_refinement_model.source_name enumeration
 ;
