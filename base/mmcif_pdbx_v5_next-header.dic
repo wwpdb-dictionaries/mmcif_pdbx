@@ -2927,4 +2927,5 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Correct pdbx_item_linked_group_list definitions for pdbx_entity_branch_link 
     + Add PDB-Dev to pdbx_initial_refinement_model.source_name enumeration
+    + Temporary removal atom_site.label_atom_id -> chem_comp_atom.atom_id parent/child relationship 
 ;
