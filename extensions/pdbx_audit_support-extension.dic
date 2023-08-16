@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.15
+_pdbx_dictionary_component.version        0.16
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -110,6 +110,12 @@ Changes (EP):
 + Add 'Independent Research Fund Denmark - Technology and Production Sciences', 'Research England',
   'Innovate UK'
 
+;
+mmcif_pdbx_audit_support-extension.dic  0.15  2023-08-15
+;
+Changes (EP):
++ Correct typo in 'National Aeronautics Space Administration (NASA, United States)'
++ Add 'The Foundation for Barnes-Jewish Hospital'
 ;
 
 ########################
@@ -440,7 +446,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Monash University/ARC Centre of Excellence in Advanced Molecular Imaging Alliance'               Australia
          '_pdbx_audit_support.funding_organization'  'Montpellier University of Excellence (MUSE)'                                                     France
 
-         '_pdbx_audit_support.funding_organization'  'National Aeronautic Space Administration (NASA, United States)'                                  'United States'
+         '_pdbx_audit_support.funding_organization'  'National Aeronautics Space Administration (NASA, United States)'                                 'United States'
          '_pdbx_audit_support.funding_organization'  'National Authority for Scientific Research in Romania (ANCS)'                                    'Romania'
          '_pdbx_audit_support.funding_organization'  'National Basic Research Program of China (973 Program)'                                          China
          '_pdbx_audit_support.funding_organization'  'National Center for Genetic Engineering and Biotechnology (Thailand)'                            Thailand
@@ -574,6 +580,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'The Carnegie Trust for the Universities of Scotland'                                             'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'The Comammox Research Platform'                                                                  Austria
          '_pdbx_audit_support.funding_organization'  'The Crafoord Foundation'                                                                         Sweden
+         '_pdbx_audit_support.funding_organization'  'The Foundation for Barnes-Jewish Hospital'                                                       'United States'
          '_pdbx_audit_support.funding_organization'  'The Francis Crick Institute'                                                                     'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'The Giovanni Armenise-Harvard Foundation'                                                        'United States'
          '_pdbx_audit_support.funding_organization'  'The Grant Agency of The University of South Bohemia'                                             'Czech Republic'

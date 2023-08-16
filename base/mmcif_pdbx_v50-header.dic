@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.376
+    _dictionary.version         5.377
 #
      loop_
     _dictionary_history.version
@@ -2785,4 +2785,15 @@ data_mmcif_pdbx.dic
     + Correct pdbx_item_linked_group_list definitions for pdbx_entity_branch_link 
     + Add PDB-Dev to pdbx_initial_refinement_model.source_name enumeration
     + Temporary removal atom_site.label_atom_id -> chem_comp_atom.atom_id parent/child relationship 
+;
+5.377  2023-08-15
+;
+    Changes (ep):
+    + Add PTM remediation categories and data
+      _chem_comp.pdbx_pcm, _chem_comp_atom.pdbx_backbone_atom_flag,
+      _chem_comp_atom.pdbx_n_terminal_atom_flag, _chem_comp_atom.pdbx_c_terminal_atom_flag,
+      category pdbx_chem_comp_pcm, _pdbx_entry_details.has_protein_modification,
+      category pdbx_modification_feature
+    + Extend _pdbx_audit_support.funding_organization enumeration
+    + Add "CRYOSOL VITROJET"  to em_vitrification.instrument
 ;
