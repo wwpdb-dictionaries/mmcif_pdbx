@@ -8,7 +8,7 @@ data_initial-model-extension.dic
 _pdbx_dictionary_component.datablock_id   initial-model-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   initial-model-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF Initial model extension"
-_pdbx_dictionary_component.version        0.6
+_pdbx_dictionary_component.version        0.8
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -48,6 +48,11 @@ initial-model-extension.dic  0.6  2023-08-02
 ;
 Changes (EP):
 + Add PDB-Dev to pdbx_initial_refinement_model.source_name enumeration
+;
+initial-model-extension.dic  0.7  2023-08-22
+;
+Changes (EP):
++ Add EMDB_PUBLIC context to pdbx_initial_refinement_model
 ;
 
 loop_
@@ -108,6 +113,8 @@ save_pdbx_initial_refinement_model
        _pdbx_initial_refinement_model.accession_code   3LTQ
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    _pdbx_category_context.type         EMDB_PUBLIC
+    _pdbx_category_context.category_id  pdbx_initial_refinement_model
 
      save_
 

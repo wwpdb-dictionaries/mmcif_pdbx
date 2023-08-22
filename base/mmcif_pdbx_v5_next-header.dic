@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.385
+    _dictionary.version         5.386
 #
      loop_
     _dictionary_history.version
@@ -2934,4 +2934,10 @@ data_mmcif_pdbx.dic
     Changes (ep):
     + Extend _pdbx_audit_support.funding_organization enumeration
     + Add "CRYOSOL VITROJET"  to em_vitrification.instrument
+;
+5.386  2023-08-22
+;
+Changes (ep):
+  + Add em_admin.process_site and em_admin.composite_map
+  + For many EM categories and EMDB_PUBLIC
 ;

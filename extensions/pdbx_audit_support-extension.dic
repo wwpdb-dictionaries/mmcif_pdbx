@@ -117,6 +117,12 @@ Changes (EP):
 + Correct typo in 'National Aeronautics Space Administration (NASA, United States)'
 + Add 'The Foundation for Barnes-Jewish Hospital'
 ;
+mmcif_pdbx_audit_support-extension.dic  0.16  2023-08-22
+;
+Changes (EP):
++ Correct typo in 'National Aeronautics Space Administration (NASA, United States)'
++ Add EMDB_PUBLIC for pdbx_audit_support
+;
 
 ########################
 ## PDBX_AUDIT_SUPPORT ##
@@ -150,6 +156,8 @@ save_pdbx_audit_support
      1  'National Institutes of Health/National Institute of General Medical Sciences' '1R01GM072999-01' 'United States'
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    _pdbx_category_context.type         EMDB_PUBLIC
+    _pdbx_category_context.category_id  pdbx_audit_support
      save_
 
 save__pdbx_audit_support.funding_organization
@@ -446,7 +454,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Monash University/ARC Centre of Excellence in Advanced Molecular Imaging Alliance'               Australia
          '_pdbx_audit_support.funding_organization'  'Montpellier University of Excellence (MUSE)'                                                     France
 
-         '_pdbx_audit_support.funding_organization'  'National Aeronautics Space Administration (NASA, United States)'                                 'United States'
+         '_pdbx_audit_support.funding_organization'  'National Aeronautics and Space Administration (NASA, United States)'                                 'United States'
          '_pdbx_audit_support.funding_organization'  'National Authority for Scientific Research in Romania (ANCS)'                                    'Romania'
          '_pdbx_audit_support.funding_organization'  'National Basic Research Program of China (973 Program)'                                          China
          '_pdbx_audit_support.funding_organization'  'National Center for Genetic Engineering and Biotechnology (Thailand)'                            Thailand
