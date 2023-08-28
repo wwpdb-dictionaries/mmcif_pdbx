@@ -27,10 +27,11 @@ _pdbx_dictionary_component.title          "PDBx/mmCIF PTM extension"
 _pdbx_dictionary_component.version        0.10
 
 loop_
-_dictionary_history.version
-_dictionary_history.update
-_dictionary_history.revision
-0.1  2023-05-26  
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+ptm-extension.dic 0.1  2023-05-26  
 ;  
   Changes (mgb)
   + added new item type for UniProt PTM Accession IDs (PTM-XXXX) 

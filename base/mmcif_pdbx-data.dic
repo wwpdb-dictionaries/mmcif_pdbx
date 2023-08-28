@@ -575,8 +575,9 @@ data_mmcif_pdbx-data.dic
    point_group         char '(C[1-9][0-9]*|D[2-9]|D[1-9][0-9]+|O|T|I)' 'Point group symmetry in Schoenflies notation'
    point_group_helical char '[CD][1-9][0-9]*' 'Point group symmetry for helices in Schoenflies notation'
    boolean char 'YES|NO' 'Boolean type'
-   #author char "[A-Za-z '\-]+,\s+([A-Z\-]+\.)+$" 'Author name in PDB format: Taylor, C.A.'
-   author char "[A-Za-z0-9_]+(( |-|'|\. )[A-Za-z0-9_]+)*( Jr.| III)?, [A-Za-z0-9_]\.(-?[A-Za-z0-9_]+\.)*$" 'Author name in PDB format: Taylor, C.A.'
+
+   # EM uses this data type
+   author char "([A-Za-z0-9_]+(( |-|'|\. )[A-Za-z0-9_]+)*( Jr.| III)?, [A-Za-z0-9_]\.(-?[A-Za-z0-9_]+\.)*)|(Seattle Structural Genomics Center for Infectious Disease.*)|(Structural Genomics Consortium.*)|(QCRG Structural Biology Consortium.*)$" 'Author name in PDB format: Taylor, C.A.'
    orcid_id char "[0-9]{4}-[0-9]{4}-[0-9]{4}-([0-9]{3}X|[0-9]{4})"  'ORCID pattern - dddd-dddd-dddd-dddd|dddX'
    symmetry_operation char '[-+0-9XxYyZ/ ]+,[-+0-9XxYyZ/ ]+,[-+0-9XxYyZ/ ]+' 'Allowed characters for use in symmetry operation such as 1/2-x,y,1/2-z'
    sequence_dep        char '[a-zA-Z0-9\t \r\n\v\f\(\)]+$'  'Deposition specific one letter code'
