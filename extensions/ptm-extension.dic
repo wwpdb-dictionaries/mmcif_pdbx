@@ -24,7 +24,7 @@ data_ptm-extension.dic
 _pdbx_dictionary_component.datablock_id   ptm-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   ptm-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF PTM extension"
-_pdbx_dictionary_component.version        0.10
+_pdbx_dictionary_component.version        0.2
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -77,6 +77,18 @@ ptm-extension.dic 0.1  2023-05-26
       _pdbx_modification_feature.category
       _pdbx_modification_feature.biological_function
       _pdbx_modification_feature.biological_function_details
+;
+ptm-extension.dic 0.2  2023-09-22
+;
+  Changes (mgb)
+  + added additional PTM types to enumeration list for
+      _pdbx_chem_comp_pcm.type
+      _pdbx_modification_feature.type
+  + added N as a value to enumeration list for
+      _pdbx_entry_details.has_protein_modification
+  + updated item descriptions for 
+      _chem_comp_atom.pdbx_n_terminal_atom_flag
+      _chem_comp_atom.pdbx_c_terminal_atom_flag
 ;
 
 ####################
@@ -180,7 +192,7 @@ save__chem_comp_atom.pdbx_backbone_atom_flag
 save_
 #
 save__chem_comp_atom.pdbx_n_terminal_atom_flag
-   _item_description.description  "              A flag indicating the N-terminal amino-group atoms in polypeptide units."
+   _item_description.description  "              A flag indicating the N-terminal group atoms in polypeptide units."
    #
    _item.name            "_chem_comp_atom.pdbx_n_terminal_atom_flag"
    _item.category_id     chem_comp_atom
@@ -197,7 +209,7 @@ save__chem_comp_atom.pdbx_n_terminal_atom_flag
 save_
 #
 save__chem_comp_atom.pdbx_c_terminal_atom_flag
-   _item_description.description  "              A flag indicating the C-terminal carboxyl-group atoms in polypeptide units."
+   _item_description.description  "              A flag indicating the C-terminal group atoms in polypeptide units."
    #
    _item.name            "_chem_comp_atom.pdbx_c_terminal_atom_flag"
    _item.category_id     chem_comp_atom
@@ -399,6 +411,7 @@ save__pdbx_chem_comp_pcm.type
     "Diphosphorylation"                                .
     "Diphthamide"                                      .
     "Dipyrromethane methylation"                       .
+    "D-lactate"                                        .
     "Dopaminylation"                                   .
     "Ethylation"                                       .
     "Ethylsulfanylation"                               .
@@ -417,24 +430,29 @@ save__pdbx_chem_comp_pcm.type
     "Hydrogenation"                                    .
     "Hydroperoxylation"                                .
     "Hydroxylation"                                    .
+    "Hydroxysulfanylation"                             .
     "Hypusine"                                         .
     "Iodination"                                       .
     "Lactoylation"                                     .
     "Laurylation"                                      .
     "Lipoylation"                                      .
+    "L-lactate"                                        .
     "Malonylation"                                     .
+    "Methoxylation"                                    .
     "Methylamination"                                  .
     "Methylation"                                      .
     "Methylsulfanylation"                              .
     "Methylsulfation"                                  .
     "Myristoylation"                                   .
     "N-pyruvic acid 2-iminylation"                     .
+    "N-methylcarbamoylation"                           .
     "Nitration"                                        .
     "Nitrosylation"                                    .
     "Noradrenylation"                                  .
     "Norleucine"                                       .
+    "Norvaline"                                        .
     "Octanoylation"                                    .
-    "Oleiylation"                                      .
+    "Oleoylation"                                      .
     "Ornithine"                                        .
     "Oxidation"                                        .
     "Palmitoleoylation"                                .
@@ -462,6 +480,7 @@ save__pdbx_chem_comp_pcm.type
     "Sulfhydration"                                    .
     "Sulfonation"                                      .
     "Tert-butylation"                                  .
+    "Tert-butyloxycarbonylation"                       .
     "Thyroxine"                                        .
     "Triiodothyronine"                                 .
     "UMPylation"                                       .
@@ -645,7 +664,8 @@ save__pdbx_entry_details.has_protein_modification
    loop_
    _item_enumeration.value
    _item_enumeration.detail
-     Y  "Protein modification present"  
+     Y  "Protein modifications present"  
+     N  "No protein modifications present"  
    #
 save_
 #
@@ -1220,6 +1240,7 @@ save__pdbx_modification_feature.type
     "Diphosphorylation"                                .
     "Diphthamide"                                      .
     "Dipyrromethane methylation"                       .
+    "D-lactate"                                        .
     "Dopaminylation"                                   .
     "Ethylation"                                       .
     "Ethylsulfanylation"                               .
@@ -1238,24 +1259,29 @@ save__pdbx_modification_feature.type
     "Hydrogenation"                                    .
     "Hydroperoxylation"                                .
     "Hydroxylation"                                    .
+    "Hydroxysulfanylation"                             .
     "Hypusine"                                         .
     "Iodination"                                       .
     "Lactoylation"                                     .
     "Laurylation"                                      .
     "Lipoylation"                                      .
+    "L-lactate"                                        .
     "Malonylation"                                     .
+    "Methoxylation"                                    .
     "Methylamination"                                  .
     "Methylation"                                      .
     "Methylsulfanylation"                              .
     "Methylsulfation"                                  .
     "Myristoylation"                                   .
     "N-pyruvic acid 2-iminylation"                     .
+    "N-methylcarbamoylation"                           .
     "Nitration"                                        .
     "Nitrosylation"                                    .
     "Noradrenylation"                                  .
     "Norleucine"                                       .
+    "Norvaline"                                        .
     "Octanoylation"                                    .
-    "Oleiylation"                                      .
+    "Oleoylation"                                      .
     "Ornithine"                                        .
     "Oxidation"                                        .
     "Palmitoleoylation"                                .
@@ -1283,6 +1309,7 @@ save__pdbx_modification_feature.type
     "Sulfhydration"                                    .
     "Sulfonation"                                      .
     "Tert-butylation"                                  .
+    "Tert-butyloxycarbonylation"                       .
     "Thyroxine"                                        .
     "Triiodothyronine"                                 .
     "UMPylation"                                       .

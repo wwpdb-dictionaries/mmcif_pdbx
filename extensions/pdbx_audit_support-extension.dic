@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.16
+_pdbx_dictionary_component.version        0.17
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -122,6 +122,15 @@ mmcif_pdbx_audit_support-extension.dic  0.16  2023-08-22
 Changes (EP):
 + Correct typo in 'National Aeronautics Space Administration (NASA, United States)'
 + Add EMDB_PUBLIC for pdbx_audit_support
+;
+mmcif_pdbx_audit_support-extension.dic  0.17  2023-10-01
+;
+Changes (EP):
++ Add 'Commonwealth Scientific and Industrial Research Organisation (CSIRO)',
+  'Flanders Innovation & Entrepreneurship (VLAIO)', 'Helen Hay Whitney Foundation',
+  'Innoviris', 'Institut National de la Sante et de la Recherche Medicale (INSERM)',
+  'Service public de Wallonie', 'Shapiro-Silverberg Fund for the Advancement of Translational Research'
++ Correct 'Foundation for Science and Technology' Portugal vs UK
 ;
 
 ########################
@@ -255,6 +264,7 @@ save__pdbx_audit_support.funding_organization
 	 '_pdbx_audit_support.funding_organization'  'Columbia Technology Ventures'                                                                   'United States'
          '_pdbx_audit_support.funding_organization'  'Comision Nacional Cientifica y Technologica (CONICYT)'                                           Chile
          '_pdbx_audit_support.funding_organization'  'Commonwealth Scholarship Commission (United Kingdom)'                                            'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Commonwealth Scientific and Industrial Research Organisation (CSIRO)'                            Australia	 
          '_pdbx_audit_support.funding_organization'  'Compagnia di San Paolo Foundation'                                                               Italy
          '_pdbx_audit_support.funding_organization'  'Comunidad de Madrid'                                                                             Spain
          '_pdbx_audit_support.funding_organization'  'Consejo Nacional de Ciencia y Tecnologia (CONACYT)'                                              Mexico
@@ -305,8 +315,8 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'European Research Council (ERC)'                                                                 'European Union'
          '_pdbx_audit_support.funding_organization'  'European Union (EU)'                                                                             'European Union'
          '_pdbx_audit_support.funding_organization'  'F. Hoffmann-La Roche LTD'                                                                        Switzerland
-         '_pdbx_audit_support.funding_organization'  'Fundacao para a Ciencia e a Tecnologia'                                                          Portugal
          '_pdbx_audit_support.funding_organization'  'Finnish Cultural Foundation'                                                                     Finland
+         '_pdbx_audit_support.funding_organization'  'Flanders Innovation & Entrepreneurship (VLAIO)'                                                  Belgium
          '_pdbx_audit_support.funding_organization'  'Florence Instruct-ERIC Center'                                                                   Italy
          '_pdbx_audit_support.funding_organization'  'Fondation ARC'                                                                                   France
          '_pdbx_audit_support.funding_organization'  'Foundation for Barnes-Jewish Hospital'                                                           'United States'
@@ -314,8 +324,10 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Foundation for Polish Science'                                                                   Poland
 
          '_pdbx_audit_support.funding_organization'  'Fondation pour la Recherche Medicale (FRM)'                                                      France
-         '_pdbx_audit_support.funding_organization'  'Foundation for Science and Technology (FCT)'                                                     'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Foundation for Science and Technology (FCT)'                                                     Portugal
+         '_pdbx_audit_support.funding_organization'  'Foundation for Science and Technology (FST)'                                                     'United Kingdom'	 
          '_pdbx_audit_support.funding_organization'  'Fondazione CARIPLO'                                                                              Italy
+         '_pdbx_audit_support.funding_organization'  'Fondazione Ricerca Fibrosi Cistica'                                                              Italy
          '_pdbx_audit_support.funding_organization'  'Fonds de Recherche du Quebec - Nature et Technologies (FRQNT)'                                   Canada
          '_pdbx_audit_support.funding_organization'  'Fonds de Recherche du Quebec - Sante (FRQS)'                                                     Canada
          # Being deprecated
@@ -329,6 +341,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'French National Institute of Agricultural Research (INRAE)'                                      France
          '_pdbx_audit_support.funding_organization'  'French National Research Agency'                                                                 France
          '_pdbx_audit_support.funding_organization'  'Friedreichs Ataxia Research Alliance (FARA)'                                                     'United States'
+         '_pdbx_audit_support.funding_organization'  'Fundacao para a Ciencia e a Tecnologia'                                                          Portugal
          '_pdbx_audit_support.funding_organization'  'Future Leader Fellowship'                                                                        'United Kingdom'
 
          '_pdbx_audit_support.funding_organization'  'Gatsby Charitable Foundation'                                                                    'United Kingdom'
@@ -347,6 +360,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'H2020 Marie Curie Actions of the European Commission'                                            'European Union'
          '_pdbx_audit_support.funding_organization'  'Health-Holland'                                                                                  'Netherlands'
          '_pdbx_audit_support.funding_organization'  'Health Research Council (HRC)'                                                                   'New Zealand'
+         '_pdbx_audit_support.funding_organization'  'Helen Hay Whitney Foundation'                                                                    'United States'
          '_pdbx_audit_support.funding_organization'  'Hellenic Foundation for Research and Innovation (HFRI)'                                          Greece
          '_pdbx_audit_support.funding_organization'  'Helmholtz Association'                                                                           Germany
 	 '_pdbx_audit_support.funding_organization'  'Heritage Medical Research Institute'                                                             'United States'
@@ -361,6 +375,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Imperial College London'                                                                         'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Independent Research Fund Denmark - Technology and Production Sciences'                          Denmark
          '_pdbx_audit_support.funding_organization'  'Indian Council of Medical Research'                                                              India
+         '_pdbx_audit_support.funding_organization'  'Innoviris'                                                                                       Belgium
          '_pdbx_audit_support.funding_organization'  'Instruct-ERIC Center (Strasbourg Centre)'                                                        France
          '_pdbx_audit_support.funding_organization'  'Instruct-ERIC Center (Helsinki)'                                                                 Finland
          '_pdbx_audit_support.funding_organization'  iNEXT                                                                                             'European Union'
@@ -369,6 +384,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Innovate UK'                                                                                     'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Innovative Medicines Initiative'                                                                 Switzerland
          '_pdbx_audit_support.funding_organization'  'Institut Laue-Langevin'                                                                          France
+         '_pdbx_audit_support.funding_organization'  'Institut National de la Sante et de la Recherche Medicale (INSERM)'                              France
          '_pdbx_audit_support.funding_organization'  'Institut National du Cancer (inCA)'                                                              France
          '_pdbx_audit_support.funding_organization'  'Institute for Integrative Biology of the Cell (I2BC)'                                            France
          '_pdbx_audit_support.funding_organization'  'Institute of Chemical Physics Russian Academy of Science'                                        'Russian Federation'
@@ -556,6 +572,9 @@ save__pdbx_audit_support.funding_organization
 	
          '_pdbx_audit_support.funding_organization'  'Science and Technology Funding Council'                                                          'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Seneca Foundation'                                                                               'United States'
+
+         '_pdbx_audit_support.funding_organization'  'Service public de Wallonie'                                                                      Belgium
+         '_pdbx_audit_support.funding_organization'  'Shapiro-Silverberg Fund for the Advancement of Translational Research'                           'United States'
          '_pdbx_audit_support.funding_organization'  'Shirley Boyde Foundation'                                                                        'Hong Kong'
          '_pdbx_audit_support.funding_organization'  'Sigrid Juselius Foundation'                                                                      Finland
          '_pdbx_audit_support.funding_organization'  'Simons Foundation'                                                                               'United States'

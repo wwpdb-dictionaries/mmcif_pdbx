@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.387
+    _dictionary.version         5.388
 #
      loop_
     _dictionary_history.version
@@ -2949,4 +2949,11 @@ Changes (ep):
   + author data type extended to support structural genomics names
   + Add 'I3' to _em_software.name enumeration
   + Add "RIGAKU HyPix-Arc 150" to _diffrn_detector.type
+;
+5.388  2023-10-02
+;
+Changes (ep):
+  + Extend _pdbx_audit_support.funding_organization enumeration
+  + PTM extension updates to enumerations
+  + Add Poky to _pdbx_nmr_softare.name enumeration
 ;
