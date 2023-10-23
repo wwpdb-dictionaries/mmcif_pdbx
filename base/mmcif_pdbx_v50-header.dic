@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.380
+    _dictionary.version         5.381
 #
      loop_
     _dictionary_history.version
@@ -2818,4 +2818,15 @@ Changes (ep):
   + Extend _pdbx_audit_support.funding_organization enumeration
   + PTM extension updates to enumerations
   + Add Poky to _pdbx_nmr_softare.name enumeration
+;
+5.381  2023-10-23
+;
+Changes (ep):
+  + author data type was corrected from 5.379 version so options properly checked
+  + Extend _pdbx_audit_support.funding_organization enumeration
+  + Add "MAR CCD 300 mm" to _diffrn_detector.type
+  + Add definitions for _pdbx_chem_comp_depositor.upload_file_name,
+    _pdbx_chem_comp_depositor.upload_file_type
+  + Change _pdbx_chem_comp_instance_depositor_info.PDB_ins_code to
+    _pdbx_chem_comp_instance_depositor_info.pdbx_PDB_ins_code to match usage
 ;
