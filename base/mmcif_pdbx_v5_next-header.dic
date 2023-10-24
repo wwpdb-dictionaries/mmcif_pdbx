@@ -2965,6 +2965,5 @@ Changes (ep):
   + Add "MAR CCD 300 mm" to _diffrn_detector.type
   + Add definitions for _pdbx_chem_comp_depositor.upload_file_name,
     _pdbx_chem_comp_depositor.upload_file_type
-  + Change _pdbx_chem_comp_instance_depositor_info.PDB_ins_code to
-    _pdbx_chem_comp_instance_depositor_info.pdbx_PDB_ins_code to match usage
+  + Add _pdbx_chem_comp_instance_depositor_info.pdbx_PDB_ins_code
 ;
