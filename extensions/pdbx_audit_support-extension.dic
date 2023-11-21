@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.18
+_pdbx_dictionary_component.version        0.19
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -132,10 +132,19 @@ Changes (EP):
   'Service public de Wallonie', 'Shapiro-Silverberg Fund for the Advancement of Translational Research'
 + Correct 'Foundation for Science and Technology' Portugal vs UK
 ;
-mmcif_pdbx_audit_support-extension.dic  0.17  2023-10-23
+mmcif_pdbx_audit_support-extension.dic  0.18  2023-10-23
 ;
 Changes (EP):
 + Add 'Brain & Behaviour Research Foundation' and 'Generalitat Valenciana'  
+;
+mmcif_pdbx_audit_support-extension.dic  0.19  2023-11-20
+;
+Changes (EP):
++ Add 'Aligning Science Across Parkinsons (ASAP)', 'Breast Cancer Now', 'Cystic Fibrosis Trust',
+  'DanScatt', 'ETH Zurich', 'German Academic Scholarship Foundation', 'Germanys Excellence Strategy',
+  'Gerty Cori Programme, Medical Faculty, University of Munster', 'Ghent University Special Research Fund (BOF)',
+  'Independent Research Fund Denmark - Medical Sciences', 'Jardine Foundation', 'Max IV Laboratory',
+  'Rosetrees Trust', 'Swiss State Secretariat for Education, Research and Innovation'
 ;
 
 
@@ -207,6 +216,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Agence Nationale de Recherches Sur le Sida et les Hepatites Virales (ANRS)'                      France
          '_pdbx_audit_support.funding_organization'  'Ake Wiberg Foundation'                                                                           'European Union'
          '_pdbx_audit_support.funding_organization'  'Alexander von Humboldt Foundation'                                                               Germany
+         '_pdbx_audit_support.funding_organization'  'Aligning Science Across Parkinsons (ASAP)'                                                       'United States'	 
          '_pdbx_audit_support.funding_organization'  'Almirall, LLC'                                                                                   'United States'
          '_pdbx_audit_support.funding_organization'  'Alexs Lemonade Stand Foundation for Cancer'                                                      'United States'
          '_pdbx_audit_support.funding_organization'  'Alzheimer Forschung Initiative e.V.'                                                             Germany
@@ -236,6 +246,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Bloodwise'                                                                                       'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Board of Research in Nuclear Sciences (BRNS)'                                                    India
          '_pdbx_audit_support.funding_organization'  'Boehringer Ingelheim Fonds (BIF)'                                                                Germany
+         '_pdbx_audit_support.funding_organization'  'Breast Cancer Now'                                                                               'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Brain & Behavior Research Foundation'                                                            'United States'
 	 
          '_pdbx_audit_support.funding_organization'  'Brazilian National Council for Scientific and Technological Development (CNPq)'                  Brazil
@@ -282,11 +293,13 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Croatian Science Foundation'                                                                     Croatia
          '_pdbx_audit_support.funding_organization'  'CRDF Global'                                                                                    'United States'
          '_pdbx_audit_support.funding_organization'  'Cystic Fibrosis Foundation'                                                                      'United States'
+         '_pdbx_audit_support.funding_organization'  'Cystic Fibrosis Trust'                                                                           'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Czech Academy of Sciences'                                                                       'Czech Republic'
          '_pdbx_audit_support.funding_organization'  'Czech Science Foundation'                                                                        'Czech Republic'
          '_pdbx_audit_support.funding_organization'  'Danish Agency for Science Technology and Innovation'                                             Denmark
          '_pdbx_audit_support.funding_organization'  'Danish Council for Independent Research'                                                         Denmark
          '_pdbx_audit_support.funding_organization'  'Danish National Research Foundation'                                                             Denmark
+         '_pdbx_audit_support.funding_organization'  'DanScatt'                                                                                        Denmark
          '_pdbx_audit_support.funding_organization'  'Damon Runyon Cancer Research Foundation'                                                         'United States'
 
          '_pdbx_audit_support.funding_organization'  'David and Lucile Packard Foundation'                                                             'United States'
@@ -313,6 +326,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Engineering and Physical Sciences Research Council'                                              'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Enterprise Ireland'                                                                              Ireland
 
+         '_pdbx_audit_support.funding_organization'  'ETH Zurich'                                                                                      Switzerland
          '_pdbx_audit_support.funding_organization'  'Estonian Research Council'                                                                       Estonia
          '_pdbx_audit_support.funding_organization'  'European Commission'                                                                             'European Union'
          '_pdbx_audit_support.funding_organization'  'European Communitys Seventh Framework Programme'                                                 'European Union'
@@ -355,10 +369,14 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'General Secretariat for Research and Technology (GSRT)'                                          'European Union'
          '_pdbx_audit_support.funding_organization'  'Generalitat de Catalunya'                                                                        Spain
          '_pdbx_audit_support.funding_organization'  'Generalitat Valenciana'                                                                          Spain
+         '_pdbx_audit_support.funding_organization'  'German Academic Scholarship Foundation'                                                          Germany
          '_pdbx_audit_support.funding_organization'  'German Federal Ministry for Economic Affairs and Energy'                                         Germany
          '_pdbx_audit_support.funding_organization'  'German Federal Ministry for Education and Research'                                              Germany
          '_pdbx_audit_support.funding_organization'  'German-Israeli Foundation for Research and Development'                                          Germany
          '_pdbx_audit_support.funding_organization'  'German Research Foundation (DFG)'                                                                Germany
+         '_pdbx_audit_support.funding_organization'  'Germanys Excellence Strategy'                                                                    Germany
+         '_pdbx_audit_support.funding_organization'  'Gerty Cori Programme, Medical Faculty, University of Munster'                                    Germany
+         '_pdbx_audit_support.funding_organization'  'Ghent University Special Research Fund (BOF)'                                                    Belgium
          '_pdbx_audit_support.funding_organization'  'GHR Foundation'                                                                                  'United States'
          '_pdbx_audit_support.funding_organization'  'Global Challenges Research Fund'                                                                 'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Global Health Innovative Technology Fund'                                                        Japan
@@ -381,6 +399,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Hungarian Ministry of Finance'                                                                   Hungary
          '_pdbx_audit_support.funding_organization'  'Hungarian National Research, Development and Innovation Office'                                  Hungary
          '_pdbx_audit_support.funding_organization'  'Imperial College London'                                                                         'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Independent Research Fund Denmark - Medical Sciences'                                            Denmark
          '_pdbx_audit_support.funding_organization'  'Independent Research Fund Denmark - Technology and Production Sciences'                          Denmark
          '_pdbx_audit_support.funding_organization'  'Indian Council of Medical Research'                                                              India
          '_pdbx_audit_support.funding_organization'  'Innoviris'                                                                                       Belgium
@@ -412,6 +431,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Japan Agency for Medical Research and Development (AMED)'                                        Japan
          '_pdbx_audit_support.funding_organization'  'Japan Science and Technology'                                                                    Japan
          '_pdbx_audit_support.funding_organization'  'Japan Society for the Promotion of Science (JSPS)'                                               Japan
+         '_pdbx_audit_support.funding_organization'  'Jardine Foundation'                                                                              'Hong Kong'
          '_pdbx_audit_support.funding_organization'  'Joachim Herz Stiftung'                                                                           Germany
          '_pdbx_audit_support.funding_organization'  'John Innes Foundation'                                                                           'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Johns Hopkins University'                                                                        'United States'
@@ -441,6 +461,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Maryland Stem Cell Research Fund'                                                                'United States'
 	 '_pdbx_audit_support.funding_organization'  'Massachusetts Consortium on Pathogen Readiness (MassCPR)'                                        'United States'
 
+         '_pdbx_audit_support.funding_organization'  'Max IV Laboratory'                                                                               Sweden
          '_pdbx_audit_support.funding_organization'  'Max Planck Bristol Centre for Minimal Biology - University of Bristol'                           'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Max Planck Society'                                                                              Germany
          '_pdbx_audit_support.funding_organization'  'Medical Research Council (MRC, Canada)'                                                          Canada
@@ -564,6 +585,7 @@ save__pdbx_audit_support.funding_organization
 	 '_pdbx_audit_support.funding_organization'  'Robert A. Welch Foundation'                                                                      'United States'
          '_pdbx_audit_support.funding_organization'  'Roechling Stiftung'                                                                              Germany
          '_pdbx_audit_support.funding_organization'  'ROME Therapeutics, Inc.'                                                                         'United States'
+         '_pdbx_audit_support.funding_organization'  'Rosetrees Trust'                                                                                 'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Royal Society'                                                                                   'United Kingdom'
 	
          '_pdbx_audit_support.funding_organization'  'Royal Society of New Zealand'                                                                    'New Zealand'
@@ -603,7 +625,8 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Swiss Cancer League'                                                                             Switzerland
          '_pdbx_audit_support.funding_organization'  'Swiss Nanoscience Institute'                                                                     Switzerland
          '_pdbx_audit_support.funding_organization'  'Swiss National Science Foundation'                                                               Switzerland
-	
+         '_pdbx_audit_support.funding_organization'  'Swiss State Secretariat for Education, Research and Innovation'                                  Switzerland
+
          '_pdbx_audit_support.funding_organization'  'Synchrotron Light Research Institute (SLRI)'                                                     Thailand
 
          '_pdbx_audit_support.funding_organization'  'Technology Agency of the Czech Republic'                                                         'Czech Republic'
