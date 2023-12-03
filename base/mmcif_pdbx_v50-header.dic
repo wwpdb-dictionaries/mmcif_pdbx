@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.382
+    _dictionary.version         5.383
 #
      loop_
     _dictionary_history.version
@@ -2835,4 +2835,13 @@ Changes (ep):
   + Remove NDB, BMCD, and BIOISIS from the pdbx_enumeration_list for pdbx_database_related.db_name
   + Add 'DECTRIS PILATUS4' detectors to _diffrn_detector.type
   + Extend _pdbx_audit_support.funding_organization enumeration
+;
+5.383  2023-12-03
+;
+Changes (ep):
+  + Extend _pdbx_audit_support.funding_organization enumeration
+  + Add ARTINA to pdbx_nmr_software.name enumeration
+  + Add "DECTRIS ELA (1k x 0.5k)" to em_image_recording.film_or_detector_model enumeration
+  + Add PanthaRhei and PACEtomo to em_software.name enumeration
+  + Add 'CEOS CEFID' to _em_imaging_optics.energyfilter_name enumeration
 ;

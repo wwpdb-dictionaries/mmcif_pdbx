@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.19
+_pdbx_dictionary_component.version        0.20
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -146,6 +146,13 @@ Changes (EP):
   'Independent Research Fund Denmark - Medical Sciences', 'Jardine Foundation', 'Max IV Laboratory',
   'Rosetrees Trust', 'Swiss State Secretariat for Education, Research and Innovation'
 ;
+mmcif_pdbx_audit_support-extension.dic  0.20  2023-12-03
+;
+Changes (EP):
++ Add 'CA18103 - Innovation with Glycans: new frontiers from synthesis to new biological targets (INNOGLY)',
+  'CA18132 - Functional Glyconanomaterials for the Development of Diagnostics and Targeted Therapeutic Probes (GLYCONanoPROBES)',
+  'Branco Weiss Fellowship - Society in Science'
+;
 
 
 ########################
@@ -248,13 +255,15 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Boehringer Ingelheim Fonds (BIF)'                                                                Germany
          '_pdbx_audit_support.funding_organization'  'Breast Cancer Now'                                                                               'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Brain & Behavior Research Foundation'                                                            'United States'
-	 
+         '_pdbx_audit_support.funding_organization'  'Branco Weiss Fellowship - Society in Science'                                                     Switzerland	 
          '_pdbx_audit_support.funding_organization'  'Brazilian National Council for Scientific and Technological Development (CNPq)'                  Brazil
          '_pdbx_audit_support.funding_organization'  'British Heart Foundation'                                                                        'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Brookhaven National Laboratory (BNL)'                                                            'United States'
          '_pdbx_audit_support.funding_organization'  'Bulgarian National Science Fund'                                                                 Bulgaria
          '_pdbx_audit_support.funding_organization'  'Burroughs Wellcome Fund'                                                                         'United States'
 	 '_pdbx_audit_support.funding_organization'  'Business Finland'                                                                                Finland
+         '_pdbx_audit_support.funding_organization'  'CA18103 - Innovation with Glycans: new frontiers from synthesis to new biological targets (INNOGLY)' 'European Union'
+         '_pdbx_audit_support.funding_organization'  'CA18132 - Functional Glyconanomaterials for the Development of Diagnostics and Targeted Therapeutic Probes (GLYCONanoPROBES)' 'European Union'
          '_pdbx_audit_support.funding_organization'  'CAMS Innovation Fund for Medical Sciences (CIFMS)'                                               'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Canada Excellence Research Chair Award'                                                          Canada
          '_pdbx_audit_support.funding_organization'  'Canada Foundation for Innovation'                                                                Canada
