@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.383
+    _dictionary.version         5.384
 #
      loop_
     _dictionary_history.version
@@ -2844,4 +2844,13 @@ Changes (ep):
   + Add "DECTRIS ELA (1k x 0.5k)" to em_image_recording.film_or_detector_model enumeration
   + Add PanthaRhei and PACEtomo to em_software.name enumeration
   + Add 'CEOS CEFID' to _em_imaging_optics.energyfilter_name enumeration
+;
+5.384  2023-01-16
+;
+Changes (ep):
+  + em_software.name enumeration change "PanthaRhei" to "Pantha Rhei"
+  + Add "GATAN K3 BIOCONTINUUM (6k x 4k)" to _em_image_recording.film_or_detector_model
+  + Add "RIGAKU HyPix-Arc 100" to _diffrn_detector.type enumeration
+  + Add pdbx_item_description to _entity.details
+  + Extend _pdbx_audit_support.funding_organization enumeration
 ;

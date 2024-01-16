@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.20
+_pdbx_dictionary_component.version        0.21
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -153,7 +153,15 @@ Changes (EP):
   'CA18132 - Functional Glyconanomaterials for the Development of Diagnostics and Targeted Therapeutic Probes (GLYCONanoPROBES)',
   'Branco Weiss Fellowship - Society in Science'
 ;
-
+mmcif_pdbx_audit_support-extension.dic  0.21  2024-01-16
+;
+Changes (EP):
++ Add 'The Ehlers-Danlos Society', 'Heidelberg ImmunoTherapeutics GmbH',
+  'NextGenerationEU-MUR PNRR Extended Partnership initiative on Emerging Infectious Diseases (INF-ACT)',
+  'European Foundation for the Study of Diabetes (EFSD)', 'European Cooperation in Science and Technology (COST) action'
++ Remove 'CA18103 - Innovation with Glycans: new frontiers from synthesis to new biological targets (INNOGLY)' 'European Union',
+  'CA18132 - Functional Glyconanomaterials for the Development of Diagnostics and Targeted Therapeutic Probes (GLYCONanoPROBES)'
+;
 
 ########################
 ## PDBX_AUDIT_SUPPORT ##
@@ -262,8 +270,6 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Bulgarian National Science Fund'                                                                 Bulgaria
          '_pdbx_audit_support.funding_organization'  'Burroughs Wellcome Fund'                                                                         'United States'
 	 '_pdbx_audit_support.funding_organization'  'Business Finland'                                                                                Finland
-         '_pdbx_audit_support.funding_organization'  'CA18103 - Innovation with Glycans: new frontiers from synthesis to new biological targets (INNOGLY)' 'European Union'
-         '_pdbx_audit_support.funding_organization'  'CA18132 - Functional Glyconanomaterials for the Development of Diagnostics and Targeted Therapeutic Probes (GLYCONanoPROBES)' 'European Union'
          '_pdbx_audit_support.funding_organization'  'CAMS Innovation Fund for Medical Sciences (CIFMS)'                                               'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Canada Excellence Research Chair Award'                                                          Canada
          '_pdbx_audit_support.funding_organization'  'Canada Foundation for Innovation'                                                                Canada
@@ -329,6 +335,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Dutch Kidney Foundation'                                                                         Netherlands
          '_pdbx_audit_support.funding_organization'  'Ecole polytechnique'                                                                             France
          '_pdbx_audit_support.funding_organization'  'EIPOD fellowship under Marie Sklodowska-Curie Actions COFUND'                                    Germany
+         '_pdbx_audit_support.funding_organization'  'The Ehlers-Danlos Society'                                                                       'United States'
          '_pdbx_audit_support.funding_organization'  'Elite Network of Bavaria'                                                                        Germany
          '_pdbx_audit_support.funding_organization'  'Emergence program from Universite Grenoble Alpes'                                                France
          '_pdbx_audit_support.funding_organization'  'Emerson Collective'                                                                              'United States'
@@ -339,6 +346,8 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Estonian Research Council'                                                                       Estonia
          '_pdbx_audit_support.funding_organization'  'European Commission'                                                                             'European Union'
          '_pdbx_audit_support.funding_organization'  'European Communitys Seventh Framework Programme'                                                 'European Union'
+         '_pdbx_audit_support.funding_organization'  'European Cooperation in Science and Technology (COST) action'                                    'European Union'
+         '_pdbx_audit_support.funding_organization'  'European Foundation for the Study of Diabetes (EFSD)'                                            'European Union'
          '_pdbx_audit_support.funding_organization'  'European Institute of Chemistry and Biology (IECB)'                                              France
          '_pdbx_audit_support.funding_organization'  'European Molecular Biology Organization (EMBO)'                                                  'European Union'
          '_pdbx_audit_support.funding_organization'  'European Regional Development Fund'                                                              'European Union'
@@ -401,6 +410,7 @@ save__pdbx_audit_support.funding_organization
 	 '_pdbx_audit_support.funding_organization'  'Heritage Medical Research Institute'                                                             'United States'
          '_pdbx_audit_support.funding_organization'  'Herman Frasch Foundation'                                                                        'United States'
          '_pdbx_audit_support.funding_organization'  'Hessian Ministry of Science, Higher Education and Art (HMWK)'                                    Germany
+         '_pdbx_audit_support.funding_organization'  'Heidelberg ImmunoTherapeutics GmbH'                                                              Germany
          '_pdbx_audit_support.funding_organization'  'Higher Education Funding Council for England'                                                    'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Howard Hughes Medical Institute (HHMI)'                                                          'United States'
          '_pdbx_audit_support.funding_organization'  'Human Frontier Science Program (HFSP)'                                                           France
@@ -556,6 +566,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Natural Environment Research Council (NERC)'                                                     'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Natural Sciences and Engineering Research Council (NSERC, Canada)'                               Canada
          '_pdbx_audit_support.funding_organization'  'Netherlands Organisation for Scientific Research (NWO)'                                          Netherlands
+	 '_pdbx_audit_support.funding_organization'  'NextGenerationEU-MUR PNRR Extended Partnership initiative on Emerging Infectious Diseases (INF-ACT)'  Italy
          '_pdbx_audit_support.funding_organization'  'New Energy and Industrial Technology Development Organization (NEDO)'                            Japan
          '_pdbx_audit_support.funding_organization'  'Norwegian Cancer Society'                                                                        Norway
          '_pdbx_audit_support.funding_organization'  'Norwegian Research Council'                                                                      Norway
