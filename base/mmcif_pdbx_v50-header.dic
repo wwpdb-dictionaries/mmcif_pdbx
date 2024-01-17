@@ -2853,4 +2853,5 @@ Changes (ep):
   + Add "RIGAKU HyPix-Arc 100" to _diffrn_detector.type enumeration
   + Add pdbx_item_description to _entity.details
   + Extend _pdbx_audit_support.funding_organization enumeration
+  + Add IPCAS to _software.name enumeration
 ;
