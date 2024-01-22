@@ -54,6 +54,11 @@ initial-model-extension.dic  0.7  2023-08-22
 Changes (EP):
 + Add EMDB_PUBLIC context to pdbx_initial_refinement_model
 ;
+initial-model-extension.dic  0.8  2024-01-22
+;
+Changes (EP):
++ Add pdbx_enumeration_enumeration for pdbx_initial_refinement_model.type removing "other"
+;
 
 loop_
 _item_type_list.code
@@ -156,6 +161,12 @@ save__pdbx_initial_refinement_model.type
                                   'experimental model'
                                   'integrative model'
                                   other
+     loop_
+    _pdbx_item_enumeration.name
+    _pdbx_item_enumeration.value
+      "_pdbx_initial_refinement_model.type"   "in silico model"
+      "_pdbx_initial_refinement_model.type"   "experimental model"
+      "_pdbx_initial_refinement_model.type"   "integrative model"      
      save_
 
 save__pdbx_initial_refinement_model.source_name

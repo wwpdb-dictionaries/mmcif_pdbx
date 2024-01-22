@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.392
+    _dictionary.version         5.393
 #
      loop_
     _dictionary_history.version
@@ -2992,4 +2992,12 @@ Changes (ep):
   + Add pdbx_item_description to _entity.details
   + Extend _pdbx_audit_support.funding_organization enumeration
   + Add IPCAS to _software.name enumeration
+;
+5.393  2024-01-22
+;
+Changes (ep):
+  + Add pdbx_enumeration_enumeration for pdbx_initial_refinement_model.type removing "other"
+  + Add new "DECTRIS PILATUS4 (R,X,XE) CdTe" detectors to _diffrn_detector.type enumeration
+  + Add "GATAN ALPINE (2.3k x 3.2k)" to _em_image_recording.film_or_detector_model
+  + Extend _pdbx_audit_support.funding_organization enumeration
 ;

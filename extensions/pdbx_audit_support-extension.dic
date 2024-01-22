@@ -158,7 +158,8 @@ mmcif_pdbx_audit_support-extension.dic  0.21  2024-01-16
 Changes (EP):
 + Add 'The Ehlers-Danlos Society', 'Heidelberg ImmunoTherapeutics GmbH',
   'NextGenerationEU-MUR PNRR Extended Partnership initiative on Emerging Infectious Diseases (INF-ACT)',
-  'European Foundation for the Study of Diabetes (EFSD)', 'European Cooperation in Science and Technology (COST) action'
+  'European Foundation for the Study of Diabetes (EFSD)', 'European Cooperation in Science and Technology (COST) action',
+  'Kempe Foundation'
 + Remove 'CA18103 - Innovation with Glycans: new frontiers from synthesis to new biological targets (INNOGLY)' 'European Union',
   'CA18132 - Functional Glyconanomaterials for the Development of Diagnostics and Targeted Therapeutic Probes (GLYCONanoPROBES)'
 ;
@@ -457,6 +458,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Joint Supercomputer Center of the Russian Academy of Sciences'                                   'Russian Federation'
          '_pdbx_audit_support.funding_organization'  'Junta de Castilla y Leon, Consejeria de Educacion y Cultura y Fondo Social Europeo'              Spain
          '_pdbx_audit_support.funding_organization'  'Kay Kendall Leukaemia Fund'                                                                      'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Kempe Foundation'                                                                                Sweden
          '_pdbx_audit_support.funding_organization'  'Kidney Research UK'                                                                              'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Knut and Alice Wallenberg Foundation'                                                            Sweden
          '_pdbx_audit_support.funding_organization'  'KU Leuven'                                                                                       Belgium
