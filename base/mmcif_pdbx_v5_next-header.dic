@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.393
+    _dictionary.version         5.394
 #
      loop_
     _dictionary_history.version
@@ -3000,4 +3000,13 @@ Changes (ep):
   + Add new "DECTRIS PILATUS4 (R,X,XE) CdTe" detectors to _diffrn_detector.type enumeration
   + Add "GATAN ALPINE (2.3k x 3.2k)" to _em_image_recording.film_or_detector_model
   + Extend _pdbx_audit_support.funding_organization enumeration
+;
+5.394  2024-01-29
+;
+Changes (ep):
+  + Add enumeration for _pdbx_database_related.db_name
+  + Add "NMRtist" to pdbx_nmr_software.name enumeration
+  + Add _em_entity_assembly.oligomeric_state, _em_entity_assembly.recombinant_exp_flag,
+    _em_entity_assembly.number_unique_components and _em_image_recording.bits_per_pixel
+    to legacy EM structures.
 ;
