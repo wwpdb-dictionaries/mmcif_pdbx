@@ -2868,7 +2868,4 @@ Changes (ep):
 Changes (ep):
   + Add enumeration for _pdbx_database_related.db_name
   + Add "NMRtist" to pdbx_nmr_software.name enumeration
-  + Add _em_entity_assembly.oligomeric_state, _em_entity_assembly.recombinant_exp_flag,
-    _em_entity_assembly.number_unique_components and _em_image_recording.bits_per_pixel
-    to legacy EM structures.
 ;
