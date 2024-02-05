@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.386
+    _dictionary.version         5.387
 #
      loop_
     _dictionary_history.version
@@ -2868,4 +2868,12 @@ Changes (ep):
 Changes (ep):
   + Add enumeration for _pdbx_database_related.db_name
   + Add "NMRtist" to pdbx_nmr_software.name enumeration
+;
+5.387  2024-02-04
+;
+Changes (ep):
+  + Add "int_list" data type for a comma separated list of positive integers.
+    Use for pdbx_item_type for -pdbx_initial_refinement_model.entity_id_list.
+    Update description for pdbx_initial_refinement_model.entity_id_list.
+  + Add "STFC Large Pixel Detector" to _diffrn_detector.type enumeration.
 ;

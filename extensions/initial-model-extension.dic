@@ -8,7 +8,7 @@ data_initial-model-extension.dic
 _pdbx_dictionary_component.datablock_id   initial-model-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   initial-model-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF Initial model extension"
-_pdbx_dictionary_component.version        0.8
+_pdbx_dictionary_component.version        0.9
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -59,6 +59,13 @@ initial-model-extension.dic  0.8  2024-01-22
 Changes (EP):
 + Add pdbx_enumeration_enumeration for pdbx_initial_refinement_model.type removing "other"
 ;
+initial-model-extension.dic  0.9  2024-01-22
+;
+Changes (EP):
++ Add "int_list" data type for a comma separated list of positive integers.
+  Use for pdbx_item_type for -pdbx_initial_refinement_model.entity_id_list.
+  Update description for pdbx_initial_refinement_model.entity_id_list.
+;
 
 loop_
 _item_type_list.code
@@ -68,6 +75,10 @@ _item_type_list.detail
                entity_id_list     uchar
                '[0-9A-Za-z]+(,[0-9A-Za-z]+)*'
                "comma separated alphanumeric codes (no spaces)  ..."
+
+               int_list     uchar
+               '[1-9][0-9]*(,[1-9][0-9]*)*'
+               "comma separated list of positive integers (no spaces)  ..."
 
 
 loop_
@@ -141,6 +152,9 @@ save__pdbx_initial_refinement_model.entity_id_list
     _item.category_id             pdbx_initial_refinement_model
     _item.mandatory_code          no
     _item_type.code               entity_id_list
+    _pdbx_item_type.code          int_list
+    _pdbx_item_description.description 'A comma separated list of macromolecule entities in the current entry for which the specified initial refinement model was used.'
+    _pdbx_item_description.name '_pdbx_initial_refinement_model.entity_id_list'
      save_
 
 
