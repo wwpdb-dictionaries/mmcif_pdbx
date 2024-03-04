@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.21
+_pdbx_dictionary_component.version        0.22
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -162,6 +162,11 @@ Changes (EP):
   'Kempe Foundation'
 + Remove 'CA18103 - Innovation with Glycans: new frontiers from synthesis to new biological targets (INNOGLY)' 'European Union',
   'CA18132 - Functional Glyconanomaterials for the Development of Diagnostics and Targeted Therapeutic Probes (GLYCONanoPROBES)'
+;
+mmcif_pdbx_audit_support-extension.dic  0.22  2024-03-04
+;
+Changes (EP):
++ Add 'IdEx Universite Paris Cite' and 'Fraunhofer Cluster of Excellence Immune-Mediated Diseases'
 ;
 
 ########################
@@ -373,6 +378,7 @@ save__pdbx_audit_support.funding_organization
          # Being deprecated
          '_pdbx_audit_support.funding_organization'  'Fonds National de la Recherche Scientifique (FNRS)'                                              Belgium
          '_pdbx_audit_support.funding_organization'  'Fonds de la Recherche Scientifique (FNRS)'                                                       Belgium
+         '_pdbx_audit_support.funding_organization'  'Fraunhofer Cluster of Excellence Immune-Mediated Diseases'                                       Netherlands
          '_pdbx_audit_support.funding_organization'  'French Alternative Energies and Atomic Energy Commission (CEA)'                                  France
          '_pdbx_audit_support.funding_organization'  'French Infrastructure for Integrated Structural Biology (FRISBI)'                                France
          '_pdbx_audit_support.funding_organization'  'French League Against Cancer'                                                                    France
@@ -418,6 +424,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Hungarian Academy of Sciences'                                                                   Hungary
          '_pdbx_audit_support.funding_organization'  'Hungarian Ministry of Finance'                                                                   Hungary
          '_pdbx_audit_support.funding_organization'  'Hungarian National Research, Development and Innovation Office'                                  Hungary
+         '_pdbx_audit_support.funding_organization'  'IdEx Universite Paris Cite'                                                                      France
          '_pdbx_audit_support.funding_organization'  'Imperial College London'                                                                         'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Independent Research Fund Denmark - Medical Sciences'                                            Denmark
          '_pdbx_audit_support.funding_organization'  'Independent Research Fund Denmark - Technology and Production Sciences'                          Denmark

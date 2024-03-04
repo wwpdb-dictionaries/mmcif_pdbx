@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.395
+    _dictionary.version         5.396
 #
      loop_
     _dictionary_history.version
@@ -3014,4 +3014,16 @@ Changes (ep):
     Use for pdbx_item_type for -pdbx_initial_refinement_model.entity_id_list.
     Update description for pdbx_initial_refinement_model.entity_id_list.
   + Add "STFC Large Pixel Detector" to _diffrn_detector.type enumeration.
+;
+5.396  2024-03-04
+;
+Changes (ep/mgb):
+  + Update ptm-extension
+  + Example for _entity_poly.pdbx_seq_one_letter_code updted changing PTO -> TPO
+  + Enumeration for _software.name "MAIN" has roles added.
+  + Add CSearch to _software.name enumeration
+  + Add ASTRA-TOOLBOX to _em_software enumeration
+  + Add 4D-STEM to _em_iaging.mode enumeration
+  + Add PDB-Dev to _database_2.database_id
+  + Update funding enumerations
 ;
