@@ -378,7 +378,7 @@ save__pdbx_audit_support.funding_organization
          # Being deprecated
          '_pdbx_audit_support.funding_organization'  'Fonds National de la Recherche Scientifique (FNRS)'                                              Belgium
          '_pdbx_audit_support.funding_organization'  'Fonds de la Recherche Scientifique (FNRS)'                                                       Belgium
-         '_pdbx_audit_support.funding_organization'  'Fraunhofer Cluster of Excellence Immune-Mediated Diseases'                                       Netherlands
+         '_pdbx_audit_support.funding_organization'  'Fraunhofer Cluster of Excellence Immune-Mediated Diseases'                                       Germany
          '_pdbx_audit_support.funding_organization'  'French Alternative Energies and Atomic Energy Commission (CEA)'                                  France
          '_pdbx_audit_support.funding_organization'  'French Infrastructure for Integrated Structural Biology (FRISBI)'                                France
          '_pdbx_audit_support.funding_organization'  'French League Against Cancer'                                                                    France
