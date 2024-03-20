@@ -8,7 +8,7 @@ data_initial-model-extension.dic
 _pdbx_dictionary_component.datablock_id   initial-model-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   initial-model-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF Initial model extension"
-_pdbx_dictionary_component.version        0.9
+_pdbx_dictionary_component.version        0.10
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -65,6 +65,11 @@ Changes (EP):
 + Add "int_list" data type for a comma separated list of positive integers.
   Use for pdbx_item_type for -pdbx_initial_refinement_model.entity_id_list.
   Update description for pdbx_initial_refinement_model.entity_id_list.
+;
+initial-model-extension.dic  0.10  2024-03-20
+;
+Changes (EP):
++ Add Robetta, PHYRE and InsightII to _pdbx_initial_refinement_model.source_name enumeration
 ;
 
 loop_
@@ -195,13 +200,30 @@ save__pdbx_initial_refinement_model.source_name
     _item_enumeration.value
                                    PDB
                                    AlphaFold
+				   Robetta
                                    RoseTTAFold
 				   ModelArchive
                                    SwissModel
                                    Modeller
                                    ITasser
 				   PDB-Dev
+				   PHYRE
+				   InsightII
                                    Other
+     loop_
+    _pdbx_item_enumeration.name
+    _pdbx_item_enumeration.value
+    _pdbx_item_enumeration.detail
+      "_pdbx_initial_refinement_model.source_name" PDB          .
+      "_pdbx_initial_refinement_model.source_name" AlphaFold    .
+      "_pdbx_initial_refinement_model.source_name" Robetta      .
+      "_pdbx_initial_refinement_model.source_name" RoseTTAFold  .
+      "_pdbx_initial_refinement_model.source_name" ModelArchive .
+      "_pdbx_initial_refinement_model.source_name" SwissModel   .
+      "_pdbx_initial_refinement_model.source_name" Modeller     .
+      "_pdbx_initial_refinement_model.source_name" ITasser      .
+      "_pdbx_initial_refinement_model.source_name" PDB-Dev      .
+      "_pdbx_initial_refinement_model.source_name" Other .
      save_
 
 save__pdbx_initial_refinement_model.accession_code

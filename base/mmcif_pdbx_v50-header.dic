@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.388
+    _dictionary.version         5.389
 #
      loop_
     _dictionary_history.version
@@ -2887,5 +2887,11 @@ Changes (ep/mgb):
   + Add ASTRA-TOOLBOX to _em_software enumeration
   + Add 4D-STEM to _em_iaging.mode enumeration
   + Add PDB-Dev to _database_2.database_id
+  + Update funding enumerations
+;
+5.389  2024-03-20
+;
+Changes (ep):
+  + Add Robetta, PHYRE and InsightII to _pdbx_initial_refinement_model.source_name enumeration
   + Update funding enumerations
 ;

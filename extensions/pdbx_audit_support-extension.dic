@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.22
+_pdbx_dictionary_component.version        0.23
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -167,6 +167,13 @@ mmcif_pdbx_audit_support-extension.dic  0.22  2024-03-04
 ;
 Changes (EP):
 + Add 'IdEx Universite Paris Cite' and 'Fraunhofer Cluster of Excellence Immune-Mediated Diseases'
+;
+mmcif_pdbx_audit_support-extension.dic  0.23  2024-03-20
+;
+Changes (EP):
++ Add 'Dorothea Schloezer Program from the Georg-August University of Goettingen',
+  'Erik, Karin and Gosta Selander Foundation', 'The Swedish Society of Medicine',
+  'Life Sciences Research Foundation'
 ;
 
 ########################
@@ -338,6 +345,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Department of Veterans Affairs (VA, United States)'                                              'United States'
          '_pdbx_audit_support.funding_organization'  'Diamond Light Source'                                                                            'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'DOC Fellowship of the Austrian Academy of Sciences'                                              Austria
+         '_pdbx_audit_support.funding_organization'  'Dorothea Schloezer Program from the Georg-August University of Goettingen'                       Germany
          '_pdbx_audit_support.funding_organization'  'Dutch Kidney Foundation'                                                                         Netherlands
          '_pdbx_audit_support.funding_organization'  'Ecole polytechnique'                                                                             France
          '_pdbx_audit_support.funding_organization'  'EIPOD fellowship under Marie Sklodowska-Curie Actions COFUND'                                    Germany
@@ -347,7 +355,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Emerson Collective'                                                                              'United States'
          '_pdbx_audit_support.funding_organization'  'Engineering and Physical Sciences Research Council'                                              'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Enterprise Ireland'                                                                              Ireland
-
+         '_pdbx_audit_support.funding_organization'  'Erik, Karin and Gosta Selander Foundation'                                                       Sweden
          '_pdbx_audit_support.funding_organization'  'ETH Zurich'                                                                                      Switzerland
          '_pdbx_audit_support.funding_organization'  'Estonian Research Council'                                                                       Estonia
          '_pdbx_audit_support.funding_organization'  'European Commission'                                                                             'European Union'
@@ -477,6 +485,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Leibniz Association'                                                                             Germany
          '_pdbx_audit_support.funding_organization'  'Leukemia & Lymphoma Society'                                                                     'United States'
          '_pdbx_audit_support.funding_organization'  'Leverhulme Trust'                                                                                'United Kingdom'
+         '_pdbx_audit_support.funding_organization'  'Life Sciences Research Foundation'                                                               'United States'
          '_pdbx_audit_support.funding_organization'  'LOreal-UNESCO'                                                                                   France
          '_pdbx_audit_support.funding_organization'  'Louis-Jeantet Foundation'                                                                        Switzerland
          '_pdbx_audit_support.funding_organization'  'LOEWE Center DRUID'                                                                              Germany
@@ -681,6 +690,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'The Robertson Foundation'                                                                        'United States'
          '_pdbx_audit_support.funding_organization'  'The Structural Genomics Consortium (SGC)'                                                        Canada
          '_pdbx_audit_support.funding_organization'  'The Swedish Foundation for Strategic Research'                                                   Sweden
+         '_pdbx_audit_support.funding_organization'  'The Swedish Society of Medicine'                                                                 Sweden
          '_pdbx_audit_support.funding_organization'  'The Thailand Research Fund (TRF)'                                                                Thailand
          '_pdbx_audit_support.funding_organization'  'The Vallee Foundation Inc.'                                                                      'United States'
          '_pdbx_audit_support.funding_organization'  'The Walter and Eliza Hall Institute of Medical Research'                                         Australia
