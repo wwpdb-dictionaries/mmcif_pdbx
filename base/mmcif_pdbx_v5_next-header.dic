@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.397
+    _dictionary.version         5.398
 #
      loop_
     _dictionary_history.version
@@ -3031,5 +3031,15 @@ Changes (ep/mgb):
 ;
 Changes (ep):
   + Add Robetta, PHYRE and InsightII to _pdbx_initial_refinement_model.source_name enumeration
+  + Update funding enumerations
+;
+5.398  2024-04-01
+;
+Changes (ep):
+Changes (ep/mgb):
+  + Add "DECTRIS ARINA (0.2k x 0.2k)" to _em_image_recording.film_or_detector_model
+    enumeration
+  + Add RAPD to _software.name enumeration
+  + PTM extension add None to enumerations, and support alt ids.
   + Update funding enumerations
 ;

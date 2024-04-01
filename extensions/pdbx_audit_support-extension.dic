@@ -15,7 +15,7 @@ data_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx_audit_support-extension.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx Audit support extension"
-_pdbx_dictionary_component.version        0.23
+_pdbx_dictionary_component.version        0.24
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -175,6 +175,12 @@ Changes (EP):
   'Erik, Karin and Gosta Selander Foundation', 'The Swedish Society of Medicine',
   'Life Sciences Research Foundation'
 ;
+mmcif_pdbx_audit_support-extension.dic  0.24  2024-04-01
+;
+Changes (EP):
++ Add 'Aarhus University Research Foundation', 'BigC Cancer Charity',
+  'Maersk Foundation',  'USC Zumberge Award'
+;
 
 ########################
 ## PDBX_AUDIT_SUPPORT ##
@@ -232,6 +238,7 @@ save__pdbx_audit_support.funding_organization
        _pdbx_item_enumeration.name
        _pdbx_item_enumeration.value
        _pdbx_item_enumeration.detail
+         '_pdbx_audit_support.funding_organization'  'Aarhus University Research Foundation'                                                           Denmark
          '_pdbx_audit_support.funding_organization'  'Academia Sinica (Taiwan)'                                                                        Taiwan
          '_pdbx_audit_support.funding_organization'  'Academy of Finland'                                                                              Finland
          '_pdbx_audit_support.funding_organization'  'Accelerated Early staGe drug dIScovery (AEGIS)'                                                  'European Union'
@@ -268,6 +275,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Becton-Dickinson and Company'                                                                    'United States'
          '_pdbx_audit_support.funding_organization'  'Belgian Foundation against Cancer'                                                               Netherlands
          '_pdbx_audit_support.funding_organization'  'Belarusian Republican Foundation for Fundamental Research'                                       Belarus
+         '_pdbx_audit_support.funding_organization'  'BigC Cancer Charity'                                                                             'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Bill & Melinda Gates Foundation'                                                                 'United States'
          '_pdbx_audit_support.funding_organization'  'Biotechnology and Biological Sciences Research Council (BBSRC)'                                  'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Birkbeck College'                                                                                'United Kingdom'
@@ -452,6 +460,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Institute of Chemical Physics Russian Academy of Science'                                        'Russian Federation'
          '_pdbx_audit_support.funding_organization'  'International AIDS Vaccine Initiative'                                                           'United States'
          '_pdbx_audit_support.funding_organization'  'Irish Research Council'                                                                          Ireland
+         '_pdbx_audit_support.funding_organization'  'Isaac Newton Trust'                                                                              'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'Israel Ministry of Science and Technology'                                                       Israel
          '_pdbx_audit_support.funding_organization'  'Israel Science Foundation'                                                                       Israel
          '_pdbx_audit_support.funding_organization'  'Italian Association for Cancer Research'                                                         Italy
@@ -459,7 +468,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'Italian Ministry of Health'                                                                      Italy
          '_pdbx_audit_support.funding_organization'  'Italian Medicines Agency'                                                                        Italy
          '_pdbx_audit_support.funding_organization'  'Italian National Research Council (CNR)'                                                         Italy
-         '_pdbx_audit_support.funding_organization'  'Jacob and Lena Joels Memorial Foundation, Hebrew University of Jerusalem'                         Israel
+         '_pdbx_audit_support.funding_organization'  'Jacob and Lena Joels Memorial Foundation, Hebrew University of Jerusalem'                        Israel
          '_pdbx_audit_support.funding_organization'  'Jack Ma Foundation'                                                                              China
          '_pdbx_audit_support.funding_organization'  'Jane and Aatos Erkko Foundation'                                                                 Finland
          '_pdbx_audit_support.funding_organization'  'Jane Coffin Childs (JCC) Fund'                                                                   'United States'
@@ -493,6 +502,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'   Lundbeckfonden                                                                                   Denmark
          '_pdbx_audit_support.funding_organization'  'Luxembourg Centre for Systems Biomedicine (LCSB), University of Luxembourg'                      Luxembourg
          '_pdbx_audit_support.funding_organization'  'Lustgarten Foundation'                                                                           'United States'
+         '_pdbx_audit_support.funding_organization'  'Maersk Foundation'                                                                               Denmark
          '_pdbx_audit_support.funding_organization'  'Marie Sklodowska-Curie Actions, FragNET ITN'                                                     'European Union'
          '_pdbx_audit_support.funding_organization'  'Marsden Fund'                                                                                    'New Zealand'
          '_pdbx_audit_support.funding_organization'  'Maryland Stem Cell Research Fund'                                                                'United States'
@@ -720,6 +730,7 @@ save__pdbx_audit_support.funding_organization
          '_pdbx_audit_support.funding_organization'  'University of Warwick'                                                                           'United Kingdom'
          '_pdbx_audit_support.funding_organization'  'University of Zurich'                                                                            Switzerland
          '_pdbx_audit_support.funding_organization'  'Uppsala Antibiotic Center'                                                                       Sweden
+         '_pdbx_audit_support.funding_organization'  'USC Zumberge Award'                                                                             'United States'
          '_pdbx_audit_support.funding_organization'  'V Foundation for Cancer Research'                                                               'United States'
 	 '_pdbx_audit_support.funding_organization'  'Velux Stiftung'                                                                                  Switzerland
          '_pdbx_audit_support.funding_organization'  'Vidyasirimedhi Institute of Science and Technology (VISTEC)'                                     Thailand
