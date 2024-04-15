@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.390
+    _dictionary.version         5.391
 #
      loop_
     _dictionary_history.version
@@ -2903,4 +2903,9 @@ Changes (ep/mgb):
   + Add RAPD to _software.name enumeration
   + PTM extension add None to enumerations, and support alt ids.
   + Update funding enumerations
+;
+5.391  2024-04-15
+;
+Changes (ep):
+  + Extend enumeration of _pdbx_chem_comp_depositor_info.type based on use
 ;
