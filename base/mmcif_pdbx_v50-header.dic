@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.391
+    _dictionary.version         5.392
 #
      loop_
     _dictionary_history.version
@@ -2908,4 +2908,12 @@ Changes (ep/mgb):
 ;
 Changes (ep):
   + Extend enumeration of _pdbx_chem_comp_depositor_info.type based on use
+;
+5.392  2024-04-29
+;
+Changes (ep/mgb):
+  + Remove biological function information from pdbx_modification_feature
+  + Extend em_author_list to support Center for Structural Biology of Infectious Diseases (CSBID)
+  + Change type of _pdbx_chem_comp_upload_depositor_info.upload_file_type
+    to uline to reflect usage. Add JPG and PDBX to enumeration.
 ;

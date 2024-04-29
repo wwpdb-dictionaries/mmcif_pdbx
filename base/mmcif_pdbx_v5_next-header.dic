@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.399
+    _dictionary.version         5.400
 #
      loop_
     _dictionary_history.version
@@ -3048,4 +3048,12 @@ Changes (ep/mgb):
 Changes (ep):
   + Extend enumeration of _pdbx_chem_comp_depositor_info.type based on use
   + Extend _diffrn_source.type enumeration with "PETRA III, DESY BEAMLINE P09 HiPhaX"
+;
+5.400  2024-04-29
+;
+Changes (ep/mgb):
+  + Remove biological function information from pdbx_modification_feature
+  + Extend em_author_list to support Center for Structural Biology of Infectious Diseases (CSBID)
+  + Change type of _pdbx_chem_comp_upload_depositor_info.upload_file_type
+    to uline to reflect usage. Add JPG and PDBX to enumeration.
 ;
