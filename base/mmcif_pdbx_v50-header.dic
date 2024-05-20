@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.392
+    _dictionary.version         5.393
 #
      loop_
     _dictionary_history.version
@@ -2916,4 +2916,13 @@ Changes (ep/mgb):
   + Extend em_author_list to support Center for Structural Biology of Infectious Diseases (CSBID)
   + Change type of _pdbx_chem_comp_upload_depositor_info.upload_file_type
     to uline to reflect usage. Add JPG and PDBX to enumeration.
+;
+5.393  2024-05-20
+;
+Changes (ep/mgb):
+  + Remove "D-amino acid" from enumeration from pdbx_modification_feature.type,
+    pdbx_chem_comp_pcm.type.
+  + Removed direct linking modifications from enumeration list for _pdbx_chem_comp_pcm.category
+  + Add parent/child relationships for _pdbx_nmr_spectral_peak_software.software_id
+    and _pdbx_nmr_chem_shift_software.software_id to _pdbx_nmr_software.ordinal
 ;

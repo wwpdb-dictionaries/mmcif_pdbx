@@ -689,8 +689,10 @@ pdbx_struct_special_symmetry             3 pdbx_struct_special_symmetry:atom_sit
 #
 pdbx_nmr_chem_shift_experiment         1  pdbx_nmr_chem_shift_experiment:pdbx_nmr_assigned_chem_shift_list:1         . .
 pdbx_nmr_chem_shift_software           1  pdbx_nmr_chem_shift_software:pdbx_nmr_assigned_chem_shift_list:1           . .
+pdbx_nmr_chem_shift_software           2  pdbx_nmr_chem_shift_software:pdbx_nmr_software:2                           . .
 pdbx_nmr_spectral_dim                  1  pdbx_nmr_spectral_dim:pdbx_nmr_spectral_peak_list:1                        . .
 pdbx_nmr_spectral_peak_software        1  pdbx_nmr_spectral_peak_software:pdbx_nmr_spectral_peak_list:1              . .
+pdbx_nmr_spectral_peak_software        2  pdbx_nmr_spectral_peak_software:pdbx_nmr_software:2                        . .
 pdbx_nmr_systematic_chem_shift_offset  1  pdbx_nmr_systematic_chem_shift_offset:pdbx_nmr_assigned_chem_shift_list:1  . .
 #
 #pdbx_chem_comp_instance_depositor_info     1  pdbx_chem_comp_instance_depositor_info:atom_site:1                              . .
@@ -2212,8 +2214,10 @@ pdbx_struct_special_symmetry 3   '_pdbx_struct_special_symmetry.PDB_model_num'  
 #
 pdbx_nmr_chem_shift_experiment        1 '_pdbx_nmr_chem_shift_experiment.assigned_chem_shift_list_id'         '_pdbx_nmr_assigned_chem_shift_list.id' pdbx_nmr_assigned_chem_shift_list
 pdbx_nmr_chem_shift_software          1 '_pdbx_nmr_chem_shift_software.assigned_chem_shift_list_id'           '_pdbx_nmr_assigned_chem_shift_list.id' pdbx_nmr_assigned_chem_shift_list
+pdbx_nmr_chem_shift_software          2 '_pdbx_nmr_chem_shift_software.software_id'                           '_pdbx_nmr_software.ordinal'            pdbx_nmr_software
 pdbx_nmr_spectral_dim                 1 '_pdbx_nmr_spectral_dim.spectral_peak_list_id'                        '_pdbx_nmr_spectral_peak_list.id'       pdbx_nmr_spectral_peak_list
 pdbx_nmr_spectral_peak_software       1 '_pdbx_nmr_spectral_peak_software.spectral_peak_list_id'              '_pdbx_nmr_spectral_peak_list.id'       pdbx_nmr_spectral_peak_list
+pdbx_nmr_spectral_peak_software       2 '_pdbx_nmr_spectral_peak_software.software_id'                        '_pdbx_nmr_software.ordinal'            pdbx_nmr_software
 pdbx_nmr_systematic_chem_shift_offset 1 '_pdbx_nmr_systematic_chem_shift_offset.assigned_chem_shift_list_id'  '_pdbx_nmr_assigned_chem_shift_list.id' pdbx_nmr_assigned_chem_shift_list
 #
 ##

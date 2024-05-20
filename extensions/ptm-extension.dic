@@ -2,7 +2,7 @@
 #
 #  File: ptm-extension.dic
 #  Date: 26-May-2023 MGB
-#  Update: 29-Apr-2024 MGB
+#  Update: 08-May-2024 MGB
 #
 #  Dictionary extensions for: 
 #     - Extending the chemical components definition to backbone, N-terminal and C-terminal flags
@@ -24,7 +24,7 @@ data_ptm-extension.dic
 _pdbx_dictionary_component.datablock_id   ptm-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   ptm-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF PTM extension"
-_pdbx_dictionary_component.version        0.5
+_pdbx_dictionary_component.version        0.6
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -116,6 +116,15 @@ ptm-extension.dic 0.5  2024-04-29
 ;
   Changes (mgb)
   + removed biological function items
+;
+ptm-extension.dic 0.6  2024-05-08
+;
+  Changes (mgb)
+  + removed "D-amino acid" from enumeration list for
+      _pdbx_chem_comp_pcm.type
+      _pdbx_modification_feature.type
+  + removed direct linking modifications from enumeration list for
+      _pdbx_chem_comp_pcm.category
 ;
 
 ####################
@@ -425,7 +434,6 @@ save__pdbx_chem_comp_pcm.type
     "Citrullination"                                   .
     "Crotonylation"                                    .
     "Cyanation"                                        .
-    "D-amino acid"                                     .
     "Deamidation"                                      .
     "Decanoylation"                                    .
     "Decarboxylation"                                  .
@@ -538,13 +546,10 @@ save__pdbx_chem_comp_pcm.category
     "Chromophore/chromophore-like"    "Chromophore or chromophore-like protein modifications"
     "Covalent chemical modification"  "A diverse range of chemical compounds that form covalent bonds with amino acids. Not covered by any of the other modification categories"
     "Crosslinker"                     "Chemical modifications which covalently link two amino-acid residues. Excludes reaction intermediates and modifications covered by other modification categories"
-    "Disulfide bridge"                "Disulfide bridge protein modifications"
     "Flavin"                          "Flavin protein modifications"
     "Heme/heme-like"                  "Heme or heme-like protein modifications"
-    "Isopeptide bond"                 "Isopeptide bond protein modifications"
     "Lipid/lipid-like"                "Lipid or lipid-like protein modifications"
     "Named protein modification"      "All protein modifications that are well defined into known types, have limited diversity, and are not explicitly covered by any other category. It includes PTMs, PCMs, rare amino acids and unnatural amino acids"
-    "Non-standard linkage"            "Non-standard covalent chemical linkages directly between two polypeptide residues"
     "Non-standard residue"            "A diverse range of non-standard polypeptide residues that are not considered to be 'Named protein modifications'. These cannot be practically split into two CCDs, which describe the standard polypeptide residue and the modification group, and are not covered by any of the other modification categories"
     "Nucleotide monophosphate"        "Nucleotide monophosphate protein modifications"
     "Terminal acetylation"            "Terminal acetylation protein modification"
@@ -1334,7 +1339,6 @@ save__pdbx_modification_feature.type
     "Citrullination"                                   .
     "Crotonylation"                                    .
     "Cyanation"                                        .
-    "D-amino acid"                                     .
     "Deamidation"                                      .
     "Decanoylation"                                    .
     "Decarboxylation"                                  .
