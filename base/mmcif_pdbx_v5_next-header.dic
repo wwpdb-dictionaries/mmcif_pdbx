@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.401
+    _dictionary.version         5.402
 #
      loop_
     _dictionary_history.version
@@ -3066,4 +3066,10 @@ Changes (ep/mgb):
   + Add "Modify PCM" to pdbx_chem_comp_audit.action_type enumeration.
   + Add parent/child relationships for _pdbx_nmr_spectral_peak_software.software_id
     and _pdbx_nmr_chem_shift_software.software_id to _pdbx_nmr_software.ordinal
+;
+5.402  2024-06-05
+;
+Changes (ep):
+  + Add "home-built" to pdbx_nmr_spectrometer.model for deposition enumeration.
+  + Extend enumerations for pdbx_chem_comp_pcm and pdbx_modification_feature
 ;

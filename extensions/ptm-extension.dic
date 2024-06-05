@@ -2,7 +2,7 @@
 #
 #  File: ptm-extension.dic
 #  Date: 26-May-2023 MGB
-#  Update: 08-May-2024 MGB
+#  Update: 31-May-2024 MGB
 #
 #  Dictionary extensions for: 
 #     - Extending the chemical components definition to backbone, N-terminal and C-terminal flags
@@ -24,7 +24,7 @@ data_ptm-extension.dic
 _pdbx_dictionary_component.datablock_id   ptm-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   ptm-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF PTM extension"
-_pdbx_dictionary_component.version        0.6
+_pdbx_dictionary_component.version        0.7
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -125,6 +125,19 @@ ptm-extension.dic 0.6  2024-05-08
       _pdbx_modification_feature.type
   + removed direct linking modifications from enumeration list for
       _pdbx_chem_comp_pcm.category
+;
+ptm-extension.dic 0.7  2024-05-31
+;
+  Changes (mgb)
+  + added "Amino acid" types to enumeration list for
+      _pdbx_chem_comp_pcm.type
+      _pdbx_modification_feature.type
+  + added "Amino acid" to enumeration list for
+      _pdbx_chem_comp_pcm.category
+      _pdbx_modification_feature.category
+  + changed capitalisation of "ADP-ribose" for
+      _pdbx_chem_comp_pcm.category
+      _pdbx_modification_feature.category
 ;
 
 ####################
@@ -409,11 +422,15 @@ save__pdbx_chem_comp_pcm.type
     "Acetamidation"                                    .
     "Acetamidomethylation"                             .
     "Acetylation"                                      .
+    "Alanylation"                                      .
     "Allysine"                                         .
     "Amination"                                        .
     "Arachidoylation"                                  .
     "Archaeol"                                         .
+    "Arginylation"                                     .
     "Arsenylation"                                     .
+    "Asparaginylation"                                 .
+    "Aspartylation"                                    .
     "Bacillithiolation"                                .
     "Benzoylation"                                     .
     "Benzylation"                                      .
@@ -434,6 +451,7 @@ save__pdbx_chem_comp_pcm.type
     "Citrullination"                                   .
     "Crotonylation"                                    .
     "Cyanation"                                        .
+    "Cysteinylation"                                   .
     "Deamidation"                                      .
     "Decanoylation"                                    .
     "Decarboxylation"                                  .
@@ -448,7 +466,26 @@ save__pdbx_chem_comp_pcm.type
     "Diphosphorylation"                                .
     "Diphthamide"                                      .
     "Dipyrromethane methylation"                       .
+    "D-alanylation"                                    .
+    "D-arginylation"                                   .
+    "D-asparaginylation"                               .
+    "D-aspartylation"                                  .
+    "D-cysteinylation"                                 .
+    "D-glutaminylation"                                .
+    "D-glutamylation"                                  .
+    "D-histidinylation"                                .
+    "D-isoleucylation"                                 .
     "D-lactate"                                        .
+    "D-leucylation"                                    .
+    "D-lysylation"                                     .
+    "D-methionylation"                                 .
+    "D-phenylalanylation"                              .
+    "D-prolylation"                                    .
+    "D-serylation"                                     .
+    "D-threoninylation"                                .
+    "D-tryptophanylation"                              .
+    "D-tyrosination"                                   .
+    "D-valylation"                                     .
     "Dopaminylation"                                   .
     "Ethylation"                                       .
     "Ethylsulfanylation"                               .
@@ -457,13 +494,17 @@ save__pdbx_chem_comp_pcm.type
     "Formylation"                                      .
     "GMPylation"                                       .
     "Geranylgeranylation"                              .
+    "Glutaminylation"                                  .
+    "Glutamylation"                                    .
     "Glutarylation"                                    .
     "Glutathionylation"                                .
     "Glycerophosphorylation"                           .
     "Glycerylphosphorylethanolamination"               .
+    "Glycylation"                                      .
     "Heptanoylation"                                   .
     "Hexanoylation"                                    .
     "Histaminylation"                                  .
+    "Histidinylation"                                  .
     "Hydrogenation"                                    .
     "Hydroperoxylation"                                .
     "Hydroxyamination"                                 .
@@ -473,11 +514,15 @@ save__pdbx_chem_comp_pcm.type
     "Hydroxysulfanylation"                             .
     "Hypusine"                                         .
     "Iodination"                                       .
+    "Isoleucylation"                                   .
     "Lactoylation"                                     .
     "Laurylation"                                      .
+    "Leucylation"                                      .
     "Lipoylation"                                      .
     "L-lactate"                                        .
+    "Lysylation"                                       .
     "Malonylation"                                     .
+    "Methionylation"                                   .
     "Methoxylation"                                    .
     "Methylamination"                                  .
     "Methylation"                                      .
@@ -500,9 +545,11 @@ save__pdbx_chem_comp_pcm.type
     "Palmitoylation"                                   .
     "Pentadecanoylation"                               .
     "Pentanoylation"                                   .
+    "Phenylalanylation"                                .
     "Phosphatidylethanolamine amidation"               .
     "Phosphoenolpyruvate"                              .
     "Phosphorylation"                                  .
+    "Prolylation"                                      .
     "Propionylation"                                   .
     "Pyridoxal phosphate"                              .
     "Pyrrolidone carboxylic acid"                      .
@@ -511,6 +558,7 @@ save__pdbx_chem_comp_pcm.type
     "Selanylation"                                     .
     "Selenomethionine"                                 .
     "Serotonylation"                                   .
+    "Serylation"                                       .
     "Stearoylation"                                    .
     "Stereoisomerisation"                              .
     "Succinamide ring"                                 .
@@ -521,9 +569,13 @@ save__pdbx_chem_comp_pcm.type
     "Sulfhydration"                                    .
     "Tert-butylation"                                  .
     "Tert-butyloxycarbonylation"                       .
+    "Threoninylation"                                  .
     "Thyroxine"                                        .
     "Triiodothyronine"                                 .
+    "Tryptophanylation"                                .
+    "Tyrosination"                                     .
     "UMPylation"                                       .
+    "Valylation"                                       .
    #
 save_
 #
@@ -540,7 +592,8 @@ save__pdbx_chem_comp_pcm.category
    loop_
    _item_enumeration.value
    _item_enumeration.detail
-    "ADP-Ribose"                      "ADP-ribose protein modifications"
+    "ADP-ribose"                      "ADP-ribose protein modifications"
+    "Amino acid"                      "Canonical amino acid linked to a peptide residue"
     "Biotin"                          "Biotin protein modifications"
     "Carbohydrate"                    "Carbohydrate protein modifications"
     "Chromophore/chromophore-like"    "Chromophore or chromophore-like protein modifications"
@@ -1314,11 +1367,15 @@ save__pdbx_modification_feature.type
     "Acetamidation"                                    .
     "Acetamidomethylation"                             .
     "Acetylation"                                      .
+    "Alanylation"                                      .
     "Allysine"                                         .
     "Amination"                                        .
     "Arachidoylation"                                  .
     "Archaeol"                                         .
+    "Arginylation"                                     .
     "Arsenylation"                                     .
+    "Asparaginylation"                                 .
+    "Aspartylation"                                    .
     "Bacillithiolation"                                .
     "Benzoylation"                                     .
     "Benzylation"                                      .
@@ -1339,6 +1396,7 @@ save__pdbx_modification_feature.type
     "Citrullination"                                   .
     "Crotonylation"                                    .
     "Cyanation"                                        .
+    "Cysteinylation"                                   .
     "Deamidation"                                      .
     "Decanoylation"                                    .
     "Decarboxylation"                                  .
@@ -1353,7 +1411,26 @@ save__pdbx_modification_feature.type
     "Diphosphorylation"                                .
     "Diphthamide"                                      .
     "Dipyrromethane methylation"                       .
+    "D-alanylation"                                    .
+    "D-arginylation"                                   .
+    "D-asparaginylation"                               .
+    "D-aspartylation"                                  .
+    "D-cysteinylation"                                 .
+    "D-glutaminylation"                                .
+    "D-glutamylation"                                  .
+    "D-histidinylation"                                .
+    "D-isoleucylation"                                 .
     "D-lactate"                                        .
+    "D-leucylation"                                    .
+    "D-lysylation"                                     .
+    "D-methionylation"                                 .
+    "D-phenylalanylation"                              .
+    "D-prolylation"                                    .
+    "D-serylation"                                     .
+    "D-threoninylation"                                .
+    "D-tryptophanylation"                              .
+    "D-tyrosination"                                   .
+    "D-valylation"                                     .
     "Dopaminylation"                                   .
     "Ethylation"                                       .
     "Ethylsulfanylation"                               .
@@ -1362,13 +1439,17 @@ save__pdbx_modification_feature.type
     "Formylation"                                      .
     "GMPylation"                                       .
     "Geranylgeranylation"                              .
+    "Glutaminylation"                                  .
+    "Glutamylation"                                    .
     "Glutarylation"                                    .
     "Glutathionylation"                                .
     "Glycerophosphorylation"                           .
     "Glycerylphosphorylethanolamination"               .
+    "Glycylation"                                      .
     "Heptanoylation"                                   .
     "Hexanoylation"                                    .
     "Histaminylation"                                  .
+    "Histidinylation"                                  .
     "Hydrogenation"                                    .
     "Hydroperoxylation"                                .
     "Hydroxyamination"                                 .
@@ -1378,11 +1459,15 @@ save__pdbx_modification_feature.type
     "Hydroxysulfanylation"                             .
     "Hypusine"                                         .
     "Iodination"                                       .
+    "Isoleucylation"                                   .
     "Lactoylation"                                     .
     "Laurylation"                                      .
+    "Leucylation"                                      .
     "Lipoylation"                                      .
     "L-lactate"                                        .
+    "Lysylation"                                       .
     "Malonylation"                                     .
+    "Methionylation"                                   .
     "Methoxylation"                                    .
     "Methylamination"                                  .
     "Methylation"                                      .
@@ -1405,9 +1490,11 @@ save__pdbx_modification_feature.type
     "Palmitoylation"                                   .
     "Pentadecanoylation"                               .
     "Pentanoylation"                                   .
+    "Phenylalanylation"                                .
     "Phosphatidylethanolamine amidation"               .
     "Phosphoenolpyruvate"                              .
     "Phosphorylation"                                  .
+    "Prolylation"                                      .
     "Propionylation"                                   .
     "Pyridoxal phosphate"                              .
     "Pyrrolidone carboxylic acid"                      .
@@ -1416,6 +1503,7 @@ save__pdbx_modification_feature.type
     "Selanylation"                                     .
     "Selenomethionine"                                 .
     "Serotonylation"                                   .
+    "Serylation"                                       .
     "Stearoylation"                                    .
     "Stereoisomerisation"                              .
     "Succinamide ring"                                 .
@@ -1426,9 +1514,13 @@ save__pdbx_modification_feature.type
     "Sulfhydration"                                    .
     "Tert-butylation"                                  .
     "Tert-butyloxycarbonylation"                       .
+    "Threoninylation"                                  .
     "Thyroxine"                                        .
     "Triiodothyronine"                                 .
+    "Tryptophanylation"                                .
+    "Tyrosination"                                     .
     "UMPylation"                                       .
+    "Valylation"                                       .
    #
 save_
 #
@@ -1445,7 +1537,8 @@ save__pdbx_modification_feature.category
    loop_
    _item_enumeration.value
    _item_enumeration.detail
-    "ADP-Ribose"                      "ADP-ribose protein modifications"
+    "ADP-ribose"                      "ADP-ribose protein modifications"
+    "Amino acid"                      "Canonical amino acid linked to a peptide residue"
     "Biotin"                          "Biotin protein modifications"
     "Carbohydrate"                    "Carbohydrate protein modifications"
     "Chromophore/chromophore-like"    "Chromophore or chromophore-like protein modifications"
