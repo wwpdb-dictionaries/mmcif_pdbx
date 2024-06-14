@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.394
+    _dictionary.version         5.395
 #
      loop_
     _dictionary_history.version
@@ -2931,4 +2931,9 @@ Changes (ep/mgb):
 Changes (ep):
   + Add "home-built" to pdbx_nmr_spectrometer.model for deposition enumeration.
   + Extend enumerations for pdbx_chem_comp_pcm and pdbx_modification_feature
+;
+5.395  2024-06-14
+;
+Changes (ep):
+  + Change context of em_admin to include some attributes in PDB public files
 ;
