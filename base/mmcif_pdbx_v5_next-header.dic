@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.403
+    _dictionary.version         5.404
 #
      loop_
     _dictionary_history.version
@@ -3077,4 +3077,15 @@ Changes (ep):
 ;
 Changes (ep):
   + Change context of em_admin to include some attributes in PDB public files
+;
+5.404  2024-08-26
+;
+Changes (ep/mgb):
+  + Add "BURKER D8 VENTURE" and "BRUKER IMUS DIAMOND II" to _diffrn_source.type enumeration
+  + Add 'Quantifoil Active R2/1', 'Quantifoil Active R1.6/0.9', 'Quantifoil Active R1.2/0.8',
+    'SPT Labtech self-wicking R1.2/0.8' to em_sample_support.grid_type enumeration
+  + Add "SPT LABTECH CHAMELEON" to _em_vitrification.equipment
+  + For _em_imaging.microscope_model create a pdbx_item_enumeration list removing "FEI TITAN" and "FEI TITAN KRIOS"
+  + Add SDF and TIF to _pdbx_chem_comp_upload_depositor_info.upload_file_type enumeration
+  + PTM extension enumeration list update
 ;

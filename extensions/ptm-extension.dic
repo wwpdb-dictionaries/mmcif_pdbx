@@ -1,8 +1,8 @@
 # ----------------------------------------------------------------------------------------------------------------------------
 #
 #  File: ptm-extension.dic
-#  Date: 26-May-2023 MGB
-#  Update: 31-May-2024 MGB
+#  Date: 26-Aug-2023 MGB
+#  Update: 14-Aug-2024 MGB
 #
 #  Dictionary extensions for: 
 #     - Extending the chemical components definition to backbone, N-terminal and C-terminal flags
@@ -24,7 +24,7 @@ data_ptm-extension.dic
 _pdbx_dictionary_component.datablock_id   ptm-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   ptm-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF PTM extension"
-_pdbx_dictionary_component.version        0.7
+_pdbx_dictionary_component.version        0.8
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -138,6 +138,19 @@ ptm-extension.dic 0.7  2024-05-31
   + changed capitalisation of "ADP-ribose" for
       _pdbx_chem_comp_pcm.category
       _pdbx_modification_feature.category
+;
+ptm-extension.dic 0.8  2024-08-14
+;
+  Changes (mgb)
+  + added "Carbohydrate" types to enumeration list for
+      _pdbx_chem_comp_pcm.type
+      _pdbx_modification_feature.type
+  + added "Triphosphorylation" type to enumeration list for
+      _pdbx_chem_comp_pcm.type
+      _pdbx_modification_feature.type
+  + reordered type enumeration lists for
+      _pdbx_chem_comp_pcm.type
+      _pdbx_modification_feature.type
 ;
 
 ####################
@@ -452,6 +465,7 @@ save__pdbx_chem_comp_pcm.type
     "Crotonylation"                                    .
     "Cyanation"                                        .
     "Cysteinylation"                                   .
+    "C-Mannosylation"                                  .
     "Deamidation"                                      .
     "Decanoylation"                                    .
     "Decarboxylation"                                  .
@@ -466,6 +480,7 @@ save__pdbx_chem_comp_pcm.type
     "Diphosphorylation"                                .
     "Diphthamide"                                      .
     "Dipyrromethane methylation"                       .
+    "Dopaminylation"                                   .
     "D-alanylation"                                    .
     "D-arginylation"                                   .
     "D-asparaginylation"                               .
@@ -486,7 +501,6 @@ save__pdbx_chem_comp_pcm.type
     "D-tryptophanylation"                              .
     "D-tyrosination"                                   .
     "D-valylation"                                     .
-    "Dopaminylation"                                   .
     "Ethylation"                                       .
     "Ethylsulfanylation"                               .
     "Farnesylation"                                    .
@@ -537,10 +551,12 @@ save__pdbx_chem_comp_pcm.type
     "Noradrenylation"                                  .
     "Norleucine"                                       .
     "Norvaline"                                        .
+    "N-Glycosylation"                                  .
     "Octanoylation"                                    .
     "Oleoylation"                                      .
     "Ornithine"                                        .
     "Oxidation"                                        .
+    "O-Glycosylation"                                  .
     "Palmitoleoylation"                                .
     "Palmitoylation"                                   .
     "Pentadecanoylation"                               .
@@ -567,11 +583,13 @@ save__pdbx_chem_comp_pcm.type
     "Sulfanylmethylation"                              .
     "Sulfation"                                        .
     "Sulfhydration"                                    .
+    "S-Glycosylation"                                  .
     "Tert-butylation"                                  .
     "Tert-butyloxycarbonylation"                       .
     "Threoninylation"                                  .
     "Thyroxine"                                        .
     "Triiodothyronine"                                 .
+    "Triphosphorylation"                               .
     "Tryptophanylation"                                .
     "Tyrosination"                                     .
     "UMPylation"                                       .
@@ -1397,6 +1415,7 @@ save__pdbx_modification_feature.type
     "Crotonylation"                                    .
     "Cyanation"                                        .
     "Cysteinylation"                                   .
+    "C-Mannosylation"                                  .
     "Deamidation"                                      .
     "Decanoylation"                                    .
     "Decarboxylation"                                  .
@@ -1411,6 +1430,7 @@ save__pdbx_modification_feature.type
     "Diphosphorylation"                                .
     "Diphthamide"                                      .
     "Dipyrromethane methylation"                       .
+    "Dopaminylation"                                   .
     "D-alanylation"                                    .
     "D-arginylation"                                   .
     "D-asparaginylation"                               .
@@ -1431,7 +1451,6 @@ save__pdbx_modification_feature.type
     "D-tryptophanylation"                              .
     "D-tyrosination"                                   .
     "D-valylation"                                     .
-    "Dopaminylation"                                   .
     "Ethylation"                                       .
     "Ethylsulfanylation"                               .
     "Farnesylation"                                    .
@@ -1482,10 +1501,12 @@ save__pdbx_modification_feature.type
     "Noradrenylation"                                  .
     "Norleucine"                                       .
     "Norvaline"                                        .
+    "N-Glycosylation"                                  .
     "Octanoylation"                                    .
     "Oleoylation"                                      .
     "Ornithine"                                        .
     "Oxidation"                                        .
+    "O-Glycosylation"                                  .
     "Palmitoleoylation"                                .
     "Palmitoylation"                                   .
     "Pentadecanoylation"                               .
@@ -1512,11 +1533,13 @@ save__pdbx_modification_feature.type
     "Sulfanylmethylation"                              .
     "Sulfation"                                        .
     "Sulfhydration"                                    .
+    "S-Glycosylation"                                  .
     "Tert-butylation"                                  .
     "Tert-butyloxycarbonylation"                       .
     "Threoninylation"                                  .
     "Thyroxine"                                        .
     "Triiodothyronine"                                 .
+    "Triphosphorylation"                               .
     "Tryptophanylation"                                .
     "Tyrosination"                                     .
     "UMPylation"                                       .
