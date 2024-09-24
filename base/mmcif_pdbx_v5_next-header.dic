@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.404
+    _dictionary.version         5.405
 #
      loop_
     _dictionary_history.version
@@ -3088,4 +3088,14 @@ Changes (ep/mgb):
   + For _em_imaging.microscope_model create a pdbx_item_enumeration list removing "FEI TITAN" and "FEI TITAN KRIOS"
   + Add SDF and TIF to _pdbx_chem_comp_upload_depositor_info.upload_file_type enumeration
   + PTM extension enumeration list update
+;
+5.405  2024-09-23
+;
+Changes (ep/mgb):
+  + PTM extension enumeration list update
+  + Update description of OBS enumeration value in _pdbx_database_status.status_code,
+    _pdbx_database_status.author_release_status_code, _pdbx_database_status.status_code_sf,
+    _pdbx_database_status.status_code_mr, _pdbx_database_status.status_code_cs,
+    _pdbx_database_status.status_code_nmr_data, _pdbx_database_status.post_rel_status
+  + Change key for _pdbx_domain_range to only include pdbx_domain_range.domain.id
 ;
