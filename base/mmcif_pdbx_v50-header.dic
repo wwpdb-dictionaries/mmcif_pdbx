@@ -2956,5 +2956,5 @@ Changes (ep/mgb):
     _pdbx_database_status.author_release_status_code, _pdbx_database_status.status_code_sf,
     _pdbx_database_status.status_code_mr, _pdbx_database_status.status_code_cs,
     _pdbx_database_status.status_code_nmr_data, _pdbx_database_status.post_rel_status
-  + Change key for _pdbx_domain_range to only include pdbx_domain_range.domain.id
+  + Change key for _pdbx_domain_range to newly created _pdbx_domain_range.id
 ;
