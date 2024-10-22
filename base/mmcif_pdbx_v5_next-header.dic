@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.405
+    _dictionary.version         5.406
 #
      loop_
     _dictionary_history.version
@@ -3098,4 +3098,12 @@ Changes (ep/mgb):
     _pdbx_database_status.status_code_mr, _pdbx_database_status.status_code_cs,
     _pdbx_database_status.status_code_nmr_data, _pdbx_database_status.post_rel_status
   + Change key for _pdbx_domain_range to newly created _pdbx_domain_range.id
+;
+5.406  2024-10-22
+;
+Changes (ep):
+  + Add _pdbx_depui_status_flags.assembly_inferred
+  + Add "Quantifoil R1/4" to _em_sample_support.grid_type enumeration
+  + Add "SILICON DIOXIDE" to _em_sample_support.film_material enumeration
+  + Update enumberations for _pdbx_nmr_constraint_file.constraint_type and _pdbx_nmr_constraint_file.constraint_subtype
 ;
