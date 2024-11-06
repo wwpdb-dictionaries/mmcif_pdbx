@@ -20,7 +20,7 @@ data_mmcif_xfel_extensions-v3.dic
 _pdbx_dictionary_component.datablock_id   mmcif_xfel_extensions-v3.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_xfel_extensions-v3.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF XFELDictionary License Extension"
-_pdbx_dictionary_component.version        0.0.1
+_pdbx_dictionary_component.version        0.0.2
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -29,8 +29,13 @@ _pdbx_dictionary_component_history.update
 _pdbx_dictionary_component_history.revision
 mmcif_xfel_extensions-v3.dic  0.0.1  2023-05-31
 ;
-Changes (EP):
+Changes (ep):
 + Make _diffrn.pdbx_serial_crystal_experiment mandatory for deposition
+;
+mmcif_xfel_extensions-v3.dic  0.0.2  2024-10-31
+;
+Changes (ep):
++ Add enumeration for _diffrn.pdbx_serial_crystal_experiment
 ;
 
 loop_
@@ -78,6 +83,12 @@ save__diffrn.pdbx_serial_crystal_experiment
    loop_
    _item_examples.case   Y   N
    #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     Y  Yes
+     N  No
+   #   
    loop_
    _pdbx_item_enumeration.name
    _pdbx_item_enumeration.value

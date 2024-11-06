@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.398
+    _dictionary.version         5.399
 #
      loop_
     _dictionary_history.version
@@ -2965,4 +2965,15 @@ Changes (ep):
   + Add "Quantifoil R1/4" to _em_sample_support.grid_type enumeration
   + Add "SILICON DIOXIDE" to _em_sample_support.film_material enumeration
   + Update enumberations for _pdbx_nmr_constraint_file.constraint_type and _pdbx_nmr_constraint_file.constraint_subtype
+;
+5.399  2024-11-06
+;
+Changes (ep):
+  + Add enumeration for _diffrn.pdbx_serial_crystal_experiment
+  + Add ssbond to enumeration for _pdbx_data_processing_status.task_name
+  + Add DSA to enumberation for _pdbx_nmr_chem_shift_ref.mol_common_name
+  + Add "SILICON DIOXIDE" to em_support_film.material enumeration
+  + Change category key for _em_entity_assembly_molwt,
+    _em_entity_assembly_naturalsource and _em_entity_assembly_recombinant to
+    only include the id attribute
 ;
