@@ -2973,7 +2973,4 @@ Changes (ep):
   + Add ssbond to enumeration for _pdbx_data_processing_status.task_name
   + Add DSA to enumberation for _pdbx_nmr_chem_shift_ref.mol_common_name
   + Add "SILICON DIOXIDE" to em_support_film.material enumeration
-  + Change category key for _em_entity_assembly_molwt,
-    _em_entity_assembly_naturalsource and _em_entity_assembly_recombinant to
-    only include the id attribute
 ;
