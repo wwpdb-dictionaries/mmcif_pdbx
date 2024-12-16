@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.399
+    _dictionary.version         5.400
 #
      loop_
     _dictionary_history.version
@@ -2964,13 +2964,31 @@ Changes (ep):
   + Add _pdbx_depui_status_flags.assembly_inferred
   + Add "Quantifoil R1/4" to _em_sample_support.grid_type enumeration
   + Add "SILICON DIOXIDE" to _em_sample_support.film_material enumeration
-  + Update enumberations for _pdbx_nmr_constraint_file.constraint_type and _pdbx_nmr_constraint_file.constraint_subtype
+  + Update enumerations for _pdbx_nmr_constraint_file.constraint_type and _pdbx_nmr_constraint_file.constraint_subtype
 ;
 5.399  2024-11-06
 ;
 Changes (ep):
   + Add enumeration for _diffrn.pdbx_serial_crystal_experiment
   + Add ssbond to enumeration for _pdbx_data_processing_status.task_name
-  + Add DSA to enumberation for _pdbx_nmr_chem_shift_ref.mol_common_name
+  + Add DSA to enumeration for _pdbx_nmr_chem_shift_ref.mol_common_name
   + Add "SILICON DIOXIDE" to em_support_film.material enumeration
+;
+5.400  2024-12-16
+;
+Changes (ep/mw/mgb):
+  + Add "MAX IV BEAMLINE MicroMAX" to _diffrn_source.type enumeration and MicroMAX to
+    _diffrn_source.pdbx_synchrotron_beamline
+  + Update examples for _pdbx_chem_comp_feature
+  + Add refine_ls_shell.correlation_coeff_Fo_to_Fc, _refine_ls_shell.correlation_coeff_I_to_Fcsqd_free,
+    _refine_ls_shell.correlation_coeff_I_to_Fcsqd_work, _refine.correlation_coeff_I_to_Fcsqd_free,
+    _refine.correlation_coeff_I_to_Fcsqd_work
+  + Add "TFS TITAN THEMIS" to _em_imaging.microscope_mode enumeration
+  + Extend experimental data types enumerations to _pdbx_audit_revision_history.data_content_type,
+    _pdbx_audit_revision_group.data_content_type, _pdbx_audit_revision_category.data_content_type,
+    _pdbx_audit_revision_details.data_content_type, _pdbx_audit_revision_item.data_content_type
+  + Extend enumber of _pdbx_audit_revision_details.type to include data focused values
+  + added "Methacrylation" type to enumeration list for
+    _pdbx_chem_comp_pcm.type
+    _pdbx_modification_feature.type
 ;
