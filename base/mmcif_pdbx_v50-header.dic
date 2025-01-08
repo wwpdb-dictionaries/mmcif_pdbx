@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.400
+    _dictionary.version         5.401
 #
      loop_
     _dictionary_history.version
@@ -2991,4 +2991,13 @@ Changes (ep/mw/mgb):
   + added "Methacrylation" type to enumeration list for
     _pdbx_chem_comp_pcm.type
     _pdbx_modification_feature.type
+;
+5.401  2024-01-08
+;
+Changes (ep):
+  + Add "FAST_DP" to _software.name enumeration
+  + Change context to support EMDB for _pdbx_audit_revision_history,
+    _pdbx_audit_revision_group, _pdbx_audit_revision_category,
+    _pdbx_audit_revision_details, _pdbx_audit_revision_item
+    categories.
 ;
