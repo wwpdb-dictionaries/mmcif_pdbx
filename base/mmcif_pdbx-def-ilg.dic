@@ -136,6 +136,8 @@ em_layer_lines_depositor_info       1 em_layer_lines_depositor_info:em_experimen
 em_map                              1 em_map:entry:1                                        . .
 em_map_depositor_info               1 em_map_depositor_info:entry:1                         . .
 em_map_depositor_info               2 em_map_depositor_info:em_experiment:2                 . .
+em_motion_correction                1 em_motion_correction:em_image_processing:1            . .
+
 em_particle_selection               1 em_particle_selection:em_image_processing:1           . .
 em_sample_preparation               1 em_sample_preparation:entry:1                         . .
 em_sample_support                   1 em_sample_support:citation:1                          . .
@@ -890,6 +892,7 @@ em_layer_lines_depositor_info       1 '_em_layer_lines_depositor_info.experiment
 em_map                              1 '_em_map.entry_id'                                     '_entry.id'                  entry
 em_map_depositor_info               1 '_em_map_depositor_info.entry_id'                      '_entry.id'                  entry
 em_map_depositor_info               2 '_em_map_depositor_info.experiment_id'                 '_em_experiment.id'          em_experiment
+em_motion_correction                1 '_em_motion_correction.image_processing_id'            '_em_image_processing.id'    em_image_processing
 em_particle_selection               1 '_em_particle_selection.image_processing_id'           '_em_image_processing.id'    em_image_processing
 em_sample_preparation               1 '_em_sample_preparation.entry_id'                      '_entry.id'                  entry
 em_sample_support                   1 '_em_sample_support.citation_id'                       '_citation.id'               citation

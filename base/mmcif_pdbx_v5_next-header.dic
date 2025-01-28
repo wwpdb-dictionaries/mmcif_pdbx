@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.409
+    _dictionary.version         5.410
 #
      loop_
     _dictionary_history.version
@@ -3133,7 +3133,7 @@ Changes (ep/mw/mgb):
     _pdbx_chem_comp_pcm.type
     _pdbx_modification_feature.type
 ;
-5.409  2024-01-08
+5.409  2025-01-08
 ;
 Changes (ep):
   + Add "FAST_DP" to _software.name enumeration
@@ -3141,4 +3141,13 @@ Changes (ep):
     _pdbx_audit_revision_group, _pdbx_audit_revision_category,
     _pdbx_audit_revision_details, _pdbx_audit_revision_item
     categories.
+;
+5.410  2025-01-28
+;
+Changes (ep):
+  + Add _em_motion_correction category.
+  + Add _em_imaging.objective_aperture, _em_imaging.microscope_serial_number
+    and _em_imaging.microscope_version
+  + Add "EMReady" and "PyTo" to em_software.name enumeration
+  + Remove "NAME" from _pdbx_nmr_software.name enumeration
 ;
