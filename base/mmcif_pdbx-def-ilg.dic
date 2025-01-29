@@ -531,8 +531,6 @@ pdbx_remediation_atom_site_mapping       1  pdbx_remediation_atom_site_mapping:a
 pdbx_remediation_atom_site_mapping       2  pdbx_remediation_atom_site_mapping:atom_site:2                            . .
 #
 #
-pdbx_chem_comp_atom_feature              1  pdbx_chem_comp_atom_feature:chem_comp_atom:1                              . .
-#
 #pdbx_struct_comp_nstd_link               1  pdbx_struct_comp_nstd_link:atom_site:1      . .
 #
 pdbx_struct_group_components   1  pdbx_struct_group_components:pdbx_struct_group_list:1  . .
@@ -1818,8 +1816,6 @@ pdbx_remediation_atom_site_mapping    2 '_pdbx_remediation_atom_site_mapping.PDB
 #
 #
 #
-pdbx_chem_comp_atom_feature              1  '_pdbx_chem_comp_atom_feature.comp_id'                '_chem_comp_atom.comp_id'                   chem_comp_atom
-pdbx_chem_comp_atom_feature              1  '_pdbx_chem_comp_atom_feature.atom_id'                '_chem_comp_atom.atom_id'                   chem_comp_atom
 #
 #
 pdbx_struct_group_components    1 '_pdbx_struct_group_components.struct_group_id'  '_pdbx_struct_group_list.struct_group_id'   pdbx_struct_group_list

@@ -641,6 +641,7 @@ save__pdbx_chem_comp_pcm.category
     "Nucleotide monophosphate"        "Nucleotide monophosphate protein modifications"
     "Terminal acetylation"            "Terminal acetylation protein modification"
     "Terminal amidation"              "Terminal amidation protein modification"
+    "Metal coordination"              "Metal coordination"
    #
 save_
 #
@@ -1596,5 +1597,6 @@ save__pdbx_modification_feature.category
     "Nucleotide monophosphate"        "Nucleotide monophosphate protein modifications"
     "Terminal acetylation"            "Terminal acetylation protein modification"
     "Terminal amidation"              "Terminal amidation protein modification"
+    "Metal coordination"              "Metal coordination"
    #
 save_
