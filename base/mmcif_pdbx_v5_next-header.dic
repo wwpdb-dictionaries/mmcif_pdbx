@@ -3159,4 +3159,5 @@ Changes (ep):
   + Add _software.pdbx_reference_DOI, _em_software.reference_DOI
   + Add _refine_ls_restr.pdbx_Zscore
   + Updated examples in _database_2.database_code
+  + Add gemmi to _software.name PDBx enumeration
 ;
