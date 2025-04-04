@@ -10,7 +10,7 @@ import pytest
 last_name = """[A-Za-z0-9_]+(( |-|'|\\. )[A-Za-z0-9_]+)*( Jr.| III)?"""
 first_name = """[A-Za-z0-9_]\\.(-?[A-Za-z0-9_]+\\.)*"""
 sgc = "(Seattle Structural Genomics Center for Infectious Disease.*)"
-other = "(Structural Genomics Consortium.*)|(QCRG Structural Biology Consortium.*)"
+other = "(Structural Genomics Consortium.*)|(QCRG Structural Biology Consortium.*)|(Center for Structures of Membrane Proteins.*)"
 author_re = "(" + "(" + last_name + ", " + first_name + ")|" + sgc + "|" + other + ")"
 
 @pytest.fixture(scope = "module")
@@ -39,3 +39,4 @@ def test_names_named(getRe):
     assert check_name(reg, "Tran, S.C.")
     assert not check_name(reg, "Tran, S.C")
     assert check_name(reg, "Structural Genomics Consortium (SGC)")
+    assert check_name(reg, "Center for Structures of Membrane Proteins (CSMP)")
