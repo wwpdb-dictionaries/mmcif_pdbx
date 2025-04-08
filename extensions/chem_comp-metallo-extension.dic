@@ -266,9 +266,9 @@ save__pdbx_chem_comp_atom_feature.provenance
     loop_
     _item_enumeration.value
     _item_enumeration.detail
-      PDB
-      Author
-      FindGeo
+      PDB        ?
+      Author     ?
+      FindGeo    ?
      save_
 
 save__pdbx_chem_comp_atom_feature.representative_entry_id
@@ -569,10 +569,10 @@ save__pdbx_nonpoly_atom_feature.provenance
     loop_
     _item_enumeration.value
     _item_enumeration.detail
-      PDB
-      Author
-      FindGeo
-      metalCoord
+      PDB           ?
+      Author        ?
+      FindGeo       ?
+      metalCoord    ?
 
      save_
 
@@ -595,8 +595,8 @@ save__pdbx_nonpoly_atom_feature.type_interpretation
     loop_
     _item_enumeration.value
     _item_enumeration.detail
-       Regular
-       Irregular
+       Regular    ?
+       Irregular  ?
      save_
 
 save__pdbx_nonpoly_atom_feature.assessment
