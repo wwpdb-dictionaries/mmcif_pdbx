@@ -39,6 +39,7 @@ chem_comp-metallo-extension.dic 0.3  2025-04-06
   + Add enumeration for _pdbx_nonpoly_atom_feature_evidence.type
   + Add _pdbx_non_poly_atom_feature.type_interpretations
   + Add enumeration for _pdbx_chem_comp_precursor_descriptor.source
+  + Add _pdbx_nonpoly_atom_feature.assessment
 ;
 
 
@@ -441,8 +442,8 @@ save_pdbx_nonpoly_atom_feature
     _pdbx_nonpoly_atom_feature.label_asym_id
     _pdbx_nonpoly_atom_feature.type
     _pdbx_nonpoly_atom_feature.value
-    _pdbx_nonpoly_atom_feature.provenance                      
-    _pdbx_nonpoly_atom_feature.type_interpretation
+    _pdbx_nonpoly_atom_feature.provenance 
+    _pdbx_nonpoly_atom_feature.assessment
     1 VO4 V D 'Coordination number'     5                                                                                                     FindGeo regular
     2 VO4 V D 'Coordination geometry'   'trigonal bipyramid'                                                                                  FindGeo regular
     3 VO4 V D 'Coordination descriptor' V(O)(O)(O)(O)(N){OVO<120>,OVO<120>,OVO<90>,OVO<120>,OVO<90>,OVO<90>,OVN<90>,OVN<90>,OVN<90>,OVN<180>} PDB     ?
@@ -460,8 +461,8 @@ save_pdbx_nonpoly_atom_feature
     _pdbx_nonpoly_atom_feature.label_asym_id
     _pdbx_nonpoly_atom_feature.type
     _pdbx_nonpoly_atom_feature.value
-    _pdbx_nonpoly_atom_feature.provenance                      
-    _pdbx_nonpoly_atom_feature.type_interpretation                   
+    _pdbx_nonpoly_atom_feature.provenance 
+    _pdbx_nonpoly_atom_feature.assessment
     1  SF4 FE1 B 'Coordination number'     4                                                                                       FindGeo regular
     2  SF4 FE1 B 'Coordination geometry'   tetrahedron                                                                             FindGeo regular
     3  SF4 FE1 B 'Coordination descriptor' Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>} PDB     ?
@@ -597,6 +598,28 @@ save__pdbx_nonpoly_atom_feature.type_interpretation
        Regular
        Irregular
      save_
+
+save__pdbx_nonpoly_atom_feature.assessment
+    _item_description.description
+;              This data item provides an assessment of the value for the given feature type
+               (ex. coordination number and coordination geometry). For coordination number
+	       and coordination geometry, the assessment is based on comparison with the CCD.
+	       If features are annotated in the CCD, then these features in the structure
+	       will be compared with the references in the CCD. If there is a match with the
+	       reference CCD, assessment will be annotated as regular, whereas if there is not
+	       a match, assessment will be annotated as irregular.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature.assessment'
+    _item.category_id             pdbx_nonpoly_atom_feature
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+    Regular    ?
+    Irregular  ?
+     save_
+
 
 ########################################
 ## PDBX_NONPOLY_ATOM_FEATURE_EVIDENCE ##
