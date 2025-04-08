@@ -402,9 +402,8 @@ save__pdbx_nonpoly_feature.provenance
     loop_
     _item_enumeration.value
     _item_enumeration.detail
-      PDB
-      Author
-      FindGeo
+      PDB      ?
+      Author   ?
 
      save_
 
@@ -432,7 +431,7 @@ save_pdbx_nonpoly_atom_feature
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 -
+    Example 1 - based on 1RPT
 ;
 ;
     loop_
@@ -444,14 +443,14 @@ save_pdbx_nonpoly_atom_feature
     _pdbx_nonpoly_atom_feature.value
     _pdbx_nonpoly_atom_feature.provenance 
     _pdbx_nonpoly_atom_feature.assessment
-    1 VO4 V D 'Coordination number'     5                                                                                                     FindGeo regular
+    1 VO4 V D 'Coordination number'     5                                                                                                     FindGeo ?
     2 VO4 V D 'Coordination geometry'   'trigonal bipyramid'                                                                                  FindGeo regular
     3 VO4 V D 'Coordination descriptor' V(O)(O)(O)(O)(N){OVO<120>,OVO<120>,OVO<90>,OVO<120>,OVO<90>,OVO<90>,OVN<90>,OVN<90>,OVN<90>,OVN<180>} PDB     ?
     4 VO4 V D 'Oxidation state'         5                                                                                                     Author  ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 2 -
+    Example 2 - based on 1HIP
 ;
 ;
     loop_
@@ -463,16 +462,16 @@ save_pdbx_nonpoly_atom_feature
     _pdbx_nonpoly_atom_feature.value
     _pdbx_nonpoly_atom_feature.provenance 
     _pdbx_nonpoly_atom_feature.assessment
-    1  SF4 FE1 B 'Coordination number'     4                                                                                       FindGeo regular
+    1  SF4 FE1 B 'Coordination number'     4                                                                                       FindGeo ?
     2  SF4 FE1 B 'Coordination geometry'   tetrahedron                                                                             FindGeo regular
     3  SF4 FE1 B 'Coordination descriptor' Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>} PDB     ?
-    4  SF4 FE2 B 'Coordination number'     4                                                                                       FindGeo regular
+    4  SF4 FE2 B 'Coordination number'     4                                                                                       FindGeo ?
     5  SF4 FE2 B 'Coordination geometry'   tetrahedron                                                                             FindGeo regular
     6  SF4 FE2 B 'Coordination descriptor' Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>} PDB     ?
-    7  SF4 FE3 B 'Coordination number'     4                                                                                       FindGeo regular
+    7  SF4 FE3 B 'Coordination number'     4                                                                                       FindGeo ?
     8  SF4 FE3 B 'Coordination geometry'   tetrahedron                                                                             FindGeo regular
     9  SF4 FE3 B 'Coordination descriptor' Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>} PDB     ?
-    10 SF4 FE4 B 'Coordination number'     4                                                                                       FindGeo regular
+    10 SF4 FE4 B 'Coordination number'     4                                                                                       FindGeo ?
     11 SF4 FE4 B 'Coordination geometry'   tetrahedron                                                                             FindGeo regular
     12 SF4 FE4 B 'Coordination descriptor' Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>} PDB     ?
 ;
@@ -573,6 +572,7 @@ save__pdbx_nonpoly_atom_feature.provenance
       PDB
       Author
       FindGeo
+      metalCoord
 
      save_
 
@@ -602,12 +602,12 @@ save__pdbx_nonpoly_atom_feature.type_interpretation
 save__pdbx_nonpoly_atom_feature.assessment
     _item_description.description
 ;              This data item provides an assessment of the value for the given feature type
-               (ex. coordination number and coordination geometry). For coordination number
-	       and coordination geometry, the assessment is based on comparison with the CCD.
-	       If features are annotated in the CCD, then these features in the structure
-	       will be compared with the references in the CCD. If there is a match with the
-	       reference CCD, assessment will be annotated as regular, whereas if there is not
-	       a match, assessment will be annotated as irregular.
+               (ex. coordination geometry). For coordination geometry, the assessment is
+	       based on comparison with the CCD. If features are annotated in the CCD, then
+	       these features in the structure will be compared with the references in the CCD.
+	       If there is a match with the reference CCD, assessment will be annotated as
+	       regular, whereas if there is not a match, assessment will be annotated as
+	       irregular.
 ;
     _item.name                  '_pdbx_nonpoly_atom_feature.assessment'
     _item.category_id             pdbx_nonpoly_atom_feature
