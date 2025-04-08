@@ -232,7 +232,7 @@ save__pdbx_chem_comp_atom_feature.type
     _item.name                  '_pdbx_chem_comp_atom_feature.type'
     _item.category_id             pdbx_chem_comp_atom_feature
     _item.mandatory_code          yes
-    _item_type.code               ucode
+    _item_type.code               line
     loop_
     _item_enumeration.value
     _item_enumeration.detail
@@ -248,7 +248,7 @@ save__pdbx_chem_comp_atom_feature.value
     _item.name                  '_pdbx_chem_comp_atom_feature.value'
     _item.category_id             pdbx_chem_comp_atom_feature
     _item.mandatory_code          yes
-    _item_type.code               ucode # XXXX- might need line
+    _item_type.code               line
     loop_
     _item_examples.case           4
                                   5
@@ -368,7 +368,7 @@ save__pdbx_nonpoly_feature.type
     _item.name                  '_pdbx_nonpoly_feature.type'
     _item.category_id             pdbx_nonpoly_feature
     _item.mandatory_code          yes
-    _item_type.code               ucode
+    _item_type.code               line
     loop_
     _item_enumeration.value
     _item_enumeration.detail
@@ -535,7 +535,7 @@ save__pdbx_nonpoly_atom_feature.type
     _item.name                  '_pdbx_nonpoly_atom_feature.type'
     _item.category_id             pdbx_nonpoly_atom_feature
     _item.mandatory_code          yes
-    _item_type.code               ucode
+    _item_type.code               line
     loop_
     _item_enumeration.value
     _item_enumeration.detail
@@ -552,7 +552,7 @@ save__pdbx_nonpoly_atom_feature.value
     _item.name                  '_pdbx_nonpoly_atom_feature.value'
     _item.category_id             pdbx_nonpoly_atom_feature
     _item.mandatory_code          yes
-    _item_type.code               ucode # XXXX- might need line
+    _item_type.code               line
     loop_
     _item_examples.case           4
                                   5
@@ -846,7 +846,7 @@ save__pdbx_nonpoly_feature_evidence.type
     _item.name                  '_pdbx_nonpoly_feature_evidence.type'
     _item.category_id             pdbx_nonpoly_feature_evidence
     _item.mandatory_code          yes
-    _item_type.code               ucode
+    _item_type.code               line
      loop_
     _item_enumeration.value
     _item_enumeration.detail
