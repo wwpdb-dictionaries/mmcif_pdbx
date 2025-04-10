@@ -51,7 +51,6 @@ _pdbx_item_linked_group.context
 _pdbx_item_linked_group.condition_id
 pdbx_chem_comp_atom_feature              1  pdbx_chem_comp_atom_feature:chem_comp_atom:1                    . .
 pdbx_chem_comp_precursor                 1  pdbx_chem_comp_precursor:chem_comp:1                            . .
-pdbx_chem_comp_precursor                 2  pdbx_chem_comp_precursor:chem_comp:2                            . .
 pdbx_chem_comp_precursor                 1  pdbx_chem_comp_precursor:pdbx_chem_comp_precursor_set:1         . .
 pdbx_chem_comp_precursor_descriptor      1  pdbx_chem_comp_precursor_descriptor:pdbx_chem_comp_precursor:1  . .
 pdbx_chem_comp_precursor_identifier      1  pdbx_chem_comp_precursor_identifier:pdbx_chem_comp_precursor:1  . .
@@ -71,7 +70,6 @@ _pdbx_item_linked_group_list.parent_category_id
 pdbx_chem_comp_atom_feature              1  '_pdbx_chem_comp_atom_feature.comp_id'                '_chem_comp_atom.comp_id'                   chem_comp_atom
 pdbx_chem_comp_atom_feature              1  '_pdbx_chem_comp_atom_feature.atom_id'                '_chem_comp_atom.atom_id'                   chem_comp_atom
 pdbx_chem_comp_precursor                 1  '_pdbx_chem_comp_precursor.comp_id'                   '_chem_comp.id'                             chem_comp
-pdbx_chem_comp_precursor                 2  '_pdbx_chem_comp_precursor.precursor_comp_id'         '_chem_comp.id'                             chem_comp
 pdbx_chem_comp_precursor                 1  '_pdbx_chem_comp_precursor.set_id'                    '_pdbx_chem_comp_precursor_set.id'          pdbx_chem_comp_precursor_set
 pdbx_chem_comp_precursor_descriptor      1  '_pdbx_chem_comp_precursor_descriptor.comp_id'        '_pdbx_chem_comp_precursor.comp_id'         pdbx_chem_comp_precursor
 pdbx_chem_comp_precursor_descriptor      1  '_pdbx_chem_comp_precursor_descriptor.precursor_id'   '_pdbx_chem_comp_precursor.id'              pdbx_chem_comp_precursor
@@ -717,7 +715,7 @@ save__pdbx_nonpoly_atom_feature_evidence.type
     _item.name                  '_pdbx_nonpoly_atom_feature_evidence.type'
     _item.category_id             pdbx_nonpoly_atom_feature_evidence
     _item.mandatory_code          yes
-    _item_type.code               ucode
+    _item_type.code               line
      loop_
     _item_enumeration.value
     _item_enumeration.detail
@@ -989,8 +987,6 @@ save__pdbx_chem_comp_precursor.precursor_comp_id
     _item.category_id             pdbx_chem_comp_precursor
     _item.mandatory_code          no
     _item_type.code               ucode
-    _item_linked.child_name     '_pdbx_chem_comp_precursor.precursor_comp_id'
-    _item_linked.parent_name    '_chem_comp.id'
      save_
 
 
@@ -1298,10 +1294,13 @@ save__pdbx_chem_comp_precursor_descriptor.program
     loop_
     _item_enumeration.value
     _item_enumeration.detail
-           OPENEYE     'OpenEye OECHEM library'
-           CACTVS      'CACTVS  program library'
-           DAYLIGHT    'Daylight program library'
+           'OpenEye OEToolkits'     'OpenEye OECHEM library'
+           CACTVS                   'CACTVS  program library'
+           DAYLIGHT                 'Daylight program library'
+	   InChI                     ?
+           ACDLabs                   ?
            OTHER       'Other program or library'
+
      save_
 
 save__pdbx_chem_comp_precursor_descriptor.program_version
@@ -1499,6 +1498,7 @@ save__pdbx_chem_comp_precursor_identifier.program
        Chemaxon  ?
        BIOVIA    ?
        DAYLIGHT  ?
+       "OpenEye OEToolkits"
      save_
 
 save__pdbx_chem_comp_precursor_identifier.program_version
