@@ -3,7 +3,7 @@ data_chem_comp-metallo-extension.dic
 _pdbx_dictionary_component.datablock_id   chem_comp-metallo-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   chem_comp-metallo-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF extension to support metalloprotein annotation"
-_pdbx_dictionary_component.version        0.4
+_pdbx_dictionary_component.version        0.5
 
 
 loop_
@@ -32,7 +32,7 @@ chem_comp-metallo-extension.dic 0.3  2025-02-27
   + Remove atom_id and instance_id from _pdbx_nonpoly_feature, add label_asym_id
   + Add category _pdbx_nonpoly_atom_feature_evidence
 ;
-chem_comp-metallo-extension.dic 0.3  2025-04-06  
+chem_comp-metallo-extension.dic 0.4  2025-04-06  
 ;  
   Changes (ep/ab)
   + Add _pdbx_nonpoly_feature_evidence category
@@ -41,7 +41,11 @@ chem_comp-metallo-extension.dic 0.3  2025-04-06
   + Add enumeration for _pdbx_chem_comp_precursor_descriptor.source
   + Add _pdbx_nonpoly_atom_feature.assessment
 ;
-
+chem_comp-metallo-extension.dic 0.5  2025-04-22  
+;  
+  Changes (ep/cs)
+  + Correct enumeration for _pdbx_chem_comp_precursor_set.class
+;
 
 loop_
 _pdbx_item_linked_group.category_id
@@ -1101,7 +1105,7 @@ save__pdbx_chem_comp_precursor_set.class
     _item_enumeration.detail
     Substitution  'One chemical group replaces another. Applies when one or more substitutions occur.'
     Addition      'A bond is saturated (double to single, triple to double) due to addition of an atom or molecule to the unsaturated compound, or coordinating groups are added to a metal.'
-    Ring opening  'A transformation that is primarily characterized by ring breaking.'
+    "Ring opening"  'A transformation that is primarily characterized by ring breaking.'
     Cyclization   'A transformation that is primarily characterized by ring formation.'
     Elimination   'A bond is desaturated due to elimination of atoms or molecules from a more saturated compound.'
     Redox         'A transformation that is primarily characterized by a change in oxidation state.'
