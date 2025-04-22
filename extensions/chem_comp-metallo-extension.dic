@@ -43,8 +43,14 @@ chem_comp-metallo-extension.dic 0.4  2025-04-06
 ;
 chem_comp-metallo-extension.dic 0.5  2025-04-22  
 ;  
-  Changes (ep/cs)
+  Changes (ep/cs/ab)
   + Correct enumeration for _pdbx_chem_comp_precursor_set.class
+  + Change enumeration for _pdbx_nonpoly_atom_feature.assessment to 'Expected',
+    'Unexpected'
+  + Update description of _pdbx_chem_comp_precursor.precursor_comp_id
+  + Update enumeration for _pdbx_chem_comp_precursor_descriptor.source, and
+    _pdbx_chem_comp_precursor_identifier.source
+  + Remove _pdbx_nonpoly_atom_feature.type_interpretation
 ;
 
 loop_
@@ -446,7 +452,7 @@ save_pdbx_nonpoly_atom_feature
     _pdbx_nonpoly_atom_feature.provenance 
     _pdbx_nonpoly_atom_feature.assessment
     1 VO4 V D 'Coordination number'     5                                                                                                     FindGeo ?
-    2 VO4 V D 'Coordination geometry'   'trigonal bipyramid'                                                                                  FindGeo regular
+    2 VO4 V D 'Coordination geometry'   'trigonal bipyramid'                                                                                  FindGeo Expected
     3 VO4 V D 'Coordination descriptor' V(O)(O)(O)(O)(N){OVO<120>,OVO<120>,OVO<90>,OVO<120>,OVO<90>,OVO<90>,OVN<90>,OVN<90>,OVN<90>,OVN<180>} PDB     ?
     4 VO4 V D 'Oxidation state'         5                                                                                                     Author  ?
 ;
@@ -465,16 +471,16 @@ save_pdbx_nonpoly_atom_feature
     _pdbx_nonpoly_atom_feature.provenance 
     _pdbx_nonpoly_atom_feature.assessment
     1  SF4 FE1 B 'Coordination number'     4                                                                                       FindGeo ?
-    2  SF4 FE1 B 'Coordination geometry'   tetrahedron                                                                             FindGeo regular
+    2  SF4 FE1 B 'Coordination geometry'   tetrahedron                                                                             FindGeo Expected
     3  SF4 FE1 B 'Coordination descriptor' Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>} PDB     ?
     4  SF4 FE2 B 'Coordination number'     4                                                                                       FindGeo ?
-    5  SF4 FE2 B 'Coordination geometry'   tetrahedron                                                                             FindGeo regular
+    5  SF4 FE2 B 'Coordination geometry'   tetrahedron                                                                             FindGeo Expected
     6  SF4 FE2 B 'Coordination descriptor' Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>} PDB     ?
     7  SF4 FE3 B 'Coordination number'     4                                                                                       FindGeo ?
-    8  SF4 FE3 B 'Coordination geometry'   tetrahedron                                                                             FindGeo regular
+    8  SF4 FE3 B 'Coordination geometry'   tetrahedron                                                                             FindGeo Expected
     9  SF4 FE3 B 'Coordination descriptor' Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>} PDB     ?
     10 SF4 FE4 B 'Coordination number'     4                                                                                       FindGeo ?
-    11 SF4 FE4 B 'Coordination geometry'   tetrahedron                                                                             FindGeo regular
+    11 SF4 FE4 B 'Coordination geometry'   tetrahedron                                                                             FindGeo Expected
     12 SF4 FE4 B 'Coordination descriptor' Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>} PDB     ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -578,38 +584,18 @@ save__pdbx_nonpoly_atom_feature.provenance
 
      save_
 
-save__pdbx_nonpoly_atom_feature.type_interpretation
-    _item_description.description
-;              This data item provides an assessment of the value for the given
-               feature type (ex. coordination number and coordination geometry).
-	       For coordination number and coordination geometry, the assessment
-	       is based on comparison with the CCD. If features are annotated in
-	       the CCD, then these features in the structure will be compared
-	       with the references in the CCD. If there is a match with the
-	       reference CCD, type_interpretation will be annotated as regular,
-	       whereas if there is not a match, type_interpretation will be
-	       annotated as irregular.
-;
-    _item.name                  '_pdbx_nonpoly_atom_feature.type_interpretation'
-    _item.category_id             pdbx_nonpoly_atom_feature
-    _item.mandatory_code          no
-    _item_type.code               ucode
-    loop_
-    _item_enumeration.value
-    _item_enumeration.detail
-       Regular    ?
-       Irregular  ?
-     save_
-
 save__pdbx_nonpoly_atom_feature.assessment
     _item_description.description
-;              This data item provides an assessment of the value for the given feature type
-               (ex. coordination geometry). For coordination geometry, the assessment is
-	       based on comparison with the CCD. If features are annotated in the CCD, then
-	       these features in the structure will be compared with the references in the CCD.
-	       If there is a match with the reference CCD, assessment will be annotated as
-	       regular, whereas if there is not a match, assessment will be annotated as
-	       irregular.
+
+;              This data item provides an assessment of the value for the given
+               feature type (ex. coordination geometry). For
+               coordination geometry, the assessment is based on
+               comparison with the CCD. If features are annotated in
+               the CCD, then these features in the structure will be
+               compared with the references in the CCD. If there is a
+               match with the reference CCD, assessment will be
+               annotated as expected, whereas if there is not a match,
+               assessment will be annotated as unexpected.
 ;
     _item.name                  '_pdbx_nonpoly_atom_feature.assessment'
     _item.category_id             pdbx_nonpoly_atom_feature
@@ -618,8 +604,8 @@ save__pdbx_nonpoly_atom_feature.assessment
     loop_
     _item_enumeration.value
     _item_enumeration.detail
-    Regular    ?
-    Irregular  ?
+    Expected    ?
+    Unexpected  ?
      save_
 
 
@@ -984,8 +970,7 @@ save__pdbx_chem_comp_precursor.set_id
 
 save__pdbx_chem_comp_precursor.precursor_comp_id
     _item_description.description
-;              This data item is a pointer to id in the CHEM_COMP
-               category.
+;              This data item specifies the id in the CHEM_COMP category of the precursor.
 ;
     _item.name                  '_pdbx_chem_comp_precursor.precursor_comp_id'
     _item.category_id             pdbx_chem_comp_precursor
@@ -1220,7 +1205,7 @@ save__pdbx_chem_comp_precursor_descriptor.precursor_id
 
 save__pdbx_chem_comp_precursor_descriptor.type
     _item_description.description
-;              This data item contains the precursoe descriptor type.
+;              This data item contains the precursor descriptor type.
 ;
     _item.name                  '_pdbx_chem_comp_precursor_descriptor.type'
     _item.category_id             pdbx_chem_comp_precursor_descriptor
@@ -1269,9 +1254,12 @@ save__pdbx_chem_comp_precursor_descriptor.source
      loop_
      _item_enumeration.value
      _item_enumeration.detail
-         "OpenEye OEToolkits"   .
-	 CAS                    .
-    
+         CAS                    .
+         PubChem                .
+         ChEBI                  .
+         ChEMBL                 .
+         Author                 .
+         PDB                    .
      save_
 
 save__pdbx_chem_comp_precursor_descriptor.source_version
@@ -1467,9 +1455,12 @@ save__pdbx_chem_comp_precursor_identifier.source
      loop_
      _item_enumeration.value
      _item_enumeration.detail
-         "OpenEye OEToolkits"   .
-	 CAS                    .
-    
+         CAS                    .
+         PubChem                .
+         ChEBI                  .
+         ChEMBL                 .
+         Author                 .
+         PDB                    .
      save_
 
 save__pdbx_chem_comp_precursor_identifier.source_version
