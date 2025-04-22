@@ -1406,7 +1406,7 @@ save__pdbx_chem_comp_precursor_identifier.precursor_id
 
 save__pdbx_chem_comp_precursor_identifier.type
     _item_description.description
-;              This data item contains the precursoe descriptor type.
+;              This data item contains the precursor descriptor type.
 ;
     _item.name                  '_pdbx_chem_comp_precursor_identifier.type'
     _item.category_id             pdbx_chem_comp_precursor_identifier
