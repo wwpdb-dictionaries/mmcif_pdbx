@@ -63,6 +63,8 @@ chem_comp-metallo-extension.dic 0.7  2025-05-19
   + Update example for _pdbx_chem_comp_atom_feature
   + Add "No reference" to enumeration for _pdbx_nonpoly_atom_feature.assessment
   + Update example for _pdbx_nonpoly_atom_feature
+  + Change metalCoord to MetalCoord in to _pdbx_nonpoly_atom_feature.provenance and
+    _pdbx_chem_comp_atom_feature.provenance enumerations
 ;
 
 loop_
@@ -157,11 +159,11 @@ save_pdbx_chem_comp_atom_feature
     4 2 VO4 V 'Coordination number'     5                                                                                                       FindGeo    1RPT
     5 2 VO4 V 'Coordination geometry'   'trigonal bipyramid'                                                                                    FindGeo    1RPT
     6 2 VO4 V 'Coordination descriptor' 'V(N)(O)(O)(O)(O){NVO<90>,NVO<90>,NVO<90>,NVO<180>,OVO<120>,OVO<120>,OVO<90>,OVO<120>,OVN<90>,OVO<90>}' PDB        1RPT
-    7 3 VO4 V 'Coordination number'     4                                                                                                       metalCoord 1VNH
-    8 3 VO4 V 'Coordination geometry'   tetrahedral                                                                                             metalCoord 1VNH
+    7 3 VO4 V 'Coordination number'     4                                                                                                       MetalCoord 1VNH
+    8 3 VO4 V 'Coordination geometry'   tetrahedral                                                                                             MetalCoord 1VNH
     9 3 VO4 V 'Coordination descriptor' 'V(O)(O)(O)(O){OVO<109.5>,OVO<109.5>,OVO<109.5>,OVO<109.5>,OVO<109.5>,OVO<109.5>}'                      PDB        1VNH
-   10 4 VO4 V 'Coordination number'     5                                                                                                       metalCoord 1RPT
-   11 4 VO4 V 'Coordination geometry'   trigonal-bipyramid                                                                                      metalCoord 1RPT
+   10 4 VO4 V 'Coordination number'     5                                                                                                       MetalCoord 1RPT
+   11 4 VO4 V 'Coordination geometry'   trigonal-bipyramid                                                                                      MetalCoord 1RPT
    12 4 VO4 V 'Coordination descriptor' 'V(N)(O)(O)(O)(O){NVO<90>,NVO<90>,NVO<90>,NVO<180>,OVO<120>,OVO<120>,OVO<90>,OVO<120>,OVN<90>,OVO<90>}' PDB        1RPT
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -181,26 +183,26 @@ save_pdbx_chem_comp_atom_feature
     1  1 SF4 FE1 'Coordination number'      4                                                                                         FindGeo    7NPA
     2  1 SF4 FE1 'Coordination geometry'    tetrahedron                                                                               FindGeo    7NPA
     3  1 SF4 FE1 'Coordination descriptor'  'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        7NPA
-    4  2 SF4 FE1 'Coordination number'      4                                                                                         metalCoord 2C42
-    5  2 SF4 FE1 'Coordination geometry'    tetrahedral                                                                               metalCoord 2C42
+    4  2 SF4 FE1 'Coordination number'      4                                                                                         MetalCoord 2C42
+    5  2 SF4 FE1 'Coordination geometry'    tetrahedral                                                                               MetalCoord 2C42
     6  2 SF4 FE1 'Coordination descriptor'  'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        2C42
     7  3 SF4 FE2 'Coordination number'      4                                                                                         FindGeo    7NPA
     8  3 SF4 FE2 'Coordination geometry'    tetrahedron                                                                               FindGeo    7NPA
     9  3 SF4 FE2 'Coordination descriptor'  'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        7NPA
-    10 4 SF4 FE2 'Coordination number'      4                                                                                         metalCoord 8RIU
-    11 4 SF4 FE2 'Coordination geometry'    tetrahedral                                                                               metalCoord 8RIU
+    10 4 SF4 FE2 'Coordination number'      4                                                                                         MetalCoord 8RIU
+    11 4 SF4 FE2 'Coordination geometry'    tetrahedral                                                                               MetalCoord 8RIU
     12 4 SF4 FE2 'Coordination descriptor'  'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        8RIU
     13 5 SF4 FE3 'Coordination number'      4                                                                                         FindGeo    1GTE
     14 5 SF4 FE3 'Coordination geometry'    tetrahedron                                                                               FindGeo    1GTE
     15 5 SF4 FE3 'Coordination descriptor'  'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        1GTE
-    16 6 SF4 FE3 'Coordination number'      4                                                                                         metalCoord 7NPA
-    17 6 SF4 FE3 'Coordination geometry'    tetrahedral                                                                               metalCoord 7NPA
+    16 6 SF4 FE3 'Coordination number'      4                                                                                         MetalCoord 7NPA
+    17 6 SF4 FE3 'Coordination geometry'    tetrahedral                                                                               MetalCoord 7NPA
     18 6 SF4 FE3 'Coordination descriptor'  'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        7NPA
     19 7 SF4 FE4 'Coordination number'      4                                                                                         FindGeo    2FD2
     20 7 SF4 FE4 'Coordination geometry'    tetrahedron                                                                               FindGeo    2FD2
     21 7 SF4 FE4 'Coordination descriptor'  'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        2FD2
-    22 8 SF4 FE4 'Coordination number'      4                                                                                         metalCoord 2FD2
-    23 8 SF4 FE4 'Coordination geometry'    tetrahedral                                                                               metalCoord 2FD2
+    22 8 SF4 FE4 'Coordination number'      4                                                                                         MetalCoord 2FD2
+    23 8 SF4 FE4 'Coordination geometry'    tetrahedral                                                                               MetalCoord 2FD2
     24 8 SF4 FE4 'Coordination descriptor'  'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        2FD2  
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -306,7 +308,7 @@ save__pdbx_chem_comp_atom_feature.provenance
     _item_enumeration.detail
       PDB        ?
       FindGeo    ?
-      metalCoord ?
+      MetalCoord ?
       Author     ?
      save_
 
@@ -485,8 +487,8 @@ save_pdbx_nonpoly_atom_feature
     1 VO4 V D 'Coordination number'      5                                                                                                       FindGeo    ?
     2 VO4 V D 'Coordination geometry'   'trigonal bipyramid (regular)'                                                                           FindGeo    Expected
     3 VO4 V D 'Coordination descriptor' 'V(N)(O)(O)(O)(O){NVO<90>,NVO<90>,NVO<90>,NVO<180>,OVO<120>,OVO<120>,OVO<90>,OVO<120>,OVN<90>,OVO<90>}'  PDB        ?
-    4 VO4 V D 'Coordination number'      5                                                                                                       metalCoord ?
-    5 VO4 V D 'Coordination geometry'    trigonal-bipyramid                                                                                      metalCoord Expected
+    4 VO4 V D 'Coordination number'      5                                                                                                       MetalCoord ?
+    5 VO4 V D 'Coordination geometry'    trigonal-bipyramid                                                                                      MetalCoord Expected
     6 VO4 V D 'Coordination descriptor'  'V(N)(O)(O)(O)(O){NVO<90>,NVO<90>,NVO<90>,NVO<180>,OVO<120>,OVO<120>,OVO<90>,OVO<120>,OVN<90>,OVO<90>}' PDB        ?
     7 VO4 V D 'Oxidation state'          5                                                                                                       Author     ?
 ;
@@ -507,26 +509,26 @@ save_pdbx_nonpoly_atom_feature
     1  SF4 FE1 B 'Coordination number'     4                                                                                         FindGeo ?
     2  SF4 FE1 B 'Coordination geometry'   'tetrahedron (regular)'                                                                   FindGeo Expected
     3  SF4 FE1 B 'Coordination descriptor' 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        ?
-    4  SF4 FE1 B 'Coordination number'     4                                                                                         metalCoord ?
-    5  SF4 FE1 B 'Coordination geometry'   tetrahedral                                                                               metalCoord Expected
+    4  SF4 FE1 B 'Coordination number'     4                                                                                         MetalCoord ?
+    5  SF4 FE1 B 'Coordination geometry'   tetrahedral                                                                               MetalCoord Expected
     6  SF4 FE1 B 'Coordination descriptor' 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        ?
     7  SF4 FE2 B 'Coordination number'     4                                                                                         FindGeo    ?
     8  SF4 FE2 B 'Coordination geometry'   'tetrahedron (regular)'                                                                   FindGeo    Expected
     9  SF4 FE2 B 'Coordination descriptor' 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        ?
-    10 SF4 FE2 B 'Coordination number'     4                                                                                         metalCoord ?
-    11 SF4 FE2 B 'Coordination geometry'   tetrahedral                                                                               metalCoord Expected
+    10 SF4 FE2 B 'Coordination number'     4                                                                                         MetalCoord ?
+    11 SF4 FE2 B 'Coordination geometry'   tetrahedral                                                                               MetalCoord Expected
     12 SF4 FE2 B 'Coordination descriptor' 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        ?
     13 SF4 FE3 B 'Coordination number'     4                                                                                         FindGeo    ?
     14 SF4 FE3 B 'Coordination geometry'   'tetrahedron (regular)'                                                                   FindGeo    Expected
     15 SF4 FE3 B 'Coordination descriptor' 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        ?
-    16 SF4 FE3 B 'Coordination number'     4                                                                                         metalCoord ?
-    17 SF4 FE3 B 'Coordination geometry'   tetrahedral                                                                               metalCoord Expected
+    16 SF4 FE3 B 'Coordination number'     4                                                                                         MetalCoord ?
+    17 SF4 FE3 B 'Coordination geometry'   tetrahedral                                                                               MetalCoord Expected
     18 SF4 FE3 B 'Coordination descriptor' 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        ?
     19 SF4 FE4 B 'Coordination number'     4                                                                                         FindGeo    ?
     20 SF4 FE4 B 'Coordination geometry'   'tetrahedron (regular)'                                                                   FindGeo    Expected
     21 SF4 FE4 B 'Coordination descriptor' 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        ?
-    22 SF4 FE4 B 'Coordination number'     4                                                                                         metalCoord ?
-    23 SF4 FE4 B 'Coordination geometry'   tetrahedral                                                                               metalCoord Expected
+    22 SF4 FE4 B 'Coordination number'     4                                                                                         MetalCoord ?
+    23 SF4 FE4 B 'Coordination geometry'   tetrahedral                                                                               MetalCoord Expected
     24 SF4 FE4 B 'Coordination descriptor' 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB        ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -626,7 +628,7 @@ save__pdbx_nonpoly_atom_feature.provenance
       PDB           ?
       Author        ?
       FindGeo       ?
-      metalCoord    ?
+      MetalCoord    ?
 
      save_
 
