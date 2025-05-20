@@ -65,6 +65,7 @@ chem_comp-metallo-extension.dic 0.7  2025-05-19
   + Update example for _pdbx_nonpoly_atom_feature
   + Change metalCoord to MetalCoord in to _pdbx_nonpoly_atom_feature.provenance and
     _pdbx_chem_comp_atom_feature.provenance enumerations
+  + Change _pdbx_chem_comp_precursor_set.details to be non-mandatory
 ;
 
 loop_
@@ -1167,7 +1168,7 @@ save__pdbx_chem_comp_precursor_set.details
    #
    _item.name                     '_pdbx_chem_comp_precursor_set.details'
    _item.category_id              pdbx_chem_comp_precursor_set
-   _item.mandatory_code           yes
+   _item.mandatory_code           no
    #
    _item_type.code                text
 
