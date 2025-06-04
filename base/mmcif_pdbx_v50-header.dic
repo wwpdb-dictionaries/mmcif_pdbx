@@ -3026,4 +3026,9 @@ Changes (ep):
 Changes (ep):
   + Add DeepEMhancer to _em_software.name enumeration
   + Add HexAuFoil to _em_sample_support.grid_type enumeration
+  + Add "PSI JUNGFRAU 9M" and "PSI JUNGFRAU 10M" detectors to
+    _diffrn_detector.type
+  + Add "N6-benzoyllysine", "N6-isonicotinyllysine",
+    and "N6-methacryllysine" to enumeration list for
+    _pdbx_chem_comp_pcm.type and _pdbx_modification_feature.type
 ;

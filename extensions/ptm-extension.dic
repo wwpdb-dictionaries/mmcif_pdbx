@@ -24,7 +24,7 @@ data_ptm-extension.dic
 _pdbx_dictionary_component.datablock_id   ptm-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   ptm-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF PTM extension"
-_pdbx_dictionary_component.version        0.10
+_pdbx_dictionary_component.version        0.11
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -163,6 +163,15 @@ ptm-extension.dic 0.10  2024-11-26
 ;
   Changes (mgb)
   + added "Methacrylation" type to enumeration list for
+      _pdbx_chem_comp_pcm.type
+      _pdbx_modification_feature.type
+;
+ptm-extension.dic 0.11  2024-06-01
+;
+  Changes (dh/ep)
+  + added "N6-benzoyllysine", "N6-isonicotinyllysine",
+    and "N6-methacryllysine" 
+    type to enumeration list for
       _pdbx_chem_comp_pcm.type
       _pdbx_modification_feature.type
 ;
@@ -559,6 +568,9 @@ save__pdbx_chem_comp_pcm.type
     "Methylsulfanylation"                              .
     "Methylsulfation"                                  .
     "Myristoylation"                                   .
+    "N6-benzoyllysine"                                 .
+    "N6-isonicotinyllysine"                            .
+    "N6-methacryllysine"                               .
     "N-pyruvic acid 2-iminylation"                     .
     "N-methylcarbamoylation"                           .
     "Nitration"                                        .
@@ -1511,6 +1523,9 @@ save__pdbx_modification_feature.type
     "Methylsulfanylation"                              .
     "Methylsulfation"                                  .
     "Myristoylation"                                   .
+    "N6-benzoyllysine"                                 .
+    "N6-isonicotinyllysine"                            .
+    "N6-methacryllysine"                               .
     "N-pyruvic acid 2-iminylation"                     .
     "N-methylcarbamoylation"                           .
     "Nitration"                                        .
