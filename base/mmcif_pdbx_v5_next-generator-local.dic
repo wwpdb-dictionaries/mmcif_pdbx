@@ -18,6 +18,7 @@ mmcif_pdbx_v5_next-variable.dic      mmcif_pdbx_v5_next-variable.dic   extend . 
 # V5_next extensions are in this file
 mmcif_pdbx_v5_next-ext.dic           mmcif_pdbx_v5_next-ext.dic        extend . .
 mmcif_pdbx-ilg.dic                   mmcif_pdbx-def-ilg.dic            extend . .
+
 # PDB specific extension
 mmcif_pdbx-def-pdb-ilg.dic           mmcif_pdbx-def-pdb-ilg.dic        extend . .
 

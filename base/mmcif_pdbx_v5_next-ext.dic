@@ -45,3 +45,4 @@ binding-assay-extension.dic      ../extensions/binding-assay-extension.dic      
 ptm-extension.doc                ../extensions/ptm-extension.dic                extend . .
 
 batch_extension.dic              ../extensions/batch-extension.dic  extend . .
+electon_diffrn-extension.dic     ../extensions/electron_diffrn-extension.dic  extend . .
