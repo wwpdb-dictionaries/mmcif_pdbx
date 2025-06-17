@@ -3,7 +3,7 @@ data_chem_comp-metallo-extension.dic
 _pdbx_dictionary_component.datablock_id   chem_comp-metallo-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   chem_comp-metallo-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF extension to support metalloprotein annotation"
-_pdbx_dictionary_component.version        0.7
+_pdbx_dictionary_component.version        0.8
 
 
 loop_
@@ -66,6 +66,12 @@ chem_comp-metallo-extension.dic 0.7  2025-05-19
   + Change metalCoord to MetalCoord in to _pdbx_nonpoly_atom_feature.provenance and
     _pdbx_chem_comp_atom_feature.provenance enumerations
   + Change _pdbx_chem_comp_precursor_set.details to be non-mandatory
+;
+chem_comp-metallo-extension.dic 0.8  2025-06-19
+;  
+  Changes (ab)
+  + Remove 'Coordination geometry' and 'Coordination number' from _pdbx_nonpoly_atom_feature_evidence.type
+    enumeration
 ;
 
 loop_
@@ -759,8 +765,6 @@ save__pdbx_nonpoly_atom_feature_evidence.type
      loop_
     _item_enumeration.value
     _item_enumeration.detail
-    'Coordination number'     ?
-    'Coordination geometry'   ?
     'Oxidation state'         ?
     'Metal identity'          ?
      save_
