@@ -3,7 +3,7 @@ data_electron_diffrn-extension.dic
 _pdbx_dictionary_component.datablock_id   electron_diffrn-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   electron_diffrn-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF Electron Diffraction Extension"
-_pdbx_dictionary_component.version        0.4
+_pdbx_dictionary_component.version        0.5
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -25,7 +25,7 @@ electron_diffrn-extension.dic 0.3  2023-10-20
   Changes (ep/cs):
   + Remove None from _pdbx_exptl_subtype.method_type enumeration
 ;
-electron_diffrn-extension.dic 0.3  2025-06-10
+electron_diffrn-extension.dic 0.4  2025-06-10
 ;  
   Changes (ep/cs):
   + Update enumeration for _pdbx_exptl_subtype.method_type
@@ -34,6 +34,14 @@ electron_diffrn-extension.dic 0.3  2025-06-10
   + Remove "TUNGSTEN HAIRPIN" from _pdbx_electron_diffrn_source.electron_source enumeration
   + Reduce enumeration list for _pdbx_electron_diffrn_detector.detector_camera
   + Add _pdbx_electron_diffrn_continuous_rotation.angle_per_image
+;
+electron_diffrn-extension.dic 0.5  2025-06-17
+;  
+  Changes (ep/cs):
+  + Change _pdbx_electron_diffrn_continuous_rotation.exposure_time_per_frame to
+    _pdbx_electron_diffrn_continuous_rotation.exposure_time_per_image
+  + Change     _pdbx_electron_diffrn_discrete_angle.exposure_time_per_frame to
+    _pdbx_electron_diffrn_discrete_angle.exposure_time_per_image
 ;
 
 #########################
@@ -720,7 +728,7 @@ save_pdbx_electron_diffrn_continuous_rotation
     _pdbx_electron_diffrn_continuous_rotation.angle_start               -30
     _pdbx_electron_diffrn_continuous_rotation.angle_end                 30
     _pdbx_electron_diffrn_continuous_rotation.rotation_rate             0.2
-    _pdbx_electron_diffrn_continuous_rotation.exposure_time_per_frame   ?
+    _pdbx_electron_diffrn_continuous_rotation.exposure_time_per_image   ?
     _pdbx_electron_diffrn_continuous_rotation.details                   ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -789,12 +797,12 @@ save__pdbx_electron_diffrn_continuous_rotation.rotation_rate
     
      save_
 
-save__pdbx_electron_diffrn_continuous_rotation.exposure_time_per_frame
+save__pdbx_electron_diffrn_continuous_rotation.exposure_time_per_image
     _item_description.description
 ;              The exposure time of the rolling shutter model of the detector/camera
                measured in seconds.
 ;
-    _item.name                  '_pdbx_electron_diffrn_continuous_rotation.exposure_time_per_frame'
+    _item.name                  '_pdbx_electron_diffrn_continuous_rotation.exposure_time_per_image'
     _item.category_id             pdbx_electron_diffrn_continuous_rotation
     _item.mandatory_code          no
     _item_type.code               float
@@ -854,7 +862,7 @@ save_pdbx_electron_diffrn_discrete_angle
     _pdbx_electron_diffrn_discrete_angle.angle_end                45
     _pdbx_electron_diffrn_discrete_angle.angle_increment          0.1-1
     _pdbx_electron_diffrn_discrete_angle.tilt_angle_lists         ?
-    _pdbx_electron_diffrn_discrete_angle.exposure_time_per_frame  10
+    _pdbx_electron_diffrn_discrete_angle.exposure_time_per_image  10
     _pdbx_electron_diffrn_discrete_angle.details                  ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -945,12 +953,12 @@ save__pdbx_electron_diffrn_discrete_angle.tilt_angle_lists
     
      save_
 
-save__pdbx_electron_diffrn_discrete_angle.exposure_time_per_frame
+save__pdbx_electron_diffrn_discrete_angle.exposure_time_per_image
     _item_description.description
 ;              The exposure time of the rolling shutter model of the detector/camera
                measured in seconds.
 ;
-    _item.name                  '_pdbx_electron_diffrn_discrete_angle.exposure_time_per_frame'
+    _item.name                  '_pdbx_electron_diffrn_discrete_angle.exposure_time_per_image'
     _item.category_id             pdbx_electron_diffrn_discrete_angle
     _item.mandatory_code          no
     _item_type.code               float
