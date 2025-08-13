@@ -100,10 +100,14 @@ pdbx_chem_comp_atom_coordination         1  pdbx_chem_comp_atom_coordination:che
 pdbx_chem_comp_atom_coordination_sphere  1  pdbx_chem_comp_atom_coordination_sphere:chem_comp_atom:1        . .
 pdbx_chem_comp_atom_coordination_sphere  2  pdbx_chem_comp_atom_coordination_sphere:pdbx_chem_comp_atom_coordination:2        . .
 
-pdbx_nonpoly_atom_coordination_sphere    1  pdbx_nonpoly_atom_coordination_sphere:pdbx_nonpoly_atom_coordination:1        . .
+pdbx_nonpoly_atom_coordination           1  pdbx_nonpoly_atom_coordination:atom_site:1                      . .
+
+pdbx_nonpoly_atom_coordination_sphere    1  pdbx_nonpoly_atom_coordination_sphere:atom_site:1               . .
+pdbx_nonpoly_atom_coordination_sphere    2  pdbx_nonpoly_atom_coordination_sphere:pdbx_nonpoly_atom_coordination:1        . .
 
 pdbx_nonpoly_feature                     1  pdbx_nonpoly_feature:atom_site:1                                . .
 pdbx_nonpoly_feature_evidence            1  pdbx_nonpoly_feature_evidence:atom_site:1                       . .
+
 pdbx_nonpoly_atom_feature                1  pdbx_nonpoly_atom_feature:atom_site:1                           . .
 pdbx_nonpoly_atom_feature_evidence       1  pdbx_nonpoly_atom_feature_evidence:atom_site:1                  . .
 #
@@ -121,7 +125,15 @@ pdbx_chem_comp_atom_coordination_sphere  1  '_pdbx_chem_comp_atom_coordination_s
 pdbx_chem_comp_atom_coordination_sphere  1  '_pdbx_chem_comp_atom_coordination_sphere.atom_id'    '_chem_comp_atom.atom_id'                   chem_comp_atom
 pdbx_chem_comp_atom_coordination_sphere  2  '_pdbx_chem_comp_atom_coordination_sphere.geometry_id' '_pdbx_chem_comp_atom_coordination.geometry_id'  pdbx_chem_comp_atom_coordination
 
-pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.geometry_id' '_pdbx_nonpoly_atom_coordination.geometry_id'  pdbx_nonpoly_atom_coordination
+
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.comp_id'             '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.atom_id'             '_atom_site.label_atom_id'                  atom_site
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.label_asym_id'       '_atom_site.label_asym_id'                  atom_site
+
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.comp_id'      '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.atom_id'      '_atom_site.label_atom_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.label_asym_id' '_atom_site.label_asym_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere    2  '_pdbx_nonpoly_atom_coordination_sphere.geometry_id' '_pdbx_nonpoly_atom_coordination.geometry_id'  pdbx_nonpoly_atom_coordination
 
 pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.comp_id'                       '_atom_site.label_comp_id'                  atom_site
 pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.label_asym_id'                 '_atom_site.label_asym_id'                  atom_site
@@ -134,6 +146,7 @@ pdbx_nonpoly_feature_evidence            1  '_pdbx_nonpoly_feature_evidence.labe
 pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.comp_id'         '_atom_site.label_comp_id'                  atom_site
 pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.atom_id'         '_atom_site.label_atom_id'                  atom_site
 pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.label_asym_id'   '_atom_site.label_asym_id'                  atom_site
+
 
 
 #################################
@@ -1228,8 +1241,8 @@ save__pdbx_nonpoly_atom_coordination.label_asym_id
     _item.category_id             pdbx_nonpoly_atom_coordination
     _item.mandatory_code          yes
     _item_type.code               code
-    # _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.label_asym_id'
-    # _item_linked.parent_name    '_atom_site.label_asym_id'
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
      save_
 
 save__pdbx_nonpoly_atom_coordination.comp_id
@@ -1242,8 +1255,8 @@ save__pdbx_nonpoly_atom_coordination.comp_id
    _item.name                   '_pdbx_nonpoly_atom_coordination.comp_id'
    _item.category_id              pdbx_nonpoly_atom_coordination
    _item.mandatory_code           yes
-#    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.comp_id'
-#    _item_linked.parent_name    '_chem_comp_atom.comp_id'
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
    _item_type.code                ucode
 save_
 
@@ -1255,8 +1268,8 @@ save__pdbx_nonpoly_atom_coordination.atom_id
     _item.category_id             pdbx_nonpoly_atom_coordination
     _item.mandatory_code          yes
     _item_type.code               atcode
-#    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.atom_id'
-#    _item_linked.parent_name    '_chem_comp_atom.atom_id'
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
      save_
 
 save__pdbx_nonpoly_atom_coordination.number
@@ -1551,8 +1564,8 @@ save__pdbx_nonpoly_atom_coordination_sphere.label_asym_id
     _item.category_id             pdbx_nonpoly_atom_coordination_sphere
     _item.mandatory_code          yes
     _item_type.code               code
-    # _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere.label_asym_id'
-    # _item_linked.parent_name    '_atom_site.label_asym_id'
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
      save_
 
 save__pdbx_nonpoly_atom_coordination_sphere.comp_id
@@ -1565,8 +1578,8 @@ save__pdbx_nonpoly_atom_coordination_sphere.comp_id
    _item.name                   '_pdbx_nonpoly_atom_coordination_sphere.comp_id'
    _item.category_id              pdbx_nonpoly_atom_coordination_sphere
    _item.mandatory_code           yes
-#   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere.comp_id'
-#   _item_linked.parent_name     '_chem_comp_atom.comp_id'
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere.comp_id'
+   _item_linked.parent_name     '_atom_site.label_comp_id'
    _item_type.code                ucode
 save_
 
@@ -1578,8 +1591,8 @@ save__pdbx_nonpoly_atom_coordination_sphere.atom_id
     _item.category_id             pdbx_nonpoly_atom_coordination_sphere
     _item.mandatory_code          yes
     _item_type.code               atcode
-#    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere.atom_id'
-#    _item_linked.parent_name    '_chem_comp_atom.atom_id'
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere.atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
      save_
 
 save__pdbx_nonpoly_atom_coordination_sphere.descriptor
