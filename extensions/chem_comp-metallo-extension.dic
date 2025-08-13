@@ -826,7 +826,7 @@ save__pdbx_chem_comp_atom_coordination.geometry_pdb
           'linear'                                  ?
           'bent'                                    ?
           'trigonal planar'                         ?
-          'pyramid'                                 ?
+          'pyramidal'                               ?
           't shape'                                 ?
           'linear monocapped'                       ?
           'tetrahedral'                             ?
@@ -928,6 +928,7 @@ save__pdbx_chem_comp_atom_coordination.geometry_pdb
           'sandwich 8 8 i'                          ?
           'sandwich 8 8 v'                          ?
           'ball'                                    ?
+	  'irregular'                               ?
 
 save__pdbx_chem_comp_atom_coordination.provenance
     _item_description.description
@@ -1314,7 +1315,7 @@ save__pdbx_nonpoly_atom_coordination.geometry_pdb
           'linear'                                  ?
           'bent'                                    ?
           'trigonal planar'                         ?
-          'pyramid'                                 ?
+          'pyramidal'                               ?
           't shape'                                 ?
           'linear monocapped'                       ?
           'tetrahedral'                             ?
@@ -1416,6 +1417,7 @@ save__pdbx_nonpoly_atom_coordination.geometry_pdb
           'sandwich 8 8 i'                          ?
           'sandwich 8 8 v'                          ?
           'ball'                                    ?
+	  'irregular'                               ?
 
 save__pdbx_nonpoly_atom_coordination.provenance
     _item_description.description
