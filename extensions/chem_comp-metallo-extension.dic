@@ -741,8 +741,8 @@ save__pdbx_chem_comp_atom_coordination.geometry_id
    #
    _item_description.description
 ;    This data item is used to group together equivalent geometries coming from different
-     software programs. For instance, if one program has an output of ‘tetrahedral’ and
-     another has an output of ‘tetrahedron’ for the same atom, these two records will
+     software programs. For instance, if one program has an output of 'tetrahedral' and
+     another has an output of 'tetrahedron' for the same atom, these two records will
      have the same geometry_id because these two outputs represent the same coordination geometry.
 ;
    #
@@ -817,7 +817,7 @@ save__pdbx_chem_comp_atom_coordination.geometry_generic
     _item_description.description
 ;              This data item translates the geometry output from a software program (for example, FindGeo or MetalCoord) into
                a unified naming scheme. As software programs sometimes have different names for the same geometry (for instance,
-	       ‘tetrahedral’ and ‘tetrahedron’ correspond to the same geometry), this data item provides a name for
+	       'tetrahedral' and 'tetrahedron' correspond to the same geometry), this data item provides a name for
 	       the geometry that is consistent regardless of the provenance to enhance findability.
 ;
     _item.name                  '_pdbx_chem_comp_atom_coordination.geometry_generic'
@@ -1199,8 +1199,8 @@ save__pdbx_nonpoly_atom_coordination.geometry_id
 _item_description.description
 ;              This data item is used to group together equivalent
                geometries coming from different software programs.
-	       For instance, if one program has an output of ‘tetrahedral’
-               and another has an output of ‘tetrahedron’ for the same atom,
+	       For instance, if one program has an output of 'tetrahedral'
+               and another has an output of 'tetrahedron' for the same atom,
 	       these two records will have the same geometry_id
 	       because these two outputs represent the same coordination geometry.
 ;
@@ -1293,7 +1293,7 @@ save__pdbx_nonpoly_atom_coordination.geometry
 ;              This data item translates the geometry output from a software
                program (for example, FindGeo or MetalCoord) into a unified naming
 	       scheme. As software programs sometimes have different names for
-	       the same geometry (for instance, ‘tetrahedral’ and ‘tetrahedron’
+	       the same geometry (for instance, 'tetrahedral' and 'tetrahedron'
 	       correspond to the same geometry), this data item provides a name
 	       for the geometry that is consistent regardless of the provenance
 	       to enhance findability.
@@ -1307,7 +1307,7 @@ save__pdbx_nonpoly_atom_coordination.geometry_generic
     _item_description.description
 ;              This data item translates the geometry output from a software program (for example, FindGeo or MetalCoord) into
                a unified naming scheme. As software programs sometimes have different names for the same geometry (for instance,
-	       ‘tetrahedral’ and ‘tetrahedron’ correspond to the same geometry), this data item provides a name for
+	       'tetrahedral' and 'tetrahedron' correspond to the same geometry), this data item provides a name for
 	       the geometry that is consistent regardless of the provenance to enhance findability.
 ;
     _item.name                  '_pdbx_nonpoly_atom_coordination.geometry_generic'
@@ -1450,7 +1450,7 @@ save__pdbx_nonpoly_atom_coordination.assessment
 	       with the reference CCD, assessment will be annotated as Expected,
 	       whereas if there is not a match, assessment will be annotated as Unexpected.
 	       If there is no reference in the CCD, assessment will be annotated
-	       as ‘No reference’.
+	       as 'No reference'.
 ;
     _item.name                  '_pdbx_nonpoly_atom_coordination.assessment'
     _item.category_id             pdbx_nonpoly_atom_coordination
