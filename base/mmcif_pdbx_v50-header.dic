@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.403
+    _dictionary.version         5.404
 #
      loop_
     _dictionary_history.version
@@ -3020,4 +3020,15 @@ Changes (ep):
   + Updated examples in _database_2.database_code
   + Add gemmi to _software.name PDBx enumeration
   + Add 'M' to _em_software.name enumeration.
+;
+5.404  2025-06-01
+;
+Changes (ep):
+  + Add DeepEMhancer to _em_software.name enumeration
+  + Add HexAuFoil to _em_sample_support.grid_type enumeration
+  + Add "PSI JUNGFRAU 9M" and "PSI JUNGFRAU 10M" detectors to
+    _diffrn_detector.type
+  + Add "N6-benzoyllysine", "N6-isonicotinyllysine",
+    and "N6-methacryllysine" to enumeration list for
+    _pdbx_chem_comp_pcm.type and _pdbx_modification_feature.type
 ;
