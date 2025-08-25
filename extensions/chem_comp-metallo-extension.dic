@@ -92,7 +92,22 @@ chem_comp-metallo-extension.dic 0.10  2025-08-12
 chem_comp-metallo-extension.dic 0.11  2025-08-20
 ;  
   Changes (ab)
-  + ...
+  + Category keys for _chem_comp_attrom_coordination changed to _pdbx_chem_comp_atom_coordination.geometry_id
+    and _pdbx_chem_comp_atom_coordination.provenance
+  + _pdbx_chem_comp_atom_coordination.ordinal and _pdbx_nonpoly_atom_coordination.ordinal removed
+  + _pdbx_chem_comp_atom_coordination.geometry_software renamed _pdbx_chem_comp_atom_coordination.geometry.
+    _pdbx_chem_comp_atom_coordination.geometry_pdb renamed _pdbx_chem_comp_atom_coordination.geometry_generic
+  + _pdbx_nonpoly_atom_coordination category keys changed to __pdbx_nonpoly_atom_coordination.geometry_id and
+    __pdbx_nonpoly_atom_coordination.provenance.
+  + _pdbx_nonpoly_atom_coordination.alt_id and _pdbx_nonpoly_atom_coordination_sphere.alt_id added
+  + _pdbx_nonpoly_atom_coordination.geometry_software renamed _pdbx_nonpoly_atom_coordination.geometry and
+    _pdbx_nonpoly_atom_coordination.geometry_pdb renamed _pdbx_nonpoly_atom_coordination.geometry_generic
+  + Category keys for _pdbx_nonpoly_atom_coordination_sphere changed to
+   _pdbx_nonpoly_atom_coordination_sphere.geometry_id, _pdbx_nonpoly_atom_coordination_sphere.comp_id
+    and _pdbx_nonpoly_atom_coordination_sphere.atom_id
+  + _pdbx_nonpoly_atom_coordination_sphere.id removed.
+  
+
 ;
 
 loop_
@@ -1290,13 +1305,8 @@ save__pdbx_nonpoly_atom_coordination.number
 
 save__pdbx_nonpoly_atom_coordination.geometry
     _item_description.description
-;              This data item translates the geometry output from a software
-               program (for example, FindGeo or MetalCoord) into a unified naming
-	       scheme. As software programs sometimes have different names for
-	       the same geometry (for instance, 'tetrahedral' and 'tetrahedron'
-	       correspond to the same geometry), this data item provides a name
-	       for the geometry that is consistent regardless of the provenance
-	       to enhance findability.
+;              This data item contains the geometry output from a software program
+               (for example, FindGeo or MetalCoord).
 ;
     _item.name                  '_pdbx_nonpoly_atom_coordination.geometry'
     _item.category_id             pdbx_nonpoly_atom_coordination
