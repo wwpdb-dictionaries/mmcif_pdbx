@@ -24,7 +24,7 @@ data_ptm-extension.dic
 _pdbx_dictionary_component.datablock_id   ptm-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   ptm-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF PTM extension"
-_pdbx_dictionary_component.version        0.11
+_pdbx_dictionary_component.version        0.12
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -171,11 +171,18 @@ ptm-extension.dic 0.11  2024-06-01
   Changes (dh/ep)
   + added "N6-benzoyllysine", "N6-isonicotinyllysine",
     and "N6-methacryllysine" 
-    type to enumeration list for
+    types to enumeration list for
       _pdbx_chem_comp_pcm.type
       _pdbx_modification_feature.type
 ;
-
+ptm-extension.dic 0.12  2025-08-25
+;
+  Changes (ab/ep)
+  + added "Metal coordination" type to
+    enumeration for:
+      _pdbx_chem_comp_pcm.type
+      _pdbx_modification_feature.type
+;
 ####################
 #    Item Types    #
 ####################
@@ -653,6 +660,7 @@ save__pdbx_chem_comp_pcm.category
     "Nucleotide monophosphate"        "Nucleotide monophosphate protein modifications"
     "Terminal acetylation"            "Terminal acetylation protein modification"
     "Terminal amidation"              "Terminal amidation protein modification"
+    "Metal coordination"              "Metal coordination"
    #
 save_
 #
@@ -1611,5 +1619,6 @@ save__pdbx_modification_feature.category
     "Nucleotide monophosphate"        "Nucleotide monophosphate protein modifications"
     "Terminal acetylation"            "Terminal acetylation protein modification"
     "Terminal amidation"              "Terminal amidation protein modification"
+    "Metal coordination"              "Metal coordination"
    #
 save_

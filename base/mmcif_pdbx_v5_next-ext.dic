@@ -45,3 +45,5 @@ binding-assay-extension.dic      ../extensions/binding-assay-extension.dic      
 ptm-extension.doc                ../extensions/ptm-extension.dic                extend . .
 
 batch_extension.dic              ../extensions/batch-extension.dic  extend . .
+chem_comp-metallo-extension.dic  ../extensions/chem_comp-metallo-extension.dic  extend . .
+# chem_comp-precursor-extension.dic  ../extensions/chem_comp-precursor-extension.dic  extend . .

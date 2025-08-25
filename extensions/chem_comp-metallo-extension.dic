@@ -1,0 +1,1685 @@
+data_chem_comp-metallo-extension.dic
+
+_pdbx_dictionary_component.datablock_id   chem_comp-metallo-extension.dic
+_pdbx_dictionary_component.dictionary_component_id   chem_comp-metallo-extension.dic
+_pdbx_dictionary_component.title          "PDBx/mmCIF extension to support metalloprotein annotation"
+_pdbx_dictionary_component.version        0.11
+
+
+loop_
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+chem_comp-metallo-extension.dic 0.1  2025-01-09  
+;  
+  Changes (ep/ab)
+  + Initial version
+;
+chem_comp-metallo-extension.dic 0.2  2025-01-14  
+;  
+  Changes (ep/ab)
+  + Example updates to pdbx_chem_comp_precursor_identifier and
+    pdbx_chem_comp_precursor_descriptor
+  + Descriptions update for pdbx_chem_comp_precursor_identifier and
+    pdbx_chem_comp_precursor_descriptor
+;
+chem_comp-metallo-extension.dic 0.3  2025-02-27  
+;  
+  Changes (ep/ab)
+  + Add provenance and id attributes to _pdbx_chem_comp_atom_feature, remove validated and validation_software
+  + Add _pdbx_nonpoly_atom_feature
+  + Remove atom_id and instance_id from _pdbx_nonpoly_feature, add label_asym_id
+  + Add category _pdbx_nonpoly_atom_feature_evidence
+;
+chem_comp-metallo-extension.dic 0.4  2025-04-06  
+;  
+  Changes (ep/ab)
+  + Add _pdbx_nonpoly_feature_evidence category
+  + Add enumeration for _pdbx_nonpoly_atom_feature_evidence.type
+  + Add _pdbx_non_poly_atom_feature.type_interpretations
+  + Add enumeration for _pdbx_chem_comp_precursor_descriptor.source
+  + Add _pdbx_nonpoly_atom_feature.assessment.  Change type to uline
+;
+chem_comp-metallo-extension.dic 0.5  2025-04-22  
+;  
+  Changes (ep/cs/ab)
+  + Correct enumeration for _pdbx_chem_comp_precursor_set.class
+  + Change enumeration for _pdbx_nonpoly_atom_feature.assessment to 'Expected',
+    'Unexpected'
+  + Update description of _pdbx_chem_comp_precursor.precursor_comp_id
+  + Update enumeration for _pdbx_chem_comp_precursor_descriptor.source, and
+    _pdbx_chem_comp_precursor_identifier.source
+  + Remove _pdbx_nonpoly_atom_feature.type_interpretation
+;
+chem_comp-metallo-extension.dic 0.6  2025-05-05  
+;  
+  Changes (ab)
+  + Update enumeration for _pdbx_chem_comp_atom_feature.provenance
+;
+chem_comp-metallo-extension.dic 0.7  2025-05-19
+;  
+  Changes (ab)
+  + Update example for _pdbx_chem_comp_atom_feature
+  + Add "No reference" to enumeration for _pdbx_nonpoly_atom_feature.assessment
+  + Update example for _pdbx_nonpoly_atom_feature
+  + Change metalCoord to MetalCoord in to _pdbx_nonpoly_atom_feature.provenance and
+    _pdbx_chem_comp_atom_feature.provenance enumerations
+  + Change _pdbx_chem_comp_precursor_set.details to be non-mandatory
+;
+chem_comp-metallo-extension.dic 0.8  2025-06-18
+;  
+  Changes (ab)
+  + Remove 'Coordination geometry' and 'Coordination number' from _pdbx_nonpoly_atom_feature_evidence.type
+    enumeration
+;
+chem_comp-metallo-extension.dic 0.9  2025-06-19
+;  
+  Changes (ab)
+  + Remove _pdbx_chem_comp_precursor_set, _pdbx_chem_comp_precursor,
+    _pdbx_chem_comp_precursor_descriptor, _pdbx_chem_comp_precursor_identifier
+  + _pdbx_depui_status_flags.metal_experiment_evidence
+;
+chem_comp-metallo-extension.dic 0.10  2025-08-12
+;  
+  Changes (ab)
+  + Add _pdbx_chem_comp_atom_coordination, _pdbx_chem_comp_atom_coordination_sphere,
+    _pdbx_nonpoly_atom_coordination, _pdbx_nonpoly_atom_coordination_spehere
+  + Remove _pdbx_nonpoly_atom_feature.assessment
+  + Update enumeration for _pdbx_nonpoly_atom_feature.type
+  + Revert any changes to _pdbx_chem_comp_atom_feature
+;
+chem_comp-metallo-extension.dic 0.11  2025-08-20
+;  
+  Changes (ab)
+  + Category keys for _chem_comp_attrom_coordination changed to _pdbx_chem_comp_atom_coordination.geometry_id
+    and _pdbx_chem_comp_atom_coordination.provenance
+  + _pdbx_chem_comp_atom_coordination.ordinal and _pdbx_nonpoly_atom_coordination.ordinal removed
+  + _pdbx_chem_comp_atom_coordination.geometry_software renamed _pdbx_chem_comp_atom_coordination.geometry.
+    _pdbx_chem_comp_atom_coordination.geometry_pdb renamed _pdbx_chem_comp_atom_coordination.geometry_generic
+  + _pdbx_nonpoly_atom_coordination category keys changed to __pdbx_nonpoly_atom_coordination.geometry_id and
+    __pdbx_nonpoly_atom_coordination.provenance.
+  + _pdbx_nonpoly_atom_coordination.alt_id and _pdbx_nonpoly_atom_coordination_sphere.alt_id added
+  + _pdbx_nonpoly_atom_coordination.geometry_software renamed _pdbx_nonpoly_atom_coordination.geometry and
+    _pdbx_nonpoly_atom_coordination.geometry_pdb renamed _pdbx_nonpoly_atom_coordination.geometry_generic
+  + Category keys for _pdbx_nonpoly_atom_coordination_sphere changed to
+   _pdbx_nonpoly_atom_coordination_sphere.geometry_id, _pdbx_nonpoly_atom_coordination_sphere.comp_id
+    and _pdbx_nonpoly_atom_coordination_sphere.atom_id
+  + _pdbx_nonpoly_atom_coordination_sphere.id removed.
+  
+
+;
+
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+pdbx_chem_comp_atom_coordination         1  pdbx_chem_comp_atom_coordination:chem_comp_atom:1               . .
+pdbx_chem_comp_atom_coordination_sphere  1  pdbx_chem_comp_atom_coordination_sphere:chem_comp_atom:1        . .
+pdbx_chem_comp_atom_coordination_sphere  2  pdbx_chem_comp_atom_coordination_sphere:pdbx_chem_comp_atom_coordination:2        . .
+
+pdbx_nonpoly_atom_coordination           1  pdbx_nonpoly_atom_coordination:atom_site:1                      . .
+
+pdbx_nonpoly_atom_coordination_sphere    1  pdbx_nonpoly_atom_coordination_sphere:atom_site:1               . .
+pdbx_nonpoly_atom_coordination_sphere    2  pdbx_nonpoly_atom_coordination_sphere:pdbx_nonpoly_atom_coordination:1        . .
+
+pdbx_nonpoly_feature                     1  pdbx_nonpoly_feature:atom_site:1                                . .
+pdbx_nonpoly_feature_evidence            1  pdbx_nonpoly_feature_evidence:atom_site:1                       . .
+
+pdbx_nonpoly_atom_feature                1  pdbx_nonpoly_atom_feature:atom_site:1                           . .
+pdbx_nonpoly_atom_feature_evidence       1  pdbx_nonpoly_atom_feature_evidence:atom_site:1                  . .
+#
+
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+pdbx_chem_comp_atom_coordination         1  '_pdbx_chem_comp_atom_coordination.comp_id'           '_chem_comp_atom.comp_id'                   chem_comp_atom
+pdbx_chem_comp_atom_coordination         1  '_pdbx_chem_comp_atom_coordination.atom_id'           '_chem_comp_atom.atom_id'                   chem_comp_atom
+
+pdbx_chem_comp_atom_coordination_sphere  1  '_pdbx_chem_comp_atom_coordination_sphere.comp_id'    '_chem_comp_atom.comp_id'                   chem_comp_atom
+pdbx_chem_comp_atom_coordination_sphere  1  '_pdbx_chem_comp_atom_coordination_sphere.atom_id'    '_chem_comp_atom.atom_id'                   chem_comp_atom
+pdbx_chem_comp_atom_coordination_sphere  2  '_pdbx_chem_comp_atom_coordination_sphere.geometry_id' '_pdbx_chem_comp_atom_coordination.geometry_id'  pdbx_chem_comp_atom_coordination
+
+
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.comp_id'             '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.atom_id'             '_atom_site.label_atom_id'                  atom_site
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.label_asym_id'       '_atom_site.label_asym_id'                  atom_site
+
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.comp_id'      '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.atom_id'      '_atom_site.label_atom_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.label_asym_id' '_atom_site.label_asym_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere    2  '_pdbx_nonpoly_atom_coordination_sphere.geometry_id' '_pdbx_nonpoly_atom_coordination.geometry_id'  pdbx_nonpoly_atom_coordination
+
+pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.comp_id'                       '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.label_asym_id'                 '_atom_site.label_asym_id'                  atom_site
+pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.comp_id'                  '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.atom_id'                  '_atom_site.label_atom_id'                  atom_site
+pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.label_asym_id'            '_atom_site.label_asym_id'                  atom_site
+pdbx_nonpoly_feature_evidence            1  '_pdbx_nonpoly_feature_evidence.comp_id'              '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_feature_evidence            1  '_pdbx_nonpoly_feature_evidence.label_asym_id'        '_atom_site.label_asym_id'                  atom_site
+
+pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.comp_id'         '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.atom_id'         '_atom_site.label_atom_id'                  atom_site
+pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.label_asym_id'   '_atom_site.label_asym_id'                  atom_site
+
+
+
+#################################
+## PDBX_NONPOLY_FEATURE        ##
+#################################
+
+save_pdbx_nonpoly_feature
+    _category.description
+;              Data items in the PDBX_NONPOLY_FEATURE category provide
+               a selected list of atom level features for the chemical component.
+;
+    _category.id                  pdbx_nonpoly_feature
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_nonpoly_feature.ordinal'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 -
+;
+;
+    loop_
+    _pdbx_nonpoly_feature.ordinal
+    _pdbx_nonpoly_feature.comp_id
+    _pdbx_nonpoly_feature.label_asym_id
+    _pdbx_nonpoly_feature.type
+    _pdbx_nonpoly_feature.value
+    _pdbx_nonpoly_feature.provenance   
+    1 SF4 B 'Group charge' 2 Author
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+     save_
+
+save__pdbx_nonpoly_feature.ordinal
+   #
+   _item_description.description  'An ordinal index for this category'
+   #
+   _item.name                     '_pdbx_nonpoly_feature.ordinal'
+   _item.category_id              pdbx_nonpoly_feature
+   _item.mandatory_code           yes
+   #
+   _item_type.code                int
+save_
+
+
+save__pdbx_nonpoly_feature.comp_id
+    _item_description.description
+;              This data item is a pointer to id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_nonpoly_feature.comp_id'
+    _item.category_id             pdbx_nonpoly_feature
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_nonpoly_feature.comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_nonpoly_feature.label_asym_id
+    _item_description.description
+;              The identifier of the instance of the STRUCT_ASYM_ID to which this feature applies.
+;
+    _item.name                  '_pdbx_nonpoly_feature.label_asym_id'
+    _item.category_id             pdbx_nonpoly_feature
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_nonpoly_feature.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+
+save__pdbx_nonpoly_feature.type
+    _item_description.description
+;              The feature assigned to this atom.
+;
+    _item.name                  '_pdbx_nonpoly_feature.type'
+    _item.category_id             pdbx_nonpoly_feature
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+#    'Coordination number'   ?
+#    'Coordination geometry' ?
+     'Group charge'          ?
+     save_
+
+save__pdbx_nonpoly_feature.value
+    _item_description.description
+;              The feature assigned to this atom.
+;
+    _item.name                  '_pdbx_nonpoly_feature.value'
+    _item.category_id             pdbx_nonpoly_feature
+    _item.mandatory_code          yes
+    _item_type.code               ucode # XXXX- might need line
+    loop_
+    _item_examples.case           4
+                                  5
+				  tetrahedral
+     save_
+
+save__pdbx_nonpoly_feature.provenance
+    _item_description.description
+;              The feature assigned to this atom.
+;
+    _item.name                  '_pdbx_nonpoly_feature.provenance'
+    _item.category_id             pdbx_nonpoly_feature
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+      PDB      ?
+      Author   ?
+
+     save_
+
+
+#################################
+## PDBX_NONPOLY_ATOM_FEATURE   ##
+#################################
+
+save_pdbx_nonpoly_atom_feature
+    _category.description
+;              Data items in the PDBX_NONPOLY_ATOM_FEATURE category provide
+               a selected list of atom level features for the chemical component.
+;
+    _category.id                  pdbx_nonpoly_atom_feature
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_nonpoly_atom_feature.ordinal'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - based on 1RPT
+;
+;
+    loop_
+    _pdbx_nonpoly_atom_feature.ordinal
+    _pdbx_nonpoly_atom_feature.comp_id
+    _pdbx_nonpoly_atom_feature.atom_id
+    _pdbx_nonpoly_atom_feature.label_asym_id
+    _pdbx_nonpoly_atom_feature.type
+    _pdbx_nonpoly_atom_feature.value
+    _pdbx_nonpoly_atom_feature.provenance 
+    1 VO4 V D 'Oxidation state' 5 Author
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+     save_
+
+save__pdbx_nonpoly_atom_feature.ordinal
+   #
+   _item_description.description  'An ordinal index for this category'
+   #
+   _item.name                     '_pdbx_nonpoly_atom_feature.ordinal'
+   _item.category_id              pdbx_nonpoly_atom_feature
+   _item.mandatory_code           yes
+   #
+   _item_type.code                int
+save_
+
+save__pdbx_nonpoly_atom_feature.comp_id
+    _item_description.description
+;              This data item is a pointer to id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature.comp_id'
+    _item.category_id             pdbx_nonpoly_atom_feature
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_nonpoly_atom_feature.comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_nonpoly_atom_feature.atom_id
+    _item_description.description
+;              The identifier for the target atom to which the feature is assigned.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature.atom_id'
+    _item.category_id             pdbx_nonpoly_atom_feature
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_nonpoly_atom_feature.atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_nonpoly_atom_feature.label_asym_id
+    _item_description.description
+;              The identifier of the instance of the STRUCT_ASYM_ID to which this feature applies.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature.label_asym_id'
+    _item.category_id             pdbx_nonpoly_atom_feature
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_nonpoly_atom_feature.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_nonpoly_atom_feature.type
+    _item_description.description
+;              The feature assigned to this atom.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature.type'
+    _item.category_id             pdbx_nonpoly_atom_feature
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+    'Oxidation state'         ?
+     save_
+
+save__pdbx_nonpoly_atom_feature.value
+    _item_description.description
+;              The feature assigned to this atom.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature.value'
+    _item.category_id             pdbx_nonpoly_atom_feature
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_examples.case           4
+                                  5
+				  tetrahedral
+     save_
+
+save__pdbx_nonpoly_atom_feature.provenance
+    _item_description.description
+;              The feature assigned to this atom.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature.provenance'
+    _item.category_id             pdbx_nonpoly_atom_feature
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+      PDB           ?
+      Author        ?
+     save_
+
+
+########################################
+## PDBX_NONPOLY_ATOM_FEATURE_EVIDENCE ##
+########################################
+
+save_pdbx_nonpoly_atom_feature_evidence
+    _category.description
+;              Data items in the PDBX_NONPOLY_ATOM_FEATURE_EVIDENCE category provide
+               a selected list of atom level features for the chemical component.
+;
+    _category.id                  pdbx_nonpoly_atom_feature_evidence
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_nonpoly_atom_feature_evidence.ordinal'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 -
+;
+;
+    loop_
+    _pdbx_nonpoly_atom_feature_evidence.ordinal
+    _pdbx_nonpoly_atom_feature_evidence.comp_id
+    _pdbx_nonpoly_atom_feature_evidence.atom_id
+    _pdbx_nonpoly_atom_feature_evidence.label_asym_id
+    _pdbx_nonpoly_atom_feature_evidence.type
+    _pdbx_nonpoly_atom_feature_evidence.experimental_support
+    _pdbx_nonpoly_atom_feature_evidence.details
+    1 VO4 V B 'Metal identity'  'Anomalous scattering' ?
+    1 VO4 V B 'Oxidation state' 'UV-Vis spectroscopy'  ?
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+     save_
+
+save__pdbx_nonpoly_atom_feature_evidence.ordinal
+   #
+   _item_description.description  'An ordinal index for this category'
+   #
+   _item.name                     '_pdbx_nonpoly_atom_feature_evidence.ordinal'
+   _item.category_id              pdbx_nonpoly_atom_feature_evidence
+   _item.mandatory_code           yes
+   #
+   _item_type.code                int
+save_
+
+save__pdbx_nonpoly_atom_feature_evidence.comp_id
+    _item_description.description
+;              This data item is a pointer to id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature_evidence.comp_id'
+    _item.category_id             pdbx_nonpoly_atom_feature_evidence
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_nonpoly_atom_feature_evidence.comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_nonpoly_atom_feature_evidence.atom_id
+    _item_description.description
+;              The identifier for the target atom to which the feature is assigned.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature_evidence.atom_id'
+    _item.category_id             pdbx_nonpoly_atom_feature_evidence
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_nonpoly_atom_feature_evidence.atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_nonpoly_atom_feature_evidence.label_asym_id
+    _item_description.description
+;              The identifier of the instance of the STRUCT_ASYM_ID to which this feature applies.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature_evidence.label_asym_id'
+    _item.category_id             pdbx_nonpoly_atom_feature_evidence
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_nonpoly_atom_feature_evidence.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_nonpoly_atom_feature_evidence.type
+    _item_description.description
+;              The feature assigned to this atom.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature_evidence.type'
+    _item.category_id             pdbx_nonpoly_atom_feature_evidence
+    _item.mandatory_code          yes
+    _item_type.code               line
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+    'Oxidation state'         ?
+    'Metal identity'          ?
+     save_
+
+save__pdbx_nonpoly_atom_feature_evidence.experimental_support
+    _item_description.description
+;              The feature assigned to this atom.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature_evidence.experimental_support'
+    _item.category_id             pdbx_nonpoly_atom_feature_evidence
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_examples.case           'Inductively coupled plasma mass spectrometry'
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+       'Anomalous scattering'                          ?
+       'Inductively coupled plasma mass spectrometry'  ?
+       'Infrared spectroscopy'                         ?
+       'Electron paramagnetic resonance spectroscopy'  ?
+       'Mossbauer spectroscopy'                        ?
+       'Raman spectroscopy'                            ?
+       'UV-Vis spectroscopy'                           ?
+       'X-ray absorption spectroscopy'                 ?
+       'X-ray fluorescence'                            ?
+       'Other'                                         ?
+   save_
+
+save__pdbx_nonpoly_atom_feature_evidence.details
+    _item_description.description
+;              Additional details on this atom assignment
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature_evidence.details'
+    _item.category_id             pdbx_nonpoly_atom_feature_evidence
+    _item.mandatory_code          no
+    _item_type.code               line
+
+     save_
+
+
+###################################
+## PDBX_NONPOLY_FEATURE_EVIDENCE ##
+###################################
+
+save_pdbx_nonpoly_feature_evidence
+    _category.description
+;              Data items in the PDBX_NONPOLY_FEATURE_EVIDENCE category provide
+               a selected list of asym level features for the chemical component.
+;
+    _category.id                  pdbx_nonpoly_feature_evidence
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_nonpoly_feature_evidence.ordinal'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 -
+;
+;
+    loop_
+    _pdbx_nonpoly_feature_evidence.ordinal
+    _pdbx_nonpoly_feature_evidence.comp_id
+    _pdbx_nonpoly_feature_evidence.label_asym_id
+    _pdbx_nonpoly_feature_evidence.type
+    _pdbx_nonpoly_feature_evidence.experimental_support
+    _pdbx_nonpoly_feature_evidence.details
+    1 SF4 B 'Group charge' 'Electron paramagnetic resonance spectrometry' ?
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+     save_
+
+save__pdbx_nonpoly_feature_evidence.ordinal
+   #
+   _item_description.description  'An ordinal index for this category'
+   #
+   _item.name                     '_pdbx_nonpoly_feature_evidence.ordinal'
+   _item.category_id              pdbx_nonpoly_feature_evidence
+   _item.mandatory_code           yes
+   #
+   _item_type.code                int
+save_
+
+save__pdbx_nonpoly_feature_evidence.comp_id
+    _item_description.description
+;              This data item is a pointer to id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_nonpoly_feature_evidence.comp_id'
+    _item.category_id             pdbx_nonpoly_feature_evidence
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_nonpoly_feature_evidence.comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_nonpoly_feature_evidence.label_asym_id
+    _item_description.description
+;              The identifier of the instance of the STRUCT_ASYM_ID to which this feature applies.
+;
+    _item.name                  '_pdbx_nonpoly_feature_evidence.label_asym_id'
+    _item.category_id             pdbx_nonpoly_feature_evidence
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_nonpoly_feature_evidence.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_nonpoly_feature_evidence.type
+    _item_description.description
+;              The feature assigned to this atom.
+;
+    _item.name                  '_pdbx_nonpoly_feature_evidence.type'
+    _item.category_id             pdbx_nonpoly_feature_evidence
+    _item.mandatory_code          yes
+    _item_type.code               line
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+    'Group charge'            ?
+     save_
+
+save__pdbx_nonpoly_feature_evidence.experimental_support
+    _item_description.description
+;              The feature assigned to this atom.
+;
+    _item.name                  '_pdbx_nonpoly_feature_evidence.experimental_support'
+    _item.category_id             pdbx_nonpoly_feature_evidence
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_examples.case           'Inductively coupled plasma mass spectrometry'
+     loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+       'Electron paramagnetic resonance spectroscopy'  ?
+       'Mossbauer spectroscopy'                        ?
+       'UV-Vis spectroscopy'                           ?
+       'Other'                                         ?
+   save_
+
+save__pdbx_nonpoly_feature_evidence.details
+    _item_description.description
+;              Additional details on this atom assignment
+;
+    _item.name                  '_pdbx_nonpoly_feature_evidence.details'
+    _item.category_id             pdbx_nonpoly_feature_evidence
+    _item.mandatory_code          no
+    _item_type.code               line
+     save_
+
+
+
+####################################
+# pdbx_chem_comp_atom_coordination #
+####################################
+save_pdbx_chem_comp_atom_coordination
+    _category.description
+;             Data items in the PDBX_CHEM_COMP_ATOM_COORDINATION category provide
+              coordination information on selected atoms
+;
+    _category.id                  pdbx_chem_comp_atom_coordination
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_chem_comp_atom_coordination.geometry_id'
+                                 '_pdbx_chem_comp_atom_coordination.provenance'
+	   
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 -
+;
+;
+    loop_
+    _pdbx_chem_comp_atom_coordination.geometry_id
+    _pdbx_chem_comp_atom_coordination.comp_id
+    _pdbx_chem_comp_atom_coordination.atom_id
+    _pdbx_chem_comp_atom_coordination.number
+    _pdbx_chem_comp_atom_coordination.geometry
+    _pdbx_chem_comp_atom_coordination.geometry_generic
+    _pdbx_chem_comp_atom_coordination.provenance
+    _pdbx_chem_comp_atom_coordination.representative_entry_id
+    1 VO4 V 4 tetrahedron           tetrahedral FindGeo     1VNH
+    1 VO4 V 4 tetrahedral           tetrahedral MetalCoord  1VNH
+    2 VO4 V 5 'trigonal bipyramid' 'trigonal bipyramidal'   FindGeo 1RPT
+    2 VO4 V 5 trigonal-bipyramid   'trigonal bipyramidal'   FindGeo 1RPT
+;
+;
+    Example 2 -
+;
+;
+    loop_
+    _pdbx_chem_comp_atom_coordination.geometry_id
+    _pdbx_chem_comp_atom_coordination.comp_id
+    _pdbx_chem_comp_atom_coordination.atom_id
+    _pdbx_chem_comp_atom_coordination.number
+    _pdbx_chem_comp_atom_coordination.geometry
+    _pdbx_chem_comp_atom_coordination.geometry_generic
+    _pdbx_chem_comp_atom_coordination.provenance
+    _pdbx_chem_comp_atom_coordination.representative_entry_id
+    1 SF4 FE1 4 tetrahedron tetrahedral FindGeo 7NPA    
+    1 SF4 FE1 4 tetrahedral tetrahedral MetalCoord 2C42 
+    2 SF4 FE2 4 tetrahedron tetrahedral FindGeo 7NPA    
+    2 SF4 FE2 4 tetrahedral tetrahedral MetalCoord 8RIU 
+    3 SF4 FE3 4 tetrahedron tetrahedral FindGeo 1GTE    
+    3 SF4 FE3 4 tetrahedral tetrahedral MetalCoord 7NPA  
+    4 SF4 FE4 4 tetrahedron tetrahedral FindGeo 2FD2    
+    4 SF4 FE4 4 tetrahedral tetrahedral MetalCoord 2FD2;
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+     save_
+
+save__pdbx_chem_comp_atom_coordination.geometry_id
+   #
+   _item_description.description
+;    This data item is used to group together equivalent geometries coming from different
+     software programs. For instance, if one program has an output of 'tetrahedral' and
+     another has an output of 'tetrahedron' for the same atom, these two records will
+     have the same geometry_id because these two outputs represent the same coordination geometry.
+;
+   #
+   _item.name                     '_pdbx_chem_comp_atom_coordination.geometry_id'
+   _item.category_id              pdbx_chem_comp_atom_coordination
+   _item.mandatory_code           yes
+   #
+   _item_type.code                int
+save_
+
+save__pdbx_chem_comp_atom_coordination.comp_id
+   #
+   _item_description.description
+;              This data item is a pointer to _chem_comp_atom.comp_id in the CHEM_COMP
+               category.
+;
+   #
+   _item.name                   '_pdbx_chem_comp_atom_coordination.comp_id'
+   _item.category_id              pdbx_chem_comp_atom_coordination
+   _item.mandatory_code           yes
+    _item_linked.child_name     '_pdbx_chem_comp_atom_coordination.comp_id'
+    _item_linked.parent_name    '_chem_comp_atom.comp_id'
+   _item_type.code                ucode
+save_
+
+save__pdbx_chem_comp_atom_coordination.atom_id
+    _item_description.description
+;              The identifier for the target atom to which the feature is assigned.
+;
+    _item.name                  '_pdbx_chem_comp_atom_coordination.atom_id'
+    _item.category_id             pdbx_chem_comp_atom_coordination
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_chem_comp_atom_coordination.atom_id'
+    _item_linked.parent_name    '_chem_comp_atom.atom_id'
+     save_
+
+save__pdbx_chem_comp_atom_coordination.number
+    _item_description.description
+;              The coordination number of the target atom.
+;
+    _item.name                  '_pdbx_chem_comp_atom_coordination.number'
+    _item.category_id             pdbx_chem_comp_atom_coordination
+    _item.mandatory_code          yes
+    _item_type.code               int
+    loop_
+    _item_range.maximum
+    _item_range.minimum
+                                  24  24
+				  24   2
+                                   2   2
+				   
+    loop_
+    _pdbx_item_range.maximum
+    _pdbx_item_range.minimum
+                                  10  10
+				  10   2
+                                   2   2
+				   
+     save_
+
+save__pdbx_chem_comp_atom_coordination.geometry
+    _item_description.description
+;              This data item contains the geometry output from a software program (for example, FindGeo or MetalCoord).  
+;
+    _item.name                  '_pdbx_chem_comp_atom_coordination.geometry'
+    _item.category_id             pdbx_chem_comp_atom_coordination
+    _item.mandatory_code          yes
+    _item_type.code               line
+
+save__pdbx_chem_comp_atom_coordination.geometry_generic
+    _item_description.description
+;              This data item translates the geometry output from a software program (for example, FindGeo or MetalCoord) into
+               a unified naming scheme. As software programs sometimes have different names for the same geometry (for instance,
+	       'tetrahedral' and 'tetrahedron' correspond to the same geometry), this data item provides a name for
+	       the geometry that is consistent regardless of the provenance to enhance findability.
+;
+    _item.name                  '_pdbx_chem_comp_atom_coordination.geometry_generic'
+    _item.category_id             pdbx_chem_comp_atom_coordination
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+          'linear'                                  ?
+          'bent'                                    ?
+          'trigonal planar'                         ?
+          'pyramidal'                               ?
+          't shape'                                 ?
+          'linear monocapped'                       ?
+          'tetrahedral'                             ?
+          'square planar'                           ?
+          'trigonal pyramidal'                      ?
+          'trigonal bipyramidal with vacancy'       ?
+          'square pyramidal with vacancy'           ?
+          'trigonal planar monocapped'              ?
+          'linear bicapped'                         ?
+          'square non-planar'                       ?
+          'square pyramidal'                        ?
+          'trigonal bipyramidal'                    ?
+          'trigonal prismatic with vacancy'         ?
+          'square planar monocapped'                ?
+          'trigonal planar bicapped'                ?
+          'trigonal planar tricapped'               ?
+          'octahedral'                              ?
+          'trigonal prismatic'                      ?
+          'pentagonal bipyramidal with vacancy'     ?
+          'octahedral monocapped with vacancy'      ?
+          'trigonal prismatic monocapped with vacancy'  ?
+          'sandwich 4h 2'                           ?
+          'sandwich 4 2'                            ?
+          'sandwich 5 1'                            ?
+          'square planar bicapped'                  ?
+          'hexagonal planar'                        ?
+          'pentagonal bipyramidal'                  ?
+          'trigonal prismatic monocapped'           ?
+          'octahedral monocapped'                   ?
+          'hexagonal bipyramidal with vacancy'      ?
+          'cubic with vacancy'                      ?
+          'square antiprismatic with vacancy'       ?
+          'sandwich 6 1'                            ?
+          'sandwich 4 3'                            ?
+          'sandwich 4h 3'                           ?
+          'sandwich 5 2'                            ?
+          'hexagonal bipyramidal'                   ?
+          'cubic'                                   ?
+          'square antiprismatic'                    ?
+          'octahedral bicapped'                     ?
+          'trigonal prismatic bicapped'             ?
+          'sandwich 4h 4h'                          ?
+          'sandwich 7 1'                            ?
+          'sandwich 4h 4'                           ?
+          'sandwich 5 capped 1'                     ?
+          'sandwich 5 3'                            ?
+          'sandwich 5h 3'                           ?
+          'sandwich 6 2'                            ?
+          'dodecahedral'                            ?
+          'trigonal prism tricapped'                ?
+          'square antiprismatic monocapped'         ?
+          'sandwich 7 2'                            ?
+          'sandwich 5 tricapped i'                  ?
+          'sandwich 5 4h'                           ?
+          'sandwich 5 4'                            ?
+          'sandwich 6 3'                            ?
+          'pentagonal prismatic'                    ?
+          'square antiprismatic bicapped'           ?
+          'sandwich 5 5o'                           ?
+          'sandwich 6 trigonal pyramidal'           ?
+          'sandwich 6 4'                            ?                          
+          'sandwich 5 4 i'                          ?
+          'pentagonal antiprismatic'                ?
+          'sandwich 7 3'                            ?
+          'sandwich 5 tricapped v'                  ?
+          'sandwich 5 square pyramidal'             ?
+          'sandwich 5 5'                            ?
+          'sandwich 5 pentagonal pyramidal'         ?
+          'trigonal prismatic all face capped'      ?
+          'sandwich 5 square pyramidal monocapped'  ?
+          'sandwich 8 3'                            ?
+          'sandwich 5 4h v'                         ?
+          'sandwich 5 5 i'                          ?
+          'sandwich 6 5'                            ?
+          'seamine'                                 ?
+          'cuboctahedral'                           ?
+          'sandwich 5 hexagonal pyramidal'          ?
+          'sandwich 8 4'                            ?
+          'paired octahedral'                       ?
+          'sandwich 7 5'                            ?
+          'sandwich 6 6'                            ?
+          'sandwich 5 5 v'                          ?
+          'sandwich 6 5 v'                          ?
+          'sandwich 8 5'                            ?
+          'sandwich 5 5 v i'                        ?
+          'sandwich 5 5 v v 3d'                     ?
+          'sandwich 6 6 v'                          ?
+          'sandwich c5 5 i'                         ?
+          'sandwich 5 5 v v'                        ?
+          'sandwich 8 5 i'                          ?
+          'sandwich 5 5 4'                          ?
+          'sandwich 6 6 triangle'                   ?
+          'sandwich 5 5 star'                       ?
+          'penta trigonal planar'                   ?
+          'penta trigonal planar i'                 ?
+          'sandwich 8 8'                            ?
+          'penta trigonal planar v'                 ?
+          'penta trigonal planar i i'               ?
+          'sandwich 8 8 i'                          ?
+          'sandwich 8 8 v'                          ?
+          'ball'                                    ?
+	  'irregular'                               ?
+
+save__pdbx_chem_comp_atom_coordination.provenance
+    _item_description.description
+;              The provenance of the feature assigned to this atom.
+;
+    _item.name                  '_pdbx_chem_comp_atom_coordination.provenance'
+    _item.category_id             pdbx_chem_comp_atom_coordination
+    _item.mandatory_code          yes
+    _item_type.code               ucode # XXXX- might need line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+      PDB        ?
+      FindGeo    ?
+      MetalCoord ?
+      Author     ?
+     save_
+
+save__pdbx_chem_comp_atom_coordination.representative_entry_id
+   #
+   _item_description.description  'The representative entry for this set'
+   #
+   _item.name                     '_pdbx_chem_comp_atom_coordination.representative_entry_id'
+   _item.category_id              pdbx_chem_comp_atom_coordination
+   _item.mandatory_code           no
+   #
+   _item_type.code                ucode
+
+   _pdbx_item_context.type        CHEM_COMP_INT
+   _pdbx_item_context.item_name   '_pdbx_chem_comp_atom_coordination.representative_entry_id'
+save_
+
+
+###########################################
+# pdbx_chem_comp_atom_coordination_sphere #
+###########################################
+save_pdbx_chem_comp_atom_coordination_sphere
+    _category.description
+;             Data items in the PDBX_CHEM_COMP_ATOM_COORDINATION_SPHERE category provide
+              geometric coordination information on selected atoms
+;
+    _category.id                  pdbx_chem_comp_atom_coordination_sphere
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_chem_comp_atom_coordination_sphere.id'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'chem_comp_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 -
+;
+;
+    loop_
+    _pdbx_chem_comp_atom_coordination_sphere.id
+    _pdbx_chem_comp_atom_coordination_sphere.geometry_id
+    _pdbx_chem_comp_atom_coordination_sphere.comp_id
+    _pdbx_chem_comp_atom_coordination_sphere.atom_id
+    _pdbx_chem_comp_atom_coordination_sphere.descriptor
+    _pdbx_chem_comp_atom_coordination_sphere.provenance
+    _pdbx_chem_comp_atom_coordination_sphere.representative_entry_id
+    1 1 VO4 V 'V(O)(O)(O)(O){OVO<109.5>,OVO<109.5>,OVO<109.5>,OVO<109.5>,OVO<109.5>,OVO<109.5>}'                      PDB 1VNH
+    2 2 VO4 V 'V(N)(O)(O)(O)(O){NVO<90>,NVO<90>,NVO<90>,NVO<180>,OVO<120>,OVO<120>,OVO<90>,OVO<120>,OVN<90>,OVO<90>}' PDB 1RPT
+;
+;
+    Example 2 -
+;
+;
+    loop_
+    _pdbx_chem_comp_atom_coordination_sphere.id
+    _pdbx_chem_comp_atom_coordination_sphere.geometry_id
+    _pdbx_chem_comp_atom_coordination_sphere.comp_id
+    _pdbx_chem_comp_atom_coordination_sphere.atom_id
+    _pdbx_chem_comp_atom_coordination_sphere.descriptor
+    _pdbx_chem_comp_atom_coordination_sphere.provenance
+    _pdbx_chem_comp_atom_coordination_sphere.representative_entry_id
+    1    1  SF4 FE1 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 2C42    
+    2    1  SF4 FE1 'Fe(N)(S)(S)(S){NFeS<109.5>,NFeS<109.5>,NFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 7LJT  
+    3    1  SF4 FE1 'Fe(O)(S)(S)(S){OFeS<109.5>,OFeS<109.5>,OFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 8VPO    
+    4    2  SF4 FE2 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 8RIU     
+    5    2  SF4 FE2 'Fe(N)(S)(S)(S){NFeS<109.5>,NFeS<109.5>,NFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 6Z7R 
+    6    2  SF4 FE2 'Fe(O)(S)(S)(S){OFeS<109.5>,OFeS<109.5>,OFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 8RIU     
+    7    2  SF4 FE2 'Fe(S)(S)(S)(Cl){SFeS<109.5>,SFeS<109.5>,SFeCl<109.5>,SFeS<109.5>,SFeCl<109.5>,SFeCl<109.5>}' PDB 8CP4 
+    8    3  SF4 FE3 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 7NPA    
+    9    3  SF4 FE3 'Fe(N)(S)(S)(S){NFeS<109.5>,NFeS<109.5>,NFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 6GAL 
+    10   3  SF4 FE3 'Fe(O)(S)(S)(S){OFeS<109.5>,OFeS<109.5>,OFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 7M31    
+    11   3  SF4 FE3 'Fe(S)(S)(S)(Cl){SFeS<109.5>,SFeS<109.5>,SFeCl<109.5>,SFeS<109.5>,SFeCl<109.5>,SFeCl<109.5>}' PDB 7P4M  
+    12   4  SF4 FE4 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 2FD2    
+    13   4  SF4 FE4 'Fe(N)(S)(S)(S){NFeS<109.5>,NFeS<109.5>,NFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 8POW 
+    14   4  SF4 FE4 'Fe(O)(S)(S)(S){OFeS<109.5>,OFeS<109.5>,OFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 5EXJ    
+    15   4  SF4 FE4 'Fe(S)(S)(S)(Cl){SFeS<109.5>,SFeS<109.5>,SFeCl<109.5>,SFeS<109.5>,SFeCl<109.5>,SFeCl<109.5>}' PDB 4S28
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_chem_comp_atom_coordination_sphere.id
+   #
+   _item_description.description  'An ordinal index for this category'
+   #
+   _item.name                     '_pdbx_chem_comp_atom_coordination_sphere.id'
+   _item.category_id              pdbx_chem_comp_atom_coordination_sphere
+   _item.mandatory_code           yes
+   #
+   _item_type.code                int
+save_
+
+save__pdbx_chem_comp_atom_coordination_sphere.geometry_id
+   #
+   _item_description.description
+;    This data item is a foreign key to _pdbx_chem_comp_atom_coordination.geometry_id. This item maps the
+     coordination descriptor to a specific geometry described in the pdbx_chem_comp_atom_coordination category.
+;
+   #
+   _item.name                     '_pdbx_chem_comp_atom_coordination_sphere.geometry_id'
+   _item.category_id              pdbx_chem_comp_atom_coordination_sphere
+   _item.mandatory_code           yes
+   #
+   _item_type.code                int
+   _item_linked.child_name      '_pdbx_chem_comp_atom_coordination_sphere.geometry_id'
+   _item_linked.parent_name     '_pdbx_chem_comp_atom_coordination.geometry_id'
+save_
+
+save__pdbx_chem_comp_atom_coordination_sphere.comp_id
+   #
+   _item_description.description
+;              This data item is a pointer to _chem_comp_atom.comp_id in the CHEM_COMP
+               category.
+;
+   #
+   _item.name                   '_pdbx_chem_comp_atom_coordination_sphere.comp_id'
+   _item.category_id              pdbx_chem_comp_atom_coordination_sphere
+   _item.mandatory_code           yes
+   _item_linked.child_name      '_pdbx_chem_comp_atom_coordination_sphere.comp_id'
+   _item_linked.parent_name     '_chem_comp_atom.comp_id'
+   _item_type.code                ucode
+save_
+
+save__pdbx_chem_comp_atom_coordination_sphere.atom_id
+    _item_description.description
+;              The identifier for the target atom to which the feature is assigned.
+;
+    _item.name                  '_pdbx_chem_comp_atom_coordination_sphere.atom_id'
+    _item.category_id             pdbx_chem_comp_atom_coordination_sphere
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_chem_comp_atom_coordination_sphere.atom_id'
+    _item_linked.parent_name    '_chem_comp_atom.atom_id'
+     save_
+
+save__pdbx_chem_comp_atom_coordination_sphere.descriptor
+    _item_description.description
+;              A descriptor describing the geometry of this atom.
+;
+    _item.name                  '_pdbx_chem_comp_atom_coordination_sphere.descriptor'
+    _item.category_id             pdbx_chem_comp_atom_coordination_sphere
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+
+save__pdbx_chem_comp_atom_coordination_sphere.provenance
+    _item_description.description
+;              The provenance of the feature assigned to this atom.
+;
+    _item.name                  '_pdbx_chem_comp_atom_coordination_sphere.provenance'
+    _item.category_id             pdbx_chem_comp_atom_coordination_sphere
+    _item.mandatory_code          yes
+    _item_type.code               ucode # XXXX- might need line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+      PDB        ?
+      FindGeo    ?
+      MetalCoord ?
+     save_
+
+save__pdbx_chem_comp_atom_coordination_sphere.representative_entry_id
+   #
+   _item_description.description  'The representative entry for this set'
+   #
+   _item.name                     '_pdbx_chem_comp_atom_coordination_sphere.representative_entry_id'
+   _item.category_id              pdbx_chem_comp_atom_coordination_sphere
+   _item.mandatory_code           no
+   #
+   _item_type.code                ucode
+
+   _pdbx_item_context.type        CHEM_COMP_INT
+   _pdbx_item_context.item_name   '_pdbx_chem_comp_atom_coordination.representative_entry_id'
+save_
+
+##################################
+# pdbx_nonpoly_atom_coordination #
+##################################
+save_pdbx_nonpoly_atom_coordination
+    _category.description
+;             Data items in the PDBX_NONPOLY_ATOM_COORDINATION category provide
+              coordination information on selected atoms
+;
+    _category.id                  pdbx_nonpoly_atom_coordination
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_nonpoly_atom_coordination.geometry_id'
+	                         '_pdbx_nonpoly_atom_coordination.provenance'
+
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - based on 1RPT
+;
+;
+    loop_
+    _pdbx_nonpoly_atom_coordination.geometry_id
+    _pdbx_nonpoly_atom_coordination.label_asym_id 
+    _pdbx_nonpoly_atom_coordination.comp_id
+    _pdbx_nonpoly_atom_coordination.atom_id
+    _pdbx_nonpoly_atom_coordination.alt_id
+    _pdbx_nonpoly_atom_coordination.number
+    _pdbx_nonpoly_atom_coordination.geometry
+    _pdbx_nonpoly_atom_coordination.geometry_generic
+    _pdbx_nonpoly_atom_coordination.provenance
+    _pdbx_nonpoly_atom_coordination.assessment
+    1 D VO4 V ? 5 'trigonal bipyramid (regular)' 'trigonal bipyramidal' FindGeo    Expected
+    1 D VO4 V ? 5 trigonal-bipyramid             'trigonal bipyramidal' MetalCoord Expected
+;
+;
+    Example 2 - based on 1HIP: 
+;
+;
+    loop_
+    _pdbx_nonpoly_atom_coordination.geometry_id
+    _pdbx_nonpoly_atom_coordination.label_asym_id 
+    _pdbx_nonpoly_atom_coordination.comp_id
+    _pdbx_nonpoly_atom_coordination.atom_id
+    _pdbx_nonpoly_atom_coordination.alt_id
+    _pdbx_nonpoly_atom_coordination.number
+    _pdbx_nonpoly_atom_coordination.geometry
+    _pdbx_nonpoly_atom_coordination.geometry_generic
+    _pdbx_nonpoly_atom_coordination.provenance
+    _pdbx_nonpoly_atom_coordination.assessment            
+    1 B SF4 FE1 ? 4 'tetrahedron (regular)' tetrahedral FindGeo    Expected
+    1 B SF4 FE1 ? 4 tetrahedral             tetrahedral MetalCoord Expected
+    2 B SF4 FE2 ? 4 'tetrahedron (regular)' tetrahedral FindGeo    Expected
+    2 B SF4 FE2 ? 4 tetrahedral             tetrahedral MetalCoord Expected
+    3 B SF4 FE3 ? 4 'tetrahedron (regular)' tetrahedral FindGeo    Expected
+    3 B SF4 FE3 ? 4 tetrahedral             tetrahedral MetalCoord Expected
+    4 B SF4 FE4 ? 4 'tetrahedron (regular)' tetrahedral FindGeo    Expected
+    4 B SF4 FE4 ? 4 tetrahedral             tetrahedral MetalCoord Expected
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_nonpoly_atom_coordination.geometry_id
+_item_description.description
+;              This data item is used to group together equivalent
+               geometries coming from different software programs.
+	       For instance, if one program has an output of 'tetrahedral'
+               and another has an output of 'tetrahedron' for the same atom,
+	       these two records will have the same geometry_id
+	       because these two outputs represent the same coordination geometry.
+;
+   #
+   _item.name                     '_pdbx_nonpoly_atom_coordination.geometry_id'
+   _item.category_id              pdbx_nonpoly_atom_coordination
+   _item.mandatory_code           yes
+   #
+   _item_type.code                int
+save_
+
+save__pdbx_nonpoly_atom_coordination.label_asym_id
+    _item_description.description
+;              The identifier of the instance of the STRUCT_ASYM_ID to which this feature applies.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination.label_asym_id'
+    _item.category_id             pdbx_nonpoly_atom_coordination
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_nonpoly_atom_coordination.comp_id
+   #
+   _item_description.description
+;              This data item is a pointer to _chem_comp_atom.comp_id in the CHEM_COMP
+               category.
+;
+   #
+   _item.name                   '_pdbx_nonpoly_atom_coordination.comp_id'
+   _item.category_id              pdbx_nonpoly_atom_coordination
+   _item.mandatory_code           yes
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+   _item_type.code                ucode
+save_
+
+save__pdbx_nonpoly_atom_coordination.atom_id
+    _item_description.description
+;              The identifier for the target atom to which the feature is assigned.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination.atom_id'
+    _item.category_id             pdbx_nonpoly_atom_coordination
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_nonpoly_atom_coordination.alt_id
+   _item_description.description  
+;              A place holder to indicate alternate conformation. 
+;
+   #
+   _item.name            "_pdbx_nonpoly_atom_coordination.alt_id"
+   _item.mandatory_code  no
+   #
+   _item_type.code  code
+   #
+save_
+
+
+save__pdbx_nonpoly_atom_coordination.number
+    _item_description.description
+;              The coordination number of the target atom.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination.number'
+    _item.category_id             pdbx_nonpoly_atom_coordination
+    _item.mandatory_code          yes
+    _item_type.code               int
+    loop_
+    _item_range.maximum
+    _item_range.minimum
+                                  24  24
+				  24   2
+                                   2   2
+				   
+    loop_
+    _pdbx_item_range.maximum
+    _pdbx_item_range.minimum
+                                  10  10
+				  10   2
+                                   2   2
+				   
+     save_
+
+save__pdbx_nonpoly_atom_coordination.geometry
+    _item_description.description
+;              This data item contains the geometry output from a software program
+               (for example, FindGeo or MetalCoord).
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination.geometry'
+    _item.category_id             pdbx_nonpoly_atom_coordination
+    _item.mandatory_code          yes
+    _item_type.code               line
+
+save__pdbx_nonpoly_atom_coordination.geometry_generic
+    _item_description.description
+;              This data item translates the geometry output from a software program (for example, FindGeo or MetalCoord) into
+               a unified naming scheme. As software programs sometimes have different names for the same geometry (for instance,
+	       'tetrahedral' and 'tetrahedron' correspond to the same geometry), this data item provides a name for
+	       the geometry that is consistent regardless of the provenance to enhance findability.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination.geometry_generic'
+    _item.category_id             pdbx_nonpoly_atom_coordination
+    _item.mandatory_code          yes
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+          'linear'                                  ?
+          'bent'                                    ?
+          'trigonal planar'                         ?
+          'pyramidal'                               ?
+          't shape'                                 ?
+          'linear monocapped'                       ?
+          'tetrahedral'                             ?
+          'square planar'                           ?
+          'trigonal pyramidal'                      ?
+          'trigonal bipyramidal with vacancy'       ?
+          'square pyramidal with vacancy'           ?
+          'trigonal planar monocapped'              ?
+          'linear bicapped'                         ?
+          'square non-planar'                       ?
+          'square pyramidal'                        ?
+          'trigonal bipyramidal'                    ?
+          'trigonal prismatic with vacancy'         ?
+          'square planar monocapped'                ?
+          'trigonal planar bicapped'                ?
+          'trigonal planar tricapped'               ?
+          'octahedral'                              ?
+          'trigonal prismatic'                      ?
+          'pentagonal bipyramidal with vacancy'     ?
+          'octahedral monocapped with vacancy'      ?
+          'trigonal prismatic monocapped with vacancy'  ?
+          'sandwich 4h 2'                           ?
+          'sandwich 4 2'                            ?
+          'sandwich 5 1'                            ?
+          'square planar bicapped'                  ?
+          'hexagonal planar'                        ?
+          'pentagonal bipyramidal'                  ?
+          'trigonal prismatic monocapped'           ?
+          'octahedral monocapped'                   ?
+          'hexagonal bipyramidal with vacancy'      ?
+          'cubic with vacancy'                      ?
+          'square antiprismatic with vacancy'       ?
+          'sandwich 6 1'                            ?
+          'sandwich 4 3'                            ?
+          'sandwich 4h 3'                           ?
+          'sandwich 5 2'                            ?
+          'hexagonal bipyramidal'                   ?
+          'cubic'                                   ?
+          'square antiprismatic'                    ?
+          'octahedral bicapped'                     ?
+          'trigonal prismatic bicapped'             ?
+          'sandwich 4h 4h'                          ?
+          'sandwich 7 1'                            ?
+          'sandwich 4h 4'                           ?
+          'sandwich 5 capped 1'                     ?
+          'sandwich 5 3'                            ?
+          'sandwich 5h 3'                           ?
+          'sandwich 6 2'                            ?
+          'dodecahedral'                            ?
+          'trigonal prism tricapped'                ?
+          'square antiprismatic monocapped'         ?
+          'sandwich 7 2'                            ?
+          'sandwich 5 tricapped i'                  ?
+          'sandwich 5 4h'                           ?
+          'sandwich 5 4'                            ?
+          'sandwich 6 3'                            ?
+          'pentagonal prismatic'                    ?
+          'square antiprismatic bicapped'           ?
+          'sandwich 5 5o'                           ?
+          'sandwich 6 trigonal pyramidal'           ?
+          'sandwich 6 4'                            ?                          
+          'sandwich 5 4 i'                          ?
+          'pentagonal antiprismatic'                ?
+          'sandwich 7 3'                            ?
+          'sandwich 5 tricapped v'                  ?
+          'sandwich 5 square pyramidal'             ?
+          'sandwich 5 5'                            ?
+          'sandwich 5 pentagonal pyramidal'         ?
+          'trigonal prismatic all face capped'      ?
+          'sandwich 5 square pyramidal monocapped'  ?
+          'sandwich 8 3'                            ?
+          'sandwich 5 4h v'                         ?
+          'sandwich 5 5 i'                          ?
+          'sandwich 6 5'                            ?
+          'seamine'                                 ?
+          'cuboctahedral'                           ?
+          'sandwich 5 hexagonal pyramidal'          ?
+          'sandwich 8 4'                            ?
+          'paired octahedral'                       ?
+          'sandwich 7 5'                            ?
+          'sandwich 6 6'                            ?
+          'sandwich 5 5 v'                          ?
+          'sandwich 6 5 v'                          ?
+          'sandwich 8 5'                            ?
+          'sandwich 5 5 v i'                        ?
+          'sandwich 5 5 v v 3d'                     ?
+          'sandwich 6 6 v'                          ?
+          'sandwich c5 5 i'                         ?
+          'sandwich 5 5 v v'                        ?
+          'sandwich 8 5 i'                          ?
+          'sandwich 5 5 4'                          ?
+          'sandwich 6 6 triangle'                   ?
+          'sandwich 5 5 star'                       ?
+          'penta trigonal planar'                   ?
+          'penta trigonal planar i'                 ?
+          'sandwich 8 8'                            ?
+          'penta trigonal planar v'                 ?
+          'penta trigonal planar i i'               ?
+          'sandwich 8 8 i'                          ?
+          'sandwich 8 8 v'                          ?
+          'ball'                                    ?
+	  'irregular'                               ?
+
+save__pdbx_nonpoly_atom_coordination.provenance
+    _item_description.description
+;              The provenance of the feature assigned to this atom.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination.provenance'
+    _item.category_id             pdbx_nonpoly_atom_coordination
+    _item.mandatory_code          yes
+    _item_type.code               ucode # XXXX- might need line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+      PDB        ?
+      FindGeo    ?
+      MetalCoord ?
+      Author     ?
+     save_
+
+save__pdbx_nonpoly_atom_coordination.assessment
+    _item_description.description
+;              This data item provides an assessment of the coordination.
+               The assessment is based on comparison with the CCD. If coordination
+	       is annotated in the CCD, then the coordination in the structure will
+	       be compared with the reference(s) in the CCD. If there is a match
+	       with the reference CCD, assessment will be annotated as Expected,
+	       whereas if there is not a match, assessment will be annotated as Unexpected.
+	       If there is no reference in the CCD, assessment will be annotated
+	       as 'No reference'.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination.assessment'
+    _item.category_id             pdbx_nonpoly_atom_coordination
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+      Expected       ?
+      Unexpected     ?
+      'No reference' ?
+     save_
+
+
+#########################################
+# pdbx_nonpoly_atom_coordination_sphere #
+#########################################
+save_pdbx_nonpoly_atom_coordination_sphere
+    _category.description
+;             Data items in the PDBX_NONPOLY_ATOM_COORDINATION_SPHERE category provide
+              geometric coordination information on selected atoms
+;
+    _category.id                  pdbx_nonpoly_atom_coordination_sphere
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_nonpoly_atom_coordination_sphere.geometry_id'
+                                 '_pdbx_nonpoly_atom_coordination_sphere.comp_id'
+                                 '_pdbx_nonpoly_atom_coordination_sphere.atom_id'
+	   
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - based on 1RPT
+;
+;
+    loop_
+    _pdbx_nonpoly_atom_coordination_sphere.geometry_id
+    _pdbx_nonpoly_atom_coordination_sphere.label_asym_id
+    _pdbx_nonpoly_atom_coordination_sphere.comp_id
+    _pdbx_nonpoly_atom_coordination_sphere.atom_id
+    _pdbx_nonpoly_atom_coordination_sphere.alt_id
+    _pdbx_nonpoly_atom_coordination_sphere.descriptor
+    _pdbx_nonpoly_atom_coordination_sphere.provenance
+    1 D VO4 V ? 'V(N)(O)(O)(O)(O){NVO<90>,NVO<90>,NVO<90>,NVO<180>,OVO<120>,OVO<120>,OVO<90>,OVO<120>,OVN<90>,OVO<90>}' PDB
+;
+;
+    Example 2 - based on 1HIP
+;
+;
+    loop_
+    _pdbx_nonpoly_atom_coordination_sphere.geometry_id
+    _pdbx_nonpoly_atom_coordination_sphere.label_asym_id
+    _pdbx_nonpoly_atom_coordination_sphere.comp_id
+    _pdbx_nonpoly_atom_coordination_sphere.atom_id
+    _pdbx_nonpoly_atom_coordination_sphere.alt_id
+    _pdbx_nonpoly_atom_coordination_sphere.descriptor
+    _pdbx_nonpoly_atom_coordination_sphere.provenance
+    1 B SF4 FE1 ? 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB
+    2 B SF4 FE2 ? 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB
+    3 B SF4 FE3 ? 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB
+    4 B SF4 FE4 ? 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_nonpoly_atom_coordination_sphere.geometry_id
+   #
+   _item_description.description
+;    This data item is a foreign key to _pdbx_nonpoly_atom_coordination.geometry_id. This
+     item maps the coordination descriptor to a specific geometry described in the
+     pdbx_nonpoly_atom_coordination category.
+;
+   #
+   _item.name                     '_pdbx_nonpoly_atom_coordination_sphere.geometry_id'
+   _item.category_id              pdbx_nonpoly_atom_coordination_sphere
+   _item.mandatory_code           yes
+   #
+   _item_type.code                int
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere.geometry_id'
+   _item_linked.parent_name     '_pdbx_nonpoly_atom_coordination.geometry_id'
+save_
+
+save__pdbx_nonpoly_atom_coordination_sphere.label_asym_id
+    _item_description.description
+;              The identifier of the instance of the STRUCT_ASYM_ID to which this feature applies.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination_sphere.label_asym_id'
+    _item.category_id             pdbx_nonpoly_atom_coordination_sphere
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_nonpoly_atom_coordination_sphere.comp_id
+   #
+   _item_description.description
+;              This data item is a pointer to _chem_comp_atom.comp_id in the CHEM_COMP
+               category.
+;
+   #
+   _item.name                   '_pdbx_nonpoly_atom_coordination_sphere.comp_id'
+   _item.category_id              pdbx_nonpoly_atom_coordination_sphere
+   _item.mandatory_code           yes
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere.comp_id'
+   _item_linked.parent_name     '_atom_site.label_comp_id'
+   _item_type.code                ucode
+save_
+
+save__pdbx_nonpoly_atom_coordination_sphere.alt_id
+   _item_description.description  
+;              A place holder to indicate alternate conformation. 
+;
+   #
+   _item.name            "_pdbx_nonpoly_atom_coordination_sphere.alt_id"
+   _item.mandatory_code  no
+   #
+   _item_type.code  code
+   #
+save_
+
+save__pdbx_nonpoly_atom_coordination_sphere.atom_id
+    _item_description.description
+;              The identifier for the target atom to which the feature is assigned.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination_sphere.atom_id'
+    _item.category_id             pdbx_nonpoly_atom_coordination_sphere
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere.atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_nonpoly_atom_coordination_sphere.descriptor
+    _item_description.description
+;              A descriptor describing the geometry of this atom.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination_sphere.descriptor'
+    _item.category_id             pdbx_nonpoly_atom_coordination_sphere
+    _item.mandatory_code          yes
+    _item_type.code               line
+     save_
+
+
+save__pdbx_nonpoly_atom_coordination_sphere.provenance
+    _item_description.description
+;              The provenance of the feature assigned to this atom.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination_sphere.provenance'
+    _item.category_id             pdbx_nonpoly_atom_coordination_sphere
+    _item.mandatory_code          yes
+    _item_type.code               ucode # XXXX- might need line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+      PDB        ?
+      FindGeo    ?
+      MetalCoord ?
+     save_
+
+
+
+#### pdbx_chem_comp_pcm.category changes and pdbx_modification_feature has addition 'Metal coordination'
+#
+# chem_comp.pdbx_chem_type - changed elsewhere
+#
+
+####################
+## CHEM_COMP_BOND ## 
+####################
+save__chem_comp_bond.pdbx_metal_pi_flag
+    _item_description.description
+;              This data item identifies if this is a bond between a metal and a pi system (alkene, arene, etc).
+;
+    _item.name                  '_chem_comp_bond.pdbx_metal_pi_flag'
+    _item.category_id             chem_comp_bond
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      'Y'  .
+                                  'N'  .
+     save_
+
+save__chem_comp_bond.pdbx_metal_coordination_flag
+    _item_description.description
+;              This data item identifies if this is a bond between a metal and its coordinating group, otherwise
+               referred to as a dative or coordinate covalent bond. This flag is used for all bonds between
+	       metals and non-metals, including metal-pi bonds and all other metal coordination bonds.
+;
+    _item.name                  '_chem_comp_bond.pdbx_metal_coordination_flag'
+    _item.category_id             chem_comp_bond
+    _item.mandatory_code          no
+    _item_type.code               ucode
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail      'Y'  .
+                                  'N'  .
+     save_
+
+
+###########################
+# pdbx_depui_status_flags #
+###########################
+save__pdbx_depui_status_flags.metal_experiment_evidence
+    _item_description.description
+;   This data item will be set to Y if the author provides experimental support for metal features in the DepUI. This
+    data item will be set to N if the author does not provide experimental support for metal features in the DepUI. 
+;
+    _item.name                  '_pdbx_depui_status_flags.metal_experiment_evidence'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          yes
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N
+     save_

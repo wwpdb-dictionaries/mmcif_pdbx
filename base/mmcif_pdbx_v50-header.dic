@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.404
+    _dictionary.version         5.405
 #
      loop_
     _dictionary_history.version
@@ -3031,4 +3031,15 @@ Changes (ep):
   + Add "N6-benzoyllysine", "N6-isonicotinyllysine",
     and "N6-methacryllysine" to enumeration list for
     _pdbx_chem_comp_pcm.type and _pdbx_modification_feature.type
+;
+5.405  2025-08-25
+;
+Changes (ep):
+  + Update enumeration for _chem_comp.pdbx_comp_type
+  + Add 'Modify metal description' to _pdbx_chem_comp_audit.action_type
+    eumeration
+  + Add "EMS Formvar Carbon" to _em_sample_support.grid_type
+  + Add Velox, EPU-D, 'CrystFEL partialator', MemBrain-pick,
+    TILTCTF, TOMOMAN to _em_software.name enumeration
+  + Add Laueprocess to _software.name enumeration
 ;
