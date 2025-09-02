@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.405
+    _dictionary.version         5.406
 #
      loop_
     _dictionary_history.version
@@ -3042,4 +3042,14 @@ Changes (ep):
   + Add Velox, EPU-D, 'CrystFEL partialator', MemBrain-pick,
     TILTCTF, TOMOMAN to _em_software.name enumeration
   + Add Laueprocess to _software.name enumeration
+;
+5.406  2025-09-02
+;
+Changes (ep):
+  + Add MX3 and "BL09U MX-ES" to _diffrn_source.pdbx_synchrotron_beamline
+    enumeration
+  + Add "AUSTRALIAN SYNCHROTRON BEAMLINE MX3" and
+    "NanoTerasu BEAMLINE BL09U MX-ES" to
+    _diffrn_source.type enumeration
+  + Add NanoTerasu to _diffrn_source.pdbx_synchrotron_site 
 ;
