@@ -3180,8 +3180,7 @@ Changes (ep):
   + Add 'Modify metal description' to _pdbx_chem_comp_audit.action_type
     eumeration
   + Add "EMS Formvar Carbon" to _em_sample_support.grid_type
-  + Add Velox, EPU-D, CrystFEL, MemBrain-pick,
-    TILTCTF, TOMOMAN to _em_software.name enumeration
+  + Add Velox, EPU-D, CrystFEL, TOMOMAN to _em_software.name enumeration
   + Add Laueprocess to _software.name enumeration
 ;
 5.414  2025-09-02
