@@ -1,0 +1,159 @@
+data_heterogeneity-extension.dic
+
+_pdbx_dictionary_component.datablock_id   heterogeneity-extension.dic
+_pdbx_dictionary_component.dictionary_component_id   heterogeneity-extension.dic
+_pdbx_dictionary_component.title          "PDBx/mmCIF heterogeneity extension"
+_pdbx_dictionary_component.version        0.1
+
+loop_
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+heterogeneity-extension.dic 0.1  2025-01-03
+;  
+  Changes (ep)
+  + Initial version
+;
+
+
+####################
+
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+pdbx_heterogeneity_hierarchy         1 pdbx_heterogeneity_hierarchy:pdbx_heterogeneity_hierarchy:1   . .
+atom_site                            1 atom_site:pdbx_heterogeneity_hierarchy:1   . .
+
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+pdbx_heterogeneity_hierarchy         1 '_pdbx_heterogeneity_hierarchy.parent'   '_pdbx_heterogeneity_hierarchy.id'  pdbx_heterogeneity_hierarchy 
+atom_site                            1 '_atom_site.pdbx_heterogeneity_id'       '_pdbx_heterogeneity_hierarchy.id'  pdbx_heterogeneity_hierarchy 
+
+#################
+
+save_pdbx_heterogeneity_hierarchy
+   _category.description     
+;              Data items in the PDBX_HETERGENEITY_HIERARCHY category
+	       represents named compositional hetergeneity in a heirarchal tree
+	       and use of atom_site.label_alt_id
+;
+
+   _category.id              pdbx_heterogeneity_hierarchy
+   _category.mandatory_code  no
+   #
+   _category_key.name  "_pdbx_heterogeneity_hierarchy.id"
+   #
+   loop_
+   _category_group.id
+    inclusive_group
+    pdbx_group
+   #
+   loop_
+   _category_examples.detail
+   _category_examples.case
+     
+;
+    Example 1 - in which two loop conformations exist, and in one
+                there are two conformations of an Aspartate.
+;
+;
+    loop_
+    _pdbx_heterogeneity_hierarchy.name
+    _pdbx_heterogeneity_hierarchy.parent
+    _pdbx_heterogeneity_hierarchy.id
+    _pdbx_heterogeneity_hierarchy.details    
+      Base        .           Base  ?
+      "Loop_out"  Base        A     "Activated active site loop"
+      "Loop_in"   Base        B     "Inactivated active site loop"
+      Alt_Asp1    "Loop_out"  C     "Activated active site loop, Asp unbound"
+      Alt_Asp2    "Loop_out"  D     "Activated active site loop, Asp bound"
+;
+   #
+save_
+
+
+save__pdbx_heterogeneity_hierarchy.id
+    _item_description.description
+;              The parent of _atom_site.pdbx_heterogenity_id that describes the state.
+;
+    _item.name                  '_pdbx_heterogeneity_hierarchy.id'
+    _item.category_id             pdbx_heterogeneity_hierarchy
+    _item.mandatory_code          yes
+    _item_type.code               code
+
+    _item_default.value          Base
+
+    loop_
+    _item_examples.case
+     Base
+     A
+     B
+save_
+
+
+save__pdbx_heterogeneity_hierarchy.name
+    _item_description.description
+;              A unique state name in the heirarchy.
+;
+    _item.name                  '_pdbx_heterogeneity_hierarchy.name'
+    _item.category_id             pdbx_heterogeneity_hierarchy
+    _item.mandatory_code          yes
+    _item_type.code               code
+    loop_
+    _item_examples.case
+     Base
+     "Loop_in"
+     EDO1
+save_
+
+save__pdbx_heterogeneity_hierarchy.parent
+    _item_description.description
+;              Points to the _pdbx_heterogeneity_heirarchy.id that is the parent of this node.
+;
+    _item.name                  '_pdbx_heterogeneity_hierarchy.parent'
+    _item.category_id             pdbx_heterogeneity_hierarchy
+    _item.mandatory_code          no
+    _item_type.code               code
+
+    # Parent/child
+   _item_linked.child_name      "_pdbx_heterogeneity_hierarchy.parent"
+   _item_linked.parent_name     "_pdbx_heterogeneity_hierarchy.id"
+save_
+
+save__pdbx_heterogeneity_hierarchy.details
+    _item_description.description
+;              Details about this compositional heterogeneity.
+;
+    _item.name                  '_pdbx_heterogeneity_hierarchy.details'
+    _item.category_id             pdbx_heterogeneity_hierarchy
+    _item.mandatory_code          no
+    _item_type.code               text
+save_
+
+
+
+#######################
+
+save__atom_site.pdbx_heterogeneity_id
+    _item_description.description
+;              Points to the _pdbx_heterogeneity_heirarchy.id and represents atoms heirarchy.
+               Usually this will be the same as _atom_site.label_alt_id. If unspecified, implied
+	       as "Base"
+    
+;
+    _item.name                  '_atom_site.pdbx_heterogeneity_id'
+    _item.category_id             atom_site
+    _item.mandatory_code          no
+    _item_type.code               code
+
+    # Parent/child
+   _item_linked.child_name      "_atom_site.pdbx_heterogeneity_id"
+   _item_linked.parent_name     "_pdbx_heterogeneity_hierarchy.id"
