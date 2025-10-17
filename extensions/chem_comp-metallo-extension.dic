@@ -3,7 +3,7 @@ data_chem_comp-metallo-extension.dic
 _pdbx_dictionary_component.datablock_id   chem_comp-metallo-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   chem_comp-metallo-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF extension to support metalloprotein annotation"
-_pdbx_dictionary_component.version        0.11
+_pdbx_dictionary_component.version        0.12
 
 
 loop_
@@ -84,7 +84,7 @@ chem_comp-metallo-extension.dic 0.10  2025-08-12
 ;  
   Changes (ab)
   + Add _pdbx_chem_comp_atom_coordination, _pdbx_chem_comp_atom_coordination_sphere,
-    _pdbx_nonpoly_atom_coordination, _pdbx_nonpoly_atom_coordination_spehere
+    _pdbx_nonpoly_atom_coordination, _pdbx_nonpoly_atom_coordination_sphere
   + Remove _pdbx_nonpoly_atom_feature.assessment
   + Update enumeration for _pdbx_nonpoly_atom_feature.type
   + Revert any changes to _pdbx_chem_comp_atom_feature
@@ -106,9 +106,21 @@ chem_comp-metallo-extension.dic 0.11  2025-08-20
    _pdbx_nonpoly_atom_coordination_sphere.geometry_id, _pdbx_nonpoly_atom_coordination_sphere.comp_id
     and _pdbx_nonpoly_atom_coordination_sphere.atom_id
   + _pdbx_nonpoly_atom_coordination_sphere.id removed.
-  
-
 ;
+chem_comp-metallo-extension.dic 0.12  2025-10-17
+;  
+  Changes (ab/ep)
+  + Add category _pdbx_nonpoly_atom_coordination_sphere_order
+  + Change attribute names in _pdbx_nonpoly_atom_coordination and
+    _pdbx_nonpoly_atom_coordination_sphere from comp_id, atom_id, alt_id
+    to label_comp_id, label_atom_id, label_alt_id
+  + Add attributes label_seq_id, auth_asym_id, auth_comp_id, auto_atom_id,
+    PDB_ins_code to _pdbx_nonpoly_atom_coordination and
+    _pdbx_nonpoly_atom_coordination_sphere
+  + Add pdbx_chem_comp_atom_coordination.geometry_abbr
+;
+
+
 
 loop_
 _pdbx_item_linked_group.category_id
@@ -124,6 +136,9 @@ pdbx_nonpoly_atom_coordination           1  pdbx_nonpoly_atom_coordination:atom_
 
 pdbx_nonpoly_atom_coordination_sphere    1  pdbx_nonpoly_atom_coordination_sphere:atom_site:1               . .
 pdbx_nonpoly_atom_coordination_sphere    2  pdbx_nonpoly_atom_coordination_sphere:pdbx_nonpoly_atom_coordination:1        . .
+
+pdbx_nonpoly_atom_coordination_sphere_order    1  pdbx_nonpoly_atom_coordination_sphere_order:atom_site:1               . .
+pdbx_nonpoly_atom_coordination_sphere_order    2  pdbx_nonpoly_atom_coordination_sphere_order:pdbx_nonpoly_atom_coordination:1        . .
 
 pdbx_nonpoly_feature                     1  pdbx_nonpoly_feature:atom_site:1                                . .
 pdbx_nonpoly_feature_evidence            1  pdbx_nonpoly_feature_evidence:atom_site:1                       . .
@@ -146,14 +161,19 @@ pdbx_chem_comp_atom_coordination_sphere  1  '_pdbx_chem_comp_atom_coordination_s
 pdbx_chem_comp_atom_coordination_sphere  2  '_pdbx_chem_comp_atom_coordination_sphere.geometry_id' '_pdbx_chem_comp_atom_coordination.geometry_id'  pdbx_chem_comp_atom_coordination
 
 
-pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.comp_id'             '_atom_site.label_comp_id'                  atom_site
-pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.atom_id'             '_atom_site.label_atom_id'                  atom_site
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.label_comp_id'       '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.label_atom_id'       '_atom_site.label_atom_id'                  atom_site
 pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.label_asym_id'       '_atom_site.label_asym_id'                  atom_site
 
-pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.comp_id'      '_atom_site.label_comp_id'                  atom_site
-pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.atom_id'      '_atom_site.label_atom_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.label_comp_id'      '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.label_atom_id'      '_atom_site.label_atom_id'                  atom_site
 pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.label_asym_id' '_atom_site.label_asym_id'                  atom_site
 pdbx_nonpoly_atom_coordination_sphere    2  '_pdbx_nonpoly_atom_coordination_sphere.geometry_id' '_pdbx_nonpoly_atom_coordination.geometry_id'  pdbx_nonpoly_atom_coordination
+
+pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id'      '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.label_atom_id'      '_atom_site.label_atom_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.label_asym_id' '_atom_site.label_asym_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere_order    2  '_pdbx_nonpoly_atom_coordination_sphere_order.geometry_id' '_pdbx_nonpoly_atom_coordination.geometry_id'  pdbx_nonpoly_atom_coordination
 
 pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.comp_id'                       '_atom_site.label_comp_id'                  atom_site
 pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.label_asym_id'                 '_atom_site.label_asym_id'                  atom_site
@@ -720,11 +740,12 @@ save_pdbx_chem_comp_atom_coordination
     _pdbx_chem_comp_atom_coordination.geometry
     _pdbx_chem_comp_atom_coordination.geometry_generic
     _pdbx_chem_comp_atom_coordination.provenance
+    _pdbx_chem_comp_atom_coordination.geometry_abbr
     _pdbx_chem_comp_atom_coordination.representative_entry_id
-    1 VO4 V 4 tetrahedron           tetrahedral FindGeo     1VNH
-    1 VO4 V 4 tetrahedral           tetrahedral MetalCoord  1VNH
-    2 VO4 V 5 'trigonal bipyramid' 'trigonal bipyramidal'   FindGeo 1RPT
-    2 VO4 V 5 trigonal-bipyramid   'trigonal bipyramidal'   FindGeo 1RPT
+    1 VO4 V 4 tetrahedron           tetrahedral             FindGeo     .    1VNH
+    1 VO4 V 4 tetrahedral           tetrahedral             MetalCoord  TET  1VNH
+    2 VO4 V 5 'trigonal bipyramid' 'trigonal bipyramidal'   FindGeo     .    1RPT
+    2 VO4 V 5 trigonal-bipyramid   'trigonal bipyramidal'   MetalCoord  TET  1RPT
 ;
 ;
     Example 2 -
@@ -738,15 +759,16 @@ save_pdbx_chem_comp_atom_coordination
     _pdbx_chem_comp_atom_coordination.geometry
     _pdbx_chem_comp_atom_coordination.geometry_generic
     _pdbx_chem_comp_atom_coordination.provenance
+    _pdbx_chem_comp_atom_coordination.geometry_abbr
     _pdbx_chem_comp_atom_coordination.representative_entry_id
-    1 SF4 FE1 4 tetrahedron tetrahedral FindGeo 7NPA    
-    1 SF4 FE1 4 tetrahedral tetrahedral MetalCoord 2C42 
-    2 SF4 FE2 4 tetrahedron tetrahedral FindGeo 7NPA    
-    2 SF4 FE2 4 tetrahedral tetrahedral MetalCoord 8RIU 
-    3 SF4 FE3 4 tetrahedron tetrahedral FindGeo 1GTE    
-    3 SF4 FE3 4 tetrahedral tetrahedral MetalCoord 7NPA  
-    4 SF4 FE4 4 tetrahedron tetrahedral FindGeo 2FD2    
-    4 SF4 FE4 4 tetrahedral tetrahedral MetalCoord 2FD2;
+    1 SF4 FE1 4 tetrahedron tetrahedral FindGeo    .    7NPA    
+    1 SF4 FE1 4 tetrahedral tetrahedral MetalCoord TET  2C42 
+    2 SF4 FE2 4 tetrahedron tetrahedral FindGeo    .    7NPA    
+    2 SF4 FE2 4 tetrahedral tetrahedral MetalCoord TET  8RIU 
+    3 SF4 FE3 4 tetrahedron tetrahedral FindGeo    .    1GTE    
+    3 SF4 FE3 4 tetrahedral tetrahedral MetalCoord TET  7NPA  
+    4 SF4 FE4 4 tetrahedron tetrahedral FindGeo    .    2FD2    
+    4 SF4 FE4 4 tetrahedral tetrahedral MetalCoord TET  2FD2
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -821,7 +843,8 @@ save__pdbx_chem_comp_atom_coordination.number
 
 save__pdbx_chem_comp_atom_coordination.geometry
     _item_description.description
-;              This data item contains the geometry output from a software program (for example, FindGeo or MetalCoord).  
+;              This data item contains the geometry output from a software program (for example, FindGeo or MetalCoord).
+               The geometry derived from observed geometries in atomic coordinate files.
 ;
     _item.name                  '_pdbx_chem_comp_atom_coordination.geometry'
     _item.category_id             pdbx_chem_comp_atom_coordination
@@ -833,7 +856,8 @@ save__pdbx_chem_comp_atom_coordination.geometry_generic
 ;              This data item translates the geometry output from a software program (for example, FindGeo or MetalCoord) into
                a unified naming scheme. As software programs sometimes have different names for the same geometry (for instance,
 	       'tetrahedral' and 'tetrahedron' correspond to the same geometry), this data item provides a name for
-	       the geometry that is consistent regardless of the provenance to enhance findability.
+	       the geometry that is consistent regardless of the provenance to enhance findability. The geometry derived
+	       from observed geometries in atomic coordinate files.
 ;
     _item.name                  '_pdbx_chem_comp_atom_coordination.geometry_generic'
     _item.category_id             pdbx_chem_comp_atom_coordination
@@ -948,7 +972,20 @@ save__pdbx_chem_comp_atom_coordination.geometry_generic
           'sandwich 8 8 v'                          ?
           'ball'                                    ?
 	  'irregular'                               ?
+     save_
 
+save__pdbx_chem_comp_atom_coordination.geometry_abbr
+    _item_description.description
+;              This data item lists the abbreviated name of the geometry, as specified in the
+               _pdbx_chem_comp_atom_coordination_sphere.descriptor. For instance, square planar
+	       is abbreviated to SPL. The geometry derived from observed geometries in atomic coordinate files.
+;
+    _item.name                  '_pdbx_chem_comp_atom_coordination.geometry_abbr'
+    _item.category_id             pdbx_chem_comp_atom_coordination
+    _item.mandatory_code          no
+    _item_type.code               code
+    save_
+    
 save__pdbx_chem_comp_atom_coordination.provenance
     _item_description.description
 ;              The provenance of the feature assigned to this atom.
@@ -1014,8 +1051,8 @@ save_pdbx_chem_comp_atom_coordination_sphere
     _pdbx_chem_comp_atom_coordination_sphere.descriptor
     _pdbx_chem_comp_atom_coordination_sphere.provenance
     _pdbx_chem_comp_atom_coordination_sphere.representative_entry_id
-    1 1 VO4 V 'V(O)(O)(O)(O){OVO<109.5>,OVO<109.5>,OVO<109.5>,OVO<109.5>,OVO<109.5>,OVO<109.5>}'                      PDB 1VNH
-    2 2 VO4 V 'V(N)(O)(O)(O)(O){NVO<90>,NVO<90>,NVO<90>,NVO<180>,OVO<120>,OVO<120>,OVO<90>,OVO<120>,OVN<90>,OVO<90>}' PDB 1RPT
+    1 1 VO4 V @TET{V,O,O,O,O}   MetalCoord  1VNH
+    2 2 VO4 V @TBP{V,N,O,O,O,O} MetalCoord  1RPT
 ;
 ;
     Example 2 -
@@ -1029,21 +1066,21 @@ save_pdbx_chem_comp_atom_coordination_sphere
     _pdbx_chem_comp_atom_coordination_sphere.descriptor
     _pdbx_chem_comp_atom_coordination_sphere.provenance
     _pdbx_chem_comp_atom_coordination_sphere.representative_entry_id
-    1    1  SF4 FE1 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 2C42    
-    2    1  SF4 FE1 'Fe(N)(S)(S)(S){NFeS<109.5>,NFeS<109.5>,NFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 7LJT  
-    3    1  SF4 FE1 'Fe(O)(S)(S)(S){OFeS<109.5>,OFeS<109.5>,OFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 8VPO    
-    4    2  SF4 FE2 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 8RIU     
-    5    2  SF4 FE2 'Fe(N)(S)(S)(S){NFeS<109.5>,NFeS<109.5>,NFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 6Z7R 
-    6    2  SF4 FE2 'Fe(O)(S)(S)(S){OFeS<109.5>,OFeS<109.5>,OFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 8RIU     
-    7    2  SF4 FE2 'Fe(S)(S)(S)(Cl){SFeS<109.5>,SFeS<109.5>,SFeCl<109.5>,SFeS<109.5>,SFeCl<109.5>,SFeCl<109.5>}' PDB 8CP4 
-    8    3  SF4 FE3 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 7NPA    
-    9    3  SF4 FE3 'Fe(N)(S)(S)(S){NFeS<109.5>,NFeS<109.5>,NFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 6GAL 
-    10   3  SF4 FE3 'Fe(O)(S)(S)(S){OFeS<109.5>,OFeS<109.5>,OFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 7M31    
-    11   3  SF4 FE3 'Fe(S)(S)(S)(Cl){SFeS<109.5>,SFeS<109.5>,SFeCl<109.5>,SFeS<109.5>,SFeCl<109.5>,SFeCl<109.5>}' PDB 7P4M  
-    12   4  SF4 FE4 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 2FD2    
-    13   4  SF4 FE4 'Fe(N)(S)(S)(S){NFeS<109.5>,NFeS<109.5>,NFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 8POW 
-    14   4  SF4 FE4 'Fe(O)(S)(S)(S){OFeS<109.5>,OFeS<109.5>,OFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}'     PDB 5EXJ    
-    15   4  SF4 FE4 'Fe(S)(S)(S)(Cl){SFeS<109.5>,SFeS<109.5>,SFeCl<109.5>,SFeS<109.5>,SFeCl<109.5>,SFeCl<109.5>}' PDB 4S28
+    1    1  SF4  FE1  @TET{Fe,S,S,S,S}   MetalCoord  2C42    
+    2    1  SF4  FE1  @TET{Fe,N,S,S,S}   MetalCoord  7LJT  
+    3    1  SF4  FE1  @TET{Fe,O,S,S,S}   MetalCoord  8VPO    
+    4    2  SF4  FE2  @TET{Fe,S,S,S,S}   MetalCoord  8RIU     
+    5    2  SF4  FE2  @TET{Fe,N,S,S,S}   MetalCoord  6Z7R 
+    6    2  SF4  FE2  @TET{Fe,O,S,S,S}   MetalCoord  8RIU     
+    7    2  SF4  FE2  @TET{Fe,S,S,S,Cl}  MetalCoord  8CP4 
+    8    3  SF4  FE3  @TET{Fe,S,S,S,S}   MetalCoord  7NPA    
+    9    3  SF4  FE3  @TET{Fe,N,S,S,S}   MetalCoord  6GAL 
+    10   3  SF4  FE3  @TET{Fe,O,S,S,S}   MetalCoord  7M31    
+    11   3  SF4  FE3  @TET{Fe,S,S,S,Cl}  MetalCoord  7P4M  
+    12   4  SF4  FE4  @TET{Fe,S,S,S,S}   MetalCoord  2FD2    
+    13   4  SF4  FE4  @TET{Fe,N,S,S,S}   MetalCoord  8POW 
+    14   4  SF4  FE4  @TET{Fe,O,S,S,S}   MetalCoord  5EXJ    
+    15   4  SF4  FE4  @TET{Fe,S,S,S,Cl}  MetalCoord  4S28
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -1105,7 +1142,9 @@ save__pdbx_chem_comp_atom_coordination_sphere.atom_id
 
 save__pdbx_chem_comp_atom_coordination_sphere.descriptor
     _item_description.description
-;              A descriptor describing the geometry of this atom.
+;              This data item contains a descriptor of the coordination environment of
+               an atom. The descriptor is derived from observed coordination environments
+	       in atomic coordinate files.
 ;
     _item.name                  '_pdbx_chem_comp_atom_coordination_sphere.descriptor'
     _item.category_id             pdbx_chem_comp_atom_coordination_sphere
@@ -1172,16 +1211,23 @@ save_pdbx_nonpoly_atom_coordination
     loop_
     _pdbx_nonpoly_atom_coordination.geometry_id
     _pdbx_nonpoly_atom_coordination.label_asym_id 
-    _pdbx_nonpoly_atom_coordination.comp_id
-    _pdbx_nonpoly_atom_coordination.atom_id
-    _pdbx_nonpoly_atom_coordination.alt_id
+    _pdbx_nonpoly_atom_coordination.label_seq_id
+    _pdbx_nonpoly_atom_coordination.label_comp_id
+    _pdbx_nonpoly_atom_coordination.label_atom_id
+    _pdbx_nonpoly_atom_coordination.label_alt_id
+    _pdbx_nonpoly_atom_coordination.auth_asym_id
+    _pdbx_nonpoly_atom_coordination.auth_seq_id
+    _pdbx_nonpoly_atom_coordination.auth_comp_id
+    _pdbx_nonpoly_atom_coordination.auth_atom_id
+    _pdbx_nonpoly_atom_coordination.PDB_ins_code
     _pdbx_nonpoly_atom_coordination.number
     _pdbx_nonpoly_atom_coordination.geometry
     _pdbx_nonpoly_atom_coordination.geometry_generic
+    _pdbx_nonpoly_atom_coordination.geometry_abbr
     _pdbx_nonpoly_atom_coordination.provenance
     _pdbx_nonpoly_atom_coordination.assessment
-    1 D VO4 V ? 5 'trigonal bipyramid (regular)' 'trigonal bipyramidal' FindGeo    Expected
-    1 D VO4 V ? 5 trigonal-bipyramid             'trigonal bipyramidal' MetalCoord Expected
+    1 D . VO4 V ? A 343 VO4 V ? 5 'trigonal bipyramid (regular)' 'trigonal bipyramidal' .    FindGeo    Expected
+    1 D . VO4 V ? A 343 VO4 V ? 5 trigonal-bipyramid             'trigonal bipyramidal' TBP  MetalCoord Expected
 ;
 ;
     Example 2 - based on 1HIP: 
@@ -1190,22 +1236,29 @@ save_pdbx_nonpoly_atom_coordination
     loop_
     _pdbx_nonpoly_atom_coordination.geometry_id
     _pdbx_nonpoly_atom_coordination.label_asym_id 
-    _pdbx_nonpoly_atom_coordination.comp_id
-    _pdbx_nonpoly_atom_coordination.atom_id
-    _pdbx_nonpoly_atom_coordination.alt_id
+    _pdbx_nonpoly_atom_coordination.label_seq_id
+    _pdbx_nonpoly_atom_coordination.label_comp_id
+    _pdbx_nonpoly_atom_coordination.label_atom_id
+    _pdbx_nonpoly_atom_coordination.label_alt_id
+    _pdbx_nonpoly_atom_coordination.auth_asym_id
+    _pdbx_nonpoly_atom_coordination.auth_seq_id
+    _pdbx_nonpoly_atom_coordination.auth_comp_id
+    _pdbx_nonpoly_atom_coordination.auth_atom_id
+    _pdbx_nonpoly_atom_coordination.PDB_ins_code
     _pdbx_nonpoly_atom_coordination.number
     _pdbx_nonpoly_atom_coordination.geometry
     _pdbx_nonpoly_atom_coordination.geometry_generic
     _pdbx_nonpoly_atom_coordination.provenance
+    _pdbx_nonpoly_atom_coordination.geometry_abbr
     _pdbx_nonpoly_atom_coordination.assessment            
-    1 B SF4 FE1 ? 4 'tetrahedron (regular)' tetrahedral FindGeo    Expected
-    1 B SF4 FE1 ? 4 tetrahedral             tetrahedral MetalCoord Expected
-    2 B SF4 FE2 ? 4 'tetrahedron (regular)' tetrahedral FindGeo    Expected
-    2 B SF4 FE2 ? 4 tetrahedral             tetrahedral MetalCoord Expected
-    3 B SF4 FE3 ? 4 'tetrahedron (regular)' tetrahedral FindGeo    Expected
-    3 B SF4 FE3 ? 4 tetrahedral             tetrahedral MetalCoord Expected
-    4 B SF4 FE4 ? 4 'tetrahedron (regular)' tetrahedral FindGeo    Expected
-    4 B SF4 FE4 ? 4 tetrahedral             tetrahedral MetalCoord Expected
+    1 B . SF4 FE1 ? A 86 SF4 FE1 ?  4 'tetrahedron (regular)' tetrahedral FindGeo    .    Expected
+    1 B . SF4 FE1 ? A 86 SF4 FE1 ?  4 tetrahedral             tetrahedral MetalCoord TET  Expected
+    2 B . SF4 FE2 ? A 86 SF4 FE2 ?  4 'tetrahedron (regular)' tetrahedral FindGeo    .    Expected
+    2 B . SF4 FE2 ? A 86 SF4 FE2 ?  4 tetrahedral             tetrahedral MetalCoord TET  Expected
+    3 B . SF4 FE3 ? A 86 SF4 FE3 ?  4 'tetrahedron (regular)' tetrahedral FindGeo    .    Expected
+    3 B . SF4 FE3 ? A 86 SF4 FE3 ?  4 tetrahedral             tetrahedral MetalCoord TET  Expected
+    4 B . SF4 FE4 ? A 86 SF4 FE4 ?  4 'tetrahedron (regular)' tetrahedral FindGeo    .    Expected
+    4 B . SF4 FE4 ? A 86 SF4 FE4 ?  4 tetrahedral             tetrahedral MetalCoord TET  Expected
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -1239,44 +1292,142 @@ save__pdbx_nonpoly_atom_coordination.label_asym_id
     _item_linked.parent_name    '_atom_site.label_asym_id'
      save_
 
-save__pdbx_nonpoly_atom_coordination.comp_id
+save__pdbx_nonpoly_atom_coordination.label_seq_id
    #
    _item_description.description
-;              This data item is a pointer to _chem_comp_atom.comp_id in the CHEM_COMP
+;              This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+   #
+   _item.name                   '_pdbx_nonpoly_atom_coordination.label_seq_id'
+   _item.category_id             pdbx_nonpoly_atom_coordination
+   _item.mandatory_code           no
+   # _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.label_seq_id'
+   # _item_linked.parent_name    '_atom_site.label_seq_id'
+   _item_type.code                int
+save_
+
+save__pdbx_nonpoly_atom_coordination.label_comp_id
+   #
+   _item_description.description
+;              This data item is a pointer to _atom_site.label_comp_id in the ATOM_SITE
                category.
 ;
    #
-   _item.name                   '_pdbx_nonpoly_atom_coordination.comp_id'
+   _item.name                   '_pdbx_nonpoly_atom_coordination.label_comp_id'
    _item.category_id              pdbx_nonpoly_atom_coordination
    _item.mandatory_code           yes
-    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.comp_id'
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.label_comp_id'
     _item_linked.parent_name    '_atom_site.label_comp_id'
    _item_type.code                ucode
 save_
 
-save__pdbx_nonpoly_atom_coordination.atom_id
+save__pdbx_nonpoly_atom_coordination.label_atom_id
     _item_description.description
 ;              The identifier for the target atom to which the feature is assigned.
 ;
-    _item.name                  '_pdbx_nonpoly_atom_coordination.atom_id'
+    _item.name                  '_pdbx_nonpoly_atom_coordination.label_atom_id'
     _item.category_id             pdbx_nonpoly_atom_coordination
     _item.mandatory_code          yes
     _item_type.code               atcode
-    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.atom_id'
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.label_atom_id'
     _item_linked.parent_name    '_atom_site.label_atom_id'
      save_
 
-save__pdbx_nonpoly_atom_coordination.alt_id
+save__pdbx_nonpoly_atom_coordination.label_alt_id
    _item_description.description  
 ;              A place holder to indicate alternate conformation. 
 ;
    #
-   _item.name            "_pdbx_nonpoly_atom_coordination.alt_id"
-   _item.mandatory_code  no
+   _item.name                   "_pdbx_nonpoly_atom_coordination.label_alt_id"
+   _item.category_id             pdbx_nonpoly_atom_coordination
+   _item.mandatory_code          no
    #
-   _item_type.code  code
+   _item_type.code               code
    #
 save_
+
+
+save__pdbx_nonpoly_atom_coordination.auth_asym_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                    "_pdbx_nonpoly_atom_coordination.auth_asym_id"
+   _item.category_id             pdbx_nonpoly_atom_coordination
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+   save_
+
+save__pdbx_nonpoly_atom_coordination.auth_seq_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                   "_pdbx_nonpoly_atom_coordination.auth_seq_id"
+   _item.category_id             pdbx_nonpoly_atom_coordination
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+save_
+
+save__pdbx_nonpoly_atom_coordination.auth_comp_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_comp_id in
+               the ATOM_SITE category.
+;
+
+   #
+   _item.name                   "_pdbx_nonpoly_atom_coordination.auth_comp_id"
+   _item.category_id             pdbx_nonpoly_atom_coordination
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+save_
+
+
+save__pdbx_nonpoly_atom_coordination.auth_atom_id
+   _item_description.description  
+;              A component of the identifier for partner 1 of the structure
+               connection.
+
+               This data item is a pointer to _atom_site.auth_atom_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                  "_pdbx_nonpoly_atom_coordination.auth_atom_id"
+   _item.category_id           pdbx_nonpoly_atom_coordination
+   _item.mandatory_code        no
+   _item_type.code             atcode
+   #
+save_
+
+save__pdbx_nonpoly_atom_coordination.PDB_ins_code
+   _item_description.description
+;              PDB insertion code.
+;
+   #
+   _item.name                 "_pdbx_nonpoly_atom_coordination.PDB_ins_code"
+   _item.category_id           pdbx_nonpoly_atom_coordination
+   _item.mandatory_code        no
+   #
+   _item_type.code             code
+   save_
 
 
 save__pdbx_nonpoly_atom_coordination.number
@@ -1306,7 +1457,8 @@ save__pdbx_nonpoly_atom_coordination.number
 save__pdbx_nonpoly_atom_coordination.geometry
     _item_description.description
 ;              This data item contains the geometry output from a software program
-               (for example, FindGeo or MetalCoord).
+               (for example, FindGeo or MetalCoord). The geometry is based on what
+	       is observed in the coordinate file.
 ;
     _item.name                  '_pdbx_nonpoly_atom_coordination.geometry'
     _item.category_id             pdbx_nonpoly_atom_coordination
@@ -1315,10 +1467,25 @@ save__pdbx_nonpoly_atom_coordination.geometry
 
 save__pdbx_nonpoly_atom_coordination.geometry_generic
     _item_description.description
-;              This data item translates the geometry output from a software program (for example, FindGeo or MetalCoord) into
-               a unified naming scheme. As software programs sometimes have different names for the same geometry (for instance,
-	       'tetrahedral' and 'tetrahedron' correspond to the same geometry), this data item provides a name for
-	       the geometry that is consistent regardless of the provenance to enhance findability.
+;              This data item translates the geometry output from a
+               software program (for example, FindGeo or MetalCoord)
+               into a unified naming scheme. As software programs
+               sometimes have different names for the same geometry
+               (for instance, 'tetrahedral' and 'tetrahedron'
+               correspond to the same geometry), this data item
+               provides a name for the geometry that is consistent
+               regardless of the provenance to enhance
+               findability. The geometry is based on what is observed
+               in the coordinate file.
+
+               Description of _pdbx_nonpoly_atom_coordination.geometry_abbr:
+
+               This data item lists the abbreviated name of the
+               geometry, as specified in the
+               _pdbx_nonpoly_atom_coordination_sphere.descriptor. For
+               instance, square planar is abbreviated to SPL. The
+               geometry is based on what is observed in the coordinate
+               file.
 ;
     _item.name                  '_pdbx_nonpoly_atom_coordination.geometry_generic'
     _item.category_id             pdbx_nonpoly_atom_coordination
@@ -1434,6 +1601,18 @@ save__pdbx_nonpoly_atom_coordination.geometry_generic
           'ball'                                    ?
 	  'irregular'                               ?
 
+save__pdbx_nonpoly_atom_coordination.geometry_abbr
+    _item_description.description
+;              This data item lists the abbreviated name of the geometry, as specified in the
+               _pdbx_nonpoly_atom_coordination_sphere.descriptor. For instance, square planar
+	       is abbreviated to SPL. The geometry derived from observed geometries in atomic coordinate files.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination.geometry_abbr'
+    _item.category_id             pdbx_nonpoly_atom_coordination
+    _item.mandatory_code          no
+    _item_type.code               code
+    save_
+
 save__pdbx_nonpoly_atom_coordination.provenance
     _item_description.description
 ;              The provenance of the feature assigned to this atom.
@@ -1487,8 +1666,8 @@ save_pdbx_nonpoly_atom_coordination_sphere
     _category.mandatory_code      no
     loop_
     _category_key.name           '_pdbx_nonpoly_atom_coordination_sphere.geometry_id'
-                                 '_pdbx_nonpoly_atom_coordination_sphere.comp_id'
-                                 '_pdbx_nonpoly_atom_coordination_sphere.atom_id'
+                                 '_pdbx_nonpoly_atom_coordination_sphere.label_comp_id'
+                                 '_pdbx_nonpoly_atom_coordination_sphere.label_atom_id'
 	   
     loop_
     _category_group.id           'inclusive_group'
@@ -1504,12 +1683,18 @@ save_pdbx_nonpoly_atom_coordination_sphere
     loop_
     _pdbx_nonpoly_atom_coordination_sphere.geometry_id
     _pdbx_nonpoly_atom_coordination_sphere.label_asym_id
-    _pdbx_nonpoly_atom_coordination_sphere.comp_id
-    _pdbx_nonpoly_atom_coordination_sphere.atom_id
-    _pdbx_nonpoly_atom_coordination_sphere.alt_id
+    _pdbx_nonpoly_atom_coordination_sphere.label_seq_id
+    _pdbx_nonpoly_atom_coordination_sphere.label_comp_id
+    _pdbx_nonpoly_atom_coordination_sphere.label_atom_id
+    _pdbx_nonpoly_atom_coordination_sphere.label_alt_id
+    _pdbx_nonpoly_atom_coordination_sphere.auth_asym_id
+    _pdbx_nonpoly_atom_coordination_sphere.auth_seq_id
+    _pdbx_nonpoly_atom_coordination_sphere.auth_comp_id 
+    _pdbx_nonpoly_atom_coordination_sphere.auth_atom_id 
+    _pdbx_nonpoly_atom_coordination_sphere.PDB_ins_code
     _pdbx_nonpoly_atom_coordination_sphere.descriptor
     _pdbx_nonpoly_atom_coordination_sphere.provenance
-    1 D VO4 V ? 'V(N)(O)(O)(O)(O){NVO<90>,NVO<90>,NVO<90>,NVO<180>,OVO<120>,OVO<120>,OVO<90>,OVO<120>,OVN<90>,OVO<90>}' PDB
+    1 D . VO4 V ? A 343 VO4 V ? @TBP{V,N,O,O,O,O} MetalCoord
 ;
 ;
     Example 2 - based on 1HIP
@@ -1518,15 +1703,21 @@ save_pdbx_nonpoly_atom_coordination_sphere
     loop_
     _pdbx_nonpoly_atom_coordination_sphere.geometry_id
     _pdbx_nonpoly_atom_coordination_sphere.label_asym_id
-    _pdbx_nonpoly_atom_coordination_sphere.comp_id
-    _pdbx_nonpoly_atom_coordination_sphere.atom_id
-    _pdbx_nonpoly_atom_coordination_sphere.alt_id
+    _pdbx_nonpoly_atom_coordination_sphere.label_seq_id
+    _pdbx_nonpoly_atom_coordination_sphere.label_comp_id
+    _pdbx_nonpoly_atom_coordination_sphere.label_atom_id
+    _pdbx_nonpoly_atom_coordination_sphere.label_alt_id
+    _pdbx_nonpoly_atom_coordination_sphere.auth_asym_id
+    _pdbx_nonpoly_atom_coordination_sphere.auth_seq_id
+    _pdbx_nonpoly_atom_coordination_sphere.auth_comp_id 
+    _pdbx_nonpoly_atom_coordination_sphere.auth_atom_id 
+    _pdbx_nonpoly_atom_coordination_sphere.PDB_ins_code 
     _pdbx_nonpoly_atom_coordination_sphere.descriptor
     _pdbx_nonpoly_atom_coordination_sphere.provenance
-    1 B SF4 FE1 ? 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB
-    2 B SF4 FE2 ? 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB
-    3 B SF4 FE3 ? 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB
-    4 B SF4 FE4 ? 'Fe(S)(S)(S)(S){SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>,SFeS<109.5>}' PDB
+    1 B . SF4 FE1 ? A 86 SF4 FE1 ? @TET{Fe,S,S,S,S} MetalCoord
+    2 B . SF4 FE1 ? A 86 SF4 FE1 ? @TET{Fe,S,S,S,S} MetalCoord
+    3 B . SF4 FE1 ? A 86 SF4 FE1 ? @TET{Fe,S,S,S,S} MetalCoord
+    4 B . SF4 FE1 ? A 86 SF4 FE1 ? @TET{Fe,S,S,S,S} MetalCoord
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -1561,48 +1752,147 @@ save__pdbx_nonpoly_atom_coordination_sphere.label_asym_id
     _item_linked.parent_name    '_atom_site.label_asym_id'
      save_
 
-save__pdbx_nonpoly_atom_coordination_sphere.comp_id
+save__pdbx_nonpoly_atom_coordination_sphere.label_seq_id
    #
    _item_description.description
-;              This data item is a pointer to _chem_comp_atom.comp_id in the CHEM_COMP
+;              This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+   #
+   _item.name                   '_pdbx_nonpoly_atom_coordination_sphere.label_seq_id'
+   _item.category_id             pdbx_nonpoly_atom_coordination_sphere
+   _item.mandatory_code           no
+   # _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere.label_seq_id'
+   # _item_linked.parent_name    '_atom_site.label_seq_id'
+   _item_type.code                int
+    save_
+
+save__pdbx_nonpoly_atom_coordination_sphere.label_comp_id
+   #
+   _item_description.description
+;              This data item is a pointer to _atom_site.comp_id in the ATOM_SITE
                category.
 ;
    #
-   _item.name                   '_pdbx_nonpoly_atom_coordination_sphere.comp_id'
+   _item.name                   '_pdbx_nonpoly_atom_coordination_sphere.label_comp_id'
    _item.category_id              pdbx_nonpoly_atom_coordination_sphere
    _item.mandatory_code           yes
-   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere.comp_id'
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere.label_comp_id'
    _item_linked.parent_name     '_atom_site.label_comp_id'
    _item_type.code                ucode
 save_
 
-save__pdbx_nonpoly_atom_coordination_sphere.alt_id
+save__pdbx_nonpoly_atom_coordination_sphere.label_atom_id
+    _item_description.description
+;              The identifier for the target atom to which the feature is assigned.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination_sphere.label_atom_id'
+    _item.category_id             pdbx_nonpoly_atom_coordination_sphere
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere.label_atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_nonpoly_atom_coordination_sphere.label_alt_id
    _item_description.description  
 ;              A place holder to indicate alternate conformation. 
 ;
    #
-   _item.name            "_pdbx_nonpoly_atom_coordination_sphere.alt_id"
-   _item.mandatory_code  no
+   _item.name                   "_pdbx_nonpoly_atom_coordination_sphere.label_alt_id"
+    _item.category_id             pdbx_nonpoly_atom_coordination_sphere
+   _item.mandatory_code           no
    #
-   _item_type.code  code
+   _item_type.code                code
+   #
+   save_
+
+save__pdbx_nonpoly_atom_coordination_sphere.auth_asym_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                    "_pdbx_nonpoly_atom_coordination_sphere.auth_asym_id"
+   _item.category_id             pdbx_nonpoly_atom_coordination_sphere
+   _item.mandatory_code          no
+   _item_type.code               code
    #
 save_
 
-save__pdbx_nonpoly_atom_coordination_sphere.atom_id
-    _item_description.description
-;              The identifier for the target atom to which the feature is assigned.
+save__pdbx_nonpoly_atom_coordination_sphere.auth_seq_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
 ;
-    _item.name                  '_pdbx_nonpoly_atom_coordination_sphere.atom_id'
-    _item.category_id             pdbx_nonpoly_atom_coordination_sphere
-    _item.mandatory_code          yes
-    _item_type.code               atcode
-    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere.atom_id'
-    _item_linked.parent_name    '_atom_site.label_atom_id'
-     save_
+
+   #
+   _item.name                   "_pdbx_nonpoly_atom_coordination_sphere.auth_seq_id"
+   _item.category_id             pdbx_nonpoly_atom_coordination_sphere
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+save_
+
+save__pdbx_nonpoly_atom_coordination_sphere.auth_comp_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_comp_id in
+               the ATOM_SITE category.
+;
+
+   #
+   _item.name                   "_pdbx_nonpoly_atom_coordination_sphere.auth_comp_id"
+   _item.category_id             pdbx_nonpoly_atom_coordination_sphere
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+save_
+
+save__pdbx_nonpoly_atom_coordination_sphere.auth_atom_id
+   _item_description.description  
+;              A component of the identifier for partner 1 of the structure
+               connection.
+
+               This data item is a pointer to _atom_site.auth_atom_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                  "_pdbx_nonpoly_atom_coordination_sphere.auth_atom_id"
+   _item.category_id           pdbx_nonpoly_atom_coordination_sphere
+   _item.mandatory_code        no
+   _item_type.code             atcode
+   #
+   save_
+
+save__pdbx_nonpoly_atom_coordination_sphere.PDB_ins_code
+   _item_description.description
+;              PDB insertion code.
+;
+   #
+   _item.name                 "_pdbx_nonpoly_atom_coordination_sphere.PDB_ins_code"
+   _item.category_id           pdbx_nonpoly_atom_coordination_sphere
+   _item.mandatory_code        no
+   #
+   _item_type.code             code
+   save_
+
 
 save__pdbx_nonpoly_atom_coordination_sphere.descriptor
     _item_description.description
-;              A descriptor describing the geometry of this atom.
+;              This data item contains a descriptor of the coordination environment
+               of an atom. The descriptor is based on what is observed in the coordinate
+	       file.
 ;
     _item.name                  '_pdbx_nonpoly_atom_coordination_sphere.descriptor'
     _item.category_id             pdbx_nonpoly_atom_coordination_sphere
@@ -1627,6 +1917,265 @@ save__pdbx_nonpoly_atom_coordination_sphere.provenance
       MetalCoord ?
      save_
 
+###############################################
+# pdbx_nonpoly_atom_coordination_sphere_order #
+###############################################
+save_pdbx_nonpoly_atom_coordination_sphere_order
+    _category.description
+;             Data items in the PDBX_NONPOLY_ATOM_COORDINATION_SPHERE_ORDER category provide
+              ordering of the atoms in the coordination sphere.
+;
+    _category.id                  pdbx_nonpoly_atom_coordination_sphere_order
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_nonpoly_atom_coordination_sphere_order.geometry_id'
+                                 '_pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id'
+                                 '_pdbx_nonpoly_atom_coordination_sphere_order.label_atom_id'
+	   
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'pdbx_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - based on 1RPT
+;
+;
+    loop_
+    _pdbx_nonpoly_atom_coordination_sphere_order.geometry_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.label_asym_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.label_seq_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.label_atom_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.label_alt_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.auth_asym_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.auth_seq_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.auth_comp_id 
+    _pdbx_nonpoly_atom_coordination_sphere_order.auth_atom_id 
+    _pdbx_nonpoly_atom_coordination_sphere_order.PDB_ins_code 
+    _pdbx_nonpoly_atom_coordination_sphere_order.atom_place 
+    1 A 12 HIS NE2 ? A 12  HIS NE2 ? 1
+    1 D .  VO4 O1  ? A 343 VO4 O1  ? 2
+    1 D .  VO4 O2  ? A 343 VO4 O2  ? 3
+    1 D .  VO4 O3  ? A 343 VO4 O3  ? 4
+    1 D .  VO4 O4  ? A 343 VO4 O4  ? 5
+;
+;
+    Example 2 - based on 1HIP
+;
+;
+    loop_
+    _pdbx_nonpoly_atom_coordination_sphere_order.geometry_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.label_asym_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.label_seq_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.label_atom_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.label_alt_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.auth_asym_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.auth_seq_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.auth_comp_id 
+    _pdbx_nonpoly_atom_coordination_sphere_order.auth_atom_id 
+    _pdbx_nonpoly_atom_coordination_sphere_order.PDB_ins_code 
+    _pdbx_nonpoly_atom_coordination_sphere_order.atom_place 
+    1 B .  SF4 FE1 ? A 86 SF4 FE1 ? 1
+    1 B .  SF4 FE1 ? A 86 SF4 FE1 ? 2
+    1 B .  SF4 FE1 ? A 86 SF4 FE1 ? 3
+    1 A 43 CYS SG  ? A 43 CYS SG  ? 4
+    2 B .  SF4 FE2 ? A 86 SF4 FE2 ? 1
+    2 B .  SF4 FE2 ? A 86 SF4 FE2 ? 2
+    2 B .  SF4 FE2 ? A 86 SF4 FE2 ? 3
+    2 A 46 CYS SG  ? A 46 CYS SG  ? 4
+    3 B .  SF4 FE3 ? A 86 SF4 FE3 ? 1
+    3 B .  SF4 FE3 ? A 86 SF4 FE3 ? 2
+    3 B .  SF4 FE3 ? A 86 SF4 FE3 ? 3
+    3 A 63 CYS SG  ? A 63 CYS SG  ? 4
+    4 B .  SF4 FE4 ? A 86 SF4 FE4 ? 1
+    4 B .  SF4 FE4 ? A 86 SF4 FE4 ? 2
+    4 B .  SF4 FE4 ? A 86 SF4 FE4 ? 3
+    4 A 77 CYS SG  ? A 77 CYS SG ? 4
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+
+save__pdbx_nonpoly_atom_coordination_sphere_order.geometry_id
+   #
+   _item_description.description
+;              This data item is a foreign key to
+               _pdbx_nonpoly_atom_coordination_sphere.geometry_id.
+               This item maps the coordination sphere order to a
+               specific coordination sphere described in the
+               pdbx_nonpoly_atom_coordination_sphere category.
+;
+   #
+   _item.name                     '_pdbx_nonpoly_atom_coordination_sphere_order.geometry_id'
+   _item.category_id              pdbx_nonpoly_atom_coordination_sphere_order
+   _item.mandatory_code           yes
+   #
+   _item_type.code                int
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere_order.geometry_id'
+   _item_linked.parent_name     '_pdbx_nonpoly_atom_coordination.geometry_id'
+save_
+
+save__pdbx_nonpoly_atom_coordination_sphere_order.label_asym_id
+    _item_description.description
+;              The identifier of the instance of the STRUCT_ASYM_ID to which this feature applies.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination_sphere_order.label_asym_id'
+    _item.category_id             pdbx_nonpoly_atom_coordination_sphere_order
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere_order.label_asym_id'
+    _item_linked.parent_name    '_atom_site.label_asym_id'
+     save_
+
+save__pdbx_nonpoly_atom_coordination_sphere_order.label_seq_id
+   #
+   _item_description.description
+;              This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+   #
+   _item.name                   '_pdbx_nonpoly_atom_coordination_sphere_order.label_seq_id'
+   _item.category_id             pdbx_nonpoly_atom_coordination_sphere_order
+   _item.mandatory_code           no
+   # _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere_order.label_seq_id'
+   # _item_linked.parent_name    '_atom_site.label_seq_id'
+   _item_type.code                int
+    save_
+
+save__pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id
+   #
+   _item_description.description
+;              This data item is a pointer to _atom_site.comp_id in the ATOM_SITE
+               category.
+;
+   #
+   _item.name                   '_pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id'
+   _item.category_id              pdbx_nonpoly_atom_coordination_sphere_order
+   _item.mandatory_code           yes
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id'
+   _item_linked.parent_name     '_atom_site.label_comp_id'
+   _item_type.code                ucode
+save_
+
+save__pdbx_nonpoly_atom_coordination_sphere_order.label_atom_id
+    _item_description.description
+;              The identifier for the target atom to which the feature is assigned.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination_sphere_order.label_atom_id'
+    _item.category_id             pdbx_nonpoly_atom_coordination_sphere_order
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere_order.label_atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_nonpoly_atom_coordination_sphere_order.label_alt_id
+   _item_description.description  
+;              A place holder to indicate alternate conformation. 
+;
+   #
+   _item.name                   "_pdbx_nonpoly_atom_coordination_sphere_order.label_alt_id"
+    _item.category_id             pdbx_nonpoly_atom_coordination_sphere_order
+   _item.mandatory_code           no
+   #
+   _item_type.code                code
+   #
+   save_
+
+save__pdbx_nonpoly_atom_coordination_sphere_order.auth_asym_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                    "_pdbx_nonpoly_atom_coordination_sphere_order.auth_asym_id"
+   _item.category_id             pdbx_nonpoly_atom_coordination_sphere_order
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+save_
+
+save__pdbx_nonpoly_atom_coordination_sphere_order.auth_seq_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                   "_pdbx_nonpoly_atom_coordination_sphere_order.auth_seq_id"
+   _item.category_id             pdbx_nonpoly_atom_coordination_sphere_order
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+save_
+
+save__pdbx_nonpoly_atom_coordination_sphere_order.auth_comp_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_comp_id in
+               the ATOM_SITE category.
+;
+
+   #
+   _item.name                   "_pdbx_nonpoly_atom_coordination_sphere_order.auth_comp_id"
+   _item.category_id             pdbx_nonpoly_atom_coordination_sphere_order
+   _item.mandatory_code          yes
+   _item_type.code               code
+   #
+save_
+
+save__pdbx_nonpoly_atom_coordination_sphere_order.auth_atom_id
+   _item_description.description  
+;              A component of the identifier for partner 1 of the structure
+               connection.
+
+               This data item is a pointer to _atom_site.auth_atom_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                  "_pdbx_nonpoly_atom_coordination_sphere_order.auth_atom_id"
+   _item.category_id           pdbx_nonpoly_atom_coordination_sphere_order
+   _item.mandatory_code        yes
+   _item_type.code             atcode
+   #
+   save_
+
+save__pdbx_nonpoly_atom_coordination_sphere_order.PDB_ins_code
+   _item_description.description
+;              PDB insertion code.
+;
+   #
+   _item.name                 "_pdbx_nonpoly_atom_coordination_sphere_order.PDB_ins_code"
+   _item.category_id           pdbx_nonpoly_atom_coordination_sphere_order
+   _item.mandatory_code        no
+   #
+   _item_type.code             code
+   save_
+
+
+save__pdbx_nonpoly_atom_coordination_sphere_order.atom_place
+    _item_description.description
+;              XXXX
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination_sphere_order.atom_place'
+    _item.category_id             pdbx_nonpoly_atom_coordination_sphere_order
+    _item.mandatory_code          yes
+    _item_type.code               int
+     save_
 
 
 #### pdbx_chem_comp_pcm.category changes and pdbx_modification_feature has addition 'Metal coordination'
