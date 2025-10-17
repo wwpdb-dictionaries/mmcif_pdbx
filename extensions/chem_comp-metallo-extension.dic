@@ -158,34 +158,79 @@ pdbx_chem_comp_atom_coordination         1  '_pdbx_chem_comp_atom_coordination.a
 
 pdbx_chem_comp_atom_coordination_sphere  1  '_pdbx_chem_comp_atom_coordination_sphere.comp_id'    '_chem_comp_atom.comp_id'                   chem_comp_atom
 pdbx_chem_comp_atom_coordination_sphere  1  '_pdbx_chem_comp_atom_coordination_sphere.atom_id'    '_chem_comp_atom.atom_id'                   chem_comp_atom
+
 pdbx_chem_comp_atom_coordination_sphere  2  '_pdbx_chem_comp_atom_coordination_sphere.geometry_id' '_pdbx_chem_comp_atom_coordination.geometry_id'  pdbx_chem_comp_atom_coordination
 
 
 pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.label_comp_id'       '_atom_site.label_comp_id'                  atom_site
 pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.label_atom_id'       '_atom_site.label_atom_id'                  atom_site
 pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.label_asym_id'       '_atom_site.label_asym_id'                  atom_site
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.label_seq_id'        '_atom_site.label_seq_id'                   atom_site
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.label_alt_id'        '_atom_site.label_alt_id'                   atom_site
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.auth_asym_id'        '_atom_site.auth_asym_id'                   atom_site
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.auth_asym_id'        '_atom_site.auth_asym_id'                   atom_site
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.auth_comp_id'        '_atom_site.auth_comp_id'                   atom_site
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.auth_atom_id'        '_atom_site.auth_atom_id'                   atom_site
+pdbx_nonpoly_atom_coordination           1  '_pdbx_nonpoly_atom_coordination.PDB_ins_code'        '_atom_site.pdbx_PDB_ins_code'              atom_site
 
-pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.label_comp_id'      '_atom_site.label_comp_id'                  atom_site
-pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.label_atom_id'      '_atom_site.label_atom_id'                  atom_site
+
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.label_comp_id' '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.label_atom_id' '_atom_site.label_atom_id'                  atom_site
 pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.label_asym_id' '_atom_site.label_asym_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.label_seq_id'  '_atom_site.label_seq_id'                   atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.label_alt_id'  '_atom_site.label_alt_id'                   atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.auth_asym_id'  '_atom_site.auth_asym_id'                   atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.auth_atom_id'  '_atom_site.auth_atom_id'                   atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.auth_seq_id'   '_atom_site.auth_seq_id'                    atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.auth_comp_id'  '_atom_site.auth_comp_id'                   atom_site
+pdbx_nonpoly_atom_coordination_sphere    1  '_pdbx_nonpoly_atom_coordination_sphere.PDB_ins_code'  '_atom_site.pdbx_PDB_ins_code'              atom_site
 pdbx_nonpoly_atom_coordination_sphere    2  '_pdbx_nonpoly_atom_coordination_sphere.geometry_id' '_pdbx_nonpoly_atom_coordination.geometry_id'  pdbx_nonpoly_atom_coordination
 
 pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id'      '_atom_site.label_comp_id'                  atom_site
 pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.label_atom_id'      '_atom_site.label_atom_id'                  atom_site
-pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.label_asym_id' '_atom_site.label_asym_id'                  atom_site
-pdbx_nonpoly_atom_coordination_sphere_order    2  '_pdbx_nonpoly_atom_coordination_sphere_order.geometry_id' '_pdbx_nonpoly_atom_coordination.geometry_id'  pdbx_nonpoly_atom_coordination
+pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.label_asym_id'      '_atom_site.label_asym_id'                  atom_site
+pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.label_seq_id'       '_atom_site.label_seq_id'                   atom_site
+pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.auth_asym_id'       '_atom_site.auth_asym_id'                   atom_site
+pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.auth_comp_id'       '_atom_site.auth_comp_id'                   atom_site
+pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.auth_atom_id'       '_atom_site.auth_atom_id'                   atom_site
+pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.PDB_ins_code'       '_atom_site.pdbx_PDB_ins_code'              atom_site
+pdbx_nonpoly_atom_coordination_sphere_order    2  '_pdbx_nonpoly_atom_coordination_sphere_order.geometry_id'        '_pdbx_nonpoly_atom_coordination.geometry_id'  pdbx_nonpoly_atom_coordination
 
-pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.comp_id'                       '_atom_site.label_comp_id'                  atom_site
 pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.label_asym_id'                 '_atom_site.label_asym_id'                  atom_site
-pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.comp_id'                  '_atom_site.label_comp_id'                  atom_site
-pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.atom_id'                  '_atom_site.label_atom_id'                  atom_site
-pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.label_asym_id'            '_atom_site.label_asym_id'                  atom_site
-pdbx_nonpoly_feature_evidence            1  '_pdbx_nonpoly_feature_evidence.comp_id'              '_atom_site.label_comp_id'                  atom_site
-pdbx_nonpoly_feature_evidence            1  '_pdbx_nonpoly_feature_evidence.label_asym_id'        '_atom_site.label_asym_id'                  atom_site
+pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.label_comp_id'                 '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.label_seq_id'                  '_atom_site.label_seq_id'                   atom_site
+pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.auth_asym_id'                 '_atom_site.auth_asym_id'                    atom_site
+pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.auth_seq_id'                  '_atom_site.auth_seq_id'                     atom_site
+pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.auth_comp_id'                 '_atom_site.auth_comp_id'                    atom_site
+pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.PDB_ins_code'                 '_atom_site.pdbx_PDB_ins_code'               atom_site
 
-pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.comp_id'         '_atom_site.label_comp_id'                  atom_site
-pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.atom_id'         '_atom_site.label_atom_id'                  atom_site
+pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.label_comp_id'            '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.label_atom_id'            '_atom_site.label_atom_id'                  atom_site
+pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.label_asym_id'            '_atom_site.label_asym_id'                  atom_site
+pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.label_seq_id'             '_atom_site.label_seq_id'                   atom_site
+pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.label_alt_id'             '_atom_site.label_alt_id'                   atom_site
+pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.auth_asym_id'            '_atom_site.auth_asym_id'                    atom_site
+pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.auth_comp_id'            '_atom_site.auth_comp_id'                    atom_site
+pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.auth_atom_id'            '_atom_site.auth_atom_id'                    atom_site
+pdbx_nonpoly_atom_feature                1  '_pdbx_nonpoly_atom_feature.PDB_ins_code'            '_atom_site.pdbx_PDB_ins_code'               atom_site
+
+pdbx_nonpoly_feature_evidence            1  '_pdbx_nonpoly_feature_evidence.label_comp_id'        '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_feature_evidence            1  '_pdbx_nonpoly_feature_evidence.label_asym_id'        '_atom_site.label_asym_id'                  atom_site
+pdbx_nonpoly_feature_evidence            1  '_pdbx_nonpoly_feature_evidence.label_seq_id'         '_atom_site.label_seq_id'                   atom_site
+pdbx_nonpoly_feature_evidence            1  '_pdbx_nonpoly_feature_evidence.auth_asym_id'         '_atom_site.auth_asym_id'                   atom_site
+pdbx_nonpoly_feature_evidence            1  '_pdbx_nonpoly_feature_evidence.auth_comp_id'         '_atom_site.auth_comp_id'                   atom_site
+pdbx_nonpoly_feature_evidence            1  '_pdbx_nonpoly_feature_evidence.PDB_ins_code'         '_atom_site.pdbx_PDB_ins_code'              atom_site
+
+pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.label_comp_id'   '_atom_site.label_comp_id'                  atom_site
+pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.label_atom_id'   '_atom_site.label_atom_id'                  atom_site
 pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.label_asym_id'   '_atom_site.label_asym_id'                  atom_site
+pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.label_seq_id'    '_atom_site.label_seq_id'                   atom_site
+pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.label_alt_id'    '_atom_site.label_alt_id'                   atom_site
+ 
+pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.auth_asym_id'    '_atom_site.auth_asym_id'                   atom_site
+pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.auth_comp_id'    '_atom_site.auth_comp_id'                   atom_site
+pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.auth_atom_id'    '_atom_site.auth_atom_id'                   atom_site
+pdbx_nonpoly_atom_feature_evidence       1  '_pdbx_nonpoly_atom_feature_evidence.PDB_ins_code'    '_atom_site.pdbx_PDB_ins_code'              atom_site
 
 
 
@@ -212,17 +257,22 @@ save_pdbx_nonpoly_feature
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 -
+    Example 1 - based on 1HIP
 ;
 ;
     loop_
     _pdbx_nonpoly_feature.ordinal
-    _pdbx_nonpoly_feature.comp_id
     _pdbx_nonpoly_feature.label_asym_id
+    _pdbx_nonpoly_feature.label_seq_id
+    _pdbx_nonpoly_feature.label_comp_id
+    _pdbx_nonpoly_feature.auth_asym_id
+    _pdbx_nonpoly_feature.auth_seq_id 
+    _pdbx_nonpoly_feature.auth_comp_id
+    _pdbx_nonpoly_feature.PDB_ins_code
     _pdbx_nonpoly_feature.type
     _pdbx_nonpoly_feature.value
     _pdbx_nonpoly_feature.provenance   
-    1 SF4 B 'Group charge' 2 Author
+    1 B . SF4 A 86 SF4 ? 'Group charge' 2 Author
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -240,18 +290,6 @@ save__pdbx_nonpoly_feature.ordinal
 save_
 
 
-save__pdbx_nonpoly_feature.comp_id
-    _item_description.description
-;              This data item is a pointer to id in the CHEM_COMP
-               category.
-;
-    _item.name                  '_pdbx_nonpoly_feature.comp_id'
-    _item.category_id             pdbx_nonpoly_feature
-    _item.mandatory_code          yes
-    _item_type.code               ucode
-    _item_linked.child_name     '_pdbx_nonpoly_feature.comp_id'
-    _item_linked.parent_name    '_atom_site.label_comp_id'
-     save_
 
 save__pdbx_nonpoly_feature.label_asym_id
     _item_description.description
@@ -265,6 +303,105 @@ save__pdbx_nonpoly_feature.label_asym_id
     _item_linked.parent_name    '_atom_site.label_asym_id'
      save_
 
+save__pdbx_nonpoly_feature.label_seq_id
+   #
+   _item_description.description
+;              This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+   #
+   _item.name                   '_pdbx_nonpoly_feature.label_seq_id'
+   _item.category_id             pdbx_nonpoly_feature
+   _item.mandatory_code           no
+   _item_linked.child_name      '_pdbx_nonpoly_feature.label_seq_id'
+   _item_linked.parent_name     '_atom_site.label_seq_id'
+   _item_type.code                int
+    save_
+
+save__pdbx_nonpoly_feature.label_comp_id
+    _item_description.description
+;              This data item is a pointer to id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_nonpoly_feature.label_comp_id'
+    _item.category_id             pdbx_nonpoly_feature
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_nonpoly_feature.label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_nonpoly_feature.auth_asym_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                    "_pdbx_nonpoly_feature.auth_asym_id"
+   _item.category_id             pdbx_nonpoly_feature
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+   _item_linked.child_name     '_pdbx_nonpoly_feature.auth_asym_id'
+   _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+   save_
+
+save__pdbx_nonpoly_feature.auth_seq_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                   "_pdbx_nonpoly_feature.auth_seq_id"
+   _item.category_id             pdbx_nonpoly_feature
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+   save_
+
+save__pdbx_nonpoly_feature.auth_comp_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_comp_id in
+               the ATOM_SITE category.
+;
+
+   #
+   _item.name                   "_pdbx_nonpoly_feature.auth_comp_id"
+   _item.category_id             pdbx_nonpoly_feature
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+   _item_linked.child_name     '_pdbx_nonpoly_feature.auth_comp_id'
+   _item_linked.parent_name    '_atom_site.auth_comp_id'
+   save_
+
+save__pdbx_nonpoly_feature.PDB_ins_code
+   _item_description.description
+;              PDB insertion code.
+;
+   #
+   _item.name                 "_pdbx_nonpoly_feature.PDB_ins_code"
+   _item.category_id           pdbx_nonpoly_feature
+   _item.mandatory_code        no
+   #
+   _item_type.code             code
+   #
+   _item_linked.child_name     '_pdbx_nonpoly_feature.PDB_ins_code'
+   _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+
+   save_
 
 save__pdbx_nonpoly_feature.type
     _item_description.description
@@ -341,13 +478,20 @@ save_pdbx_nonpoly_atom_feature
 ;
     loop_
     _pdbx_nonpoly_atom_feature.ordinal
-    _pdbx_nonpoly_atom_feature.comp_id
-    _pdbx_nonpoly_atom_feature.atom_id
     _pdbx_nonpoly_atom_feature.label_asym_id
+    _pdbx_nonpoly_atom_feature.label_seq_id
+    _pdbx_nonpoly_atom_feature.label_comp_id
+    _pdbx_nonpoly_atom_feature.label_atom_id
+    _pdbx_nonpoly_atom_feature.label_alt_id
+    _pdbx_nonpoly_atom_feature.auth_asym_id
+    _pdbx_nonpoly_atom_feature.auth_seq_id 
+    _pdbx_nonpoly_atom_feature.auth_comp_id
+    _pdbx_nonpoly_atom_feature.auth_atom_id
+    _pdbx_nonpoly_atom_feature.PDB_ins_code
     _pdbx_nonpoly_atom_feature.type
     _pdbx_nonpoly_atom_feature.value
     _pdbx_nonpoly_atom_feature.provenance 
-    1 VO4 V D 'Oxidation state' 5 Author
+    1 D . VO4 V ? A 343 VO4 V ? 'Oxidation state' 5 Author
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -364,31 +508,6 @@ save__pdbx_nonpoly_atom_feature.ordinal
    _item_type.code                int
 save_
 
-save__pdbx_nonpoly_atom_feature.comp_id
-    _item_description.description
-;              This data item is a pointer to id in the CHEM_COMP
-               category.
-;
-    _item.name                  '_pdbx_nonpoly_atom_feature.comp_id'
-    _item.category_id             pdbx_nonpoly_atom_feature
-    _item.mandatory_code          yes
-    _item_type.code               ucode
-    _item_linked.child_name     '_pdbx_nonpoly_atom_feature.comp_id'
-    _item_linked.parent_name    '_atom_site.label_comp_id'
-     save_
-
-save__pdbx_nonpoly_atom_feature.atom_id
-    _item_description.description
-;              The identifier for the target atom to which the feature is assigned.
-;
-    _item.name                  '_pdbx_nonpoly_atom_feature.atom_id'
-    _item.category_id             pdbx_nonpoly_atom_feature
-    _item.mandatory_code          yes
-    _item_type.code               atcode
-    _item_linked.child_name     '_pdbx_nonpoly_atom_feature.atom_id'
-    _item_linked.parent_name    '_atom_site.label_atom_id'
-     save_
-
 save__pdbx_nonpoly_atom_feature.label_asym_id
     _item_description.description
 ;              The identifier of the instance of the STRUCT_ASYM_ID to which this feature applies.
@@ -400,6 +519,156 @@ save__pdbx_nonpoly_atom_feature.label_asym_id
     _item_linked.child_name     '_pdbx_nonpoly_atom_feature.label_asym_id'
     _item_linked.parent_name    '_atom_site.label_asym_id'
      save_
+
+save__pdbx_nonpoly_atom_feature.label_seq_id
+   #
+   _item_description.description
+;              This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+   #
+   _item.name                   '_pdbx_nonpoly_atom_feature.label_seq_id'
+   _item.category_id             pdbx_nonpoly_atom_feature
+   _item.mandatory_code           no
+   _item_linked.child_name      '_pdbx_nonpoly_atom_feature.label_seq_id'
+   _item_linked.parent_name     '_atom_site.label_seq_id'
+   _item_type.code                int
+    save_
+
+
+save__pdbx_nonpoly_atom_feature.label_comp_id
+    _item_description.description
+;              This data item is a pointer to id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature.label_comp_id'
+    _item.category_id             pdbx_nonpoly_atom_feature
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_nonpoly_atom_feature.label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_nonpoly_atom_feature.label_atom_id
+    _item_description.description
+;              The identifier for the target atom to which the feature is assigned.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature.label_atom_id'
+    _item.category_id             pdbx_nonpoly_atom_feature
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_nonpoly_atom_feature.label_atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_nonpoly_atom_feature.label_alt_id
+   _item_description.description  
+;              A place holder to indicate alternate conformation. 
+;
+   #
+   _item.name                   "_pdbx_nonpoly_atom_feature.label_alt_id"
+   _item.category_id             pdbx_nonpoly_atom_feature
+   _item.mandatory_code          no
+   #
+   _item_type.code               code
+   #
+    _item_linked.child_name     '_pdbx_nonpoly_atom_feature.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+save_
+
+
+save__pdbx_nonpoly_atom_feature.auth_asym_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                    "_pdbx_nonpoly_atom_feature.auth_asym_id"
+   _item.category_id             pdbx_nonpoly_atom_feature
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+   _item_linked.child_name     '_pdbx_nonpoly_atom_feature.auth_asym_id'
+   _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+   save_
+
+save__pdbx_nonpoly_atom_feature.auth_seq_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                   "_pdbx_nonpoly_atom_feature.auth_seq_id"
+   _item.category_id             pdbx_nonpoly_atom_feature
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+   save_
+
+save__pdbx_nonpoly_atom_feature.auth_comp_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_comp_id in
+               the ATOM_SITE category.
+;
+
+   #
+   _item.name                   "_pdbx_nonpoly_atom_feature.auth_comp_id"
+   _item.category_id             pdbx_nonpoly_atom_feature
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+   _item_linked.child_name     '_pdbx_nonpoly_atom_feature.auth_comp_id'
+   _item_linked.parent_name    '_atom_site.auth_comp_id'
+   save_
+
+
+save__pdbx_nonpoly_atom_feature.auth_atom_id
+   _item_description.description  
+;              A component of the identifier for partner 1 of the structure
+               connection.
+
+               This data item is a pointer to _atom_site.auth_atom_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                  "_pdbx_nonpoly_atom_feature.auth_atom_id"
+   _item.category_id           pdbx_nonpoly_atom_feature
+   _item.mandatory_code        no
+   _item_type.code             atcode
+   _item_linked.child_name     '_pdbx_nonpoly_atom_feature.auth_atom_id'
+   _item_linked.parent_name    '_atom_site.auth_atom_id'
+   
+   #
+   save_
+
+save__pdbx_nonpoly_atom_feature.PDB_ins_code
+   _item_description.description
+;              PDB insertion code.
+;
+   #
+   _item.name                 "_pdbx_nonpoly_atom_feature.PDB_ins_code"
+   _item.category_id           pdbx_nonpoly_atom_feature
+   _item.mandatory_code        no
+   #
+   _item_type.code             code
+   #
+   _item_linked.child_name     '_pdbx_nonpoly_atom_feature.PDB_ins_code'
+   _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+
+   save_
 
 save__pdbx_nonpoly_atom_feature.type
     _item_description.description
@@ -468,19 +737,26 @@ save_pdbx_nonpoly_atom_feature_evidence
     _category_examples.case
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ;
-    Example 1 -
+    Example 1 - based on 1RPT
 ;
 ;
     loop_
     _pdbx_nonpoly_atom_feature_evidence.ordinal
-    _pdbx_nonpoly_atom_feature_evidence.comp_id
-    _pdbx_nonpoly_atom_feature_evidence.atom_id
     _pdbx_nonpoly_atom_feature_evidence.label_asym_id
+    _pdbx_nonpoly_atom_feature_evidence.label_seq_id
+    _pdbx_nonpoly_atom_feature_evidence.label_comp_id
+    _pdbx_nonpoly_atom_feature_evidence.label_atom_id
+    _pdbx_nonpoly_atom_feature_evidence.label_alt_id
+    _pdbx_nonpoly_atom_feature_evidence.auth_asym_id
+    _pdbx_nonpoly_atom_feature_evidence.auth_seq_id 
+    _pdbx_nonpoly_atom_feature_evidence.auth_comp_id
+    _pdbx_nonpoly_atom_feature_evidence.auth_atom_id
+    _pdbx_nonpoly_atom_feature_evidence.PDB_ins_code
     _pdbx_nonpoly_atom_feature_evidence.type
     _pdbx_nonpoly_atom_feature_evidence.experimental_support
     _pdbx_nonpoly_atom_feature_evidence.details
-    1 VO4 V B 'Metal identity'  'Anomalous scattering' ?
-    1 VO4 V B 'Oxidation state' 'UV-Vis spectroscopy'  ?
+    1 D . VO4 V ? A 343 VO4 V ? 'Metal identity' 'Anomalous scattering' ?
+    1 D . VO4 V ? A 343 VO4 V ? 'Oxidation state' 'UV-Vis spectroscopy' ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -497,31 +773,6 @@ save__pdbx_nonpoly_atom_feature_evidence.ordinal
    _item_type.code                int
 save_
 
-save__pdbx_nonpoly_atom_feature_evidence.comp_id
-    _item_description.description
-;              This data item is a pointer to id in the CHEM_COMP
-               category.
-;
-    _item.name                  '_pdbx_nonpoly_atom_feature_evidence.comp_id'
-    _item.category_id             pdbx_nonpoly_atom_feature_evidence
-    _item.mandatory_code          yes
-    _item_type.code               ucode
-    _item_linked.child_name     '_pdbx_nonpoly_atom_feature_evidence.comp_id'
-    _item_linked.parent_name    '_atom_site.label_comp_id'
-     save_
-
-save__pdbx_nonpoly_atom_feature_evidence.atom_id
-    _item_description.description
-;              The identifier for the target atom to which the feature is assigned.
-;
-    _item.name                  '_pdbx_nonpoly_atom_feature_evidence.atom_id'
-    _item.category_id             pdbx_nonpoly_atom_feature_evidence
-    _item.mandatory_code          yes
-    _item_type.code               atcode
-    _item_linked.child_name     '_pdbx_nonpoly_atom_feature_evidence.atom_id'
-    _item_linked.parent_name    '_atom_site.label_atom_id'
-     save_
-
 save__pdbx_nonpoly_atom_feature_evidence.label_asym_id
     _item_description.description
 ;              The identifier of the instance of the STRUCT_ASYM_ID to which this feature applies.
@@ -533,6 +784,157 @@ save__pdbx_nonpoly_atom_feature_evidence.label_asym_id
     _item_linked.child_name     '_pdbx_nonpoly_atom_feature_evidence.label_asym_id'
     _item_linked.parent_name    '_atom_site.label_asym_id'
      save_
+
+save__pdbx_nonpoly_atom_feature_evidence.label_seq_id
+   #
+   _item_description.description
+;              This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+   #
+   _item.name                   '_pdbx_nonpoly_atom_feature_evidence.label_seq_id'
+   _item.category_id             pdbx_nonpoly_atom_feature_evidence
+   _item.mandatory_code           no
+   _item_linked.child_name      '_pdbx_nonpoly_atom_feature_evidence.label_seq_id'
+   _item_linked.parent_name     '_atom_site.label_seq_id'
+   _item_type.code                int
+    save_
+
+
+save__pdbx_nonpoly_atom_feature_evidence.label_comp_id
+    _item_description.description
+;              This data item is a pointer to id in the ATOM_SITE
+               category.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature_evidence.label_comp_id'
+    _item.category_id             pdbx_nonpoly_atom_feature_evidence
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_nonpoly_atom_feature_evidence.label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_nonpoly_atom_feature_evidence.label_atom_id
+    _item_description.description
+;              The identifier for the target atom to which the feature is assigned.
+;
+    _item.name                  '_pdbx_nonpoly_atom_feature_evidence.label_atom_id'
+    _item.category_id             pdbx_nonpoly_atom_feature_evidence
+    _item.mandatory_code          yes
+    _item_type.code               atcode
+    _item_linked.child_name     '_pdbx_nonpoly_atom_feature_evidence.label_atom_id'
+    _item_linked.parent_name    '_atom_site.label_atom_id'
+     save_
+
+save__pdbx_nonpoly_atom_feature_evidence.label_alt_id
+   _item_description.description  
+;              A place holder to indicate alternate conformation. 
+;
+   #
+   _item.name                   "_pdbx_nonpoly_atom_feature_evidence.label_alt_id"
+   _item.category_id             pdbx_nonpoly_atom_feature_evidence
+   _item.mandatory_code          no
+   #
+   _item_type.code               code
+   #
+    _item_linked.child_name     '_pdbx_nonpoly_atom_feature_evidence.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
+save_
+
+
+save__pdbx_nonpoly_atom_feature_evidence.auth_asym_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                    "_pdbx_nonpoly_atom_feature_evidence.auth_asym_id"
+   _item.category_id             pdbx_nonpoly_atom_feature_evidence
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+   _item_linked.child_name     '_pdbx_nonpoly_atom_feature_evidence.auth_asym_id'
+   _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+   save_
+
+save__pdbx_nonpoly_atom_feature_evidence.auth_seq_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                   "_pdbx_nonpoly_atom_feature_evidence.auth_seq_id"
+   _item.category_id             pdbx_nonpoly_atom_feature_evidence
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+   save_
+
+save__pdbx_nonpoly_atom_feature_evidence.auth_comp_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_comp_id in
+               the ATOM_SITE category.
+;
+
+   #
+   _item.name                   "_pdbx_nonpoly_atom_feature_evidence.auth_comp_id"
+   _item.category_id             pdbx_nonpoly_atom_feature_evidence
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+   _item_linked.child_name     '_pdbx_nonpoly_atom_feature_evidence.auth_comp_id'
+   _item_linked.parent_name    '_atom_site.auth_comp_id'
+   save_
+
+
+save__pdbx_nonpoly_atom_feature_evidence.auth_atom_id
+   _item_description.description  
+;              A component of the identifier for partner 1 of the structure
+               connection.
+
+               This data item is a pointer to _atom_site.auth_atom_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                  "_pdbx_nonpoly_atom_feature_evidence.auth_atom_id"
+   _item.category_id           pdbx_nonpoly_atom_feature_evidence
+   _item.mandatory_code        no
+   _item_type.code             atcode
+   _item_linked.child_name     '_pdbx_nonpoly_atom_feature_evidence.auth_atom_id'
+   _item_linked.parent_name    '_atom_site.auth_atom_id'
+   
+   #
+   save_
+
+save__pdbx_nonpoly_atom_feature_evidence.PDB_ins_code
+   _item_description.description
+;              PDB insertion code.
+;
+   #
+   _item.name                 "_pdbx_nonpoly_atom_feature_evidence.PDB_ins_code"
+   _item.category_id           pdbx_nonpoly_atom_feature_evidence
+   _item.mandatory_code        no
+   #
+   _item_type.code             code
+   #
+   _item_linked.child_name     '_pdbx_nonpoly_atom_feature_evidence.PDB_ins_code'
+   _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+
+   save_
+
 
 save__pdbx_nonpoly_atom_feature_evidence.type
     _item_description.description
@@ -614,12 +1016,17 @@ save_pdbx_nonpoly_feature_evidence
 ;
     loop_
     _pdbx_nonpoly_feature_evidence.ordinal
-    _pdbx_nonpoly_feature_evidence.comp_id
     _pdbx_nonpoly_feature_evidence.label_asym_id
+    _pdbx_nonpoly_feature_evidence.label_seq_id
+    _pdbx_nonpoly_feature_evidence.label_comp_id
+    _pdbx_nonpoly_feature_evidence.auth_asym_id
+    _pdbx_nonpoly_feature_evidence.auth_seq_id 
+    _pdbx_nonpoly_feature_evidence.auth_comp_id
+    _pdbx_nonpoly_feature_evidence.PDB_ins_code
     _pdbx_nonpoly_feature_evidence.type
     _pdbx_nonpoly_feature_evidence.experimental_support
     _pdbx_nonpoly_feature_evidence.details
-    1 SF4 B 'Group charge' 'Electron paramagnetic resonance spectrometry' ?
+    1 B . SF4 A 86 SF4 ? 'Group charge' 'Electron paramagnetic resonance spectrometry' ?
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -636,19 +1043,6 @@ save__pdbx_nonpoly_feature_evidence.ordinal
    _item_type.code                int
 save_
 
-save__pdbx_nonpoly_feature_evidence.comp_id
-    _item_description.description
-;              This data item is a pointer to id in the CHEM_COMP
-               category.
-;
-    _item.name                  '_pdbx_nonpoly_feature_evidence.comp_id'
-    _item.category_id             pdbx_nonpoly_feature_evidence
-    _item.mandatory_code          yes
-    _item_type.code               ucode
-    _item_linked.child_name     '_pdbx_nonpoly_feature_evidence.comp_id'
-    _item_linked.parent_name    '_atom_site.label_comp_id'
-     save_
-
 save__pdbx_nonpoly_feature_evidence.label_asym_id
     _item_description.description
 ;              The identifier of the instance of the STRUCT_ASYM_ID to which this feature applies.
@@ -661,6 +1055,106 @@ save__pdbx_nonpoly_feature_evidence.label_asym_id
     _item_linked.parent_name    '_atom_site.label_asym_id'
      save_
 
+save__pdbx_nonpoly_feature_evidence.label_seq_id
+   #
+   _item_description.description
+;              This data item is a pointer to _atom_site.label_seq_id in the
+               ATOM_SITE category.
+;
+   #
+   _item.name                   '_pdbx_nonpoly_feature_evidence.label_seq_id'
+   _item.category_id             pdbx_nonpoly_feature_evidence
+   _item.mandatory_code           no
+   _item_linked.child_name      '_pdbx_nonpoly_feature_evidence.label_seq_id'
+   _item_linked.parent_name     '_atom_site.label_seq_id'
+   _item_type.code                int
+    save_
+
+
+save__pdbx_nonpoly_feature_evidence.label_comp_id
+    _item_description.description
+;              This data item is a pointer to id in the CHEM_COMP
+               category.
+;
+    _item.name                  '_pdbx_nonpoly_feature_evidence.label_comp_id'
+    _item.category_id             pdbx_nonpoly_feature_evidence
+    _item.mandatory_code          yes
+    _item_type.code               ucode
+    _item_linked.child_name     '_pdbx_nonpoly_feature_evidence.label_comp_id'
+    _item_linked.parent_name    '_atom_site.label_comp_id'
+     save_
+
+save__pdbx_nonpoly_feature_evidence.auth_asym_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_asym_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                    "_pdbx_nonpoly_feature_evidence.auth_asym_id"
+   _item.category_id             pdbx_nonpoly_feature_evidence
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+   _item_linked.child_name     '_pdbx_nonpoly_feature_evidence.auth_asym_id'
+   _item_linked.parent_name    '_atom_site.auth_asym_id'
+
+   save_
+
+save__pdbx_nonpoly_feature_evidence.auth_seq_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_seq_id in the
+               ATOM_SITE category.
+;
+
+   #
+   _item.name                   "_pdbx_nonpoly_feature_evidence.auth_seq_id"
+   _item.category_id             pdbx_nonpoly_feature_evidence
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+   save_
+
+save__pdbx_nonpoly_feature_evidence.auth_comp_id
+   _item_description.description  
+;              A component of the identifier for the residue at which the
+               conformation segment begins.
+
+               This data item is a pointer to _atom_site.auth_comp_id in
+               the ATOM_SITE category.
+;
+
+   #
+   _item.name                   "_pdbx_nonpoly_feature_evidence.auth_comp_id"
+   _item.category_id             pdbx_nonpoly_feature_evidence
+   _item.mandatory_code          no
+   _item_type.code               code
+   #
+   _item_linked.child_name     '_pdbx_nonpoly_feature_evidence.auth_comp_id'
+   _item_linked.parent_name    '_atom_site.auth_comp_id'
+   save_
+
+save__pdbx_nonpoly_feature_evidence.PDB_ins_code
+   _item_description.description
+;              PDB insertion code.
+;
+   #
+   _item.name                 "_pdbx_nonpoly_feature_evidence.PDB_ins_code"
+   _item.category_id           pdbx_nonpoly_feature_evidence
+   _item.mandatory_code        no
+   #
+   _item_type.code             code
+   #
+   _item_linked.child_name     '_pdbx_nonpoly_feature_evidence.PDB_ins_code'
+   _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+
+   save_
 save__pdbx_nonpoly_feature_evidence.type
     _item_description.description
 ;              The feature assigned to this atom.
@@ -742,10 +1236,10 @@ save_pdbx_chem_comp_atom_coordination
     _pdbx_chem_comp_atom_coordination.provenance
     _pdbx_chem_comp_atom_coordination.geometry_abbr
     _pdbx_chem_comp_atom_coordination.representative_entry_id
-    1 VO4 V 4 tetrahedron           tetrahedral             FindGeo     .    1VNH
+    1 VO4 V 4 tetrahedron           tetrahedral             FindGeo     TET  1VNH
     1 VO4 V 4 tetrahedral           tetrahedral             MetalCoord  TET  1VNH
-    2 VO4 V 5 'trigonal bipyramid' 'trigonal bipyramidal'   FindGeo     .    1RPT
-    2 VO4 V 5 trigonal-bipyramid   'trigonal bipyramidal'   MetalCoord  TET  1RPT
+    2 VO4 V 5 'trigonal bipyramid' 'trigonal bipyramidal'   FindGeo     TBP  1RPT
+    2 VO4 V 5 trigonal-bipyramid   'trigonal bipyramidal'   MetalCoord  TBP  1RPT
 ;
 ;
     Example 2 -
@@ -761,13 +1255,13 @@ save_pdbx_chem_comp_atom_coordination
     _pdbx_chem_comp_atom_coordination.provenance
     _pdbx_chem_comp_atom_coordination.geometry_abbr
     _pdbx_chem_comp_atom_coordination.representative_entry_id
-    1 SF4 FE1 4 tetrahedron tetrahedral FindGeo    .    7NPA    
+    1 SF4 FE1 4 tetrahedron tetrahedral FindGeo    TET  7NPA    
     1 SF4 FE1 4 tetrahedral tetrahedral MetalCoord TET  2C42 
-    2 SF4 FE2 4 tetrahedron tetrahedral FindGeo    .    7NPA    
+    2 SF4 FE2 4 tetrahedron tetrahedral FindGeo    TET  7NPA    
     2 SF4 FE2 4 tetrahedral tetrahedral MetalCoord TET  8RIU 
-    3 SF4 FE3 4 tetrahedron tetrahedral FindGeo    .    1GTE    
+    3 SF4 FE3 4 tetrahedron tetrahedral FindGeo    TET  1GTE    
     3 SF4 FE3 4 tetrahedral tetrahedral MetalCoord TET  7NPA  
-    4 SF4 FE4 4 tetrahedron tetrahedral FindGeo    .    2FD2    
+    4 SF4 FE4 4 tetrahedron tetrahedral FindGeo    TET  2FD2    
     4 SF4 FE4 4 tetrahedral tetrahedral MetalCoord TET  2FD2
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1302,10 +1796,10 @@ save__pdbx_nonpoly_atom_coordination.label_seq_id
    _item.name                   '_pdbx_nonpoly_atom_coordination.label_seq_id'
    _item.category_id             pdbx_nonpoly_atom_coordination
    _item.mandatory_code           no
-   # _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.label_seq_id'
-   # _item_linked.parent_name    '_atom_site.label_seq_id'
+   _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.label_seq_id'
+   _item_linked.parent_name    '_atom_site.label_seq_id'
    _item_type.code                int
-save_
+    save_
 
 save__pdbx_nonpoly_atom_coordination.label_comp_id
    #
@@ -1320,7 +1814,7 @@ save__pdbx_nonpoly_atom_coordination.label_comp_id
     _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.label_comp_id'
     _item_linked.parent_name    '_atom_site.label_comp_id'
    _item_type.code                ucode
-save_
+    save_
 
 save__pdbx_nonpoly_atom_coordination.label_atom_id
     _item_description.description
@@ -1345,6 +1839,8 @@ save__pdbx_nonpoly_atom_coordination.label_alt_id
    #
    _item_type.code               code
    #
+    _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.label_alt_id'
+    _item_linked.parent_name    '_atom_site.label_alt_id'
 save_
 
 
@@ -1363,6 +1859,9 @@ save__pdbx_nonpoly_atom_coordination.auth_asym_id
    _item.mandatory_code          no
    _item_type.code               code
    #
+   _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.auth_asym_id'
+   _item_linked.parent_name    '_atom_site.auth_asym_id'
+
    save_
 
 save__pdbx_nonpoly_atom_coordination.auth_seq_id
@@ -1380,7 +1879,7 @@ save__pdbx_nonpoly_atom_coordination.auth_seq_id
    _item.mandatory_code          no
    _item_type.code               code
    #
-save_
+   save_
 
 save__pdbx_nonpoly_atom_coordination.auth_comp_id
    _item_description.description  
@@ -1397,7 +1896,9 @@ save__pdbx_nonpoly_atom_coordination.auth_comp_id
    _item.mandatory_code          no
    _item_type.code               code
    #
-save_
+   _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.auth_comp_id'
+   _item_linked.parent_name    '_atom_site.auth_comp_id'
+   save_
 
 
 save__pdbx_nonpoly_atom_coordination.auth_atom_id
@@ -1414,8 +1915,11 @@ save__pdbx_nonpoly_atom_coordination.auth_atom_id
    _item.category_id           pdbx_nonpoly_atom_coordination
    _item.mandatory_code        no
    _item_type.code             atcode
+   _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.auth_atom_id'
+   _item_linked.parent_name    '_atom_site.auth_atom_id'
+   
    #
-save_
+   save_
 
 save__pdbx_nonpoly_atom_coordination.PDB_ins_code
    _item_description.description
@@ -1427,6 +1931,10 @@ save__pdbx_nonpoly_atom_coordination.PDB_ins_code
    _item.mandatory_code        no
    #
    _item_type.code             code
+   #
+   _item_linked.child_name     '_pdbx_nonpoly_atom_coordination.PDB_ins_code'
+   _item_linked.parent_name    '_atom_site.pdbx_PDB_ins_code'
+
    save_
 
 
@@ -1762,8 +2270,8 @@ save__pdbx_nonpoly_atom_coordination_sphere.label_seq_id
    _item.name                   '_pdbx_nonpoly_atom_coordination_sphere.label_seq_id'
    _item.category_id             pdbx_nonpoly_atom_coordination_sphere
    _item.mandatory_code           no
-   # _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere.label_seq_id'
-   # _item_linked.parent_name    '_atom_site.label_seq_id'
+   _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere.label_seq_id'
+   _item_linked.parent_name    '_atom_site.label_seq_id'
    _item_type.code                int
     save_
 
@@ -1805,6 +2313,9 @@ save__pdbx_nonpoly_atom_coordination_sphere.label_alt_id
    #
    _item_type.code                code
    #
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere.label_alt_id'
+   _item_linked.parent_name     '_atom_site.label_alt_id'
+   #
    save_
 
 save__pdbx_nonpoly_atom_coordination_sphere.auth_asym_id
@@ -1822,6 +2333,8 @@ save__pdbx_nonpoly_atom_coordination_sphere.auth_asym_id
    _item.mandatory_code          no
    _item_type.code               code
    #
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere.auth_asym_id'
+   _item_linked.parent_name     '_atom_site.auth_asym_id'
 save_
 
 save__pdbx_nonpoly_atom_coordination_sphere.auth_seq_id
@@ -1839,6 +2352,8 @@ save__pdbx_nonpoly_atom_coordination_sphere.auth_seq_id
    _item.mandatory_code          no
    _item_type.code               code
    #
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere.auth_seq_id'
+   _item_linked.parent_name     '_atom_site.auth_seq_id'
 save_
 
 save__pdbx_nonpoly_atom_coordination_sphere.auth_comp_id
@@ -1855,6 +2370,9 @@ save__pdbx_nonpoly_atom_coordination_sphere.auth_comp_id
    _item.category_id             pdbx_nonpoly_atom_coordination_sphere
    _item.mandatory_code          no
    _item_type.code               code
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere.auth_comp_id'
+   _item_linked.parent_name     '_atom_site.auth_comp_id'
+  
    #
 save_
 
@@ -1868,10 +2386,12 @@ save__pdbx_nonpoly_atom_coordination_sphere.auth_atom_id
 ;
 
    #
-   _item.name                  "_pdbx_nonpoly_atom_coordination_sphere.auth_atom_id"
-   _item.category_id           pdbx_nonpoly_atom_coordination_sphere
-   _item.mandatory_code        no
-   _item_type.code             atcode
+   _item.name                   "_pdbx_nonpoly_atom_coordination_sphere.auth_atom_id"
+   _item.category_id             pdbx_nonpoly_atom_coordination_sphere
+   _item.mandatory_code          no
+   _item_type.code               atcode
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere.auth_atom_id'
+   _item_linked.parent_name     '_atom_site.auth_atom_id'
    #
    save_
 
@@ -1880,11 +2400,13 @@ save__pdbx_nonpoly_atom_coordination_sphere.PDB_ins_code
 ;              PDB insertion code.
 ;
    #
-   _item.name                 "_pdbx_nonpoly_atom_coordination_sphere.PDB_ins_code"
-   _item.category_id           pdbx_nonpoly_atom_coordination_sphere
-   _item.mandatory_code        no
+   _item.name                  "_pdbx_nonpoly_atom_coordination_sphere.PDB_ins_code"
+   _item.category_id            pdbx_nonpoly_atom_coordination_sphere
+   _item.mandatory_code         no
    #
-   _item_type.code             code
+   _item_type.code              code
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere.PDB_ins_code'
+   _item_linked.parent_name     '_atom_site.pdbx_PDB_ins_code'
    save_
 
 
@@ -1922,14 +2444,16 @@ save__pdbx_nonpoly_atom_coordination_sphere.provenance
 ###############################################
 save_pdbx_nonpoly_atom_coordination_sphere_order
     _category.description
-;             Data items in the PDBX_NONPOLY_ATOM_COORDINATION_SPHERE_ORDER category provide
-              ordering of the atoms in the coordination sphere.
+;              This category describes the order of the atoms in the
+               coordination sphere category:
+               pdbx_nonpoly_atom_coordination_sphere. The order of the
+               atoms is the encoding of the 3D arrangement of atoms
+               for a particular coordination geometry.
 ;
     _category.id                  pdbx_nonpoly_atom_coordination_sphere_order
     _category.mandatory_code      no
     loop_
     _category_key.name           '_pdbx_nonpoly_atom_coordination_sphere_order.geometry_id'
-                                 '_pdbx_nonpoly_atom_coordination_sphere_order.label_asym_id'
                                  '_pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id'				 
                                  '_pdbx_nonpoly_atom_coordination_sphere_order.label_atom_id'
                                  '_pdbx_nonpoly_atom_coordination_sphere_order.atom_place'				 
@@ -2043,8 +2567,8 @@ save__pdbx_nonpoly_atom_coordination_sphere_order.label_seq_id
    _item.name                   '_pdbx_nonpoly_atom_coordination_sphere_order.label_seq_id'
    _item.category_id             pdbx_nonpoly_atom_coordination_sphere_order
    _item.mandatory_code           no
-   # _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere_order.label_seq_id'
-   # _item_linked.parent_name    '_atom_site.label_seq_id'
+   _item_linked.child_name     '_pdbx_nonpoly_atom_coordination_sphere_order.label_seq_id'
+   _item_linked.parent_name    '_atom_site.label_seq_id'
    _item_type.code                int
     save_
 
@@ -2103,7 +2627,9 @@ save__pdbx_nonpoly_atom_coordination_sphere_order.auth_asym_id
    _item.mandatory_code          no
    _item_type.code               code
    #
-save_
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere_order.auth_asym_id'
+   _item_linked.parent_name     '_atom_site.auth_asym_id'
+   save_
 
 save__pdbx_nonpoly_atom_coordination_sphere_order.auth_seq_id
    _item_description.description  
@@ -2134,8 +2660,11 @@ save__pdbx_nonpoly_atom_coordination_sphere_order.auth_comp_id
    #
    _item.name                   "_pdbx_nonpoly_atom_coordination_sphere_order.auth_comp_id"
    _item.category_id             pdbx_nonpoly_atom_coordination_sphere_order
-   _item.mandatory_code          yes
+   _item.mandatory_code          no
    _item_type.code               code
+   #
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere_order.auth_comp_id'
+   _item_linked.parent_name     '_atom_site.auth_comp_id'
    #
 save_
 
@@ -2151,9 +2680,12 @@ save__pdbx_nonpoly_atom_coordination_sphere_order.auth_atom_id
    #
    _item.name                  "_pdbx_nonpoly_atom_coordination_sphere_order.auth_atom_id"
    _item.category_id           pdbx_nonpoly_atom_coordination_sphere_order
-   _item.mandatory_code        yes
+   _item.mandatory_code        no
    _item_type.code             atcode
    #
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere_order.auth_atom_id'
+   _item_linked.parent_name     '_atom_site.auth_atom_id'
+  
    save_
 
 save__pdbx_nonpoly_atom_coordination_sphere_order.PDB_ins_code
@@ -2166,12 +2698,17 @@ save__pdbx_nonpoly_atom_coordination_sphere_order.PDB_ins_code
    _item.mandatory_code        no
    #
    _item_type.code             code
+   #
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere_order.PDB_ins_code'
+   _item_linked.parent_name     '_atom_site.pdbx_PDB_ins_code'
    save_
 
 
 save__pdbx_nonpoly_atom_coordination_sphere_order.atom_place
     _item_description.description
-;              XXXX
+;              This data item enumerates the order of the atom in the
+               coordination sphere, which is the encoding of the 3D
+               arrangement of the atoms.
 ;
     _item.name                  '_pdbx_nonpoly_atom_coordination_sphere_order.atom_place'
     _item.category_id             pdbx_nonpoly_atom_coordination_sphere_order
