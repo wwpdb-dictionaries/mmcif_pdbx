@@ -1929,8 +1929,10 @@ save_pdbx_nonpoly_atom_coordination_sphere_order
     _category.mandatory_code      no
     loop_
     _category_key.name           '_pdbx_nonpoly_atom_coordination_sphere_order.geometry_id'
-                                 '_pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id'
+                                 '_pdbx_nonpoly_atom_coordination_sphere_order.label_asym_id'
+                                 '_pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id'				 
                                  '_pdbx_nonpoly_atom_coordination_sphere_order.label_atom_id'
+                                 '_pdbx_nonpoly_atom_coordination_sphere_order.atom_place'				 
 	   
     loop_
     _category_group.id           'inclusive_group'
