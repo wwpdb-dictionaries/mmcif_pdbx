@@ -1678,7 +1678,7 @@ save__pdbx_depui_status_flags.metal_experiment_evidence
 ;
     _item.name                  '_pdbx_depui_status_flags.metal_experiment_evidence'
     _item.category_id             pdbx_depui_status_flags
-    _item.mandatory_code          yes
+    _item.mandatory_code          no
     _item_type.code               code
     loop_
     _item_enumeration.value    Y N
