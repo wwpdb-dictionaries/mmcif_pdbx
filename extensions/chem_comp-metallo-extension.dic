@@ -1985,15 +1985,6 @@ save__pdbx_nonpoly_atom_coordination.geometry_generic
                regardless of the provenance to enhance
                findability. The geometry is based on what is observed
                in the coordinate file.
-
-               Description of _pdbx_nonpoly_atom_coordination.geometry_abbr:
-
-               This data item lists the abbreviated name of the
-               geometry, as specified in the
-               _pdbx_nonpoly_atom_coordination_sphere.descriptor. For
-               instance, square planar is abbreviated to SPL. The
-               geometry is based on what is observed in the coordinate
-               file.
 ;
     _item.name                  '_pdbx_nonpoly_atom_coordination.geometry_generic'
     _item.category_id             pdbx_nonpoly_atom_coordination
@@ -2111,9 +2102,12 @@ save__pdbx_nonpoly_atom_coordination.geometry_generic
 
 save__pdbx_nonpoly_atom_coordination.geometry_abbr
     _item_description.description
-;              This data item lists the abbreviated name of the geometry, as specified in the
-               _pdbx_nonpoly_atom_coordination_sphere.descriptor. For instance, square planar
-	       is abbreviated to SPL. The geometry derived from observed geometries in atomic coordinate files.
+;              This data item lists the abbreviated name of the
+               geometry, as specified in the
+               _pdbx_nonpoly_atom_coordination_sphere.descriptor. For
+               instance, square planar is abbreviated to SPL. The
+               geometry derived from observed geometries in atomic
+               coordinate files.
 ;
     _item.name                  '_pdbx_nonpoly_atom_coordination.geometry_abbr'
     _item.category_id             pdbx_nonpoly_atom_coordination
