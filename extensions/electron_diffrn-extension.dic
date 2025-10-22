@@ -147,9 +147,9 @@ save__pdbx_exptl_subtype.method_type
     _item_description.description
 ;              The subtype of the method used in the experiment. The
                subtype should be a variance of the primary method
-               recorded in the the _exptl.method item, with
-               distinctive technical applications and significant
-               scientific impacts.
+               recorded in the _exptl.method item, with distinctive
+               technical applications and significant scientific
+               impacts.
 ;
    #
    _item.name            "_pdbx_exptl_subtype.method_type"
@@ -243,7 +243,8 @@ save__pdbx_exptl_crystal_process.crystal_id
 
 save__pdbx_exptl_crystal_process.microcrystal_method
     _item_description.description
-;              This data item is a pointer to the _exptl_crystal.id
+;              The method used to produce microcrystals for
+               diffraction experiments, if applicable.
 ;
     _item.name                  '_pdbx_exptl_crystal_process.microcrystal_method'
     _item.category_id             pdbx_exptl_crystal_process
@@ -510,7 +511,7 @@ save__pdbx_diffrn_ed.fluence_accumulated
 
 save__pdbx_diffrn_ed.c2_aperture_diameter
     _item_description.description
-;               C2 aperturn diameter
+;               C2 aperture diameter
 ;
     _item.name                  '_pdbx_diffrn_ed.c2_aperture_diameter'
     _item.category_id             pdbx_diffrn_ed
@@ -524,7 +525,7 @@ save__pdbx_diffrn_ed.c2_aperture_diameter
 
 save__pdbx_diffrn_ed.sa_aperture_diameter
     _item_description.description
-;               Select Area aperturn diameter
+;               Select Area aperture diameter
 ;
     _item.name                  '_pdbx_diffrn_ed.sa_aperture_diameter'
     _item.category_id             pdbx_diffrn_ed
