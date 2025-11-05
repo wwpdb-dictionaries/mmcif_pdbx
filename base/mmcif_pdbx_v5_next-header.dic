@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.414
+    _dictionary.version         5.415
 #
      loop_
     _dictionary_history.version
@@ -3192,4 +3192,16 @@ Changes (ep):
     "NanoTerasu BEAMLINE BL09U MX-ES" to
     _diffrn_source.type enumeration
   + Add NanoTerasu to _diffrn_source.pdbx_synchrotron_site 
+;
+5.415  2025-11-04
+;
+Changes (ep):
+  + Update metallo chemical component extension v0.12
+  + Add MemBrain, AreTomo, DataSMART, CryoSMART to _em_software.name enumeration
+  + Add "TFS FALCON C (2k x 2k) to _em_image_recording.film_or_detector_model
+  + Add 'DECTRIS PILATUS 1M' detector to _diffrn_detector.type
+  + Add ANTcryo ANTA grids to _em_sample_support.grid_type
+  + Add SHUIUMU TOTEM microscopes to _em_imgaing.microscope_model enumeration
+  + Add AutoPD to _software.name enumeration
+  + Add _pdbx_related_exp_data_set.db_source
 ;
