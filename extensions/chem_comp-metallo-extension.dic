@@ -129,6 +129,8 @@ chem_comp-metallo-extension.dic 0.13  2025-11-24
   + Remove _pdbx_nonpoly_atom_coordination_sphere_order.geometry_id
     and add new key _pdbx_nonpoly_atom_coordination_sphere_order.sphere_id
     and _pdbx_nonpoly_atom_coordination_sphere_order.symmetry_operation
+  + Change _pdbx_chem_comp_atom_coordination.geometry to
+    _pdbx_chem_comp_atom_coordination.geometry_calculated
 ;
 
 
@@ -1242,7 +1244,7 @@ save_pdbx_chem_comp_atom_coordination
     _pdbx_chem_comp_atom_coordination.comp_id
     _pdbx_chem_comp_atom_coordination.atom_id
     _pdbx_chem_comp_atom_coordination.number
-    _pdbx_chem_comp_atom_coordination.geometry
+    _pdbx_chem_comp_atom_coordination.geometry_calculated
     _pdbx_chem_comp_atom_coordination.geometry_generic
     _pdbx_chem_comp_atom_coordination.provenance
     _pdbx_chem_comp_atom_coordination.geometry_abbr
@@ -1261,7 +1263,7 @@ save_pdbx_chem_comp_atom_coordination
     _pdbx_chem_comp_atom_coordination.comp_id
     _pdbx_chem_comp_atom_coordination.atom_id
     _pdbx_chem_comp_atom_coordination.number
-    _pdbx_chem_comp_atom_coordination.geometry
+    _pdbx_chem_comp_atom_coordination.geometry_calculated
     _pdbx_chem_comp_atom_coordination.geometry_generic
     _pdbx_chem_comp_atom_coordination.provenance
     _pdbx_chem_comp_atom_coordination.geometry_abbr
@@ -1346,12 +1348,12 @@ save__pdbx_chem_comp_atom_coordination.number
 				   
      save_
 
-save__pdbx_chem_comp_atom_coordination.geometry
+save__pdbx_chem_comp_atom_coordination.geometry_calculated
     _item_description.description
 ;              This data item contains the geometry output from a software program (for example, FindGeo or MetalCoord).
                The geometry derived from observed geometries in atomic coordinate files.
 ;
-    _item.name                  '_pdbx_chem_comp_atom_coordination.geometry'
+    _item.name                  '_pdbx_chem_comp_atom_coordination.geometry_calculated'
     _item.category_id             pdbx_chem_comp_atom_coordination
     _item.mandatory_code          yes
     _item_type.code               line
