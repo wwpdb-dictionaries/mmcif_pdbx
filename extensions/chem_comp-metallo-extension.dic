@@ -3,7 +3,7 @@ data_chem_comp-metallo-extension.dic
 _pdbx_dictionary_component.datablock_id   chem_comp-metallo-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   chem_comp-metallo-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF extension to support metalloprotein annotation"
-_pdbx_dictionary_component.version        0.12
+_pdbx_dictionary_component.version        0.13
 
 
 loop_
@@ -119,6 +119,17 @@ chem_comp-metallo-extension.dic 0.12  2025-10-17
     _pdbx_nonpoly_atom_coordination_sphere
   + Add pdbx_chem_comp_atom_coordination.geometry_abbr
 ;
+chem_comp-metallo-extension.dic 0.13  2025-11-24
+;  
+  Changes (ab/ep)
+  + Remove _pdbx_nonpoly_atom_coordination.geometry, add
+    _pdbx_nonpoly_atom_coordination.geometry_calculated and
+    _pdbx_nonpoly_atom_coordination.software_remark
+  + Add _pdbx_nonpoly_atom_coordination_sphere.id
+  + Remove _pdbx_nonpoly_atom_coordination_sphere_order.geometry_id
+    and add new key _pdbx_nonpoly_atom_coordination_sphere_order.sphere_id
+    and _pdbx_nonpoly_atom_coordination_sphere_order.symmetry_operation
+;
 
 
 
@@ -138,7 +149,7 @@ pdbx_nonpoly_atom_coordination_sphere    1  pdbx_nonpoly_atom_coordination_spher
 pdbx_nonpoly_atom_coordination_sphere    2  pdbx_nonpoly_atom_coordination_sphere:pdbx_nonpoly_atom_coordination:1        . .
 
 pdbx_nonpoly_atom_coordination_sphere_order    1  pdbx_nonpoly_atom_coordination_sphere_order:atom_site:1               . .
-pdbx_nonpoly_atom_coordination_sphere_order    2  pdbx_nonpoly_atom_coordination_sphere_order:pdbx_nonpoly_atom_coordination:1        . .
+pdbx_nonpoly_atom_coordination_sphere_order    2  pdbx_nonpoly_atom_coordination_sphere_order:pdbx_nonpoly_atom_coordination_sphere:1        . .
 
 pdbx_nonpoly_feature                     1  pdbx_nonpoly_feature:atom_site:1                                . .
 pdbx_nonpoly_feature_evidence            1  pdbx_nonpoly_feature_evidence:atom_site:1                       . .
@@ -194,7 +205,7 @@ pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordinati
 pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.auth_comp_id'       '_atom_site.auth_comp_id'                   atom_site
 pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.auth_atom_id'       '_atom_site.auth_atom_id'                   atom_site
 pdbx_nonpoly_atom_coordination_sphere_order    1  '_pdbx_nonpoly_atom_coordination_sphere_order.PDB_ins_code'       '_atom_site.pdbx_PDB_ins_code'              atom_site
-pdbx_nonpoly_atom_coordination_sphere_order    2  '_pdbx_nonpoly_atom_coordination_sphere_order.geometry_id'        '_pdbx_nonpoly_atom_coordination.geometry_id'  pdbx_nonpoly_atom_coordination
+pdbx_nonpoly_atom_coordination_sphere_order    2  '_pdbx_nonpoly_atom_coordination_sphere_order.sphere_id'          '_pdbx_nonpoly_atom_coordination_sphere.id' pdbx_nonpoly_atom_coordination_sphere
 
 pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.label_asym_id'                 '_atom_site.label_asym_id'                  atom_site
 pdbx_nonpoly_feature                     1  '_pdbx_nonpoly_feature.label_comp_id'                 '_atom_site.label_comp_id'                  atom_site
@@ -1715,13 +1726,14 @@ save_pdbx_nonpoly_atom_coordination
     _pdbx_nonpoly_atom_coordination.auth_atom_id
     _pdbx_nonpoly_atom_coordination.PDB_ins_code
     _pdbx_nonpoly_atom_coordination.number
-    _pdbx_nonpoly_atom_coordination.geometry
+    _pdbx_nonpoly_atom_coordination.geometry_calculated
+    _pdbx_nonpoly_atom_coordination.software_remark
     _pdbx_nonpoly_atom_coordination.geometry_generic
     _pdbx_nonpoly_atom_coordination.geometry_abbr
     _pdbx_nonpoly_atom_coordination.provenance
     _pdbx_nonpoly_atom_coordination.assessment
-    1 D . VO4 V ? A 343 VO4 V ? 5 'trigonal bipyramid (regular)' 'trigonal bipyramidal' .    FindGeo    Expected
-    1 D . VO4 V ? A 343 VO4 V ? 5 trigonal-bipyramid             'trigonal bipyramidal' TBP  MetalCoord Expected
+    1 D . VO4 V ? A 343 VO4 V ? 5 'trigonal bipyramid'  regular  'trigonal bipyramidal' .    FindGeo    Expected
+    1 D . VO4 V ? A 343 VO4 V ? 5 trigonal-bipyramid    .        'trigonal bipyramidal' TBP  MetalCoord Expected
 ;
 ;
     Example 2 - based on 1HIP: 
@@ -1740,19 +1752,20 @@ save_pdbx_nonpoly_atom_coordination
     _pdbx_nonpoly_atom_coordination.auth_atom_id
     _pdbx_nonpoly_atom_coordination.PDB_ins_code
     _pdbx_nonpoly_atom_coordination.number
-    _pdbx_nonpoly_atom_coordination.geometry
-    _pdbx_nonpoly_atom_coordination.geometry_generic
+    _pdbx_nonpoly_atom_coordination.geometry_calculated
+    _pdbx_nonpoly_atom_coordination.software_remark
     _pdbx_nonpoly_atom_coordination.provenance
+    _pdbx_nonpoly_atom_coordination.geometry_generic
     _pdbx_nonpoly_atom_coordination.geometry_abbr
     _pdbx_nonpoly_atom_coordination.assessment            
-    1 B . SF4 FE1 ? A 86 SF4 FE1 ?  4 'tetrahedron (regular)' tetrahedral FindGeo    .    Expected
-    1 B . SF4 FE1 ? A 86 SF4 FE1 ?  4 tetrahedral             tetrahedral MetalCoord TET  Expected
-    2 B . SF4 FE2 ? A 86 SF4 FE2 ?  4 'tetrahedron (regular)' tetrahedral FindGeo    .    Expected
-    2 B . SF4 FE2 ? A 86 SF4 FE2 ?  4 tetrahedral             tetrahedral MetalCoord TET  Expected
-    3 B . SF4 FE3 ? A 86 SF4 FE3 ?  4 'tetrahedron (regular)' tetrahedral FindGeo    .    Expected
-    3 B . SF4 FE3 ? A 86 SF4 FE3 ?  4 tetrahedral             tetrahedral MetalCoord TET  Expected
-    4 B . SF4 FE4 ? A 86 SF4 FE4 ?  4 'tetrahedron (regular)' tetrahedral FindGeo    .    Expected
-    4 B . SF4 FE4 ? A 86 SF4 FE4 ?  4 tetrahedral             tetrahedral MetalCoord TET  Expected
+    1 B . SF4 FE1 ? A 86 SF4 FE1 ? 4 tetrahedron regular tetrahedral FindGeo    .    Expected
+    1 B . SF4 FE1 ? A 86 SF4 FE1 ? 4 tetrahedral .       tetrahedral MetalCoord TET  Expected
+    2 B . SF4 FE2 ? A 86 SF4 FE2 ? 4 tetrahedron regular tetrahedral FindGeo    .    Expected
+    2 B . SF4 FE2 ? A 86 SF4 FE2 ? 4 tetrahedral .       tetrahedral MetalCoord TET  Expected
+    3 B . SF4 FE3 ? A 86 SF4 FE3 ? 4 tetrahedron regular tetrahedral FindGeo    .    Expected
+    3 B . SF4 FE3 ? A 86 SF4 FE3 ? 4 tetrahedral .       tetrahedral MetalCoord TET  Expected
+    4 B . SF4 FE4 ? A 86 SF4 FE4 ? 4 tetrahedron regular tetrahedral FindGeo    .    Expected
+    4 B . SF4 FE4 ? A 86 SF4 FE4 ? 4 tetrahedral .       tetrahedral MetalCoord TET  Expected
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -1962,15 +1975,27 @@ save__pdbx_nonpoly_atom_coordination.number
 				   
      save_
 
-save__pdbx_nonpoly_atom_coordination.geometry
+save__pdbx_nonpoly_atom_coordination.geometry_calculated
     _item_description.description
 ;              This data item contains the geometry output from a software program
                (for example, FindGeo or MetalCoord). The geometry is based on what
 	       is observed in the coordinate file.
 ;
-    _item.name                  '_pdbx_nonpoly_atom_coordination.geometry'
+    _item.name                  '_pdbx_nonpoly_atom_coordination.geometry_calculated'
     _item.category_id             pdbx_nonpoly_atom_coordination
     _item.mandatory_code          yes
+    _item_type.code               line
+
+save__pdbx_nonpoly_atom_coordination.software_remark
+    _item_description.description
+;              This data item describes the agreement of the
+               software-generated geometry with the idealized
+               reference geometries. This information is generated by
+               the software that generates geometry annotation.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination.software_remark'
+    _item.category_id             pdbx_nonpoly_atom_coordination
+    _item.mandatory_code          no
     _item_type.code               line
 
 save__pdbx_nonpoly_atom_coordination.geometry_generic
@@ -2167,7 +2192,8 @@ save_pdbx_nonpoly_atom_coordination_sphere
     _category.id                  pdbx_nonpoly_atom_coordination_sphere
     _category.mandatory_code      no
     loop_
-    _category_key.name           '_pdbx_nonpoly_atom_coordination_sphere.geometry_id'
+    _category_key.name           '_pdbx_nonpoly_atom_coordination_sphere.id'
+                                 '_pdbx_nonpoly_atom_coordination_sphere.label_asym_id'
                                  '_pdbx_nonpoly_atom_coordination_sphere.label_comp_id'
                                  '_pdbx_nonpoly_atom_coordination_sphere.label_atom_id'
 	   
@@ -2183,6 +2209,7 @@ save_pdbx_nonpoly_atom_coordination_sphere
 ;
 ;
     loop_
+    _pdbx_nonpoly_atom_coordination_sphere.id
     _pdbx_nonpoly_atom_coordination_sphere.geometry_id
     _pdbx_nonpoly_atom_coordination_sphere.label_asym_id
     _pdbx_nonpoly_atom_coordination_sphere.label_seq_id
@@ -2196,13 +2223,14 @@ save_pdbx_nonpoly_atom_coordination_sphere
     _pdbx_nonpoly_atom_coordination_sphere.PDB_ins_code
     _pdbx_nonpoly_atom_coordination_sphere.descriptor
     _pdbx_nonpoly_atom_coordination_sphere.provenance
-    1 D . VO4 V ? A 343 VO4 V ? @TBP{V,N,O,O,O,O} MetalCoord
+    1 1 D . VO4 V ? A 343 VO4 V ? @TBP{V,N,O,O,O,O} MetalCoord
 ;
 ;
     Example 2 - based on 1HIP
 ;
 ;
     loop_
+    _pdbx_nonpoly_atom_coordination_sphere.id
     _pdbx_nonpoly_atom_coordination_sphere.geometry_id
     _pdbx_nonpoly_atom_coordination_sphere.label_asym_id
     _pdbx_nonpoly_atom_coordination_sphere.label_seq_id
@@ -2216,14 +2244,28 @@ save_pdbx_nonpoly_atom_coordination_sphere
     _pdbx_nonpoly_atom_coordination_sphere.PDB_ins_code 
     _pdbx_nonpoly_atom_coordination_sphere.descriptor
     _pdbx_nonpoly_atom_coordination_sphere.provenance
-    1 B . SF4 FE1 ? A 86 SF4 FE1 ? @TET{Fe,S,S,S,S} MetalCoord
-    2 B . SF4 FE1 ? A 86 SF4 FE1 ? @TET{Fe,S,S,S,S} MetalCoord
-    3 B . SF4 FE1 ? A 86 SF4 FE1 ? @TET{Fe,S,S,S,S} MetalCoord
-    4 B . SF4 FE1 ? A 86 SF4 FE1 ? @TET{Fe,S,S,S,S} MetalCoord
+    1 1 B . SF4 FE1 ? A 86 SF4 FE1 ? @TET{Fe,S,S,S,S} MetalCoord
+    2 2 B . SF4 FE1 ? A 86 SF4 FE1 ? @TET{Fe,S,S,S,S} MetalCoord
+    3 3 B . SF4 FE1 ? A 86 SF4 FE1 ? @TET{Fe,S,S,S,S} MetalCoord
+    4 4 B . SF4 FE1 ? A 86 SF4 FE1 ? @TET{Fe,S,S,S,S} MetalCoord
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
 
+
+save__pdbx_nonpoly_atom_coordination_sphere.id
+   #
+   _item_description.description
+;    This data item is the parent for
+     _pdbx_nonpoly_atom_coordination_sphere_order.sphere_id.
+;
+   #
+   _item.name                     '_pdbx_nonpoly_atom_coordination_sphere.id'
+   _item.category_id              pdbx_nonpoly_atom_coordination_sphere
+   _item.mandatory_code           yes
+   #
+   _item_type.code                int
+save_
 
 save__pdbx_nonpoly_atom_coordination_sphere.geometry_id
    #
@@ -2447,7 +2489,7 @@ save_pdbx_nonpoly_atom_coordination_sphere_order
     _category.id                  pdbx_nonpoly_atom_coordination_sphere_order
     _category.mandatory_code      no
     loop_
-    _category_key.name           '_pdbx_nonpoly_atom_coordination_sphere_order.geometry_id'
+    _category_key.name           '_pdbx_nonpoly_atom_coordination_sphere_order.sphere_id'
                                  '_pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id'				 
                                  '_pdbx_nonpoly_atom_coordination_sphere_order.label_atom_id'
                                  '_pdbx_nonpoly_atom_coordination_sphere_order.atom_place'				 
@@ -2464,7 +2506,7 @@ save_pdbx_nonpoly_atom_coordination_sphere_order
 ;
 ;
     loop_
-    _pdbx_nonpoly_atom_coordination_sphere_order.geometry_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.sphere_id
     _pdbx_nonpoly_atom_coordination_sphere_order.label_asym_id
     _pdbx_nonpoly_atom_coordination_sphere_order.label_seq_id
     _pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id
@@ -2474,20 +2516,21 @@ save_pdbx_nonpoly_atom_coordination_sphere_order
     _pdbx_nonpoly_atom_coordination_sphere_order.auth_seq_id
     _pdbx_nonpoly_atom_coordination_sphere_order.auth_comp_id 
     _pdbx_nonpoly_atom_coordination_sphere_order.auth_atom_id 
-    _pdbx_nonpoly_atom_coordination_sphere_order.PDB_ins_code 
+    _pdbx_nonpoly_atom_coordination_sphere_order.PDB_ins_code
+    _pdbx_nonpoly_atom_coordination_sphere_order.symmetry_operation
     _pdbx_nonpoly_atom_coordination_sphere_order.atom_place 
-    1 A 12 HIS NE2 ? A 12  HIS NE2 ? 1
-    1 D .  VO4 O1  ? A 343 VO4 O1  ? 2
-    1 D .  VO4 O2  ? A 343 VO4 O2  ? 3
-    1 D .  VO4 O3  ? A 343 VO4 O3  ? 4
-    1 D .  VO4 O4  ? A 343 VO4 O4  ? 5
+    1 A 12 HIS NE2 ? A 12  HIS NE2 ? x,y,z 1
+    1 D .  VO4 O1  ? A 343 VO4 O1  ? x,y,z 2
+    1 D .  VO4 O2  ? A 343 VO4 O2  ? x,y,z 3
+    1 D .  VO4 O3  ? A 343 VO4 O3  ? x,y,z 4
+    1 D .  VO4 O4  ? A 343 VO4 O4  ? x,y,z 5
 ;
 ;
     Example 2 - based on 1HIP
 ;
 ;
     loop_
-    _pdbx_nonpoly_atom_coordination_sphere_order.geometry_id
+    _pdbx_nonpoly_atom_coordination_sphere_order.sphere_id
     _pdbx_nonpoly_atom_coordination_sphere_order.label_asym_id
     _pdbx_nonpoly_atom_coordination_sphere_order.label_seq_id
     _pdbx_nonpoly_atom_coordination_sphere_order.label_comp_id
@@ -2497,46 +2540,47 @@ save_pdbx_nonpoly_atom_coordination_sphere_order
     _pdbx_nonpoly_atom_coordination_sphere_order.auth_seq_id
     _pdbx_nonpoly_atom_coordination_sphere_order.auth_comp_id 
     _pdbx_nonpoly_atom_coordination_sphere_order.auth_atom_id 
-    _pdbx_nonpoly_atom_coordination_sphere_order.PDB_ins_code 
+    _pdbx_nonpoly_atom_coordination_sphere_order.PDB_ins_code
+    _pdbx_nonpoly_atom_coordination_sphere_order.symmetry_operation
     _pdbx_nonpoly_atom_coordination_sphere_order.atom_place 
-    1 B .  SF4 FE1 ? A 86 SF4 FE1 ? 1
-    1 B .  SF4 FE1 ? A 86 SF4 FE1 ? 2
-    1 B .  SF4 FE1 ? A 86 SF4 FE1 ? 3
-    1 A 43 CYS SG  ? A 43 CYS SG  ? 4
-    2 B .  SF4 FE2 ? A 86 SF4 FE2 ? 1
-    2 B .  SF4 FE2 ? A 86 SF4 FE2 ? 2
-    2 B .  SF4 FE2 ? A 86 SF4 FE2 ? 3
-    2 A 46 CYS SG  ? A 46 CYS SG  ? 4
-    3 B .  SF4 FE3 ? A 86 SF4 FE3 ? 1
-    3 B .  SF4 FE3 ? A 86 SF4 FE3 ? 2
-    3 B .  SF4 FE3 ? A 86 SF4 FE3 ? 3
-    3 A 63 CYS SG  ? A 63 CYS SG  ? 4
-    4 B .  SF4 FE4 ? A 86 SF4 FE4 ? 1
-    4 B .  SF4 FE4 ? A 86 SF4 FE4 ? 2
-    4 B .  SF4 FE4 ? A 86 SF4 FE4 ? 3
-    4 A 77 CYS SG  ? A 77 CYS SG ? 4
+    1 B .  SF4 FE1 ? A 86 SF4 FE1 ? x,y,z 1
+    1 B .  SF4 FE1 ? A 86 SF4 FE1 ? x,y,z 2
+    1 B .  SF4 FE1 ? A 86 SF4 FE1 ? x,y,z 3
+    1 A 43 CYS SG  ? A 43 CYS SG  ? x,y,z 4
+    2 B .  SF4 FE2 ? A 86 SF4 FE2 ? x,y,z 1
+    2 B .  SF4 FE2 ? A 86 SF4 FE2 ? x,y,z 2
+    2 B .  SF4 FE2 ? A 86 SF4 FE2 ? x,y,z 3
+    2 A 46 CYS SG  ? A 46 CYS SG  ? x,y,z 4
+    3 B .  SF4 FE3 ? A 86 SF4 FE3 ? x,y,z 1
+    3 B .  SF4 FE3 ? A 86 SF4 FE3 ? x,y,z 2
+    3 B .  SF4 FE3 ? A 86 SF4 FE3 ? x,y,z 3
+    3 A 63 CYS SG  ? A 63 CYS SG  ? x,y,z 4
+    4 B .  SF4 FE4 ? A 86 SF4 FE4 ? x,y,z 1
+    4 B .  SF4 FE4 ? A 86 SF4 FE4 ? x,y,z 2
+    4 B .  SF4 FE4 ? A 86 SF4 FE4 ? x,y,z 3
+    4 A 77 CYS SG  ? A 77 CYS SG  ? x,y,z 4
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
 
 
-save__pdbx_nonpoly_atom_coordination_sphere_order.geometry_id
+save__pdbx_nonpoly_atom_coordination_sphere_order.sphere_id
    #
    _item_description.description
 ;              This data item is a foreign key to
-               _pdbx_nonpoly_atom_coordination_sphere.geometry_id.
+               _pdbx_nonpoly_atom_coordination_sphere.id
                This item maps the coordination sphere order to a
                specific coordination sphere described in the
                pdbx_nonpoly_atom_coordination_sphere category.
 ;
    #
-   _item.name                     '_pdbx_nonpoly_atom_coordination_sphere_order.geometry_id'
+   _item.name                     '_pdbx_nonpoly_atom_coordination_sphere_order.sphere_id'
    _item.category_id              pdbx_nonpoly_atom_coordination_sphere_order
    _item.mandatory_code           yes
    #
    _item_type.code                int
-   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere_order.geometry_id'
-   _item_linked.parent_name     '_pdbx_nonpoly_atom_coordination.geometry_id'
+   _item_linked.child_name      '_pdbx_nonpoly_atom_coordination_sphere_order.sphere_id'
+   _item_linked.parent_name     '_pdbx_nonpoly_atom_coordination_sphere.id'
 save_
 
 save__pdbx_nonpoly_atom_coordination_sphere_order.label_asym_id
@@ -2708,6 +2752,17 @@ save__pdbx_nonpoly_atom_coordination_sphere_order.atom_place
     _item.category_id             pdbx_nonpoly_atom_coordination_sphere_order
     _item.mandatory_code          yes
     _item_type.code               int
+     save_
+
+save__pdbx_nonpoly_atom_coordination_sphere_order.symmetry_operation
+    _item_description.description
+;              The symmetry operator to apply to the specific atom to
+               move it into the coordinate spehere.
+;
+    _item.name                  '_pdbx_nonpoly_atom_coordination_sphere_order.symmetry_operation'
+    _item.category_id             pdbx_nonpoly_atom_coordination_sphere_order
+    _item.mandatory_code          yes
+    _item_type.code               line
      save_
 
 
