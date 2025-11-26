@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.407
+    _dictionary.version         5.408
 #
      loop_
     _dictionary_history.version
@@ -3062,4 +3062,10 @@ Changes (ep):
   + Add SHUIUMU TOTEM microscopes to _em_imgaing.microscope_model enumeration
   + Add AutoPD to _software.name enumeration
   + Add _pdbx_related_exp_data_set.db_source
+;
+5.408  2025-11-26
+;
+Changes (ep):
+  + Correct SHUIUMU TOTEM microscope names in _em_imgaing.microscope_model enumeration
+  + Correct symmetry_operation regular expression to include lower case z
 ;
