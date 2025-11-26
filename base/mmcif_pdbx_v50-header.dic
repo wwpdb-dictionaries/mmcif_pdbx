@@ -3068,4 +3068,5 @@ Changes (ep):
 Changes (ep):
   + Correct SHUIUMU TOTEM microscope names in _em_imgaing.microscope_model enumeration
   + Correct symmetry_operation regular expression to include lower case z
+  + Adjust advisory limits for _reflns_shell.pdbx_Rrim_I_all
 ;

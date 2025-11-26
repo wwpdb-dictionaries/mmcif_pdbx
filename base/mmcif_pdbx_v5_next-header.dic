@@ -3211,4 +3211,5 @@ Changes (ep):
   + Correct SHUIUMU TOTEM microscope names in _em_imgaing.microscope_model enumeration
   + Correct symmetry_operation regular expression to include lower case z
   + Update metallo chemical component extension to v0.13
+  + Adjust advisory limits for _reflns_shell.pdbx_Rrim_I_all
 ;
