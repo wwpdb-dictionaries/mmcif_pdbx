@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.408
+    _dictionary.version         5.409
 #
      loop_
     _dictionary_history.version
@@ -3069,4 +3069,11 @@ Changes (ep):
   + Correct SHUIUMU TOTEM microscope names in _em_imgaing.microscope_model enumeration
   + Correct symmetry_operation regular expression to include lower case z
   + Adjust advisory limits for _reflns_shell.pdbx_Rrim_I_all
+;
+5.409  2025-12-15
+;
+Changes (ep):
+  + Add new DECTRIS detectors to _diffrn_detector.type enumeraton"
+  + Add ModelAngelo to _em_software.name enumeration
+  + Add "ALBA BEAMLINE XAIRA" to _diffrn_source.type enumeration
 ;
