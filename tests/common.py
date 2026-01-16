@@ -100,6 +100,20 @@ class DictionaryData(object):
 
         return self._dApi.getItemRelatedList(categoryName, attributeName)
 
+    def getPdbxItemType(self, itemName):
+        """Returns any DepUI enum list"""
+
+        categoryName = CifName.categoryPart(itemName)
+        attributeName = CifName.attributePart(itemName)
+        return self._dApi.getTypeCodePdbx(categoryName, attributeName)
+
+    def getItemType(self, itemName):
+        """Returns any DepUI enum list"""
+
+        categoryName = CifName.categoryPart(itemName)
+        attributeName = CifName.attributePart(itemName)
+        return self._dApi.getTypeCode(categoryName, attributeName)
+    
 
 def main():
     d = DictionaryData()
