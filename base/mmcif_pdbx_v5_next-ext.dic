@@ -37,13 +37,17 @@ initial-model-extension-EMD.dic  ../extensions/initial-model-extension-EMD.dic  
 emd_map_upload_extension.dic     ../extensions/emd_map_upload_extension.dic     extend . .
 em_map_upload_extension.dic      ../extensions/em_map_upload_extension.dic      extend . .
 
+# Production
+ptm-extension.doc                ../extensions/ptm-extension.dic                extend . .
+chem_comp-metallo-extension.dic  ../extensions/chem_comp-metallo-extension.dic  extend . .
+batch_extension.dic              ../extensions/batch-extension.dic  extend . .
+
 
 # In development
+electon_diffrn-extension.dic     ../extensions/electron_diffrn-extension.dic    extend . .
+
 diffrn-data-set-extension.dic    ../extensions/diffrn-data-set-extension-v2.dic extend . .
 comment-ext.dic                  ../extensions/comment-ext.dic                  extend . .
 binding-assay-extension.dic      ../extensions/binding-assay-extension.dic      extend . .
-ptm-extension.doc                ../extensions/ptm-extension.dic                extend . .
 
-batch_extension.dic              ../extensions/batch-extension.dic  extend . .
-chem_comp-metallo-extension.dic  ../extensions/chem_comp-metallo-extension.dic  extend . .
 # chem_comp-precursor-extension.dic  ../extensions/chem_comp-precursor-extension.dic  extend . .

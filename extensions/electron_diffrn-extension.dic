@@ -1,0 +1,727 @@
+data_electron_diffrn-extension.dic
+
+_pdbx_dictionary_component.datablock_id   electron_diffrn-extension.dic
+_pdbx_dictionary_component.dictionary_component_id   electron_diffrn-extension.dic
+_pdbx_dictionary_component.title          "PDBx/mmCIF Electron Diffraction Extension"
+_pdbx_dictionary_component.version        0.6
+
+loop_
+_pdbx_dictionary_component_history.dictionary_component_id
+_pdbx_dictionary_component_history.version
+_pdbx_dictionary_component_history.update
+_pdbx_dictionary_component_history.revision
+electron_diffrn-extension.dic 0.1  2023-08-30
+;  
+  Changes (ep/cs):
+  + Initial version
+;
+electron_diffrn-extension.dic 0.2  2023-09-08
+;  
+  Changes (ep/cs):
+  + Remove changes to _exptl category, create _pdbx_exptl_subtype
+;
+electron_diffrn-extension.dic 0.3  2023-10-20
+;  
+  Changes (ep/cs):
+  + Remove None from _pdbx_exptl_subtype.method_type enumeration
+;
+electron_diffrn-extension.dic 0.4  2025-06-10
+;  
+  Changes (ep/cs):
+  + Update enumeration for _pdbx_exptl_subtype.method_type
+  + Reduced enumeration list for _pdbx_electron_diffrn_source.instrument_model
+  + Remove _pdbx_electron_diffrn_source.wavelength
+  + Remove "TUNGSTEN HAIRPIN" from _pdbx_electron_diffrn_source.electron_source enumeration
+  + Reduce enumeration list for _pdbx_electron_diffrn_detector.detector_camera
+  + Add _pdbx_electron_diffrn_continuous_rotation.angle_per_image
+;
+electron_diffrn-extension.dic 0.5  2025-06-17
+;  
+  Changes (ep/cs):
+  + Change _pdbx_electron_diffrn_continuous_rotation.exposure_time_per_frame to
+    _pdbx_electron_diffrn_continuous_rotation.exposure_time_per_image
+  + Change     _pdbx_electron_diffrn_discrete_angle.exposure_time_per_frame to
+    _pdbx_electron_diffrn_discrete_angle.exposure_time_per_image
+;
+electron_diffrn-extension.dic 0.6  2025-06-17
+;  
+  Changes (ep/cs):
+  + Remove _pdbx_electron_diffrn, _pdbx_electron_diffn_source,
+    _pdbx_electron_diffn_detector, pdbx_electron_diffn_continuous_rotation,
+    _pdbx_electron_diffn_discrete_angle, _pdbx_electro_diffrn_crystal_group
+    categories
+  + Remove electron_diffrn_group
+  + Add new categories _pdbx_diffrn_ed, _pdbx_extl_crystal_process
+  + Add _pdbx_exptl_crystal_cryo_treatment.cryogen, _diffrn_measurement.angle_start
+    _diffrn_measurement.angle_end, _diffrn_measurement.rotation_rate,
+    _diffrn_measurement.exposure_time_per_frame, _diffrn_measurement.rotation_mode,
+    _diffrn_measurement.precession, _diffrn_measurement.sample_tracking,
+    _diffrn_measurement.sample_tracking_method
+;
+
+
+#####################
+## ITEM_UNITS_LIST ##
+#####################
+
+loop_
+_item_units_list.code
+_item_units_list.detail
+degrees_per_second                           "degrees (of arc) per second"  
+electrons_per_angstroms_squared              "electrons per angstroms squared (electrons/(metres * 10^(-10)^)^(-2)^)"
+electrons_per_angstroms_squared_per_second   "electrons per angstroms squared (electrons/(metres * 10^(-10)^)^(-2)/second^)"  
+
+###########################
+#   Parent/Child Links    #
+###########################
+loop_
+_pdbx_item_linked_group.category_id
+_pdbx_item_linked_group.link_group_id
+_pdbx_item_linked_group.label
+_pdbx_item_linked_group.context
+_pdbx_item_linked_group.condition_id
+pdbx_diffrn_ed                           1  pdbx_diffrn_ed:diffrn:1                                          .  .
+pdbx_exptl_subtype                       1  pdbx_exptl_subtype:exptl:1                                       .  .
+pdbx_exptl_crystal_process               1  pdbx_exptl_crystal_process:exptl_crystal:1                       .  .
+
+loop_
+_pdbx_item_linked_group_list.child_category_id
+_pdbx_item_linked_group_list.link_group_id
+_pdbx_item_linked_group_list.child_name
+_pdbx_item_linked_group_list.parent_name
+_pdbx_item_linked_group_list.parent_category_id
+pdbx_diffrn_ed                           1  "_pdbx_diffrn_ed.diffrn_id"                                     "_diffrn.id"                    diffrn
+pdbx_exptl_subtype                       1  "_pdbx_exptl_subtype.exptl_method"                              "_exptl.method"                 exptl
+pdbx_exptl_crystal_process               1  "_pdbx_exptl_crystal_process.crystal_id"                        "_exptl_crystal.id"             exptl_crystal
+
+######################
+# pdbx_exptl_subtype #
+######################
+save_pdbx_exptl_subtype
+    _category.description
+;              Data items in the PDBX_EXPTL_SUBTYPE category record
+               details about the method subtype under the primary
+               method recorded in _exptl.method
+;
+    _category.id                  pdbx_exptl_subtype
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_exptl_subtype.exptl_method'
+                                 '_pdbx_exptl_subtype.method_type'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'exptl_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1
+;
+;
+    _pdbx_exptl_subtype.exptl_method                    "ELECTRON CRYSTALLOGRAPHY"
+    _pdbx_exptl_subtype.method_type                     "Microcrystal Electron Diffraction"
+    _pdbx_exptl_subtype.details		                ?
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_exptl_subtype.exptl_method
+    _item_description.description
+;              This data item is a pointer to _exptl.method in the EXPTL category.
+;
+   #
+   _item.name            "_pdbx_exptl_subtype.exptl_method"
+   _item.category_id     pdbx_exptl_subtype
+   _item.mandatory_code  yes
+   #
+   _item_type.code  line
+   _item_examples.case "X-RAY CRYSTALLOGRAPHY"
+   #
+    _item_linked.child_name       '_pdbx_exptl_subtype.exptl_method'
+    _item_linked.parent_name      '_exptl.method'
+   #
+save_
+
+save__pdbx_exptl_subtype.method_type
+    _item_description.description
+;              The subtype of the method used in the experiment. The
+               subtype should be a variance of the primary method
+               recorded in the _exptl.method item, with distinctive
+               technical applications and significant scientific
+               impacts.
+;
+   #
+   _item.name            "_pdbx_exptl_subtype.method_type"
+   _item.category_id     pdbx_exptl_subtype
+   _item.mandatory_code  yes
+   #
+   _item_type.code  line
+   _item_examples.case   "Microcrystal Electron Diffraction"
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+   "Microcrystal Electron Diffraction"        .
+   "2-Dimensional Electron Crystallography"   .
+#
+save_
+
+save__pdbx_exptl_subtype.details
+    _item_description.description
+;               Details about the method subtype.
+;
+    _item.name                  '_pdbx_exptl_subtype.details'
+    _item.category_id             pdbx_exptl_subtype
+    _item.mandatory_code          no
+    _item_type.code               text
+    
+     save_
+
+
+
+##############################
+# pdbx_exptl_crystal_process #
+##############################
+
+save_pdbx_exptl_crystal_process
+    _category.description
+;              Data items in the pdbx_exptl_crystal_process category
+               record details of the post-crystallization process to
+               prepare specific crystal samples such as microcrystals
+               for subsequent diffraction experiments.
+;
+    _category.id                  pdbx_exptl_crystal_process
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_exptl_crystal_process.id'
+                                 '_pdbx_exptl_crystal_process.crystal_id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'exptl_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - based on PDB entry 9dho
+;
+;
+    _pdbx_exptl_crystal_process.id                              1
+    _pdbx_exptl_crystal_process.crystal_id                      1
+    _pdbx_exptl_crystal_process.microcrystal_method             "FIB milling"
+    _pdbx_exptl_crystal_process.microcrystal_instrument         "Helios Hydra 5 CX dual-beam plasma FIB/SEM (Thermo Fisher Scientific)"
+    _pdbx_exptl_crystal_process.microcrystal_min_dim            0.3
+    _pdbx_exptl_crystal_process.microcrystal_max_dim            5
+    _pdbx_exptl_crystal_process.microcrystal_description        lamella
+    _pdbx_exptl_crystal_process.details                         "stepwise protocol to an optimal thickness of approximately 300 nm using a 30 kV Argon plasma ion beam"
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_exptl_crystal_process.id
+    _item_description.description
+;              The ordinal identifier for the category
+;
+    _item.name                  '_pdbx_exptl_crystal_process.id'
+    _item.category_id             pdbx_exptl_crystal_process
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_exptl_crystal_process.crystal_id
+    _item_description.description
+;              This data item is a pointer to the _exptl_crystal.id
+;
+    _item.name                  '_pdbx_exptl_crystal_process.crystal_id'
+    _item.category_id             pdbx_exptl_crystal_process
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_pdbx_exptl_crystal_process.crystal_id'
+    _item_linked.parent_name      '_exptl_crystal.id'
+     save_
+
+save__pdbx_exptl_crystal_process.microcrystal_method
+    _item_description.description
+;              The method used to produce microcrystals for
+               diffraction experiments, if applicable.
+;
+    _item.name                  '_pdbx_exptl_crystal_process.microcrystal_method'
+    _item.category_id             pdbx_exptl_crystal_process
+    _item.mandatory_code          no
+    _item_type.code               line
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+     'FIB milling'   .
+     'Naturally grown'     .
+     Sonication            .
+     Vortexing             .
+     Other                 .
+
+     save_
+
+
+save__pdbx_exptl_crystal_process.microcrystal_instrument
+    _item_description.description
+;              The instrument used to produce microcrystals for the experiments, if applicable.
+;
+    _item.name                  '_pdbx_exptl_crystal_process.microcrystal_instrument'
+    _item.category_id             pdbx_exptl_crystal_process
+    _item.mandatory_code          no
+    _item_type.code               line
+    _item_examples.case          'Thermo Fisher Helios Hydra dual-beam plasma beam FIB/SEM'
+     save_
+
+save__pdbx_exptl_crystal_process.microcrystal_min_dim
+    _item_description.description
+;               The minimal dimension of the final crystal ready for
+                diffraction experiments. For example, for
+                microcrystals processed by FIB milling, this item
+                refers to the thickness of the thin lamella.
+;
+    _item.name                  '_pdbx_exptl_crystal_process.microcrystal_min_dim'
+    _item.category_id             pdbx_exptl_crystal_process
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_examples.case           0.5
+    _item_units.code              micrometres
+
+     save_
+
+save__pdbx_exptl_crystal_process.microcrystal_max_dim
+    _item_description.description
+;               The maximal dimension of the final crystal ready for
+                diffraction experiments. For example, for
+                microcrystals processed by FIB milling, this item
+                refers to the length of the thin lamella.
+;
+    _item.name                  '_pdbx_exptl_crystal_process.microcrystal_max_dim'
+    _item.category_id             pdbx_exptl_crystal_process
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_examples.case           60
+    _item_units.code              micrometres
+
+     save_
+
+save__pdbx_exptl_crystal_process.microcrystal_description
+    _item_description.description
+;               Characteristics of the final crystal ready for diffraction experiments, e.g. shape.
+;
+    _item.name                  '_pdbx_exptl_crystal_process.microcrystal_description'
+    _item.category_id             pdbx_exptl_crystal_process
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_examples.case           Lamella
+
+     save_
+
+save__pdbx_exptl_crystal_process.details
+    _item_description.description
+;               The details about the crystal process.
+;
+    _item.name                  '_pdbx_exptl_crystal_process.details'
+    _item.category_id             pdbx_exptl_crystal_process
+    _item.mandatory_code          no
+    _item_type.code               text
+
+     save_
+
+#####################################
+# pdbx_exptl_crystal_cryo_treatment #
+#####################################
+
+# Augments existing category in base
+
+save__pdbx_exptl_crystal_cryo_treatment.cryogen
+    _item_description.description
+;              The name of cryogen used for vitrification
+;
+    _item.name                  '_pdbx_exptl_crystal_cryo_treatment.cryogen'
+    _item.category_id             pdbx_exptl_crystal_cryo_treatment
+    _item.mandatory_code          no
+    _item_type.code               line
+     loop_
+     _item_enumeration.value
+       ETHANE  
+       NITROGEN  
+       OTHER  
+     save_
+
+
+
+#######################
+# pdbx_electron_diffn #
+#######################
+save_pdbx_diffrn_ed
+    _category.description
+;              Data items in the PDBX_DIFFRN_ED record details specific to electron diffraction method.
+;
+    _category.id                  pdbx_diffrn_ed
+    _category.mandatory_code      no
+    loop_
+    _category_key.name           '_pdbx_diffrn_ed.id'
+    loop_
+    _category_group.id           'inclusive_group'
+                                 'diffrn_group'
+    loop_
+    _category_examples.detail
+    _category_examples.case
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;
+    Example 1 - based on PDB entry 9DHO
+;
+;
+    _pdbx_diffrn_ed.id                          1
+    _pdbx_diffrn_ed.diffrn_id                   1
+    _pdbx_diffrn_ed.beam_diameter_sample_plane  3.5
+    _pdbx_diffrn_ed.camera_length               1402
+    _pdbx_diffrn_ed.c2_aperture_diameter        50
+    _pdbx_diffrn_ed.details                     "The microscope was aligned for low flux density using spot size 11, and gun lens setting 8 for a less bright but more coherent illumination. The energy filter was tuned to pass electrons with energy losses less than 10 eV, with the zero-loss peak centered in defocused diffraction"
+    _pdbx_diffrn_ed.fluence_accumulated         0.84
+    _pdbx_diffrn_ed.fluence_rate                0.002
+    _pdbx_diffrn_ed.electron_source             "FIELD EMISSION GUN"
+    _pdbx_diffrn_ed.energyfilter_name           "TFS Selectris"
+    _pdbx_diffrn_ed.energyfilter_upper          ?
+    _pdbx_diffrn_ed.energyfilter_lower          ?
+    _pdbx_diffrn_ed.recording_mode              "Electron Counting"
+    _pdbx_diffrn_ed.sa_aperture_diameter        150
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+     save_
+
+save__pdbx_diffrn_ed.id
+    _item_description.description
+;              This ordinal identifier for the category
+;
+    _item.name                  '_pdbx_diffrn_ed.id'
+    _item.category_id             pdbx_diffrn_ed
+    _item.mandatory_code          yes
+    _item_type.code               code
+     save_
+
+save__pdbx_diffrn_ed.diffrn_id
+    _item_description.description
+;              This data item is a pointer to the _diffrn.id
+;
+    _item.name                  '_pdbx_diffrn_ed.diffrn_id'
+    _item.category_id             pdbx_diffrn_ed
+    _item.mandatory_code          yes
+    _item_type.code               code
+    _item_linked.child_name       '_pdbx_diffrn_ed.diffrn_id'
+    _item_linked.parent_name      '_diffrn.id'
+     save_
+
+save__pdbx_diffrn_ed.electron_source
+    _item_description.description
+;               The source of electrons, i.e. the electron gun
+;
+    _item.name                  '_pdbx_diffrn_ed.electron_source'
+    _item.category_id             pdbx_diffrn_ed
+    _item.mandatory_code          no
+    _item_type.code               line
+
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+    "FIELD EMISSION GUN"  .  
+    LAB6                  .  
+    OTHER                 .  
+
+     save_
+
+save__pdbx_diffrn_ed.beam_diameter_sample_plane
+    _item_description.description
+;               The electron beam diameter at the sample plane
+;
+    _item.name                  '_pdbx_diffrn_ed.beam_diameter_sample_plane'
+    _item.category_id             pdbx_diffrn_ed
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              micrometres
+    save_
+
+save__pdbx_diffrn_ed.camera_length
+    _item_description.description
+;              The product of the objective focal length and the
+               combined magnification of the intermediate and projector
+               lenses when the microscope is operated in the
+               diffraction mode.
+;
+    _item.name                  '_pdbx_diffrn_ed.camera_length'
+    _item.category_id             pdbx_diffrn_ed
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              millimetres
+    _item_range.minimum           0.0
+    _item_range.maximum            .
+    
+     save_
+
+
+save__pdbx_diffrn_ed.recording_mode
+    _item_description.description
+;              The mode of the detector for electron diffraction recording, e.g.
+               Electron Counting (Event) mode, Linear (Integrating) mode
+;
+   #
+   _item.name            "_pdbx_diffrn_ed.recording_mode"
+   _item.category_id     pdbx_diffrn_ed
+   _item.mandatory_code  no
+   #
+   _item_type.code  line
+   #
+   loop_
+   _item_enumeration.value
+   _item_enumeration.detail
+     "Electron Counting"  .
+     Integrating          .
+     Other                .
+   #
+save_
+
+save__pdbx_diffrn_ed.fluence_rate
+    _item_description.description
+;               Fluence rate, or flux density at the sample plane
+;
+    _item.name                  '_pdbx_diffrn_ed.fluence_rate'
+    _item.category_id             pdbx_diffrn_ed
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              electrons_per_angstroms_squared_per_second
+    _item_range.minimum           0.0
+    _item_range.maximum            .
+    
+     save_
+
+save__pdbx_diffrn_ed.fluence_accumulated
+    _item_description.description
+;               Total fluence at the sample plane
+;
+    _item.name                  '_pdbx_diffrn_ed.fluence_accumulated'
+    _item.category_id             pdbx_diffrn_ed
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              electrons_per_angstroms_squared
+    _item_range.minimum           0.0
+    _item_range.maximum            .
+    
+     save_
+
+save__pdbx_diffrn_ed.c2_aperture_diameter
+    _item_description.description
+;               C2 aperture diameter
+;
+    _item.name                  '_pdbx_diffrn_ed.c2_aperture_diameter'
+    _item.category_id             pdbx_diffrn_ed
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              micrometres
+    _item_range.minimum           0.0
+    _item_range.maximum            .
+    
+     save_
+
+save__pdbx_diffrn_ed.sa_aperture_diameter
+    _item_description.description
+;               Select Area aperture diameter
+;
+    _item.name                  '_pdbx_diffrn_ed.sa_aperture_diameter'
+    _item.category_id             pdbx_diffrn_ed
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              micrometres
+    _item_range.minimum           0.0
+    _item_range.maximum            .
+    
+     save_
+
+save__pdbx_diffrn_ed.energyfilter_name
+    _item_description.description
+;               The name of the energy filter
+;
+    _item.name                  '_pdbx_diffrn_ed.energyfilter_name'
+    _item.category_id             pdbx_diffrn_ed
+    _item.mandatory_code          no
+    _item_type.code               line
+    _item_examples.case          'TFS Selectris'
+    
+     save_
+
+save__pdbx_diffrn_ed.energyfilter_upper
+    _item_description.description
+;               The energy filter range upper value in electron volts (eV)
+                set by the specrometer
+;
+    _item.name                  '_pdbx_diffrn_ed.energyfilter_upper'
+    _item.category_id             pdbx_diffrn_ed
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              electron_volts
+    _item_range.minimum           0.0
+    _item_range.maximum            .
+    
+     save_
+
+save__pdbx_diffrn_ed.energyfilter_lower
+    _item_description.description
+;               The energy filter range lower value in electron volts (eV)
+                set by the specrometer
+;
+    _item.name                  '_pdbx_diffrn_ed.energyfilter_lower'
+    _item.category_id             pdbx_diffrn_ed
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              electron_volts
+    _item_range.minimum           0.0
+    _item_range.maximum            .
+    
+     save_
+
+save__pdbx_diffrn_ed.details
+    _item_description.description
+;               Details of the electron diffration process
+;
+    _item.name                  '_pdbx_diffrn_ed.details'
+    _item.category_id             pdbx_diffrn_ed
+    _item.mandatory_code          no
+    _item_type.code               text
+    _item_units.code              electron_volts
+     save_
+
+#######################################XXXXXXX
+
+######################
+# diffrn_measurement #
+######################
+
+# Augments base dictionary
+
+save__diffrn_measurement.pdbx_angle_start
+    _item_description.description
+;              The starting angle for crystal rotation.
+;
+    _item.name                  '_diffrn_measurement.pdbx_angle_start'
+    _item.category_id             diffrn_measurement
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+
+    _item_examples.case           -30
+
+     save_
+
+save__diffrn_measurement.pdbx_angle_end
+    _item_description.description
+;              The ending angle for crystal rotation.
+;
+    _item.name                  '_diffrn_measurement.pdbx_angle_end'
+    _item.category_id             diffrn_measurement
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees
+    _item_examples.case           30
+    
+     save_
+
+save__diffrn_measurement.pdbx_rotation_rate
+    _item_description.description
+;              The speed of crystal rotation.
+;
+    _item.name                  '_diffrn_measurement.pdbx_rotation_rate'
+    _item.category_id             diffrn_measurement
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              degrees_per_second
+    
+     save_
+
+save__diffrn_measurement.pdbx_exposure_time_per_image
+    _item_description.description
+;              The exposure time per image for the crystal and
+               detector/camera.
+;
+    _item.name                  '_diffrn_measurement.pdbx_exposure_time_per_image'
+    _item.category_id             diffrn_measurement
+    _item.mandatory_code          no
+    _item_type.code               float
+    _item_units.code              seconds
+    
+     save_
+
+save__diffrn_measurement.rotation_mode
+    _item_description.description
+;               Originated from IUCr Electron Diffraction CIF
+                extension. Code describing the technique used to
+                sample as completely as possible the accessible range
+                of reciprocal space. Rotation mode indicates the
+                detector records diffracted intensities continuously
+                while the sample is rotated. Stepwise model indicates
+                the detector records diffracted intensities while the
+                sample is stationary.
+;
+    _item.name                  '_diffrn_measurement.rotation_mode'
+    _item.category_id             diffrn_measurement
+    _item.mandatory_code          no
+    _item_type.code               code
+
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+     rotation .
+     stepwise .
+     save_
+
+save__diffrn_measurement.method_precession
+    _item_description.description
+;               Originated from IUCr Electron Diffraction CIF
+                extension. Flag indicating if the radiation beam
+                illuminates the sample at an angle that is rotated
+                about a precession axis.
+;
+    _item.name                  '_diffrn_measurement.method_precession'
+    _item.category_id             diffrn_measurement
+    _item.mandatory_code          no
+    _item_type.code               code
+
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+     Y .
+     N .
+     save_
+
+save__diffrn_measurement.sample_tracking
+    _item_description.description
+;               Originated from IUCr Electron Diffraction CIF
+                extension. Flag indicating if a tracking method to
+                follow the crystal was used in the data
+                acquisition. Typically used to track very small
+                crystals in electron diffraction experiments.
+;
+    _item.name                  '_diffrn_measurement.sample_tracking'
+    _item.category_id             diffrn_measurement
+    _item.mandatory_code          no
+    _item_type.code               code
+
+    loop_
+    _item_enumeration.value
+    _item_enumeration.detail
+     Y .
+     N .
+     save_
+
+save__diffrn_measurement.sample_tracking_method
+    _item_description.description
+;               Originated from IUCr Electron Diffraction CIF
+                extension. Description of the method used to follow
+                the crystal during data collection.
+;
+    _item.name                  '_diffrn_measurement.sample_tracking_method'
+    _item.category_id             diffrn_measurement
+    _item.mandatory_code          no
+    _item_type.code               line
+    _item_examples.case          'Electron-beam tracking by PyFast-ADT'
+     save_
+

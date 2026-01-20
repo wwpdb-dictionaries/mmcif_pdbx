@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.409
+    _dictionary.version         5.410
 #
      loop_
     _dictionary_history.version
@@ -3076,4 +3076,12 @@ Changes (ep):
   + Add new DECTRIS detectors to _diffrn_detector.type enumeraton"
   + Add ModelAngelo to _em_software.name enumeration
   + Add "ALBA BEAMLINE XAIRA" to _diffrn_source.type enumeration
+;
+5.410  2026-01-10
+;
+Changes (ep):
+  + Remove upper limit for reflns.pdbx_Rrim_I_all
+  + Remove pdbx_item_type from _pdbx_database_related.db_id as item_type already includes.
+  + Add GisSPA to _em_software.name enumeration
+  + Include chemical component metallo extension
 ;
