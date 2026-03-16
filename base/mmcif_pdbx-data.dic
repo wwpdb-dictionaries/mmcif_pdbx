@@ -586,6 +586,7 @@ data_mmcif_pdbx-data.dic
    citation_doi        char '10\..*'  'Citation DOI specification.'
    exp_data_doi        char '10\.[0-9]{4,9}/[-._;()/:A-Za-z0-9]+'  'Experimental dataset DOI'
    deposition_email    uchar '[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.-]+' 'code item types/single words  (case insensitive) ...'
+   pdbx_wavelength_list char '((([0-9]+(\.[0-9]*)?)|(\.[0-9]+))|(([0-9]+(\.[0-9]*)?)|(\.[0-9]+)) *- *(([0-9]+(\.[0-9]*)?)|(\.[0-9]+)) *) *(, *((([0-9]+(\.[0-9]*)?)|(\.[0-9]+))|(([0-9]+(\.[0-9]*)?)|(\.[0-9]+)) *- *(([0-9]+(\.[0-9]*)?)|(\.[0-9]+)) *) *)*' 'Comma separated list of wavelengths and ranges'
 
 #####################
 ## ITEM_UNITS_LIST ##

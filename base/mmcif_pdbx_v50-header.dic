@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.410
+    _dictionary.version         5.411
 #
      loop_
     _dictionary_history.version
@@ -3084,4 +3084,12 @@ Changes (ep):
   + Remove pdbx_item_type from _pdbx_database_related.db_id as item_type already includes.
   + Add GisSPA to _em_software.name enumeration
   + Include chemical component metallo extension
+;
+5.411  2026-03-16
+;
+Changes (ep):
+  + For deposition, add a pdbx_wavelength_list data type
+  + Extend enumeration for _em_sample_support.grid_type to include
+    "Quantifoil R1/1", "Quantifoil R1/2", "Quantifoil R3/5", "Quantifoil R1.2/20"
+  + Add SmartScope to _em_software.name enumeration
 ;
