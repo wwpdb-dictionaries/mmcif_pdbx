@@ -26,5 +26,5 @@ xfel2-extension.dic              ../extensions/xfel2-extension.dic              
 initial-model-extension.dic      ../extensions/initial-model-extension.dic      extend . .
 mmcif_pdbx_investigation.dic     ../extensions/investigation.dic                extend . .
 ptm-extension.doc                ../extensions/ptm-extension.dic                extend . .
-
+chem_comp-metallo-extension.dic  ../extensions/chem_comp-metallo-extension.dic  extend . .
 batch_extension.dic              ../extensions/batch-extension.dic              extend . .
