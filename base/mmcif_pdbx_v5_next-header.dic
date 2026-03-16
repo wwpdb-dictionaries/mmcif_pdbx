@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.418
+    _dictionary.version         5.418.metallo
 #
      loop_
     _dictionary_history.version
@@ -3227,4 +3227,8 @@ Changes (ep):
   + Remove pdbx_item_type from _pdbx_database_related.db_id as item_type already includes.
   + Add GisSPA to _em_software.name enumeration
   + Include MicroED extension
+;
+5.418.metallo  2025-11-24
+;
+Changes (ep):
 ;
