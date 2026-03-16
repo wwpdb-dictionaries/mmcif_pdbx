@@ -1357,6 +1357,7 @@ save__pdbx_chem_comp_atom_coordination.geometry_calculated
     _item.category_id             pdbx_chem_comp_atom_coordination
     _item.mandatory_code          yes
     _item_type.code               line
+    save_
 
 save__pdbx_chem_comp_atom_coordination.geometry_generic
     _item_description.description
@@ -1687,7 +1688,7 @@ save__pdbx_chem_comp_atom_coordination_sphere.representative_entry_id
    _item_type.code                ucode
 
    _pdbx_item_context.type        CHEM_COMP_INT
-   _pdbx_item_context.item_name   '_pdbx_chem_comp_atom_coordination.representative_entry_id'
+   _pdbx_item_context.item_name   '_pdbx_chem_comp_atom_coordination_sphere.representative_entry_id'
 save_
 
 ##################################
