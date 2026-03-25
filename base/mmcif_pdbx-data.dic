@@ -601,7 +601,6 @@ data_mmcif_pdbx-data.dic
      'millimetres'            'millimetres (metres * 10^( -3)^)'
      'micrometres'            'micrometres (metres * 10^( -6)^)'
      'nanometres'             'nanometres  (metres * 10^( -9)^)'
-     'nanometers'             'nanometers  (metres * 10^( -9)^)'
      'angstroms'              'angstroms   (metres * 10^(-10)^)'
      'picometres'             'picometres  (metres * 10^(-12)^)'
      'femtometres'            'femtometres (metres * 10^(-15)^)'
@@ -685,7 +684,7 @@ data_mmcif_pdbx-data.dic
 #
      'megadaltons'            'megadaltons'
      'kilodaltons'            'kilodaltons'
-     "kilodaltons/nanometer"  "kilodaltons/nanometer"
+     "kilodaltons/nanometre"  "kilodaltons/nanometre"
 #
      'microns_squared'        'micrometres squared (metres * 10^( -6)^)^2^'
      'microns'                'micrometres  (metres * 10^( -6)^)'

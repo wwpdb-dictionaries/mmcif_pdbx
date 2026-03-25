@@ -1468,13 +1468,13 @@ save__emd_molecular_mass.units
 
 #save__emd_molecular_mass.kda_per_nm
 #    _item_description.description
-#;    The molecular mass per nanometer, in kilodaltons, for a helical/filamentous assembly.
+#;    The molecular mass per nanometre, in kilodaltons, for a helical/filamentous assembly.
 #;
 #    _item.name                   '_emd_molecular_mass.kda_per_nm'
 #    _item.category_id            emd_molecular_mass
 #    _item.mandatory_code         no
 #    _item_type.code              float
-#    _item_units.code             'kilodaltons/nanometer'
+#    _item_units.code             'kilodaltons/nanometre'
 #      save_
 
 #save__emd_molecular_mass.method
@@ -3219,7 +3219,7 @@ save__emd_sectioning_focused_ion_beam.initial_thickness
     _item.name                  '_emd_sectioning_focused_ion_beam.initial_thickness'
     _item.category_id           emd_sectioning_focused_ion_beam
     _item.mandatory_code        yes
-    _item_units.code            nanometers
+    _item_units.code            nanometres
     _item_type.code             int
     loop_
     _item_range.maximum
@@ -3243,7 +3243,7 @@ save__emd_sectioning_focused_ion_beam.final_thickness
     _item.name                  '_emd_sectioning_focused_ion_beam.final_thickness'
     _item.category_id           emd_sectioning_focused_ion_beam
     _item.mandatory_code        yes
-    _item_units.code            nanometers
+    _item_units.code            nanometres
     _item_type.code             positive_int
     loop_
     _pdbx_item_range.name
@@ -3334,12 +3334,12 @@ save__emd_sectioning_ultramicrotomy.temperature
 
 save__emd_sectioning_ultramicrotomy.final_thickness
     _item_description.description
-;  Final thickness of the sectioned sample, in nanometers
+;  Final thickness of the sectioned sample, in nanometres
 ;
     _item.name                  '_emd_sectioning_ultramicrotomy.final_thickness'
     _item.category_id           emd_sectioning_ultramicrotomy
     _item.mandatory_code        yes
-    _item_units.code            nanometers
+    _item_units.code            nanometres
     _item_type.code             positive_int
     _item_examples.case         60
      save_
@@ -4696,14 +4696,14 @@ save__emd_microscopy.nominal_cs
 
 save__emd_microscopy.nominal_defocus_min
     _item_description.description
-;   The minimum defocus value of the objective lens (in nanometers) used
+;   The minimum defocus value of the objective lens (in nanometres) used
     to obtain the recorded images. Negative values refer to overfocus.
 ;
     _item.name                  '_emd_microscopy.nominal_defocus_min'
     _item.category_id             emd_microscopy
     _item.mandatory_code          no
     _item_type.code               float
-    _item_units.code             nanometers
+    _item_units.code             nanometres
     _item_examples.case           1200
     loop_
     _pdbx_item_range.name
@@ -4714,14 +4714,14 @@ save__emd_microscopy.nominal_defocus_min
 
 save__emd_microscopy.calibrated_defocus_min
     _item_description.description
-;   The minimum calibrated defocus value of the objective lens (in nanometers) used
+;   The minimum calibrated defocus value of the objective lens (in nanometres) used
     to obtain the recorded images. Negative values refer to overfocus.
 ;
     _item.name                  '_emd_microscopy.calibrated_defocus_min'
     _item.category_id             emd_microscopy
     _item.mandatory_code          no
     _item_type.code               float
-    _item_units.code             nanometers
+    _item_units.code             nanometres
     _item_examples.case           1200
     loop_
     _pdbx_item_range.name
@@ -4732,14 +4732,14 @@ save__emd_microscopy.calibrated_defocus_min
 
 save__emd_microscopy.nominal_defocus_max
     _item_description.description
-;   The maximum defocus value of the objective lens (in nanometers) used
+;   The maximum defocus value of the objective lens (in nanometres) used
     to obtain the recorded images. Negative values refer to overfocus.
 ;
     _item.name                  '_emd_microscopy.nominal_defocus_max'
     _item.category_id             emd_microscopy
     _item.mandatory_code          no
     _item_type.code               float
-    _item_units.code             nanometers
+    _item_units.code             nanometres
     _item_examples.case           5000
     loop_
     _pdbx_item_range.name
@@ -4750,14 +4750,14 @@ save__emd_microscopy.nominal_defocus_max
 
 save__emd_microscopy.calibrated_defocus_max
     _item_description.description
-;   The maximum calibrated defocus value of the objective lens (in nanometers) used
+;   The maximum calibrated defocus value of the objective lens (in nanometres) used
     to obtain the recorded images. Negative values refer to overfocus.
 ;
     _item.name                  '_emd_microscopy.calibrated_defocus_max'
     _item.category_id             emd_microscopy
     _item.mandatory_code          no
     _item_type.code               float
-    _item_units.code             nanometers
+    _item_units.code             nanometres
     _item_examples.case           5000
     loop_
       _item_range.minimum
