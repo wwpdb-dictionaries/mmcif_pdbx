@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.419
+    _dictionary.version         5.420
 #
      loop_
     _dictionary_history.version
@@ -3236,4 +3236,15 @@ Changes (ep):
     "Quantifoil R1/1", "Quantifoil R1/2", "Quantifoil R3/5", "Quantifoil R1.2/20"
   + Add SmartScope to _em_software.name enumeration
   + For deposition, add a pdbx_wavelength_list data type
+;
+5.420  2026-03-25
+;
+Changes (ep/CV-GPhL):
+  + Change datatype nanometer(s) to nanometre(s) to be consistent throughout
+  + _diffrn_source.type add "HEPS BEAMLINE ID02U1A",
+    _diffrn_source.pdbx_synchrotron_site add "HEPS",
+    _diffrn_source.pdbx_synchrotron_beamlin add "ID02U1A"
+  + Extend description of _pdbx_struct_assembly_prop
+  + Extend enumeration of pdbx_related_exp_data_set.db_source
+  + Add "raw EM image data" to _pdbx_related_exp_data_set.data_set_type and remove EMPIAR
 ;
