@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.412
+    _dictionary.version         5.413
 #
      loop_
     _dictionary_history.version
@@ -3099,7 +3099,11 @@ Changes (ep):
   + _diffrn_source.type add "HEPS BEAMLINE ID02U1A",
     _diffrn_source.pdbx_synchrotron_site add "HEPS",
     _diffrn_source.pdbx_synchrotron_beamlin add "ID02U1A"
-  + Extend description of _pdbx_struct_assembly_prop
   + Extend enumeration of pdbx_related_exp_data_set.db_source
   + Add "raw EM image data" to _pdbx_related_exp_data_set.data_set_type and remove EMPIAR
+;
+5.413  2026-04-06
+;
+  + Extend description of _pdbx_struct_assembly_prop
+  + Add "metal coordination" to enumeration for _pdbx_data_processing_status.task_name
 ;
