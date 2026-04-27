@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.421
+    _dictionary.version         5.422
 #
      loop_
     _dictionary_history.version
@@ -3249,6 +3249,15 @@ Changes (ep/CV-GPhL):
 ;
 5.421  2026-04-06
 ;
+Changes (ep):
   + Extend description of _pdbx_struct_assembly_prop
   + Add "metal coordination" to enumeration for _pdbx_data_processing_status.task_name
+;
+5.422  2026-04-27
+;
+Changes (ep/CV-GPhL):
+  + Add electron diffraction software to _software.name (2DX, IPLT).  Change EPU to EPU-D.
+  + Add ELECTRON MICROSCOPE names to _diffrn_source.type
+  + Add "ELECTRON DETECTOR" to _diffrn_detector.detctor enumeration
+  + Add electron detectors to _diffrn_detector.type and update types.
 ;
