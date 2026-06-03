@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.414
+    _dictionary.version         5.415
 #
      loop_
     _dictionary_history.version
@@ -3110,10 +3110,19 @@ Changes (ep/CV-GPhL):
 ;
 5.414  2026-04-27
 ;
-Changes (ep/CV-GPhL):
+Changes (ep/cs):
   + MicroED extension added to dictionary
   + Add electron diffraction software to _software.name (2DX, IPLT).  Change EPU to EPU-D.
   + Add ELECTRON MICROSCOPE names to _diffrn_source.type
   + Add "ELECTRON DETECTOR" to _diffrn_detector.detctor enumeration
   + Add electron detectors to _diffrn_detector.type and update types.
+;
+5.415  2026-06-03
+;
+Changes (ep):
+  + Correct advisory ranges (comma to period correction) in
+    _refine.correlation_coeff_I_to_Fcsqd_work, _refine.correlation_coeff_I_to_Fcsqd_free,
+    _refine_ls_shell.correlation_coeff_I_to_Fcsqd_work, _refine_ls_shell.correlation_coeff_I_to_Fcsqd_free
+  + Add "HEPS BPIX40-6M" detector to _diffrn_detector.type enumeration.
+  + Update example for _pdbx_related_exp_data_set
 ;
