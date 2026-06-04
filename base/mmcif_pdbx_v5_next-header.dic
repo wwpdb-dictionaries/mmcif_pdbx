@@ -3269,4 +3269,5 @@ Changes (ep):
     _refine_ls_shell.correlation_coeff_I_to_Fcsqd_work, _refine_ls_shell.correlation_coeff_I_to_Fcsqd_free
   + Add "HEPS BPIX40-6M" detector to _diffrn_detector.type enumeration.
   + Update example for _pdbx_related_exp_data_set
+  + Add _pdbx_nmr_constraint_file.constraint_subsubtype
 ;
