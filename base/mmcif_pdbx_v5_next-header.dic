@@ -3270,4 +3270,6 @@ Changes (ep):
   + Add "HEPS BPIX40-6M" detector to _diffrn_detector.type enumeration.
   + Update example for _pdbx_related_exp_data_set
   + Add _pdbx_nmr_constraint_file.constraint_subsubtype
+  + Add "APS BEAMLINE 15-ID-B" and "APS BEAMLINE 15-ID-D" to _diffrn_source.type enumeration.
+  + Add "15-ID-B" and "15-ID-D" to _diffrn_source.pdbx_synchrotron_beamline enumeration.
 ;
