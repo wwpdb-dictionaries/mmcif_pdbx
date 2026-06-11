@@ -3263,7 +3263,7 @@ Changes (ep/cs):
 ;
 5.423  2026-06-03
 ;
-Changes (ep):
+Changes (ep/cv):
   + Correct advisory ranges (comma to period correction) in
     _refine.correlation_coeff_I_to_Fcsqd_work, _refine.correlation_coeff_I_to_Fcsqd_free,
     _refine_ls_shell.correlation_coeff_I_to_Fcsqd_work, _refine_ls_shell.correlation_coeff_I_to_Fcsqd_free
@@ -3272,4 +3272,5 @@ Changes (ep):
   + Add _pdbx_nmr_constraint_file.constraint_subsubtype
   + Add "APS BEAMLINE 15-ID-B" and "APS BEAMLINE 15-ID-D" to _diffrn_source.type enumeration.
   + Add "15-ID-B" and "15-ID-D" to _diffrn_source.pdbx_synchrotron_beamline enumeration.
+  + Allow full range of correlation coefficients for _reflns*.pdbx_CC_half items
 ;
