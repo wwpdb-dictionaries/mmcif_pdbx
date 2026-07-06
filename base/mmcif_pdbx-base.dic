@@ -16,7 +16,7 @@ data_mmcif_pdbx-base.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx-base.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx-base.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx base dictionary"
-_pdbx_dictionary_component.version        0.51
+_pdbx_dictionary_component.version        0.52
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -425,6 +425,22 @@ Changes (ep/cv):
   + Add "APS BEAMLINE 15-ID-B" and "APS BEAMLINE 15-ID-D" to _diffrn_source.type enumeration.
   + Add "15-ID-B" and "15-ID-D" to _diffrn_source.pdbx_synchrotron_beamline enumeration.
   + Allow full range of correlation coefficients for _reflns*.pdbx_CC_half items
+;
+mmcif_pdbx-base.dic  0.52  2026-07-06
+;
+Changes (ep):
+  + Extend enumeration for _em_vitrification.instrument to include CHAMELEON, CRYOGENIUM,
+    CRYOWRITER and "LEICA EM GP2"
+  + Add Leginon to _software.name enumeration
+  + Extend eumeration of _em_image_recording.film_or_detector_model with new GATAN equipment.
+  + Extend _em_imaging_optics.energyfilter_name enumeration with "GIF CONTINUUM HR",
+    "BIOCONTINUUM", "BIOCONTINUUM HD"
+  + Updated description of _pdbx_database_related category
+  + Add "JEOL JEM-F200" to _em_imaging.microscope_model enumeration
+  + Update enumeratons for _pdbx_chem_comp_atom_coordination.geometry_generic
+    and _pdbx_nonpoly_atom_coordination.geometry_generic
+  + Add Isobutyrylation to _pdbx_chem_comp_pcm.type and _pdbx_modification_feature.type enumerations
+  + Add ModelAngelo to to _pdbx_initial_refinement_model.source_name enumeration
 ;
 
 ###############
@@ -33826,6 +33842,7 @@ save__software.name
        '_software.name' LAUENORM          'data scaling'
        '_software.name' Laueprocess       'data reduction,data scaling'
        '_software.name' LaueView          'data reduction,data scaling'
+       '_software.name' Leginon           'data collection'
        '_software.name' LSCALE            .
        '_software.name' MADNESS           .
        '_software.name' MADSYS            phasing
@@ -48686,8 +48703,7 @@ save__pdbx_refine_aux_file.file_type
 ##
 save_pdbx_database_related
     _category.description
-;    Data items in PDBX_DATABASE_RELATED contain references to entries
-     that are related to the this entry.
+;    Data items in PDBX_DATABASE_RELATED contain references to related entries.
 ;
     _category.id                 pdbx_database_related
     _category.mandatory_code      no
@@ -97234,7 +97250,10 @@ save__em_vitrification.instrument
     _item_enumeration.name  #V5
     _item_enumeration.value #V5
     _item_enumeration.detail  #V5
-  '_em_vitrification.instrument'       "CRYOSOL VITROJET"   .
+  '_em_vitrification.instrument'       CHAMELEON                      .
+  '_em_vitrification.instrument'       CRYOGENIUM                     .
+  '_em_vitrification.instrument'       "CRYOSOL VITROJET"             .
+  '_em_vitrification.instrument'       "CRYOWRITER"                   .
   '_em_vitrification.instrument'       "EMS-002 RAPID IMMERSION FREEZER"   .
   '_em_vitrification.instrument'       "FEI VITROBOT MARK I"           .
   '_em_vitrification.instrument'       "FEI VITROBOT MARK II"          .
@@ -97244,6 +97263,7 @@ save__em_vitrification.instrument
   '_em_vitrification.instrument'       "HOMEMADE PLUNGER"              .
   '_em_vitrification.instrument'       "LEICA PLUNGER"                 .
   '_em_vitrification.instrument'       "LEICA EM GP"                   .
+  '_em_vitrification.instrument'       "LEICA EM GP2"                   .
   '_em_vitrification.instrument'       "LEICA EM CPC"                  .
   '_em_vitrification.instrument'       "LEICA KF80"                    .
   '_em_vitrification.instrument'       "REICHERT-JUNG PLUNGER"         .
@@ -97554,6 +97574,7 @@ save__em_imaging.microscope_model
   '_em_imaging.microscope_model'    "JEOL 3100FFC"    .
   '_em_imaging.microscope_model'    "JEOL 3200FS"    .
   '_em_imaging.microscope_model'    "JEOL 3200FSC"    .
+  '_em_imaging.microscope_model'    "JEOL JEM-F200"   .
   '_em_imaging.microscope_model'    "JEOL KYOTO-3000SFF"    .
   '_em_imaging.microscope_model'    "JEOL 3200FSC"    .
   '_em_imaging.microscope_model'    "JEOL 4000"    .
@@ -103780,21 +103801,32 @@ save__em_image_recording.film_or_detector_model
   '_em_image_recording.film_or_detector_model'    "FEI FALCON III (4k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "FEI FALCON IV (4k x 4k)"    .
   '_em_image_recording.film_or_detector_model'    "GATAN ALPINE (2.3k x 3.2k)" .
-  '_em_image_recording.film_or_detector_model'    "GATAN MULTISCAN"   .
-  '_em_image_recording.film_or_detector_model'    "GATAN ORIUS SC200 (2k x 2k)"   .
-  '_em_image_recording.film_or_detector_model'    "GATAN ORIUS SC600 (2.7k x 2.7k)"   .
-  '_em_image_recording.film_or_detector_model'    "GATAN ORIUS SC1000 (4k x 2.7k)"   .
-  '_em_image_recording.film_or_detector_model'    "GATAN ULTRASCAN 1000 (2k x 2k)"   .
-  '_em_image_recording.film_or_detector_model'    "GATAN ULTRASCAN 4000 (4k x 4k)"   .
-  '_em_image_recording.film_or_detector_model'    "GATAN ULTRASCAN 10000 (10k x 10k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN ALPINE VISTA (5.7k x 4k)" .
+  '_em_image_recording.film_or_detector_model'    "GATAN CLEARVIEW (4k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "GATAN K2 (4k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "GATAN K2 BASE (4k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "GATAN K2 IS (4k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "GATAN K2 QUANTUM (4k x 4k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN K2 SUMMIT (4k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "GATAN K3 (6k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "GATAN K3 BIOCONTINUUM (6k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "GATAN K3 BIOQUANTUM (6k x 4k)"   .
-  '_em_image_recording.film_or_detector_model'    "GATAN K2 SUMMIT (4k x 4k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN K3 IS BASE (3.4k x 4k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN K3 IS (5.7k x 4k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN METRO (2k x 2k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN MULTISCAN"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN ONEVIEW (4k x 4k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN ORIUS SC200 (2k x 2k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN ORIUS SC600 (2.7k x 2.7k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN ORIUS SC1000 (4k x 2.7k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN RIO16 (4k x 4k)"   .  
+  '_em_image_recording.film_or_detector_model'    "GATAN RIO 9 (3k x 3k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN RIO 4 (2k x 2k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN ULTRASCAN 1000 (2k x 2k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN ULTRASCAN 4000 (4k x 4k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN ULTRASCAN 10000 (10k x 10k)"   .
+  '_em_image_recording.film_or_detector_model'    "GATAN STELLA (0.5k x 0.5k)"   .    
+  '_em_image_recording.film_or_detector_model'    "GATAN STELLA (1k x 0.5k)"   .
   '_em_image_recording.film_or_detector_model'    "GENERIC GATAN (2k x 2k)"   .
   '_em_image_recording.film_or_detector_model'    "GENERIC GATAN (4k x 4k)"   .
   '_em_image_recording.film_or_detector_model'    "GENERIC GATAN"   .
@@ -103967,8 +103999,11 @@ save__em_imaging_optics.energyfilter_name
     _pdbx_item_enumeration.name
     _pdbx_item_enumeration.value
     _pdbx_item_enumeration.detail
+         '_em_imaging_optics.energyfilter_name'  'BIOCONTINUUM'           .
+         '_em_imaging_optics.energyfilter_name'  'BIOCONTINUUM HD'        .
          '_em_imaging_optics.energyfilter_name'  'CEOS CEFID'             .
          '_em_imaging_optics.energyfilter_name'  'GIF Bioquantum'         .
+         '_em_imaging_optics.energyfilter_name'  'GIF CONTINUUM HR'       .	 
          '_em_imaging_optics.energyfilter_name'  'GIF Quantum ERS'        .
          '_em_imaging_optics.energyfilter_name'  'GIF Quantum ER'         .
          '_em_imaging_optics.energyfilter_name'  'GIF Quantum SE'         .

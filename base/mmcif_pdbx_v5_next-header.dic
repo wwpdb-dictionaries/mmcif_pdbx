@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.423
+    _dictionary.version         5.424
 #
      loop_
     _dictionary_history.version
@@ -3273,4 +3273,19 @@ Changes (ep/cv):
   + Add "APS BEAMLINE 15-ID-B" and "APS BEAMLINE 15-ID-D" to _diffrn_source.type enumeration.
   + Add "15-ID-B" and "15-ID-D" to _diffrn_source.pdbx_synchrotron_beamline enumeration.
   + Allow full range of correlation coefficients for _reflns*.pdbx_CC_half items
+;
+5.424  2026-07-06
+;
+Changes (ep):
+  + Extend enumeration for _em_vitrification.instrument to include CHAMELEON, CRYOGENIUM,
+    CRYOWRITER and "LEICA EM GP2"
+  + Add Leginon to _software.name enumeration
+  + Extend eumeration of _em_image_recording.film_or_detector_model with new GATAN equipment.
+  + Extend _em_imaging_optics.energyfilter_name enumeration with "GIF CONTINUUM HR",
+    "BIOCONTINUUM", "BIOCONTINUUM HD"
+  + Updated description of _pdbx_database_related category
+  + Add "JEOL JEM-F200" to _em_imaging.microscope_model enumeration
+  + Update enumeratons for _pdbx_chem_comp_atom_coordination.geometry_generic
+    and _pdbx_nonpoly_atom_coordination.geometry_generic
+  + Add Isobutyrylation to _pdbx_chem_comp_pcm.type and _pdbx_modification_feature.type enumerations
 ;

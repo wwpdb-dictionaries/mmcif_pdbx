@@ -214,7 +214,7 @@ save_pdbx_exptl_crystal_process
     _pdbx_exptl_crystal_process.microcrystal_min_dim            0.3
     _pdbx_exptl_crystal_process.microcrystal_max_dim            5
     _pdbx_exptl_crystal_process.microcrystal_description        lamella
-    _pdbx_exptl_crystal_process.details                         "stepwise protocol to an optimal thickness of approximately 300 nm using a 30 kV Argon plasma ion beam"
+    _pdbx_exptl_crystal_process.details                         "stepwise protocol to an optimal thickness of approximately 300 nm using a 30 kV Argon plasma ion beam"
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
      save_
@@ -378,7 +378,7 @@ save_pdbx_diffrn_ed
     _pdbx_diffrn_ed.beam_diameter_sample_plane  3.5
     _pdbx_diffrn_ed.camera_length               1402
     _pdbx_diffrn_ed.c2_aperture_diameter        50
-    _pdbx_diffrn_ed.details                     "The microscope was aligned for low flux density using spot size 11, and gun lens setting 8 for a less bright but more coherent illumination. The energy filter was tuned to pass electrons with energy losses less than 10 eV, with the zero-loss peak centered in defocused diffraction"
+    _pdbx_diffrn_ed.details                     "The microscope was aligned for low flux density using spot size 11, and gun lens setting 8 for a less bright but more coherent illumination. The energy filter was tuned to pass electrons with energy losses less than 10 eV, with the zero-loss peak centered in defocused diffraction"
     _pdbx_diffrn_ed.fluence_accumulated         0.84
     _pdbx_diffrn_ed.fluence_rate                0.002
     _pdbx_diffrn_ed.electron_source             "FIELD EMISSION GUN"

@@ -8,7 +8,7 @@ data_initial-model-extension.dic
 _pdbx_dictionary_component.datablock_id   initial-model-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   initial-model-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF Initial model extension"
-_pdbx_dictionary_component.version        0.10
+_pdbx_dictionary_component.version        0.11
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -70,6 +70,11 @@ initial-model-extension.dic  0.10  2024-03-20
 ;
 Changes (EP):
 + Add Robetta, PHYRE and InsightII to _pdbx_initial_refinement_model.source_name enumeration
+;
+initial-model-extension.dic  0.11  2026-07-06
+;
+Changes (ep):
++ Add ModelAngelo to to _pdbx_initial_refinement_model.source_name enumeration
 ;
 
 loop_
@@ -202,6 +207,7 @@ save__pdbx_initial_refinement_model.source_name
                                    AlphaFold
 				   Robetta
                                    RoseTTAFold
+				   ModelAngelo
 				   ModelArchive
                                    SwissModel
                                    Modeller

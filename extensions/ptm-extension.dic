@@ -24,7 +24,7 @@ data_ptm-extension.dic
 _pdbx_dictionary_component.datablock_id   ptm-extension.dic
 _pdbx_dictionary_component.dictionary_component_id   ptm-extension.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF PTM extension"
-_pdbx_dictionary_component.version        0.13
+_pdbx_dictionary_component.version        0.14
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -187,6 +187,11 @@ ptm-extension.dic 0.13  2026-03-16
 ;
   Changes (ep)
   + Add CMPylation to _pdbx_chem_comp_pcm.type and _pdbx_modification_feature.type enumerations
+;
+ptm-extension.dic 0.14  2026-07-06
+;
+  Changes (ep)
+  + Add Isobutyrylation to _pdbx_chem_comp_pcm.type and _pdbx_modification_feature.type enumerations
 ;
 
 ####################
@@ -566,6 +571,7 @@ save__pdbx_chem_comp_pcm.type
     "Hydroxysulfanylation"                             .
     "Hypusine"                                         .
     "Iodination"                                       .
+    "Isobutyrylation"                                  .
     "Isoleucylation"                                   .
     "Lactoylation"                                     .
     "Laurylation"                                      .
@@ -1523,6 +1529,7 @@ save__pdbx_modification_feature.type
     "Hydroxysulfanylation"                             .
     "Hypusine"                                         .
     "Iodination"                                       .
+    "Isobutyrylation"                                  .
     "Isoleucylation"                                   .
     "Lactoylation"                                     .
     "Laurylation"                                      .
