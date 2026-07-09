@@ -5062,6 +5062,8 @@ chem_comp-metallo-extension.dic         0.14   2025-07-06
   Changes (ab/ep)
   + Update enumeratons for _pdbx_chem_comp_atom_coordination.geometry_generic
     and _pdbx_nonpoly_atom_coordination.geometry_generic
+  + Rename _pdbx_nonpoly_atom_coordination.software_remark to
+    _pdbx_nonpoly_atom_coordination.remark
 ;
   
 electron_diffrn-extension.dic           0.1    2023-08-30  
@@ -171837,7 +171839,7 @@ save_pdbx_nonpoly_atom_coordination
     _pdbx_nonpoly_atom_coordination.PDB_ins_code
     _pdbx_nonpoly_atom_coordination.number
     _pdbx_nonpoly_atom_coordination.geometry_calculated
-    _pdbx_nonpoly_atom_coordination.software_remark
+    _pdbx_nonpoly_atom_coordination.remark
     _pdbx_nonpoly_atom_coordination.geometry_generic
     _pdbx_nonpoly_atom_coordination.geometry_abbr
     _pdbx_nonpoly_atom_coordination.provenance
@@ -171866,7 +171868,7 @@ save_pdbx_nonpoly_atom_coordination
     _pdbx_nonpoly_atom_coordination.PDB_ins_code
     _pdbx_nonpoly_atom_coordination.number
     _pdbx_nonpoly_atom_coordination.geometry_calculated
-    _pdbx_nonpoly_atom_coordination.software_remark
+    _pdbx_nonpoly_atom_coordination.remark
     _pdbx_nonpoly_atom_coordination.provenance
     _pdbx_nonpoly_atom_coordination.geometry_generic
     _pdbx_nonpoly_atom_coordination.geometry_abbr
@@ -172117,7 +172119,7 @@ save__pdbx_nonpoly_atom_coordination.geometry_calculated
    #
 save_
 #
-save__pdbx_nonpoly_atom_coordination.software_remark
+save__pdbx_nonpoly_atom_coordination.remark
    _item_description.description  
 ;              This data item describes the agreement of the
                software-generated geometry with the idealized
@@ -172126,7 +172128,7 @@ save__pdbx_nonpoly_atom_coordination.software_remark
 ;
 
    #
-   _item.name            "_pdbx_nonpoly_atom_coordination.software_remark"
+   _item.name            "_pdbx_nonpoly_atom_coordination.remark"
    _item.category_id     pdbx_nonpoly_atom_coordination
    _item.mandatory_code  no
    #
