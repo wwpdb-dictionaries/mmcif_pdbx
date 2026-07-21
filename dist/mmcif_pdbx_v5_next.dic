@@ -168839,6 +168839,7 @@ save__pdbx_initial_refinement_model.source_name
      "_pdbx_initial_refinement_model.source_name"  ModelArchive  .  
      "_pdbx_initial_refinement_model.source_name"  SwissModel    .  
      "_pdbx_initial_refinement_model.source_name"  Modeller      .  
+     "_pdbx_initial_refinement_model.source_name"  ModelAngelo   .  
      "_pdbx_initial_refinement_model.source_name"  ITasser       .  
      "_pdbx_initial_refinement_model.source_name"  PDB-Dev       .  
      "_pdbx_initial_refinement_model.source_name"  Other         .  
