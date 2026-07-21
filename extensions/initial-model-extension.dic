@@ -313,6 +313,7 @@ save__em_3d_fitting_list.source_name
                                    PDB
                                    AlphaFold
                                    RoseTTAFold
+				   ModelAngelo
 				   ModelArchive
                                    SwissModel
                                    Modeller
