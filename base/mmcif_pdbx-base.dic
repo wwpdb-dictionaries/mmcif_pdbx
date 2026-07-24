@@ -97659,6 +97659,7 @@ save__em_imaging.microscope_model
   '_em_imaging.microscope_model'    "JEOL 3100FFC"    .
   '_em_imaging.microscope_model'    "JEOL 3200FS"    .
   '_em_imaging.microscope_model'    "JEOL 3200FSC"    .
+  '_em_imaging.microscope_model'    "JEOL JEM-F200"   .
   '_em_imaging.microscope_model'    "JEOL KYOTO-3000SFF"    .
   '_em_imaging.microscope_model'    "JEOL 3200FSC"    .
   '_em_imaging.microscope_model'    "JEOL 4000"    .
