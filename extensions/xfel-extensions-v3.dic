@@ -20,7 +20,7 @@ data_mmcif_xfel_extensions-v3.dic
 _pdbx_dictionary_component.datablock_id   mmcif_xfel_extensions-v3.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_xfel_extensions-v3.dic
 _pdbx_dictionary_component.title          "PDBx/mmCIF XFELDictionary License Extension"
-_pdbx_dictionary_component.version        0.0.2
+_pdbx_dictionary_component.version        0.0.3
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -36,6 +36,11 @@ mmcif_xfel_extensions-v3.dic  0.0.2  2024-10-31
 ;
 Changes (ep):
 + Add enumeration for _diffrn.pdbx_serial_crystal_experiment
+;
+mmcif_xfel_extensions-v3.dic  0.0.3  2026-09-07
+;
+Changes (ep):
++ Add 'other' to _pdbx_serial_crystallography_sample_delivery.method enumeration
 ;
 
 loop_
@@ -304,6 +309,7 @@ save_pdbx_serial_crystallography_sample_delivery
 ;
 ;
     _pdbx_serial_crystallography_sample_delivery.diffrn_id   1
+    _pdbx_serial_crystallography_sample_delivery.method      injection
     _pdbx_serial_crystallography_sample_delivery.description 'LCP injector'
 
 ;
@@ -357,6 +363,7 @@ save__pdbx_serial_crystallography_sample_delivery.method
     loop_
     _item_enumeration.value      'fixed target'
                                  'injection'
+				 'other'
      save_
 
 #########################################################

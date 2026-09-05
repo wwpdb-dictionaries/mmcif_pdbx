@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.424
+    _dictionary.version         5.425
 #
      loop_
     _dictionary_history.version
@@ -3288,4 +3288,12 @@ Changes (ep):
   + Update enumeratons for _pdbx_chem_comp_atom_coordination.geometry_generic
     and _pdbx_nonpoly_atom_coordination.geometry_generic
   + Add Isobutyrylation to _pdbx_chem_comp_pcm.type and _pdbx_modification_feature.type enumerations
+;
+5.425  2026-09-07
+;
+Changes (ep):
+  + Update enumeration for _em_software.name
+  + Add 'ILL BEAMLINE DALI' and 'ESRF BEAMLINE ID15B'
+    to _diffrn_source.type enumeration
+  + Add 'other' to _pdbx_serial_crystallography_sample_delivery.method enumeration
 ;
