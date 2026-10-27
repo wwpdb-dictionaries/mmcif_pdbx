@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.417
+    _dictionary.version         5.418
 #
      loop_
     _dictionary_history.version
@@ -3153,4 +3153,14 @@ Changes (ep):
   + Add 'ILL BEAMLINE DALI' and 'ESRF BEAMLINE ID15B'
     to _diffrn_source.type enumeration
   + Add 'other' to _pdbx_serial_crystallography_sample_delivery.method enumeration
+;
+5.418  2026-10-27
+;
+Changes (ep):
+  + Augment to roles of EDNA in _software.name enumeration
+  + Add GAPSTOP_TM to _em_spftware.name enumeration
+  + Add _pdbx_depui_status_flags.onedep_lib_deposition and _pdbx_depui_status_flags.onedep_lib_agent
+  + Synchronizae enumeration for _pdbx_database_status.dep_release_code_nmr_data with other attributes
+  + Correct "pdb_id" type to represent proper extended PDB identifier
+  + Correct "sequence_dep" regular expression regarding quoting of parenthesis
 ;

@@ -16,7 +16,7 @@ data_mmcif_pdbx-base.dic
 _pdbx_dictionary_component.datablock_id   mmcif_pdbx-base.dic
 _pdbx_dictionary_component.dictionary_component_id   mmcif_pdbx-base.dic
 _pdbx_dictionary_component.title          "mmCIF/PDBx base dictionary"
-_pdbx_dictionary_component.version        0.53
+_pdbx_dictionary_component.version        0.54
 
 loop_
 _pdbx_dictionary_component_history.dictionary_component_id
@@ -448,6 +448,14 @@ Changes (ep):
   + Update enumeration for _em_software.name
   + Add 'ILL BEAMLINE DALI' and 'ESRF BEAMLINE ID15B'
     to _diffrn_source.type enumeration
+;
+mmcif_pdbx-base.dic  0.54  2026-10-27
+;
+Changes (ep):
+  + Augment to roles of EDNA in _software.name enumeration
+  + Add GAPSTOP_TM to _em_spftware.name enumeration
+  + Add _pdbx_depui_status_flags.onedep_lib_deposition and _pdbx_depui_status_flags.onedep_lib_agent
+  + Synchronizae enumeration for _pdbx_database_status.dep_release_code_nmr_data with other attributes
 ;
 
 ###############
@@ -33808,7 +33816,7 @@ save__software.name
        '_software.name' DMMulti           'phasing,model building'
        '_software.name' DNA               'data collection'
        '_software.name' DPS               'data collection,data reduction'
-       '_software.name' EDNA              'data collection'
+       '_software.name' EDNA              'data collection,data processing,data reduction,data scaling'
        '_software.name' ELVES             'data processing,data reduction,data scaling,model building,phasing,refinement'
        '_software.name' Epinorm           'data reduction'
        '_software.name' 'EM-Menu'         'data collection'
@@ -46988,6 +46996,7 @@ the value of this item.
     _item_enumeration.detail
      'RELEASE NOW'            'Release immediately'
      'HOLD FOR PUBLICATION'   'Hold until primary citation is published'
+     'HOLD FOR 4 WEEKS'       'Hold for 4 weeks'
      'HOLD FOR 6 MONTHS'      'Hold for 6 months'
      'HOLD FOR 1 YEAR'        'Hold for 1 year'
     _item_examples.case
@@ -104653,6 +104662,7 @@ save__em_software.name
         '_em_software.name'  FOCUS                              .
         '_em_software.name'  FREALIGN                           .
         '_em_software.name'  FREALIX                            .
+        '_em_software.name'  GAPSTOP_TM                         .
         '_em_software.name'  Gautomatch                         .
         '_em_software.name'  Gctf                               .
         '_em_software.name'  gEMfitter                          .
@@ -110774,6 +110784,28 @@ save__pdbx_depui_status_flags.assembly_inferred
     _item_type.code               code
     loop_
     _item_enumeration.value    Y N
+     save_
+
+save__pdbx_depui_status_flags.onedep_lib_deposition
+    _item_description.description
+;   A flag to indicate whether onedep_lib was used for any part of the deposition process.
+;
+    _item.name                  '_pdbx_depui_status_flags.onedep_lib_deposition'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _item_type.code               code
+    loop_
+    _item_enumeration.value    Y N
+     save_
+
+save__pdbx_depui_status_flags.onedep_lib_agent
+    _item_description.description
+;   The User-Agent header used by a onedep_lib submission.
+;
+    _item.name                  '_pdbx_depui_status_flags.onedep_lib_agent'
+    _item.category_id             pdbx_depui_status_flags
+    _item.mandatory_code          no
+    _item_type.code               line
      save_
 
 ##############################################

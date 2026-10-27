@@ -6,7 +6,7 @@ import re
 import pytest
 
 
-pdbid_re = "([1-9][A-Z0-9]{3}|PDB_[A-Z0-9]{8})"
+pdbid_re = "([1-9][A-Z0-9]{3}|pdb_[a-z0-9]{8})"
 
 @pytest.fixture(scope = "module")
 def getRe(dictionary):
@@ -35,8 +35,8 @@ def test_dep_pdbid(getRe):
 
 def test_ext_pdbid(getRe):
         reg = getRe
-        assert check_pdbid(reg, "PDB_00001ABC")
-        assert check_pdbid(reg, "PDB_A0001ABC")        
-        assert not check_pdbid(reg, "PDB_0001ABC") # 7 characters
-        assert not check_pdbid(reg, "PDB_120001ABC") # 9 characters        
+        assert check_pdbid(reg, "pdb_00001abc")
+        assert check_pdbid(reg, "pdb_a0001abc")        
+        assert not check_pdbid(reg, "pdb_0001abc") # 7 characters
+        assert not check_pdbid(reg, "pdb_120001abc") # 9 characters        
         

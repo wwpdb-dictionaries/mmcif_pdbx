@@ -9,7 +9,7 @@ _datablock.description
 #
 _dictionary.title         mmcif_pdbx.dic
 _dictionary.datablock_id  mmcif_pdbx.dic
-_dictionary.version       5.425
+_dictionary.version       5.426
 #
 loop_
 _dictionary_history.version
@@ -3588,6 +3588,17 @@ Changes (ep):
   + Add 'other' to _pdbx_serial_crystallography_sample_delivery.method enumeration
 ;
   
+5.426  2026-10-27  
+;
+Changes (ep):
+  + Augment to roles of EDNA in _software.name enumeration
+  + Add GAPSTOP_TM to _em_spftware.name enumeration
+  + Add _pdbx_depui_status_flags.onedep_lib_deposition and _pdbx_depui_status_flags.onedep_lib_agent
+  + Synchronizae enumeration for _pdbx_database_status.dep_release_code_nmr_data with other attributes
+  + Correct "pdb_id" type to represent proper extended PDB identifier
+  + Correct "sequence_dep" regular expression regarding quoting of parenthesis
+;
+  
 #
 loop_
 _sub_category.id
@@ -3916,7 +3927,7 @@ pdbx_related_db_id        char
 pdbx_PDB_obsoleted_db_id  char   "[0-9][0-9a-zA-Z]{3}( [0-9][0-9a-zA-Z]{3})*"  "              List of PDB ids for obsoletion - space separated"  
 positive_int              numb   "[1-9][0-9]*"  "Positive integers (1,2,3,..)"  
 emd_id                    char   EMD-[0-9]{4,}  "EMDB code"  
-pdb_id                    char   ([1-9][A-Z0-9]{3}|PDB_[A-Z0-9]{8})  "PDB code (upper cases)"  
+pdb_id                    char   ([1-9][A-Z0-9]{3}|pdb_[a-z0-9]{8})  "PDB code (upper cases)"  
 pdb_id_u                  uchar  ([1-9][A-Za-z0-9]{3}|[Pp][Dd][Bb]_[A-Za-z0-9]{8})  "PDB code (case insensitive)"  
 point_group               char   (C[1-9][0-9]*|D[2-9]|D[1-9][0-9]+|O|T|I)  "Point group symmetry in Schoenflies notation"  
 point_group_helical       char   "[CD][1-9][0-9]*"  "Point group symmetry for helices in Schoenflies notation"  
@@ -3924,7 +3935,7 @@ boolean                   char   YES|NO  "Boolean type"
 author                    char   "(([A-Za-z0-9_]+(( |-|'|\. )[A-Za-z0-9_]+)*( Jr.| III)?, [A-Za-z0-9_]\.(-?[A-Za-z0-9_]+\.)*)|(Seattle Structural Genomics Center for Infectious Disease.*)|(Structural Genomics Consortium.*)|(QCRG Structural Biology Consortium.*)|(Center for Structural Genomics of Infectious Diseases.*)|(Center for Structural Biology of Infectious Diseases.*)|(Center for Structures of Membrane Proteins.*))"  "Author name in PDB format: Taylor, C.A."  
 orcid_id                  char   "[0-9]{4}-[0-9]{4}-[0-9]{4}-([0-9]{3}X|[0-9]{4})"  "ORCID pattern - dddd-dddd-dddd-dddd|dddX"  
 symmetry_operation        char   "[-+0-9XxYyZz/ ]+,[-+0-9XxYyZz/ ]+,[-+0-9XxYyZz/ ]+"  "Allowed characters for use in symmetry operation such as 1/2-x,y,1/2-z"  
-sequence_dep              char   "[a-zA-Z0-9\t \r\n\v\f\(\)]+$"  "Deposition specific one letter code"  
+sequence_dep              char   "[a-zA-Z0-9\t \r\n\v\f\(\)]+"  "Deposition specific one letter code"  
 date_dep                  char   ([1-9][0-9](([02468][048])|([13579][26]))-02-29)|[1-9][0-9][0-9][0-9]-((((0[1-9])|(1[0-2]))-((0[1-9])|(1[0-9])|(2[0-8])))|((((0[13578])|(1[02]))-31)|(((0[1,3-9])|(1[0-2]))-(29|30))))  "Deposition specific date with better checking"  
 citation_doi              char   10\..*  "Citation DOI specification."  
 exp_data_doi              char   10\.[0-9]{4,9}/[-._;()/:A-Za-z0-9]+  "Experimental dataset DOI"  
@@ -4137,7 +4148,7 @@ _pdbx_dictionary_component.datablock_id
 _pdbx_dictionary_component.dictionary_component_id
 _pdbx_dictionary_component.title
 _pdbx_dictionary_component.version
-mmcif_pdbx-base.dic                     mmcif_pdbx-base.dic                     "mmCIF/PDBx base dictionary"                                 0.53   
+mmcif_pdbx-base.dic                     mmcif_pdbx-base.dic                     "mmCIF/PDBx base dictionary"                                 0.54   
 mmcif_xfel_extensions-v3.dic            mmcif_xfel_extensions-v3.dic            "PDBx/mmCIF XFELDictionary License Extension"                0.0.3  
 mmcif_pdbx_audit_support-extension.dic  mmcif_pdbx_audit_support-extension.dic  "mmCIF/PDBx Audit support extension"                         0.24   
 mmcif_pdbx_sifts.dic                    mmcif_pdbx_sifts.dic                    "PDBx/mmCIF Dictionary Sifts Extension"                      0.0.2  
@@ -4625,6 +4636,15 @@ Changes (ep):
   + Update enumeration for _em_software.name
   + Add 'ILL BEAMLINE DALI' and 'ESRF BEAMLINE ID15B'
     to _diffrn_source.type enumeration
+;
+  
+mmcif_pdbx-base.dic                     0.54   2026-10-27  
+;
+Changes (ep):
+  + Augment to roles of EDNA in _software.name enumeration
+  + Add GAPSTOP_TM to _em_spftware.name enumeration
+  + Add _pdbx_depui_status_flags.onedep_lib_deposition and _pdbx_depui_status_flags.onedep_lib_agent
+  + Synchronizae enumeration for _pdbx_database_status.dep_release_code_nmr_data with other attributes
 ;
   
 mmcif_xfel_extensions-v3.dic            0.0.1  2023-05-31  
@@ -47413,7 +47433,7 @@ save__software.name
      "_software.name"  DMMulti                         "phasing,model building"  
      "_software.name"  DNA                             "data collection"  
      "_software.name"  DPS                             "data collection,data reduction"  
-     "_software.name"  EDNA                            "data collection"  
+     "_software.name"  EDNA                            "data collection,data processing,data reduction,data scaling"  
      "_software.name"  ELVES                           "data processing,data reduction,data scaling,model building,phasing,refinement"  
      "_software.name"  Epinorm                         "data reduction"  
      "_software.name"  EM-Menu                         "data collection"  
@@ -62462,6 +62482,7 @@ the value of this item.
    _item_enumeration.detail
      "RELEASE NOW"           "Release immediately"  
      "HOLD FOR PUBLICATION"  "Hold until primary citation is published"  
+     "HOLD FOR 4 WEEKS"      "Hold for 4 weeks"  
      "HOLD FOR 6 MONTHS"     "Hold for 6 months"  
      "HOLD FOR 1 YEAR"       "Hold for 1 year"  
    #
@@ -127280,6 +127301,7 @@ save__em_software.name
      "_em_software.name"  FOCUS                           .  
      "_em_software.name"  FREALIGN                        .  
      "_em_software.name"  FREALIX                         .  
+     "_em_software.name"  GAPSTOP_TM                      .  
      "_em_software.name"  Gautomatch                      .  
      "_em_software.name"  Gctf                            .  
      "_em_software.name"  gEMfitter                       .  
@@ -134169,6 +134191,33 @@ save__pdbx_depui_status_flags.assembly_inferred
    _item_enumeration.value
      Y  
      N  
+   #
+save_
+#
+save__pdbx_depui_status_flags.onedep_lib_deposition
+   _item_description.description  "   A flag to indicate whether onedep_lib was used for any part of the deposition process."
+   #
+   _item.name            "_pdbx_depui_status_flags.onedep_lib_deposition"
+   _item.category_id     pdbx_depui_status_flags
+   _item.mandatory_code  no
+   #
+   _item_type.code  code
+   #
+   loop_
+   _item_enumeration.value
+     Y  
+     N  
+   #
+save_
+#
+save__pdbx_depui_status_flags.onedep_lib_agent
+   _item_description.description  "   The User-Agent header used by a onedep_lib submission."
+   #
+   _item.name            "_pdbx_depui_status_flags.onedep_lib_agent"
+   _item.category_id     pdbx_depui_status_flags
+   _item.mandatory_code  no
+   #
+   _item_type.code  line
    #
 save_
 #
