@@ -17,7 +17,7 @@ data_mmcif_pdbx.dic
 
     _dictionary.title           mmcif_pdbx.dic
     _dictionary.datablock_id    mmcif_pdbx.dic
-    _dictionary.version         5.418
+    _dictionary.version         5.419
 #
      loop_
     _dictionary_history.version
@@ -3164,3 +3164,14 @@ Changes (ep):
   + Correct "pdb_id" type to represent proper extended PDB identifier
   + Correct "sequence_dep" regular expression regarding quoting of parenthesis
 ;
+5.419  2026-11-16
+;
+Changes (ep):
+  + Add "data scaling" for phenix enumeration in _software.name
+  + Made example for _audit_author more relevant to usage
+  + Add "ELECTRON DIFFRACTOMETER" to _diffrn_source.source enumeration
+  + Add "RIGAKU HyPix-ED" to _diffrn_detector.type enumeration.
+  + Add "XtaLAB Synergy-ED" to _diffrn_source.source
+  + Add "GrenADES parallelproc" to _software.name enumeration
+;
+

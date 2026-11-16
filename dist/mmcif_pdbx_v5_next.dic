@@ -9,7 +9,7 @@ _datablock.description
 #
 _dictionary.title         mmcif_pdbx.dic
 _dictionary.datablock_id  mmcif_pdbx.dic
-_dictionary.version       5.426
+_dictionary.version       5.427
 #
 loop_
 _dictionary_history.version
@@ -3599,6 +3599,17 @@ Changes (ep):
   + Correct "sequence_dep" regular expression regarding quoting of parenthesis
 ;
   
+5.427  2026-11-16  
+;
+Changes (ep):
+  + Add "data scaling" for phenix enumeration in _software.name
+  + Made example for _audit_author more relevant to usage
+  + Add "ELECTRON DIFFRACTOMETER" to _diffrn_source.source enumeration
+  + Add "RIGAKU HyPix-ED" to _diffrn_detector.type enumeration.
+  + Add "XtaLAB Synergy-ED" to _diffrn_source.source
+  + Add "GrenADES parallelproc" to _software.name enumeration
+;
+  
 #
 loop_
 _sub_category.id
@@ -4148,7 +4159,7 @@ _pdbx_dictionary_component.datablock_id
 _pdbx_dictionary_component.dictionary_component_id
 _pdbx_dictionary_component.title
 _pdbx_dictionary_component.version
-mmcif_pdbx-base.dic                     mmcif_pdbx-base.dic                     "mmCIF/PDBx base dictionary"                                 0.54   
+mmcif_pdbx-base.dic                     mmcif_pdbx-base.dic                     "mmCIF/PDBx base dictionary"                                 0.55   
 mmcif_xfel_extensions-v3.dic            mmcif_xfel_extensions-v3.dic            "PDBx/mmCIF XFELDictionary License Extension"                0.0.3  
 mmcif_pdbx_audit_support-extension.dic  mmcif_pdbx_audit_support-extension.dic  "mmCIF/PDBx Audit support extension"                         0.24   
 mmcif_pdbx_sifts.dic                    mmcif_pdbx_sifts.dic                    "PDBx/mmCIF Dictionary Sifts Extension"                      0.0.2  
@@ -4645,6 +4656,17 @@ Changes (ep):
   + Add GAPSTOP_TM to _em_spftware.name enumeration
   + Add _pdbx_depui_status_flags.onedep_lib_deposition and _pdbx_depui_status_flags.onedep_lib_agent
   + Synchronizae enumeration for _pdbx_database_status.dep_release_code_nmr_data with other attributes
+;
+  
+mmcif_pdbx-base.dic                     0.55   2026-11-16  
+;
+Changes (ep):
+  + Add "data scaling" for phenix enumeration in _software.name
+  + Made example for _audit_author more relevant to usage
+  + Add "ELECTRON DIFFRACTOMETER" to _diffrn_source.source enumeration
+  + Add "RIGAKU HyPix-ED" to _diffrn_detector.type enumeration.
+  + Add "XtaLAB Synergy-ED" to _diffrn_source.source
+  + Add "GrenADES parallelproc" to _software.name enumeration
 ;
   
 mmcif_xfel_extensions-v3.dic            0.0.1  2023-05-31  
@@ -13549,39 +13571,14 @@ save_audit_author
     loop_
     _audit_author.pdbx_ordinal
     _audit_author.name
-    _audit_author.address
      1
      'Fitzgerald, Paula M.D.'
-    ; Department of Biophysical Chemistry
-      Merck Research Laboratories
-      P. O. Box 2000, Ry80M203
-      Rahway, New Jersey  07065
-      USA
-    ;
      2
      'McKeever, Brian M.'
-    ; Department of Biophysical Chemistry
-      Merck Research Laboratories
-      P. O. Box 2000, Ry80M203
-      Rahway, New Jersey  07065
-      USA
-    ;
      3
      'Van Middlesworth, J.F.'
-    ; Department of Biophysical Chemistry
-      Merck Research Laboratories
-      P. O. Box 2000, Ry80M203
-      Rahway, New Jersey  07065
-      USA
-    ;
      4
      'Springer, James P.'
-    ; Department of Biophysical Chemistry
-      Merck Research Laboratories
-      P. O. Box 2000, Ry80M203
-      Rahway, New Jersey  07065
-      USA
-    ;
 ;
 
    #
@@ -22867,6 +22864,7 @@ save__diffrn_detector.type
      "_diffrn_detector.type"  "RIGAKU HyPix-6000HE"              PIXEL  
      "_diffrn_detector.type"  "RIGAKU HyPix-Arc 100"             PIXEL  
      "_diffrn_detector.type"  "RIGAKU HyPix-Arc 150"             PIXEL  
+     "_diffrn_detector.type"  "RIGAKU HyPix-ED"                  "ELECTRON DETECTOR"  
      "_diffrn_detector.type"  "RIGAKU JUPITER 140"               CCD  
      "_diffrn_detector.type"  "RIGAKU JUPITER 210"               CCD  
      "_diffrn_detector.type"  "RIGAKU MERCURY"                   CCD  
@@ -25788,14 +25786,15 @@ save__diffrn_source.source
    _pdbx_item_enumeration.name
    _pdbx_item_enumeration.value
    _pdbx_item_enumeration.detail
-     "_diffrn_source.source"  "ELECTRON MICROSCOPE"  electron  
-     "_diffrn_source.source"  "FREE ELECTRON LASER"  x-ray     
-     "_diffrn_source.source"  "LIQUID ANODE"         x-ray     
-     "_diffrn_source.source"  "NUCLEAR REACTOR"      neutron   
-     "_diffrn_source.source"  "ROTATING ANODE"       x-ray     
-     "_diffrn_source.source"  "SEALED TUBE"          x-ray     
-     "_diffrn_source.source"  "SPALLATION SOURCE"    neutron   
-     "_diffrn_source.source"  SYNCHROTRON            x-ray     
+     "_diffrn_source.source"  "ELECTRON DIFFRACTOMETER"  electron  
+     "_diffrn_source.source"  "ELECTRON MICROSCOPE"      electron  
+     "_diffrn_source.source"  "FREE ELECTRON LASER"      x-ray     
+     "_diffrn_source.source"  "LIQUID ANODE"             x-ray     
+     "_diffrn_source.source"  "NUCLEAR REACTOR"          neutron   
+     "_diffrn_source.source"  "ROTATING ANODE"           x-ray     
+     "_diffrn_source.source"  "SEALED TUBE"              x-ray     
+     "_diffrn_source.source"  "SPALLATION SOURCE"        neutron   
+     "_diffrn_source.source"  SYNCHROTRON                x-ray     
    #
 save_
 #
@@ -26287,6 +26286,7 @@ save__diffrn_source.type
      "_diffrn_source.type"  "TFS TALOS F200C"                                "ELECTRON MICROSCOPE"  
      "_diffrn_source.type"  "Xenocs GeniX 3D Cu HF"                          "SEALED TUBE"  
      "_diffrn_source.type"  "ZEISS LIBRA120PLUS"                             "ELECTRON MICROSCOPE"  
+     "_diffrn_source.type"  "XtaLAB Synergy-ED"                              "ELECTRON DIFFRACTOMETER"  
      "_diffrn_source.type"  OTHER                                            .  
    #
 save_
@@ -47455,6 +47455,7 @@ save__software.name
      "_software.name"  GDA                             "data collection"  
      "_software.name"  GLRF                            phasing  
      "_software.name"  GPRLSA                          refinement  
+     "_software.name"  "GrenADES parallelproc"         "data extraction,data reduction,data scaling"  
      "_software.name"  GSAS                            refinement  
      "_software.name"  HKL-2000                        "data collection,data scaling,data reduction"  
      "_software.name"  HKL-3000                        "data collection,data scaling,data reduction,phasing"  
@@ -47508,7 +47509,7 @@ save__software.name
      "_software.name"  PDBSET                          .  
      "_software.name"  PHASER                          phasing  
      "_software.name"  PHASES                          phasing  
-     "_software.name"  PHENIX                          "refinement,phasing,model building"  
+     "_software.name"  PHENIX                          "refinement,phasing,model building,data scaling"  
      "_software.name"  pirate                          phasing  
      "_software.name"  pointless                       "data scaling"  
      "_software.name"  Precognition                    "data reduction"  
